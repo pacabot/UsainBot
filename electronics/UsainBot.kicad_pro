@@ -457,7 +457,7 @@
       "similar_labels": "warning",
       "similar_power": "warning",
       "simulation_model_issue": "ignore",
-      "single_global_label": "ignore",
+      "single_global_label": "warning",
       "stacked_pin_name": "warning",
       "unannotated": "error",
       "unconnected_wire_endpoint": "warning",
@@ -589,7 +589,7 @@
       "include_excluded_from_bom": true,
       "name": "Default Editing",
       "sort_asc": true,
-      "sort_field": "Référence"
+      "sort_field": "R\u00e9f\u00e9rence"
     },
     "bus_aliases": {},
     "connection_grid_size": 50.0,
@@ -635,7 +635,40 @@
     "used_designators": "",
     "variants": []
   },
-  "sheets": [],
+  "sheets": [
+    [
+      "e216f09c-2662-6258-2b51-4f4f498f79d0",
+      "Root"
+    ],
+    [
+      "3ee10a22-aabb-2c54-dcbf-475ae49e4e1f",
+      "Alimentation"
+    ],
+    [
+      "165c44a2-41d7-36dd-8a94-1c23bfae135d",
+      "MCU"
+    ],
+    [
+      "f091e242-b2d2-a8c1-4ba0-334789aaf38f",
+      "Moteurs"
+    ],
+    [
+      "c7b2e962-e346-9d71-cf85-4d9257327614",
+      "Barrette"
+    ],
+    [
+      "33c8b66d-3859-eb57-e0fa-870eb5261e1e",
+      "Capteurs"
+    ],
+    [
+      "d8d4cc76-9839-c28f-ba51-64e83601c223",
+      "IHM"
+    ],
+    [
+      "e7cc3c83-7c65-df9f-53be-bd87de8acfc2",
+      "Traces et turbine"
+    ]
+  ],
   "text_variables": {},
   "tuning_profiles": {
     "meta": {

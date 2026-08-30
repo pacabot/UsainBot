@@ -15,6 +15,27 @@ monté sur son support N20/N30.
 Régénérer après une mesure : éditer les constantes en tête de
 `gen_motor_footprint.py` puis `python3 gen_motor_footprint.py`.
 
+## Symboles (`Pacabot.kicad_sym`)
+
+Neuf symboles absents des bibliothèques KiCad, ou dont le typage de broches
+rendait l'ERC inexploitable. Régénérer avec `../tools/gen_lib.py`.
+
+| Symbole | Pourquoi il est là |
+|---|---|
+| `DRV8874PWPR` | KiCad ne fournit que les DRV8870/71/72. Brochage HTSSOP-16 saisi depuis la fiche TI SLVSF66A : `EN/IN1` 1, `PH/IN2` 2, `nSLEEP` 3, `nFAULT` 4, `VREF` 5, `IPROPI` 6, `IMODE` 7, `OUT1` 8, `PGND` 9, `OUT2` 10, `VM` 11, `VCP` 12, `CPH` 13, `CPL` 14, `GND` 15, `PMODE` 16, pad thermique 17 |
+| `AO4407A` | Canal P SO-8 pour la protection anti-inversion. Les `Q_PMOS_*` de KiCad n'ont que trois broches : impossible de les faire correspondre aux 1-3 source / 4 grille / 5-8 drain du boîtier |
+| `LSM6DSOTR` | Copie de `Sensor_Motion:LSM6DS3` — même LGA-14, même brochage. `SDX` et `SCX` retypées en passif : elles sont strappées à la masse, et les laisser bidirectionnelles fait crier l'ERC sans raison |
+| `ITR8307` | Copie de `Sensor_Proximity:ITR8307-S17-TR8`, phototransistor retypé en passif. « Collecteur ouvert » relié à un rail est un défaut d'ERC alors que c'est exactement le montage voulu |
+| `SW_Nav_5Way` | Switch 5 directions à commun unique. **Empreinte à confirmer** sur la référence retenue (LCSC C3674) : le champ est laissé vide exprès |
+| `VBAT` `VPACK` `+3V3A` `+3V3_BLE` | Symboles d'alimentation des quatre rails propres au projet |
+
+### Réserve
+
+Le `VL53L1CBV0FY/1` utilise le symbole standard `Sensor_Distance:VL53L1CXV0FY1`
+et l'empreinte `Sensor_Distance:ST_VL53L1x`. Même boîtier optique et même
+brochage ; seule la valeur a été changée. À revérifier si le composant
+réellement approvisionné n'est pas un CB.
+
 ## Modèles 3D (`3d/`)
 
 Six fichiers STEP **colorés**, déjà positionnés sur l'origine de l'empreinte
