@@ -27,7 +27,7 @@ s'ouvre tel quel, sans chemin absolu ni variable d'environnement à déclarer.
 
 Le document de conception complet — choix du microcontrôleur, schémas blocs, implantation,
 élévations, affectation des broches, nomenclature JLCPCB et revue de conception en
-trente-six points — est ici :
+trente-sept points — est ici :
 
 **[`documentation/architecture-usainbot.html`](documentation/architecture-usainbot.html)**
 
@@ -59,7 +59,11 @@ Conséquence à répercuter : le décalage en Z des modèles 3D du moteur et du 
   poser aux organisateurs ; un bouton physique conforme est conservé en secours.
 - **Porteuse de la télémétrie.** À choisir hors de la bande de scintillement des
   éclairages et à l'écart des 38 kHz des barrières de chronométrage, avec un codage propre
-  au robot pour la réjection par corrélation. À caler sur plaque d'essai.
+  au robot pour la réjection par corrélation. À caler sur plaque d'essai. Le courant reste
+  plafonné à 12 mA : le mode 48 mA de l'OPV302 n'est spécifié qu'en impulsions de 1 µs.
+- **Inclinaison des diodes.** 4° vers le haut, soudées à plat sur la carte. Le rayon bas du
+  faisceau monte alors de 35 mm par mètre et n'atteint jamais la bâche, mais le centre passe
+  au-dessus d'un cube de 100 mm au-delà d'environ un mètre.
 - **Approvisionnement.** OPV302 et BPW77 ne sont probablement pas dans la bibliothèque
   JLCPCB : pose manuelle des six composants de la languette à prévoir.
 - **Poussée de la turbine.** À mesurer sous 6,4 V et non sous les 8,4 V pour lesquels les

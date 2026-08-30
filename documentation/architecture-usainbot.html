@@ -616,7 +616,7 @@
       <p>Proposition de placement dans une carte de 120 × 180 mm, largement sous la limite de 200 × 200 mm. Trois principes gouvernent ce plan : les capteurs de ligne le plus en avant possible, le microcontrôleur juste derrière eux pour raccourcir les pistes analogiques, et toute la masse — pack et moteurs — concentrée sur l'essieu arrière.</p>
       <figure>
         <div class="figwrap">
-          <svg viewBox="0 0 1000 600" role="img" aria-label="Vue de dessus du robot : barrette de capteurs et languette télémètres à l'avant, microcontrôleur, turbine centrale, pack et moteurs à l'arrière">
+          <svg viewBox="0 0 1000 600" role="img" aria-label="Vue de dessus du robot : barrette de capteurs et stations de télémétrie à l'avant, microcontrôleur, turbine centrale, pack et moteurs à l'arrière">
             <defs>
               <marker id="dim" viewBox="0 0 8 8" refX="4" refY="4" markerWidth="6" markerHeight="6" orient="auto">
                 <path d="M0,0 L8,4 L0,8 z" fill="var(--accent)"/>
@@ -641,13 +641,13 @@
                 <rect x="598.5" y="96" width="10" height="14" rx="1.5"/><rect x="621.5" y="96" width="10" height="14" rx="1.5"/>
               </g>
 
-              <rect x="424" y="118" width="152" height="9" fill="var(--ink)" opacity=".82"/>
+              
               <g fill="var(--accent)">
                 <rect x="424" y="114" width="9" height="17" rx="1.5"/><rect x="436" y="114" width="9" height="17" rx="1.5"/>
                 <rect x="483" y="114" width="9" height="17" rx="1.5"/><rect x="495" y="114" width="9" height="17" rx="1.5"/>
                 <rect x="542" y="114" width="9" height="17" rx="1.5"/><rect x="554" y="114" width="9" height="17" rx="1.5"/>
               </g>
-              <text x="500" y="146" font-size="8.5" text-anchor="middle" fill="var(--muted)" font-family="IBM Plex Mono, monospace">3 stations émetteur + récepteur</text>
+              <text x="500" y="148" font-size="8.5" text-anchor="middle" fill="var(--muted)" font-family="IBM Plex Mono, monospace">diodes soudées à plat, inclinées de 4°</text>
               <g stroke="var(--accent)" fill="none" marker-end="url(#aim)" stroke-width="1.2">
                 <path d="M424,122 L388,122"/>
                 <path d="M489,111 L465,84"/>
@@ -701,8 +701,8 @@
               <g font-family="IBM Plex Sans, sans-serif" font-size="11" fill="var(--ink)" text-anchor="end">
                 <text x="252" y="100">Barrette 12 × ITR8307</text>
                 <text x="252" y="115" font-size="10" fill="var(--muted)">pas 10 mm — couverture ±55 mm</text>
-                <text x="252" y="145">Languette télémètres</text>
-                <text x="252" y="160" font-size="10" fill="var(--muted)">sécable, ressoudée à 90°</text>
+                <text x="252" y="145">Stations de télémétrie</text>
+                <text x="252" y="160" font-size="10" fill="var(--muted)">OPV302 + BPW77, sur la carte</text>
               </g>
               <g font-family="IBM Plex Sans, sans-serif" font-size="10" fill="var(--muted)">
                 <text x="666" y="80">visées : latéral gauche 90°, diagonale 45°, avant 0°</text>
@@ -721,14 +721,16 @@
             </g>
           </svg>
         </div>
-        <figcaption>Fig. 2 — Implantation proposée, cotes indicatives à recaler sur ton châssis. Le pack et les moteurs concentrent la masse sur l'essieu ; la turbine, juste en avant, souffle à travers une découpe de la carte.</figcaption>
+        <figcaption>Fig. 2 — Implantation proposée, cotes indicatives à recaler sur ton châssis. Les six diodes de télémétrie sont soudées sur la carte elle-même, boîtier couché. Le pack et les moteurs concentrent la masse sur l'essieu ; la turbine, juste en avant, souffle à travers une découpe de la carte.</figcaption>
       </figure>
 
-      <h3>Hauteurs de montage</h3>
-      <p>C'est l'élévation qui décide si la barrette peut vivre sur la carte mère, et pourquoi les télémètres, eux, doivent monter. Une relation résume tout : <strong>garde au sol = rayon de roue − hauteur de l'axe moteur au-dessus du dessous de carte</strong>. Les roues retenues sont des Pololu 40 × 7, soit un rayon de 20 mm. Le support N20 nu place l'arbre à 11 mm au-dessus du dessous de carte, ce qui donnerait 9 mm de garde — bien trop pour l'ITR8307. La correction est mécanique et se chiffre exactement : <strong>4 mm d'entretoises sur mesure</strong> sous le support portent l'axe à 15 mm, et la garde retombe à 5 mm. C'est le bon endroit pour régler, parce qu'une entretoise se retaille en dix minutes là où un PCB se recommande.</p>
+      <h3>Hauteurs et angles de montage</h3>
+      <p>Deux familles de capteurs sur la même carte, deux contraintes verticales à satisfaire — et elles se satisfont sans carte fille, parce qu'elles ne jouent pas dans le même plan. Les capteurs de ligne regardent vers le bas depuis le dessous ; les diodes de télémétrie sont soudées sur le dessus, boîtier couché, et visent vers l'avant en étant <strong>inclinées vers le haut</strong>.</p>
+      <p>Une relation gouverne la première : <strong>garde au sol = rayon de roue − hauteur de l'axe moteur au-dessus du dessous de carte</strong>. Les roues retenues sont des Pololu 40 × 7, soit un rayon de 20 mm. Le support N20 nu place l'arbre à 11 mm au-dessus du dessous de carte, ce qui donnerait 9 mm de garde — bien trop pour l'ITR8307. La correction est mécanique et se chiffre exactement : <strong>4 mm d'entretoises sur mesure</strong> sous le support portent l'axe à 15 mm, et la garde retombe à 5 mm. C'est le bon endroit pour régler, parce qu'une entretoise se retaille en dix minutes là où un PCB se recommande.</p>
+      <p>La seconde tient à l'ouverture réelle du faisceau, et c'est là que la fiche technique tranche.</p>
       <figure>
         <div class="figwrap">
-          <svg viewBox="0 0 1000 560" role="img" aria-label="Élévations : vue de profil avec les hauteurs de capteurs, et vue de face montrant le mur de la qualification Q1">
+          <svg viewBox="0 0 1000 560" role="img" aria-label="Élévations : vue de profil avec l'inclinaison du faisceau laser, et vue de face montrant le mur de la qualification Q1">
             <defs>
               <marker id="dim2" viewBox="0 0 8 8" refX="4" refY="4" markerWidth="6" markerHeight="6" orient="auto">
                 <path d="M0,0 L8,4 L0,8 z" fill="var(--accent)"/>
@@ -736,7 +738,7 @@
             </defs>
             <g font-family="IBM Plex Sans, sans-serif">
 
-              <text x="60" y="34" font-size="12" font-weight="600" fill="var(--ink)" font-family="IBM Plex Sans Condensed, sans-serif">PROFIL — faisceau collimaté, la hauteur ne dépend plus que de la tolérance de visée</text>
+              <text x="60" y="34" font-size="12" font-weight="600" fill="var(--ink)" font-family="IBM Plex Sans Condensed, sans-serif">PROFIL — diode soudée sur la carte, inclinée de 4°, faisceau de 4° FWHM</text>
 
               <line x1="60" y1="250" x2="940" y2="250" stroke="var(--ink)" stroke-width="1.4"/>
               <text x="66" y="264" font-size="9.5" fill="var(--muted)" font-family="IBM Plex Mono, monospace">bâche</text>
@@ -744,75 +746,89 @@
               <rect x="560" y="240" width="52" height="3.5" fill="var(--ink)"/>
               <rect x="652" y="240" width="160" height="3.5" fill="var(--ink)"/>
               <rect x="563" y="243.5" width="37" height="3" fill="var(--accent)"/>
-              <rect x="606" y="187" width="4" height="53" fill="var(--ink)" opacity=".82"/>
-              <rect x="598" y="179" width="8" height="14" rx="1.5" fill="var(--accent)"/>
-              <rect x="608" y="179" width="8" height="14" rx="1.5" fill="var(--accent)"/>
 
-              <g stroke="var(--accent)" stroke-dasharray="4 4" fill="none" opacity=".75">
-                <path d="M598,186 L300,197"/>
-                <path d="M598,186 L300,175"/>
+              <g transform="rotate(-4 600 233)">
+                <rect x="590" y="226" width="22" height="14" rx="3" fill="var(--accent)"/>
+                <rect x="586" y="230" width="5" height="6" rx="1" fill="var(--accent)"/>
               </g>
-              <path d="M598,186 L296,186" stroke="var(--accent)" fill="none" stroke-width="1.4"/>
-              <text x="290" y="182" font-size="10" text-anchor="end" fill="var(--accent)" font-family="IBM Plex Mono, monospace">± 2° de visée</text>
-              <text x="290" y="196" font-size="9.5" text-anchor="end" fill="var(--muted)" font-family="IBM Plex Mono, monospace">au-dessus du sol jusqu'à 1,3 m</text>
+
+              <g stroke="var(--accent)" stroke-dasharray="4 4" fill="none" opacity=".8">
+                <path d="M588,233 L300,213"/>
+                <path d="M588,233 L300,173"/>
+              </g>
+              <path d="M588,233 L300,193" stroke="var(--accent)" fill="none" stroke-width="1.2"/>
+              <path d="M588,233 L300,233" stroke="var(--rule-strong)" stroke-dasharray="2 4" fill="none"/>
+
+              <text x="292" y="180" font-size="10" text-anchor="end" fill="var(--accent)" font-family="IBM Plex Mono, monospace">± 2° — demi-angle FWHM</text>
+              <text x="292" y="197" font-size="9.5" text-anchor="end" fill="var(--muted)" font-family="IBM Plex Mono, monospace">le rayon bas monte : jamais de sol</text>
+              <text x="322" y="245" font-size="9" fill="var(--muted)" font-family="IBM Plex Mono, monospace">horizontale</text>
 
               <circle cx="756" cy="222" r="28" fill="var(--rule)" stroke="var(--rule-strong)"/>
               <rect x="716" y="214" width="60" height="26" rx="2" fill="var(--surface)" stroke="var(--rule-strong)"/>
               <text x="746" y="231" font-size="8.5" text-anchor="middle" fill="var(--ink-2)" font-family="IBM Plex Mono, monospace">N20</text>
               <rect x="630" y="214" width="80" height="26" rx="2" fill="none" stroke="var(--ink)" stroke-dasharray="4 3"/>
               <text x="670" y="231" font-size="8.5" text-anchor="middle" fill="var(--ink-2)" font-family="IBM Plex Mono, monospace">PACK 2S</text>
-              <rect x="612" y="212" width="40" height="28" rx="2" fill="var(--accent-soft)" stroke="var(--accent)"/>
-              <text x="632" y="230" font-size="8.5" text-anchor="middle" fill="var(--accent)" font-family="IBM Plex Mono, monospace">EDF</text>
-              <path d="M632,243 L632,252" stroke="var(--accent)" marker-end="url(#dim2)"/>
 
               <g stroke="var(--accent)" fill="none" marker-start="url(#dim2)" marker-end="url(#dim2)">
-                <path d="M840,186 L840,250"/>
+                <path d="M860,233 L860,250"/>
                 <path d="M540,243 L540,250"/>
               </g>
               <g font-family="IBM Plex Mono, monospace" font-size="10" fill="var(--accent)">
-                <text x="850" y="220">45 mm — télémètres</text>
+                <text x="870" y="245">12 mm — axe optique</text>
                 <text x="534" y="240" text-anchor="end">5 mm</text>
               </g>
               <text x="563" y="272" font-size="9.5" fill="var(--muted)" font-family="IBM Plex Mono, monospace">barrette à 3 mm sous la carte</text>
-              <text x="700" y="196" font-size="9.5" fill="var(--muted)" font-family="IBM Plex Mono, monospace">roue Pololu R = 20 mm · axe porté à 15 mm par 4 mm d'entretoises</text>
+              <text x="700" y="200" font-size="9.5" fill="var(--muted)" font-family="IBM Plex Mono, monospace">roue R = 20 mm · axe porté à 15 mm par 4 mm d'entretoises</text>
 
               <line x1="60" y1="310" x2="940" y2="310" stroke="var(--rule)"/>
-              <text x="60" y="344" font-size="12" font-weight="600" fill="var(--ink)" font-family="IBM Plex Sans Condensed, sans-serif">FACE — géométrie de la qualification Q1</text>
+              <text x="60" y="344" font-size="12" font-weight="600" fill="var(--ink)" font-family="IBM Plex Sans Condensed, sans-serif">PORTÉE — l'inclinaison qui évite le sol plafonne la distance utile</text>
 
-              <line x1="60" y1="520" x2="940" y2="520" stroke="var(--ink)" stroke-width="1.4"/>
-
-              <rect x="396" y="380" width="14" height="140" fill="var(--ink)" opacity=".75"/>
-              <text x="389" y="374" font-size="10" text-anchor="end" fill="var(--ink)" font-family="IBM Plex Mono, monospace">mur Q1</text>
-
-              <rect x="536" y="513" width="168" height="3.5" fill="var(--ink)"/>
-              <rect x="526" y="464" width="10" height="56" rx="3" fill="var(--rule)" stroke="var(--rule-strong)"/>
-              <rect x="704" y="464" width="10" height="56" rx="3" fill="var(--rule)" stroke="var(--rule-strong)"/>
-              <rect x="540" y="457" width="5" height="56" fill="var(--ink)" opacity=".82"/>
-              <rect x="530" y="450" width="8" height="14" rx="1.5" fill="var(--accent)"/>
-              <rect x="540" y="450" width="8" height="14" rx="1.5" fill="var(--accent)"/>
-
-              <g stroke="var(--accent)" fill="none" opacity=".8">
-                <path d="M530,457 L410,452"/>
-                <path d="M530,457 L410,462"/>
+              <line x1="120" y1="500" x2="920" y2="500" stroke="var(--ink)" stroke-width="1.4"/>
+              <g font-family="IBM Plex Mono, monospace" font-size="9" fill="var(--muted)">
+                <text x="120" y="516">0</text><text x="440" y="516">600 mm</text><text x="760" y="516">1000 mm</text>
               </g>
-              <path d="M530,457 L410,457" stroke="var(--accent)" stroke-width="1.4" fill="none"/>
-              <path d="M410,451 L410,463" stroke="var(--accent)" stroke-width="3" fill="none"/>
+              <g stroke="var(--rule)" stroke-dasharray="2 4" fill="none">
+                <path d="M440,500 L440,370"/><path d="M760,500 L760,370"/>
+              </g>
 
-              <g stroke="var(--accent)" fill="none" marker-start="url(#dim2)" marker-end="url(#dim2)">
-                <path d="M410,546 L620,546"/>
-                <path d="M370,380 L370,520"/>
+              <rect x="440" y="430" width="70" height="70" fill="none" stroke="var(--ink)" stroke-dasharray="4 3"/>
+              <text x="475" y="424" font-size="9" text-anchor="middle" fill="var(--ink-2)" font-family="IBM Plex Mono, monospace">cube 100 mm</text>
+              <rect x="760" y="430" width="70" height="70" fill="none" stroke="var(--rule-strong)" stroke-dasharray="4 3"/>
+
+              <path d="M120,492 L920,404" stroke="var(--accent)" fill="none" stroke-width="1.3"/>
+              <g stroke="var(--accent)" stroke-dasharray="4 4" fill="none" opacity=".55">
+                <path d="M120,492 L920,376"/><path d="M120,492 L920,432"/>
               </g>
-              <g font-family="IBM Plex Mono, monospace" font-size="10" fill="var(--accent)">
-                <text x="515" y="540" text-anchor="middle">150 mm</text>
-                <text x="362" y="454" text-anchor="end">100 mm</text>
-                <text x="424" y="430">tache de quelques millimètres</text>
+              <circle cx="440" cy="454" r="4" fill="var(--accent)"/>
+              <circle cx="760" cy="419" r="4" fill="var(--accent)"/>
+              <g font-family="IBM Plex Mono, monospace" font-size="9.5" fill="var(--accent)">
+                <text x="448" y="450">54 mm — plein centre</text>
+                <text x="768" y="414">82 mm — encore sur le cube</text>
+                <text x="880" y="370" text-anchor="end">au-delà, le faisceau passe au-dessus</text>
               </g>
-              <text x="620" y="546" font-size="9.5" text-anchor="middle" fill="var(--muted)" font-family="IBM Plex Mono, monospace">axe de la piste absente</text>
             </g>
           </svg>
         </div>
-        <figcaption>Fig. 3 — Un émetteur collimaté visé parallèlement au sol ne l'éclaire jamais, et la détection synchrone ignore ce qui n'est pas modulé : la contrainte de hauteur ne vient donc plus de l'ouverture du capteur mais de la tolérance de visée. À 45 mm et ± 2°, le faisceau reste au-dessus de la bâche jusqu'à 1,3 m — au-delà de la portée utile.</figcaption>
+        <figcaption>Fig. 3 — Inclinaison de 4°, demi-angle de 2° : le rayon bas monte de 35 mm par mètre et n'atteint jamais la bâche, tandis que le centre du faisceau reste sur un cube de 100 mm jusqu'à environ un mètre. Incliner davantage sécuriserait le sol mais raccourcirait la portée utile — à 6°, le faisceau passe au-dessus du cube dès 850 mm.</figcaption>
       </figure>
+
+      <h3>Ce que dit la fiche technique de l'OPV302</h3>
+      <p>Le composant est un <strong>VCSEL de 850 nm en boîtier TO-46 à lentille dôme</strong>, et non une diode laser à émission par la tranche. Cela change deux choses par rapport à ce que j'avais supposé.</p>
+      <div class="tw">
+        <table>
+          <thead><tr><th>Paramètre</th><th class="m">Valeur</th><th>Ce que ça implique ici</th></tr></thead>
+          <tbody>
+            <tr><td>Divergence du faisceau</td><td class="m">4° FWHM</td><td>Demi-angle de 2°. Étroit, mais pas collimaté : la tache fait 42 mm à 600 mm et 70 mm à 1 m — largement dans un cube de 100 mm</td></tr>
+            <tr><td>Puissance optique</td><td class="m">1,5 mW à 7 mA</td><td>Concentrée dans 4°, c'est ce qui rend le mètre atteignable</td></tr>
+            <tr><td>Rendement de pente</td><td class="m">0,28 mW/mA</td><td>À 12 mA : environ 2,5 mW crête</td></tr>
+            <tr><td>Courant direct continu max</td><td class="m">12 mA</td><td>C'est le vrai plafond en régime porteuse</td></tr>
+            <tr><td>Courant pulsé max</td><td class="m">48 mA — 1 µs, 10 %</td><td><strong>Piège :</strong> à 20 kHz en carré, la période haute dure 25 µs. Le mode 48 mA est donc inaccessible</td></tr>
+            <tr><td>Courant de seuil</td><td class="m">3 mA</td><td>Sous ce seuil, plus d'effet laser : la modulation doit rester au-dessus</td></tr>
+            <tr><td>Sensibilité ESD</td><td class="m">notée au datasheet</td><td>Précautions au montage, et protection sur la ligne de commande</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>La conséquence pratique est nette : avec un récepteur à phototransistor, dont la bande passante impose de rester vers 10–20 kHz, <strong>tu es limité à 12 mA et environ 2,5 mW crête</strong>. C'est déjà 1,7 fois la puissance nominale, et cela suffit — c'est le régime dans lequel ton mètre a été mesuré. Le mode 48 mA n'a de sens qu'avec des impulsions de 1 µs, donc une porteuse au-delà de 100 kHz, donc une photodiode et un amplificateur transimpédance à la place du phototransistor. C'est un autre projet ; ne l'ouvre que si la portée manque.</p>
     </section>
 
     <!-- ============ 4 ============ -->
@@ -824,22 +840,22 @@
       <p>Les émetteurs sont câblés en deux bancs (pairs et impairs), chacun commuté par un MOSFET <span class="mono">AO3400A</span>. La séquence d'acquisition, déclenchée par TIM6 à 2 kHz, enchaîne : mesure tous émetteurs éteints (ambiante), mesure banc A, mesure banc B. La soustraction élimine l'éclairage de salle — exigence directe du chapitre 10 — et l'alternance des bancs supprime la diaphonie entre voisins. Attention : cette soustraction est <em>numérique</em>, et elle ne suffit qu'ici, à 3 mm de la bâche, où le signal est abondant. Le télémètre analogique, lui, joue dans un tout autre régime et demande une suppression du continu en amont du gain — comparaison des deux plus bas.</p>
       <p>Les douze capteurs sont implantés <strong>sous le bord avant de la carte mère</strong>, et non sur une carte fille. Alimente-les depuis <span class="mono">3V3A</span>, la même référence que <span class="mono">VREF+</span> : la mesure devient ratiométrique et l'ondulation résiduelle du buck s'annule.</p>
 
-      <h3>Pourquoi une seule carte, et où s'arrête ce principe</h3>
-      <p>La carte fille sur nappe FFC n'a que deux arguments : le bruit, et le réglage de hauteur. Le premier ne tient pas — un plan de masse continu sur 4 couches est <em>meilleur</em> qu'une nappe, quelle que soit la façon dont on alterne signal et masse dedans. Reste la hauteur, et c'est là que se joue la décision.</p>
-      <p>Le problème est que les deux familles de capteurs ne veulent pas la même altitude, et qu'un PCB est un plan :</p>
+      <h3>Une seule carte, sans exception</h3>
+      <p>La carte fille sur nappe FFC n'avait que deux arguments : le bruit, et le réglage de hauteur. Le premier ne tient pas — un plan de masse continu sur 4 couches est <em>meilleur</em> qu'une nappe, quelle que soit la façon dont on alterne signal et masse dedans. Le second tombe avec les entretoises, qui règlent l'assiette du robot entier.</p>
+      <p>Restait la question des télémètres, que je croyais condamnés à une carte verticale. Elle disparaît elle aussi dès lors que les diodes sont <strong>soudées à plat sur la carte et inclinées</strong> : le faisceau n'a pas besoin de partir de haut, il a besoin de ne pas descendre. Boîtier couché, pattes cintrées, quatre degrés vers le haut, et l'axe optique à une douzaine de millimètres du sol suffit — c'est la pratique du micromouse, et elle vaut ici pour la même raison.</p>
       <div class="tw">
         <table>
-          <thead><tr><th>Capteur</th><th class="m">Hauteur voulue</th><th>Raison</th></tr></thead>
+          <thead><tr><th>Capteur</th><th class="m">Position</th><th>Contrainte</th></tr></thead>
           <tbody>
-            <tr><td>ITR8307, barrette de ligne</td><td class="m">2 à 4 mm</td><td>Au-delà, le signal réfléchi s'effondre et le contraste noir/blanc devient inexploitable</td></tr>
-            <tr><td>Télémètres analogiques</td><td class="m">40 à 50 mm</td><td>Le faisceau est visé parallèlement au sol : la hauteur ne couvre pas une ouverture mais la tolérance de visée, ± 2° sur toute la portée utile</td></tr>
+            <tr><td>ITR8307, barrette de ligne</td><td class="m">dessous, 3 mm du sol</td><td>Au-delà de 4 mm, le contraste noir/blanc s'effondre</td></tr>
+            <tr><td>OPV302 et BPW77, télémétrie</td><td class="m">dessus, axe à 12 mm, + 4°</td><td>Le rayon bas du faisceau doit monter, pas la source</td></tr>
           </tbody>
         </table>
       </div>
-      <p>Les figures 2 et 3 ci-dessus montrent la conséquence géométrique. La conclusion tient en deux points. <strong>La barrette de ligne passe sur la carte mère</strong> si le dessous de celle-ci se situe entre 2 et 6 mm du sol — ce qui dépend entièrement du diamètre de roue et de la façon dont le support moteur est fixé, et se mesure en une après-midi avec le châssis existant. <strong>Les télémètres, eux, resteront sur une carte verticale</strong> quoi qu'il arrive : il faut viser l'horizontale à 45 mm du sol, et le mur de la Q1 ne fait que 100 mm de haut.</p>
+      <p>Une carte, un fichier de fabrication, une commande, aucun connecteur intermédiaire et aucune poutre en porte-à-faux à l'avant du robot. C'est la configuration la plus robuste des trois qu'on aura envisagées.</p>
       <div class="note">
-        <span class="lbl">L'astuce qui garde un seul fichier de fabrication</span>
-        <p>Dessine la carte verticale des télémètres comme un <strong>appendice sécable du même PCB</strong>, relié par une amorce de rupture, avec une rangée de pastilles à cheval sur la cassure. Tu commandes un seul design, JLCPCB assemble tout en une passe, tu casses la languette et tu la ressoudes à 90° sur la carte mère. Un fichier, une commande, une facture de mise en route — et les télémètres à la bonne hauteur, orientés précisément.</p>
+        <span class="lbl">Ce qui remplace le réglage perdu</span>
+        <p>Des diodes soudées ne se règlent plus en hauteur, et leur inclinaison se joue à quelques degrés près. Deux garde-fous. Le premier est mécanique : monte-les sur pattes cintrées plutôt qu'en montage traversant rigide, pour pouvoir corriger l'angle au montage — c'est précisément ce que permet le boîtier TO-46. Le second est logiciel : un courant d'émetteur piloté rattrape une portée insuffisante sans toucher au matériel.</p>
       </div>
       <p>Deux garde-fous pour ne pas dépendre d'une mesure de hauteur faite avant le routage. D'abord, <strong>rends le courant des émetteurs pilotable</strong> : en modulant le rapport cyclique sur le MOSFET de banc, tu rattrapes en logiciel une hauteur de 6 mm au lieu de 3. Ensuite, <strong>déplace le réglage vers le châssis</strong> — trous oblongs sur les supports moteurs plutôt que sur les capteurs. C'est le bon endroit : tu règles l'assiette du robot entier, pas un sous-ensemble.</p>
 
@@ -847,10 +863,11 @@
         <div class="card">
           <h4>Télémétrie</h4>
           <p class="part">3 × OPV302 + BPW77 · détection synchrone</p>
-          <p>Avant pour voir venir le cube, avant-gauche à 45° pour anticiper la disparition de la piste, latéral gauche à 90° pour asservir sur le mur de la Q1. Trois stations émetteur–récepteur identiques, sur la languette verticale, à 45 mm du sol.</p>
+          <p>Avant pour voir venir le cube, avant-gauche à 45° pour anticiper la disparition de la piste, latéral gauche à 90° pour asservir sur le mur de la Q1. Trois stations émetteur–récepteur identiques, soudées sur la carte mère.</p>
           <ul>
             <li>Émetteurs multiplexés dans le temps : un seul éclaire à la fois, ce qui supprime la diaphonie entre visées et donne au passage une mesure du couplage parasite</li>
             <li>Intégration adaptée à la cible : 1 ms pour le mur, proche et lumineux, donc 1 kHz d'asservissement ; 10 ms pour le cube, lointain, donc 100 Hz</li>
+            <li>Diodes soudées sur la carte, boîtier couché et incliné de 4° : le faisceau ne touche jamais la bâche sans qu'il faille les surélever</li>
             <li>ADC3 leur est dédié en conversion continue, échantillonnage à quatre fois la porteuse</li>
             <li>Aucun trafic I²C dans la boucle critique</li>
           </ul>
@@ -992,8 +1009,8 @@
       <p>Avec un mètre de portée, la même chaîne couvre les trois visées : plus aucun bus I²C dans la boucle critique, une seule discipline de mesure à maîtriser, des cadences homogènes et une seule empreinte à valider. Le point de vigilance qui subsiste est que la mesure reste une <strong>intensité</strong> et non une distance : le seuil de déclenchement de l'esquive dépendra de l'albédo du cube, que le règlement ne garantit pas — il promet seulement qu'il sera « visible » en infrarouge. Les essais libres avant chaque phase servent précisément à l'étalonner contre le vrai obstacle.</p>
       <div class="note">
         <span class="lbl">Deux réserves indépendantes du traitement</span>
-        <p><strong>Approvisionnement.</strong> L'OPV302 est un TT Electronics/Optek, les BPW77NA, BPW77NB et BPY 62 des Vishay en boîtier traversant. Aucun des trois n'est probablement dans la bibliothèque JLCPCB : prévois une pose manuelle sur une carte par ailleurs assemblée, ce qui reste acceptable pour six composants groupés sur la même languette.</p>
-        <p><strong>Sécurité oculaire.</strong> L'OPV302 émet à 850 nm, invisible, donc sans réflexe de clignement. Sur un stand où juges et spectateurs se penchent au-dessus de la piste, trois faisceaux collimatés à hauteur de tête imposent une vraie analyse de classification et un capotage qui la garantisse.</p>
+        <p><strong>Approvisionnement.</strong> L'OPV302 est un TT Electronics/Optek, les BPW77NA, BPW77NB et BPY 62 des Vishay en boîtier traversant. Aucun des trois n'est probablement dans la bibliothèque JLCPCB : prévois une pose manuelle sur une carte par ailleurs assemblée. Six composants traversants à souder soi-même, c'est une demi-heure — et le boîtier TO-46 sur pattes cintrées est de toute façon plus facile à orienter à la main qu'à faire poser par une machine.</p>
+        <p><strong>Sécurité oculaire.</strong> 1,5 mW à 850 nm concentrés dans 4°, c'est <strong>au-delà de la classe 1</strong> — les distributeurs référencent d'ailleurs l'OPV302 en classe 3B. Invisible, donc sans réflexe de clignement. Le faisceau part à 12 mm du sol et monte de 35 mm par mètre : il reste bas, mais un juge accroupi au bord de piste est dans son axe à trois mètres. Vérifie la classification au courant que tu retiens, mets l'étiquette réglementaire, et n'alimente les diodes qu'après l'armement — la machine à états de départ est le bon endroit pour ça.</p>
       </div>
 
       <h3>Le budget de broches analogiques</h3>
@@ -1160,7 +1177,7 @@
           <tbody>
             <tr><td>Microcontrôleur</td><td>STM32H723VGT6 · LQFP100</td><td class="m">C730142</td><td class="m">1</td><td class="ok">vérifié</td></tr>
             <tr><td>Pont en H</td><td>DRV8874PWPR · HTSSOP-16</td><td class="m">C1855818</td><td class="m">2</td><td class="ok">vérifié · 0,77 $</td></tr>
-            <tr><td>Émetteurs de télémétrie</td><td>OPV302 · laser IR 850 nm collimaté</td><td class="m">—</td><td class="m">3</td><td class="tbc">pose manuelle</td></tr>
+            <tr><td>Émetteurs de télémétrie</td><td>OPV302 · VCSEL 850 nm, TO-46 lentille dôme</td><td class="m">—</td><td class="m">3</td><td class="tbc">pose manuelle</td></tr>
             <tr><td>Récepteurs de télémétrie</td><td>BPW77NA / BPW77NB / BPY 62</td><td class="m">—</td><td class="m">3</td><td class="tbc">pose manuelle</td></tr>
             <tr><td>Multiplexeur de surveillance</td><td>74HC4051 · 8:1 analogique</td><td class="m">—</td><td class="m">1</td><td class="tbc">à vérifier</td></tr>
             <tr><td>Centrale inertielle</td><td>LSM6DSOTR</td><td class="m">C2655100</td><td class="m">1</td><td class="ok">vérifié · 2,42 $</td></tr>
@@ -1183,13 +1200,13 @@
           </tbody>
         </table>
       </div>
-      <p>Le microcontrôleur devient le poste dominant, ce qui est le signe d'une nomenclature saine. Les six composants de télémétrie sont groupés sur la même languette : s'ils ne sont pas sourçables chez JLCPCB, c'est une seule séance de soudure sur une petite carte, pas une reprise de la carte mère.</p>
+      <p>Le microcontrôleur devient le poste dominant, ce qui est le signe d'une nomenclature saine. Les six composants de télémétrie sont traversants et se posent à la main après l'assemblage : leur absence de la bibliothèque JLCPCB ne bloque donc pas la commande.</p>
     </section>
 
     <!-- ============ 8 ============ -->
     <section id="s8">
       <div class="sechead"><span class="num">§8</span><h2>Ce que tu as oublié</h2></div>
-      <p>Trente-six points relevés, classés par ce qu'ils te coûtent si tu les laisses passer. Le premier concerne directement le connecteur de la capture que tu m'as envoyée ; le second, ton idée de départ par télémètre.</p>
+      <p>Trente-sept points relevés, classés par ce qu'ils te coûtent si tu les laisses passer. Le premier concerne directement le connecteur de la capture que tu m'as envoyée ; le second, ton idée de départ par télémètre.</p>
       <div class="legend">
         <span class="chip c1">Bloquant</span>
         <span class="chip c2">Fiabilité</span>
@@ -1295,8 +1312,8 @@
           <p>Une embase JST-XH 3 points sur les points milieux du pack permet de charger avec un chargeur externe, de mesurer chaque cellule et de rattraper un déséquilibre. Le règlement autorise le changement de batterie en échange standard pendant les trois minutes : prévois donc au moins deux packs et une connectique détrompée.</p>
         </div></li>
         <li><span class="n">24</span><div>
-          <h5>Protection ESD et tenue de la languette télémètres</h5>
-          <p>USBLC6-2SC6 sur D+/D− et sur VBUS. Quant à la languette verticale des télémètres : soudée seulement par sa rangée de pastilles, c'est une poutre en porte-à-faux au point le plus exposé du robot. Ajoute deux équerres, ou des pastilles de renfort mécanique aux extrémités, sinon le premier contact avec le cube la décollera — et le règlement interdit déjà ce contact, mais les essais libres, non.</p>
+          <h5>Protection ESD, et l'inclinaison qui ne doit pas bouger</h5>
+          <p>USBLC6-2SC6 sur D+/D− et sur VBUS, et la fiche technique de l'OPV302 signale explicitement sa sensibilité aux décharges : protège aussi la ligne de commande. Côté mécanique, l'inclinaison de 4° est désormais un paramètre de conception à part entière, et elle tient sur des pattes cintrées : un choc en essais libres la dérègle sans que rien ne casse ni ne se voie. Prévois une butée ou une goutte de colle après réglage, et une routine de vérification de portée dans le menu OLED pour t'en apercevoir au stand plutôt qu'en course.</p>
         </div></li>
       </ul>
 
@@ -1319,34 +1336,38 @@
           <p>C'est le point le plus contre-intuitif de ton cahier des charges. Quand les deux roues glissent ensemble, l'odométrie reste parfaitement cohérente — et fausse. Il faut une référence indépendante des roues : le gyroscope, dont le lacet mesuré est comparé au lacet odométrique (v<sub>d</sub> − v<sub>g</sub>)/e. L'écart <em>est</em> le dérapage. Encore mieux si tu veux la vitesse sol réelle : un capteur de flux optique (PMW3901) sous le châssis — à valider côté stock JLCPCB.</p>
         </div></li>
         <li><span class="n">29</span><div>
+          <h5>L'inclinaison plafonne la portée avant, et les 48 mA sont hors d'atteinte</h5>
+          <p>Deux lignes de la fiche technique se combinent contre la visée avant. L'inclinaison qui protège du sol fait monter le faisceau de 35 mm par mètre : au-delà d'environ un mètre, il passe au-dessus d'un cube de 100 mm. Et le mode 48 mA n'est spécifié que pour des impulsions de 1 µs à 10 % de rapport cyclique — inaccessible avec une porteuse à 20 kHz, dont la période haute dure 25 µs. Tu restes donc à 12 mA et 2,5 mW crête. C'est assez pour les 600 mm dont tu as besoin, mais il n'y a aucune marge cachée à aller chercher : si la portée manque, c'est la photodiode et l'amplificateur transimpédance qu'il faut, pas plus de courant.</p>
+        </div></li>
+        <li><span class="n">30</span><div>
           <h5>Trois émetteurs IR pulsés dans une salle qui en est déjà pleine</h5>
           <p>Les barrières de chronométrage des organisateurs sont des liaisons infrarouges, souvent modulées vers 38 kHz comme les récepteurs du commerce, et chaque concurrent arrive avec ses propres émetteurs. Trois raisons de ne pas choisir sa porteuse au hasard : reste à l'écart de 38 kHz, code l'émission avec une séquence propre au robot pour obtenir une réjection par corrélation, et vérifie en essais libres que tu ne perturbes pas le chronométrage — un essai invalidé pour cette raison serait cher payé.</p>
         </div></li>
-        <li><span class="n">30</span><div>
-          <h5>La visée du télémètre gauche décide la Q1</h5>
-          <p>Le mur fait 10 cm de haut et se trouve à 15 cm à gauche du centre virtuel de la piste absente. Avec un faisceau collimaté, ce n'est plus l'ouverture qui contraint mais la <strong>tolérance de visée</strong> : à 45 mm de hauteur et ± 2°, le faisceau reste au-dessus de la bâche jusqu'à 1,3 m. Soigne donc le maintien mécanique de la languette, car un degré de vrillage se paie en portée. Et comme la piste manque sur tout un virage à 20 cm de rayon, il faut une odométrie propre pour tenir la trajectoire entre deux mesures.</p>
-        </div></li>
         <li><span class="n">31</span><div>
+          <h5>La visée du télémètre gauche décide la Q1</h5>
+          <p>Le mur fait 10 cm de haut et se trouve à 15 cm à gauche du centre virtuel de la piste absente. C'est la visée la plus facile des trois : à 150 mm, le faisceau incliné de 4° n'est monté que de 10 mm et la tache fait 10 mm, largement dans la cible. Tout le budget d'inclinaison est donc dicté par la visée avant, pas par celle-ci. Et comme la piste manque sur tout un virage à 20 cm de rayon, il faut une odométrie propre pour tenir la trajectoire entre deux mesures.</p>
+        </div></li>
+        <li><span class="n">32</span><div>
           <h5>L'apprentissage du circuit, autorisé et rentable</h5>
           <p>Le règlement dit explicitement que le robot peut mémoriser le tracé. C'est le plus gros levier de chrono du concours : au tour d'apprentissage on relève courbure et distance, puis on calcule un profil de vitesse qui freine <em>avant</em> le virage plutôt que dedans. Cela suppose une mémoire non volatile qui survit au changement de batterie, d'où la flash SPI.</p>
         </div></li>
-        <li><span class="n">32</span><div>
+        <li><span class="n">33</span><div>
           <h5>Le BLE ne suffira pas pour les traces</h5>
           <p>Vingt signaux à 1 kHz en 16 bits représentent 40 ko/s. Le BLE en délivre quelques-uns. La chaîne réaliste est : enregistrement en flash SPI pendant la tentative, puis vidage par USB CDC entre deux essais. Le BLE reste utile pour la supervision légère et les réglages, pas pour le log.</p>
         </div></li>
-        <li><span class="n">33</span><div>
+        <li><span class="n">34</span><div>
           <h5>La hauteur de la barrette doit être réglable</h5>
           <p>L'ITR8307 travaille au mieux entre 2 et 4 mm de la surface. Sur une bâche qui ondule, c'est peu — et si les capteurs sont sur la carte mère, cette hauteur n'est plus réglable du tout. Deux compensations, et elles sont indépendantes du PCB. La première est mécanique : des entretoises sur mesure sous le support moteur portent l'axe à la hauteur voulue — 4 mm avec les roues Pololu 40 mm retenues. La seconde est logicielle : un courant d'émetteur piloté rattrape une hauteur résiduelle trop grande. Usine un premier jeu d'entretoises et mesure la garde au sol réelle <em>avant</em> de router.</p>
         </div></li>
-        <li><span class="n">34</span><div>
+        <li><span class="n">35</span><div>
           <h5>Prévois une voie « ambiante seule » dans chaque cycle</h5>
           <p>Le chapitre 10 annonce un éclairage non uniforme et variable. La mesure émetteurs éteints, soustraite de la mesure éclairée, rend le capteur indifférent à l'ambiante — et son niveau brut te dit en plus si tu passes sous un projecteur, information exploitable pour resserrer les seuils.</p>
         </div></li>
-        <li><span class="n">35</span><div>
+        <li><span class="n">36</span><div>
           <h5>Masse et centre de gravité</h5>
           <p>La batterie est la masse dominante. Placée au-dessus de l'essieu moteur, elle charge les roues motrices et améliore l'adhérence ; placée à l'avant, elle allège la traction et fait sous-virer. Décide-le au niveau de l'implantation du PCB, pas après — le connecteur d'accu et le pack doivent avoir leur place réservée dès le placement.</p>
         </div></li>
-        <li><span class="n">36</span><div>
+        <li><span class="n">37</span><div>
           <h5>L'étalonnage du diamètre de roue</h5>
           <p>L'usure et le nettoyage des pneus, autorisés pendant les tentatives, changent le diamètre effectif de quelques pourcents. Toute l'odométrie et la carte apprise en dépendent. Prévois une routine d'étalonnage dans le menu OLED : le robot roule une distance connue, tu corriges le facteur d'échelle.</p>
         </div></li>
@@ -1373,7 +1394,7 @@
     </section>
 
     <footer>
-      Sources vérifiées le 30 août 2026 — jlcpcb.com/partdetail (STM32H723VGT6 C730142, DRV8874PWPR C1855818, CH224K C970725) · lcsc.com (VL53L1CBV0FY/1 C2970716, LSM6DSOTR C2655100, BQ25887RGER C2761614, ITR8307/S17/TR8(B) C81632, TPS62933DRLR C3200405, TYPE-C-31-M-12 C165948) · ti.com/lit/ds/symlink/bq25887.pdf · st.com — datasheet STM32H723VG DS13313 · Règlement TNRS Formule 1 v2.11, F. Giamarchi et J.-R. Vaillé.
+      Sources vérifiées le 30 août 2026 — jlcpcb.com/partdetail (STM32H723VGT6 C730142, DRV8874PWPR C1855818, CH224K C970725) · lcsc.com (LSM6DSOTR C2655100, BQ25887RGER C2761614, ITR8307/S17/TR8(B) C81632, TPS62933DRLR C3200405, TYPE-C-31-M-12 C165948) · ti.com/lit/ds/symlink/bq25887.pdf · st.com — datasheet STM32H723VG DS13313 · ttelectronics.com — datasheet OPV302 Rev C 09/2018 · Règlement TNRS Formule 1 v2.11, F. Giamarchi et J.-R. Vaillé.
     </footer>
 
   </main>
