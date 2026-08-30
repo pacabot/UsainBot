@@ -829,6 +829,25 @@
         </table>
       </div>
       <p>La conséquence pratique est nette : avec un récepteur à phototransistor, dont la bande passante impose de rester vers 10–20 kHz, <strong>tu es limité à 12 mA et environ 2,5 mW crête</strong>. C'est déjà 1,7 fois la puissance nominale, et cela suffit — c'est le régime dans lequel ton mètre a été mesuré. Le mode 48 mA n'a de sens qu'avec des impulsions de 1 µs, donc une porteuse au-delà de 100 kHz, donc une photodiode et un amplificateur transimpédance à la place du phototransistor. C'est un autre projet ; ne l'ouvre que si la portée manque.</p>
+
+      <h3>Faut-il monter en fréquence pour débloquer les 48 mA ?</h3>
+      <p>La question est naturelle : si le mode 48 mA n'est refusé qu'à cause de la durée d'impulsion, il suffit de raccourcir les impulsions et de monter la cadence. Techniquement oui — 1 µs à 100 kHz, c'est exactement les 10 % de rapport cyclique autorisés. Mais le calcul de ce que ça rapporte est décevant, et il tient en une ligne de tableau.</p>
+      <div class="tw">
+        <table>
+          <thead><tr><th>Régime</th><th class="m">Crête</th><th class="m">Rapport cyclique</th><th class="m">Puissance moyenne</th></tr></thead>
+          <tbody>
+            <tr><td>Porteuse 20 kHz, carré</td><td class="m">2,52 mW</td><td class="m">50 %</td><td class="m">1,26 mW</td></tr>
+            <tr><td>Impulsions 1 µs à 100 kHz</td><td class="m">12,60 mW</td><td class="m">10 %</td><td class="m">1,26 mW</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p><strong>Rigoureusement la même puissance moyenne.</strong> Ce n'est pas une coïncidence : les deux valeurs de la fiche technique sont construites autour de la même limite thermique de la puce. Or un détecteur synchrone intègre sur de nombreuses périodes, et ce qu'il accumule est une <em>énergie</em> — le produit de la puissance moyenne par le temps de mesure. Le bruit d'ambiance, lui, a une densité spectrale plate : élargir la bande pour laisser passer des impulsions de 1 µs le laisse entrer en proportion. Le rapport signal sur bruit atteint en un temps de mesure donné est donc <strong>identique dans les deux régimes</strong>.</p>
+      <p>Ce que la montée en fréquence coûte, en revanche, est bien réel. Une impulsion de 1 µs demande plusieurs centaines de kilohertz de bande passante côté réception : le phototransistor est hors jeu, il faut une photodiode et un amplificateur transimpédance par voie, soit trois op-amps et une disposition soignée. Pour un gain nul en portée.</p>
+      <div class="note">
+        <span class="lbl">Le vrai levier est du côté du récepteur</span>
+        <p>Le signal collecté est proportionnel à la <strong>surface active du détecteur</strong>, et cette voie-là n'a aucune contrepartie de sécurité puisqu'elle n'ajoute pas un milliwatt d'émission. Passer d'un phototransistor de l'ordre du millimètre carré à une photodiode BPW34 de 7,5 mm² multiplie le signal par 7,5 — soit, en 1/d², une portée multipliée par 2,7. Aucun réglage côté émetteur n'approche ce facteur. Une simple lentille de collecte devant le détecteur joue dans la même catégorie. Si un jour la portée manque, commence par là.</p>
+      </div>
+      <p>Conclusion pratique : reste à <strong>12 mA sur une porteuse de 10 à 20 kHz avec le phototransistor</strong>. Ne monte en fréquence que si tu as une raison qui n'est pas la portée — une bande encombrée par les émetteurs des concurrents, ou un besoin de latence inférieure à la centaine de microsecondes.</p>
     </section>
 
     <!-- ============ 4 ============ -->
@@ -1010,7 +1029,21 @@
       <div class="note">
         <span class="lbl">Deux réserves indépendantes du traitement</span>
         <p><strong>Approvisionnement.</strong> L'OPV302 est un TT Electronics/Optek, les BPW77NA, BPW77NB et BPY 62 des Vishay en boîtier traversant. Aucun des trois n'est probablement dans la bibliothèque JLCPCB : prévois une pose manuelle sur une carte par ailleurs assemblée. Six composants traversants à souder soi-même, c'est une demi-heure — et le boîtier TO-46 sur pattes cintrées est de toute façon plus facile à orienter à la main qu'à faire poser par une machine.</p>
-        <p><strong>Sécurité oculaire.</strong> 1,5 mW à 850 nm concentrés dans 4°, c'est <strong>au-delà de la classe 1</strong> — les distributeurs référencent d'ailleurs l'OPV302 en classe 3B. Invisible, donc sans réflexe de clignement. Le faisceau part à 12 mm du sol et monte de 35 mm par mètre : il reste bas, mais un juge accroupi au bord de piste est dans son axe à trois mètres. Vérifie la classification au courant que tu retiens, mets l'étiquette réglementaire, et n'alimente les diodes qu'après l'armement — la machine à états de départ est le bon endroit pour ça.</p>
+        <p><strong>Sécurité oculaire, et où se situe vraiment le risque.</strong> L'absence de collimation aide moins que l'intuition ne le suggère, parce que la classification se mesure à travers une ouverture normalisée de l'ordre de la pupille, à cent millimètres. Or un faisceau de 4° fait précisément 7 mm de diamètre à cette distance : il entre <em>en entier</em>. C'est ce qui sépare ce composant d'une LED infrarouge ordinaire, dont les 40 à 60° d'ouverture ne laissent passer qu'un pourcent de l'émission dans une pupille.</p>
+        <div class="tw">
+          <table>
+            <thead><tr><th class="m">Distance</th><th class="m">Diamètre du faisceau</th><th class="m">Fraction dans une pupille de 7 mm</th></tr></thead>
+            <tbody>
+              <tr><td class="m">100 mm</td><td class="m">7 mm</td><td class="m">la quasi-totalité</td></tr>
+              <tr><td class="m">200 mm</td><td class="m">14 mm</td><td class="m">25 %</td></tr>
+              <tr><td class="m">500 mm</td><td class="m">35 mm</td><td class="m">4 %</td></tr>
+              <tr><td class="m">1 m</td><td class="m">70 mm</td><td class="m">1 %</td></tr>
+              <tr><td class="m">3 m</td><td class="m">210 mm</td><td class="m">0,1 %</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>La lecture est donc l'inverse de ce que j'avais écrit : au bord de piste, à trois mètres, il ne reste que des microwatts et personne ne risque rien. <strong>Le danger est sur l'établi</strong>, à dix ou vingt centimètres, quand tu te penches sur le robot pour régler l'inclinaison — à 850 nm, invisible, sans réflexe de clignement, et sur une durée qui se compte en minutes. Prends l'habitude de n'alimenter les diodes qu'après l'armement, ce que la machine à états de départ permet déjà, et de travailler avec une caméra plutôt que l'œil quand tu vérifies la visée.</p>
+        <p>Sur la classe elle-même, reste prudent : la fiche technique que j'ai lue ne l'énonce pas, les distributeurs annoncent 3B, et 1,5 mW à 850 nm situe le composant autour de deux fois la limite de classe 1. Ce qui est certain, c'est que <strong>ce n'est pas de la classe 1</strong>. Et le mode impulsionnel n'arrange rien : les 12,6 mW crête sont évalués avec une correction qui pénalise les trains d'impulsions, donc la montée en fréquence durcit le dossier de sécurité pour un bénéfice nul.</p>
       </div>
 
       <h3>Le budget de broches analogiques</h3>
@@ -1337,7 +1370,7 @@
         </div></li>
         <li><span class="n">29</span><div>
           <h5>L'inclinaison plafonne la portée avant, et les 48 mA sont hors d'atteinte</h5>
-          <p>Deux lignes de la fiche technique se combinent contre la visée avant. L'inclinaison qui protège du sol fait monter le faisceau de 35 mm par mètre : au-delà d'environ un mètre, il passe au-dessus d'un cube de 100 mm. Et le mode 48 mA n'est spécifié que pour des impulsions de 1 µs à 10 % de rapport cyclique — inaccessible avec une porteuse à 20 kHz, dont la période haute dure 25 µs. Tu restes donc à 12 mA et 2,5 mW crête. C'est assez pour les 600 mm dont tu as besoin, mais il n'y a aucune marge cachée à aller chercher : si la portée manque, c'est la photodiode et l'amplificateur transimpédance qu'il faut, pas plus de courant.</p>
+          <p>Deux lignes de la fiche technique se combinent contre la visée avant. L'inclinaison qui protège du sol fait monter le faisceau de 35 mm par mètre : au-delà d'environ un mètre, il passe au-dessus d'un cube de 100 mm. Et le mode 48 mA n'est spécifié que pour des impulsions de 1 µs à 10 % de rapport cyclique — inaccessible sous une porteuse à 20 kHz, dont la période haute dure 25 µs. Raccourcir les impulsions et monter à 100 kHz le débloquerait, mais pour rien : les deux régimes délivrent exactement 1,26 mW de puissance moyenne, et c'est elle seule que voit un détecteur synchrone. Le seul levier de portée qui reste est la <strong>surface du récepteur</strong>, et c'est aussi le seul qui n'aggrave pas le dossier de sécurité.</p>
         </div></li>
         <li><span class="n">30</span><div>
           <h5>Trois émetteurs IR pulsés dans une salle qui en est déjà pleine</h5>

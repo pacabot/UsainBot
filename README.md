@@ -59,8 +59,10 @@ Conséquence à répercuter : le décalage en Z des modèles 3D du moteur et du 
   poser aux organisateurs ; un bouton physique conforme est conservé en secours.
 - **Porteuse de la télémétrie.** À choisir hors de la bande de scintillement des
   éclairages et à l'écart des 38 kHz des barrières de chronométrage, avec un codage propre
-  au robot pour la réjection par corrélation. À caler sur plaque d'essai. Le courant reste
-  plafonné à 12 mA : le mode 48 mA de l'OPV302 n'est spécifié qu'en impulsions de 1 µs.
+  au robot pour la réjection par corrélation. À caler sur plaque d'essai. Rester à 12 mA :
+  monter en fréquence pour débloquer les 48 mA de l'OPV302 ne change pas la puissance
+  moyenne, donc pas la portée — les deux régimes donnent 1,26 mW. Le seul levier de portée
+  est la surface du récepteur.
 - **Inclinaison des diodes.** 4° vers le haut, soudées à plat sur la carte. Le rayon bas du
   faisceau monte alors de 35 mm par mètre et n'atteint jamais la bâche, mais le centre passe
   au-dessus d'un cube de 100 mm au-delà d'environ un mètre.
