@@ -35,7 +35,7 @@ trente-sept points — est ici :
 |---|---|---|
 | Microcontrôleur | STM32H723VGT6, Cortex-M7 550 MHz, LQFP100 | `C730142` |
 | Capteur de ligne | 12 × ITR8307, pas 10 mm, émetteurs pulsés | `C81632` |
-| Télémétrie | 2 × VL53L1X + 1 voie analogique rapide à gauche | `C2970716` |
+| Télémétrie | Voie analogique à détection synchrone, VL53L1X en option | `C2970716` |
 | Inertie | LSM6DSO, 6 axes, SPI | `C2655100` |
 | Puissance moteurs | 2 × DRV8874, 6 A crête, retour de courant | `C1855818` |
 | Charge | BQ25887, 2S élévateur depuis USB-C, équilibrage | `C2761614` |
@@ -57,8 +57,12 @@ Conséquence à répercuter : le décalage en Z des modèles 3D du moteur et du 
 - **Départ par télémètre.** Le chapitre 2 du règlement énumère trois moyens de départ —
   interrupteur, bouton poussoir, jack — et cette liste se lit comme limitative. Question à
   poser aux organisateurs ; un bouton physique conforme est conservé en secours.
+- **Technologie du télémètre avant.** La chaîne analogique OPV302 + BPW77 à détection
+  synchrone atteint le mètre et couvre donc aussi la détection du cube. Reste à arbitrer
+  contre un VL53L1X, qui rend une distance plutôt qu'une intensité pour 2,86 $. Prévoir
+  son empreinte en option non montée quoi qu'il arrive.
 - **Approvisionnement du télémètre analogique.** OPV302 et BPW77 ne sont probablement pas
-  dans la bibliothèque JLCPCB : pose manuelle à prévoir, ou repli sur un VL53L1X.
+  dans la bibliothèque JLCPCB : pose manuelle à prévoir.
 - **Poussée de la turbine.** À mesurer sous 6,4 V et non sous les 8,4 V pour lesquels les
   ensembles ESC et brushless du commerce sont calibrés.
 

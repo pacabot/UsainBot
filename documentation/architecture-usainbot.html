@@ -496,7 +496,7 @@
 
                 <rect x="14" y="94" width="222" height="52" rx="3" fill="var(--surface-2)" stroke="var(--rule-strong)"/>
                 <text x="26" y="114" font-size="12.5" font-weight="600" fill="var(--ink)">Télémètres ToF</text>
-                <text x="26" y="131" font-size="10.5" fill="var(--muted)">2 × VL53L1X + 1 voie analogique</text>
+                <text x="26" y="131" font-size="10.5" fill="var(--muted)">VL53L1X et voie analogique codée</text>
 
                 <rect x="14" y="160" width="222" height="52" rx="3" fill="var(--surface-2)" stroke="var(--rule-strong)"/>
                 <text x="26" y="180" font-size="12.5" font-weight="600" fill="var(--ink)">Centrale inertielle</text>
@@ -821,7 +821,7 @@
 
       <h3>Capteur de ligne</h3>
       <p>C'est la pièce qui décide du chrono, et c'est aussi la seule que tu dois concevoir toi-même. Douze capteurs réflectifs <strong>ITR8307</strong> au pas de 10 mm couvrent 110 mm, soit ±55 mm autour de l'axe : assez pour voir les marques de départ et d'arrivée placées à 40 mm à droite, et pour reconnaître un croisement au fait que <em>toute</em> la barrette passe au noir simultanément.</p>
-      <p>Les émetteurs sont câblés en deux bancs (pairs et impairs), chacun commuté par un MOSFET <span class="mono">AO3400A</span>. La séquence d'acquisition, déclenchée par TIM6 à 2 kHz, enchaîne : mesure tous émetteurs éteints (ambiante), mesure banc A, mesure banc B. La soustraction élimine l'éclairage de salle — exigence directe du chapitre 10 — et l'alternance des bancs supprime la diaphonie entre voisins.</p>
+      <p>Les émetteurs sont câblés en deux bancs (pairs et impairs), chacun commuté par un MOSFET <span class="mono">AO3400A</span>. La séquence d'acquisition, déclenchée par TIM6 à 2 kHz, enchaîne : mesure tous émetteurs éteints (ambiante), mesure banc A, mesure banc B. La soustraction élimine l'éclairage de salle — exigence directe du chapitre 10 — et l'alternance des bancs supprime la diaphonie entre voisins. Attention : cette soustraction est <em>numérique</em>, et elle ne suffit qu'ici, à 3 mm de la bâche, où le signal est abondant. Le télémètre analogique, lui, joue dans un tout autre régime et demande une suppression du continu en amont du gain — comparaison des deux plus bas.</p>
       <p>Les douze capteurs sont implantés <strong>sous le bord avant de la carte mère</strong>, et non sur une carte fille. Alimente-les depuis <span class="mono">3V3A</span>, la même référence que <span class="mono">VREF+</span> : la mesure devient ratiométrique et l'ondulation résiduelle du buck s'annule.</p>
 
       <h3>Pourquoi une seule carte, et où s'arrête ce principe</h3>
@@ -846,8 +846,8 @@
       <div class="cards">
         <div class="card">
           <h4>Télémétrie</h4>
-          <p class="part">2 × VL53L1CBV0FY/1 + 1 voie analogique</p>
-          <p>Avant pour voir venir le cube, avant-gauche à 45° pour anticiper la disparition de la piste, et une voie analogique rapide à 90° à gauche pour asservir sur le mur de la Q1. Trois visées, pas cinq — la justification est juste en dessous.</p>
+          <p class="part">Trois visées, deux technologies possibles</p>
+          <p>Avant pour voir venir le cube, avant-gauche à 45° pour anticiper la disparition de la piste, latéral gauche à 90° pour asservir sur le mur de la Q1. Trois visées, pas cinq. Le latéral est analogique à détection synchrone ; l'avant se joue entre VL53L1X et analogique, arbitrage détaillé plus bas.</p>
           <ul>
             <li>Adresse I²C unique par défaut : une broche <span class="mono">XSHUT</span> par VL53L1X, réadressage au boot</li>
             <li>Sur languette verticale sécable, à 40–50 mm du sol — plus bas, le cône de 27° rase la bâche</li>
@@ -936,36 +936,70 @@
       </div>
       <p>Les deux visées à droite que j'avais mises ne servaient qu'à rendre le robot symétrique. Or le règlement est explicitement asymétrique : le virage escamoté est <em>à gauche</em>, le mur est <em>à gauche</em>. Quant au cube, il est garanti à plus d'un mètre de tout virage, donc toujours en ligne droite : tu esquives du côté que tu veux, et tu choisis toujours le même. Deux capteurs de moins, six euros et deux adresses I²C économisés.</p>
 
-      <h3>Ton capteur analogique OPV302 : oui, mais pas partout</h3>
-      <p>La chaîne OPV302 et BPW77 est celle du micromouse, et elle est excellente — à condition de la mettre là où sa physique gagne. Les deux besoins ci-dessus ne lui conviennent pas également.</p>
+      <h3>Ton capteur analogique OPV302 : la détection synchrone change l'échelle</h3>
+      <p>Un mètre de portée avec un OPV302 et un BPW77, c'est parfaitement crédible, et ça invalide l'objection en 1/d² prise seule. Ce qui la lève, c'est le traitement : <strong>retirer la composante continue avant le gain, puis moduler et démoduler en synchrone</strong>. Ces deux gestes ne réduisent pas la perte optique — ils rendent le signal restant exploitable, ce qui n'est pas la même chose.</p>
+      <p>La distinction est facile à manquer parce que le mot « soustraction d'ambiante » recouvre deux opérations très différentes. Sur la barrette de ligne, je décris une soustraction <em>numérique</em> : on mesure émetteurs éteints, puis allumés, et on retranche après conversion. À 3 mm de la bâche, le signal est énorme et cela suffit largement. À un mètre, cette méthode ne mène nulle part : le continu ambiant a déjà consommé toute la dynamique de l'étage d'entrée avant même que l'ADC ne voie quoi que ce soit. Il faut le supprimer <em>en amont</em>, dans l'analogique, pour pouvoir ensuite appliquer 60 à 80 dB de gain sur la seule composante modulée.</p>
+      <div class="tw">
+        <table>
+          <thead><tr><th>Régime</th><th>Barrette de ligne</th><th>Télémètre analogique</th></tr></thead>
+          <tbody>
+            <tr><td class="m">Distance</td><td>3 mm</td><td>150 à 1000 mm</td></tr>
+            <tr><td class="m">Signal disponible</td><td>Abondant</td><td>Rare — c'est toute la difficulté</td></tr>
+            <tr><td class="m">Contrainte</td><td>Débit : 12 voies à cadencer</td><td>Sensibilité : une voie à extraire du bruit</td></tr>
+            <tr><td class="m">Rejet de l'ambiante</td><td>Soustraction numérique en 3 phases</td><td>Couplage alternatif puis détection synchrone</td></tr>
+            <tr><td class="m">Cadence ADC</td><td>2 kHz × 12 voies</td><td>4 × la porteuse sur une voie, en continu</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Ce que la chaîne doit comporter</h3>
       <div class="cards">
         <div class="card">
-          <h4>Là où elle gagne</h4>
-          <p class="part">Mur de la Q1, latéral gauche</p>
-          <p>La cible est à 150 mm, toujours la même, et le robot doit s'asservir dessus en temps réel. Un VL53L1X plafonne à 50 Hz, soit 6 cm parcourus entre deux points de mesure ; ta chaîne analogique se lit à chaque conversion ADC, donc à 1 kHz sans effort. Sur un virage de 20 cm de rayon parcouru sans ligne, c'est décisif.</p>
+          <h4>Émission codée</h4>
+          <p class="part">OPV302 · sortie timer</p>
           <ul>
-            <li>Le règlement prévoit des essais libres avant chaque phase : tu calibres l'intensité contre le vrai mur, ce qui annule le principal défaut de la mesure par intensité</li>
-            <li>Émetteur pulsé et soustraction d'ambiante : exactement le schéma déjà en place pour la barrette de ligne</li>
-            <li>Aucun trafic I²C, donc aucune contention avec les autres capteurs</li>
+            <li>Porteuse au-dessus de la bande de scintillement des éclairages : le 100 Hz du secteur et ses harmoniques, la MLI des LED, montent à quelques kHz. Une porteuse à <strong>10–20 kHz</strong> s'en dégage nettement</li>
+            <li>Les barrières de chronométrage sont elles aussi des liaisons infrarouges, souvent modulées vers 38 kHz comme les récepteurs du commerce. Raison de plus pour choisir une porteuse distincte, et pour <strong>coder</strong> l'émission : une séquence pseudo-aléatoire propre au robot donne une réjection par corrélation contre les autres émetteurs de la salle</li>
+            <li>Impulsions à fort courant crête plutôt qu'un continu tiède : le rapport cyclique faible autorise des pointes bien au-delà du courant moyen admissible</li>
           </ul>
         </div>
         <div class="card">
-          <h4>Là où elle perd</h4>
-          <p class="part">Détection du cube à longue portée</p>
-          <p>C'est un changement d'échelle, pas de degré. Un capteur de micromouse travaille à 50–100 mm ; ici il faut voir à 600 mm. Le signal reçu décroît en 1/d² : à dix fois la distance, il reste un centième du signal.</p>
+          <h4>Réception et suppression du continu</h4>
+          <p class="part">BPW77 / BPY 62, ou photodiode + TIA</p>
           <ul>
-            <li>Le laser collimaté de l'OPV302 supprime la divergence côté émission, mais il reste la collecte : optique, baffles et dynamique deviennent un vrai projet d'optique</li>
-            <li>La mesure reste une <strong>intensité</strong>, pas une distance : elle dépend de l'albédo du cube, que le règlement ne garantit pas — il promet seulement qu'il sera « visible » en infrarouge</li>
-            <li>Un VL53L1X rend une distance en millimètres, calibrée, insensible à la couleur de la cible</li>
+            <li><strong>Couplage alternatif</strong> entre le détecteur et l'étage de gain, ou asservissement qui annule le continu. C'est le geste décisif : il rend la dynamique disponible pour le signal utile</li>
+            <li>Le phototransistor échange gain contre bande passante par sa résistance de charge. Vérifie la bande atteinte à la charge retenue avant de figer la porteuse — c'est ce compromis, pas le composant, qui plafonne</li>
+            <li>Si tu veux monter la porteuse plus haut, une photodiode suivie d'un amplificateur transimpédance lève la contrainte, au prix d'un composant actif de plus</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4>Démodulation dans le firmware</h4>
+          <p class="part">ADC3 dédié · DMA · Cortex-M7</p>
+          <ul>
+            <li>Échantillonne à <strong>quatre fois la porteuse</strong>, déclenché par le même timer que l'émetteur : la démodulation I/Q se réduit alors à multiplier par des ±1, donc à des additions et soustractions</li>
+            <li>Module = √(I² + Q²) : la mesure devient insensible à la phase, donc au temps de vol et aux dérives</li>
+            <li>Le gain de traitement vient du rétrécissement de bande : passer de 20 kHz de bruit d'entrée à 200 Hz en sortie de filtre vaut un facteur dix en rapport signal sur bruit, gratuitement</li>
+            <li>À 20 kHz de porteuse, cela fait 80 kéch/s sur une voie — négligeable pour un M7 à 550 MHz</li>
           </ul>
         </div>
       </div>
       <div class="note">
-        <span class="lbl">Deux réserves à lever avant de t'engager</span>
+        <span class="lbl">Conséquence sur l'architecture</span>
+        <p>Cette voie ne peut pas se contenter d'un rang dans le balayage à 2 kHz de la barrette : elle réclame une conversion continue et rapide, synchronisée sur l'émetteur. <strong>ADC3 lui est donc dédié</strong>, en conversion continue déclenchée par timer avec DMA circulaire, et la surveillance lente — VBAT et les retours de courant — rejoint le balayage d'ADC1 et ADC2 sur PC0 et PC1, qui acceptent les trois convertisseurs. Répartition à confirmer sous CubeMX.</p>
+      </div>
+
+      <h3>Ce qu'il reste à trancher</h3>
+      <p>Avec un mètre de portée démontrée, ta chaîne couvre aussi la détection du cube, et le choix cesse d'être technique pour devenir une préférence d'ingénierie. Les deux arguments qui restent en faveur d'un VL53L1X à l'avant :</p>
+      <ul>
+        <li><strong>Il rend une distance, pas une intensité.</strong> Le seuil de déclenchement de l'esquive ne dépend alors ni de l'albédo du cube — que le règlement ne garantit pas, il promet seulement qu'il sera visible en infrarouge — ni de son angle de présentation. Les essais libres permettent certes de calibrer contre le vrai cube, mais une distance en millimètres se transpose d'une compétition à l'autre, pas un seuil d'intensité.</li>
+        <li><strong>Il coûte 2,86 $ et ne demande aucune conception analogique.</strong> C'est une assurance bon marché sur la fonction qui décide de la Q2.</li>
+      </ul>
+      <p>À l'inverse, une chaîne tout analogique a une vraie cohérence : plus aucun trafic I²C dans la boucle critique, une seule discipline de mesure à maîtriser, et des cadences homogènes. Si tu la retiens, garde la place du VL53L1X en option non montée sur la languette — le remords coûte alors une pose, pas une révision de carte.</p>
+      <div class="note">
+        <span class="lbl">Deux réserves qui subsistent, indépendantes du traitement</span>
         <p><strong>Approvisionnement.</strong> L'OPV302 est un TT Electronics/Optek, les BPW77NA, BPW77NB et BPY 62 des Vishay en boîtier traversant. Aucun des trois n'est probablement dans la bibliothèque JLCPCB, et l'OPV302 coûte à lui seul plusieurs fois le prix d'un VL53L1X. Ils sortent donc de la contrainte « tout chez JLCPCB » que tu t'es fixée : à vérifier au cas par cas, sachant qu'une pose manuelle sur une carte par ailleurs assemblée reste acceptable pour deux composants.</p>
         <p><strong>Sécurité oculaire.</strong> L'OPV302 émet à 850 nm, invisible, donc sans réflexe de clignement. Sur un stand où juges et spectateurs se penchent au-dessus de la piste, un faisceau collimaté à hauteur de tête impose une vraie analyse de classification, et un boîtier qui la garantit. Le VL53L1X est un module certifié classe 1, ce qui est précisément l'argument qui le fait choisir dans les produits grand public.</p>
       </div>
-      <p><strong>Le coût caché : les broches ADC.</strong> Les seize entrées analogiques du LQFP100 sont toutes prises — douze pour la barrette, quatre pour la surveillance. Chaque récepteur analogique ajouté doit donc être payé quelque part. La bonne nouvelle, c'est que j'avais fait une erreur en réservant une voie ADC pour la thermistance du pack : elle n'a rien à faire là, sa place est sur l'entrée <span class="mono">TS</span> du BQ25887, qui gère lui-même la coupure thermique de charge. Cette voie libérée accueille exactement le récepteur latéral, et l'émetteur laser est piloté depuis PB2, resté disponible. Si tu voulais deux voies analogiques de plus, la sortie propre serait le <strong>STM32H723ZGT6 en LQFP144</strong>, qui expose davantage d'entrées ADC3 — au prix d'une carte plus grande.</p>
 
       <h3>Séquence d'armement et de départ</h3>
       <p>Partir en passant la main devant le télémètre est confortable et évite de bousculer le robot au moment critique — mais c'est aussi le même capteur qui doit voir le cube, et n'importe quel spectateur passant devant déclencherait un départ. La séquence doit donc être verrouillée :</p>
@@ -1079,8 +1113,8 @@
           <thead><tr><th>Fonction</th><th>Périphérique</th><th class="m">Broches</th><th>Notes</th></tr></thead>
           <tbody>
             <tr><td>Barrette de ligne, 12 voies</td><td>ADC1 + ADC2, dual regular simultaneous + DMA</td><td class="m">PA0–PA7, PB0, PB1, PC4, PC5</td><td>Déclenché par TIM6, synchronisé sur les impulsions IR</td></tr>
-            <tr><td>Surveillance de bord</td><td>ADC3, 12 bits</td><td class="m">PC0 · PC1 · PC2</td><td>VBAT, IPROPI1, IPROPI2 — seules broches ADC3 du boîtier</td></tr>
-            <tr><td>Télémètre analogique latéral</td><td>ADC3 + GPIO</td><td class="m">PC3 (réception) · PB2 (émetteur)</td><td>Voie libérée par le déplacement de la thermistance sur l'entrée TS du chargeur</td></tr>
+            <tr><td>Surveillance de bord</td><td>Rangs ajoutés au balayage ADC1/ADC2</td><td class="m">PC0 · PC1 · PC2</td><td>VBAT, IPROPI1, IPROPI2 — signaux lents, ils suivent la cadence de la barrette</td></tr>
+            <tr><td>Télémètre analogique</td><td>ADC3 dédié, continu + DMA</td><td class="m">PC3 (réception) · PB2 (émetteur)</td><td>Échantillonnage à 4 × la porteuse, synchronisé sur l'émetteur ; ADC3 ne partage rien</td></tr>
             <tr><td>PWM des deux ponts</td><td>TIM1 CH1–CH4</td><td class="m">PE9 · PE11 · PE13 · PE14</td><td>Centré, 25 kHz, hors bande audible</td></tr>
             <tr><td>Encodeur gauche</td><td>TIM3 mode encodeur</td><td class="m">PB4 · PB5</td><td>Filtre d'entrée activé</td></tr>
             <tr><td>Encodeur droit</td><td>TIM8 mode encodeur</td><td class="m">PC6 · PC7</td><td>16 bits, lu à 1 kHz</td></tr>
