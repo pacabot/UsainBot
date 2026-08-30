@@ -1,0 +1,34 @@
+# macOS
+.DS_Store
+
+# KiCad — état local, sauvegardes automatiques, caches
+*.kicad_prl
+*-backups/
+fp-info-cache
+*.kicad_pcb-bak
+*.kicad_sch-bak
+*-cache.lib
+*.net
+
+# Extension d'historique local KiCad (contient son propre dépôt git)
+.history/
+
+# FreeCAD — sauvegardes automatiques
+*.FCBak
+*.FCStd1
+*.fcstd1
+
+# Archive de téléchargement, redondante avec le dossier extrait du même nom
+Mecanique/battery-holder-4xaa-1.snapshot.1.zip
+
+# Sorties de fabrication (à régénérer, pas à versionner)
+gerbers/
+*.gbr
+*.drl
+*.zip
+!Mecanique/**/*.x_t
+
+# Python
+__pycache__/
+*.pyc
+venv/

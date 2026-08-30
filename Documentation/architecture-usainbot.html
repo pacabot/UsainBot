@@ -1,0 +1,1342 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Architecture matérielle STM32H7 du robot suiveur de ligne UsainBot — Tournoi National de Robotique, épreuve Formule 1, règlement v2.11.">
+  <meta name="author" content="Pacabot Junior">
+  <style>
+    :root{color-scheme:light dark}
+    html,body{margin:0}
+    img{max-width:100%}
+    [hidden]{display:none!important}
+  </style>
+<title>Architecture UsainBot</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+Condensed:wght@600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<style>
+  :root{
+    --paper:#E9EAE4;
+    --surface:#FAFAF6;
+    --surface-2:#F1F2ED;
+    --ink:#16181A;
+    --ink-2:#3C4247;
+    --muted:#6B7178;
+    --rule:#D2D5CC;
+    --rule-strong:#B6BAB0;
+    --accent:#1B4D8F;
+    --accent-soft:rgba(27,77,143,.10);
+    --crit:#9E2B24;
+    --crit-soft:rgba(158,43,36,.12);
+    --watch:#845E0B;
+    --watch-soft:rgba(132,94,11,.14);
+    --gain:#276554;
+    --gain-soft:rgba(39,101,84,.13);
+    --shadow:0 1px 2px rgba(20,24,20,.05),0 8px 24px -18px rgba(20,24,20,.35);
+
+    --f-disp:"IBM Plex Sans Condensed","Helvetica Neue",Arial,sans-serif;
+    --f-body:"IBM Plex Sans","Helvetica Neue",Arial,sans-serif;
+    --f-mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --paper:#121417;
+      --surface:#191C20;
+      --surface-2:#20242A;
+      --ink:#E6E8E4;
+      --ink-2:#C2C7C5;
+      --muted:#939A9F;
+      --rule:#2D323A;
+      --rule-strong:#3D434C;
+      --accent:#82AEEC;
+      --accent-soft:rgba(130,174,236,.14);
+      --crit:#E48278;
+      --crit-soft:rgba(228,130,120,.14);
+      --watch:#D8A73F;
+      --watch-soft:rgba(216,167,63,.14);
+      --gain:#74C2A6;
+      --gain-soft:rgba(116,194,166,.14);
+      --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 28px -20px rgba(0,0,0,.9);
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#121417;
+    --surface:#191C20;
+    --surface-2:#20242A;
+    --ink:#E6E8E4;
+    --ink-2:#C2C7C5;
+    --muted:#939A9F;
+    --rule:#2D323A;
+    --rule-strong:#3D434C;
+    --accent:#82AEEC;
+    --accent-soft:rgba(130,174,236,.14);
+    --crit:#E48278;
+    --crit-soft:rgba(228,130,120,.14);
+    --watch:#D8A73F;
+    --watch-soft:rgba(216,167,63,.14);
+    --gain:#74C2A6;
+    --gain-soft:rgba(116,194,166,.14);
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 28px -20px rgba(0,0,0,.9);
+  }
+
+  *{box-sizing:border-box}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--f-body);
+    font-size:15px;
+    line-height:1.62;
+    -webkit-font-smoothing:antialiased;
+  }
+  .shell{
+    max-width:1280px;
+    margin:0 auto;
+    padding:0 22px 96px;
+    display:grid;
+    grid-template-columns:minmax(0,1fr);
+    gap:0 52px;
+  }
+  @media (min-width:1160px){
+    .shell{grid-template-columns:216px minmax(0,1fr)}
+    .masthead{grid-column:1/-1}
+  }
+
+  /* ---------- masthead ---------- */
+  .masthead{
+    border-bottom:2px solid var(--ink);
+    padding:44px 0 22px;
+    margin-bottom:38px;
+  }
+  .kicker{
+    font-family:var(--f-mono);
+    font-size:11px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--accent);
+    margin:0 0 14px;
+  }
+  h1{
+    font-family:var(--f-disp);
+    font-weight:700;
+    font-size:clamp(38px,6.2vw,68px);
+    line-height:.98;
+    letter-spacing:-.015em;
+    margin:0 0 16px;
+    text-wrap:balance;
+  }
+  .standfirst{
+    font-size:18px;
+    line-height:1.5;
+    color:var(--ink-2);
+    max-width:62ch;
+    margin:0 0 26px;
+  }
+  .meta{
+    display:flex;
+    flex-wrap:wrap;
+    gap:0 30px;
+    font-family:var(--f-mono);
+    font-size:11.5px;
+    color:var(--muted);
+  }
+  .meta b{color:var(--ink-2);font-weight:500}
+
+  /* ---------- toc ---------- */
+  nav.toc{display:none}
+  @media (min-width:1160px){
+    nav.toc{
+      display:block;
+      position:sticky;
+      top:26px;
+      align-self:start;
+      padding-top:4px;
+    }
+    nav.toc ol{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:2px}
+    nav.toc a{
+      display:grid;
+      grid-template-columns:26px 1fr;
+      gap:6px;
+      text-decoration:none;
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.35;
+      padding:5px 8px 5px 0;
+      border-left:2px solid transparent;
+      padding-left:10px;
+    }
+    nav.toc a:hover,nav.toc a:focus-visible{color:var(--ink);border-left-color:var(--accent)}
+    nav.toc a span{font-family:var(--f-mono);font-size:11px;color:var(--accent);padding-top:1px}
+  }
+
+  /* ---------- sections ---------- */
+  section{margin:0 0 62px;scroll-margin-top:22px}
+  .sechead{
+    display:flex;
+    align-items:baseline;
+    gap:14px;
+    border-top:1px solid var(--rule-strong);
+    padding-top:14px;
+    margin-bottom:20px;
+  }
+  .sechead .num{
+    font-family:var(--f-mono);
+    font-size:12px;
+    color:var(--accent);
+    letter-spacing:.06em;
+    flex:0 0 auto;
+  }
+  h2{
+    font-family:var(--f-disp);
+    font-weight:700;
+    font-size:clamp(23px,3vw,30px);
+    line-height:1.1;
+    letter-spacing:-.01em;
+    margin:0;
+    text-wrap:balance;
+  }
+  h3{
+    font-family:var(--f-disp);
+    font-weight:600;
+    font-size:17px;
+    letter-spacing:.005em;
+    margin:30px 0 8px;
+  }
+  p{margin:0 0 14px;max-width:70ch}
+  ul,ol{margin:0 0 14px;padding-left:20px;max-width:70ch}
+  li{margin:0 0 6px}
+  a{color:var(--accent)}
+  code,.mono{font-family:var(--f-mono);font-size:.88em}
+  code{background:var(--accent-soft);padding:1px 5px;border-radius:3px}
+  strong{font-weight:600}
+  em{font-style:italic;color:var(--ink-2)}
+
+  /* ---------- figure ---------- */
+  figure{margin:26px 0 30px}
+  .figwrap{
+    overflow-x:auto;
+    background:var(--surface);
+    border:1px solid var(--rule);
+    border-radius:4px;
+    padding:16px;
+    box-shadow:var(--shadow);
+  }
+  .figwrap svg{display:block;min-width:720px;width:100%;height:auto}
+  figcaption{
+    font-family:var(--f-mono);
+    font-size:11px;
+    color:var(--muted);
+    margin-top:9px;
+    letter-spacing:.02em;
+  }
+
+  /* ---------- tables ---------- */
+  .tw{overflow-x:auto;margin:6px 0 22px;border:1px solid var(--rule);border-radius:4px;background:var(--surface)}
+  table{border-collapse:collapse;width:100%;font-size:13.5px;min-width:560px}
+  th,td{text-align:left;padding:9px 13px;border-bottom:1px solid var(--rule);vertical-align:top}
+  thead th{
+    font-family:var(--f-disp);
+    font-weight:600;
+    font-size:12px;
+    letter-spacing:.05em;
+    text-transform:uppercase;
+    color:var(--muted);
+    background:var(--surface-2);
+    border-bottom:1px solid var(--rule-strong);
+    white-space:nowrap;
+  }
+  tbody tr:last-child td{border-bottom:none}
+  td.m,th.m{font-family:var(--f-mono);font-size:12.5px;font-variant-numeric:tabular-nums;white-space:nowrap}
+  .ok{color:var(--gain);font-family:var(--f-mono);font-size:11.5px;white-space:nowrap}
+  .tbc{color:var(--watch);font-family:var(--f-mono);font-size:11.5px;white-space:nowrap}
+
+  /* ---------- cards ---------- */
+  .cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(290px,1fr));
+    gap:16px;
+    margin:8px 0 22px;
+  }
+  .card{
+    background:var(--surface);
+    border:1px solid var(--rule);
+    border-radius:4px;
+    padding:16px 17px 15px;
+    box-shadow:var(--shadow);
+  }
+  .card h4{
+    font-family:var(--f-disp);
+    font-weight:700;
+    font-size:14px;
+    letter-spacing:.03em;
+    text-transform:uppercase;
+    margin:0 0 3px;
+  }
+  .card .part{
+    font-family:var(--f-mono);
+    font-size:11.5px;
+    color:var(--accent);
+    margin:0 0 10px;
+  }
+  .card p{font-size:13.5px;line-height:1.55;margin:0 0 9px;max-width:none}
+  .card ul{font-size:13.5px;line-height:1.55;margin:0;padding-left:17px;max-width:none}
+  .card li{margin:0 0 4px}
+
+  /* ---------- callout ---------- */
+  .note{
+    background:var(--surface-2);
+    border:1px solid var(--rule);
+    border-left:3px solid var(--accent);
+    border-radius:0 4px 4px 0;
+    padding:14px 17px;
+    margin:18px 0 22px;
+  }
+  .note p:last-child{margin-bottom:0}
+  .note .lbl{
+    font-family:var(--f-mono);
+    font-size:10.5px;
+    letter-spacing:.13em;
+    text-transform:uppercase;
+    color:var(--accent);
+    display:block;
+    margin-bottom:5px;
+  }
+
+  /* ---------- findings ---------- */
+  .legend{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 20px}
+  .chip{
+    font-family:var(--f-mono);
+    font-size:10.5px;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    padding:3px 9px;
+    border-radius:2px;
+    white-space:nowrap;
+  }
+  .chip.c1{color:var(--crit);background:var(--crit-soft)}
+  .chip.c2{color:var(--watch);background:var(--watch-soft)}
+  .chip.c3{color:var(--gain);background:var(--gain-soft)}
+
+  .finds{list-style:none;margin:0 0 26px;padding:0;max-width:none}
+  .finds li{
+    display:grid;
+    grid-template-columns:34px 1fr;
+    gap:0 14px;
+    padding:13px 0 13px;
+    border-bottom:1px solid var(--rule);
+    margin:0;
+  }
+  .finds li:last-child{border-bottom:none}
+  .finds .n{
+    font-family:var(--f-mono);
+    font-size:12px;
+    font-variant-numeric:tabular-nums;
+    color:var(--muted);
+    padding-top:2px;
+  }
+  .finds h5{
+    font-family:var(--f-body);
+    font-weight:600;
+    font-size:14.5px;
+    margin:0 0 3px;
+    line-height:1.35;
+  }
+  .finds p{font-size:13.5px;line-height:1.55;color:var(--ink-2);margin:0;max-width:74ch}
+  .grphead{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin:34px 0 6px;
+  }
+  .grphead h3{margin:0}
+  .grphead .bar{flex:1;height:1px;background:var(--rule)}
+
+  /* ---------- misc ---------- */
+  .kpis{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    gap:1px;
+    background:var(--rule);
+    border:1px solid var(--rule);
+    border-radius:4px;
+    overflow:hidden;
+    margin:6px 0 24px;
+  }
+  .kpi{background:var(--surface);padding:14px 16px}
+  .kpi .v{
+    font-family:var(--f-disp);
+    font-weight:700;
+    font-size:24px;
+    line-height:1.05;
+    font-variant-numeric:tabular-nums;
+    display:block;
+  }
+  .kpi .k{
+    font-family:var(--f-mono);
+    font-size:10.5px;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    color:var(--muted);
+    display:block;
+    margin-top:5px;
+  }
+  footer{
+    border-top:1px solid var(--rule-strong);
+    padding-top:16px;
+    font-family:var(--f-mono);
+    font-size:11.5px;
+    color:var(--muted);
+    max-width:74ch;
+  }
+  :focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="shell">
+
+  <header class="masthead">
+    <p class="kicker">Pacabot Junior · UsainBot · architecture matérielle</p>
+    <h1>Architecture UsainBot</h1>
+    <p class="standfirst">Robot suiveur de ligne pour le Tournoi National de Robotique — épreuve Formule 1, règlement v2.11. Cœur STM32H7, chaîne de mesure 12 voies, deux ponts en H à mesure de courant, sortie ESC pour turbine d'appui, alimentation 2S LiFePO4 rechargeable en USB-C. Tous les composants actifs sont sourçables chez JLCPCB.</p>
+    <div class="meta">
+      <span><b>Cible</b> STM32H723VGT6 · LQFP100</span>
+      <span><b>Règlement</b> TNRS F1 v2.11 (2025)</span>
+      <span><b>Assemblage</b> JLCPCB PCBA 4 couches</span>
+      <span><b>Révision</b> 30 août 2026</span>
+    </div>
+  </header>
+
+  <nav class="toc" aria-label="Sommaire">
+    <ol>
+      <li><a href="#s1"><span>§1</span>Ce que le règlement impose</a></li>
+      <li><a href="#s2"><span>§2</span>Choix du microcontrôleur</a></li>
+      <li><a href="#s3"><span>§3</span>Architecture et implantation</a></li>
+      <li><a href="#s4"><span>§4</span>Sous-systèmes</a></li>
+      <li><a href="#s5"><span>§5</span>Alimentation</a></li>
+      <li><a href="#s6"><span>§6</span>Affectation des broches</a></li>
+      <li><a href="#s7"><span>§7</span>Nomenclature JLCPCB</a></li>
+      <li><a href="#s8"><span>§8</span>Ce que tu as oublié</a></li>
+      <li><a href="#s9"><span>§9</span>Prochaines étapes</a></li>
+    </ol>
+  </nav>
+
+  <main>
+
+    <!-- ============ 1 ============ -->
+    <section id="s1">
+      <div class="sechead"><span class="num">§1</span><h2>Ce que le règlement impose au matériel</h2></div>
+      <p>Le règlement n'est pas qu'un cadre sportif : sept de ses articles se traduisent directement en composants sur la carte. Cette lecture conditionne tout le reste du document.</p>
+      <div class="tw">
+        <table>
+          <thead><tr><th>Article</th><th>Texte</th><th>Conséquence matérielle</th></tr></thead>
+          <tbody>
+            <tr><td class="m">Ch. 2</td><td>Interrupteur de mise en marche et d'arrêt facile d'accès</td><td>Interrupteur mécanique 5 A dans la ligne batterie, accessible robot posé — pas seulement le connecteur d'accu</td></tr>
+            <tr><td class="m">Ch. 2</td><td>Départ par interrupteur, bouton poussoir ou jack</td><td>Énumération limitative : le geste devant le télémètre n'y figure pas. Bouton START physique conservé comme moyen conforme, geste devant le ToF en complément — voir §8, point 02</td></tr>
+            <tr><td class="m">Ch. 2</td><td>Moyens de communication inhibés au moment du départ</td><td>Coupure d'alimentation matérielle du module BLE + LED témoin visible du jury</td></tr>
+            <tr><td class="m">Ch. 3</td><td>Marques départ/arrivée à droite, 19 × 50 mm, à 40 mm du centre de piste</td><td>La barrette doit couvrir au moins ±55 mm, sinon le robot ne voit pas l'arrivée</td></tr>
+            <tr><td class="m">Ch. 3</td><td>Croisements perpendiculaires de deux segments</td><td>Barrette symétrique pour distinguer « toute la largeur noire » (croisement) de « côté droit seul » (marque)</td></tr>
+            <tr><td class="m">Ch. 5 art. 1</td><td>Calibration et configuration sans outillage, seul un petit tournevis accepté</td><td>IHM embarquée obligatoire : boutons + OLED + buzzer, réglages en flash</td></tr>
+            <tr><td class="m">Ch. 5 art. 1</td><td>Changement de batterie en échange standard pendant les 3 minutes</td><td>Connecteur d'accu accessible et détrompé, pack interchangeable, calibration non perdue au débranchement</td></tr>
+            <tr><td class="m">Ch. 5 art. 2</td><td>Franchir l'arrivée, s'arrêter seul en moins de 1 m, rester immobile 5 s</td><td>Freinage actif à pleine puissance + détection d'immobilité par IMU</td></tr>
+            <tr><td class="m">Ch. 7 (Q2)</td><td>Cube de 100 mm visible par capteurs de distance infrarouge, contact interdit</td><td>Télémétrie ToF avant + diagonales, détection à &gt; 60 cm pour avoir le temps d'esquiver</td></tr>
+            <tr><td class="m">Ch. 8 (Q1)</td><td>Piste absente dans un virage à gauche, mur de 10 cm de haut à 15 cm à gauche du centre virtuel</td><td>ToF latéral gauche monté à 40–50 mm du sol, plus odométrie fiable pour tenir le virage sans ligne</td></tr>
+            <tr><td class="m">Ch. 10</td><td>Éclairage non uniforme et variable, flashs interdits</td><td>Émetteurs IR pulsés et soustraction de l'ambiante à chaque cycle — un capteur en continu est disqualifiant en pratique</td></tr>
+            <tr><td class="m">Ch. 5 art. 1</td><td>Le robot peut apprendre le tracé par lui-même</td><td>Mémoire non volatile pour la carte du circuit et le profil de vitesse — le plus gros levier de chrono</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="note">
+        <span class="lbl">Chiffre à garder en tête</span>
+        <p>Rayon de virage minimum 20 cm. À 2,5 m/s, l'accélération centripète vaut v²/r = 31 m/s², soit <strong>3,2 g</strong>. Aucun pneu de robot ne tient ça sans appui aérodynamique. C'est la mécanique, pas l'électronique, qui plafonnera ton chrono — la carte doit donc au minimum prévoir de quoi alimenter et piloter une turbine.</p>
+      </div>
+    </section>
+
+    <!-- ============ 2 ============ -->
+    <section id="s2">
+      <div class="sechead"><span class="num">§2</span><h2>Choix du microcontrôleur</h2></div>
+      <p>Entre F7 et H7, l'arbitrage se joue sur la chaîne d'acquisition analogique, pas sur la puissance de calcul : la boucle de suivi de ligne demande une poignée de MIPS, mais un échantillonnage synchronisé sur les impulsions IR, à cadence élevée et sans jitter.</p>
+      <p>Le <strong>STM32H723VGT6</strong> l'emporte : Cortex-M7 à 550 MHz, 1 Mo de flash, 564 Ko de RAM, trois ADC dont deux en 16 bits capables de conversion simultanée, et surtout un boîtier LQFP100 qui reste routable sur 4 couches sans BGA. Il est référencé <span class="mono">C730142</span> chez JLCPCB.</p>
+      <div class="kpis">
+        <div class="kpi"><span class="v">550</span><span class="k">MHz Cortex-M7</span></div>
+        <div class="kpi"><span class="v">2 × 16 bits</span><span class="k">ADC simultanés</span></div>
+        <div class="kpi"><span class="v">1 Mo</span><span class="k">Flash interne</span></div>
+        <div class="kpi"><span class="v">564 Ko</span><span class="k">RAM</span></div>
+        <div class="kpi"><span class="v">82</span><span class="k">E/S en LQFP100</span></div>
+      </div>
+      <h3>Pourquoi pas un F7</h3>
+      <p>Le STM32F767 conviendrait fonctionnellement, mais ses ADC sont en 12 bits et plafonnent à 2,4 Méch/s ; la dynamique gagnée par le 16 bits du H7 se paie directement en qualité de position de ligne quand le contraste s'effondre sous éclairage variable (chapitre 10 du règlement). À prix et disponibilité JLCPCB comparables, il n'y a pas de raison de prendre le F7.</p>
+      <h3>Pourquoi pas plus petit</h3>
+      <p>Ton ancien projet visait un STM32G431 en LQFP32 : 27 broches utilisables, c'est trop juste dès qu'on ajoute la télémétrie, une flash externe, l'USB et l'IHM. Le H723 en LQFP100 laisse une dizaine d'E/S de réserve après affectation complète — de la marge pour la révision 2.</p>
+      <div class="note">
+        <span class="lbl">Piège H7 classique</span>
+        <p>Le H7 embarque un régulateur à découpage interne (SMPS) en plus du LDO. Le câblage de <span class="mono">VDDSMPS / VLXSMPS / VFBSMPS</span> et le choix du mode d'alimentation doivent être figés au schéma : un H7 mal strappé ne démarre pas, ou démarre puis se bloque au premier passage en VOS0. Suis à la lettre la note d'application AN5312 pour le mode « LDO seul », le plus simple ici.</p>
+      </div>
+    </section>
+
+    <!-- ============ 3 ============ -->
+    <section id="s3">
+      <div class="sechead"><span class="num">§3</span><h2>Architecture et implantation</h2></div>
+      <figure>
+        <div class="figwrap">
+          <svg viewBox="0 0 1000 560" role="img" aria-label="Schéma bloc : capteurs à gauche, STM32H723 au centre, actionneurs et interfaces à droite">
+            <defs>
+              <marker id="ar" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto">
+                <path d="M0,0 L8,4 L0,8 z" fill="var(--rule-strong)"/>
+              </marker>
+            </defs>
+            <g font-family="IBM Plex Sans, sans-serif">
+
+              <!-- colonne gauche -->
+              <g>
+                <rect x="14" y="18" width="222" height="62" rx="3" fill="var(--surface-2)" stroke="var(--rule-strong)"/>
+                <text x="26" y="38" font-size="12.5" font-weight="600" fill="var(--ink)">Barrette de ligne</text>
+                <text x="26" y="55" font-size="10.5" fill="var(--muted)">12 × ITR8307 · pas 10 mm · ±55 mm</text>
+                <text x="26" y="70" font-size="10.5" fill="var(--muted)">2 bancs d'émetteurs pulsés</text>
+
+                <rect x="14" y="94" width="222" height="52" rx="3" fill="var(--surface-2)" stroke="var(--rule-strong)"/>
+                <text x="26" y="114" font-size="12.5" font-weight="600" fill="var(--ink)">Télémètres ToF</text>
+                <text x="26" y="131" font-size="10.5" fill="var(--muted)">2 × VL53L1X + 1 voie analogique</text>
+
+                <rect x="14" y="160" width="222" height="52" rx="3" fill="var(--surface-2)" stroke="var(--rule-strong)"/>
+                <text x="26" y="180" font-size="12.5" font-weight="600" fill="var(--ink)">Centrale inertielle</text>
+                <text x="26" y="197" font-size="10.5" fill="var(--muted)">LSM6DSO · lacet et accél. latérale</text>
+
+                <rect x="14" y="226" width="222" height="52" rx="3" fill="var(--surface-2)" stroke="var(--rule-strong)"/>
+                <text x="26" y="246" font-size="12.5" font-weight="600" fill="var(--ink)">Encodeurs</text>
+                <text x="26" y="263" font-size="10.5" fill="var(--muted)">2 × quadrature à effet Hall</text>
+
+                <rect x="14" y="292" width="222" height="52" rx="3" fill="var(--surface-2)" stroke="var(--rule-strong)"/>
+                <text x="26" y="312" font-size="12.5" font-weight="600" fill="var(--ink)">Mesures de bord</text>
+                <text x="26" y="329" font-size="10.5" fill="var(--muted)">VBAT · IPROPI ×2 · NTC pack</text>
+
+                <rect x="14" y="358" width="222" height="52" rx="3" fill="var(--surface-2)" stroke="var(--rule-strong)"/>
+                <text x="26" y="378" font-size="12.5" font-weight="600" fill="var(--ink)">Commandes</text>
+                <text x="26" y="395" font-size="10.5" fill="var(--muted)">switch 5 directions · bouton · jack</text>
+              </g>
+
+              <!-- MCU -->
+              <rect x="330" y="18" width="250" height="514" rx="4" fill="var(--surface)" stroke="var(--ink)" stroke-width="1.6"/>
+              <text x="455" y="52" font-size="16" font-weight="700" text-anchor="middle" fill="var(--ink)" font-family="IBM Plex Sans Condensed, sans-serif">STM32H723VGT6</text>
+              <text x="455" y="70" font-size="10.5" text-anchor="middle" fill="var(--muted)">Cortex-M7 550 MHz · LQFP100</text>
+              <text x="455" y="85" font-size="10.5" text-anchor="middle" fill="var(--muted)">1 Mo flash · 564 Ko RAM</text>
+              <line x1="348" y1="98" x2="562" y2="98" stroke="var(--rule)"/>
+              <g font-family="IBM Plex Mono, monospace" font-size="10.5" fill="var(--ink-2)">
+                <text x="348" y="120">ADC1 + ADC2 · 16 bits · dual + DMA</text>
+                <text x="348" y="141">ADC3 · 12 bits · surveillance</text>
+                <text x="348" y="162">TIM1 · 4 sorties PWM 25 kHz</text>
+                <text x="348" y="183">TIM3 / TIM8 · mode encodeur</text>
+                <text x="348" y="204">TIM6 · base de temps 2 kHz</text>
+                <text x="348" y="225">TIM17 · buzzer</text>
+                <text x="348" y="246">I2C1 400 kHz · I2C2 400 kHz</text>
+                <text x="348" y="267">SPI2 · SPI3</text>
+                <text x="348" y="288">USART1</text>
+                <text x="348" y="309">USB OTG FS</text>
+                <text x="348" y="330">SWD + SWO + ITM</text>
+                <text x="348" y="351">TIM4 · sortie ESC turbine</text>
+                <text x="348" y="372">IWDG · chien de garde</text>
+              </g>
+              <rect x="348" y="396" width="214" height="112" rx="3" fill="var(--accent-soft)" stroke="var(--accent)" stroke-dasharray="3 3"/>
+              <text x="455" y="420" font-size="11" font-weight="600" text-anchor="middle" fill="var(--accent)">Boucle de contrôle 1 kHz</text>
+              <text x="455" y="440" font-size="10" text-anchor="middle" fill="var(--ink-2)">ligne · cap · vitesse · glissement</text>
+              <text x="455" y="457" font-size="10" text-anchor="middle" fill="var(--ink-2)">apprentissage du circuit</text>
+              <text x="455" y="474" font-size="10" text-anchor="middle" fill="var(--ink-2)">consigne d'appui aérodynamique</text>
+              <text x="455" y="497" font-size="10" font-weight="600" text-anchor="middle" fill="var(--accent)">machine à états de départ</text>
+
+              <!-- colonne droite -->
+              <g>
+                <rect x="674" y="18" width="312" height="52" rx="3" fill="var(--surface-2)" stroke="var(--rule-strong)"/>
+                <text x="686" y="38" font-size="12.5" font-weight="600" fill="var(--ink)">Puissance moteurs</text>
+                <text x="686" y="55" font-size="10.5" fill="var(--muted)">2 × DRV8874 · 6 A crête · retour IPROPI</text>
+
+                <rect x="674" y="84" width="312" height="52" rx="3" fill="var(--surface-2)" stroke="var(--rule-strong)"/>
+                <text x="686" y="104" font-size="12.5" font-weight="600" fill="var(--ink)">Mémoire de traces</text>
+                <text x="686" y="121" font-size="10.5" fill="var(--muted)">W25Q128 · 16 Mo · carte du circuit et logs</text>
+
+                <rect x="674" y="150" width="312" height="52" rx="3" fill="var(--surface-2)" stroke="var(--rule-strong)"/>
+                <text x="686" y="170" font-size="12.5" font-weight="600" fill="var(--ink)">Afficheur OLED</text>
+                <text x="686" y="187" font-size="10.5" fill="var(--muted)">SSD1306 128 × 64 · menu de calibration</text>
+
+                <rect x="674" y="216" width="312" height="52" rx="3" fill="var(--surface-2)" stroke="var(--rule-strong)"/>
+                <text x="686" y="236" font-size="12.5" font-weight="600" fill="var(--ink)">Buzzer passif</text>
+                <text x="686" y="253" font-size="10.5" fill="var(--muted)">retour sonore robot au sol</text>
+
+                <rect x="674" y="282" width="312" height="52" rx="3" fill="var(--surface-2)" stroke="var(--rule-strong)"/>
+                <text x="686" y="302" font-size="12.5" font-weight="600" fill="var(--ink)">Port BLE</text>
+                <text x="686" y="319" font-size="10.5" fill="var(--muted)">module détachable · UART · coupure d'alim.</text>
+
+                <rect x="674" y="348" width="312" height="52" rx="3" fill="var(--surface-2)" stroke="var(--rule-strong)"/>
+                <text x="686" y="368" font-size="12.5" font-weight="600" fill="var(--ink)">USB-C</text>
+                <text x="686" y="385" font-size="10.5" fill="var(--muted)">charge 2S · DFU · port série · vidage des logs</text>
+
+                <rect x="674" y="414" width="312" height="52" rx="3" fill="var(--surface-2)" stroke="var(--accent)"/>
+                <text x="686" y="434" font-size="12.5" font-weight="600" fill="var(--ink)">Debug Tag-Connect</text>
+                <text x="686" y="451" font-size="10.5" fill="var(--muted)">SWD + SWO + VTref — voir §8, point 01</text>
+
+                <rect x="674" y="480" width="312" height="52" rx="3" fill="var(--surface-2)" stroke="var(--rule-strong)"/>
+                <text x="686" y="500" font-size="12.5" font-weight="600" fill="var(--ink)">Turbine d'appui</text>
+                <text x="686" y="517" font-size="10.5" fill="var(--muted)">embase ESC 3 points · BEC non connecté</text>
+              </g>
+
+              <!-- liaisons gauche -->
+              <g stroke="var(--rule-strong)" fill="none" marker-end="url(#ar)">
+                <path d="M236,49 L328,49"/><path d="M236,120 L328,120"/><path d="M236,186 L328,186"/>
+                <path d="M236,252 L328,252"/><path d="M236,318 L328,318"/><path d="M236,384 L328,384"/>
+              </g>
+              <g font-family="IBM Plex Mono, monospace" font-size="9" fill="var(--accent)" text-anchor="middle">
+                <text x="282" y="43">ADC ×12</text>
+                <text x="282" y="114">I2C1</text>
+                <text x="282" y="180">SPI2</text>
+                <text x="282" y="246">TIM3/8</text>
+                <text x="282" y="312">ADC3 ×4</text>
+                <text x="282" y="378">GPIO</text>
+              </g>
+
+              <!-- liaisons droite -->
+              <g stroke="var(--rule-strong)" fill="none" marker-end="url(#ar)">
+                <path d="M582,44 L672,44"/><path d="M582,110 L672,110"/><path d="M582,176 L672,176"/>
+                <path d="M582,242 L672,242"/><path d="M582,308 L672,308"/><path d="M582,374 L672,374"/>
+                <path d="M582,440 L672,440"/><path d="M582,506 L672,506"/>
+              </g>
+              <g font-family="IBM Plex Mono, monospace" font-size="9" fill="var(--accent)" text-anchor="middle">
+                <text x="627" y="38">TIM1 ×4</text>
+                <text x="627" y="104">SPI3</text>
+                <text x="627" y="170">I2C2</text>
+                <text x="627" y="236">TIM17</text>
+                <text x="627" y="302">USART1</text>
+                <text x="627" y="368">USB FS</text>
+                <text x="627" y="434">SWD/SWO</text>
+                <text x="627" y="500">TIM4</text>
+              </g>
+            </g>
+          </svg>
+        </div>
+        <figcaption>Fig. 1 — Répartition des bus. Les douze voies de la barrette occupent ADC1 et ADC2 en conversion simultanée ; la surveillance de bord est isolée sur ADC3 pour ne jamais perturber la cadence de la barrette.</figcaption>
+      </figure>
+
+      <h3>Implantation, vue de dessus</h3>
+      <p>Proposition de placement dans une carte de 120 × 180 mm, largement sous la limite de 200 × 200 mm. Trois principes gouvernent ce plan : les capteurs de ligne le plus en avant possible, le microcontrôleur juste derrière eux pour raccourcir les pistes analogiques, et toute la masse — pack et moteurs — concentrée sur l'essieu arrière.</p>
+      <figure>
+        <div class="figwrap">
+          <svg viewBox="0 0 1000 600" role="img" aria-label="Vue de dessus du robot : barrette de capteurs et languette télémètres à l'avant, microcontrôleur, turbine centrale, pack et moteurs à l'arrière">
+            <defs>
+              <marker id="dim" viewBox="0 0 8 8" refX="4" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+                <path d="M0,0 L8,4 L0,8 z" fill="var(--accent)"/>
+              </marker>
+              <marker id="aim" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+                <path d="M0,0 L8,4 L0,8 z" fill="var(--accent)"/>
+              </marker>
+            </defs>
+            <g font-family="IBM Plex Sans, sans-serif">
+
+              <rect x="270" y="60" width="460" height="460" fill="none" stroke="var(--rule-strong)" stroke-dasharray="6 5"/>
+              <text x="730" y="52" font-size="10" text-anchor="end" fill="var(--muted)" font-family="IBM Plex Mono, monospace">200 × 200 mm — limite règlement</text>
+
+              <rect x="362" y="90" width="276" height="414" rx="5" fill="var(--surface-2)" stroke="var(--ink)" stroke-width="1.4"/>
+
+              <g fill="var(--accent)">
+                <rect x="368.5" y="96" width="10" height="14" rx="1.5"/><rect x="391.5" y="96" width="10" height="14" rx="1.5"/>
+                <rect x="414.5" y="96" width="10" height="14" rx="1.5"/><rect x="437.5" y="96" width="10" height="14" rx="1.5"/>
+                <rect x="460.5" y="96" width="10" height="14" rx="1.5"/><rect x="483.5" y="96" width="10" height="14" rx="1.5"/>
+                <rect x="506.5" y="96" width="10" height="14" rx="1.5"/><rect x="529.5" y="96" width="10" height="14" rx="1.5"/>
+                <rect x="552.5" y="96" width="10" height="14" rx="1.5"/><rect x="575.5" y="96" width="10" height="14" rx="1.5"/>
+                <rect x="598.5" y="96" width="10" height="14" rx="1.5"/><rect x="621.5" y="96" width="10" height="14" rx="1.5"/>
+              </g>
+
+              <rect x="424" y="118" width="152" height="9" fill="var(--ink)" opacity=".82"/>
+              <g fill="var(--accent)">
+                <rect x="428" y="113" width="13" height="19" rx="2"/>
+                <rect x="487" y="113" width="13" height="19" rx="2"/>
+                <rect x="546" y="113" width="13" height="19" rx="2"/>
+              </g>
+              <g stroke="var(--accent)" fill="none" marker-end="url(#aim)" stroke-width="1.2">
+                <path d="M428,122 L392,122"/>
+                <path d="M490,111 L466,84"/>
+                <path d="M552,111 L552,80"/>
+              </g>
+
+              <circle cx="395" cy="152" r="9" fill="none" stroke="var(--rule-strong)"/>
+              <circle cx="605" cy="152" r="9" fill="none" stroke="var(--rule-strong)"/>
+
+              <g stroke="var(--rule-strong)" fill="var(--surface)">
+                <rect x="372" y="145" width="42" height="30" rx="2"/>
+                <rect x="586" y="145" width="42" height="40" rx="2"/>
+                <rect x="478" y="148" width="44" height="44" rx="2" fill="var(--accent-soft)" stroke="var(--accent)"/>
+                <rect x="368" y="355" width="46" height="40" rx="2"/>
+                <rect x="586" y="355" width="46" height="40" rx="2"/>
+                <rect x="362" y="406" width="93" height="28" rx="2"/>
+                <rect x="545" y="406" width="93" height="28" rx="2"/>
+                <rect x="342" y="383" width="20" height="74" rx="3" fill="var(--rule)"/>
+                <rect x="638" y="383" width="20" height="74" rx="3" fill="var(--rule)"/>
+                <rect x="490" y="410" width="20" height="20" rx="2" fill="var(--accent-soft)" stroke="var(--accent)"/>
+                <rect x="368" y="448" width="72" height="44" rx="2"/>
+                <rect x="460" y="448" width="80" height="44" rx="2"/>
+                <rect x="560" y="448" width="72" height="44" rx="2"/>
+              </g>
+
+              <circle cx="500" cy="250" r="57" fill="var(--surface)" stroke="var(--rule-strong)"/>
+              <circle cx="500" cy="250" r="48" fill="none" stroke="var(--accent)" stroke-dasharray="4 4"/>
+              <rect x="420" y="315" width="160" height="85" rx="3" fill="none" stroke="var(--ink)" stroke-dasharray="5 4"/>
+
+              <g font-family="IBM Plex Mono, monospace" font-size="9" fill="var(--ink-2)" text-anchor="middle">
+                <text x="393" y="164">SWD</text>
+                <text x="607" y="169">BLE</text>
+                <text x="500" y="174">H723</text>
+                <text x="391" y="379">DRV</text>
+                <text x="609" y="379">DRV</text>
+                <text x="408" y="424">GM12-N20</text>
+                <text x="591" y="424">GM12-N20</text>
+                <text x="500" y="424">IMU</text>
+                <text x="500" y="253">TURBINE</text>
+                <text x="500" y="266">Ø 50 mm</text>
+                <text x="500" y="355">PACK 2S — au-dessus</text>
+                <text x="404" y="466">3V3 +</text><text x="404" y="478">charge</text>
+                <text x="500" y="466">OLED + switch</text><text x="500" y="478">+ buzzer</text>
+                <text x="596" y="466">ON/OFF</text><text x="596" y="478">accu · USB-C</text>
+              </g>
+
+              <g stroke="var(--rule-strong)" fill="none">
+                <path d="M366,103 L258,103"/>
+                <path d="M424,122 L300,122 L258,142"/>
+              </g>
+              <g font-family="IBM Plex Sans, sans-serif" font-size="11" fill="var(--ink)" text-anchor="end">
+                <text x="252" y="100">Barrette 12 × ITR8307</text>
+                <text x="252" y="115" font-size="10" fill="var(--muted)">pas 10 mm — couverture ±55 mm</text>
+                <text x="252" y="145">Languette télémètres</text>
+                <text x="252" y="160" font-size="10" fill="var(--muted)">sécable, ressoudée à 90°</text>
+              </g>
+              <g font-family="IBM Plex Sans, sans-serif" font-size="10" fill="var(--muted)">
+                <text x="666" y="80">visées : latéral gauche, diagonale, avant</text>
+              </g>
+
+              <g stroke="var(--accent)" fill="none" marker-start="url(#dim)" marker-end="url(#dim)">
+                <path d="M322,103 L322,420"/>
+                <path d="M362,540 L638,540"/>
+                <path d="M342,566 L658,566"/>
+              </g>
+              <g font-family="IBM Plex Mono, monospace" font-size="10" fill="var(--accent)">
+                <text x="330" y="266">138 mm d'avance capteurs</text>
+                <text x="500" y="534" text-anchor="middle">carte 120 mm</text>
+                <text x="500" y="586" text-anchor="middle">hors-tout roues 136 mm</text>
+              </g>
+            </g>
+          </svg>
+        </div>
+        <figcaption>Fig. 2 — Implantation proposée, cotes indicatives à recaler sur ton châssis. Le pack et les moteurs concentrent la masse sur l'essieu ; la turbine, juste en avant, souffle à travers une découpe de la carte.</figcaption>
+      </figure>
+
+      <h3>Hauteurs de montage</h3>
+      <p>C'est l'élévation qui décide si la barrette peut vivre sur la carte mère, et pourquoi les télémètres ne le peuvent pas. Une relation résume tout : <strong>garde au sol = rayon de roue − hauteur de l'axe moteur au-dessus du dessous de carte</strong>. Avec des roues de 32 mm et un support N20 qui place l'arbre à 11 mm au-dessus de la carte, il reste 5 mm — dans la plage de l'ITR8307. Passe à des roues de 40 mm sans rien changer d'autre et tu montes à 9 mm : la barrette ne voit plus rien.</p>
+      <figure>
+        <div class="figwrap">
+          <svg viewBox="0 0 1000 560" role="img" aria-label="Élévations : vue de profil avec les hauteurs de capteurs, et vue de face montrant le mur de la qualification Q1">
+            <defs>
+              <marker id="dim2" viewBox="0 0 8 8" refX="4" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+                <path d="M0,0 L8,4 L0,8 z" fill="var(--accent)"/>
+              </marker>
+            </defs>
+            <g font-family="IBM Plex Sans, sans-serif">
+
+              <text x="60" y="34" font-size="12" font-weight="600" fill="var(--ink)" font-family="IBM Plex Sans Condensed, sans-serif">PROFIL — le sol entre dans le champ du télémètre à 187 mm</text>
+
+              <line x1="60" y1="250" x2="940" y2="250" stroke="var(--ink)" stroke-width="1.4"/>
+              <text x="66" y="264" font-size="9.5" fill="var(--muted)" font-family="IBM Plex Mono, monospace">bâche</text>
+
+              <rect x="560" y="240" width="52" height="3.5" fill="var(--ink)"/>
+              <rect x="652" y="240" width="160" height="3.5" fill="var(--ink)"/>
+              <rect x="563" y="243.5" width="37" height="3" fill="var(--accent)"/>
+              <rect x="606" y="187" width="4" height="53" fill="var(--ink)" opacity=".82"/>
+              <rect x="600" y="179" width="15" height="14" rx="2" fill="var(--accent)"/>
+
+              <g stroke="var(--accent)" stroke-dasharray="4 4" fill="none" opacity=".75">
+                <path d="M606,186 L344,250"/>
+                <path d="M606,186 L344,122"/>
+              </g>
+              <circle cx="344" cy="250" r="4" fill="var(--accent)"/>
+              <text x="336" y="242" font-size="10" text-anchor="end" fill="var(--accent)" font-family="IBM Plex Mono, monospace">187 mm</text>
+
+              <circle cx="756" cy="228" r="22" fill="var(--rule)" stroke="var(--rule-strong)"/>
+              <rect x="716" y="214" width="60" height="26" rx="2" fill="var(--surface)" stroke="var(--rule-strong)"/>
+              <text x="746" y="231" font-size="8.5" text-anchor="middle" fill="var(--ink-2)" font-family="IBM Plex Mono, monospace">N20</text>
+              <rect x="630" y="214" width="80" height="26" rx="2" fill="none" stroke="var(--ink)" stroke-dasharray="4 3"/>
+              <text x="670" y="231" font-size="8.5" text-anchor="middle" fill="var(--ink-2)" font-family="IBM Plex Mono, monospace">PACK 2S</text>
+              <rect x="612" y="212" width="40" height="28" rx="2" fill="var(--accent-soft)" stroke="var(--accent)"/>
+              <text x="632" y="230" font-size="8.5" text-anchor="middle" fill="var(--accent)" font-family="IBM Plex Mono, monospace">EDF</text>
+              <path d="M632,243 L632,252" stroke="var(--accent)" marker-end="url(#dim2)"/>
+
+              <g stroke="var(--accent)" fill="none" marker-start="url(#dim2)" marker-end="url(#dim2)">
+                <path d="M840,186 L840,250"/>
+                <path d="M540,243 L540,250"/>
+              </g>
+              <g font-family="IBM Plex Mono, monospace" font-size="10" fill="var(--accent)">
+                <text x="850" y="220">45 mm — télémètres</text>
+                <text x="534" y="240" text-anchor="end">5 mm</text>
+              </g>
+              <text x="563" y="272" font-size="9.5" fill="var(--muted)" font-family="IBM Plex Mono, monospace">barrette à 3 mm sous la carte</text>
+              <text x="700" y="196" font-size="9.5" fill="var(--muted)" font-family="IBM Plex Mono, monospace">axe moteur à 11 mm au-dessus du dessous de carte · roue R = 16 mm</text>
+
+              <line x1="60" y1="310" x2="940" y2="310" stroke="var(--rule)"/>
+              <text x="60" y="344" font-size="12" font-weight="600" fill="var(--ink)" font-family="IBM Plex Sans Condensed, sans-serif">FACE — géométrie de la qualification Q1</text>
+
+              <line x1="60" y1="520" x2="940" y2="520" stroke="var(--ink)" stroke-width="1.4"/>
+
+              <rect x="396" y="380" width="14" height="140" fill="var(--ink)" opacity=".75"/>
+              <text x="389" y="374" font-size="10" text-anchor="end" fill="var(--ink)" font-family="IBM Plex Mono, monospace">mur Q1</text>
+
+              <rect x="536" y="513" width="168" height="3.5" fill="var(--ink)"/>
+              <rect x="522" y="476" width="14" height="44" rx="3" fill="var(--rule)" stroke="var(--rule-strong)"/>
+              <rect x="704" y="476" width="14" height="44" rx="3" fill="var(--rule)" stroke="var(--rule-strong)"/>
+              <rect x="540" y="457" width="5" height="56" fill="var(--ink)" opacity=".82"/>
+              <rect x="532" y="450" width="15" height="14" rx="2" fill="var(--accent)"/>
+
+              <g stroke="var(--accent)" fill="none" opacity=".8">
+                <path d="M540,457 L410,426"/>
+                <path d="M540,457 L410,488"/>
+              </g>
+              <path d="M410,426 L410,488" stroke="var(--accent)" stroke-width="2" fill="none"/>
+              <g stroke="var(--accent)" stroke-dasharray="3 4" fill="none" opacity=".35">
+                <path d="M410,488 L278,520"/>
+              </g>
+
+              <g stroke="var(--accent)" fill="none" marker-start="url(#dim2)" marker-end="url(#dim2)">
+                <path d="M410,546 L620,546"/>
+                <path d="M370,380 L370,520"/>
+              </g>
+              <g font-family="IBM Plex Mono, monospace" font-size="10" fill="var(--accent)">
+                <text x="515" y="540" text-anchor="middle">150 mm</text>
+                <text x="362" y="454" text-anchor="end">100 mm</text>
+                <text x="430" y="418">faisceau : 62 mm de haut sur la cible</text>
+              </g>
+              <text x="620" y="546" font-size="9.5" text-anchor="middle" fill="var(--muted)" font-family="IBM Plex Mono, monospace">axe de la piste absente</text>
+            </g>
+          </svg>
+        </div>
+        <figcaption>Fig. 3 — À 45 mm de haut, le cône de 27° du télémètre ne touche la bâche qu'au-delà de 187 mm : le mur de la Q1, à 150 mm, est intercepté avant. Descendre le capteur à 20 mm ramènerait ce seuil à 83 mm et rendrait la mesure inutilisable.</figcaption>
+      </figure>
+    </section>
+
+    <!-- ============ 4 ============ -->
+    <section id="s4">
+      <div class="sechead"><span class="num">§4</span><h2>Sous-systèmes</h2></div>
+
+      <h3>Capteur de ligne</h3>
+      <p>C'est la pièce qui décide du chrono, et c'est aussi la seule que tu dois concevoir toi-même. Douze capteurs réflectifs <strong>ITR8307</strong> au pas de 10 mm couvrent 110 mm, soit ±55 mm autour de l'axe : assez pour voir les marques de départ et d'arrivée placées à 40 mm à droite, et pour reconnaître un croisement au fait que <em>toute</em> la barrette passe au noir simultanément.</p>
+      <p>Les émetteurs sont câblés en deux bancs (pairs et impairs), chacun commuté par un MOSFET <span class="mono">AO3400A</span>. La séquence d'acquisition, déclenchée par TIM6 à 2 kHz, enchaîne : mesure tous émetteurs éteints (ambiante), mesure banc A, mesure banc B. La soustraction élimine l'éclairage de salle — exigence directe du chapitre 10 — et l'alternance des bancs supprime la diaphonie entre voisins.</p>
+      <p>Les douze capteurs sont implantés <strong>sous le bord avant de la carte mère</strong>, et non sur une carte fille. Alimente-les depuis <span class="mono">3V3A</span>, la même référence que <span class="mono">VREF+</span> : la mesure devient ratiométrique et l'ondulation résiduelle du buck s'annule.</p>
+
+      <h3>Pourquoi une seule carte, et où s'arrête ce principe</h3>
+      <p>La carte fille sur nappe FFC n'a que deux arguments : le bruit, et le réglage de hauteur. Le premier ne tient pas — un plan de masse continu sur 4 couches est <em>meilleur</em> qu'une nappe, quelle que soit la façon dont on alterne signal et masse dedans. Reste la hauteur, et c'est là que se joue la décision.</p>
+      <p>Le problème est que les deux familles de capteurs ne veulent pas la même altitude, et qu'un PCB est un plan :</p>
+      <div class="tw">
+        <table>
+          <thead><tr><th>Capteur</th><th class="m">Hauteur voulue</th><th>Raison</th></tr></thead>
+          <tbody>
+            <tr><td>ITR8307, barrette de ligne</td><td class="m">2 à 4 mm</td><td>Au-delà, le signal réfléchi s'effondre et le contraste noir/blanc devient inexploitable</td></tr>
+            <tr><td>VL53L1X, télémètres</td><td class="m">40 à 50 mm</td><td>Champ de vision de 27° : à 36 mm de haut, le cône rase déjà le sol à 150 mm — exactement la distance du mur de la Q1</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Les figures 2 et 3 ci-dessus montrent la conséquence géométrique. La conclusion tient en deux points. <strong>La barrette de ligne passe sur la carte mère</strong> si le dessous de celle-ci se situe entre 2 et 6 mm du sol — ce qui dépend entièrement du diamètre de roue et de la façon dont le support moteur est fixé, et se mesure en une après-midi avec le châssis existant. <strong>Les télémètres, eux, resteront sur une carte verticale</strong> quoi qu'il arrive : posés dans le plan de la carte mère, ils passeraient leur temps à mesurer la bâche.</p>
+      <div class="note">
+        <span class="lbl">L'astuce qui garde un seul fichier de fabrication</span>
+        <p>Dessine la carte verticale des télémètres comme un <strong>appendice sécable du même PCB</strong>, relié par une amorce de rupture, avec une rangée de pastilles à cheval sur la cassure. Tu commandes un seul design, JLCPCB assemble tout en une passe, tu casses la languette et tu la ressoudes à 90° sur la carte mère. Un fichier, une commande, une facture de mise en route — et les télémètres à la bonne hauteur, orientés précisément.</p>
+      </div>
+      <p>Deux garde-fous pour ne pas dépendre d'une mesure de hauteur faite avant le routage. D'abord, <strong>rends le courant des émetteurs pilotable</strong> : en modulant le rapport cyclique sur le MOSFET de banc, tu rattrapes en logiciel une hauteur de 6 mm au lieu de 3. Ensuite, <strong>déplace le réglage vers le châssis</strong> — trous oblongs sur les supports moteurs plutôt que sur les capteurs. C'est le bon endroit : tu règles l'assiette du robot entier, pas un sous-ensemble.</p>
+
+      <div class="cards">
+        <div class="card">
+          <h4>Télémétrie</h4>
+          <p class="part">2 × VL53L1CBV0FY/1 + 1 voie analogique</p>
+          <p>Avant pour voir venir le cube, avant-gauche à 45° pour anticiper la disparition de la piste, et une voie analogique rapide à 90° à gauche pour asservir sur le mur de la Q1. Trois visées, pas cinq — la justification est juste en dessous.</p>
+          <ul>
+            <li>Adresse I²C unique par défaut : une broche <span class="mono">XSHUT</span> par VL53L1X, réadressage au boot</li>
+            <li>Sur languette verticale sécable, à 40–50 mm du sol — plus bas, le cône de 27° rase la bâche</li>
+            <li>Mode long, budget 20 ms → 50 Hz : à 3 m/s cela fait 6 cm entre deux mesures</li>
+            <li>Composant nu réflowé par JLCPCB, pas de module tout fait : c'est l'orientation qui compte, et elle doit être gravée dans le cuivre</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4>Inertie et dérapage</h4>
+          <p class="part">LSM6DSOTR — C2655100 · SPI2</p>
+          <p>Le dérapage ne se voit pas aux encodeurs : quand les deux roues glissent ensemble, l'odométrie reste cohérente et fausse. Il faut une référence externe.</p>
+          <ul>
+            <li>Lacet gyro comparé au lacet odométrique (v<sub>d</sub> − v<sub>g</sub>)/e — l'écart <em>est</em> le dérapage</li>
+            <li>Accélération latérale mesurée contre la consigne : donne la limite d'adhérence réelle du jour</li>
+            <li>Détection d'immobilité pour valider les 5 s d'arrêt</li>
+            <li>À placer au centre de rotation, près de l'essieu moteur</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4>Motorisation</h4>
+          <p class="part">2 × DRV8874PWPR — C1855818</p>
+          <p>Un pont complet par moteur, 6 A crête, 200 mΩ, pompe de charge intégrée et surtout une sortie <span class="mono">IPROPI</span> qui recopie le courant moteur — de quoi détecter un calage, mesurer la traction et faire de la coulométrie.</p>
+          <ul>
+            <li><span class="mono">PMODE</span> en mode IN1/IN2 : freinage actif et décroissance rapide contrôlés</li>
+            <li><span class="mono">nSLEEP</span> rappelé au 0 V, <span class="mono">nFAULT</span> lu par le MCU</li>
+            <li>Pad thermique cousu de vias, 2 × 100 µF faible ESR au plus près</li>
+            <li>100 nF X7R aux bornes de chaque moteur, fils torsadés</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4>Odométrie</h4>
+          <p class="part">TIM3 et TIM8 en mode encodeur</p>
+          <p>Encodeurs à effet Hall en quadrature sur l'arbre moteur, alimentés en 3,3 V, connecteur JST-PH 6 points par moteur (moteur + encodeur sur la même nappe).</p>
+          <ul>
+            <li>Compteurs 16 bits : à 840 pts/tour et roue de 27 mm, un tour de compteur vaut 2,7 m — sans risque de débordement entre deux lectures à 1 kHz</li>
+            <li>Filtre d'entrée du timer activé, plus 100 Ω / 1 nF en série</li>
+            <li>Le SWO occupe PB3, ce qui interdit TIM2 ; d'où le choix de deux timers 16 bits plutôt qu'un 32 bits</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4>Interface homme-machine</h4>
+          <p class="part">SSD1306 I²C · switch 5 directions · buzzer</p>
+          <p>Le règlement n'autorise qu'un petit tournevis au bord de piste : toute la configuration passe donc par l'écran et le switch, et les réglages vivent en flash.</p>
+          <ul>
+            <li>Switch 5 directions (haut, bas, gauche, droite, appui) : navigation à deux dimensions dans les menus, une seule pièce, un seul trou dans le capot</li>
+            <li>OLED sur I²C2, jamais rafraîchi pendant une tentative (transfert bloquant de ~30 ms)</li>
+            <li>Buzzer passif sur TIM17 : le seul retour lisible quand le robot est au sol</li>
+            <li>Bouton START séparé + embase « jack de départ » conservés — voir la séquence ci-dessous</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4>Traces et télémétrie</h4>
+          <p class="part">W25Q128 SPI3 · port BLE · USB CDC</p>
+          <p>Trois canaux, trois usages distincts. Ne compte pas sur le BLE pour du log rapide : il plafonne à quelques kilo-octets par seconde.</p>
+          <ul>
+            <li>Flash SPI : log 1 kHz de 20 signaux pendant un tour complet, puis vidage</li>
+            <li>USB CDC : vidage rapide et mise à jour DFU sans sonde</li>
+            <li>BLE : supervision légère et réglages à distance, sur module détachable</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4>Turbine d'appui</h4>
+          <p class="part">Embase ESC 3 points · TIM4 CH3 sur PB8</p>
+          <p>Le moteur brushless n'est pas piloté par la carte : c'est l'ESC qui s'en charge, et la carte ne lui envoie qu'une consigne. L'interface se réduit donc à trois fils, mais deux détails la rendent dangereuse si on les néglige.</p>
+          <ul>
+            <li><strong>Broche centrale non connectée</strong> : la plupart des ESC sortent 5 ou 6 V de BEC sur ce fil. Reliée au rail 3,3 V, elle emporte toute la carte</li>
+            <li>Signal servo 1–2 ms à 50–500 Hz, ou <strong>DShot</strong> via TIM4 et DMA — pas de calibration, et le régime réel remonte en télémétrie, ce qui permet de voir la turbine décrocher</li>
+            <li>Puissance prise directement sur VBAT, en amont des ponts moteurs, avec son propre découplage</li>
+            <li>L'armement de l'ESC fait partie de la séquence de pré-départ, pas du démarrage du firmware</li>
+          </ul>
+        </div>
+      </div>
+
+      
+      <h3>Combien de télémètres, et de quel type</h3>
+      <p>Tu as raison de tiquer : cinq, c'était de la symétrie, pas du besoin. En revenant au règlement, il n'y a que deux obligations de détection, et une seule d'entre elles demande de la vitesse.</p>
+      <div class="tw">
+        <table>
+          <thead><tr><th>Besoin</th><th>Source</th><th class="m">Visée</th><th>Contrainte dominante</th></tr></thead>
+          <tbody>
+            <tr><td>Voir venir le cube de 100 mm</td><td>Ch. 7 — Q2</td><td class="m">avant, 0°</td><td>Portée : il faut le voir à 60 cm pour avoir le temps de planifier l'esquive</td></tr>
+            <tr><td>Suivre le mur quand la piste disparaît</td><td>Ch. 8 — Q1</td><td class="m">gauche, 90°</td><td>Cadence : c'est un asservissement, il tourne à 1 kHz</td></tr>
+            <tr><td>Anticiper l'entrée dans la zone sans piste</td><td>Confort</td><td class="m">avant-gauche, 45°</td><td>Ni l'un ni l'autre — utile, pas indispensable</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Les deux visées à droite que j'avais mises ne servaient qu'à rendre le robot symétrique. Or le règlement est explicitement asymétrique : le virage escamoté est <em>à gauche</em>, le mur est <em>à gauche</em>. Quant au cube, il est garanti à plus d'un mètre de tout virage, donc toujours en ligne droite : tu esquives du côté que tu veux, et tu choisis toujours le même. Deux capteurs de moins, six euros et deux adresses I²C économisés.</p>
+
+      <h3>Ton capteur analogique OPV302 : oui, mais pas partout</h3>
+      <p>La chaîne OPV302 et BPW77 est celle du micromouse, et elle est excellente — à condition de la mettre là où sa physique gagne. Les deux besoins ci-dessus ne lui conviennent pas également.</p>
+      <div class="cards">
+        <div class="card">
+          <h4>Là où elle gagne</h4>
+          <p class="part">Mur de la Q1, latéral gauche</p>
+          <p>La cible est à 150 mm, toujours la même, et le robot doit s'asservir dessus en temps réel. Un VL53L1X plafonne à 50 Hz, soit 6 cm parcourus entre deux points de mesure ; ta chaîne analogique se lit à chaque conversion ADC, donc à 1 kHz sans effort. Sur un virage de 20 cm de rayon parcouru sans ligne, c'est décisif.</p>
+          <ul>
+            <li>Le règlement prévoit des essais libres avant chaque phase : tu calibres l'intensité contre le vrai mur, ce qui annule le principal défaut de la mesure par intensité</li>
+            <li>Émetteur pulsé et soustraction d'ambiante : exactement le schéma déjà en place pour la barrette de ligne</li>
+            <li>Aucun trafic I²C, donc aucune contention avec les autres capteurs</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4>Là où elle perd</h4>
+          <p class="part">Détection du cube à longue portée</p>
+          <p>C'est un changement d'échelle, pas de degré. Un capteur de micromouse travaille à 50–100 mm ; ici il faut voir à 600 mm. Le signal reçu décroît en 1/d² : à dix fois la distance, il reste un centième du signal.</p>
+          <ul>
+            <li>Le laser collimaté de l'OPV302 supprime la divergence côté émission, mais il reste la collecte : optique, baffles et dynamique deviennent un vrai projet d'optique</li>
+            <li>La mesure reste une <strong>intensité</strong>, pas une distance : elle dépend de l'albédo du cube, que le règlement ne garantit pas — il promet seulement qu'il sera « visible » en infrarouge</li>
+            <li>Un VL53L1X rend une distance en millimètres, calibrée, insensible à la couleur de la cible</li>
+          </ul>
+        </div>
+      </div>
+      <div class="note">
+        <span class="lbl">Deux réserves à lever avant de t'engager</span>
+        <p><strong>Approvisionnement.</strong> L'OPV302 est un TT Electronics/Optek, les BPW77NA, BPW77NB et BPY 62 des Vishay en boîtier traversant. Aucun des trois n'est probablement dans la bibliothèque JLCPCB, et l'OPV302 coûte à lui seul plusieurs fois le prix d'un VL53L1X. Ils sortent donc de la contrainte « tout chez JLCPCB » que tu t'es fixée : à vérifier au cas par cas, sachant qu'une pose manuelle sur une carte par ailleurs assemblée reste acceptable pour deux composants.</p>
+        <p><strong>Sécurité oculaire.</strong> L'OPV302 émet à 850 nm, invisible, donc sans réflexe de clignement. Sur un stand où juges et spectateurs se penchent au-dessus de la piste, un faisceau collimaté à hauteur de tête impose une vraie analyse de classification, et un boîtier qui la garantit. Le VL53L1X est un module certifié classe 1, ce qui est précisément l'argument qui le fait choisir dans les produits grand public.</p>
+      </div>
+      <p><strong>Le coût caché : les broches ADC.</strong> Les seize entrées analogiques du LQFP100 sont toutes prises — douze pour la barrette, quatre pour la surveillance. Chaque récepteur analogique ajouté doit donc être payé quelque part. La bonne nouvelle, c'est que j'avais fait une erreur en réservant une voie ADC pour la thermistance du pack : elle n'a rien à faire là, sa place est sur l'entrée <span class="mono">TS</span> du BQ25887, qui gère lui-même la coupure thermique de charge. Cette voie libérée accueille exactement le récepteur latéral, et l'émetteur laser est piloté depuis PB2, resté disponible. Si tu voulais deux voies analogiques de plus, la sortie propre serait le <strong>STM32H723ZGT6 en LQFP144</strong>, qui expose davantage d'entrées ADC3 — au prix d'une carte plus grande.</p>
+
+      <h3>Séquence d'armement et de départ</h3>
+      <p>Partir en passant la main devant le télémètre est confortable et évite de bousculer le robot au moment critique — mais c'est aussi le même capteur qui doit voir le cube, et n'importe quel spectateur passant devant déclencherait un départ. La séquence doit donc être verrouillée :</p>
+      <ol>
+        <li><strong>Armement</strong> par appui long sur le switch 5 directions, robot posé sur la piste. L'OLED affiche l'état, le buzzer confirme.</li>
+        <li><strong>Armement de l'ESC</strong> : consigne à zéro maintenue deux secondes, attente des bips de l'ESC, turbine déclarée prête.</li>
+        <li><strong>Champ libre</strong> : le ToF avant doit lire « rien à moins de 400 mm » pendant trois secondes consécutives. Sans cette étape, une main déjà présente au moment de l'armement compte comme un départ.</li>
+        <li><strong>Geste</strong> : objet détecté à moins de 100 mm pendant plus de 200 ms, puis retiré.</li>
+        <li><strong>Compte à rebours sonore</strong> de deux à trois secondes, puis départ — et désactivation définitive de ce canal de déclenchement pour le reste de la tentative.</li>
+      </ol>
+      <div class="note">
+        <span class="lbl">Ce que ça ne coûte pas</span>
+        <p>Le chronomètre ne se déclenche pas au démarrage du robot mais au moment où il coupe la barrière infrarouge de la ligne de départ, et il est placé entre la ligne d'arrivée et la ligne de départ. Le compte à rebours, la temporisation d'armement de l'ESC et la montée en régime de la turbine sont donc <strong>gratuits en temps</strong>. Prends-les larges plutôt que serrés.</p>
+      </div>
+    </section>
+
+    <!-- ============ 5 ============ -->
+    <section id="s5">
+      <div class="sechead"><span class="num">§5</span><h2>Alimentation</h2></div>
+      <p>Un pack 2S LiFePO4 délivre 6,4 V nominal, 7,3 V à pleine charge (3,65 V/cellule) et descend vers 5,0 V à vide. C'est parfait pour des moteurs 6 V attaqués directement, et c'est aussi ce qui rend la charge délicate : recharger du 2S depuis les 5 V de l'USB demande un chargeur <em>élévateur</em>, pas un abaisseur.</p>
+
+      <figure>
+        <div class="figwrap">
+          <svg viewBox="0 0 1000 268" role="img" aria-label="Chaîne d'alimentation : USB-C vers chargeur BQ25887, pack 2S, interrupteur, bus VBAT et rails dérivés">
+            <defs>
+              <marker id="ar2" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto">
+                <path d="M0,0 L8,4 L0,8 z" fill="var(--rule-strong)"/>
+              </marker>
+            </defs>
+            <g font-family="IBM Plex Sans, sans-serif">
+              <rect x="14" y="16" width="152" height="58" rx="3" fill="var(--surface-2)" stroke="var(--rule-strong)"/>
+              <text x="26" y="38" font-size="12.5" font-weight="600" fill="var(--ink)">USB-C 5 V</text>
+              <text x="26" y="55" font-size="10.5" fill="var(--muted)">2 × 5,1 kΩ CC · ESD</text>
+
+              <rect x="196" y="16" width="248" height="58" rx="3" fill="var(--surface-2)" stroke="var(--rule-strong)"/>
+              <text x="208" y="38" font-size="12.5" font-weight="600" fill="var(--ink)">BQ25887 — chargeur 2S élévateur</text>
+              <text x="208" y="55" font-size="10.5" fill="var(--muted)">équilibrage cellules · I²C · 3,60 V/cell</text>
+
+              <rect x="474" y="16" width="228" height="58" rx="3" fill="var(--surface-2)" stroke="var(--rule-strong)"/>
+              <text x="486" y="38" font-size="12.5" font-weight="600" fill="var(--ink)">Pack 2S LiFePO4</text>
+              <text x="486" y="55" font-size="10.5" fill="var(--muted)">6,4 V nom. · PCM · équilibrage XH-3</text>
+
+              <rect x="732" y="16" width="254" height="58" rx="3" fill="var(--surface-2)" stroke="var(--rule-strong)"/>
+              <text x="744" y="38" font-size="12.5" font-weight="600" fill="var(--ink)">Interrupteur + protections</text>
+              <text x="744" y="55" font-size="10.5" fill="var(--muted)">ON/OFF 5 A · anti-inversion · fusible</text>
+
+              <g stroke="var(--rule-strong)" fill="none" marker-end="url(#ar2)">
+                <path d="M166,45 L194,45"/><path d="M444,45 L472,45"/><path d="M702,45 L730,45"/>
+                <path d="M859,74 L859,104"/>
+              </g>
+
+              <rect x="14" y="106" width="972" height="30" rx="3" fill="var(--accent-soft)" stroke="var(--accent)"/>
+              <text x="500" y="126" font-size="12" font-weight="600" text-anchor="middle" fill="var(--accent)" font-family="IBM Plex Mono, monospace">BUS VBAT — 5,0 à 7,3 V</text>
+
+              <g stroke="var(--rule-strong)" fill="none" marker-end="url(#ar2)">
+                <path d="M164,136 L164,172"/><path d="M498,136 L498,172"/>
+              </g>
+
+              <rect x="14" y="174" width="300" height="72" rx="3" fill="var(--surface-2)" stroke="var(--rule-strong)"/>
+              <text x="26" y="196" font-size="12.5" font-weight="600" fill="var(--ink)">Étage de puissance</text>
+              <text x="26" y="213" font-size="10.5" fill="var(--muted)">2 × 100 µF faible ESR + clamp TVS</text>
+              <text x="26" y="229" font-size="10.5" fill="var(--muted)">2 × DRV8874 → moteurs</text>
+
+              <rect x="348" y="174" width="300" height="72" rx="3" fill="var(--surface-2)" stroke="var(--rule-strong)"/>
+              <text x="360" y="196" font-size="12.5" font-weight="600" fill="var(--ink)">TPS62933 — buck 3,3 V / 2 A</text>
+              <text x="360" y="213" font-size="10.5" fill="var(--muted)">MCU · ToF · IMU · OLED · BLE</text>
+              <text x="360" y="229" font-size="10.5" fill="var(--muted)">flash · afficheur</text>
+
+              <rect x="686" y="174" width="300" height="72" rx="3" fill="var(--surface-2)" stroke="var(--rule-strong)"/>
+              <text x="698" y="196" font-size="12.5" font-weight="600" fill="var(--ink)">3V3A — filtre π à ferrite</text>
+              <text x="698" y="213" font-size="10.5" fill="var(--muted)">VDDA · VREF+ · barrette de ligne</text>
+              <text x="698" y="229" font-size="10.5" fill="var(--muted)">mesure ratiométrique</text>
+
+              <g stroke="var(--rule-strong)" fill="none" marker-end="url(#ar2)">
+                <path d="M648,210 L684,210"/>
+              </g>
+            </g>
+          </svg>
+        </div>
+        <figcaption>Fig. 4 — Le chargeur est placé <em>avant</em> l'interrupteur : le robot se recharge éteint. La ligne 3V3A est dérivée du 3,3 V par un filtre π, et non par un régulateur séparé, pour que la barrette et la référence ADC partagent exactement le même potentiel.</figcaption>
+      </figure>
+
+      <h3>Le chargeur</h3>
+      <p>Le <strong>BQ25887</strong> (<span class="mono">C2761614</span>, environ 1,90 $) est le composant qui rend l'ensemble simple : chargeur à découpage élévateur 2 A conçu pour charger un pack 2S depuis une entrée USB 5 V, avec équilibrage de cellules intégré, limite de courant d'entrée programmable et mesure de tension et de courant restituée en I²C. Cette dernière alimente directement l'affichage d'état de charge sur l'OLED.</p>
+      <p>Point de vigilance : sa tension de régulation par cellule descend jusqu'à 3,4 V, donc 3,60 V pour du LiFePO4 est atteignable — mais ce n'est <strong>pas</strong> sa valeur par défaut. Au reset, il part sur un profil Li-ion. Le firmware doit écrire <span class="mono">VCELLREG</span> avant d'autoriser la charge, et la broche <span class="mono">CD</span> doit maintenir le chargeur inhibé jusqu'à ce que cette écriture soit confirmée.</p>
+      <p>Si le BQ25887 venait à manquer, la solution de repli est un <strong>CH224K</strong> (<span class="mono">C970725</span>, 0,33 $) qui négocie 12 V en USB-PD, suivi d'un chargeur abaisseur LiFePO4 — au prix de l'obligation d'utiliser un chargeur PD et non un simple port USB.</p>
+
+      <h3>Ce que la turbine change au bilan</h3>
+      <p>C'est l'ajout qui redimensionne tout le reste. Une turbine capable de produire un appui utile sur un robot de cette taille consomme entre 5 et 15 A en continu — davantage que les deux moteurs de traction réunis. Trois conséquences en cascade :</p>
+      <ul>
+        <li><strong>Le pack change de catégorie.</strong> Un accu de réception 2S LiFePO4 de 450 mAh est hors sujet : il faut au minimum 1000 mAh avec un taux de décharge de 15 C, et le poids gagné en électronique se reperd là.</li>
+        <li><strong>La tension joue contre toi.</strong> Un 2S LiFePO4 plafonne à 7,3 V et travaille surtout vers 6,4 V, là où les ensembles ESC et moteur brushless du commerce sont calibrés pour du 2S LiPo à 8,4 V. La poussée réelle sera nettement inférieure à celle annoncée par le fabricant — vérifie-la avant de dimensionner la mécanique.</li>
+        <li><strong>L'appel de courant fait chuter VBAT.</strong> Une montée en régime brutale peut faire décrocher le convertisseur 3,3 V et redémarrer le MCU en pleine ligne droite. Rampe la consigne de turbine plutôt que de l'appliquer d'un coup, augmente le volume de condensateurs à l'entrée du buck, et surveille VBAT sur ADC3 pour lever une alarme avant le décrochage.</li>
+      </ul>
+
+      <h3>Connectique et protections</h3>
+      <ul>
+        <li><strong>USB-C</strong> : embase <span class="mono">TYPE-C-31-M-12</span> (C165948), 16 broches, avec les deux résistances de 5,1 kΩ sur CC1/CC2 — sans elles aucun chargeur ne délivre le 5 V. D+/D− remontent au MCU pour le DFU et le port série.</li>
+        <li><strong>Accu</strong> : XT30 ou JST-PH selon le courant crête retenu, plus une embase d'équilibrage JST-XH 3 points pour charger et mesurer les cellules à l'extérieur.</li>
+        <li><strong>Anti-inversion</strong> : MOSFET canal P en série côté haut, pas une diode — la chute de 0,4 V d'une Schottky à 3 A représente 1,2 W de perte pure.</li>
+        <li><strong>Écrêtage</strong> : à 3 m/s, un freinage à fond renvoie l'énergie cinétique dans un pack potentiellement plein. Prévois un TVS d'écrêtage vers 9 V sur VBAT et du volume de condensateurs, sinon c'est le buck ou le driver qui encaisse.</li>
+      </ul>
+    </section>
+
+    <!-- ============ 6 ============ -->
+    <section id="s6">
+      <div class="sechead"><span class="num">§6</span><h2>Affectation des broches</h2></div>
+      <p>Proposition cohérente pour le LQFP100, à confirmer sous CubeMX — notamment le mapping exact des canaux ADC, qui diffère d'une déclinaison H7 à l'autre. Le point structurant : le H723 en LQFP100 n'expose que <strong>seize</strong> broches capables d'ADC. Douze vont à la barrette, quatre à la surveillance ; il n'en reste aucune, ce qui explique le choix de douze capteurs de ligne plutôt que seize.</p>
+      <div class="tw">
+        <table>
+          <thead><tr><th>Fonction</th><th>Périphérique</th><th class="m">Broches</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td>Barrette de ligne, 12 voies</td><td>ADC1 + ADC2, dual regular simultaneous + DMA</td><td class="m">PA0–PA7, PB0, PB1, PC4, PC5</td><td>Déclenché par TIM6, synchronisé sur les impulsions IR</td></tr>
+            <tr><td>Surveillance de bord</td><td>ADC3, 12 bits</td><td class="m">PC0 · PC1 · PC2</td><td>VBAT, IPROPI1, IPROPI2 — seules broches ADC3 du boîtier</td></tr>
+            <tr><td>Télémètre analogique latéral</td><td>ADC3 + GPIO</td><td class="m">PC3 (réception) · PB2 (émetteur)</td><td>Voie libérée par le déplacement de la thermistance sur l'entrée TS du chargeur</td></tr>
+            <tr><td>PWM des deux ponts</td><td>TIM1 CH1–CH4</td><td class="m">PE9 · PE11 · PE13 · PE14</td><td>Centré, 25 kHz, hors bande audible</td></tr>
+            <tr><td>Encodeur gauche</td><td>TIM3 mode encodeur</td><td class="m">PB4 · PB5</td><td>Filtre d'entrée activé</td></tr>
+            <tr><td>Encodeur droit</td><td>TIM8 mode encodeur</td><td class="m">PC6 · PC7</td><td>16 bits, lu à 1 kHz</td></tr>
+            <tr><td>Drivers, service</td><td>GPIO</td><td class="m">PD0, PD1 (nSLEEP) · PD3, PD4 (nFAULT)</td><td>nSLEEP rappelé au 0 V par 100 kΩ</td></tr>
+            <tr><td>Télémètres ToF</td><td>I2C1 400 kHz</td><td class="m">PB6 · PB7</td><td>XSHUT sur PD5, PD6 et interruptions sur PE0, PE1 ; PD7–PD9 et PE3–PE5 gardés en réserve</td></tr>
+            <tr><td>OLED et chargeur</td><td>I2C2 400 kHz</td><td class="m">PB10 · PB11</td><td>Bus lent séparé, jamais sollicité en course</td></tr>
+            <tr><td>Centrale inertielle</td><td>SPI2</td><td class="m">PB12–PB15</td><td>10 MHz, interruption DRDY sur PE6</td></tr>
+            <tr><td>Flash de traces</td><td>SPI3</td><td class="m">PC10, PC11, PC12 · CS PD2</td><td>SPI simple à 50 MHz suffit — pas besoin de QSPI</td></tr>
+            <tr><td>Module BLE</td><td>USART1 + GPIO</td><td class="m">PA9 · PA10 · PA8 (EN)</td><td>PA8 commande le load switch d'alimentation</td></tr>
+            <tr><td>USB</td><td>USB OTG FS</td><td class="m">PA11 · PA12</td><td>Quartz HSE obligatoire pour l'horloge USB</td></tr>
+            <tr><td>Débogage</td><td>SWD + ITM</td><td class="m">PA13 · PA14 · PB3 (SWO)</td><td>PB3 réservé au SWO, d'où l'abandon de TIM2</td></tr>
+            <tr><td>Bancs d'émetteurs IR</td><td>GPIO</td><td class="m">PE7 · PE8</td><td>Deux bancs alternés, anti-diaphonie</td></tr>
+            <tr><td>Buzzer</td><td>TIM17 CH1</td><td class="m">PB9</td><td>Via MOSFET + diode de roue libre</td></tr>
+            <tr><td>Switch 5 directions</td><td>GPIO + EXTI</td><td class="m">PE10, PE12, PE15, PD10, PD13</td><td>Haut / bas / gauche / droite / appui, commun à la masse</td></tr>
+            <tr><td>Départ</td><td>GPIO + EXTI</td><td class="m">PD14 (bouton et jack)</td><td>Moyen conforme au règlement, en parallèle du départ par ToF</td></tr>
+            <tr><td>ESC de turbine</td><td>TIM4 CH3 (+ DMA si DShot)</td><td class="m">PB8</td><td>Broche BEC de l'embase laissée non connectée</td></tr>
+            <tr><td>LED d'état</td><td>GPIO</td><td class="m">PD15 · PC8 · PC9</td><td>Dont une dédiée « BLE alimenté », visible du jury</td></tr>
+            <tr><td>Horloge</td><td>HSE</td><td class="m">PH0 · PH1</td><td>Quartz 25 MHz</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Bilan : environ 74 broches affectées sur 82 disponibles. Le switch 5 directions consomme une entrée de plus que les quatre boutons qu'il remplace, et l'ESC prend PB8 — qui était justement le seul canal de TIM4 encore libre, les deux premiers étant pris par I²C1 et le quatrième par le buzzer. Les réserves restantes — PB2, PE2, PC13–PC15 — sont à sortir sur pastilles de test.</p>
+    </section>
+
+    <!-- ============ 7 ============ -->
+    <section id="s7">
+      <div class="sechead"><span class="num">§7</span><h2>Nomenclature JLCPCB</h2></div>
+      <p>Les références marquées vérifiées ont été contrôlées en stock LCSC/JLCPCB le 30 août 2026. Les prix et les stocks bougent vite : refais un passage juste avant de figer la nomenclature, et prévois systématiquement une deuxième source pour les pièces critiques.</p>
+      <div class="tw">
+        <table>
+          <thead><tr><th>Fonction</th><th>Référence</th><th class="m">JLCPCB</th><th class="m">Qté</th><th>État</th></tr></thead>
+          <tbody>
+            <tr><td>Microcontrôleur</td><td>STM32H723VGT6 · LQFP100</td><td class="m">C730142</td><td class="m">1</td><td class="ok">vérifié</td></tr>
+            <tr><td>Pont en H</td><td>DRV8874PWPR · HTSSOP-16</td><td class="m">C1855818</td><td class="m">2</td><td class="ok">vérifié · 0,77 $</td></tr>
+            <tr><td>Télémètre ToF</td><td>VL53L1CBV0FY/1 · composant nu</td><td class="m">C2970716</td><td class="m">2</td><td class="ok">vérifié · 2,86 $</td></tr>
+            <tr><td>Émetteur télémètre analogique</td><td>OPV302 · laser IR 850 nm</td><td class="m">—</td><td class="m">1</td><td class="tbc">hors JLCPCB probable</td></tr>
+            <tr><td>Récepteur télémètre analogique</td><td>BPW77NA / BPW77NB / BPY 62</td><td class="m">—</td><td class="m">1</td><td class="tbc">hors JLCPCB probable</td></tr>
+            <tr><td>Centrale inertielle</td><td>LSM6DSOTR</td><td class="m">C2655100</td><td class="m">1</td><td class="ok">vérifié · 2,42 $</td></tr>
+            <tr><td>IMU — variante haut de gamme</td><td>ICM-42688-P</td><td class="m">C1850418</td><td class="m">1</td><td class="tbc">stock faible · 13 $</td></tr>
+            <tr><td>IMU — variante économique</td><td>QMI8658C</td><td class="m">C2842151</td><td class="m">1</td><td class="ok">vérifié · 0,74 $</td></tr>
+            <tr><td>Capteur réflectif</td><td>ITR8307/S17/TR8(B)</td><td class="m">C81632</td><td class="m">12</td><td class="ok">vérifié · 0,06 $</td></tr>
+            <tr><td>Chargeur 2S élévateur</td><td>BQ25887RGER · VQFN-24</td><td class="m">C2761614</td><td class="m">1</td><td class="ok">vérifié · 1,90 $</td></tr>
+            <tr><td>Convertisseur 3,3 V</td><td>TPS62933DRLR · SOT583</td><td class="m">C3200405</td><td class="m">1</td><td class="ok">vérifié · 0,24 $</td></tr>
+            <tr><td>Embase USB-C</td><td>TYPE-C-31-M-12</td><td class="m">C165948</td><td class="m">1</td><td class="ok">vérifié</td></tr>
+            <tr><td>Sink USB-PD (repli chargeur)</td><td>CH224K</td><td class="m">C970725</td><td class="m">1</td><td class="ok">vérifié · 0,33 $</td></tr>
+            <tr><td>Flash de traces</td><td>W25Q128JVSIQ · SOIC-8</td><td class="m">—</td><td class="m">1</td><td class="tbc">à vérifier</td></tr>
+            <tr><td>Protection USB</td><td>USBLC6-2SC6</td><td class="m">—</td><td class="m">1</td><td class="tbc">à vérifier</td></tr>
+            <tr><td>MOSFET commutation</td><td>AO3400A (N) · SI2301 (P)</td><td class="m">—</td><td class="m">6</td><td class="tbc">à vérifier</td></tr>
+            <tr><td>Buzzer passif</td><td>magnétique CMS 9 × 5,5 mm</td><td class="m">—</td><td class="m">1</td><td class="tbc">à vérifier</td></tr>
+            <tr><td>Switch 5 directions</td><td>TS-006 · 5 voies + commun</td><td class="m">C3674</td><td class="m">1</td><td class="tbc">empreinte à confirmer</td></tr>
+            <tr><td>Embase ESC turbine</td><td>barrette 1×3 au pas de 2,54 mm</td><td class="m">hors PCBA</td><td class="m">1</td><td class="ok">broche centrale NC</td></tr>
+            <tr><td>Quartz HSE</td><td>25 MHz · 3225 · 10 ppm</td><td class="m">—</td><td class="m">1</td><td class="tbc">à vérifier</td></tr>
+            <tr><td>Connecteur de debug</td><td>Tag-Connect TC2050-IDC-NL</td><td class="m">aucun</td><td class="m">0</td><td class="ok">empreinte seule</td></tr>
+            <tr><td>Afficheur</td><td>module OLED SSD1306 0,96″ I²C</td><td class="m">hors PCBA</td><td class="m">1</td><td class="ok">embase 4 points</td></tr>
+            <tr><td>Module BLE</td><td>HM-11 / JDY-08 ou ESP32-C3-MINI-1</td><td class="m">hors PCBA</td><td class="m">1</td><td class="ok">embase 6 points</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Le total des actifs tombe autour de 27 $ par carte en petite série une fois les deux télémètres superflus retirés. Le poste dominant devient le microcontrôleur, ce qui est le signe d'une nomenclature saine. Les deux composants analogiques du télémètre latéral, s'ils ne sont pas sourçables chez JLCPCB, se posent à la main sur une carte par ailleurs assemblée : c'est acceptable pour deux pièces, pas pour douze.</p>
+    </section>
+
+    <!-- ============ 8 ============ -->
+    <section id="s8">
+      <div class="sechead"><span class="num">§8</span><h2>Ce que tu as oublié</h2></div>
+      <p>Trente-sept points relevés, classés par ce qu'ils te coûtent si tu les laisses passer. Le premier concerne directement le connecteur de la capture que tu m'as envoyée ; le second, ton idée de départ par télémètre.</p>
+      <div class="legend">
+        <span class="chip c1">Bloquant</span>
+        <span class="chip c2">Fiabilité</span>
+        <span class="chip c3">Chrono</span>
+      </div>
+
+      <div class="grphead"><h3>Bloquant</h3><span class="bar"></span></div>
+      <ul class="finds">
+        <li><span class="n">01</span><div>
+          <h5>Ton connecteur TC2030 n'a ni VTref ni SWO</h5>
+          <p>Sur la capture, les six broches sont RXD, TXD, RST, SWD-CLK, SWD-IO, GND. Il manque <span class="mono">VTref</span> : une sonde ST-Link mesure la tension de la cible sur cette broche pour adapter ses niveaux, et refuse de se connecter si elle lit 0 V. Il manque aussi <span class="mono">SWO</span>, qui est la sortie de trace ITM — c'est-à-dire exactement le canal de debug que tu cherches. Six broches ne suffisent pas pour SWD + UART + VTref + SWO. Deux issues : passer au <strong>TC2050-IDC-NL</strong> (2×05, même famille, même encombrement) et tout loger ; ou garder le TC2030 avec le brochage standard ARM — 1 VTref, 2 SWDIO, 3 NRST, 4 SWCLK, 5 GND, 6 SWO — et déporter l'UART sur le port BLE, qui joue déjà ce rôle.</p>
+        </div></li>
+        <li><span class="n">02</span><div>
+          <h5>Le départ par geste n'est pas dans la liste du règlement</h5>
+          <p>Le chapitre 2 énumère trois moyens : « <em>par interrupteur, un bouton poussoir ou par un jack</em> ». Un geste devant un télémètre n'y figure pas, et l'énumération se lit comme limitative. Ton idée est bonne à l'usage — elle évite de bousculer le robot au moment le plus sensible — mais elle t'expose à un jury tatillon. Deux précautions qui ne coûtent rien : garde un bouton START physique câblé et fonctionnel comme moyen de départ conforme, et pose la question aux organisateurs avant la compétition, l'adresse figure en première page du règlement. La séquence verrouillée décrite au §4 gère le reste : faux départs, armement de l'ESC, et un compte à rebours qui ne te coûte aucun temps puisque le chrono ne part qu'à la barrière infrarouge.</p>
+        </div></li>
+        <li><span class="n">03</span><div>
+          <h5>L'état des drivers au reset n'est pas défini</h5>
+          <p>Entre la mise sous tension et l'initialisation du firmware, les GPIO du STM32 sont en entrée haute impédance. Sans rappel externe, <span class="mono">nSLEEP</span> et les entrées PWM flottent et le robot peut partir tout seul sur l'établi. Résistance de 100 kΩ vers la masse sur <span class="mono">nSLEEP</span> et sur chaque entrée de pont — c'est trois composants qui évitent un doigt écrasé.</p>
+        </div></li>
+        <li><span class="n">04</span><div>
+          <h5>Les résistances CC de l'USB-C</h5>
+          <p>Deux résistances de 5,1 kΩ entre CC1/CC2 et la masse. Sans elles, un chargeur USB-C ne voit aucun périphérique et ne délivre rien du tout. C'est l'oubli le plus fréquent sur une première carte USB-C, et il ne se voit qu'au moment où rien ne charge.</p>
+        </div></li>
+        <li><span class="n">05</span><div>
+          <h5>Le module BLE détachable règle la conformité, pas la fiabilité</h5>
+          <p>Le chapitre 2 exige que les moyens de communication soient <em>inhibés au moment du départ</em>. Un module qu'on retire physiquement est la démonstration la plus simple qui soit devant un jury — bien meilleure qu'une désactivation logicielle. Garde quand même le load switch à MOSFET canal P et sa LED témoin : ils te permettent de laisser le module en place entre deux essais et de le couper à la volée, sans manipuler la carte à chaque tentative. Et ils couvrent le cas où tu oublies de le retirer.</p>
+        </div></li>
+        <li><span class="n">06</span><div>
+          <h5>L'interrupteur marche/arrêt facile d'accès</h5>
+          <p>Exigé explicitement par le règlement, et distinct du connecteur d'accu. Un interrupteur à glissière 5 A dans la ligne batterie, accessible robot posé sur ses roues, avec limitation d'appel de courant (MOSFET canal P à montée lente ou CTN) — sinon l'étincelle à chaque enclenchement usera le contact et fera redémarrer le MCU en boucle.</p>
+        </div></li>
+        <li><span class="n">07</span><div>
+          <h5>Le robot ne peut pas voir l'arrivée</h5>
+          <p>Les marques sont à 40 mm à droite de l'axe de piste et font 19 mm de large : elles occupent la bande +30,5 à +49,5 mm. Une barrette centrée de 60 mm de large ne les voit jamais, et le robot ne sait donc pas quand freiner. Or il doit s'arrêter en moins d'un mètre après l'arrivée, sous peine d'essai invalidé. D'où la couverture ±55 mm retenue au §4.</p>
+        </div></li>
+        <li><span class="n">08</span><div>
+          <h5>La référence analogique et son retour de masse</h5>
+          <p>Douze voies ADC en 16 bits à côté de deux ponts en H qui hachent plusieurs ampères à 25 kHz : sans plan de masse analogique dédié, sans filtre π sur <span class="mono">VDDA</span> et sans <span class="mono">VREF+</span> propre, tu mesureras le bruit des moteurs. Et alimente la barrette depuis <span class="mono">3V3A</span> : la mesure devient ratiométrique et l'ondulation du buck disparaît du résultat.</p>
+        </div></li>
+      </ul>
+
+      <div class="grphead"><h3>Fiabilité</h3><span class="bar"></span></div>
+      <ul class="finds">
+        <li><span class="n">09</span><div>
+          <h5>Le BEC de l'ESC peut emporter toute la carte</h5>
+          <p>La plupart des ESC brushless renvoient 5 ou 6 V de BEC sur le fil central du connecteur servo. Câblé sur une embase où cette broche rejoint le 3,3 V, il détruit le MCU, l'IMU, les télémètres et l'écran d'un seul coup. Laisse la broche centrale non connectée, marque-la « NC » en sérigraphie, et n'utilise que signal et masse. Si tu veux vraiment récupérer le BEC un jour, fais-le passer par un cavalier explicite vers un rail 5 V séparé.</p>
+        </div></li>
+        <li><span class="n">10</span><div>
+          <h5>L'ESC ne s'arme pas tout seul</h5>
+          <p>Un ESC standard exige un signal à gaz zéro pendant une à deux secondes après sa mise sous tension, sinon il refuse d'armer et reste muet. Cette temporisation doit faire partie de la séquence de pré-départ, pas du démarrage du firmware — sinon tu découvriras au bord de piste que la turbine ne part pas. Ses bips d'armement vont par ailleurs se mélanger aux tiens : prévois-le dans le protocole sonore. Le DShot supprime le problème et donne en prime le régime réel en retour, ce qui permet de détecter un décrochage de turbine.</p>
+        </div></li>
+        <li><span class="n">11</span><div>
+          <h5>Le télémètre de départ est aussi celui qui voit le cube</h5>
+          <p>Un seul capteur pour deux rôles antagonistes : entre l'armement et le départ, n'importe quel spectateur passant devant déclenche le robot. D'où la machine à états du §4, avec sa fenêtre de champ libre obligatoire avant d'accepter un geste, et surtout la désactivation définitive de ce canal dès le départ donné — sinon le cube lui-même relancerait un événement de départ en pleine course.</p>
+        </div></li>
+        <li><span class="n">12</span><div>
+          <h5>Un module détachable doit être retenu et détecté</h5>
+          <p>Un module BLE qui se déclipse à 3 m/s finit sur la piste, et le règlement n'aime pas les pièces qui se détachent. Choisis une embase à verrouillage, ou ajoute une vis. Et câble une broche de présence : le firmware doit savoir si le module est là, pour ne pas passer son temps à attendre des réponses UART qui ne viendront jamais.</p>
+        </div></li>
+        <li><span class="n">13</span><div>
+          <h5>Les modules ToF du commerce se prêtent mal au montage définitif</h5>
+          <p>Trois obstacles, dans cet ordre. Tous les VL53L1X sortent d'usine avec <strong>la même adresse I²C</strong> : sans une broche <span class="mono">XSHUT</span> accessible sur chaque module, impossible de les réadresser au démarrage — et beaucoup de petits modules ne la sortent pas. C'est le premier point à vérifier sur les photos d'une annonce. Chacun embarque ensuite ses <strong>propres résistances de tirage</strong>, qui se mettent en parallèle et alourdissent le bus. Et l'<strong>orientation</strong>, enfin, fait la qualité de la mesure : un module sur barrette se vrille, un composant réflowé sur un cuivre à 90° ne bouge pas. Contrôle aussi qu'on t'a bien vendu un VL53L1X : la lecture 16 bits du registre <span class="mono">0x010F</span> doit renvoyer <span class="mono">0xEACC</span>, ce qui écarte le cas classique du VL53L0X — sans distinguer pour autant les VL53L1CB et VL53L4CD, qui répondent la même chose. Le module reste excellent sur breadboard pour écrire le pilote ; le robot veut le composant nu.</p>
+        </div></li>
+        <li><span class="n">14</span><div>
+          <h5>Distinguer un croisement d'une marque</h5>
+          <p>Tourner à un croisement invalide l'essai. Les deux motifs sont noirs et perpendiculaires ; ce qui les sépare, c'est l'étendue latérale — toute la barrette pour un croisement, le seul quart droit pour une marque. La barrette symétrique n'est donc pas un luxe, c'est ce qui rend la discrimination possible.</p>
+        </div></li>
+        <li><span class="n">15</span><div>
+          <h5>Le freinage renvoie de l'énergie dans le pack</h5>
+          <p>Freiner de 3 m/s à l'arrêt en moins d'un mètre, avec des ponts en H en mode frein, transforme les moteurs en générateurs. Si le pack est plein, la tension de bus monte. Prévois un écrêteur TVS vers 9 V sur VBAT et un volume de condensateurs suffisant — sinon c'est le TPS62933 ou un DRV8874 qui absorbe la surtension, une fois.</p>
+        </div></li>
+        <li><span class="n">16</span><div>
+          <h5>Le BQ25887 démarre sur un profil Li-ion</h5>
+          <p>Ses valeurs par défaut visent du Li-ion. Appliquées à du LiFePO4, elles chargent au-delà de 4 V par cellule. Le firmware doit écrire <span class="mono">VCELLREG</span> à 3,60 V avant toute charge, et la broche <span class="mono">CD</span> doit maintenir le chargeur inhibé tant que cette écriture n'est pas relue et confirmée. Prévois aussi la CTN sur le pack pour l'entrée <span class="mono">TS</span>, ou le pont de résistances qui la neutralise.</p>
+        </div></li>
+        <li><span class="n">17</span><div>
+          <h5>La jauge de batterie par tension ne marche pas en LiFePO4</h5>
+          <p>La courbe de décharge du LiFePO4 est extrêmement plate : entre 90 % et 20 % de charge, la tension bouge de quelques dizaines de millivolts, noyés dans la chute due au courant moteur. Il faut intégrer le courant — ce que permettent les sorties <span class="mono">IPROPI</span> des drivers et le shunt d'entrée. Sans ça, tu ne sauras jamais s'il te reste un tour.</p>
+        </div></li>
+        <li><span class="n">18</span><div>
+          <h5>Les circuits de protection 2S du commerce sont calibrés Li-ion</h5>
+          <p>Les PCM courants (type HY2120) coupent en surtension vers 4,25 V et en sous-tension vers 2,4 V par cellule : ces seuils n'ont aucun sens pour du LiFePO4, dont la plage utile est 2,5–3,65 V. Achète un pack dont le PCM est réellement prévu pour du LiFePO4, ou traite la sous-tension côté firmware avec une coupure et une alarme sonore.</p>
+        </div></li>
+        <li><span class="n">19</span><div>
+          <h5>Chien de garde et état de repli</h5>
+          <p>Un robot qui plante à 3 m/s finit dans les gradins. Active l'IWDG, et fais en sorte que le <span class="mono">HardFault</span> comme le débordement de watchdog forcent <span class="mono">nSLEEP</span> à 0 avant tout redémarrage. Lis <span class="mono">nFAULT</span> des drivers et traite-le : surintensité, surchauffe et sous-tension y remontent.</p>
+        </div></li>
+        <li><span class="n">20</span><div>
+          <h5>Tu n'avais pas prévu de mesurer le courant moteur</h5>
+          <p>C'est gratuit avec le DRV8874 — une résistance sur <span class="mono">IPROPI</span> et une voie ADC — et ça donne trois choses : la détection de calage, une image directe du couple pour l'antipatinage, et la coulométrie du point précédent.</p>
+        </div></li>
+        <li><span class="n">21</span><div>
+          <h5>L'empreinte Tag-Connect « FP » traverse la carte</h5>
+          <p>La variante à pattes de positionnement exige trois trous non métallisés traversants et une zone d'exclusion des deux côtés du PCB — pas seulement en face avant. Réserve aussi le dégagement mécanique en dessous : les pattes dépassent sous la carte, et un composant placé là empêche le câble de se clipser.</p>
+        </div></li>
+        <li><span class="n">22</span><div>
+          <h5>Le filtrage des moteurs</h5>
+          <p>Un moteur à charbons est un générateur d'impulsions large bande. 100 nF X7R aux bornes de chaque moteur, fils d'alimentation torsadés, et retour de masse puissance ramené en étoile au point d'entrée batterie — pas à travers le plan analogique. Sinon le hachage remonte dans les ADC et fait planter le bus I²C des télémètres.</p>
+        </div></li>
+        <li><span class="n">23</span><div>
+          <h5>La thermique du DRV8874</h5>
+          <p>200 mΩ à 3 A continus font près de 2 W par pont. Le pad thermique doit être cousu de vias vers un plan de cuivre, et pas posé sur un îlot isolé — sinon la protection thermique coupera le moteur en fin de ligne droite, au pire moment.</p>
+        </div></li>
+        <li><span class="n">24</span><div>
+          <h5>Le connecteur d'équilibrage</h5>
+          <p>Une embase JST-XH 3 points sur les points milieux du pack permet de charger avec un chargeur externe, de mesurer chaque cellule et de rattraper un déséquilibre. Le règlement autorise le changement de batterie en échange standard pendant les trois minutes : prévois donc au moins deux packs et une connectique détrompée.</p>
+        </div></li>
+        <li><span class="n">25</span><div>
+          <h5>Protection ESD et tenue de la languette télémètres</h5>
+          <p>USBLC6-2SC6 sur D+/D− et sur VBUS. Quant à la languette verticale des télémètres : soudée seulement par sa rangée de pastilles, c'est une poutre en porte-à-faux au point le plus exposé du robot. Ajoute deux équerres, ou des pastilles de renfort mécanique aux extrémités, sinon le premier contact avec le cube la décollera — et le règlement interdit déjà ce contact, mais les essais libres, non.</p>
+        </div></li>
+      </ul>
+
+      <div class="grphead"><h3>Chrono</h3><span class="bar"></span></div>
+      <ul class="finds">
+        <li><span class="n">26</span><div>
+          <h5>L'appui aérodynamique reste la contrainte dominante</h5>
+          <p>Tu as bien fait de prévoir la turbine : dans un virage de 20 cm de rayon, 2,5 m/s demandent 3,2 g de force latérale, et aucun pneu de robot ne fournit ça sur une bâche. Mais garde en tête que c'est un système à part entière, pas un accessoire — il a sa propre séquence d'armement, son propre budget d'énergie, et il déplace le centre de gravité. Traite-le comme un second actionneur, avec sa consigne dans la boucle de contrôle : l'appui n'a d'intérêt qu'en virage, et le faire tourner à fond en ligne droite ne fait que vider le pack.</p>
+        </div></li>
+        <li><span class="n">27</span><div>
+          <h5>La turbine redimensionne le pack</h5>
+          <p>Cinq à quinze ampères en continu, soit plus que les deux moteurs réunis. Un accu de réception 2S LiFePO4 de 450 mAh est hors sujet : vise 1000 mAh et 15 C au minimum. Et le 2S LiFePO4 plafonne à 7,3 V là où les ensembles ESC et brushless du commerce sont calibrés pour du 2S LiPo à 8,4 V : la poussée réelle sera inférieure à celle du catalogue. Mesure-la avant de figer la mécanique, pas après.</p>
+        </div></li>
+        <li><span class="n">28</span><div>
+          <h5>Le couple disponible plafonne ton chrono avant l'électronique</h5>
+          <p>Un GM12-N20 1:30 sous 6 V tourne autour de 1000 tr/min, soit environ 1,4 m/s avec des roues de 27 mm. Sur une ligne droite de 6 m, c'est très loin du potentiel. Si tu vises 2,5 m/s, il faut un rapport plus court ou des roues plus grandes, et alors le courant grimpe : le DRV8874 (6 A crête) et le pack doivent suivre, avec une capacité de décharge d'au moins 15 C.</p>
+        </div></li>
+        <li><span class="n">29</span><div>
+          <h5>Les encodeurs ne détectent pas le dérapage</h5>
+          <p>C'est le point le plus contre-intuitif de ton cahier des charges. Quand les deux roues glissent ensemble, l'odométrie reste parfaitement cohérente — et fausse. Il faut une référence indépendante des roues : le gyroscope, dont le lacet mesuré est comparé au lacet odométrique (v<sub>d</sub> − v<sub>g</sub>)/e. L'écart <em>est</em> le dérapage. Encore mieux si tu veux la vitesse sol réelle : un capteur de flux optique (PMW3901) sous le châssis — à valider côté stock JLCPCB.</p>
+        </div></li>
+        <li><span class="n">30</span><div>
+          <h5>Aucun ToF ne peut asservir, et c'est ce qui dicte le choix des capteurs</h5>
+          <p>Un VL53L1X avec un budget de 20 ms plafonne à 50 Hz. À 3 m/s cela fait 6 cm entre deux mesures. Deux conséquences opposées. Pour le cube, ce n'est pas grave : on le détecte loin, en mode longue portée, et on déclenche une trajectoire d'évitement pré-calculée en odométrie plutôt qu'une boucle fermée — le règlement interdit tout contact, prends de la marge. Pour le mur de la Q1, en revanche, c'est rédhibitoire : suivre un mur est un asservissement, et 50 Hz ne suffisent pas à tenir un virage de 20 cm de rayon. D'où la voie analogique rapide de ce côté-là.</p>
+        </div></li>
+        <li><span class="n">31</span><div>
+          <h5>La géométrie du ToF gauche décide la Q1</h5>
+          <p>Le mur fait 10 cm de haut et se trouve à 15 cm à gauche du centre virtuel de la piste absente. Le télémètre latéral doit donc viser entre 40 et 50 mm du sol, avec un champ qui ne déborde ni au-dessus du mur ni sur la bâche. Et comme la piste manque sur tout un virage à 20 cm de rayon, il faut une odométrie propre pour tenir la trajectoire entre deux mesures.</p>
+        </div></li>
+        <li><span class="n">32</span><div>
+          <h5>L'apprentissage du circuit, autorisé et rentable</h5>
+          <p>Le règlement dit explicitement que le robot peut mémoriser le tracé. C'est le plus gros levier de chrono du concours : au tour d'apprentissage on relève courbure et distance, puis on calcule un profil de vitesse qui freine <em>avant</em> le virage plutôt que dedans. Cela suppose une mémoire non volatile qui survit au changement de batterie, d'où la flash SPI.</p>
+        </div></li>
+        <li><span class="n">33</span><div>
+          <h5>Le BLE ne suffira pas pour les traces</h5>
+          <p>Vingt signaux à 1 kHz en 16 bits représentent 40 ko/s. Le BLE en délivre quelques-uns. La chaîne réaliste est : enregistrement en flash SPI pendant la tentative, puis vidage par USB CDC entre deux essais. Le BLE reste utile pour la supervision légère et les réglages, pas pour le log.</p>
+        </div></li>
+        <li><span class="n">34</span><div>
+          <h5>La hauteur de la barrette doit être réglable</h5>
+          <p>L'ITR8307 travaille au mieux entre 2 et 4 mm de la surface. Sur une bâche qui ondule, c'est peu — et si les capteurs sont sur la carte mère, cette hauteur n'est plus réglable du tout. Deux compensations : des trous oblongs sur les supports moteurs, pour régler l'assiette du robot entier ; et un courant d'émetteur piloté en logiciel, qui rattrape une hauteur trop grande sans toucher au matériel. Mesure la garde au sol réelle de ton châssis <em>avant</em> de router.</p>
+        </div></li>
+        <li><span class="n">35</span><div>
+          <h5>Prévois une voie « ambiante seule » dans chaque cycle</h5>
+          <p>Le chapitre 10 annonce un éclairage non uniforme et variable. La mesure émetteurs éteints, soustraite de la mesure éclairée, rend le capteur indifférent à l'ambiante — et son niveau brut te dit en plus si tu passes sous un projecteur, information exploitable pour resserrer les seuils.</p>
+        </div></li>
+        <li><span class="n">36</span><div>
+          <h5>Masse et centre de gravité</h5>
+          <p>La batterie est la masse dominante. Placée au-dessus de l'essieu moteur, elle charge les roues motrices et améliore l'adhérence ; placée à l'avant, elle allège la traction et fait sous-virer. Décide-le au niveau de l'implantation du PCB, pas après — le connecteur d'accu et le pack doivent avoir leur place réservée dès le placement.</p>
+        </div></li>
+        <li><span class="n">37</span><div>
+          <h5>L'étalonnage du diamètre de roue</h5>
+          <p>L'usure et le nettoyage des pneus, autorisés pendant les tentatives, changent le diamètre effectif de quelques pourcents. Toute l'odométrie et la carte apprise en dépendent. Prévois une routine d'étalonnage dans le menu OLED : le robot roule une distance connue, tu corriges le facteur d'échelle.</p>
+        </div></li>
+      </ul>
+    </section>
+
+    <!-- ============ 9 ============ -->
+    <section id="s9">
+      <div class="sechead"><span class="num">§9</span><h2>Prochaines étapes</h2></div>
+      <p>Dans cet ordre, parce que chaque étape verrouille des choix pour la suivante.</p>
+      <ol>
+        <li><strong>Figer la motorisation et la turbine ensemble.</strong> Vitesse cible, rapport de réduction, diamètre de roue, courant crête de traction, et poussée d'appui mesurée sous 6,4 V et non sous 8,4 V. C'est ce trio qui dimensionne le pack, les drivers et les pistes de puissance — tout le reste en découle.</li>
+        <li><strong>Écrire aux organisateurs</strong> au sujet du départ par télémètre. La réponse arrive vite et décide si le bouton START reste un secours ou devient le moyen principal.</li>
+        <li><strong>Valider le brochage sous CubeMX.</strong> Le mapping exact des canaux ADC est le seul point du §6 qui peut te réserver une surprise : vérifie que les douze voies de la barrette tombent bien sur ADC1 et ADC2, et les quatre de surveillance sur ADC3.</li>
+        <li><strong>Mesurer la garde au sol du châssis existant</strong>, roues et supports moteurs montés. C'est ce chiffre, et lui seul, qui autorise ou non la barrette de ligne sur la carte mère.</li>
+        <li><strong>Prototyper la chaîne optique.</strong> Une carte d'essai à trois ou quatre ITR8307, balayée en hauteur de 2 à 8 mm, avec la soustraction d'ambiante en place. Tu y valideras la plage de fonctionnement, le pas et le rapport signal sur bruit — les trois inconnues réelles du projet. En parallèle, un module VL53L1X du commerce sur breadboard suffit pour écrire et valider le pilote et la stratégie de télémétrie.</li>
+        <li><strong>Trancher le connecteur de debug.</strong> TC2050 en 2×05, ou TC2030 rebroché en VTref / SWDIO / NRST / SWCLK / GND / SWO. Ce choix conditionne la place autour et n'est plus modifiable après le routage.</li>
+        <li><strong>Refaire un passage stock JLCPCB</strong> juste avant de commander, et remplir les références marquées « à vérifier » au §7.</li>
+      </ol>
+      <div class="note">
+        <span class="lbl">Sur la disponibilité</span>
+        <p>Les références et prix vérifiés le sont à la date de ce document. Les pièces les plus exposées à une rupture sont le STM32H723VGT6 et les VL53L1X ; garde en tête que le STM32H750VBT6 est une roue de secours pin-compatible en LQFP100, au prix d'une flash interne réduite à 128 Ko — ce qui rend la flash SPI externe obligatoire au lieu d'optionnelle.</p>
+      </div>
+    </section>
+
+    <footer>
+      Sources vérifiées le 30 août 2026 — jlcpcb.com/partdetail (STM32H723VGT6 C730142, DRV8874PWPR C1855818, CH224K C970725) · lcsc.com (VL53L1CBV0FY/1 C2970716, LSM6DSOTR C2655100, BQ25887RGER C2761614, ITR8307/S17/TR8(B) C81632, TPS62933DRLR C3200405, TYPE-C-31-M-12 C165948) · ti.com/lit/ds/symlink/bq25887.pdf · st.com — datasheet STM32H723VG DS13313 · Règlement TNRS Formule 1 v2.11, F. Giamarchi et J.-R. Vaillé.
+    </footer>
+
+  </main>
+</div>
+</body>
+</html>
