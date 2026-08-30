@@ -432,15 +432,15 @@
           <thead><tr><th>Article</th><th>Texte</th><th>Conséquence matérielle</th></tr></thead>
           <tbody>
             <tr><td class="m">Ch. 2</td><td>Interrupteur de mise en marche et d'arrêt facile d'accès</td><td>Interrupteur mécanique 5 A dans la ligne batterie, accessible robot posé — pas seulement le connecteur d'accu</td></tr>
-            <tr><td class="m">Ch. 2</td><td>Départ par interrupteur, bouton poussoir ou jack</td><td>Énumération limitative : le geste devant le télémètre n'y figure pas. Bouton START physique conservé comme moyen conforme, geste devant le ToF en complément — voir §8, point 02</td></tr>
+            <tr><td class="m">Ch. 2</td><td>Départ par interrupteur, bouton poussoir ou jack</td><td>Énumération limitative : le geste devant le télémètre n'y figure pas. Bouton START physique conservé comme moyen conforme, geste devant le télémètre en complément — voir §8, point 02</td></tr>
             <tr><td class="m">Ch. 2</td><td>Moyens de communication inhibés au moment du départ</td><td>Coupure d'alimentation matérielle du module BLE + LED témoin visible du jury</td></tr>
             <tr><td class="m">Ch. 3</td><td>Marques départ/arrivée à droite, 19 × 50 mm, à 40 mm du centre de piste</td><td>La barrette doit couvrir au moins ±55 mm, sinon le robot ne voit pas l'arrivée</td></tr>
             <tr><td class="m">Ch. 3</td><td>Croisements perpendiculaires de deux segments</td><td>Barrette symétrique pour distinguer « toute la largeur noire » (croisement) de « côté droit seul » (marque)</td></tr>
             <tr><td class="m">Ch. 5 art. 1</td><td>Calibration et configuration sans outillage, seul un petit tournevis accepté</td><td>IHM embarquée obligatoire : boutons + OLED + buzzer, réglages en flash</td></tr>
             <tr><td class="m">Ch. 5 art. 1</td><td>Changement de batterie en échange standard pendant les 3 minutes</td><td>Connecteur d'accu accessible et détrompé, pack interchangeable, calibration non perdue au débranchement</td></tr>
             <tr><td class="m">Ch. 5 art. 2</td><td>Franchir l'arrivée, s'arrêter seul en moins de 1 m, rester immobile 5 s</td><td>Freinage actif à pleine puissance + détection d'immobilité par IMU</td></tr>
-            <tr><td class="m">Ch. 7 (Q2)</td><td>Cube de 100 mm visible par capteurs de distance infrarouge, contact interdit</td><td>Télémétrie ToF avant + diagonales, détection à &gt; 60 cm pour avoir le temps d'esquiver</td></tr>
-            <tr><td class="m">Ch. 8 (Q1)</td><td>Piste absente dans un virage à gauche, mur de 10 cm de haut à 15 cm à gauche du centre virtuel</td><td>ToF latéral gauche monté à 40–50 mm du sol, plus odométrie fiable pour tenir le virage sans ligne</td></tr>
+            <tr><td class="m">Ch. 7 (Q2)</td><td>Cube de 100 mm visible par capteurs de distance infrarouge, contact interdit</td><td>Télémétrie avant et diagonale, détection à &gt; 60 cm pour avoir le temps d'esquiver</td></tr>
+            <tr><td class="m">Ch. 8 (Q1)</td><td>Piste absente dans un virage à gauche, mur de 10 cm de haut à 15 cm à gauche du centre virtuel</td><td>Télémètre latéral gauche visé à l'horizontale à 45 mm du sol, plus odométrie fiable pour tenir le virage sans ligne</td></tr>
             <tr><td class="m">Ch. 10</td><td>Éclairage non uniforme et variable, flashs interdits</td><td>Émetteurs IR pulsés et soustraction de l'ambiante à chaque cycle — un capteur en continu est disqualifiant en pratique</td></tr>
             <tr><td class="m">Ch. 5 art. 1</td><td>Le robot peut apprendre le tracé par lui-même</td><td>Mémoire non volatile pour la carte du circuit et le profil de vitesse — le plus gros levier de chrono</td></tr>
           </tbody>
@@ -466,8 +466,6 @@
       </div>
       <h3>Pourquoi pas un F7</h3>
       <p>Le STM32F767 conviendrait fonctionnellement, mais ses ADC sont en 12 bits et plafonnent à 2,4 Méch/s ; la dynamique gagnée par le 16 bits du H7 se paie directement en qualité de position de ligne quand le contraste s'effondre sous éclairage variable (chapitre 10 du règlement). À prix et disponibilité JLCPCB comparables, il n'y a pas de raison de prendre le F7.</p>
-      <h3>Pourquoi pas plus petit</h3>
-      <p>Ton ancien projet visait un STM32G431 en LQFP32 : 27 broches utilisables, c'est trop juste dès qu'on ajoute la télémétrie, une flash externe, l'USB et l'IHM. Le H723 en LQFP100 laisse une dizaine d'E/S de réserve après affectation complète — de la marge pour la révision 2.</p>
       <div class="note">
         <span class="lbl">Piège H7 classique</span>
         <p>Le H7 embarque un régulateur à découpage interne (SMPS) en plus du LDO. Le câblage de <span class="mono">VDDSMPS / VLXSMPS / VFBSMPS</span> et le choix du mode d'alimentation doivent être figés au schéma : un H7 mal strappé ne démarre pas, ou démarre puis se bloque au premier passage en VOS0. Suis à la lettre la note d'application AN5312 pour le mode « LDO seul », le plus simple ici.</p>
@@ -495,8 +493,8 @@
                 <text x="26" y="70" font-size="10.5" fill="var(--muted)">2 bancs d'émetteurs pulsés</text>
 
                 <rect x="14" y="94" width="222" height="52" rx="3" fill="var(--surface-2)" stroke="var(--rule-strong)"/>
-                <text x="26" y="114" font-size="12.5" font-weight="600" fill="var(--ink)">Télémètres ToF</text>
-                <text x="26" y="131" font-size="10.5" fill="var(--muted)">VL53L1X et voie analogique codée</text>
+                <text x="26" y="114" font-size="12.5" font-weight="600" fill="var(--ink)">Télémètres analogiques</text>
+                <text x="26" y="131" font-size="10.5" fill="var(--muted)">3 × OPV302 + BPW77 · détection synchrone</text>
 
                 <rect x="14" y="160" width="222" height="52" rx="3" fill="var(--surface-2)" stroke="var(--rule-strong)"/>
                 <text x="26" y="180" font-size="12.5" font-weight="600" fill="var(--ink)">Centrale inertielle</text>
@@ -508,7 +506,7 @@
 
                 <rect x="14" y="292" width="222" height="52" rx="3" fill="var(--surface-2)" stroke="var(--rule-strong)"/>
                 <text x="26" y="312" font-size="12.5" font-weight="600" fill="var(--ink)">Mesures de bord</text>
-                <text x="26" y="329" font-size="10.5" fill="var(--muted)">VBAT · IPROPI ×2 · NTC pack</text>
+                <text x="26" y="329" font-size="10.5" fill="var(--muted)">VBAT · IPROPI ×2 · via mux 8:1</text>
 
                 <rect x="14" y="358" width="222" height="52" rx="3" fill="var(--surface-2)" stroke="var(--rule-strong)"/>
                 <text x="26" y="378" font-size="12.5" font-weight="600" fill="var(--ink)">Commandes</text>
@@ -523,12 +521,12 @@
               <line x1="348" y1="98" x2="562" y2="98" stroke="var(--rule)"/>
               <g font-family="IBM Plex Mono, monospace" font-size="10.5" fill="var(--ink-2)">
                 <text x="348" y="120">ADC1 + ADC2 · 16 bits · dual + DMA</text>
-                <text x="348" y="141">ADC3 · 12 bits · surveillance</text>
+                <text x="348" y="141">ADC3 · démodulation synchrone</text>
                 <text x="348" y="162">TIM1 · 4 sorties PWM 25 kHz</text>
                 <text x="348" y="183">TIM3 / TIM8 · mode encodeur</text>
                 <text x="348" y="204">TIM6 · base de temps 2 kHz</text>
                 <text x="348" y="225">TIM17 · buzzer</text>
-                <text x="348" y="246">I2C1 400 kHz · I2C2 400 kHz</text>
+                <text x="348" y="246">I2C2 400 kHz · afficheur</text>
                 <text x="348" y="267">SPI2 · SPI3</text>
                 <text x="348" y="288">USART1</text>
                 <text x="348" y="309">USB OTG FS</text>
@@ -585,10 +583,10 @@
               </g>
               <g font-family="IBM Plex Mono, monospace" font-size="9" fill="var(--accent)" text-anchor="middle">
                 <text x="282" y="43">ADC ×12</text>
-                <text x="282" y="114">I2C1</text>
+                <text x="282" y="114">ADC3</text>
                 <text x="282" y="180">SPI2</text>
                 <text x="282" y="246">TIM3/8</text>
-                <text x="282" y="312">ADC3 ×4</text>
+                <text x="282" y="312">ADC1/2</text>
                 <text x="282" y="378">GPIO</text>
               </g>
 
@@ -645,13 +643,14 @@
 
               <rect x="424" y="118" width="152" height="9" fill="var(--ink)" opacity=".82"/>
               <g fill="var(--accent)">
-                <rect x="428" y="113" width="13" height="19" rx="2"/>
-                <rect x="487" y="113" width="13" height="19" rx="2"/>
-                <rect x="546" y="113" width="13" height="19" rx="2"/>
+                <rect x="424" y="114" width="9" height="17" rx="1.5"/><rect x="436" y="114" width="9" height="17" rx="1.5"/>
+                <rect x="483" y="114" width="9" height="17" rx="1.5"/><rect x="495" y="114" width="9" height="17" rx="1.5"/>
+                <rect x="542" y="114" width="9" height="17" rx="1.5"/><rect x="554" y="114" width="9" height="17" rx="1.5"/>
               </g>
+              <text x="500" y="146" font-size="8.5" text-anchor="middle" fill="var(--muted)" font-family="IBM Plex Mono, monospace">3 stations émetteur + récepteur</text>
               <g stroke="var(--accent)" fill="none" marker-end="url(#aim)" stroke-width="1.2">
-                <path d="M428,122 L392,122"/>
-                <path d="M490,111 L466,84"/>
+                <path d="M424,122 L388,122"/>
+                <path d="M489,111 L465,84"/>
                 <path d="M552,111 L552,80"/>
               </g>
 
@@ -706,7 +705,7 @@
                 <text x="252" y="160" font-size="10" fill="var(--muted)">sécable, ressoudée à 90°</text>
               </g>
               <g font-family="IBM Plex Sans, sans-serif" font-size="10" fill="var(--muted)">
-                <text x="666" y="80">visées : latéral gauche, diagonale, avant</text>
+                <text x="666" y="80">visées : latéral gauche 90°, diagonale 45°, avant 0°</text>
               </g>
 
               <g stroke="var(--accent)" fill="none" marker-start="url(#dim)" marker-end="url(#dim)">
@@ -726,7 +725,7 @@
       </figure>
 
       <h3>Hauteurs de montage</h3>
-      <p>C'est l'élévation qui décide si la barrette peut vivre sur la carte mère, et pourquoi les télémètres ne le peuvent pas. Une relation résume tout : <strong>garde au sol = rayon de roue − hauteur de l'axe moteur au-dessus du dessous de carte</strong>. Les roues retenues sont des Pololu 40 × 7, soit un rayon de 20 mm. Le support N20 nu place l'arbre à 11 mm au-dessus du dessous de carte, ce qui donnerait 9 mm de garde — bien trop pour l'ITR8307. La correction est mécanique et se chiffre exactement : <strong>4 mm d'entretoises sur mesure</strong> sous le support portent l'axe à 15 mm, et la garde retombe à 5 mm. C'est le bon endroit pour régler, parce qu'une entretoise se retaille en dix minutes là où un PCB se recommande.</p>
+      <p>C'est l'élévation qui décide si la barrette peut vivre sur la carte mère, et pourquoi les télémètres, eux, doivent monter. Une relation résume tout : <strong>garde au sol = rayon de roue − hauteur de l'axe moteur au-dessus du dessous de carte</strong>. Les roues retenues sont des Pololu 40 × 7, soit un rayon de 20 mm. Le support N20 nu place l'arbre à 11 mm au-dessus du dessous de carte, ce qui donnerait 9 mm de garde — bien trop pour l'ITR8307. La correction est mécanique et se chiffre exactement : <strong>4 mm d'entretoises sur mesure</strong> sous le support portent l'axe à 15 mm, et la garde retombe à 5 mm. C'est le bon endroit pour régler, parce qu'une entretoise se retaille en dix minutes là où un PCB se recommande.</p>
       <figure>
         <div class="figwrap">
           <svg viewBox="0 0 1000 560" role="img" aria-label="Élévations : vue de profil avec les hauteurs de capteurs, et vue de face montrant le mur de la qualification Q1">
@@ -737,7 +736,7 @@
             </defs>
             <g font-family="IBM Plex Sans, sans-serif">
 
-              <text x="60" y="34" font-size="12" font-weight="600" fill="var(--ink)" font-family="IBM Plex Sans Condensed, sans-serif">PROFIL — le sol entre dans le champ du télémètre à 187 mm</text>
+              <text x="60" y="34" font-size="12" font-weight="600" fill="var(--ink)" font-family="IBM Plex Sans Condensed, sans-serif">PROFIL — faisceau collimaté, la hauteur ne dépend plus que de la tolérance de visée</text>
 
               <line x1="60" y1="250" x2="940" y2="250" stroke="var(--ink)" stroke-width="1.4"/>
               <text x="66" y="264" font-size="9.5" fill="var(--muted)" font-family="IBM Plex Mono, monospace">bâche</text>
@@ -746,14 +745,16 @@
               <rect x="652" y="240" width="160" height="3.5" fill="var(--ink)"/>
               <rect x="563" y="243.5" width="37" height="3" fill="var(--accent)"/>
               <rect x="606" y="187" width="4" height="53" fill="var(--ink)" opacity=".82"/>
-              <rect x="600" y="179" width="15" height="14" rx="2" fill="var(--accent)"/>
+              <rect x="598" y="179" width="8" height="14" rx="1.5" fill="var(--accent)"/>
+              <rect x="608" y="179" width="8" height="14" rx="1.5" fill="var(--accent)"/>
 
               <g stroke="var(--accent)" stroke-dasharray="4 4" fill="none" opacity=".75">
-                <path d="M606,186 L344,250"/>
-                <path d="M606,186 L344,122"/>
+                <path d="M598,186 L300,197"/>
+                <path d="M598,186 L300,175"/>
               </g>
-              <circle cx="344" cy="250" r="4" fill="var(--accent)"/>
-              <text x="336" y="242" font-size="10" text-anchor="end" fill="var(--accent)" font-family="IBM Plex Mono, monospace">187 mm</text>
+              <path d="M598,186 L296,186" stroke="var(--accent)" fill="none" stroke-width="1.4"/>
+              <text x="290" y="182" font-size="10" text-anchor="end" fill="var(--accent)" font-family="IBM Plex Mono, monospace">± 2° de visée</text>
+              <text x="290" y="196" font-size="9.5" text-anchor="end" fill="var(--muted)" font-family="IBM Plex Mono, monospace">au-dessus du sol jusqu'à 1,3 m</text>
 
               <circle cx="756" cy="222" r="28" fill="var(--rule)" stroke="var(--rule-strong)"/>
               <rect x="716" y="214" width="60" height="26" rx="2" fill="var(--surface)" stroke="var(--rule-strong)"/>
@@ -787,16 +788,15 @@
               <rect x="526" y="464" width="10" height="56" rx="3" fill="var(--rule)" stroke="var(--rule-strong)"/>
               <rect x="704" y="464" width="10" height="56" rx="3" fill="var(--rule)" stroke="var(--rule-strong)"/>
               <rect x="540" y="457" width="5" height="56" fill="var(--ink)" opacity=".82"/>
-              <rect x="532" y="450" width="15" height="14" rx="2" fill="var(--accent)"/>
+              <rect x="530" y="450" width="8" height="14" rx="1.5" fill="var(--accent)"/>
+              <rect x="540" y="450" width="8" height="14" rx="1.5" fill="var(--accent)"/>
 
               <g stroke="var(--accent)" fill="none" opacity=".8">
-                <path d="M540,457 L410,426"/>
-                <path d="M540,457 L410,488"/>
+                <path d="M530,457 L410,452"/>
+                <path d="M530,457 L410,462"/>
               </g>
-              <path d="M410,426 L410,488" stroke="var(--accent)" stroke-width="2" fill="none"/>
-              <g stroke="var(--accent)" stroke-dasharray="3 4" fill="none" opacity=".35">
-                <path d="M410,488 L278,520"/>
-              </g>
+              <path d="M530,457 L410,457" stroke="var(--accent)" stroke-width="1.4" fill="none"/>
+              <path d="M410,451 L410,463" stroke="var(--accent)" stroke-width="3" fill="none"/>
 
               <g stroke="var(--accent)" fill="none" marker-start="url(#dim2)" marker-end="url(#dim2)">
                 <path d="M410,546 L620,546"/>
@@ -805,13 +805,13 @@
               <g font-family="IBM Plex Mono, monospace" font-size="10" fill="var(--accent)">
                 <text x="515" y="540" text-anchor="middle">150 mm</text>
                 <text x="362" y="454" text-anchor="end">100 mm</text>
-                <text x="430" y="418">faisceau : 62 mm de haut sur la cible</text>
+                <text x="424" y="430">tache de quelques millimètres</text>
               </g>
               <text x="620" y="546" font-size="9.5" text-anchor="middle" fill="var(--muted)" font-family="IBM Plex Mono, monospace">axe de la piste absente</text>
             </g>
           </svg>
         </div>
-        <figcaption>Fig. 3 — À 45 mm de haut, le cône de 27° du télémètre ne touche la bâche qu'au-delà de 187 mm : le mur de la Q1, à 150 mm, est intercepté avant. Descendre le capteur à 20 mm ramènerait ce seuil à 83 mm et rendrait la mesure inutilisable.</figcaption>
+        <figcaption>Fig. 3 — Un émetteur collimaté visé parallèlement au sol ne l'éclaire jamais, et la détection synchrone ignore ce qui n'est pas modulé : la contrainte de hauteur ne vient donc plus de l'ouverture du capteur mais de la tolérance de visée. À 45 mm et ± 2°, le faisceau reste au-dessus de la bâche jusqu'à 1,3 m — au-delà de la portée utile.</figcaption>
       </figure>
     </section>
 
@@ -832,11 +832,11 @@
           <thead><tr><th>Capteur</th><th class="m">Hauteur voulue</th><th>Raison</th></tr></thead>
           <tbody>
             <tr><td>ITR8307, barrette de ligne</td><td class="m">2 à 4 mm</td><td>Au-delà, le signal réfléchi s'effondre et le contraste noir/blanc devient inexploitable</td></tr>
-            <tr><td>VL53L1X, télémètres</td><td class="m">40 à 50 mm</td><td>Champ de vision de 27° : à 36 mm de haut, le cône rase déjà le sol à 150 mm — exactement la distance du mur de la Q1</td></tr>
+            <tr><td>Télémètres analogiques</td><td class="m">40 à 50 mm</td><td>Le faisceau est visé parallèlement au sol : la hauteur ne couvre pas une ouverture mais la tolérance de visée, ± 2° sur toute la portée utile</td></tr>
           </tbody>
         </table>
       </div>
-      <p>Les figures 2 et 3 ci-dessus montrent la conséquence géométrique. La conclusion tient en deux points. <strong>La barrette de ligne passe sur la carte mère</strong> si le dessous de celle-ci se situe entre 2 et 6 mm du sol — ce qui dépend entièrement du diamètre de roue et de la façon dont le support moteur est fixé, et se mesure en une après-midi avec le châssis existant. <strong>Les télémètres, eux, resteront sur une carte verticale</strong> quoi qu'il arrive : posés dans le plan de la carte mère, ils passeraient leur temps à mesurer la bâche.</p>
+      <p>Les figures 2 et 3 ci-dessus montrent la conséquence géométrique. La conclusion tient en deux points. <strong>La barrette de ligne passe sur la carte mère</strong> si le dessous de celle-ci se situe entre 2 et 6 mm du sol — ce qui dépend entièrement du diamètre de roue et de la façon dont le support moteur est fixé, et se mesure en une après-midi avec le châssis existant. <strong>Les télémètres, eux, resteront sur une carte verticale</strong> quoi qu'il arrive : il faut viser l'horizontale à 45 mm du sol, et le mur de la Q1 ne fait que 100 mm de haut.</p>
       <div class="note">
         <span class="lbl">L'astuce qui garde un seul fichier de fabrication</span>
         <p>Dessine la carte verticale des télémètres comme un <strong>appendice sécable du même PCB</strong>, relié par une amorce de rupture, avec une rangée de pastilles à cheval sur la cassure. Tu commandes un seul design, JLCPCB assemble tout en une passe, tu casses la languette et tu la ressoudes à 90° sur la carte mère. Un fichier, une commande, une facture de mise en route — et les télémètres à la bonne hauteur, orientés précisément.</p>
@@ -846,13 +846,13 @@
       <div class="cards">
         <div class="card">
           <h4>Télémétrie</h4>
-          <p class="part">Trois visées, deux technologies possibles</p>
-          <p>Avant pour voir venir le cube, avant-gauche à 45° pour anticiper la disparition de la piste, latéral gauche à 90° pour asservir sur le mur de la Q1. Trois visées, pas cinq. Le latéral est analogique à détection synchrone ; l'avant se joue entre VL53L1X et analogique, arbitrage détaillé plus bas.</p>
+          <p class="part">3 × OPV302 + BPW77 · détection synchrone</p>
+          <p>Avant pour voir venir le cube, avant-gauche à 45° pour anticiper la disparition de la piste, latéral gauche à 90° pour asservir sur le mur de la Q1. Trois stations émetteur–récepteur identiques, sur la languette verticale, à 45 mm du sol.</p>
           <ul>
-            <li>Adresse I²C unique par défaut : une broche <span class="mono">XSHUT</span> par VL53L1X, réadressage au boot</li>
-            <li>Sur languette verticale sécable, à 40–50 mm du sol — plus bas, le cône de 27° rase la bâche</li>
-            <li>Mode long, budget 20 ms → 50 Hz : à 3 m/s cela fait 6 cm entre deux mesures</li>
-            <li>Composant nu réflowé par JLCPCB, pas de module tout fait : c'est l'orientation qui compte, et elle doit être gravée dans le cuivre</li>
+            <li>Émetteurs multiplexés dans le temps : un seul éclaire à la fois, ce qui supprime la diaphonie entre visées et donne au passage une mesure du couplage parasite</li>
+            <li>Intégration adaptée à la cible : 1 ms pour le mur, proche et lumineux, donc 1 kHz d'asservissement ; 10 ms pour le cube, lointain, donc 100 Hz</li>
+            <li>ADC3 leur est dédié en conversion continue, échantillonnage à quatre fois la porteuse</li>
+            <li>Aucun trafic I²C dans la boucle critique</li>
           </ul>
         </div>
         <div class="card">
@@ -988,25 +988,36 @@
         <p>Cette voie ne peut pas se contenter d'un rang dans le balayage à 2 kHz de la barrette : elle réclame une conversion continue et rapide, synchronisée sur l'émetteur. <strong>ADC3 lui est donc dédié</strong>, en conversion continue déclenchée par timer avec DMA circulaire, et la surveillance lente — VBAT et les retours de courant — rejoint le balayage d'ADC1 et ADC2 sur PC0 et PC1, qui acceptent les trois convertisseurs. Répartition à confirmer sous CubeMX.</p>
       </div>
 
-      <h3>Ce qu'il reste à trancher</h3>
-      <p>Avec un mètre de portée démontrée, ta chaîne couvre aussi la détection du cube, et le choix cesse d'être technique pour devenir une préférence d'ingénierie. Les deux arguments qui restent en faveur d'un VL53L1X à l'avant :</p>
-      <ul>
-        <li><strong>Il rend une distance, pas une intensité.</strong> Le seuil de déclenchement de l'esquive ne dépend alors ni de l'albédo du cube — que le règlement ne garantit pas, il promet seulement qu'il sera visible en infrarouge — ni de son angle de présentation. Les essais libres permettent certes de calibrer contre le vrai cube, mais une distance en millimètres se transpose d'une compétition à l'autre, pas un seuil d'intensité.</li>
-        <li><strong>Il coûte 2,86 $ et ne demande aucune conception analogique.</strong> C'est une assurance bon marché sur la fonction qui décide de la Q2.</li>
-      </ul>
-      <p>À l'inverse, une chaîne tout analogique a une vraie cohérence : plus aucun trafic I²C dans la boucle critique, une seule discipline de mesure à maîtriser, et des cadences homogènes. Si tu la retiens, garde la place du VL53L1X en option non montée sur la languette — le remords coûte alors une pose, pas une révision de carte.</p>
+      <h3>Trois stations identiques</h3>
+      <p>Avec un mètre de portée, la même chaîne couvre les trois visées : plus aucun bus I²C dans la boucle critique, une seule discipline de mesure à maîtriser, des cadences homogènes et une seule empreinte à valider. Le point de vigilance qui subsiste est que la mesure reste une <strong>intensité</strong> et non une distance : le seuil de déclenchement de l'esquive dépendra de l'albédo du cube, que le règlement ne garantit pas — il promet seulement qu'il sera « visible » en infrarouge. Les essais libres avant chaque phase servent précisément à l'étalonner contre le vrai obstacle.</p>
       <div class="note">
-        <span class="lbl">Deux réserves qui subsistent, indépendantes du traitement</span>
-        <p><strong>Approvisionnement.</strong> L'OPV302 est un TT Electronics/Optek, les BPW77NA, BPW77NB et BPY 62 des Vishay en boîtier traversant. Aucun des trois n'est probablement dans la bibliothèque JLCPCB, et l'OPV302 coûte à lui seul plusieurs fois le prix d'un VL53L1X. Ils sortent donc de la contrainte « tout chez JLCPCB » que tu t'es fixée : à vérifier au cas par cas, sachant qu'une pose manuelle sur une carte par ailleurs assemblée reste acceptable pour deux composants.</p>
-        <p><strong>Sécurité oculaire.</strong> L'OPV302 émet à 850 nm, invisible, donc sans réflexe de clignement. Sur un stand où juges et spectateurs se penchent au-dessus de la piste, un faisceau collimaté à hauteur de tête impose une vraie analyse de classification, et un boîtier qui la garantit. Le VL53L1X est un module certifié classe 1, ce qui est précisément l'argument qui le fait choisir dans les produits grand public.</p>
+        <span class="lbl">Deux réserves indépendantes du traitement</span>
+        <p><strong>Approvisionnement.</strong> L'OPV302 est un TT Electronics/Optek, les BPW77NA, BPW77NB et BPY 62 des Vishay en boîtier traversant. Aucun des trois n'est probablement dans la bibliothèque JLCPCB : prévois une pose manuelle sur une carte par ailleurs assemblée, ce qui reste acceptable pour six composants groupés sur la même languette.</p>
+        <p><strong>Sécurité oculaire.</strong> L'OPV302 émet à 850 nm, invisible, donc sans réflexe de clignement. Sur un stand où juges et spectateurs se penchent au-dessus de la piste, trois faisceaux collimatés à hauteur de tête imposent une vraie analyse de classification et un capotage qui la garantisse.</p>
       </div>
+
+      <h3>Le budget de broches analogiques</h3>
+      <p>C'est la ressource rare de ce boîtier, et trois récepteurs la mettent exactement à niveau. Le LQFP100 n'expose que <strong>seize</strong> entrées ADC, et seules PC0 à PC3 sont câblées sur ADC3, le convertisseur qui doit servir la démodulation.</p>
+      <div class="tw">
+        <table>
+          <thead><tr><th>Usage</th><th class="m">Voies</th><th class="m">Broches</th><th>Convertisseur</th></tr></thead>
+          <tbody>
+            <tr><td>Barrette de ligne</td><td class="m">12</td><td class="m">PA0–PA7, PB0, PB1, PC4, PC5</td><td>ADC1 + ADC2, balayage à 2 kHz</td></tr>
+            <tr><td>Récepteurs de télémétrie</td><td class="m">3</td><td class="m">PC1 · PC2 · PC3</td><td>ADC3 dédié, continu à 4 × la porteuse</td></tr>
+            <tr><td>Surveillance, derrière un mux 8:1</td><td class="m">1</td><td class="m">PC0</td><td>Rang ajouté au balayage ADC1/ADC2</td></tr>
+            <tr><td><strong>Total</strong></td><td class="m"><strong>16 / 16</strong></td><td class="m">—</td><td>Aucune réserve analogique</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Deux conséquences. VBAT et les deux retours de courant passent par un <strong>multiplexeur 74HC4051</strong> : ce sont des signaux lents, les commuter ne coûte rien et cela libère les deux broches qui manquaient. Et il ne reste plus aucune marge — toute voie analogique supplémentaire imposerait le <strong>STM32H723ZGT6 en LQFP144</strong>, qui expose davantage d'entrées ADC3, au prix d'une carte plus grande.</p>
+      <p>Une erreur corrigée au passage : j'avais réservé une voie ADC pour la thermistance du pack. Elle n'a rien à y faire, sa place est sur l'entrée <span class="mono">TS</span> du BQ25887, qui gère lui-même la coupure thermique de charge.</p>
 
       <h3>Séquence d'armement et de départ</h3>
       <p>Partir en passant la main devant le télémètre est confortable et évite de bousculer le robot au moment critique — mais c'est aussi le même capteur qui doit voir le cube, et n'importe quel spectateur passant devant déclencherait un départ. La séquence doit donc être verrouillée :</p>
       <ol>
         <li><strong>Armement</strong> par appui long sur le switch 5 directions, robot posé sur la piste. L'OLED affiche l'état, le buzzer confirme.</li>
         <li><strong>Armement de l'ESC</strong> : consigne à zéro maintenue deux secondes, attente des bips de l'ESC, turbine déclarée prête.</li>
-        <li><strong>Champ libre</strong> : le ToF avant doit lire « rien à moins de 400 mm » pendant trois secondes consécutives. Sans cette étape, une main déjà présente au moment de l'armement compte comme un départ.</li>
+        <li><strong>Champ libre</strong> : le télémètre avant doit lire « rien à moins de 400 mm » pendant trois secondes consécutives. Sans cette étape, une main déjà présente au moment de l'armement compte comme un départ.</li>
         <li><strong>Geste</strong> : objet détecté à moins de 100 mm pendant plus de 200 ms, puis retiré.</li>
         <li><strong>Compte à rebours sonore</strong> de deux à trois secondes, puis départ — et désactivation définitive de ce canal de déclenchement pour le reste de la tentative.</li>
       </ol>
@@ -1065,7 +1076,7 @@
 
               <rect x="348" y="174" width="300" height="72" rx="3" fill="var(--surface-2)" stroke="var(--rule-strong)"/>
               <text x="360" y="196" font-size="12.5" font-weight="600" fill="var(--ink)">TPS62933 — buck 3,3 V / 2 A</text>
-              <text x="360" y="213" font-size="10.5" fill="var(--muted)">MCU · ToF · IMU · OLED · BLE</text>
+              <text x="360" y="213" font-size="10.5" fill="var(--muted)">MCU · télémétrie · IMU · OLED · BLE</text>
               <text x="360" y="229" font-size="10.5" fill="var(--muted)">flash · afficheur</text>
 
               <rect x="686" y="174" width="300" height="72" rx="3" fill="var(--surface-2)" stroke="var(--rule-strong)"/>
@@ -1113,14 +1124,14 @@
           <thead><tr><th>Fonction</th><th>Périphérique</th><th class="m">Broches</th><th>Notes</th></tr></thead>
           <tbody>
             <tr><td>Barrette de ligne, 12 voies</td><td>ADC1 + ADC2, dual regular simultaneous + DMA</td><td class="m">PA0–PA7, PB0, PB1, PC4, PC5</td><td>Déclenché par TIM6, synchronisé sur les impulsions IR</td></tr>
-            <tr><td>Surveillance de bord</td><td>Rangs ajoutés au balayage ADC1/ADC2</td><td class="m">PC0 · PC1 · PC2</td><td>VBAT, IPROPI1, IPROPI2 — signaux lents, ils suivent la cadence de la barrette</td></tr>
-            <tr><td>Télémètre analogique</td><td>ADC3 dédié, continu + DMA</td><td class="m">PC3 (réception) · PB2 (émetteur)</td><td>Échantillonnage à 4 × la porteuse, synchronisé sur l'émetteur ; ADC3 ne partage rien</td></tr>
+            <tr><td>Surveillance de bord</td><td>Mux 74HC4051 → rang ADC1/ADC2</td><td class="m">PC0 + 3 GPIO de sélection</td><td>VBAT, IPROPI1, IPROPI2 et réserves — signaux lents, une seule broche suffit</td></tr>
+            <tr><td>Télémètres analogiques</td><td>ADC3 dédié, continu + DMA</td><td class="m">PC1 · PC2 · PC3 (réception)</td><td>Échantillonnage à 4 × la porteuse, synchronisé sur les émetteurs ; ADC3 ne partage rien</td></tr>
+            <tr><td>Émetteurs de télémétrie</td><td>Timer, multiplexés dans le temps</td><td class="m">PB2 · PE2 · PC13</td><td>Un seul actif à la fois : pas de diaphonie entre visées</td></tr>
             <tr><td>PWM des deux ponts</td><td>TIM1 CH1–CH4</td><td class="m">PE9 · PE11 · PE13 · PE14</td><td>Centré, 25 kHz, hors bande audible</td></tr>
             <tr><td>Encodeur gauche</td><td>TIM3 mode encodeur</td><td class="m">PB4 · PB5</td><td>Filtre d'entrée activé</td></tr>
             <tr><td>Encodeur droit</td><td>TIM8 mode encodeur</td><td class="m">PC6 · PC7</td><td>16 bits, lu à 1 kHz</td></tr>
             <tr><td>Drivers, service</td><td>GPIO</td><td class="m">PD0, PD1 (nSLEEP) · PD3, PD4 (nFAULT)</td><td>nSLEEP rappelé au 0 V par 100 kΩ</td></tr>
-            <tr><td>Télémètres ToF</td><td>I2C1 400 kHz</td><td class="m">PB6 · PB7</td><td>XSHUT sur PD5, PD6 et interruptions sur PE0, PE1 ; PD7–PD9 et PE3–PE5 gardés en réserve</td></tr>
-            <tr><td>OLED et chargeur</td><td>I2C2 400 kHz</td><td class="m">PB10 · PB11</td><td>Bus lent séparé, jamais sollicité en course</td></tr>
+                        <tr><td>OLED et chargeur</td><td>I2C2 400 kHz</td><td class="m">PB10 · PB11</td><td>Bus lent séparé, jamais sollicité en course</td></tr>
             <tr><td>Centrale inertielle</td><td>SPI2</td><td class="m">PB12–PB15</td><td>10 MHz, interruption DRDY sur PE6</td></tr>
             <tr><td>Flash de traces</td><td>SPI3</td><td class="m">PC10, PC11, PC12 · CS PD2</td><td>SPI simple à 50 MHz suffit — pas besoin de QSPI</td></tr>
             <tr><td>Module BLE</td><td>USART1 + GPIO</td><td class="m">PA9 · PA10 · PA8 (EN)</td><td>PA8 commande le load switch d'alimentation</td></tr>
@@ -1129,14 +1140,14 @@
             <tr><td>Bancs d'émetteurs IR</td><td>GPIO</td><td class="m">PE7 · PE8</td><td>Deux bancs alternés, anti-diaphonie</td></tr>
             <tr><td>Buzzer</td><td>TIM17 CH1</td><td class="m">PB9</td><td>Via MOSFET + diode de roue libre</td></tr>
             <tr><td>Switch 5 directions</td><td>GPIO + EXTI</td><td class="m">PE10, PE12, PE15, PD10, PD13</td><td>Haut / bas / gauche / droite / appui, commun à la masse</td></tr>
-            <tr><td>Départ</td><td>GPIO + EXTI</td><td class="m">PD14 (bouton et jack)</td><td>Moyen conforme au règlement, en parallèle du départ par ToF</td></tr>
+            <tr><td>Départ</td><td>GPIO + EXTI</td><td class="m">PD14 (bouton et jack)</td><td>Moyen conforme au règlement, en parallèle du départ par télémètre</td></tr>
             <tr><td>ESC de turbine</td><td>TIM4 CH3 (+ DMA si DShot)</td><td class="m">PB8</td><td>Broche BEC de l'embase laissée non connectée</td></tr>
             <tr><td>LED d'état</td><td>GPIO</td><td class="m">PD15 · PC8 · PC9</td><td>Dont une dédiée « BLE alimenté », visible du jury</td></tr>
             <tr><td>Horloge</td><td>HSE</td><td class="m">PH0 · PH1</td><td>Quartz 25 MHz</td></tr>
           </tbody>
         </table>
       </div>
-      <p>Bilan : environ 74 broches affectées sur 82 disponibles. Le switch 5 directions consomme une entrée de plus que les quatre boutons qu'il remplace, et l'ESC prend PB8 — qui était justement le seul canal de TIM4 encore libre, les deux premiers étant pris par I²C1 et le quatrième par le buzzer. Les réserves restantes — PB2, PE2, PC13–PC15 — sont à sortir sur pastilles de test.</p>
+      <p>Bilan : environ 72 broches affectées sur 82. Les seize entrées analogiques, elles, sont saturées — c'est là qu'est la vraie limite, pas sur le nombre d'E/S. L'abandon du bus I²C des télémètres libère PB6 et PB7, qui rejoignent les réserves avec PD7–PD9, PE3–PE5, PC14 et PC15, à sortir sur pastilles de test.</p>
     </section>
 
     <!-- ============ 7 ============ -->
@@ -1149,11 +1160,10 @@
           <tbody>
             <tr><td>Microcontrôleur</td><td>STM32H723VGT6 · LQFP100</td><td class="m">C730142</td><td class="m">1</td><td class="ok">vérifié</td></tr>
             <tr><td>Pont en H</td><td>DRV8874PWPR · HTSSOP-16</td><td class="m">C1855818</td><td class="m">2</td><td class="ok">vérifié · 0,77 $</td></tr>
-            <tr><td>Télémètre ToF</td><td>VL53L1CBV0FY/1 · composant nu</td><td class="m">C2970716</td><td class="m">2</td><td class="ok">vérifié · 2,86 $</td></tr>
-            <tr><td>Émetteur télémètre analogique</td><td>OPV302 · laser IR 850 nm</td><td class="m">—</td><td class="m">1</td><td class="tbc">hors JLCPCB probable</td></tr>
-            <tr><td>Récepteur télémètre analogique</td><td>BPW77NA / BPW77NB / BPY 62</td><td class="m">—</td><td class="m">1</td><td class="tbc">hors JLCPCB probable</td></tr>
+            <tr><td>Émetteurs de télémétrie</td><td>OPV302 · laser IR 850 nm collimaté</td><td class="m">—</td><td class="m">3</td><td class="tbc">pose manuelle</td></tr>
+            <tr><td>Récepteurs de télémétrie</td><td>BPW77NA / BPW77NB / BPY 62</td><td class="m">—</td><td class="m">3</td><td class="tbc">pose manuelle</td></tr>
+            <tr><td>Multiplexeur de surveillance</td><td>74HC4051 · 8:1 analogique</td><td class="m">—</td><td class="m">1</td><td class="tbc">à vérifier</td></tr>
             <tr><td>Centrale inertielle</td><td>LSM6DSOTR</td><td class="m">C2655100</td><td class="m">1</td><td class="ok">vérifié · 2,42 $</td></tr>
-            <tr><td>IMU — variante haut de gamme</td><td>ICM-42688-P</td><td class="m">C1850418</td><td class="m">1</td><td class="tbc">stock faible · 13 $</td></tr>
             <tr><td>IMU — variante économique</td><td>QMI8658C</td><td class="m">C2842151</td><td class="m">1</td><td class="ok">vérifié · 0,74 $</td></tr>
             <tr><td>Capteur réflectif</td><td>ITR8307/S17/TR8(B)</td><td class="m">C81632</td><td class="m">12</td><td class="ok">vérifié · 0,06 $</td></tr>
             <tr><td>Chargeur 2S élévateur</td><td>BQ25887RGER · VQFN-24</td><td class="m">C2761614</td><td class="m">1</td><td class="ok">vérifié · 1,90 $</td></tr>
@@ -1173,13 +1183,13 @@
           </tbody>
         </table>
       </div>
-      <p>Le total des actifs tombe autour de 27 $ par carte en petite série une fois les deux télémètres superflus retirés. Le poste dominant devient le microcontrôleur, ce qui est le signe d'une nomenclature saine. Les deux composants analogiques du télémètre latéral, s'ils ne sont pas sourçables chez JLCPCB, se posent à la main sur une carte par ailleurs assemblée : c'est acceptable pour deux pièces, pas pour douze.</p>
+      <p>Le microcontrôleur devient le poste dominant, ce qui est le signe d'une nomenclature saine. Les six composants de télémétrie sont groupés sur la même languette : s'ils ne sont pas sourçables chez JLCPCB, c'est une seule séance de soudure sur une petite carte, pas une reprise de la carte mère.</p>
     </section>
 
     <!-- ============ 8 ============ -->
     <section id="s8">
       <div class="sechead"><span class="num">§8</span><h2>Ce que tu as oublié</h2></div>
-      <p>Trente-sept points relevés, classés par ce qu'ils te coûtent si tu les laisses passer. Le premier concerne directement le connecteur de la capture que tu m'as envoyée ; le second, ton idée de départ par télémètre.</p>
+      <p>Trente-six points relevés, classés par ce qu'ils te coûtent si tu les laisses passer. Le premier concerne directement le connecteur de la capture que tu m'as envoyée ; le second, ton idée de départ par télémètre.</p>
       <div class="legend">
         <span class="chip c1">Bloquant</span>
         <span class="chip c2">Fiabilité</span>
@@ -1241,54 +1251,50 @@
           <p>Un module BLE qui se déclipse à 3 m/s finit sur la piste, et le règlement n'aime pas les pièces qui se détachent. Choisis une embase à verrouillage, ou ajoute une vis. Et câble une broche de présence : le firmware doit savoir si le module est là, pour ne pas passer son temps à attendre des réponses UART qui ne viendront jamais.</p>
         </div></li>
         <li><span class="n">13</span><div>
-          <h5>Les modules ToF du commerce se prêtent mal au montage définitif</h5>
-          <p>Trois obstacles, dans cet ordre. Tous les VL53L1X sortent d'usine avec <strong>la même adresse I²C</strong> : sans une broche <span class="mono">XSHUT</span> accessible sur chaque module, impossible de les réadresser au démarrage — et beaucoup de petits modules ne la sortent pas. C'est le premier point à vérifier sur les photos d'une annonce. Chacun embarque ensuite ses <strong>propres résistances de tirage</strong>, qui se mettent en parallèle et alourdissent le bus. Et l'<strong>orientation</strong>, enfin, fait la qualité de la mesure : un module sur barrette se vrille, un composant réflowé sur un cuivre à 90° ne bouge pas. Contrôle aussi qu'on t'a bien vendu un VL53L1X : la lecture 16 bits du registre <span class="mono">0x010F</span> doit renvoyer <span class="mono">0xEACC</span>, ce qui écarte le cas classique du VL53L0X — sans distinguer pour autant les VL53L1CB et VL53L4CD, qui répondent la même chose. Le module reste excellent sur breadboard pour écrire le pilote ; le robot veut le composant nu.</p>
-        </div></li>
-        <li><span class="n">14</span><div>
           <h5>Distinguer un croisement d'une marque</h5>
           <p>Tourner à un croisement invalide l'essai. Les deux motifs sont noirs et perpendiculaires ; ce qui les sépare, c'est l'étendue latérale — toute la barrette pour un croisement, le seul quart droit pour une marque. La barrette symétrique n'est donc pas un luxe, c'est ce qui rend la discrimination possible.</p>
         </div></li>
-        <li><span class="n">15</span><div>
+        <li><span class="n">14</span><div>
           <h5>Le freinage renvoie de l'énergie dans le pack</h5>
           <p>Freiner de 3 m/s à l'arrêt en moins d'un mètre, avec des ponts en H en mode frein, transforme les moteurs en générateurs. Si le pack est plein, la tension de bus monte. Prévois un écrêteur TVS vers 9 V sur VBAT et un volume de condensateurs suffisant — sinon c'est le TPS62933 ou un DRV8874 qui absorbe la surtension, une fois.</p>
         </div></li>
-        <li><span class="n">16</span><div>
+        <li><span class="n">15</span><div>
           <h5>Le BQ25887 démarre sur un profil Li-ion</h5>
           <p>Ses valeurs par défaut visent du Li-ion. Appliquées à du LiFePO4, elles chargent au-delà de 4 V par cellule. Le firmware doit écrire <span class="mono">VCELLREG</span> à 3,60 V avant toute charge, et la broche <span class="mono">CD</span> doit maintenir le chargeur inhibé tant que cette écriture n'est pas relue et confirmée. Prévois aussi la CTN sur le pack pour l'entrée <span class="mono">TS</span>, ou le pont de résistances qui la neutralise.</p>
         </div></li>
-        <li><span class="n">17</span><div>
+        <li><span class="n">16</span><div>
           <h5>La jauge de batterie par tension ne marche pas en LiFePO4</h5>
           <p>La courbe de décharge du LiFePO4 est extrêmement plate : entre 90 % et 20 % de charge, la tension bouge de quelques dizaines de millivolts, noyés dans la chute due au courant moteur. Il faut intégrer le courant — ce que permettent les sorties <span class="mono">IPROPI</span> des drivers et le shunt d'entrée. Sans ça, tu ne sauras jamais s'il te reste un tour.</p>
         </div></li>
-        <li><span class="n">18</span><div>
+        <li><span class="n">17</span><div>
           <h5>Les circuits de protection 2S du commerce sont calibrés Li-ion</h5>
           <p>Les PCM courants (type HY2120) coupent en surtension vers 4,25 V et en sous-tension vers 2,4 V par cellule : ces seuils n'ont aucun sens pour du LiFePO4, dont la plage utile est 2,5–3,65 V. Achète un pack dont le PCM est réellement prévu pour du LiFePO4, ou traite la sous-tension côté firmware avec une coupure et une alarme sonore.</p>
         </div></li>
-        <li><span class="n">19</span><div>
+        <li><span class="n">18</span><div>
           <h5>Chien de garde et état de repli</h5>
           <p>Un robot qui plante à 3 m/s finit dans les gradins. Active l'IWDG, et fais en sorte que le <span class="mono">HardFault</span> comme le débordement de watchdog forcent <span class="mono">nSLEEP</span> à 0 avant tout redémarrage. Lis <span class="mono">nFAULT</span> des drivers et traite-le : surintensité, surchauffe et sous-tension y remontent.</p>
         </div></li>
-        <li><span class="n">20</span><div>
+        <li><span class="n">19</span><div>
           <h5>Tu n'avais pas prévu de mesurer le courant moteur</h5>
           <p>C'est gratuit avec le DRV8874 — une résistance sur <span class="mono">IPROPI</span> et une voie ADC — et ça donne trois choses : la détection de calage, une image directe du couple pour l'antipatinage, et la coulométrie du point précédent.</p>
         </div></li>
-        <li><span class="n">21</span><div>
+        <li><span class="n">20</span><div>
           <h5>L'empreinte Tag-Connect « FP » traverse la carte</h5>
           <p>La variante à pattes de positionnement exige trois trous non métallisés traversants et une zone d'exclusion des deux côtés du PCB — pas seulement en face avant. Réserve aussi le dégagement mécanique en dessous : les pattes dépassent sous la carte, et un composant placé là empêche le câble de se clipser.</p>
         </div></li>
-        <li><span class="n">22</span><div>
+        <li><span class="n">21</span><div>
           <h5>Le filtrage des moteurs</h5>
           <p>Un moteur à charbons est un générateur d'impulsions large bande. 100 nF X7R aux bornes de chaque moteur, fils d'alimentation torsadés, et retour de masse puissance ramené en étoile au point d'entrée batterie — pas à travers le plan analogique. Sinon le hachage remonte dans les ADC et fait planter le bus I²C des télémètres.</p>
         </div></li>
-        <li><span class="n">23</span><div>
+        <li><span class="n">22</span><div>
           <h5>La thermique du DRV8874</h5>
           <p>200 mΩ à 3 A continus font près de 2 W par pont. Le pad thermique doit être cousu de vias vers un plan de cuivre, et pas posé sur un îlot isolé — sinon la protection thermique coupera le moteur en fin de ligne droite, au pire moment.</p>
         </div></li>
-        <li><span class="n">24</span><div>
+        <li><span class="n">23</span><div>
           <h5>Le connecteur d'équilibrage</h5>
           <p>Une embase JST-XH 3 points sur les points milieux du pack permet de charger avec un chargeur externe, de mesurer chaque cellule et de rattraper un déséquilibre. Le règlement autorise le changement de batterie en échange standard pendant les trois minutes : prévois donc au moins deux packs et une connectique détrompée.</p>
         </div></li>
-        <li><span class="n">25</span><div>
+        <li><span class="n">24</span><div>
           <h5>Protection ESD et tenue de la languette télémètres</h5>
           <p>USBLC6-2SC6 sur D+/D− et sur VBUS. Quant à la languette verticale des télémètres : soudée seulement par sa rangée de pastilles, c'est une poutre en porte-à-faux au point le plus exposé du robot. Ajoute deux équerres, ou des pastilles de renfort mécanique aux extrémités, sinon le premier contact avec le cube la décollera — et le règlement interdit déjà ce contact, mais les essais libres, non.</p>
         </div></li>
@@ -1296,51 +1302,51 @@
 
       <div class="grphead"><h3>Chrono</h3><span class="bar"></span></div>
       <ul class="finds">
-        <li><span class="n">26</span><div>
+        <li><span class="n">25</span><div>
           <h5>L'appui aérodynamique reste la contrainte dominante</h5>
           <p>Tu as bien fait de prévoir la turbine : dans un virage de 20 cm de rayon, 2,5 m/s demandent 3,2 g de force latérale, et aucun pneu de robot ne fournit ça sur une bâche. Mais garde en tête que c'est un système à part entière, pas un accessoire — il a sa propre séquence d'armement, son propre budget d'énergie, et il déplace le centre de gravité. Traite-le comme un second actionneur, avec sa consigne dans la boucle de contrôle : l'appui n'a d'intérêt qu'en virage, et le faire tourner à fond en ligne droite ne fait que vider le pack.</p>
         </div></li>
-        <li><span class="n">27</span><div>
+        <li><span class="n">26</span><div>
           <h5>La turbine redimensionne le pack</h5>
           <p>Cinq à quinze ampères en continu, soit plus que les deux moteurs réunis. Un accu de réception 2S LiFePO4 de 450 mAh est hors sujet : vise 1000 mAh et 15 C au minimum. Et le 2S LiFePO4 plafonne à 7,3 V là où les ensembles ESC et brushless du commerce sont calibrés pour du 2S LiPo à 8,4 V : la poussée réelle sera inférieure à celle du catalogue. Mesure-la avant de figer la mécanique, pas après.</p>
         </div></li>
-        <li><span class="n">28</span><div>
+        <li><span class="n">27</span><div>
           <h5>Le couple disponible plafonne ton chrono avant l'électronique</h5>
           <p>Un GM12-N20 1:30 sous 6 V tourne autour de 1000 tr/min, soit environ 1,4 m/s avec des roues de 27 mm. Sur une ligne droite de 6 m, c'est très loin du potentiel. Si tu vises 2,5 m/s, il faut un rapport plus court ou des roues plus grandes, et alors le courant grimpe : le DRV8874 (6 A crête) et le pack doivent suivre, avec une capacité de décharge d'au moins 15 C.</p>
         </div></li>
-        <li><span class="n">29</span><div>
+        <li><span class="n">28</span><div>
           <h5>Les encodeurs ne détectent pas le dérapage</h5>
           <p>C'est le point le plus contre-intuitif de ton cahier des charges. Quand les deux roues glissent ensemble, l'odométrie reste parfaitement cohérente — et fausse. Il faut une référence indépendante des roues : le gyroscope, dont le lacet mesuré est comparé au lacet odométrique (v<sub>d</sub> − v<sub>g</sub>)/e. L'écart <em>est</em> le dérapage. Encore mieux si tu veux la vitesse sol réelle : un capteur de flux optique (PMW3901) sous le châssis — à valider côté stock JLCPCB.</p>
         </div></li>
+        <li><span class="n">29</span><div>
+          <h5>Trois émetteurs IR pulsés dans une salle qui en est déjà pleine</h5>
+          <p>Les barrières de chronométrage des organisateurs sont des liaisons infrarouges, souvent modulées vers 38 kHz comme les récepteurs du commerce, et chaque concurrent arrive avec ses propres émetteurs. Trois raisons de ne pas choisir sa porteuse au hasard : reste à l'écart de 38 kHz, code l'émission avec une séquence propre au robot pour obtenir une réjection par corrélation, et vérifie en essais libres que tu ne perturbes pas le chronométrage — un essai invalidé pour cette raison serait cher payé.</p>
+        </div></li>
         <li><span class="n">30</span><div>
-          <h5>Aucun ToF ne peut asservir, et c'est ce qui dicte le choix des capteurs</h5>
-          <p>Un VL53L1X avec un budget de 20 ms plafonne à 50 Hz. À 3 m/s cela fait 6 cm entre deux mesures. Deux conséquences opposées. Pour le cube, ce n'est pas grave : on le détecte loin, en mode longue portée, et on déclenche une trajectoire d'évitement pré-calculée en odométrie plutôt qu'une boucle fermée — le règlement interdit tout contact, prends de la marge. Pour le mur de la Q1, en revanche, c'est rédhibitoire : suivre un mur est un asservissement, et 50 Hz ne suffisent pas à tenir un virage de 20 cm de rayon. D'où la voie analogique rapide de ce côté-là.</p>
+          <h5>La visée du télémètre gauche décide la Q1</h5>
+          <p>Le mur fait 10 cm de haut et se trouve à 15 cm à gauche du centre virtuel de la piste absente. Avec un faisceau collimaté, ce n'est plus l'ouverture qui contraint mais la <strong>tolérance de visée</strong> : à 45 mm de hauteur et ± 2°, le faisceau reste au-dessus de la bâche jusqu'à 1,3 m. Soigne donc le maintien mécanique de la languette, car un degré de vrillage se paie en portée. Et comme la piste manque sur tout un virage à 20 cm de rayon, il faut une odométrie propre pour tenir la trajectoire entre deux mesures.</p>
         </div></li>
         <li><span class="n">31</span><div>
-          <h5>La géométrie du ToF gauche décide la Q1</h5>
-          <p>Le mur fait 10 cm de haut et se trouve à 15 cm à gauche du centre virtuel de la piste absente. Le télémètre latéral doit donc viser entre 40 et 50 mm du sol, avec un champ qui ne déborde ni au-dessus du mur ni sur la bâche. Et comme la piste manque sur tout un virage à 20 cm de rayon, il faut une odométrie propre pour tenir la trajectoire entre deux mesures.</p>
-        </div></li>
-        <li><span class="n">32</span><div>
           <h5>L'apprentissage du circuit, autorisé et rentable</h5>
           <p>Le règlement dit explicitement que le robot peut mémoriser le tracé. C'est le plus gros levier de chrono du concours : au tour d'apprentissage on relève courbure et distance, puis on calcule un profil de vitesse qui freine <em>avant</em> le virage plutôt que dedans. Cela suppose une mémoire non volatile qui survit au changement de batterie, d'où la flash SPI.</p>
         </div></li>
-        <li><span class="n">33</span><div>
+        <li><span class="n">32</span><div>
           <h5>Le BLE ne suffira pas pour les traces</h5>
           <p>Vingt signaux à 1 kHz en 16 bits représentent 40 ko/s. Le BLE en délivre quelques-uns. La chaîne réaliste est : enregistrement en flash SPI pendant la tentative, puis vidage par USB CDC entre deux essais. Le BLE reste utile pour la supervision légère et les réglages, pas pour le log.</p>
         </div></li>
-        <li><span class="n">34</span><div>
+        <li><span class="n">33</span><div>
           <h5>La hauteur de la barrette doit être réglable</h5>
           <p>L'ITR8307 travaille au mieux entre 2 et 4 mm de la surface. Sur une bâche qui ondule, c'est peu — et si les capteurs sont sur la carte mère, cette hauteur n'est plus réglable du tout. Deux compensations, et elles sont indépendantes du PCB. La première est mécanique : des entretoises sur mesure sous le support moteur portent l'axe à la hauteur voulue — 4 mm avec les roues Pololu 40 mm retenues. La seconde est logicielle : un courant d'émetteur piloté rattrape une hauteur résiduelle trop grande. Usine un premier jeu d'entretoises et mesure la garde au sol réelle <em>avant</em> de router.</p>
         </div></li>
-        <li><span class="n">35</span><div>
+        <li><span class="n">34</span><div>
           <h5>Prévois une voie « ambiante seule » dans chaque cycle</h5>
           <p>Le chapitre 10 annonce un éclairage non uniforme et variable. La mesure émetteurs éteints, soustraite de la mesure éclairée, rend le capteur indifférent à l'ambiante — et son niveau brut te dit en plus si tu passes sous un projecteur, information exploitable pour resserrer les seuils.</p>
         </div></li>
-        <li><span class="n">36</span><div>
+        <li><span class="n">35</span><div>
           <h5>Masse et centre de gravité</h5>
           <p>La batterie est la masse dominante. Placée au-dessus de l'essieu moteur, elle charge les roues motrices et améliore l'adhérence ; placée à l'avant, elle allège la traction et fait sous-virer. Décide-le au niveau de l'implantation du PCB, pas après — le connecteur d'accu et le pack doivent avoir leur place réservée dès le placement.</p>
         </div></li>
-        <li><span class="n">37</span><div>
+        <li><span class="n">36</span><div>
           <h5>L'étalonnage du diamètre de roue</h5>
           <p>L'usure et le nettoyage des pneus, autorisés pendant les tentatives, changent le diamètre effectif de quelques pourcents. Toute l'odométrie et la carte apprise en dépendent. Prévois une routine d'étalonnage dans le menu OLED : le robot roule une distance connue, tu corriges le facteur d'échelle.</p>
         </div></li>
@@ -1356,13 +1362,13 @@
         <li><strong>Écrire aux organisateurs</strong> au sujet du départ par télémètre. La réponse arrive vite et décide si le bouton START reste un secours ou devient le moyen principal.</li>
         <li><strong>Valider le brochage sous CubeMX.</strong> Le mapping exact des canaux ADC est le seul point du §6 qui peut te réserver une surprise : vérifie que les douze voies de la barrette tombent bien sur ADC1 et ADC2, et les quatre de surveillance sur ADC3.</li>
         <li><strong>Usiner un premier jeu d'entretoises et mesurer la garde au sol réelle</strong>, roues et supports moteurs montés. Le calcul annonce 4 mm d'entretoises pour 5 mm de garde ; c'est la mesure qui tranche, et c'est elle qui valide la barrette de ligne sur la carte mère.</li>
-        <li><strong>Prototyper la chaîne optique.</strong> Une carte d'essai à trois ou quatre ITR8307, balayée en hauteur de 2 à 8 mm, avec la soustraction d'ambiante en place. Tu y valideras la plage de fonctionnement, le pas et le rapport signal sur bruit — les trois inconnues réelles du projet. En parallèle, un module VL53L1X du commerce sur breadboard suffit pour écrire et valider le pilote et la stratégie de télémétrie.</li>
+        <li><strong>Prototyper les deux chaînes optiques séparément.</strong> D'un côté trois ou quatre ITR8307 balayés en hauteur de 2 à 8 mm, avec la soustraction numérique en place. De l'autre une station OPV302 + BPW77 sur plaque d'essai, pour caler la porteuse, la constante de couplage alternatif et le gain, et mesurer la portée réelle contre un cube et contre un mur. Ce sont les deux inconnues du projet, et elles ne se valident pas ensemble.</li>
         <li><strong>Trancher le connecteur de debug.</strong> TC2050 en 2×05, ou TC2030 rebroché en VTref / SWDIO / NRST / SWCLK / GND / SWO. Ce choix conditionne la place autour et n'est plus modifiable après le routage.</li>
         <li><strong>Refaire un passage stock JLCPCB</strong> juste avant de commander, et remplir les références marquées « à vérifier » au §7.</li>
       </ol>
       <div class="note">
         <span class="lbl">Sur la disponibilité</span>
-        <p>Les références et prix vérifiés le sont à la date de ce document. Les pièces les plus exposées à une rupture sont le STM32H723VGT6 et les VL53L1X ; garde en tête que le STM32H750VBT6 est une roue de secours pin-compatible en LQFP100, au prix d'une flash interne réduite à 128 Ko — ce qui rend la flash SPI externe obligatoire au lieu d'optionnelle.</p>
+        <p>Les références et prix vérifiés le sont à la date de ce document. La pièce la plus exposée à une rupture est le STM32H723VGT6 ; garde en tête que le STM32H750VBT6 est une roue de secours pin-compatible en LQFP100, au prix d'une flash interne réduite à 128 Ko — ce qui rend la flash SPI externe obligatoire au lieu d'optionnelle.</p>
       </div>
     </section>
 
