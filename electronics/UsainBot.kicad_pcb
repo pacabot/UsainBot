@@ -219,7 +219,7 @@
 			(uuid "0acff508-992a-45c7-90b7-a8d7b68c4a52")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/../kicad-lib/3d/GM12-N20_bracket.step"
+		(model "${KIPRJMOD}/kicad-lib/3d/GM12-N20_bracket.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -230,7 +230,7 @@
 				(xyz 0 0 0)
 			)
 		)
-		(model "${KIPRJMOD}/../kicad-lib/3d/GM12-N20_motor_gearbox.step"
+		(model "${KIPRJMOD}/kicad-lib/3d/GM12-N20_motor_gearbox.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -241,7 +241,7 @@
 				(xyz 0 0 0)
 			)
 		)
-		(model "${KIPRJMOD}/../kicad-lib/3d/GM12-N20_motor_can.step"
+		(model "${KIPRJMOD}/kicad-lib/3d/GM12-N20_motor_can.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -252,7 +252,7 @@
 				(xyz 0 0 0)
 			)
 		)
-		(model "${KIPRJMOD}/../kicad-lib/3d/GM12-N20_motor_encoder.step"
+		(model "${KIPRJMOD}/kicad-lib/3d/GM12-N20_motor_encoder.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -263,7 +263,7 @@
 				(xyz 0 0 0)
 			)
 		)
-		(model "${KIPRJMOD}/../kicad-lib/3d/Pololu_wheel_40x7_hub.step"
+		(model "${KIPRJMOD}/kicad-lib/3d/Pololu_wheel_40x7_hub.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -274,7 +274,7 @@
 				(xyz 0 0 0)
 			)
 		)
-		(model "${KIPRJMOD}/../kicad-lib/3d/Pololu_wheel_40x7_tire.step"
+		(model "${KIPRJMOD}/kicad-lib/3d/Pololu_wheel_40x7_tire.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -418,7 +418,7 @@
 			(uuid "5fb4477c-f0b4-42d1-8acf-d4a6008b30d4")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/../kicad-lib/3d/GM12-N20_bracket.step"
+		(model "${KIPRJMOD}/kicad-lib/3d/GM12-N20_bracket.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -429,7 +429,7 @@
 				(xyz 0 0 0)
 			)
 		)
-		(model "${KIPRJMOD}/../kicad-lib/3d/GM12-N20_motor_gearbox.step"
+		(model "${KIPRJMOD}/kicad-lib/3d/GM12-N20_motor_gearbox.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -440,7 +440,7 @@
 				(xyz 0 0 0)
 			)
 		)
-		(model "${KIPRJMOD}/../kicad-lib/3d/GM12-N20_motor_can.step"
+		(model "${KIPRJMOD}/kicad-lib/3d/GM12-N20_motor_can.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -451,7 +451,7 @@
 				(xyz 0 0 0)
 			)
 		)
-		(model "${KIPRJMOD}/../kicad-lib/3d/GM12-N20_motor_encoder.step"
+		(model "${KIPRJMOD}/kicad-lib/3d/GM12-N20_motor_encoder.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -462,7 +462,7 @@
 				(xyz 0 0 0)
 			)
 		)
-		(model "${KIPRJMOD}/../kicad-lib/3d/Pololu_wheel_40x7_hub.step"
+		(model "${KIPRJMOD}/kicad-lib/3d/Pololu_wheel_40x7_hub.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -473,7 +473,7 @@
 				(xyz 0 0 0)
 			)
 		)
-		(model "${KIPRJMOD}/../kicad-lib/3d/Pololu_wheel_40x7_tire.step"
+		(model "${KIPRJMOD}/kicad-lib/3d/Pololu_wheel_40x7_tire.step"
 			(offset
 				(xyz 0 0 0)
 			)

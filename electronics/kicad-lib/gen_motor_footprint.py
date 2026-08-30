@@ -69,7 +69,7 @@ MODELS = ("GM12-N20_bracket",          # support ABS blanc
           "Pololu_wheel_40x7_hub",     # moyeu roue, blanc
           "Pololu_wheel_40x7_tire")    # gomme, noir
 for mdl in MODELS:
-    s += f'\t(model "${{KIPRJMOD}}/../kicad-lib/3d/{mdl}.step"\n'
+    s += f'\t(model "${{KIPRJMOD}}/kicad-lib/3d/{mdl}.step"\n'
     s += '\t\t(offset (xyz 0 0 0)) (scale (xyz 1 1 1)) (rotate (xyz 0 0 0)))\n'
 s += ')\n'
 

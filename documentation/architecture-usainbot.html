@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Architecture matérielle STM32H7 du robot suiveur de ligne UsainBot — Tournoi National de Robotique, épreuve Formule 1, règlement v2.11.">
-  <meta name="author" content="Pacabot Junior">
+  <meta name="author" content="Pacabot">
   <style>
     :root{color-scheme:light dark}
     html,body{margin:0}
@@ -396,7 +396,7 @@
 <div class="shell">
 
   <header class="masthead">
-    <p class="kicker">Pacabot Junior · UsainBot · architecture matérielle</p>
+    <p class="kicker">Pacabot · UsainBot · architecture matérielle</p>
     <h1>Architecture UsainBot</h1>
     <p class="standfirst">Robot suiveur de ligne pour le Tournoi National de Robotique — épreuve Formule 1, règlement v2.11. Cœur STM32H7, chaîne de mesure 12 voies, deux ponts en H à mesure de courant, sortie ESC pour turbine d'appui, alimentation 2S LiFePO4 rechargeable en USB-C. Tous les composants actifs sont sourçables chez JLCPCB.</p>
     <div class="meta">
@@ -726,7 +726,7 @@
       </figure>
 
       <h3>Hauteurs de montage</h3>
-      <p>C'est l'élévation qui décide si la barrette peut vivre sur la carte mère, et pourquoi les télémètres ne le peuvent pas. Une relation résume tout : <strong>garde au sol = rayon de roue − hauteur de l'axe moteur au-dessus du dessous de carte</strong>. Avec des roues de 32 mm et un support N20 qui place l'arbre à 11 mm au-dessus de la carte, il reste 5 mm — dans la plage de l'ITR8307. Passe à des roues de 40 mm sans rien changer d'autre et tu montes à 9 mm : la barrette ne voit plus rien.</p>
+      <p>C'est l'élévation qui décide si la barrette peut vivre sur la carte mère, et pourquoi les télémètres ne le peuvent pas. Une relation résume tout : <strong>garde au sol = rayon de roue − hauteur de l'axe moteur au-dessus du dessous de carte</strong>. Les roues retenues sont des Pololu 40 × 7, soit un rayon de 20 mm. Le support N20 nu place l'arbre à 11 mm au-dessus du dessous de carte, ce qui donnerait 9 mm de garde — bien trop pour l'ITR8307. La correction est mécanique et se chiffre exactement : <strong>4 mm d'entretoises sur mesure</strong> sous le support portent l'axe à 15 mm, et la garde retombe à 5 mm. C'est le bon endroit pour régler, parce qu'une entretoise se retaille en dix minutes là où un PCB se recommande.</p>
       <figure>
         <div class="figwrap">
           <svg viewBox="0 0 1000 560" role="img" aria-label="Élévations : vue de profil avec les hauteurs de capteurs, et vue de face montrant le mur de la qualification Q1">
@@ -755,7 +755,7 @@
               <circle cx="344" cy="250" r="4" fill="var(--accent)"/>
               <text x="336" y="242" font-size="10" text-anchor="end" fill="var(--accent)" font-family="IBM Plex Mono, monospace">187 mm</text>
 
-              <circle cx="756" cy="228" r="22" fill="var(--rule)" stroke="var(--rule-strong)"/>
+              <circle cx="756" cy="222" r="28" fill="var(--rule)" stroke="var(--rule-strong)"/>
               <rect x="716" y="214" width="60" height="26" rx="2" fill="var(--surface)" stroke="var(--rule-strong)"/>
               <text x="746" y="231" font-size="8.5" text-anchor="middle" fill="var(--ink-2)" font-family="IBM Plex Mono, monospace">N20</text>
               <rect x="630" y="214" width="80" height="26" rx="2" fill="none" stroke="var(--ink)" stroke-dasharray="4 3"/>
@@ -773,7 +773,7 @@
                 <text x="534" y="240" text-anchor="end">5 mm</text>
               </g>
               <text x="563" y="272" font-size="9.5" fill="var(--muted)" font-family="IBM Plex Mono, monospace">barrette à 3 mm sous la carte</text>
-              <text x="700" y="196" font-size="9.5" fill="var(--muted)" font-family="IBM Plex Mono, monospace">axe moteur à 11 mm au-dessus du dessous de carte · roue R = 16 mm</text>
+              <text x="700" y="196" font-size="9.5" fill="var(--muted)" font-family="IBM Plex Mono, monospace">roue Pololu R = 20 mm · axe porté à 15 mm par 4 mm d'entretoises</text>
 
               <line x1="60" y1="310" x2="940" y2="310" stroke="var(--rule)"/>
               <text x="60" y="344" font-size="12" font-weight="600" fill="var(--ink)" font-family="IBM Plex Sans Condensed, sans-serif">FACE — géométrie de la qualification Q1</text>
@@ -784,8 +784,8 @@
               <text x="389" y="374" font-size="10" text-anchor="end" fill="var(--ink)" font-family="IBM Plex Mono, monospace">mur Q1</text>
 
               <rect x="536" y="513" width="168" height="3.5" fill="var(--ink)"/>
-              <rect x="522" y="476" width="14" height="44" rx="3" fill="var(--rule)" stroke="var(--rule-strong)"/>
-              <rect x="704" y="476" width="14" height="44" rx="3" fill="var(--rule)" stroke="var(--rule-strong)"/>
+              <rect x="526" y="464" width="10" height="56" rx="3" fill="var(--rule)" stroke="var(--rule-strong)"/>
+              <rect x="704" y="464" width="10" height="56" rx="3" fill="var(--rule)" stroke="var(--rule-strong)"/>
               <rect x="540" y="457" width="5" height="56" fill="var(--ink)" opacity=".82"/>
               <rect x="532" y="450" width="15" height="14" rx="2" fill="var(--accent)"/>
 
@@ -1296,7 +1296,7 @@
         </div></li>
         <li><span class="n">34</span><div>
           <h5>La hauteur de la barrette doit être réglable</h5>
-          <p>L'ITR8307 travaille au mieux entre 2 et 4 mm de la surface. Sur une bâche qui ondule, c'est peu — et si les capteurs sont sur la carte mère, cette hauteur n'est plus réglable du tout. Deux compensations : des trous oblongs sur les supports moteurs, pour régler l'assiette du robot entier ; et un courant d'émetteur piloté en logiciel, qui rattrape une hauteur trop grande sans toucher au matériel. Mesure la garde au sol réelle de ton châssis <em>avant</em> de router.</p>
+          <p>L'ITR8307 travaille au mieux entre 2 et 4 mm de la surface. Sur une bâche qui ondule, c'est peu — et si les capteurs sont sur la carte mère, cette hauteur n'est plus réglable du tout. Deux compensations, et elles sont indépendantes du PCB. La première est mécanique : des entretoises sur mesure sous le support moteur portent l'axe à la hauteur voulue — 4 mm avec les roues Pololu 40 mm retenues. La seconde est logicielle : un courant d'émetteur piloté rattrape une hauteur résiduelle trop grande. Usine un premier jeu d'entretoises et mesure la garde au sol réelle <em>avant</em> de router.</p>
         </div></li>
         <li><span class="n">35</span><div>
           <h5>Prévois une voie « ambiante seule » dans chaque cycle</h5>
@@ -1321,7 +1321,7 @@
         <li><strong>Figer la motorisation et la turbine ensemble.</strong> Vitesse cible, rapport de réduction, diamètre de roue, courant crête de traction, et poussée d'appui mesurée sous 6,4 V et non sous 8,4 V. C'est ce trio qui dimensionne le pack, les drivers et les pistes de puissance — tout le reste en découle.</li>
         <li><strong>Écrire aux organisateurs</strong> au sujet du départ par télémètre. La réponse arrive vite et décide si le bouton START reste un secours ou devient le moyen principal.</li>
         <li><strong>Valider le brochage sous CubeMX.</strong> Le mapping exact des canaux ADC est le seul point du §6 qui peut te réserver une surprise : vérifie que les douze voies de la barrette tombent bien sur ADC1 et ADC2, et les quatre de surveillance sur ADC3.</li>
-        <li><strong>Mesurer la garde au sol du châssis existant</strong>, roues et supports moteurs montés. C'est ce chiffre, et lui seul, qui autorise ou non la barrette de ligne sur la carte mère.</li>
+        <li><strong>Usiner un premier jeu d'entretoises et mesurer la garde au sol réelle</strong>, roues et supports moteurs montés. Le calcul annonce 4 mm d'entretoises pour 5 mm de garde ; c'est la mesure qui tranche, et c'est elle qui valide la barrette de ligne sur la carte mère.</li>
         <li><strong>Prototyper la chaîne optique.</strong> Une carte d'essai à trois ou quatre ITR8307, balayée en hauteur de 2 à 8 mm, avec la soustraction d'ambiante en place. Tu y valideras la plage de fonctionnement, le pas et le rapport signal sur bruit — les trois inconnues réelles du projet. En parallèle, un module VL53L1X du commerce sur breadboard suffit pour écrire et valider le pilote et la stratégie de télémétrie.</li>
         <li><strong>Trancher le connecteur de debug.</strong> TC2050 en 2×05, ou TC2030 rebroché en VTref / SWDIO / NRST / SWCLK / GND / SWO. Ce choix conditionne la place autour et n'est plus modifiable après le routage.</li>
         <li><strong>Refaire un passage stock JLCPCB</strong> juste avant de commander, et remplir les références marquées « à vérifier » au §7.</li>

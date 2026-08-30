@@ -9,14 +9,27 @@ qualification, de difficulté croissante — Q3 piste nue, Q2 avec un cube de 10
 éviter sans contact, Q1 avec en plus un virage à gauche escamoté et un mur de 100 mm de
 haut placé à 150 mm à gauche de l'axe de la piste absente.
 
+## Organisation
+
+```
+electronics/      projet KiCad — schéma, PCB, table de bibliothèques
+  kicad-lib/      empreintes et modèles 3D propres au projet
+firmware/         configuration STM32CubeMX, puis le code
+mechanics/        sources FreeCAD du châssis, des supports et de la carte
+documentation/    document d'architecture
+rules/            règlement de l'épreuve
+```
+
+Les bibliothèques sont référencées en `${KIPRJMOD}/kicad-lib/…` : le dépôt se clone et
+s'ouvre tel quel, sans chemin absolu ni variable d'environnement à déclarer.
+
 ## Architecture
 
 Le document de conception complet — choix du microcontrôleur, schémas blocs, implantation,
-élévations, affectation des broches, nomenclature JLCPCB et revue de conception — est ici :
+élévations, affectation des broches, nomenclature JLCPCB et revue de conception en
+trente-sept points — est ici :
 
-**[`Documentation/architecture-usainbot.html`](Documentation/architecture-usainbot.html)**
-
-En résumé :
+**[`documentation/architecture-usainbot.html`](documentation/architecture-usainbot.html)**
 
 | Fonction | Choix | JLCPCB |
 |---|---|---|
@@ -28,42 +41,35 @@ En résumé :
 | Charge | BQ25887, 2S élévateur depuis USB-C, équilibrage | `C2761614` |
 | Alimentation | Pack 2S LiFePO4, bus 5,0–7,3 V, buck 3,3 V | `C3200405` |
 
-## Organisation du dépôt
+## Géométrie
 
-```
-UsainBot/            projet KiCad (schéma, PCB, table de bibliothèques)
-UsainBot.ioc         configuration STM32CubeMX
-kicad-lib/           empreintes et modèles 3D propres au projet
-  Pacabot.pretty/    empreintes mécaniques
-  3d/                modèles STEP des moteurs, supports et roues
-Mecanique/           sources FreeCAD du châssis, des supports et de la carte
-Documentation/       document d'architecture
-Reglements/          règlement de l'épreuve
-```
+La garde au sol vaut `rayon de roue − hauteur de l'axe moteur au-dessus du dessous de
+carte`. Avec les roues Pololu 40 × 7 retenues et le support N20 nu, l'axe est à 11 mm et
+la garde serait de 9 mm — au-delà de la plage utile de l'ITR8307, qui travaille entre 2 et
+4 mm. **Quatre millimètres d'entretoises sur mesure** sous le support portent l'axe à
+15 mm et ramènent la garde à 5 mm.
 
-Les chemins de bibliothèque sont exprimés en `${KIPRJMOD}/../kicad-lib/…` : le dépôt se
-clone et s'ouvre tel quel, sans variable d'environnement à déclarer.
+Conséquence à répercuter : le décalage en Z des modèles 3D du moteur et du support, dans
+`electronics/kicad-lib/Pacabot.pretty/`, devra suivre l'épaisseur d'entretoise retenue.
 
 ## Points ouverts
 
-- **Diamètre de roue et garde au sol.** La bibliothèque 3D contient une roue Pololu
-  40 × 7 mm. Or la garde au sol vaut `rayon de roue − hauteur de l'axe moteur au-dessus du
-  dessous de carte`, soit environ 9 mm avec des roues de 40 mm — au-delà de la plage utile
-  de l'ITR8307, qui travaille entre 2 et 4 mm. À trancher avant de router : roues plus
-  petites, support moteur rehaussé, ou capteurs déportés.
-- **Départ par télémètre.** Le chapitre 2 du règlement énumère trois moyens de départ
-  (interrupteur, bouton poussoir, jack) et cette liste se lit comme limitative. Question à
+- **Départ par télémètre.** Le chapitre 2 du règlement énumère trois moyens de départ —
+  interrupteur, bouton poussoir, jack — et cette liste se lit comme limitative. Question à
   poser aux organisateurs ; un bouton physique conforme est conservé en secours.
 - **Approvisionnement du télémètre analogique.** OPV302 et BPW77 ne sont probablement pas
-  dans la bibliothèque JLCPCB ; pose manuelle à prévoir, ou repli sur un VL53L1X.
+  dans la bibliothèque JLCPCB : pose manuelle à prévoir, ou repli sur un VL53L1X.
+- **Poussée de la turbine.** À mesurer sous 6,4 V et non sous les 8,4 V pour lesquels les
+  ensembles ESC et brushless du commerce sont calibrés.
 
 ## Contenu tiers
 
-- `Reglements/Reglement-Formule-1-v2.11.pdf` — règlement rédigé par Frédéric Giamarchi et
+- `rules/Reglement-Formule-1-v2.11.pdf` — règlement rédigé par Frédéric Giamarchi et
   Jean-Roch Vaillé pour le Tournoi National de Robotique Sumo. Publié sur
   [robot-sumo.fr](https://robot-sumo.fr), reproduit ici pour le confort de travail de
   l'équipe. Tous droits réservés à leurs auteurs.
-- `Mecanique/battery-holder-4xaa-1.snapshot.1/` — modèle de porte-piles téléchargé,
-  conservé pour référence. Devenu sans objet depuis le passage à un pack 2S LiFePO4.
-- `kicad-lib/3d/GM12-N20_*.step` — dérivés du modèle Waveshare du motoréducteur.
-  Voir `kicad-lib/README.md` pour la provenance et les réserves de cotation.
+- `mechanics/battery-holder-4xaa-1.snapshot.1/` — modèle de porte-piles téléchargé,
+  conservé pour référence. Sans objet depuis le passage à un pack 2S LiFePO4.
+- `electronics/kicad-lib/3d/GM12-N20_*.step` — dérivés du modèle Waveshare du
+  motoréducteur. Voir `electronics/kicad-lib/README.md` pour la provenance et les réserves
+  de cotation.

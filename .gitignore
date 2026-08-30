@@ -19,7 +19,7 @@ fp-info-cache
 *.fcstd1
 
 # Archive de téléchargement, redondante avec le dossier extrait du même nom
-Mecanique/battery-holder-4xaa-1.snapshot.1.zip
+mechanics/battery-holder-4xaa-1.snapshot.1.zip
 
 # Sorties de fabrication (à régénérer, pas à versionner)
 gerbers/

@@ -1,4 +1,0 @@
-(fp_lib_table
-  (version 7)
-  (lib (name "Pacabot")(type "KiCad")(uri "${KIPRJMOD}/../kicad-lib/Pacabot.pretty")(options "")(descr "Pacabot Junior mechanical footprints"))
-)

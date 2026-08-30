@@ -1,4 +1,4 @@
-# Bibliothèque KiCad — Pacabot Junior
+# Bibliothèque KiCad — UsainBot
 
 ## Motor_GM12-N20_Bracket
 

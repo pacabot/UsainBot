@@ -26,16 +26,16 @@
 		(stroke (width 0.12) (type solid)) (fill no) (layer "F.SilkS"))
 	(fp_rect (start -12.750 -22.700) (end 12.750 18.100)
 		(stroke (width 0.05) (type solid)) (fill no) (layer "F.CrtYd"))
-	(model "${KIPRJMOD}/../kicad-lib/3d/GM12-N20_bracket.step"
+	(model "${KIPRJMOD}/kicad-lib/3d/GM12-N20_bracket.step"
 		(offset (xyz 0 0 0)) (scale (xyz 1 1 1)) (rotate (xyz 0 0 0)))
-	(model "${KIPRJMOD}/../kicad-lib/3d/GM12-N20_motor_gearbox.step"
+	(model "${KIPRJMOD}/kicad-lib/3d/GM12-N20_motor_gearbox.step"
 		(offset (xyz 0 0 0)) (scale (xyz 1 1 1)) (rotate (xyz 0 0 0)))
-	(model "${KIPRJMOD}/../kicad-lib/3d/GM12-N20_motor_can.step"
+	(model "${KIPRJMOD}/kicad-lib/3d/GM12-N20_motor_can.step"
 		(offset (xyz 0 0 0)) (scale (xyz 1 1 1)) (rotate (xyz 0 0 0)))
-	(model "${KIPRJMOD}/../kicad-lib/3d/GM12-N20_motor_encoder.step"
+	(model "${KIPRJMOD}/kicad-lib/3d/GM12-N20_motor_encoder.step"
 		(offset (xyz 0 0 0)) (scale (xyz 1 1 1)) (rotate (xyz 0 0 0)))
-	(model "${KIPRJMOD}/../kicad-lib/3d/Pololu_wheel_40x7_hub.step"
+	(model "${KIPRJMOD}/kicad-lib/3d/Pololu_wheel_40x7_hub.step"
 		(offset (xyz 0 0 0)) (scale (xyz 1 1 1)) (rotate (xyz 0 0 0)))
-	(model "${KIPRJMOD}/../kicad-lib/3d/Pololu_wheel_40x7_tire.step"
+	(model "${KIPRJMOD}/kicad-lib/3d/Pololu_wheel_40x7_tire.step"
 		(offset (xyz 0 0 0)) (scale (xyz 1 1 1)) (rotate (xyz 0 0 0)))
 )
