@@ -33,3 +33,9 @@ gerbers/
 __pycache__/
 *.pyc
 venv/
+
+# Sauvegardes de travail des scripts
+*.bak*
+
+# Journaux d'exécution des générateurs FreeCAD (régénérés à chaque export)
+*.log
