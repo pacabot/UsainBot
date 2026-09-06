@@ -1,0 +1,52 @@
+{
+ "01-power.kicad_sch:J102:val": [
+  3.81,
+  0
+ ],
+ "01-power.kicad_sch:J103:val": [
+  2.54,
+  0
+ ],
+ "01-power.kicad_sch:Q102": [
+  0,
+  -2.54
+ ],
+ "01-power.kicad_sch:note:ff357925:0": [
+  0,
+  2.54
+ ],
+ "02-mcu.kicad_sch:note:60cc48b3:0": [
+  0,
+  1.27
+ ],
+ "05-sensors.kicad_sch:U502:13:stub": 2.54,
+ "06-hmi.kicad_sch:Q602:3:stub": 2.54,
+ "06-hmi.kicad_sch:R614": [
+  0,
+  1.27
+ ],
+ "06-hmi.kicad_sch:R615": [
+  0,
+  1.27
+ ],
+ "06-hmi.kicad_sch:R616": [
+  0,
+  1.27
+ ],
+ "06-hmi.kicad_sch:R617": [
+  0,
+  1.27
+ ],
+ "06-hmi.kicad_sch:R618": [
+  0,
+  1.27
+ ],
+ "07-comms.kicad_sch:note:4008fd0c:0": [
+  0,
+  1.27
+ ],
+ "07-comms.kicad_sch:note:f25a0aa6:0": [
+  0,
+  1.27
+ ]
+}

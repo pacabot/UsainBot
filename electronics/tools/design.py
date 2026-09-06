@@ -1,22 +1,26 @@
 # -*- coding: utf-8 -*-
 """Genere le schema hierarchique KiCad du robot UsainBot."""
-import os, sys
+import json, os, sys
 import kigen
 from kigen import SymLib, Sheet, q, fmt, uid, ROOT_UUID, ROOT_FILE
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ELEC = os.path.abspath(os.path.join(HERE, '..'))          # .../electronics
-DEST = sys.argv[1] if len(sys.argv) > 1 else ELEC
+_args = [a for a in sys.argv[1:] if not a.startswith('--')]
+DEST = _args[0] if _args else ELEC
+REPORT = (sys.argv[sys.argv.index('--report') + 1]
+          if '--report' in sys.argv else None)
 PRJ  = os.path.join(ELEC, 'kicad-lib')
 LIB  = SymLib([PRJ])
 
 DATE, REV, COMPANY = '2026-08-30', 'A', 'Pacabot'
 
 # ------------------------------------------------------------------ empreintes
-R06  = 'Resistor_SMD:R_0603_1608Metric'
+R06  = 'Resistor_SMD:R_0402_1005Metric'     # petit signal : 0402 partout
 R08  = 'Resistor_SMD:R_0805_2012Metric'
 R12  = 'Resistor_SMD:R_1206_3216Metric'
-C06  = 'Capacitor_SMD:C_0603_1608Metric'
+C06  = 'Capacitor_SMD:C_0402_1005Metric'    # petit signal : 0402 partout
+C0603 = 'Capacitor_SMD:C_0603_1608Metric'   # repli quand tension ou valeur depasse
 C08  = 'Capacitor_SMD:C_0805_2012Metric'
 C12  = 'Capacitor_SMD:C_1206_3216Metric'
 C1210= 'Capacitor_SMD:C_1210_3225Metric'
@@ -39,22 +43,36 @@ def cx(sh, pin, spec, stub=2.54):
         sh.nc(pin); return
     if spec.startswith('@'):
         rail = spec[1:]
+        stub = sh._stub(pin, stub)
         end = pin.out(stub)
         if stub:
-            sh.wire((pin.x, pin.y), end)
-        # pas de coude : deux troncons paralleles ne se croisent jamais.
-        # La broche du symbole d alimentation est a son origine, donc le tourner
-        # ne deplace rien : on l oriente seulement pour que le dessin tombe juste.
+            sh.wire((pin.x, pin.y), end, rail)
         d = (round(pin.dx), round(pin.dy))
-        if rail in GNDISH:
-            rot = {(0, 1): 0, (0, -1): 180, (-1, 0): 90, (1, 0): 270}[d]
+        gnd = rail in GNDISH
+        if d[1] != 0:
+            # troncon vertical : masse en bas, rail en haut, jamais couches
+            rot = 0 if (gnd and d[1] > 0) or (not gnd and d[1] < 0) else 180
         else:
-            rot = {(0, -1): 0, (0, 1): 180, (-1, 0): 270, (1, 0): 90}[d]
-        sh.power_at(rail, end, PWRLIB[rail], rot=rot)
+            # troncon horizontal : petit coude, la masse descend, le rail monte.
+            # Les controles de fils et d'encre attrapent les coudes hasardeux.
+            e2 = (end[0], end[1] + (2.54 if gnd else -2.54))
+            sh.wire(end, e2, rail)
+            end = e2
+            rot = 0
+        sh.power_at(rail, end, PWRLIB[rail], rot=rot, owner=pin.ref)
     elif spec.startswith('$'):
         sh.gnet(pin, spec[1:], stub)
     else:
         sh.net(pin, spec, stub)
+
+def out_pin(part):
+    """Broche de sortie d une unite d ampli op (la numerotation change d une
+    unite a l autre : 1, 7, 8, 14)."""
+    for p in part.pins():
+        if p.etype == 'output':
+            return p
+    raise KeyError(f'{part.ref} : pas de sortie')
+
 
 def cx_bar(sh, part, nums, spec, offset=7.62, stub=2.54):
     """Plusieurs broches sur un meme net : une seule etiquette, pas une par broche.
@@ -72,7 +90,8 @@ def cx_bar(sh, part, nums, spec, offset=7.62, stub=2.54):
         cx(sh, pins[0], spec, stub)
         return
     net = spec[1:] if spec[0] in '@$' else spec
-    end = sh.bar(pins, net, offset)
+    pick = 'high' if (spec.startswith('@') and spec[1:] not in GNDISH) else 'low'
+    end = sh.bar(pins, net, offset, pick)
     d = (round(pins[0].dx), round(pins[0].dy))
     cx(sh, kigen.Pin(end[0], end[1], d[0], d[1], '', '', 'passive'), spec, stub)
 
@@ -85,7 +104,8 @@ def flag_net(sh, net, x, y, glob=True):
 
 def flag(sh, rail, x, y):
     """Rail + PWR_FLAG cote a cote, pour satisfaire l'ERC."""
-    sh.power_at(rail, (x, y), PWRLIB[rail], rot=180)
+    rot = 0 if rail in GNDISH else 180
+    sh.power_at(rail, (x, y), PWRLIB[rail], rot=rot)
     sh.wire((x, y), (x + 5.08, y), rail)
     sh.power_at('PWR_FLAG', (x + 5.08, y), 'power', rot=180)
 
@@ -93,7 +113,8 @@ def flag(sh, rail, x, y):
 def vert(sh, lib_id, ref, val, x, y, top, bot, fp, fields=None, dnp=False):
     """Composant vertical : broche 1 en haut, broche 2 en bas."""
     p = sh.place(lib_id, ref, val, x, y, fp=fp, fields=fields, dnp=dnp,
-                 ref_at=(x + 3.81, y - 1.27), val_at=(x + 3.81, y + 1.27))
+                 fjust='left',
+                 ref_at=(x + 3.6, y - 1.27), val_at=(x + 3.6, y + 1.27))
     cx(sh, p.pin('1'), top)
     cx(sh, p.pin('2'), bot)
     return p
@@ -108,18 +129,72 @@ def horiz(sh, lib_id, ref, val, x, y, left, right, fp, fields=None, dnp=False):
     cx(sh, b, right)
     return p
 
+FLD_OFF = {C08: 2.6, C1210: 3.0, R08: 2.6, R12: 2.9,
+           CPOL: 4.3, 'Capacitor_SMD:CP_Elec_8x10': 5.3,
+           'Resistor_SMD:R_2512_6332Metric': 4.0}
+R_POWER = {R06: '63mW', 'Resistor_SMD:R_0603_1608Metric': '100mW',
+           R08: '125mW', R12: '250mW',
+           'Resistor_SMD:R_2512_6332Metric': '1W'}
+
+
 def C(sh, ref, val, x, y, top, bot, fp=C06, fields=None):
-    return vert(sh, 'Device:C', ref, val, x, y, top, bot, fp, fields)
+    """Condensateur : Value nue, champ Voltage visible, Dielectric masque.
+
+    0402 par defaut ; si la valeur ou la tension demandee n existe pas
+    proprement dans ce boitier, repli automatique en 0603.
+    """
+    volt = None
+    if '/' in val:
+        val, volt = [t.strip() for t in val.split('/', 1)]
+    unit = 'p' if 'p' in val else 'n' if 'n' in val else 'u'
+    if volt is None:
+        volt = {'p': '50V', 'n': '25V'}.get(unit) or \
+               ('16V' if val == '1uF' else '10V' if val.startswith('2u2') else '25V')
+    if fp == C06:
+        v = int(volt.rstrip('V'))
+        fits = (unit == 'p' and v <= 50) or \
+               (unit == 'n' and v <= (25 if val == '100nF' else 50)) or \
+               (val == '1uF' and v <= 16) or (val.startswith('2u2') and v <= 10)
+        if not fits:
+            fp = C0603
+    if fp in (CPOL, 'Capacitor_SMD:CP_Elec_8x10'):
+        diel = 'ALU'
+    elif unit == 'p':
+        diel = 'C0G'
+    elif unit == 'u' or fp == C1210:
+        diel = 'X5R'
+    else:
+        diel = 'X7R'
+    o = FLD_OFF.get(fp, 2.3)
+    p = sh.place('Device:C', ref, val, x, y, fp=fp, fields=fields, fjust='left',
+                 ref_at=(x + o, y - 2.54), val_at=(x + o, y),
+                 extra=[('Voltage', volt, (x + o, y + 2.54), False),
+                        ('Dielectric', diel, (x + o, y + 5.08), True)])
+    cx(sh, p.pin('1'), top)
+    cx(sh, p.pin('2'), bot)
+    return p
+
 
 def R(sh, ref, val, x, y, top, bot, fp=R06, fields=None, dnp=False):
-    return vert(sh, 'Device:R', ref, val, x, y, top, bot, fp, fields, dnp)
+    """Resistance : Value nue, champ Power visible."""
+    power = R_POWER.get(fp, '100mW')
+    if '/' in val:
+        val, power = [t.strip().replace(' ', '') for t in val.split('/', 1)]
+    o = FLD_OFF.get(fp, 2.3)
+    p = sh.place('Device:R', ref, val, x, y, fp=fp, fields=fields, dnp=dnp,
+                 fjust='left',
+                 ref_at=(x + o, y - 2.54), val_at=(x + o, y),
+                 extra=[('Power', power, (x + o, y + 2.54), False)])
+    cx(sh, p.pin('1'), top)
+    cx(sh, p.pin('2'), bot)
+    return p
 
 def Rh(sh, ref, val, x, y, left, right, fp=R06, fields=None):
-    return horiz(sh, 'Device:R', ref, val, x, y, left, right, fp, fields)
+    return R(sh, ref, val, x, y, left, right, fp, fields)
 
 def tp(sh, ref, net, x, y, glob=True):
-    p = sh.place('Connector:TestPoint', ref, net, x, y, fp=TP,
-                 ref_at=(x + 2.54, y - 3.81), val_at=(x + 2.54, y - 1.27))
+    p = sh.place('Connector:TestPoint', ref, net, x, y, fp=TP, hide_value=True,
+                 ref_at=(x - 1.27, y - 3.05), val_at=(x + 2.54, y - 1.27))
     cx(sh, p.pin('1'), ('$' + net) if glob else net)
     return p
 
@@ -173,7 +248,7 @@ def sheet_power():
     sh.note('Les paires 1/6 et 3/4 sont reliees en interne :\nle signal traverse le boitier.', 100, 68, 1.0)
 
     # ---------------------------------------------------------- chargeur
-    sh.box(100, 78, 112, 168, 'C. Chargeur elevateur 2S  -  BQ25887')
+    sh.box(100, 78, 116, 168, 'C. Chargeur elevateur 2S  -  BQ25887')
     u2 = sh.place('Battery_Management:BQ25887RGE', 'U102', 'BQ25887RGER', 150, 150,
                   fp='Package_DFN_QFN:HVQFN-24-1EP_4x4mm_P0.5mm_EP2.6x2.6mm_ThermalVias',
                   fields={'LCSC': 'C2761614'}, ref_at=(150, 106), val_at=(150, 180))
@@ -189,7 +264,7 @@ def sheet_power():
     cx(sh, u2.pin('10'), 'CBSET_R')                        # via R de bilan
     cx(sh, u2.pin('8'),  'ILIM')
     cx(sh, u2.pin('7'),  'TS')
-    cx(sh, u2.pin('24'), '@GND')                           # PSEL bas = adaptateur
+    cx(sh, u2.pin('24'), '$GND')                           # PSEL bas = adaptateur
     cx(sh, u2.pin('4'),  '$SDA2')
     cx(sh, u2.pin('5'),  '$SCL2')
     cx(sh, u2.pin('6'),  '$CHG_INT')
@@ -211,17 +286,16 @@ def sheet_power():
     R(sh, 'R103', '383R', 122, 196, 'ILIM', '@GND')
     sh.note('IIN_max = KILIM / RILIM ~ 2,4 A', 136, 214, 1.0)
 
-    # thermistance du pack sur TS
+    # TS fige par le diviseur : pas de thermistance dans le pack
     R(sh, 'R104', '5k23', 106, 214, 'REGN', 'TS')
     R(sh, 'R105', '30k1', 122, 214, 'TS', '@GND')
-    j4 = sh.place('Connector_Generic:Conn_01x02', 'J104', 'NTC pack 10k B3435',
-                  116, 232, fp='Connector_JST:JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical',
-                  ref_at=(110, 224), val_at=(110, 242))
-    cx(sh, j4.pin('1'), 'TS'); cx(sh, j4.pin('2'), '@GND')
+    sh.note('Le diviseur emule un 103AT a 25 C : la fenetre de temperature\n'
+            'est neutralisee, le pack n embarque pas de NTC.', 104, 228, 1.0)
 
     # equilibrage / point milieu
     Rh(sh, 'R106', '300R', 172, 168, 'PACK_MID', 'MID_R')
-    Rh(sh, 'R107', '10R / 1 W', 190, 168, 'PACK_MID', 'CBSET_R', R12)
+    R(sh, 'R107', '10R / 1W', 190, 168, 'PACK_MID', 'CBSET_R',
+      'Resistor_SMD:R_2512_6332Metric')
     sh.note('R107 fixe le courant d equilibrage (400 mA max).', 158, 186, 1.0)
 
     # temoins et inhibition
@@ -239,35 +313,66 @@ def sheet_power():
 
 def sheet_power_b(sh):
     # ------------------------------------------------- pack, coupure, inversion
-    sh.box(220, 24, 190, 104, 'D. Pack 2S, coupure generale et protection contre l inversion')
-    j2 = sh.place('Connector_Generic:Conn_01x02', 'J102', 'Pack 2S LiFePO4 (XT30)',
+    sh.box(220, 24, 190, 104, 'D. Pack 2S : puissance et equilibrage, interrupteur general')
+    j2 = sh.place('Connector_Generic:Conn_01x02', 'J102', 'Pack 2S - puissance',
                   236, 46, fp='Connector_AMASS:AMASS_XT30U-M_1x02_P5.0mm_Vertical',
                   ref_at=(226, 38), val_at=(226, 58))
-    cx(sh, j2.pin('1'), '@VPACK'); cx(sh, j2.pin('2'), '@GND')
-    j3 = sh.place('Connector_Generic:Conn_01x03', 'J103', 'Equilibrage JST-XH 2S',
-                  236, 82, fp='Connector_JST:JST_XH_B3B-XH-AM_1x03_P2.50mm_Vertical',
-                  ref_at=(226, 72), val_at=(226, 96))
-    cx(sh, j3.pin('1'), '@GND')        # B-
-    cx(sh, j3.pin('2'), 'PACK_MID')    # point milieu
-    cx(sh, j3.pin('3'), '@VPACK')      # B+
-    sh.note('Le chargeur est en amont de l interrupteur :\nle robot se recharge eteint.', 226, 106, 1.0)
+    cx(sh, j2.pin('1'), '@VPACK')      # B+
+    cx(sh, j2.pin('2'), '@GND')        # B-
+    j4 = sh.place('Connector_Generic:Conn_01x03', 'J104', 'Pack 2S - equilibrage',
+                  272, 46, fp='Connector_JST:JST_XH_B3B-XH-A_1x03_P2.50mm_Vertical',
+                  ref_at=(262, 38), val_at=(262, 60))
+    # troncons de trois longueurs : les coudes des deux rails tombent sinon
+    # tous deux sur la ligne de la broche du milieu, et court-circuitent B+
+    # sur B- sans que rien ne le signale a l ecran.
+    cx(sh, j4.pin('1'), '@GND', 7.62)       # B- (fil noir de la nappe)
+    cx(sh, j4.pin('2'), 'PACK_MID', 2.54)   # point milieu (equilibrage BQ25887)
+    cx(sh, j4.pin('3'), '@VPACK', 15.24)    # B+
 
-    vert(sh, 'Device:Fuse', 'F101', '10 A', 288, 46, '@VPACK', 'VBAT_SW_IN', R12)
-    j5 = sh.place('Connector_Generic:Conn_01x02', 'J105', 'ON/OFF deporte 10 A',
-                  288, 78, fp='Connector_JST:JST_VH_B2P-VH_1x02_P3.96mm_Vertical',
-                  ref_at=(278, 70), val_at=(278, 92))
-    cx(sh, j5.pin('1'), 'VBAT_SW_IN'); cx(sh, j5.pin('2'), 'VBAT_SW_OUT')
 
-    q2 = sh.place('Pacabot:AO4407A', 'Q102', 'AO4407A', 362, 62,
-                  fp='Package_SO:SOIC-8_3.9x4.9mm_P1.27mm',
-                  ref_at=(334, 58), val_at=(334, 62))
-    cx_bar(sh, q2, ('5', '6', '7', '8'), 'VBAT_SW_OUT')   # drain cote batterie
-    cx_bar(sh, q2, ('1', '2', '3'), '@VBAT')              # source cote charge
-    cx(sh, q2.pin('4'), 'QREV_G')
-    R(sh, 'R114', '100k', 340, 80, 'QREV_G', '@GND')
-    sh.note('Canal P en serie cote haut : drain vers la batterie, source vers la charge.\n'
-            'Polarite correcte -> Vgs = -Vbat, le canal conduit. Polarite inversee -> bloque.\n'
-            'Une Schottky aurait coute 1,2 W a 3 A.', 300, 100, 1.0)
+    vert(sh, 'Device:Fuse', 'F101', '12 A', 316, 46, '@VPACK', 'VBAT_SW_IN', R12)
+
+    # ------------------------------- mise sous tension par bouton poussoir
+    # Une impulsion amorce, le microcontroleur se tient lui-meme, et c est lui
+    # qui coupe. L interrupteur a glissiere qui etait ici demandait une place
+    # au bord de carte que le pack, l equilibrage et les fils de l ESC ont
+    # fini par prendre - et il ne savait pas eteindre proprement : couper le
+    # 3,3 V sous les pieds du firmware n a jamais rien ecrit dans la flash.
+    R(sh, 'R125', '10k', 228, 70, 'VBAT_SW_IN', 'BTN_N')
+    R(sh, 'R127', '470k', 248, 70, 'BTN_N', '$PWR_BTN')
+    R(sh, 'R128', '220k', 268, 70, '$PWR_BTN', '@GND')
+    C(sh, 'C122', '100nF', 286, 70, '$PWR_BTN', '@GND')
+    sw1 = sh.place('Switch:SW_Push', 'SW101', 'MARCHE / ARRET', 232, 102,
+                   fp='Button_Switch_SMD:SW_SPST_B3U-1000P',
+                   ref_at=(232, 94), val_at=(232, 98))
+    cx(sh, sw1.pin('1'), 'BTN_N')
+    cx(sh, sw1.pin('2'), '@GND')
+    horiz(sh, 'Device:D_Schottky', 'D106', 'BAT54', 272, 102, 'PWR_G', 'BTN_N',
+          'Diode_SMD:D_SOD-323')
+    C(sh, 'C123', '1uF/16V', 300, 92, 'PWR_G', '@GND', C06)
+    nmos_switch(sh, 'Q104', 390, 94, '$PWR_HOLD', 'PWR_G',
+                rref=('R124', 'R126'))
+
+    for qref, qx in (('Q102', 348), ('Q103', 388)):
+        q_ = sh.place('Pacabot:AO4407A', qref, 'AO4407A', qx, 62,
+                      fp='Package_SO:SOIC-8_3.9x4.9mm_P1.27mm',
+                      ref_at=(qx, 44), val_at=(qx, 48))
+        cx_bar(sh, q_, ('1', '2', '3'), 'VBAT_SW_IN')     # source cote pack
+        cx_bar(sh, q_, ('5', '6', '7', '8'), '@VBAT')     # drain cote charge
+        cx(sh, q_.pin('4'), 'PWR_G')
+    R(sh, 'R114', '100k', 340, 80, 'PWR_G', 'VBAT_SW_IN')
+    sh.note('Pack : XT30 vertical pour le courant, JST-XH pour la nappe\n'
+            'd equilibrage qui apporte le point milieu au BQ25887. Coupure par\n'
+            'deux canaux P en parallele (Rds/2), grille rappelee a la source\n'
+            'par R114 : coupe par defaut, aucune fuite de grille.\n'
+            'MISE SOUS TENSION PAR BOUTON POUSSOIR. L appui tire la grille au\n'
+            '0 V par D106 et les FET conduisent. Le firmware met PE0 a 1 des le\n'
+            'demarrage : Q104 tient la grille, le bouton peut etre relache. Il\n'
+            'lit ensuite le bouton sur PE1 (diviseur 470k/220k, 2,3 V au plein\n'
+            'du pack) et coupe en relachant PE0 - apres avoir ferme la flash,\n'
+            'ce qu un interrupteur ne savait pas faire. C123 donne 100 ms de\n'
+            'retombee : un reset du MCU ne coupe pas l alimentation.\n'
+            'A l arret : 7,3 V / 700 k, soit 10 uA.', 296, 245, 1.0)
     horiz(sh, 'Device:D_TVS', 'D102', 'SMBJ9.0A', 300, 118, '@VBAT', '@GND', 'Diode_SMD:D_SMB')
     C(sh, 'C109', '100uF/16V', 330, 118, '@VBAT', '@GND', CPOL)
     C(sh, 'C110', '100nF', 344, 118, '@VBAT', '@GND', C06)
@@ -275,10 +380,10 @@ def sheet_power_b(sh):
             'renvoie toute l energie cinetique dans un pack deja plein.', 236, 126, 1.0)
 
     # ------------------------------------------------------------- buck 3,3 V
-    sh.box(220, 140, 190, 92, 'E. Convertisseur 3,3 V / 2 A  -  TPS62933')
+    sh.box(220, 140, 190, 84, 'E. Convertisseur 3,3 V / 2 A  -  TPS62933')
     u3 = sh.place('Regulator_Switching:TPS62933', 'U103', 'TPS62933DRLR', 290, 176,
                   fp='Package_TO_SOT_SMD:SOT-583-8', fields={'LCSC': 'C3200405'},
-                  ref_at=(290, 158), val_at=(290, 204))
+                  ref_at=(290, 158), val_at=(290, 162))
     cx(sh, u3.pin('VIN'), '@VBAT')
     cx(sh, u3.pin('GND'), '@GND')
     cx(sh, u3.pin('SW'),  'SW_BUCK')
@@ -292,18 +397,18 @@ def sheet_power_b(sh):
     C(sh, 'C113', '100nF', 258, 156, '@VBAT', '@GND', C06)
     R(sh, 'R115', '100k', 232, 200, '@VBAT', 'EN_BUCK')
     C(sh, 'C114', '100nF', 262, 200, 'BST_BUCK', 'SW_BUCK', C06)
-    C(sh, 'C115', '10nF', 272, 210, 'SS_BUCK', '@GND', C06)
-    R(sh, 'R116', '42k2', 282, 210, 'RT_BUCK', '@GND')
+    C(sh, 'C115', '10nF', 272, 206, 'SS_BUCK', '@GND', C06)
+    R(sh, 'R116', '42k2', 282, 206, 'RT_BUCK', '@GND')
     horiz(sh, 'Device:L', 'L102', '4u7H / 3 A', 330, 164, 'SW_BUCK', '@+3V3',
           'Inductor_SMD:L_Taiyo-Yuden_NR-40xx')
     C(sh, 'C116', '22uF/10V', 348, 178, '@+3V3', '@GND', C08)
     C(sh, 'C117', '22uF/10V', 358, 178, '@+3V3', '@GND', C08)
     C(sh, 'C118', '100nF', 368, 178, '@+3V3', '@GND', C06)
-    R(sh, 'R117', '100k', 330, 196, '@+3V3', 'FB_BUCK')
-    R(sh, 'R118', '31k6', 330, 214, 'FB_BUCK', '@GND')
+    R(sh, 'R117', '100k', 330, 190, '@+3V3', 'FB_BUCK')
+    R(sh, 'R118', '31k6', 330, 208, 'FB_BUCK', '@GND')
     sh.note('VOUT = 0,8 V x (1 + R117/R118) = 3,33 V.\n'
             'R116 fixe la frequence (~500 kHz) : a recaler sur la courbe fSW(RT).',
-            234, 228, 1.0)
+            234, 222, 1.0)
 
     # ------------------------------------------------- 3V3A et mesure de bord
     sh.box(16, 124, 80, 152, 'F. Rail analogique et surveillance de bord')
@@ -315,15 +420,22 @@ def sheet_power_b(sh):
             'et VREF+ partagent exactement le meme potentiel,\n'
             'donc la mesure est ratiometrique et l ondulation\n'
             'du buck s annule.', 18, 166, 1.0)
-    R(sh, 'R119', '68k', 32, 196, '@VBAT', '$VBAT_SENSE')
-    R(sh, 'R120', '33k', 32, 214, '$VBAT_SENSE', '@GND')
-    C(sh, 'C121', '100nF', 54, 214, '$VBAT_SENSE', '@GND', C06)
-    sh.note('7,3 V -> 2,38 V sur ADC3 (PC0)', 18, 230, 1.0)
+    R(sh, 'R119', '22k', 32, 190, '@VBAT', '$VBAT_SENSE')
+    R(sh, 'R120', '10k', 32, 208, '$VBAT_SENSE', '@GND')
+    C(sh, 'C121', '100nF', 54, 208, '$VBAT_SENSE', '@GND', C06)
+    sh.note('7,3 V -> 2,28 V, directement sur PC0. Le 74HC4051 qui multiplexait\n'
+            'cette mesure avec les deux IPROPI a disparu avec le passage au\n'
+            'LQFP144 : chacun des trois a desormais son entree, et surtout les\n'
+            'deux courants moteur se lisent au meme instant (PF11 sur ADC1,\n'
+            'PF13 sur ADC2, meme numero de voie). Thevenin 6,9 k, C121 sert de\n'
+            'reservoir de charge pour l echantillonnage.',
+            18, 232, 1.0)
     sh.note('VPACK est deja pilote par la broche BAT du chargeur :\n'
             'il ne prend pas de drapeau.', 18, 242, 1.0)
     for rail, y in [('VBAT', 254), ('+3V3', 262), ('+3V3A', 270), ('GND', 278)]:
         flag(sh, rail, 26, y)
     flag_net(sh, 'VBUS_IN', 58, 254, glob=False)
+
     return sh
 
 
@@ -341,41 +453,65 @@ def rail_bar(sh, pins, rail, offset=7.62):
     sh.junction((mid.x, y))
 
 
-MCU_PINS = {
-    # --- cote gauche -------------------------------------------------------
-    '14': 'NRST',            '94': 'BOOT0',          '20': '@+3V3A',
-    '12': 'OSC_IN',          '13': 'OSC_OUT',
-    '97': '$TOF_F_INT',      '98': '$TOF_FL_INT',
-    '1':  '$CHG_CD_EN',      '2':  '$CHG_INT',
-    '3':  'TP_PE4',          '4':  'TP_PE5',         '5':  '$IMU_INT1',
-    '37': '$IR_BANK_A',      '38': '$IR_BANK_B',
-    '39': '$MOT_L_IN1',      '40': '$SW_UP',
-    '41': '$MOT_L_IN2',      '42': '$SW_DOWN',
-    '43': '$MOT_R_IN1',      '44': '$MOT_R_IN2',     '45': '$SW_LEFT',
-    '81': '$MOT_L_nSLEEP',   '82': '$MOT_R_nSLEEP',  '83': '$FLASH_nCS',
-    '84': '$MOT_L_nFAULT',   '85': '$MOT_R_nFAULT',
-    '86': '$TOF_F_XSHUT',    '87': '$TOF_FL_XSHUT',
-    '88': 'NC', '55': 'NC', '56': 'NC', '58': 'NC', '59': 'NC',
-    '57': '$SW_RIGHT',       '60': '$SW_PUSH',       '61': '$START_BTN',
-    '62': '$LED_STATUS',
-    '48': 'VCAP1',           '73': 'VCAP2',
-    # --- cote droit --------------------------------------------------------
-    '22': '$LINE_00', '23': '$LINE_01', '24': '$LINE_02', '25': '$LINE_03',
-    '28': '$LINE_04', '29': '$LINE_05', '30': '$LINE_06', '31': '$LINE_07',
-    '34': '$LINE_08', '35': '$LINE_09', '32': '$LINE_10', '33': '$LINE_11',
-    '67': '$BLE_PWR_EN', '68': '$BLE_TX', '69': '$BLE_RX',
-    '70': '$USB_DM', '71': '$USB_DP',
-    '72': 'SWDIO', '76': 'SWCLK', '77': 'TP_PA15',
-    '36': '$IR_LASER_EN', '89': 'SWO',
-    '90': '$ENC_L_A', '91': '$ENC_L_B', '63': '$ENC_R_A', '64': '$ENC_R_B',
-    '92': '$SCL1', '93': '$SDA1', '46': '$SCL2', '47': '$SDA2',
-    '95': '$ESC_PWM', '96': '$BUZZER',
-    '51': '$IMU_nCS', '52': '$IMU_SCK', '53': '$IMU_MISO', '54': '$IMU_MOSI',
-    '15': '$VBAT_SENSE', '16': '$IPROPI_L', '17': '$IPROPI_R', '18': '$TOF_ANA',
-    '65': '$LED_ERROR', '66': '$LED_USER',
-    '78': '$FLASH_SCK', '79': '$FLASH_MISO', '80': '$FLASH_MOSI',
-    '7': 'TP_PC13', '8': 'TP_PC14', '9': 'TP_PC15',
+# Brochage du STM32H723ZGT6 (LQFP144), donne PAR NOM DE PORT et non par
+# numero de broche. C'est ce qui a rendu le passage du LQFP100 au LQFP144
+# sur : 85 des 87 affectations se sont transposees telles quelles, parce
+# qu'une affectation est un choix de PORT (PA0 porte la voie de ligne 00),
+# jamais un choix de patte. Une table numerotee aurait demande de recopier
+# 144 lignes a la main, et une erreur de brochage ne se voit pas a l'ERC.
+# Les broches absentes de cette table sont declarees non connectees
+# automatiquement plus bas : aucune ne peut etre oubliee.
+MCU_PORTS = {
+    # --- service et horloge ------------------------------------------------
+    'NRST': 'NRST',          'BOOT0': 'BOOT0',
+    'PH0': 'OSC_IN',         'PH1': 'OSC_OUT',
+    # --- alimentation et bouton --------------------------------------------
+    'PE0': '$PWR_HOLD',      'PE1': '$PWR_BTN',
+    # --- ponts moteur, codeurs ---------------------------------------------
+    'PE9': '$MOT_L_IN1',     'PE11': '$MOT_L_IN2',
+    'PE13': '$MOT_R_IN1',    'PE14': '$MOT_R_IN2',
+    'PD0': '$MOT_L_nSLEEP',  'PD1': '$MOT_R_nSLEEP',
+    'PD3': '$MOT_L_nFAULT',  'PD4': '$MOT_R_nFAULT',
+    'PB4(NJTRST)': '$ENC_L_A', 'PB5': '$ENC_L_B',
+    'PC6': '$ENC_R_A',       'PC7': '$ENC_R_B',
+    # --- barrette de ligne : douze voies d ADC, une par capteur ------------
+    'PA0': '$LINE_00', 'PA1': '$LINE_01', 'PA2': '$LINE_02', 'PA3': '$LINE_03',
+    'PA4': '$LINE_04', 'PA5': '$LINE_05', 'PA6': '$LINE_06', 'PA7': '$LINE_07',
+    'PB0': '$LINE_08', 'PB1': '$LINE_09', 'PC4': '$LINE_10', 'PC5': '$LINE_11',
+    'PE7': '$IR_BANK_A',     'PE8': '$IR_BANK_B',
+    # --- telemetrie : emission et trois voies de reception -----------------
+    'PE2': '$TX_FL',         'PB2': '$TX_F',         'PC13': '$TX_L',
+    'PC1': '$RX_F',          'PC2_C': '$RX_FL',      'PC3_C': '$RX_L',
+    # --- surveillance analogique DIRECTE (le multiplexeur a disparu) -------
+    # PF11 est ADC1_INP2 et PF13 ADC2_INP2 : meme numero de voie sur DEUX
+    # convertisseurs, donc les deux courants moteur se lisent au meme
+    # instant en mode double simultane. Le 74HC4051 l'interdisait par
+    # construction - on lisait un moteur, on commutait, on attendait
+    # l'etablissement, on lisait l'autre.
+    'PF11': '$IPROPI_L',     'PF13': '$IPROPI_R',    'PC0': '$VBAT_SENSE',
+    # --- inertie, flash, radio, USB ----------------------------------------
+    'PE6': '$IMU_INT1',
+    'PB12': '$IMU_nCS', 'PB13': '$IMU_SCK', 'PB14': '$IMU_MISO', 'PB15': '$IMU_MOSI',
+    'PD2': '$FLASH_nCS',
+    'PC10': '$FLASH_SCK', 'PC11': '$FLASH_MISO', 'PC12': '$FLASH_MOSI',
+    'PA8': '$BLE_PWR_EN', 'PA9': '$BLE_TX', 'PA10': '$BLE_RX',
+    'PA11': '$USB_DM', 'PA12': '$USB_DP',
+    # --- IHM, turbine, chargeur, eclairage ---------------------------------
+    'PE10': '$SW_UP', 'PE12': '$SW_DOWN', 'PE15': '$SW_LEFT',
+    'PD10': '$SW_RIGHT', 'PD13': '$SW_PUSH', 'PD14': '$START_BTN',
+    'PB10': '$SCL2', 'PB11': '$SDA2',
+    'PB8': '$ESC_PWM', 'PB9': '$BUZZER',
+    'PE3': '$CHG_CD_EN', 'PE4': '$CHG_INT', 'PE5': '$TRACK_EN',
+    # --- debogage ----------------------------------------------------------
+    'PA13(JTMS': 'SWDIO', 'PA14(JTCK': 'SWCLK', 'PB3(JTDO': 'SWO',
 }
+# broches d alimentation, traitees a part (VSS est empile sur une seule
+# position dans le symbole : un seul raccordement les relie toutes)
+MCU_ALIM = {'VDDA': '@+3V3A', 'VREF+': '@+3V3A', 'VSSA': '@GND',
+            'VBAT': '@+3V3', 'VSS': '@GND',
+            'VDD33USB': '@+3V3',    # separee sur le 144, absente du 100
+            'PDR_ON': '@+3V3'}      # a VDD : reset interne actif
+
 
 
 # =====================================================================
@@ -383,79 +519,107 @@ MCU_PINS = {
 # =====================================================================
 def sheet_mcu():
     sh = Sheet(LIB, 'MCU', '02-mcu.kicad_sch', paper='A3',
-               title='UsainBot - STM32H723VGT6, horloge et debogage',
+               title='UsainBot - STM32H723ZGT6, horloge et debogage',
                rev=REV, date=DATE, company=COMPANY,
-               comments=('Mode LDO seul (AN5312) : le LQFP100 n expose pas les broches SMPS',
-                         'PB3 est reserve au SWO, d ou l abandon de TIM2'))
-    u = sh.place('MCU_ST_STM32H7:STM32H723VGTx', 'U201', 'STM32H723VGT6', 200, 150,
-                 fp='Package_QFP:LQFP-100_14x14mm_P0.5mm', fields={'LCSC': 'C730142'},
-                 ref_at=(200, 72), val_at=(200, 228),
-                 datasheet='https://www.st.com/resource/en/datasheet/stm32h723vg.pdf')
+               comments=('Mode LDO seul (AN5312) : le LQFP144 n expose pas les broches SMPS',
+                         'Passe du LQFP100 au LQFP144 le 4 septembre : 12 entrees ADC de plus'))
+    u = sh.place('MCU_ST_STM32H7:STM32H723ZGTx', 'U201', 'STM32H723ZGT6', 200, 152,
+                 fp='Package_QFP:LQFP-144_20x20mm_P0.5mm', fields={'LCSC': 'C730146'},
+                 ref_at=(200, 52), val_at=(200, 258),
+                 datasheet='https://www.st.com/resource/en/datasheet/stm32h723zg.pdf')
 
-    for num, spec in MCU_PINS.items():
-        cx(sh, u.pin(num), spec, stub=5.08)
+    vus = set()
+    for nom, spec in MCU_PORTS.items():
+        p = u.pin(nom)
+        cx(sh, p, spec, stub=5.08)
+        vus.add(p.num)
 
-    # alimentations
-    rail_bar(sh, [u.pin(n) for n in ('11', '27', '50', '75', '100')], '+3V3', 10.16)
-    cx(sh, u.pin('6'),  '@+3V3')      # VBAT interne
-    cx(sh, u.pin('21'), '@+3V3A')     # VDDA
-    cx(sh, u.pin('10'), '@GND')       # les cinq VSS partagent le meme point
-    cx(sh, u.pin('19'), '@GND')       # VSSA
+    # --- alimentations
+    vdd = [p for p in u.pins() if p.name == 'VDD']
+    rail_bar(sh, vdd, '+3V3', 10.16)
+    vus |= {p.num for p in vdd}
+    for nom, spec in MCU_ALIM.items():
+        p = u.pin(nom)
+        cx(sh, p, spec, stub=5.08 if nom in ('VDD33USB', 'PDR_ON') else 2.54)
+        vus |= {q.num for q in u.pins() if q.name == nom}
+    for num, net in (('71', 'VCAP1'), ('106', 'VCAP2')):   # deux positions
+        cx(sh, u.pin(num), net)
+        vus.add(num)
 
-    # decouplage
-    sh.box(120, 20, 200, 32, 'Decouplage  -  un 100 nF par broche VDD, au plus pres du boitier')
-    for i, ref in enumerate(('C201', 'C202', 'C203', 'C204', 'C205')):
-        C(sh, ref, '100nF', 128 + i * 12, 36, '@+3V3', '@GND')
-    C(sh, 'C206', '4u7F/10V', 188, 36, '@+3V3', '@GND', C08)
-    C(sh, 'C207', '100nF', 200, 36, '@+3V3', '@GND')
-    C(sh, 'C208', '100nF', 224, 36, '@+3V3A', '@GND')
-    C(sh, 'C209', '1uF', 236, 36, '@+3V3A', '@GND')
-    C(sh, 'C210', '100nF', 260, 36, '@+3V3A', '@GND')
-    C(sh, 'C211', '1uF', 272, 36, '@+3V3A', '@GND')
-    sh.note('C208/C209 : VDDA        C210/C211 : VREF+', 224, 50, 1.0)
-    C(sh, 'C212', '2u2F/10V', 128, 200, 'VCAP1', '@GND', C08)
-    C(sh, 'C213', '2u2F/10V', 142, 200, 'VCAP2', '@GND', C08)
-    sh.note('VCAP : 2,2 uF ceramique, ESR < 2 ohm, tres pres du boitier.', 118, 212, 1.0)
+    # --- tout le reste est explicitement non connecte : aucune broche du
+    #     boitier ne peut etre oubliee en silence
+    libres = []
+    for p in u.pins():
+        if p.num in vus:
+            continue
+        sh.nc(p)
+        libres.append(p.name)
 
-    # reset et boot
-    sh.box(20, 62, 96, 42, 'Reset et selection du mode de demarrage')
-    R(sh, 'R201', '10k', 32, 78, '@+3V3', 'NRST')
-    C(sh, 'C214', '100nF', 46, 78, 'NRST', '@GND')
-    R(sh, 'R202', '10k', 68, 78, 'BOOT0', '@GND')
-    R(sh, 'R203', '10k', 82, 78, '@+3V3', 'BOOT0', R06, dnp=True)
-    tp(sh, 'TP201', 'BOOT0', 100, 74, glob=False)
-    sh.note('R203 non montee : la poser force le bootloader DFU.', 24, 100, 1.0)
+    # --- decouplage : un 100 nF par broche VDD, plus les rails analogiques
+    sh.box(268, 16, 142, 96,
+           'Decouplage  -  un 100 nF par broche VDD (elles sont onze)')
+    cent = ['C201', 'C202', 'C203', 'C204', 'C205', 'C207',
+            'C217', 'C218', 'C219', 'C220', 'C221']
+    for i, ref in enumerate(cent):
+        C(sh, ref, '100nF', 282 + (i % 4) * 32, 36 + (i // 4) * 26,
+          '@+3V3', '@GND')
+    C(sh, 'C206', '4u7F/10V', 378, 88, '@+3V3', '@GND', C08)
 
-    # horloge
-    sh.box(20, 112, 96, 54, 'Horloge HSE 25 MHz  -  obligatoire pour l USB')
-    y1 = sh.place('Device:Crystal_GND24_Small', 'Y201', '25 MHz / 10 ppm', 60, 130,
+    sh.box(268, 120, 142, 74, 'Rails analogiques, USB et VCAP')
+    C(sh, 'C208', '100nF', 282, 140, '@+3V3A', '@GND')
+    C(sh, 'C209', '1uF', 314, 140, '@+3V3A', '@GND')
+    C(sh, 'C210', '100nF', 346, 140, '@+3V3A', '@GND')
+    C(sh, 'C211', '1uF', 378, 140, '@+3V3A', '@GND')
+    C(sh, 'C222', '100nF', 282, 168, '@+3V3', '@GND')
+    C(sh, 'C212', '2u2F/10V', 320, 168, 'VCAP1', '@GND', C08)
+    C(sh, 'C213', '2u2F/10V', 358, 168, 'VCAP2', '@GND', C08)
+    sh.note('C208/C209 : VDDA.  C210/C211 : VREF+.  C222 : VDD33USB, broche\n'
+            'separee sur le LQFP144 alors que le LQFP100 la reliait en interne.\n'
+            'VCAP : 2,2 uF ceramique, ESR < 2 ohm, tres pres du boitier.\n'
+            'PDR_ON est tiree a VDD : reset interne d alimentation actif.',
+            270, 192, 1.0)
+
+    # --- reset et boot
+    sh.box(16, 62, 100, 42, 'Reset et selection du mode de demarrage')
+    R(sh, 'R201', '10k', 28, 78, '@+3V3', 'NRST')
+    C(sh, 'C214', '100nF', 42, 78, 'NRST', '@GND')
+    R(sh, 'R202', '10k', 64, 78, 'BOOT0', '@GND')
+    R(sh, 'R203', '10k', 78, 78, '@+3V3', 'BOOT0', R06, dnp=True)
+    swr = sh.place('Switch:SW_Push', 'SW603', 'RESET', 100, 78,
+                   fp='Button_Switch_SMD:SW_SPST_B3U-1000P',
+                   ref_at=(100, 68), val_at=(100, 72))
+    cx(sh, swr.pin('1'), 'NRST'); cx(sh, swr.pin('2'), '$GND')
+    sh.note('R203 non montee : la poser force le bootloader DFU.', 20, 100, 1.0)
+
+    # --- horloge
+    sh.box(16, 112, 100, 54, 'Horloge HSE 25 MHz  -  obligatoire pour l USB')
+    y1 = sh.place('Device:Crystal_GND24_Small', 'Y201', '25 MHz / 10 ppm', 56, 130,
                   fp='Crystal:Crystal_SMD_3225-4Pin_3.2x2.5mm',
-                  ref_at=(60, 122), val_at=(60, 140))
+                  ref_at=(56, 122), val_at=(56, 140))
     cx(sh, y1.pin('1'), 'OSC_IN')
     cx(sh, y1.pin('3'), 'XTAL_OUT')
     cx_bar(sh, y1, ('2', '4'), '@GND', offset=5.08)
-    C(sh, 'C215', '10pF', 32, 152, 'OSC_IN', '@GND')
-    C(sh, 'C216', '10pF', 88, 152, 'XTAL_OUT', '@GND')
-    Rh(sh, 'R204', '220R', 100, 130, 'XTAL_OUT', 'OSC_OUT')
-    sh.note('Charge a recaler sur le CL du quartz retenu :\nC = 2 x (CL - Cstray).', 24, 168, 1.0)
+    C(sh, 'C215', '10pF', 28, 152, 'OSC_IN', '@GND')
+    C(sh, 'C216', '10pF', 84, 152, 'XTAL_OUT', '@GND')
+    Rh(sh, 'R204', '220R', 96, 130, 'XTAL_OUT', 'OSC_OUT')
+    sh.note('Charge a recaler sur le CL du quartz retenu :\nC = 2 x (CL - Cstray).', 20, 168, 1.0)
 
-    # debogage
-    sh.box(20, 176, 96, 62, 'Debogage SWD + SWO  -  Tag-Connect TC2050-IDC-NL')
-    j = sh.place('Connector:TC2050', 'J201', 'TC2050-IDC-NL', 62, 206,
-                 fp='Connector:Tag-Connect_TC2050-IDC-NL_2x05_P1.27mm_Vertical',
-                 ref_at=(62, 186), val_at=(62, 228))
-    for num, spec in [('1', '@+3V3'), ('2', 'SWDIO'), ('3', '@GND'), ('4', 'SWCLK'),
-                      ('5', '@GND'), ('6', 'SWO'), ('7', 'NC'), ('8', 'NC'),
-                      ('9', '@GND'), ('10', 'NRST')]:
+    # --- debogage
+    sh.box(16, 176, 100, 62, 'Debogage SWD + SWO  -  Tag-Connect TC2030 (brochage Sp3ctra V4)')
+    j = sh.place('Connector:TC2030', 'J201', 'TC2030-IDC-FP', 58, 206,
+                 fp='Connector:Tag-Connect_TC2030-IDC-FP_2x03_P1.27mm_Vertical',
+                 ref_at=(58, 186), val_at=(58, 228))
+    for num, spec in [('1', '@+3V3'), ('2', 'SWO'), ('3', 'NRST'),
+                      ('4', 'SWCLK'), ('5', 'SWDIO'), ('6', '$GND')]:
         cx(sh, j.pin(num), spec)
-    sh.note('Empreinte seule, sans connecteur soude :\nla sonde se pose sur les pastilles.', 24, 234, 1.0)
+    sh.note('Empreinte seule, sans connecteur soude :\nla sonde se pose sur les pastilles.', 20, 234, 1.0)
 
-    # pastilles de test sur les reserves
-    sh.box(330, 20, 80, 88, 'Reserves sorties sur pastilles')
-    for i, n in enumerate(('TP_PE4', 'TP_PE5', 'TP_PA15', 'TP_PC13', 'TP_PC14', 'TP_PC15')):
-        tp(sh, f'TP{202 + i}', n, 344, 34 + i * 12, glob=False)
-    sh.note('PD7-PD9 et PD11-PD12 restent libres,\nmarques non connectes au schema.', 334, 104, 1.0)
-    sh.note('Bilan : 74 broches affectees sur 82 disponibles.', 330, 118, 1.2)
+    sh.note('Bilan : %d broches affectees, %d libres et marquees non connectees\n'
+            'au schema. Le LQFP144 apporte les ports F et G, soit 32 E/S de plus\n'
+            'et surtout DOUZE entrees ADC supplementaires (PF3 a PF14) : c est ce\n'
+            'qui a permis de supprimer le multiplexeur 74HC4051 et de lire les\n'
+            'deux courants moteur au meme instant.'
+            % (len(MCU_PORTS) + len(MCU_ALIM) + 2, len(libres)), 16, 258, 1.1)
     return sh
 
 
@@ -516,28 +680,31 @@ def sheet_motors():
         C(sh, f'C{refn + 2}', '1nF', 30, y + 30, f'$IPROPI_{tag}', '@GND')
         # etage de puissance
         C(sh, f'C{refn + 3}', '100nF', 200, y - 30, '@VBAT', '@GND')
-        C(sh, f'C{refn + 4}', '100uF/16V', 214, y - 30, '@VBAT', '@GND', CPOL)
+        C(sh, f'C{refn + 4}', '100uF/16V poly', 214, y - 30, '@VBAT', '@GND',
+          'Capacitor_Tantalum_SMD:CP_EIA-7343-20_Kemet-V')
         C(sh, f'C{refn + 5}', '100nF', 228, y - 30, f'VCP_{tag}', '@VBAT')
-        horiz(sh, 'Device:C', f'C{refn + 6}', '22nF', 200, y - 12, f'CPH_{tag}', f'CPL_{tag}', C06)
+        C(sh, f'C{refn + 6}', '22nF', 200, y - 12, f'CPH_{tag}', f'CPL_{tag}', C06)
         # connecteur moteur + encodeur
-        j = sh.place('Connector_Generic:Conn_01x06', f'J{refn + 1}',
-                     f'Moteur {side} + encodeur', 330, y,
-                     fp='Connector_JST:JST_PH_B6B-PH-K_1x06_P2.00mm_Vertical',
-                     ref_at=(316, y - 12), val_at=(316, y + 14))
-        cx(sh, j.pin('1'), f'MOT_{tag}_OUT1')
-        cx(sh, j.pin('2'), f'MOT_{tag}_OUT2')
-        cx(sh, j.pin('3'), '@+3V3')
-        cx(sh, j.pin('4'), '@GND')
-        cx(sh, j.pin('5'), f'ENC_{tag}_A_RAW')
-        cx(sh, j.pin('6'), f'ENC_{tag}_B_RAW')
-        horiz(sh, 'Device:C', f'C{refn + 7}', '100nF / X7R 50 V', 380, y - 26,
-              f'MOT_{tag}_OUT1', f'MOT_{tag}_OUT2', C08)
-        Rh(sh, f'R{refn + 9}', '100R', 268, y + 24, f'ENC_{tag}_A_RAW', f'$ENC_{tag}_A')
-        Rh(sh, f'R{refn + 10}', '100R', 268, y + 38, f'ENC_{tag}_B_RAW', f'$ENC_{tag}_B')
-        C(sh, f'C{refn + 8}', '1nF', 292, y + 30, f'$ENC_{tag}_A', '@GND')
-        C(sh, f'C{refn + 9}', '1nF', 306, y + 30, f'$ENC_{tag}_B', '@GND')
-        sh.note('Fils moteur torsades, 100 nF aux bornes.\n'
-                'Filtre d entree du timer active en plus du RC.', 250, y + 52, 1.0)
+        j = sh.place('Pacabot:Motor_Faulhaber', f'J{refn + 1}',
+                     'Moteur Faulhaber + IE2', 336, y,
+                     fp='Connector_TE-Connectivity:'
+                        'TE_Micro-MaTch_215079-6_2x03_P1.27mm_Vertical',
+                     fields={'MPN': 'TE 7-215079-6'},
+                     ref_at=(330, y - 12), val_at=(336, y + 12))
+        cx(sh, j.pin('2'), f'MOT_{tag}_OUT1')     # M+  -  fil rouge
+        cx(sh, j.pin('1'), f'MOT_{tag}_OUT2')     # M-
+        cx(sh, j.pin('4'), '$+3V3')               # VDD encodeur
+        cx(sh, j.pin('3'), '$GND')
+        cx(sh, j.pin('6'), f'ENC_{tag}_A_RAW')
+        cx(sh, j.pin('5'), f'ENC_{tag}_B_RAW')
+        C(sh, f'C{refn + 7}', '100nF/50V', 380, y - 26,
+          f'MOT_{tag}_OUT1', f'MOT_{tag}_OUT2', C08)
+        Rh(sh, f'R{refn + 9}', '100R', 262, y + 22, f'ENC_{tag}_A_RAW', f'$ENC_{tag}_A')
+        Rh(sh, f'R{refn + 10}', '100R', 282, y + 22, f'ENC_{tag}_B_RAW', f'$ENC_{tag}_B')
+        C(sh, f'C{refn + 8}', '1nF', 302, y + 22, f'$ENC_{tag}_A', '@GND')
+        C(sh, f'C{refn + 9}', '1nF', 316, y + 22, f'$ENC_{tag}_B', '@GND')
+        sh.note('Nappe Faulhaber sur Micro-MaTch 215079-6 : impairs a gauche,\n'
+                'fil rouge = M+. Fils moteur torsades, 100 nF aux bornes.', 250, y + 52, 1.0)
     return sh
 
 
@@ -565,7 +732,7 @@ def sheet_line():
         bank = 'A' if i % 2 == 0 else 'B'
         line = f'$LINE_{i:02d}'
         u = sh.place('Pacabot:ITR8307', f'U{401 + i}', 'ITR8307/S17/TR8',
-                     x, y, fp='OptoDevice:Everlight_ITR8307', fields={'LCSC': 'C81632'},
+                     x, y, fp='Pacabot:ITR8307_dessous', fields={'LCSC': 'C81632'},
                      ref_at=(x, y - 7.62), val_at=(x, y + 8.89))
         cx(sh, u.pin('2'), f'IR_A{i:02d}')          # anode de la diode
         cx(sh, u.pin('1'), f'IR_BANK_{bank}_N')     # cathode -> banc commute
@@ -577,7 +744,7 @@ def sheet_line():
 
     sh.box(16, 216, 274, 62, 'Commutation des deux bancs d emetteurs')
     nmos_switch(sh, 'Q401', 120, 240, '$IR_BANK_A', 'IR_BANK_A_N', rref=('R441', 'R442'))
-    nmos_switch(sh, 'Q402', 280, 240, '$IR_BANK_B', 'IR_BANK_B_N', rref=('R443', 'R444'))
+    nmos_switch(sh, 'Q402', 268, 240, '$IR_BANK_B', 'IR_BANK_B_N', rref=('R443', 'R444'))
     sh.note('Banc A : voies paires.        Banc B : voies impaires.', 150, 236, 1.2)
     sh.note('Le rapport cyclique sur la grille pilote le courant d emission :\n'
             'une garde au sol de 6 mm au lieu de 3 se rattrape en logiciel,\n'
@@ -586,86 +753,220 @@ def sheet_line():
 
 
 # =====================================================================
-#  05 - Telemetrie et centrale inertielle
+#  08 - Temoins de presence de ligne, un par capteur
 # =====================================================================
-def sheet_sensors():
-    sh = Sheet(LIB, 'Capteurs', '05-sensors.kicad_sch', paper='A3',
-               title='UsainBot - Telemetrie ToF, voie analogique rapide, inertie',
+def sheet_line_leds():
+    sh = Sheet(LIB, 'Temoins de ligne', '08-line-leds.kicad_sch', paper='A3',
+               title='UsainBot - Douze temoins de presence de ligne',
                rev=REV, date=DATE, company=COMPANY,
-               comments=('Les deux VL53L1X vivent sur la languette verticale sechable, a 45 mm du sol',
-                         'Adresse I2C identique en sortie de reset : readdressage au boot par XSHUT'))
+               comments=('PCA9685 sur I2C2 : douze PWM 12 bits sans consommer une broche de MCU',
+                         'Chaque LED est posee au-dessus de son capteur, sur la moustache'))
+    sh.note('Ce que l on regarde pendant un essai, ce n est pas un temoin d etat\n'
+            'generique : c est ce que voit la barrette. Une LED par capteur, sur\n'
+            'la moustache, a l aplomb du capteur qu elle rapporte - la ligne se\n'
+            'lit d un coup d oeil sous le robot, et un capteur borgne se voit\n'
+            'avant la course, pas apres.', 18, 22, 1.2)
+    sh.note('Le rapport cyclique suit le signal : la LED s allume progressivement\n'
+            'quand la ligne arrive sous le capteur. Un simple tout-ou-rien ne\n'
+            'dirait pas si le capteur est au bord ou au centre du trait.',
+            18, 44, 1.2)
 
-    for k, (ref, tag, label, x) in enumerate((('U501', 'F', 'avant, 0 deg', 60),
-                                              ('U502', 'FL', 'avant-gauche, 45 deg', 200))):
-        u = sh.place('Sensor_Distance:VL53L1CXV0FY1', ref, 'VL53L1CBV0FY/1', x, 80,
-                     fp='Sensor_Distance:ST_VL53L1x', fields={'LCSC': 'C2970716'},
-                     ref_at=(x, 58), val_at=(x, 104))
-        sh.box(x - 44, 30, 122, 130, f'Telemetre ToF {label}')
-        cx(sh, u.pin('1'),  '@+3V3')
-        cx(sh, u.pin('11'), '@+3V3')
-        cx_bar(sh, u, ('2', '3', '4', '6', '12'), '@GND')
-        cx(sh, u.pin('5'),  f'$TOF_{tag}_XSHUT')
-        cx(sh, u.pin('7'),  f'$TOF_{tag}_INT')
-        cx(sh, u.pin('8'),  'NC')
-        cx(sh, u.pin('9'),  '$SDA1')
-        cx(sh, u.pin('10'), '$SCL1')
-        C(sh, f'C{501 + k * 2}', '100nF', x - 34, 130, '@+3V3', '@GND')
-        C(sh, f'C{502 + k * 2}', '4u7F', x - 22, 130, '@+3V3', '@GND', C08)
-        R(sh, f'R{501 + k * 2}', '10k', x + 44, 120, '@+3V3', f'$TOF_{tag}_XSHUT')
-        R(sh, f'R{502 + k * 2}', '10k', x + 62, 120, '@+3V3', f'$TOF_{tag}_INT')
+    u = sh.place('Driver_LED:PCA9685PW', 'U105', 'PCA9685PW', 90, 150,
+                 fp='Package_SO:TSSOP-28_4.4x9.7mm_P0.65mm',
+                 ref_at=(90, 88), val_at=(90, 214))
+    cx(sh, u.pin('28'), '@+3V3')
+    cx(sh, u.pin('14'), '@GND')
+    cx(sh, u.pin('26'), '$SCL2')
+    cx(sh, u.pin('27'), '$SDA2')
+    cx_bar(sh, u, ('1', '2', '3', '4', '5', '24'), '@GND')   # adresse 0x40
+    cx(sh, u.pin('23'), '$GND')          # OE actif bas : sorties toujours validees
+    cx(sh, u.pin('25'), '$GND')          # pas d horloge externe
+    for i in range(12):
+        cx(sh, u.pin(str((6 + i) if i < 8 else (15 + i - 8))), f'LGN{i:02d}')
+    for i in range(4):
+        cx(sh, u.pin(str(19 + i)), 'NC')  # LED12 a LED15 en reserve
+    C(sh, 'C124', '100nF', 140, 150, '@+3V3', '@GND')
 
-    R(sh, 'R505', '2k2', 24, 178, '@+3V3', '$SDA1')
-    R(sh, 'R506', '2k2', 40, 178, '@+3V3', '$SCL1')
-    sh.note('Tirage unique du bus I2C1, cote carte mere.', 18, 192, 1.0)
-    sh.note('Composants nus reflowes par JLCPCB, pas de modules tout faits :\n'
-            'c est l orientation qui compte, et elle doit etre gravee dans le cuivre.\n'
-            'Mode long, budget 20 ms -> 50 Hz, soit 6 cm entre deux mesures a 3 m/s.',
-            18, 202, 1.0)
+    for i in range(12):
+        x = 190 + (i % 3) * 76
+        y = 44 + (i // 3) * 52
+        R(sh, f'R{445 + i}', '1k', x, y, '@+3V3', f'LGN{i:02d}_A')
+        horiz(sh, 'Device:LED', f'D{401 + i}', f'verte - capteur {i:02d}',
+              x + 4, y + 30, f'LGN{i:02d}', f'LGN{i:02d}_A', LED06)
+    sh.note('Adresse 0x40 (A0-A5 a la masse). Le bus I2C2 porte deja l ecran et\n'
+            'le chargeur : douze voies font 52 octets, soit 1,2 ms a 400 kHz, en\n'
+            'DMA hors de la boucle rapide. Quatre sorties restent libres.',
+            18, 236, 1.0)
+    return sh
 
-    # ---------------------------------------------------------------- IMU
-    sh.box(300, 30, 110, 130, 'Centrale inertielle  -  SPI2 a 10 MHz')
-    u3 = sh.place('Pacabot:LSM6DSOTR', 'U503', 'LSM6DSOTR', 350, 84,
+
+# =====================================================================
+#  05 - Telemetrie analogique et centrale inertielle
+# =====================================================================
+STATIONS = (('F',  'avant, 15 deg',         22),
+            ('FL', 'avant-gauche, 45 deg', 150),
+            ('L',  'gauche, 75 deg',       278))
+# 15/45/75 : chaque visee garde ~15 deg d avance sur la normale, la balise
+# est acquise avant d arriver a sa hauteur.
+
+
+def sheet_sensors():
+    sh = Sheet(LIB, 'Capteurs', '05-sensors.kicad_sch', paper='A2',
+               title='UsainBot - Telemetrie analogique a detection synchrone, inertie',
+               rev=REV, date=DATE, company=COMPANY,
+               comments=('Trois stations identiques : plus aucun bus I2C dans la boucle critique',
+                         'Couplage alternatif avant le gain, demodulation I/Q dans le firmware'))
+
+    for k, (tag, vise, X) in enumerate(STATIONS):
+        n = 500 + k * 20                      # bloc de references par station
+        amp_ref = ('U501', 'U502', 'U504')[k]  # un boitier au pied de chaque photodiode
+        Y = 26
+        sh.box(X - 6, Y - 8, 122, 188, f'Station {tag}  -  {vise}')
+
+        # -------- station couchee : les deux boitiers dans une empreinte --
+        # Un seul symbole pour le couple TX/RX : l empreinte combinee
+        # Telemetry_Duo_Coude porte les deux boitiers, le percage du
+        # pare-soleil et ses deux pions ; deux symboles ne peuvent pas se
+        # partager une empreinte.
+        st = sh.place('Pacabot:Telemetry_Duo', f'TM{n + 1}', 'OPV302 + BPV10NF',
+                      X + 42, Y + 30, fp='Pacabot:Telemetry_Duo_Coude',
+                      ref_at=(X + 42, Y + 16), val_at=(X + 42, Y + 46))
+        cx(sh, st.pin('1'), f'LAS_{tag}_K')      # TX cathode : cote MOSFET
+        cx(sh, st.pin('2'), f'LAS_{tag}_A')      # TX anode : cote resistance
+        cx(sh, st.pin('3'), '@+3V3A')            # RX cathode : polarisation
+        cx(sh, st.pin('4'), f'PD_{tag}')         # RX anode : entree du TIA
+        R(sh, f'R{n + 1}', '100R', X + 10, Y + 14, '@+3V3', f'LAS_{tag}_A')
+        horiz(sh, 'Device:D_TVS', f'D{n + 3}', 'PESD3V3', X + 40, Y + 60,
+              f'LAS_{tag}_K', '@GND', 'Diode_SMD:D_SOD-323')
+        # passe-haut de grille : un GPIO fige ne peut pas laisser le laser
+        # allume ; seule la porteuse 10-20 kHz traverse, le 100k de rappel
+        # eteint la diode en ~1 ms.  La Schottky restaure les niveaux.
+        horiz(sh, 'Device:C', f'C{n + 5}', '10nF', X + 56, Y + 4,
+              f'$TX_{tag}', f'TXAC_{tag}', C06)
+        horiz(sh, 'Device:D_Schottky', f'D{n + 4}', 'BAT54', X + 88, Y + 4,
+              f'TXAC_{tag}', '@GND', 'Diode_SMD:D_SOD-323')
+        nmos_switch(sh, f'Q{n + 1}', X + 100, Y + 28, f'TXAC_{tag}', f'LAS_{tag}_K',
+                    rref=(f'R{n + 2}', f'R{n + 3}'))
+
+        # -------- transimpedance ----------------------------------------
+        t = sh.place('Amplifier_Operational:TLV9064', amp_ref, 'TLV9064',
+                     X + 66, Y + 82, unit=1,
+                     fp='Package_SO:TSSOP-14_4.4x5mm_P0.65mm',
+                     ref_at=(X + 66, Y + 72), val_at=(X + 66, Y + 94))
+        cx(sh, t.pin('-'), f'PD_{tag}')
+        cx(sh, t.pin('+'), 'VREF_RX')
+        cx(sh, out_pin(t), f'TIA_{tag}')
+        R(sh, f'R{n + 4}', '220k', X + 66, Y + 62, f'PD_{tag}', f'TIA_{tag}')
+        C(sh, f'C{n + 1}', '22pF', X + 88, Y + 62, f'PD_{tag}', f'TIA_{tag}')
+
+        # -------- couplage alternatif puis gain -------------------------
+        C(sh, f'C{n + 2}', '1nF', X + 18, Y + 122, f'TIA_{tag}', f'G_{tag}', C06)
+        R(sh, f'R{n + 5}', '100k', X + 18, Y + 140, f'G_{tag}', 'VREF_MID')
+        g = sh.place('Amplifier_Operational:TLV9064', amp_ref, 'TLV9064',
+                     X + 66, Y + 128, unit=2,
+                     fp='Package_SO:TSSOP-14_4.4x5mm_P0.65mm',
+                     ref_at=(X + 66, Y + 118), val_at=(X + 66, Y + 140))
+        cx(sh, g.pin('+'), f'G_{tag}')
+        cx(sh, g.pin('-'), f'FB_{tag}')
+        cx(sh, out_pin(g), f'AMP_{tag}')
+        R(sh, f'R{n + 6}', '100k', X + 66, Y + 152, f'AMP_{tag}', f'FB_{tag}')
+        R(sh, f'R{n + 7}', '910R', X + 88, Y + 152, f'FB_{tag}', f'CG_{tag}')
+        C(sh, f'C{n + 3}', '1uF', X + 88, Y + 170, f'CG_{tag}', '@GND')
+        Rh(sh, f'R{n + 8}', '1k', X + 104, Y + 128, f'AMP_{tag}', f'$RX_{tag}')
+        C(sh, f'C{n + 4}', '4n7', X + 104, Y + 148, f'$RX_{tag}', '@GND')
+
+    # ------------------------------------------------ references et alim
+    sh.box(160, 218, 122, 68, 'References et alimentation des amplificateurs')
+    R(sh, 'R561', '10k', 174, 236, '@+3V3A', 'VREF_RX')
+    R(sh, 'R562', '2k2', 174, 254, 'VREF_RX', '@GND')
+    C(sh, 'C561', '1uF', 192, 254, 'VREF_RX', '@GND', C06)
+    R(sh, 'R563', '10k', 216, 236, '@+3V3A', 'VREF_MID_R')
+    R(sh, 'R564', '10k', 216, 254, 'VREF_MID_R', '@GND')
+    C(sh, 'C562', '1uF', 234, 254, 'VREF_MID_R', '@GND', C06)
+    b = sh.place('Amplifier_Operational:TLV9064', 'U501', 'TLV9064', 262, 236, unit=4,
+                 fp='Package_SO:TSSOP-14_4.4x5mm_P0.65mm',
+                 ref_at=(262, 226), val_at=(262, 248))
+    cx(sh, b.pin('+'), 'VREF_MID_R')
+    cx(sh, b.pin('-'), 'VREF_MID')
+    cx(sh, out_pin(b), 'VREF_MID')
+    sp = sh.place('Amplifier_Operational:TLV9064', 'U502', 'TLV9064', 262, 268, unit=4,
+                  fp='Package_SO:TSSOP-14_4.4x5mm_P0.65mm',
+                  ref_at=(262, 260), val_at=(262, 280))
+    cx(sh, sp.pin('+'), 'VREF_RX')
+    cx(sh, sp.pin('-'), 'U502_SPARE')
+    cx(sh, out_pin(sp), 'U502_SPARE')
+
+    for i, (ref, x) in enumerate((('U501', 316), ('U502', 366))):
+        p = sh.place('Amplifier_Operational:TLV9064', ref, 'TLV9064', x, 232, unit=5,
+                     fp='Package_SO:TSSOP-14_4.4x5mm_P0.65mm',
+                     ref_at=(x + 12, 227), val_at=(x + 12, 231))
+        cx(sh, p.pin('V+'), '@+3V3A')
+        cx(sh, p.pin('V-'), '@GND')
+        C(sh, f'C{563 + i}', '100nF', x + 20, 232, '@+3V3A', '@GND')
+    C(sh, 'C565', '10uF/10V', 398, 232, '@+3V3A', '@GND', C08)
+
+    sensor_local_amplifiers(sh)
+
+    # ------------------------------------------------------------ IMU
+    sh.box(16, 218, 136, 68, 'Centrale inertielle  -  SPI2 a 10 MHz')
+    u3 = sh.place('Pacabot:LSM6DSOTR', 'U503', 'LSM6DSOTR', 60, 246,
                   fp='Package_LGA:LGA-14_3x2.5mm_P0.5mm_LayoutBorder3x4y',
-                  fields={'LCSC': 'C2655100'}, ref_at=(350, 60), val_at=(350, 110))
+                  fields={'LCSC': 'C2655100'}, ref_at=(60, 224), val_at=(88, 228))
     cx(sh, u3.pin('1'),  '$IMU_MISO')
-    cx(sh, u3.pin('2'),  '@GND')
-    cx(sh, u3.pin('3'),  '@GND')
     cx(sh, u3.pin('4'),  '$IMU_INT1')
     cx(sh, u3.pin('5'),  '@+3V3')
-    cx_bar(sh, u3, ('6', '7'), '@GND', offset=5.08)
     cx(sh, u3.pin('8'),  '@+3V3')
-    cx(sh, u3.pin('9'),  'NC')
-    cx(sh, u3.pin('10'), 'NC')
-    cx(sh, u3.pin('11'), 'NC')
     cx(sh, u3.pin('12'), '$IMU_nCS')
     cx(sh, u3.pin('13'), '$IMU_SCK')
     cx(sh, u3.pin('14'), '$IMU_MOSI')
-    C(sh, 'C505', '100nF', 312, 130, '@+3V3', '@GND')
-    C(sh, 'C506', '100nF', 324, 130, '@+3V3', '@GND')
-    sh.note('SDX et SCX a la masse : le bus auxiliaire n est pas utilise.\n'
-            'A implanter au centre de rotation, pres de l essieu moteur.', 302, 150, 1.0)
+    cx_bar(sh, u3, ('2', '3'), '$GND', offset=5.08)
+    cx_bar(sh, u3, ('6', '7'), '@GND', offset=5.08)
+    for p in ('9', '10', '11'):
+        cx(sh, u3.pin(p), 'NC')
+    C(sh, 'C566', '100nF', 116, 250, '@+3V3', '@GND')
+    C(sh, 'C567', '100nF', 132, 250, '@+3V3', '@GND')
+    sh.note('SDX et SCX a la masse : bus auxiliaire inutilise.\n'
+            'A implanter au centre de rotation, pres de l essieu.', 18, 280, 1.0)
 
-    # ------------------------------------------ telemetre analogique lateral
-    sh.box(16, 214, 268, 66, 'Telemetre analogique lateral gauche  -  mur de la Q1')
-    R(sh, 'R507', '15R', 34, 232, '@+3V3', 'LASER_A')
-    horiz(sh, 'Device:LED', 'D501', 'OPV302 - laser IR 850 nm', 64, 246,
-          'LASER_K', 'LASER_A', 'Package_TO_SOT_THT:TO-18-2')
-    nmos_switch(sh, 'Q501', 128, 246, '$IR_LASER_EN', 'LASER_K', rref=('R508', 'R509'))
-    q2 = sh.place('Device:Q_Photo_NPN', 'Q502', 'BPW77NA', 182, 240,
-                  fp='Package_TO_SOT_THT:TO-18-2', ref_at=(190, 232), val_at=(190, 236))
-    cx(sh, q2.pin('C'), '@+3V3A')
-    cx(sh, q2.pin('E'), 'PT_E')
-    R(sh, 'R510', '47k', 206, 256, 'PT_E', '@GND')
-    Rh(sh, 'R511', '1k', 230, 240, 'PT_E', '$TOF_ANA')
-    C(sh, 'C507', '1nF', 256, 256, '$TOF_ANA', '@GND')
-    sh.note('Lu a chaque conversion ADC, donc a 1 kHz, la ou un VL53L1X\n'
-            'plafonne a 50 Hz. Calibration en intensite contre le vrai mur\n'
-            'pendant les essais libres.\n\n'
-            'Approvisionnement OPV302 / BPW77 a confirmer : pose manuelle\n'
-            'sur une carte par ailleurs assemblee, ou repli sur un VL53L1X.\n'
-            'Empreintes TO-18 a recaler sur le boitier reellement recu.',
-            296, 176, 1.0)
+    sh.note('Emission codee, couplage alternatif avant le gain, demodulation I/Q dans le '
+            'firmware :\nle gain de traitement vient du retrecissement de bande, pas de l optique.',
+            16, 212, 1.0)
     return sh
+
+
+def sensor_local_amplifiers(sh):
+    """Complement de la repartition physique : trois TIA/gains independants.
+
+    Les trois boitiers identiques gardent les valeurs et fonctions des voies.
+    U501D conserve la reference mediane a faible impedance. Les voies libres
+    sont des suiveurs sur VREF_RX, sans charge, a l interieur des rails.
+    """
+    sh.box(420, 18, 154, 268, 'Implantation locale des trois chaines analogiques')
+    sh.note('U501 : F ; U502 : FL ; U504 : L.\n'
+            'A = TIA, B = gain, dans chaque boitier.\n'
+            'R/C de contre-reaction au ras des broches 1/2 et 6/7.\n'
+            'R508/C504, R528/C524 et R548/C544 au pied des ADC.\n'
+            'Aucune longue liaison de photodiode entre stations.',
+            426, 45, 1.0)
+    for ref, unit, x, y in (('U501', 3, 455, 82), ('U502', 3, 535, 82),
+                            ('U504', 3, 455, 142), ('U504', 4, 535, 142)):
+        spare = sh.place('Amplifier_Operational:TLV9064', ref, 'TLV9064',
+                         x, y, unit=unit,
+                         fp='Package_SO:TSSOP-14_4.4x5mm_P0.65mm',
+                         ref_at=(x, y - 10), val_at=(x, y + 12))
+        cx(sh, spare.pin('+'), 'VREF_RX')
+        cx(sh, spare.pin('-'), f'{ref}_SPARE_{unit}')
+        cx(sh, out_pin(spare), f'{ref}_SPARE_{unit}')
+    p = sh.place('Amplifier_Operational:TLV9064', 'U504', 'TLV9064',
+                 455, 232, unit=5, fp='Package_SO:TSSOP-14_4.4x5mm_P0.65mm',
+                 ref_at=(467, 227), val_at=(467, 231))
+    cx(sh, p.pin('V+'), '@+3V3A')
+    cx(sh, p.pin('V-'), '@GND')
+    C(sh, 'C568', '100nF', 495, 232, '@+3V3A', '@GND')
+    sh.note('C563 / C564 / C568 : 100 nF local, broche 4 vers masse.\n'
+            'Entrees inutilisees polarisees par VREF_RX, sorties bouclees.\n'
+            'Plan de masse continu ; retours TX eloignes des noeuds PD.',
+            426, 270, 1.0)
 
 
 # =====================================================================
@@ -681,10 +982,10 @@ def sheet_hmi():
     # ---------------------------------------------------------- afficheur
     sh.box(16, 24, 150, 76, 'Afficheur OLED SSD1306 0,96 pouce  -  bus I2C2, hors PCBA')
     j = sh.place('Connector_Generic:Conn_01x04', 'J601', 'OLED SSD1306 I2C', 60, 54,
-                 fp='Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical',
+                 fp='Pacabot:OLED_096_I2C',
                  ref_at=(46, 42), val_at=(46, 68))
-    cx(sh, j.pin('1'), '@GND')
-    cx(sh, j.pin('2'), '@+3V3')
+    cx(sh, j.pin('1'), '$GND')
+    cx(sh, j.pin('2'), '$+3V3')
     cx(sh, j.pin('3'), '$SCL2')
     cx(sh, j.pin('4'), '$SDA2')
     R(sh, 'R601', '4k7', 110, 60, '@+3V3', '$SDA2')
@@ -693,8 +994,9 @@ def sheet_hmi():
 
     # ------------------------------------------------- switch 5 directions
     sh.box(180, 24, 230, 110, 'Switch 5 directions  -  navigation a deux dimensions, une seule piece')
-    sw = sh.place('Pacabot:SW_Nav_5Way', 'SW601', 'TS-006 ou equivalent', 240, 70,
-                  fp='', ref_at=(240, 52), val_at=(240, 88))
+    sw = sh.place('Pacabot:SW_Nav_5Way', 'SW601', 'SKRHABE010', 240, 70,
+                  fp='Pacabot:SKRHABE010', fields={'LCSC': 'C144855'},
+                  ref_at=(240, 52), val_at=(240, 88))
     dirs = (('1', 'SW_UP'), ('2', 'SW_DOWN'), ('3', 'SW_LEFT'),
             ('4', 'SW_RIGHT'), ('5', 'SW_PUSH'))
     for num, net in dirs:
@@ -703,8 +1005,9 @@ def sheet_hmi():
     for i, (_, net) in enumerate(dirs):
         R(sh, f'R{603 + i}', '10k', 300 + i * 20, 52, '@+3V3', '$' + net)
         C(sh, f'C{601 + i}', '100nF', 300 + i * 20, 96, '$' + net, '@GND')
-    sh.note('Empreinte a confirmer sur la reference retenue (LCSC C3674) :\n'
-            'commun unique cote masse, cinq contacts au repos ouverts.', 184, 128, 1.0)
+    sh.note('Alps SKRHABE010, joystick 4 directions + appui central, 7,35 x 7,5 mm.\n'
+            'Contacts A-D vers UP/RIGHT/DOWN/LEFT : l affectation reelle des\n'
+            'directions se recale au firmware.', 184, 128, 1.0)
 
     # ---------------------------------------------------------- depart
     sh.box(16, 144, 194, 76, 'Depart  -  moyen conforme au chapitre 2 du reglement')
@@ -713,16 +1016,10 @@ def sheet_hmi():
                    ref_at=(60, 158), val_at=(60, 162))
     cx(sh, swp.pin('1'), '$START_BTN')
     cx(sh, swp.pin('2'), '@GND')
-    jj = sh.place('Connector_Generic:Conn_01x02', 'J602', 'Jack de depart', 60, 200,
-                  fp='Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical',
-                  ref_at=(46, 192), val_at=(46, 210))
-    cx(sh, jj.pin('1'), '$START_BTN')
-    cx(sh, jj.pin('2'), '@GND')
     R(sh, 'R608', '10k', 130, 168, '@+3V3', '$START_BTN')
     C(sh, 'C606', '100nF', 146, 168, '$START_BTN', '@GND')
-    sh.note('Bouton et jack en parallele : les deux moyens que le reglement\n'
-            'enumere sont cables, le geste devant le telemetre n en est\n'
-            'qu un complement (voir la machine a etats du firmware).', 20, 220, 1.0)
+    sh.note('Le bouton suffit au reglement, le geste devant le telemetre\n'
+            'n en est qu un complement (machine a etats du firmware).', 20, 220, 1.0)
 
     # ---------------------------------------------------------- buzzer
     sh.box(224, 144, 186, 76, 'Buzzer passif  -  TIM17, le seul retour lisible robot au sol')
@@ -733,20 +1030,40 @@ def sheet_hmi():
     cx(sh, bz.pin('2'), 'BUZZ_D')
     horiz(sh, 'Device:D_Schottky', 'D601', 'BAT54', 330, 190, '@+3V3', 'BUZZ_D',
           'Diode_SMD:D_SOD-323')
-    nmos_switch(sh, 'Q601', 280, 194, '$BUZZER', 'BUZZ_D', rref=('R609', 'R610'))
-    sh.note('Diode de roue libre obligatoire : la bobine du buzzer\nrenvoie sa surtension dans le drain.', 300, 208, 1.0)
+    horiz(sh, 'Device:C', 'C607', '100nF', 244, 178, '$BUZZER', 'BZAC', C06)
+    horiz(sh, 'Device:D_Schottky', 'D610', 'BAT54', 352, 214, 'BZAC', '@GND',
+          'Diode_SMD:D_SOD-323')
+    nmos_switch(sh, 'Q601', 280, 190, 'BZAC', 'BUZZ_D', rref=('R609', 'R610'))
+    sh.note('Roue libre obligatoire (bobine) ; grille couplee en alternatif :\n'
+            'un GPIO fige ne peut pas laisser 200 mA en continu dans le buzzer.',
+            300, 208, 1.0)
 
-    # ---------------------------------------------------------- temoins
-    sh.box(16, 228, 268, 48, 'Temoins')
-    for i, (ref, net, col) in enumerate((('D602', 'LED_STATUS', 'verte - etat'),
-                                         ('D603', 'LED_ERROR', 'rouge - defaut'),
-                                         ('D604', 'LED_USER', 'jaune - libre'))):
-        x = 40 + i * 84
-        R(sh, f'R{611 + i}', '1k', x, 244, '$' + net, f'{net}_A')
-        horiz(sh, 'Device:LED', ref, col, x + 32, 244, '@GND', f'{net}_A', LED06)
-    sh.note('Le temoin " BLE alimente " visible du jury est cable sur le rail\n'
-            '+3V3_BLE lui-meme (feuille 07) : il ne peut pas mentir sur l etat\n'
-            'reel de l alimentation du module.', 18, 264, 1.0)
+    sh.note('Plus de temoins d etat generiques : les trois LED verte / rouge /\n'
+            'jaune et leurs trois GPIO ont ete rendus le 4 septembre. Ce qu on\n'
+            'regarde pendant un essai, c est la barrette - chaque capteur de\n'
+            'ligne a maintenant sa LED (feuille 04). Le temoin " BLE alimente "\n'
+            'visible du jury reste cable sur le rail +3V3_BLE lui-meme\n'
+            '(feuille 07) : il ne peut pas mentir sur l etat reel du module.',
+            18, 250, 1.0)
+
+    # ------------------------------------------- eclairage de suivi camera
+    sh.box(16, 104, 160, 38,
+           'Suivi camera  -  1 bleue au nez, 2 rouges aux coins arriere')
+    for i, (ref, rref_, col, rv) in enumerate((
+            ('D606', 'R615', 'bleue - nez', '220R'),
+            ('D608', 'R617', 'rouge - coin arriere gauche', '300R'),
+            ('D609', 'R618', 'rouge - coin arriere droit', '300R'))):
+        x = 38 + i * 30
+        R(sh, rref_, rv, x, 112, '@VBAT', f'{ref}_A')
+        horiz(sh, 'Device:LED', ref, col, x + 2, 132, 'TRACK_SW', f'{ref}_A',
+              LED06)
+    sh.note('Deux des trois bleues du nez ont ete rendues le 4 septembre : il en\n'
+            'reste une sur l axe. Avec les deux rouges des coins arriere, la\n'
+            'camera a toujours un triangle - position ET cap - et le nez, qui\n'
+            'est la partie la plus etroite et la plus chargee de la carte, y\n'
+            'gagne deux LED et deux resistances de place.', 18, 156, 1.0)
+    nmos_switch(sh, 'Q602', 152, 112, '$TRACK_EN', 'TRACK_SW',
+                rref=('R619', 'R620'))
     return sh
 
 
@@ -786,51 +1103,65 @@ def sheet_comms():
     cx(sh, q1.pin('G'), 'BLE_PG')
     R(sh, 'R703', '100k', 268, 46, '@+3V3', 'BLE_PG')
     nmos_switch(sh, 'Q702', 268, 84, '$BLE_PWR_EN', 'BLE_PG', rref=('R704', 'R705'))
-    C(sh, 'C702', '10uF/10V', 336, 62, '@+3V3_BLE', '@GND', C08)
+    C(sh, 'C702', '10uF/10V', 336, 62, '$+3V3_BLE', '@GND', C08)
     C(sh, 'C703', '100nF', 348, 62, '@+3V3_BLE', '@GND')
     R(sh, 'R706', '1k', 366, 62, '@+3V3_BLE', 'BLE_LED_A')
     horiz(sh, 'Device:LED', 'D701', 'bleue', 378, 88, '@GND', 'BLE_LED_A', LED06)
     flag(sh, '+3V3_BLE', 336, 96)
-    j1 = sh.place('Connector_Generic:Conn_01x06', 'J701', 'Module BLE (HM-11 / ESP32-C3)',
-                  240, 122, fp='Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical',
+    j1 = sh.place('Connector_Generic:Conn_01x04', 'J701', 'Module OTA (ESP32-C3)',
+                  240, 122, fp='Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical',
                   ref_at=(224, 106), val_at=(224, 138))
-    cx(sh, j1.pin('1'), '@GND')
-    cx(sh, j1.pin('2'), '@+3V3_BLE')
+    cx(sh, j1.pin('1'), '$GND')
+    cx(sh, j1.pin('2'), '$+3V3_BLE')
     cx(sh, j1.pin('3'), '$BLE_TX')
     cx(sh, j1.pin('4'), '$BLE_RX')
-    cx(sh, j1.pin('5'), 'NC')
-    cx(sh, j1.pin('6'), 'NC')
     sh.note('PA8 haut = module alimente. Grille rappelee au rail par R703 :\n'
             'MCU eteint ou GPIO en haute impedance, le module reste hors tension.\n'
-            'Broche 3 = RX du module, broche 4 = TX du module : a recroiser\n'
-            'selon la serigraphie du module retenu.', 200, 150, 1.0)
+            'Module conseille : ESP32-C3 SuperMini - OTA par WiFi natif (rapide),\n'
+            'pont UART 921600 Bd vers le STM32. Un HM-11 BLE 4.0 plafonne a\n'
+            '2-3 ko/s : 2 a 4 min pour 256 ko de firmware. Broche 3 = RX du\n'
+            'module, broche 4 = TX : a recroiser selon la serigraphie.',
+            200, 150, 1.0)
 
     # ---------------------------------------------------------- turbine
     sh.box(16, 168, 394, 76, 'Turbine d appui  -  l ESC est autonome, la carte ne lui envoie qu une consigne')
-    j2 = sh.place('Connector_Generic:Conn_01x03', 'J702', 'Embase ESC (signal)', 90, 200,
-                  fp='Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical',
-                  ref_at=(76, 188), val_at=(76, 214))
-    cx(sh, j2.pin('1'), '@GND')
-    cx(sh, j2.pin('2'), 'NC')
-    cx(sh, j2.pin('3'), 'ESC_SIG')
+    j2 = sh.place('Connector_Generic:Conn_01x01', 'J702', 'Signal ESC (coudee)',
+                  90, 200,
+                  fp='Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Horizontal',
+                  ref_at=(76, 192), val_at=(76, 208))
+    cx(sh, j2.pin('1'), 'ESC_SIG')
     Rh(sh, 'R707', '100R', 150, 202, '$ESC_PWM', 'ESC_SIG')
-    sh.note('Broche 2 = BEC. La plupart des ESC y sortent 5 ou 6 V :\n'
-            'reliee au rail 3,3 V elle emporte toute la carte.\n'
-            'Elle reste donc explicitement non connectee.', 76, 226, 1.0)
-    j3 = sh.place('Connector_Generic:Conn_01x02', 'J703', 'Puissance turbine (XT30)',
-                  300, 200, fp='Connector_AMASS:AMASS_XT30U-M_1x02_P5.0mm_Vertical',
+    sh.note('Une seule broche, et COUDEE : le variateur est debout juste a cote,\n'
+            'son fil de commande arrive a plat le long de la carte. Le cordon\n'
+            'trois fils est coupe - le fil central (BEC) sort 5 ou 6 V sur la\n'
+            'plupart des variateurs et emporterait le rail 3,3 V, et le fil de\n'
+            'masse est inutile puisque le meme cuivre revient par le fil noir de\n'
+            'puissance soude en J103, a quelques millimetres de la.', 76, 232, 1.0)
+    sh.note('Calibre : la turbine tire 11 A a 8,4 V, mais elle est ici sur VBAT\n'
+            '(5,0 a 7,3 V) et le courant d une helice suit le carre de la tension :\n'
+            '11 x (6,4/8,4)^2 = 6,4 A sur le plateau LiFePO4. Les 10 A continus du\n'
+            'MultiStar tiennent donc, avec 15 A de crete a la mise en rotation.\n'
+            'A verifier a la pince amperemetrique au premier essai en charge.',
+            176, 240, 1.0)
+    j3 = sh.place('Connector_Generic:Conn_01x02', 'J103', 'MultiStar 10A (debout)',
+                  300, 200, fp='Pacabot:ESC_Multistar_10A',
                   ref_at=(286, 190), val_at=(286, 212))
     cx(sh, j3.pin('1'), '@VBAT')
     cx(sh, j3.pin('2'), '@GND')
-    C(sh, 'C704', '220uF/16V', 344, 202, '@VBAT', '@GND', 'Capacitor_SMD:CP_Elec_8x10')
+    C(sh, 'C704', '220uF/10V', 344, 202, '@VBAT', '@GND', CPOL)  # VBAT <= 7,3 V
     C(sh, 'C705', '100nF', 358, 202, '@VBAT', '@GND')
+    sh.note('Turnigy MultiStar 10A BLHeli-S (Opto) : 22 x 12 mm, 5,1 g, 10 A\n'
+            'continu / 15 A crete. Il est DEBOUT sur sa tranche cote entree de\n'
+            'puissance, ses deux fils soudes dans J103 et un collier au corps :\n'
+            '12 x 5 mm d emprise pour 22 mm de haut. Aucun connecteur ne\n'
+            's intercale sur le courant de la turbine.', 286, 240, 1.0)
     sh.note('Puissance prise sur VBAT en amont des ponts moteurs, avec son propre decouplage.\n'
             'Rampe la consigne : une montee en regime brutale fait chuter VBAT et peut faire\n'
             'redemarrer le MCU en pleine ligne droite. L armement de l ESC fait partie de la\n'
             'sequence de pre-depart, pas du demarrage du firmware.\n\n'
-            'La turbine peut tirer 5 a 15 A : verifier que le fusible F101, l interrupteur J105\n'
-            'et le MOSFET Q102 de la feuille 01 sont dimensionnes en consequence.',
-            18, 252, 1.0)
+            'F101 12 A et les deux AO4407A en parallele de la feuille 01 laissent\n'
+            'la marge.',
+            18, 254, 1.0)
     return sh
 
 
@@ -869,7 +1200,7 @@ def sheet_root(children):
     lay = [(20, 56, 170, 42, 2), (20, 108, 170, 42, 3),
            (20, 160, 170, 42, 4), (20, 212, 170, 42, 5),
            (210, 56, 170, 42, 6), (210, 108, 170, 42, 7),
-           (210, 160, 170, 42, 8)]
+           (210, 160, 170, 42, 8), (210, 212, 170, 42, 9)]
     for child, (x, y, w, h, page) in zip(children, lay):
         add_sheet(sh, child, x, y, w, h, page)
 
@@ -881,23 +1212,29 @@ def sheet_root(children):
         '05-sensors.kicad_sch': 'Deux VL53L1X sur languette sechable, voie analogique\nrapide a gauche, LSM6DSO sur SPI2',
         '06-hmi.kicad_sch': 'OLED I2C2, switch 5 directions, buzzer sur TIM17,\nbouton et jack de depart, temoins',
         '07-comms.kicad_sch': 'Flash W25Q128 sur SPI3, module BLE a alimentation\ncommutee, embase ESC et puissance de turbine',
+        '08-line-leds.kicad_sch': 'Douze temoins de presence de ligne sur PCA9685,\nun par capteur de la moustache, pilotes en PWM par I2C2',
     }
     for child, (x, y, w, h, _) in zip(children, lay):
         sh.note(blurb[child.filename], x + 3, y + 14, 1.2)
 
-    sh.note('Points ouverts reportes du document d architecture :\n'
-            '-  interrupteur et fusible dimensionnes a 10 A ; si la turbine tire vraiment 15 A,\n'
-            '   c est toute la chaine de coupure qu il faut remonter, pas seulement le fusible ;\n'
-            '-  OPV302 et BPW77 probablement hors bibliotheque JLCPCB : pose manuelle ou repli ToF ;\n'
-            '-  valeurs marquees a recaler : R116 (frequence du buck), R107 (courant d equilibrage),\n'
+    sh.note('Points ouverts :\n'
+            '-  la turbine est sur VBAT : 6,4 A au plateau LiFePO4 contre 11 A a 8,4 V, d ou le\n'
+            '   MultiStar 10 A. A verifier a la pince au premier essai en charge ;\n'
+            '-  OPV302 et BPV10NF hors bibliotheque JLCPCB : pose manuelle, les deux sont couches\n'
+            '   dans le support imprime de la station ;\n'
+            '-  les seize entrees ADC du LQFP100 sont toutes prises (12 voies de ligne, 3 voies de\n'
+            '   telemetrie, 1 sortie de multiplexeur) : U104 ne peut pas etre supprime sans passer\n'
+            '   au LQFP144 ;\n'
+            '-  valeurs a recaler : R116 (frequence du buck), R107 (courant d equilibrage),\n'
             '   charge du quartz, R421-R432 (gain des voies de ligne).',
-            210, 226, 1.3)
+            20, 288, 1.3)
     return sh
 
 
 def main():
     kids = [sheet_power_b(sheet_power()), sheet_mcu(), sheet_motors(),
-            sheet_line(), sheet_sensors(), sheet_hmi(), sheet_comms()]
+            sheet_line(), sheet_sensors(), sheet_hmi(), sheet_comms(),
+            sheet_line_leds()]
     root = sheet_root(kids)
     si = ['sheet_instances', ['path', q('/'), ['page', q('1')]]]
     for i, k in enumerate(kids, 2):
@@ -906,6 +1243,14 @@ def main():
     open(os.path.join(DEST, root.filename), 'w', encoding='utf-8').write(root.render([si]))
     for k in kids:
         open(os.path.join(DEST, k.filename), 'w', encoding='utf-8').write(k.render())
+    if REPORT:
+        agg = {k: set() for k in ('glabel', 'label', 'text', 'textb', 'field')}
+        for sh in kids + [root]:
+            for k, v in sh.strings.items():
+                agg[k] |= v
+        json.dump({'sheets': [sh.report() for sh in kids + [root]],
+                   'strings': {k: sorted(v) for k, v in agg.items()}},
+                  open(REPORT, 'w', encoding='utf-8'), ensure_ascii=False)
     bad = [e for k in kids + [root] for e in k.check()]
     if bad:
         print('COLLISIONS ELECTRIQUES :')

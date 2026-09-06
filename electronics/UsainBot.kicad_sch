@@ -330,6 +330,48 @@
 			)
 		)
 	)
+	(sheet
+		(at 210 212)
+		(size 170 42)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "ba1ecbcf-1c65-895e-8b85-2425aaf9186b")
+		(property "Sheetname" "Temoins de ligne"
+			(at 210 211.2888 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "08-line-leds.kicad_sch"
+			(at 210 255.4224 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "UsainBot"
+				(path "/e216f09c-2662-6258-2b51-4f4f498f79d0"
+					(page "9")
+				)
+			)
+		)
+	)
 	(text "USB-C, chargeur elevateur BQ25887, pack 2S,\ncoupure generale, anti-inversion, buck 3,3 V, rail 3V3A"
 		(exclude_from_sim no)
 		(at 23 70 0)
@@ -407,16 +449,27 @@
 		)
 		(uuid "36842624-8b20-1b49-d58b-885ba28a7cf1")
 	)
-	(text "Points ouverts reportes du document d architecture :\n-  interrupteur et fusible dimensionnes a 10 A ; si la turbine tire vraiment 15 A,\n   c est toute la chaine de coupure qu il faut remonter, pas seulement le fusible ;\n-  OPV302 et BPW77 probablement hors bibliotheque JLCPCB : pose manuelle ou repli ToF ;\n-  valeurs marquees a recaler : R116 (frequence du buck), R107 (courant d equilibrage),\n   charge du quartz, R421-R432 (gain des voies de ligne)."
+	(text "Douze temoins de presence de ligne sur PCA9685,\nun par capteur de la moustache, pilotes en PWM par I2C2"
 		(exclude_from_sim no)
-		(at 210 226 0)
+		(at 213 226 0)
+		(effects
+			(font
+				(size 1.2 1.2)
+			)
+			(justify left bottom)
+		)
+		(uuid "8acf6fc5-8560-31ba-427f-765d3b894c87")
+	)
+	(text "Points ouverts :\n-  la turbine est sur VBAT : 6,4 A au plateau LiFePO4 contre 11 A a 8,4 V, d ou le\n   MultiStar 10 A. A verifier a la pince au premier essai en charge ;\n-  OPV302 et BPV10NF hors bibliotheque JLCPCB : pose manuelle, les deux sont couches\n   dans le support imprime de la station ;\n-  les seize entrees ADC du LQFP100 sont toutes prises (12 voies de ligne, 3 voies de\n   telemetrie, 1 sortie de multiplexeur) : U104 ne peut pas etre supprime sans passer\n   au LQFP144 ;\n-  valeurs a recaler : R116 (frequence du buck), R107 (courant d equilibrage),\n   charge du quartz, R421-R432 (gain des voies de ligne)."
+		(exclude_from_sim no)
+		(at 20 288 0)
 		(effects
 			(font
 				(size 1.3 1.3)
 			)
 			(justify left bottom)
 		)
-		(uuid "8acf6fc5-8560-31ba-427f-765d3b894c87")
+		(uuid "b7b1fc3d-eca7-5848-c8ad-66f7710e5c05")
 	)
 	(sheet_instances
 		(path "/"
@@ -442,6 +495,9 @@
 		)
 		(path "/e7cc3c83-7c65-df9f-53be-bd87de8acfc2"
 			(page "8")
+		)
+		(path "/ba1ecbcf-1c65-895e-8b85-2425aaf9186b"
+			(page "9")
 		)
 	)
 	(embedded_fonts no)
