@@ -398,12 +398,12 @@
   <header class="masthead">
     <p class="kicker">Pacabot · UsainBot · architecture matérielle</p>
     <h1>Architecture UsainBot</h1>
-    <p class="standfirst">Robot suiveur de ligne pour le Tournoi National de Robotique — épreuve Formule 1, règlement v2.11. Cœur STM32H7, chaîne de mesure 12 voies, deux ponts en H à mesure de courant, sortie ESC pour turbine d'appui, alimentation 2S LiFePO4 rechargeable en USB-C. Tous les composants actifs sont sourçables chez JLCPCB.</p>
+    <p class="standfirst">Robot suiveur de ligne pour le Tournoi National de Robotique — épreuve Formule 1, règlement v2.11. Cœur STM32H7, chaîne de mesure 12 voies, motorisation Faulhaber 1524 à codeurs 1024 points sur roues de 43 mm, deux ponts en H à mesure de courant, sortie ESC pour turbine d'appui, alimentation 2S LiFePO4 rechargeable en USB-C. Tous les composants actifs sont sourçables chez JLCPCB.</p>
     <div class="meta">
       <span><b>Cible</b> STM32H723VGT6 · LQFP100</span>
       <span><b>Règlement</b> TNRS F1 v2.11 (2025)</span>
       <span><b>Assemblage</b> JLCPCB PCBA 4 couches</span>
-      <span><b>Révision</b> 30 août 2026</span>
+      <span><b>Révision</b> 1er septembre 2026</span>
     </div>
   </header>
 
@@ -489,7 +489,7 @@
               <g>
                 <rect x="14" y="18" width="222" height="62" rx="3" fill="var(--surface-2)" stroke="var(--rule-strong)"/>
                 <text x="26" y="38" font-size="12.5" font-weight="600" fill="var(--ink)">Barrette de ligne</text>
-                <text x="26" y="55" font-size="10.5" fill="var(--muted)">12 × ITR8307 · pas 10 mm · ±55 mm</text>
+                <text x="26" y="55" font-size="10.5" fill="var(--muted)">12 × ITR8307 · arc 6 + 3×2 · ±74 mm</text>
                 <text x="26" y="70" font-size="10.5" fill="var(--muted)">2 bancs d'émetteurs pulsés</text>
 
                 <rect x="14" y="94" width="222" height="52" rx="3" fill="var(--surface-2)" stroke="var(--rule-strong)"/>
@@ -573,7 +573,7 @@
 
                 <rect x="674" y="480" width="312" height="52" rx="3" fill="var(--surface-2)" stroke="var(--rule-strong)"/>
                 <text x="686" y="500" font-size="12.5" font-weight="600" fill="var(--ink)">Turbine d'appui</text>
-                <text x="686" y="517" font-size="10.5" fill="var(--muted)">embase ESC 3 points · BEC non connecté</text>
+                <text x="686" y="517" font-size="10.5" fill="var(--muted)">ESC 20 A opto · pack LiPo séparé</text>
               </g>
 
               <!-- liaisons gauche -->
@@ -613,10 +613,10 @@
       </figure>
 
       <h3>Implantation, vue de dessus</h3>
-      <p>Proposition de placement dans une carte de 120 × 180 mm, largement sous la limite de 200 × 200 mm. Trois principes gouvernent ce plan : les capteurs de ligne le plus en avant possible, le microcontrôleur juste derrière eux pour raccourcir les pistes analogiques, et toute la masse — pack et moteurs — concentrée sur l'essieu arrière.</p>
+      <p>Placement dans 194 mm de long sur 155 de large : la boîte de 200 × 200 mm du règlement est remplie à 97 % dans la longueur, et c'est voulu — les machines qui gagnent poussent la moustache au maximum que leur règlement autorise, le nôtre s'arrête à 200. Quatre principes gouvernent ce plan : la moustache le plus loin possible, au bout d'un nez ajouré ; le microcontrôleur sur le nez, juste derrière elle, pour raccourcir les pistes analogiques ; toute la masse — pack, moteurs, turbine — sur l'essieu ou juste devant ; et les roues écartées à 155 mm hors-tout pour installer la turbine entre les codeurs, au-dessus du plénum. La silhouette est celle des suiveurs de compétition : un arc de capteurs au bout d'un boom, un corps compact, des roues débordantes, le ventilateur au centre, la jupe dessous.</p>
       <figure>
         <div class="figwrap">
-          <svg viewBox="0 0 1000 600" role="img" aria-label="Vue de dessus du robot : barrette de capteurs et stations de télémétrie à l'avant, microcontrôleur, turbine centrale, pack et moteurs à l'arrière">
+          <svg viewBox="0 0 1000 600" role="img" aria-label="Vue de dessus du robot : moustache en arc à 140 mm devant l'essieu au bout d'un nez ajouré, corps de 120 mm, turbine sur l'essieu entre les roues écartées à 155 mm, plénum à rebord décalé de 10 mm vers l'avant, IHM ramassée à l'arrière — 194 mm de long sur les 200 autorisés">
             <defs>
               <marker id="dim" viewBox="0 0 8 8" refX="4" refY="4" markerWidth="6" markerHeight="6" orient="auto">
                 <path d="M0,0 L8,4 L0,8 z" fill="var(--accent)"/>
@@ -629,104 +629,174 @@
 
               <rect x="270" y="60" width="460" height="460" fill="none" stroke="var(--rule-strong)" stroke-dasharray="6 5"/>
               <text x="730" y="52" font-size="10" text-anchor="end" fill="var(--muted)" font-family="IBM Plex Mono, monospace">200 × 200 mm — limite règlement</text>
+              <path d="M288,110 L288,84" stroke="var(--muted)" fill="none" marker-end="url(#aim)"/>
+              <text x="296" y="94" font-size="10" fill="var(--muted)">sens de la course</text>
 
-              <rect x="362" y="90" width="276" height="414" rx="5" fill="var(--surface-2)" stroke="var(--ink)" stroke-width="1.4"/>
+              <rect x="362" y="192" width="276" height="321" rx="4" fill="var(--surface-2)" stroke="var(--ink)" stroke-width="1.4"/>
 
-              <g fill="var(--accent)">
-                <rect x="368.5" y="96" width="10" height="14" rx="1.5"/><rect x="391.5" y="96" width="10" height="14" rx="1.5"/>
-                <rect x="414.5" y="96" width="10" height="14" rx="1.5"/><rect x="437.5" y="96" width="10" height="14" rx="1.5"/>
-                <rect x="460.5" y="96" width="10" height="14" rx="1.5"/><rect x="483.5" y="96" width="10" height="14" rx="1.5"/>
-                <rect x="506.5" y="96" width="10" height="14" rx="1.5"/><rect x="529.5" y="96" width="10" height="14" rx="1.5"/>
-                <rect x="552.5" y="96" width="10" height="14" rx="1.5"/><rect x="575.5" y="96" width="10" height="14" rx="1.5"/>
-                <rect x="598.5" y="96" width="10" height="14" rx="1.5"/><rect x="621.5" y="96" width="10" height="14" rx="1.5"/>
+              <rect x="385" y="253.3" width="230" height="253" fill="none" stroke="var(--accent)" stroke-dasharray="5 4"/>
+              <g font-family="IBM Plex Mono, monospace" font-size="8.5" fill="var(--accent)">
+                <text x="391" y="268">plénum, rebord 2 mm</text>
+                <text x="391" y="280">100 × 110 mm</text>
+                <text x="391" y="292">décalé de +10</text>
               </g>
 
-              
+              <path d="M310,402.8 L690,402.8" stroke="var(--rule-strong)" stroke-dasharray="3 4" fill="none"/>
+
+              <rect x="466" y="96" width="68" height="98" fill="var(--surface-2)" stroke="var(--ink)" stroke-width="1.2"/>
+              <path d="M466,122 L338,132" stroke="var(--ink)" stroke-width="5" fill="none"/>
+              <path d="M534,122 L662,132" stroke="var(--ink)" stroke-width="5" fill="none"/>
+
+              <path d="M329.8,129.5 A322,322 0 0 1 670.2,129.5" stroke="var(--surface-2)" stroke-width="22" fill="none"/>
+              <path d="M329.8,118.5 A322,322 0 0 1 670.2,118.5" stroke="var(--ink)" stroke-width="1.2" fill="none"/>
+              <path d="M329.8,140.5 A322,322 0 0 1 670.2,140.5" stroke="var(--ink)" stroke-width="1.2" fill="none"/>
+
               <g fill="var(--accent)">
-                <rect x="424" y="114" width="9" height="17" rx="1.5"/><rect x="436" y="114" width="9" height="17" rx="1.5"/>
-                <rect x="483" y="114" width="9" height="17" rx="1.5"/><rect x="495" y="114" width="9" height="17" rx="1.5"/>
-                <rect x="542" y="114" width="9" height="17" rx="1.5"/><rect x="554" y="114" width="9" height="17" rx="1.5"/>
+                <rect x="485.8" y="73.9" width="10" height="14" rx="1.5"/><rect x="499.2" y="73.9" width="10" height="14" rx="1.5"/>
+                <rect x="467.4" y="75" width="10" height="14" rx="1.5"/><rect x="517.6" y="75" width="10" height="14" rx="1.5"/>
+                <rect x="449" y="77.1" width="10" height="14" rx="1.5"/><rect x="536" y="77.1" width="10" height="14" rx="1.5"/>
+                <rect x="405.3" y="86.5" width="10" height="14" rx="1.5"/><rect x="579.7" y="86.5" width="10" height="14" rx="1.5"/>
+                <rect x="361.6" y="102.8" width="10" height="14" rx="1.5"/><rect x="623.4" y="102.8" width="10" height="14" rx="1.5"/>
+                <rect x="324.8" y="122.4" width="10" height="14" rx="1.5"/><rect x="660.2" y="122.4" width="10" height="14" rx="1.5"/>
               </g>
-              <text x="500" y="148" font-size="8.5" text-anchor="middle" fill="var(--muted)" font-family="IBM Plex Mono, monospace">diodes soudées à plat, inclinées de 4°</text>
+              <circle cx="500" cy="100" r="6" fill="none" stroke="var(--ink)" stroke-dasharray="3 3"/>
+              <text x="488" y="103" font-size="8.5" text-anchor="end" fill="var(--muted)" font-family="IBM Plex Mono, monospace">patin</text>
+
+              <rect x="480" y="146" width="40" height="32" rx="2" fill="var(--accent-soft)" stroke="var(--accent)"/>
+
+              <g fill="var(--accent)">
+                <rect x="398" y="200" width="9" height="17" rx="1.5"/><rect x="410" y="200" width="9" height="17" rx="1.5"/>
+                <rect x="450" y="200" width="9" height="17" rx="1.5"/><rect x="462" y="200" width="9" height="17" rx="1.5"/>
+                <rect x="552" y="200" width="9" height="17" rx="1.5"/><rect x="564" y="200" width="9" height="17" rx="1.5"/>
+              </g>
               <g stroke="var(--accent)" fill="none" marker-end="url(#aim)" stroke-width="1.2">
-                <path d="M424,122 L388,122"/>
-                <path d="M489,111 L465,84"/>
-                <path d="M552,111 L552,80"/>
+                <path d="M396,208 L370,208"/>
+                <path d="M466,198 L448,178"/>
+                <path d="M562,198 L562,176"/>
+              </g>
+              <text x="666" y="72" font-size="10" fill="var(--muted)">visées : latéral gauche 90°, diagonale 45°, avant 0°</text>
+              <g font-size="8.5" fill="var(--muted)" font-family="IBM Plex Mono, monospace">
+                <text x="666" y="150">nez ajouré :</text>
+                <text x="666" y="162">longerons PCB</text>
+                <text x="666" y="174">+ platine alu</text>
               </g>
 
-              <circle cx="395" cy="152" r="9" fill="none" stroke="var(--rule-strong)"/>
-              <circle cx="605" cy="152" r="9" fill="none" stroke="var(--rule-strong)"/>
+              <rect x="452" y="266" width="124" height="62" rx="2" fill="var(--surface)" stroke="var(--rule-strong)"/>
+
+              <circle cx="500" cy="402.8" r="42.2" fill="var(--surface)" stroke="var(--rule-strong)"/>
+              <circle cx="500" cy="402.8" r="32.7" fill="none" stroke="var(--accent)" stroke-dasharray="4 4"/>
+              <path d="M494,402.8 L506,402.8 M500,396.8 L500,408.8" stroke="var(--accent)" fill="none"/>
 
               <g stroke="var(--rule-strong)" fill="var(--surface)">
-                <rect x="372" y="145" width="42" height="30" rx="2"/>
-                <rect x="586" y="145" width="42" height="40" rx="2"/>
-                <rect x="478" y="148" width="44" height="44" rx="2" fill="var(--accent-soft)" stroke="var(--accent)"/>
-                <rect x="368" y="355" width="46" height="40" rx="2"/>
-                <rect x="586" y="355" width="46" height="40" rx="2"/>
-                <rect x="362" y="406" width="93" height="28" rx="2"/>
-                <rect x="545" y="406" width="93" height="28" rx="2"/>
-                <rect x="342" y="383" width="20" height="74" rx="3" fill="var(--rule)"/>
-                <rect x="638" y="383" width="20" height="74" rx="3" fill="var(--rule)"/>
-                <rect x="490" y="410" width="20" height="20" rx="2" fill="var(--accent-soft)" stroke="var(--accent)"/>
-                <rect x="368" y="448" width="72" height="44" rx="2"/>
-                <rect x="460" y="448" width="80" height="44" rx="2"/>
-                <rect x="560" y="448" width="72" height="44" rx="2"/>
+                <rect x="372" y="340" width="44" height="30" rx="2"/>
+                <rect x="584" y="340" width="44" height="30" rx="2"/>
+                <rect x="347" y="375.2" width="87.4" height="55.2" rx="2"/>
+                <rect x="565.6" y="375.2" width="87.4" height="55.2" rx="2"/>
+              </g>
+              <rect x="349" y="385" width="104.4" height="35.6" rx="3" fill="var(--rule)"/>
+              <rect x="546.6" y="385" width="104.4" height="35.6" rx="3" fill="var(--rule)"/>
+              <rect x="321.7" y="353.4" width="25.3" height="98.9" rx="4" fill="var(--rule)"/>
+              <rect x="653" y="353.4" width="25.3" height="98.9" rx="4" fill="var(--rule)"/>
+
+              <g stroke="var(--rule-strong)" fill="var(--surface)">
+                <rect x="372" y="458" width="42" height="26" rx="2"/>
+                <rect x="590" y="458" width="42" height="26" rx="2"/>
+                <rect x="486" y="458" width="28" height="26" rx="2" fill="var(--accent-soft)" stroke="var(--accent)"/>
+                <rect x="368" y="488" width="78" height="22" rx="2"/>
+                <rect x="452" y="488" width="96" height="22" rx="2"/>
+                <rect x="556" y="488" width="76" height="22" rx="2"/>
               </g>
 
-              <circle cx="500" cy="250" r="57" fill="var(--surface)" stroke="var(--rule-strong)"/>
-              <circle cx="500" cy="250" r="48" fill="none" stroke="var(--accent)" stroke-dasharray="4 4"/>
-              <rect x="420" y="315" width="160" height="85" rx="3" fill="none" stroke="var(--ink)" stroke-dasharray="5 4"/>
-
               <g font-family="IBM Plex Mono, monospace" font-size="9" fill="var(--ink-2)" text-anchor="middle">
-                <text x="393" y="164">SWD</text>
-                <text x="607" y="169">BLE</text>
-                <text x="500" y="174">H723</text>
-                <text x="391" y="379">DRV</text>
-                <text x="609" y="379">DRV</text>
-                <text x="408" y="424">GM12-N20</text>
-                <text x="591" y="424">GM12-N20</text>
-                <text x="500" y="424">IMU</text>
-                <text x="500" y="253">TURBINE</text>
-                <text x="500" y="266">Ø 50 mm</text>
-                <text x="500" y="355">PACK 2S — au-dessus</text>
-                <text x="404" y="466">3V3 +</text><text x="404" y="478">charge</text>
-                <text x="500" y="466">OLED + switch</text><text x="500" y="478">+ buzzer</text>
-                <text x="596" y="466">ON/OFF</text><text x="596" y="478">accu · USB-C</text>
+                <text x="500" y="166">H723</text>
+                <text x="514" y="294">PACK 2S</text>
+                <text x="514" y="307" font-size="8">au-dessus, devant l'essieu</text>
+                <text x="500" y="399">TURBINE EDF 27</text>
+                <text x="500" y="412" font-size="8">lèvre Ø 36,7 — sur l'essieu</text>
+                <text x="394" y="359">DRV</text>
+                <text x="606" y="359">DRV</text>
+                <text x="401" y="406" font-size="8.5" text-anchor="start">1524 + IE2</text>
+                <text x="599" y="406" font-size="8.5" text-anchor="end">1524 + IE2</text>
+                <text x="393" y="475">SWD</text>
+                <text x="500" y="475">IMU</text>
+                <text x="611" y="475">BLE</text>
+                <text x="407" y="503" font-size="8">3V3 · charge</text>
+                <text x="500" y="503" font-size="8">OLED · boutons · buzzer</text>
+                <text x="594" y="503" font-size="8">ON/OFF · USB-C</text>
               </g>
 
               <g stroke="var(--rule-strong)" fill="none">
-                <path d="M366,103 L258,103"/>
-                <path d="M424,122 L300,122 L258,142"/>
+                <path d="M322,122 L300,92 L258,92"/>
+                <path d="M404,219 L300,232 L258,232"/>
               </g>
               <g font-family="IBM Plex Sans, sans-serif" font-size="11" fill="var(--ink)" text-anchor="end">
-                <text x="252" y="100">Barrette 12 × ITR8307</text>
-                <text x="252" y="115" font-size="10" fill="var(--muted)">pas 10 mm — couverture ±55 mm</text>
-                <text x="252" y="145">Stations de télémétrie</text>
-                <text x="252" y="160" font-size="10" fill="var(--muted)">OPV302 + BPW77, sur la carte</text>
-              </g>
-              <g font-family="IBM Plex Sans, sans-serif" font-size="10" fill="var(--muted)">
-                <text x="666" y="80">visées : latéral gauche 90°, diagonale 45°, avant 0°</text>
+                <text x="252" y="89">Moustache en arc — 12 × ITR8307</text>
+                <text x="252" y="104" font-size="10" fill="var(--muted)">R = 140 · 6 au pas de 8 + 3 par côté · ±74</text>
+                <text x="252" y="229">Stations de télémétrie</text>
+                <text x="252" y="244" font-size="10" fill="var(--muted)">OPV302 + BPW77, sur la carte</text>
               </g>
 
               <g stroke="var(--accent)" fill="none" marker-start="url(#dim)" marker-end="url(#dim)">
-                <path d="M322,103 L322,420"/>
-                <path d="M362,540 L638,540"/>
-                <path d="M342,566 L658,566"/>
+                <path d="M306,80.9 L306,402.8"/>
+                <path d="M690,80.8 L690,513.2"/>
+                <path d="M321.7,536 L678.3,536"/>
+                <path d="M362,558 L638,558"/>
               </g>
               <g font-family="IBM Plex Mono, monospace" font-size="10" fill="var(--accent)">
-                <text x="330" y="266">138 mm d'avance capteurs</text>
-                <text x="500" y="534" text-anchor="middle">carte 120 mm</text>
-                <text x="500" y="586" text-anchor="middle">hors-tout roues 136 mm</text>
+                <text x="312" y="230">140 mm</text>
+                <text x="312" y="242" font-size="8.5">d'avance capteurs</text>
+                <text x="696" y="290">194 mm</text>
+                <text x="696" y="302" font-size="8.5">sur 200 — marge 6</text>
+                <text x="500" y="530" text-anchor="middle">hors-tout roues 155 mm — entraxe 144 mm</text>
+                <text x="500" y="552" text-anchor="middle" font-size="8.5">corps 120 mm</text>
               </g>
             </g>
           </svg>
         </div>
-        <figcaption>Fig. 2 — Implantation proposée, cotes indicatives à recaler sur ton châssis. Les six diodes de télémétrie sont soudées sur la carte elle-même, boîtier couché. Le pack et les moteurs concentrent la masse sur l'essieu ; la turbine, juste en avant, souffle à travers une découpe de la carte.</figcaption>
+        <figcaption>Fig. 2 — Implantation retenue, cotes de <span class="mono">faulhaber_geom.py</span> et <span class="mono">turbineEDF27_dimensionnement.py</span> (troisième passe du 31 août : nez poussé au maximum du gabarit). La moustache en arc de rayon 140 est à 140 mm devant l'essieu, patin dessous, au bout d'un nez ajouré — deux longerons dans la carte, raidis par la platine des équerres ; les diodes de télémétrie restent soudées sur le corps, boîtier couché. La paroi arrière du plénum remonte à 45 mm derrière l'essieu (décalage de +10 mm, χ = 0,93) et l'IHM se range au-dessus : 194 mm de long au total, 6 mm de marge sur le règlement — gabarit à vérifier au montage. Turbine sur l'essieu entre les codeurs (40,4 mm libres, lèvre à 1,8 mm par côté), pack juste devant. À vérifier dans <span class="mono">check_faulhaber_assembly.py</span> : jeu lèvre–équerres, et l'appui des équerres au bord du corps de 120 — oreilles locales ou équerre à reprendre.</figcaption>
       </figure>
+
+      <h3>Géométrie de roulage : les cinq cotes qui font le chrono</h3>
+      <p>Ces cotes ne se choisissent pas au catalogue : elles se déduisent du règlement — rayon minimum de 20 cm, ligne de 19 mm, marques du chapitre 3 — et de la motorisation retenue, Faulhaber 1524T006SR + réducteur 3,33:1 sur roues JS4311 de 43 mm, pointe d'environ 5,2 m/s. Elles forment un système : l'avance de la barrette fixe sa largeur, et la voie s'est élargie pour rendre l'essieu à la turbine. D'abord le résumé, puis chaque cote avec sa justification.</p>
+      <div class="kpis">
+        <div class="kpi"><span class="v">±74 mm</span><span class="k">moustache en arc — R = 140</span></div>
+        <div class="kpi"><span class="v">140 mm</span><span class="k">avance barrette → essieu</span></div>
+        <div class="kpi"><span class="v">6 + 3×2</span><span class="k">pas de 8 au centre, flancs ≤ 19 mm</span></div>
+        <div class="kpi"><span class="v">144 mm</span><span class="k">entraxe roues — 155 hors-tout</span></div>
+        <div class="kpi"><span class="v">0 mm</span><span class="k">turbine sur l'essieu, entre les codeurs</span></div>
+      </div>
+
+      <p><strong>L'avance <span class="mono">d</span> de la barrette d'abord, parce qu'elle commande tout le reste.</strong> Et d'abord ce qu'elle ne fait pas : anticiper les virages. Freiner de 5,2 m/s à la vitesse de passage — 1,5 à 1,8 m/s selon l'appui — demande de l'ordre du mètre, et aucune barrette ne voit si loin : l'anticipation vient de la carte apprise (point 32 du §8), la barrette ne fait que la <em>régulation latérale</em>. Son avance lui donne un effet d'avance de phase — le signal vaut à peu près <span class="mono">erreur + d·cap</span>, un PD gratuit — donc plus <span class="mono">d</span> est grand, plus la boucle est amortie. Ce qui borne <span class="mono">d</span> par le haut, c'est la géométrie du régime établi : barrette centrée sur la ligne dans un virage de rayon R, le châssis se met en crabe d'un angle α = arcsin(d/R) et l'essieu coupe à r = √(R² − d²).</p>
+      <div class="tw">
+        <table>
+          <thead><tr><th class="m">d</th><th>Angle du châssis</th><th>Rayon de l'essieu</th><th>Roue ext./int. — entraxe 144</th><th>— entraxe 125</th></tr></thead>
+          <tbody>
+            <tr><td class="m">60 mm</td><td class="m">17°</td><td class="m">191 mm</td><td class="m">2,2</td><td class="m">2,0</td></tr>
+            <tr><td class="m">80 mm</td><td class="m">24°</td><td class="m">183 mm</td><td class="m">2,3</td><td class="m">2,0</td></tr>
+            <tr><td class="m">100 mm</td><td class="m">30°</td><td class="m">173 mm</td><td class="m">2,4</td><td class="m">2,1</td></tr>
+            <tr><td class="m">120 mm</td><td class="m">37°</td><td class="m">160 mm</td><td class="m">2,6</td><td class="m">2,3</td></tr>
+            <tr><td class="m">140 mm</td><td class="m">44°</td><td class="m">143 mm</td><td class="m">3,0</td><td class="m">2,6</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Mais le vrai critère de choix n'est pas dans ce tableau : l'avance est une <strong>constante de temps</strong>, τ = d/v, utile entre ~40 et 60 ms — c'est pourquoi les machines qui gagnent poussent toutes la moustache au maximum que leur gabarit autorise. Ici, le maximum, c'est le règlement qui le fixe : 200 mm de long, moins 48 mm de queue — paroi arrière du plénum ramenée à 45 mm derrière l'essieu, IHM rangée au-dessus —, moins 6 mm de tête : d ≤ 146, et on retient <strong>d = 140 mm</strong> pour garder 6 mm de gabarit. À l'état final — 15/10K et EDF 30, 2,5 à 2,8 m/s en courbe — τ vaut 50 à 56 ms, le haut de la plage utile. Tant que les paliers frittés brident vers 1,7 m/s, le nez est « trop long » (τ ≈ 85 ms) : un excès qui se corrige dans les gains du firmware, là où un nez trop court à haute vitesse ne se corrige pas. Le crabe atteint 44° en R200 et le décalage d'entrée d²/2R = 49 mm — c'est la barrette qui encaisse, voir ci-dessous.</p>
+
+      <p><strong>La largeur de la barrette</strong> se déduit de <span class="mono">d</span> : demi-largeur ≥ d²/2R + 9,5 mm de demi-ligne + ~10 mm de réserve pour rattraper la ligne en sortie du virage aveugle de Q1. À d = 140 mm, cela fait 68,5 mm — <strong>±74 mm</strong> laisse 5,5 mm de marge, et c'est cette équation qui interdit d'aller au-delà de 140 : à 146, la réserve tombe à zéro en même temps que le gabarit. Dans la bande des marques (point 07 du §8 : latéralement, la marque couvre 50 mm, pas 19), deux capteurs (+58, +74) en lecture au bord proche, trois (+20, +39, +58) en lecture centrée. La symétrie n'est pas négociable : le côté gauche est le discriminant croisement/marque.</p>
+
+      <p><strong>La disposition retenue</strong>, à budget de douze voies ADC constant : <strong>six capteurs au pas de 8 mm au centre (±20 mm), plus trois par côté à ±39, ±58 et ±74</strong>, sous la carte, à 3 mm du sol. Au pas de 8, deux capteurs sont toujours sur la ligne de 19 mm — interpolation sans zone plate là où l'on régule — et les flancs gardent des écarts ≤ 19 mm, la largeur de la ligne : elle n'est jamais invisible entre deux capteurs, on y détecte sans y réguler. La rangée se courbe en <strong>arc de rayon 140 mm centré sur l'essieu</strong> — tous les capteurs à la même distance du centre de rotation, gain uniforme quel que soit le point de l'arc qui tient la ligne ; c'est la moustache courbe qu'on voit sur toutes les machines de compétition, et elle ne coûte rien sur un contour de PCB détouré. Le <strong>patin avant se place sous la rangée</strong> : c'est lui qui tient les 3 mm d'optique, et 1° de tangage à 140 mm de l'essieu en vaut déjà 2,4 — le nez ajouré se raidit par la platine de renfort déjà prévue sur les équerres. Et le balayage reste à 2 kHz : la marque ne fait que 19 mm dans le sens de la course, 3,8 ms à 5 m/s, sept échantillons.</p>
+
+      <p><strong>La voie</strong> est fixée par la turbine, parce que les objections à l'élargissement ne survivent pas au calcul. La valeur retenue est <strong>155 mm hors-tout — 144 mm d'entraxe</strong> (<span class="mono">turbineEDF27_dimensionnement.py</span>, §L) : c'est le minimum qui passe la lèvre Ø 36,7 entre les deux ensembles moteur + codeur couchés sur la ligne d'essieu — 114,6 mm d'ensembles, 36,7 de lèvre, 2 mm de jeu par côté, 40,4 mm libres au total. Ce que ça coûte, chiffré : l'écart des roues en régime établi passe de 2,1 à 2,4 (tableau), et la demi-largeur gagne 9,5 mm sur la trajectoire d'esquive du cube de Q2 — marginal, et il reste 45 mm sur les 200 du règlement. La chicane, elle, est <strong>neutre</strong> : la bascule gauche-droite est limitée par l'inertie de lacet, or le couple de lacet disponible croît comme la voie quand l'inertie des flancs croît comme son carré — entre 125 et 144 d'entraxe, la bascule reste à ~310 ms au plafond de couple, à 1 % près. L'objection « chaque centimètre aggrave la chicane » du premier jet était fausse. La stabilité au roulis est acquise dès ~70 mm ; seule vraie contrepartie mécanique, l'appui des équerres déborde du corps de 120 mm — oreilles locales sur le contour, ou équerre à reprendre.</p>
+
+      <p><strong>La turbine</strong>, enfin — et d'abord ce qui a changé depuis le premier croquis : la poussée directe de l'EDF 27 vaut 104 g à 8,4 V, inutilisable ; l'appui vient d'une <strong>dépression sous plénum</strong> (<span class="mono">turbineEDF27_dimensionnement.py</span>). La turbine aspire un plénum fermé par un rebord et refoule au-dessus de la carte : plénum de <strong>100 × 110 mm décalé de 10 mm vers l'avant</strong> — paroi arrière à 45 mm derrière l'essieu, ce qui raccourcit la queue et rend 140 mm de nez. Ce décalage est un prix, pas un avantage : 7 % de l'appui filent au patin, c'est-à-dire en frottement pur, et <strong>le patin doit porter le moins possible</strong>. C'est pourtant le moindre mal : raccourcir le plénum à 90 mm pour le garder centré laisserait ~3,45 N sur l'essieu, le décaler en laisse 3,76 — et les 0,28 N cédés au patin ne coûtent que ~0,06 N de traînée. On ne décale donc pas d'un millimètre de plus que ce que la queue exige. Sur son pack 2S LiPo à 8,4 V, un <strong>rebord rigide de 2 mm</strong> descendu sous la carte — donc 3 mm de jeu au sol — donne 332 Pa et <strong>4,3 N</strong> d'appui, dont les paliers frittés du réducteur n'admettent que ~2,1 : on tourne à 70 % de consigne tant que le 15/10K n'est pas monté. Aérodynamiquement, sa position est indifférente : l'appui est porté par le <em>centre de surface du plénum</em>, pas par elle. Ce qui tranche, c'est le reste — masse au centre de rotation, refoulement dégagé entre les roues, et la zone de carte devant l'essieu rendue au pack, qui vient charger les roues motrices. D'où la place retenue : <strong>sur l'essieu, entre les codeurs</strong>, ce que la voie de 155 permet — découpe d'aspiration Ø 28,4 sur l'essieu, dans le plénum, lèvre Ø 36,7 passant avec 1,8 mm par côté, à confirmer dans <span class="mono">check_faulhaber_assembly.py</span>. Restent trois servitudes. Le jeu sous le rebord reste le seul vrai levier (2 mm → 7,0 N, 4 mm → 3,0 N), mais à 8,4 V il n'a plus besoin d'être serré : un rebord <em>rigide</em> de 2 mm suffit largement, là où une jupe souple descendant à 1,5 mm talonnerait sur une bâche qui ondule. La jupe fine ne redevient utile que le jour où le 15/10K est monté. La turbine reste <strong>allumée en permanence</strong>, sur <strong>son propre pack 2S LiPo</strong> : la réamorcer avant chaque virage coûte plus cher que le régime tenu, et le pack séparé épargne au bus LiFePO4 les 11 A qu'elle appelle. Et les vibrations — désormais au plus près de l'essieu : recule le LSM6DSO vers l'arrière de la carte et monte la turbine sur silentblocs, l'odométrie du virage aveugle de Q1 en dépend.</p>
+
+      <div class="note">
+        <span class="lbl">L'enveloppe qui en découle</span>
+        <p>d = 140 mm, moustache en arc ±74, entraxe 144, turbine sur l'essieu, plénum décalé de +10 : l'ensemble fait <strong>194 mm de long</strong> — queue à 48 mm derrière l'essieu, IHM rangée au-dessus du plénum — pour <strong>155 mm hors-tout aux roues</strong>, ~158 en bout d'arc. La longueur est pleine à 6 mm près : gabarit à vérifier au montage, patin compris. Le nez n'est pas une plaque : la carte s'ajoure en deux longerons et un arc — l'équivalent PCB du boom carbone des machines de compétition, ~20 g au lieu de 60 pour une plaque pleine, et l'inertie de lacet s'en souvient. Les roues débordent le corps avec 6,5 mm de jeu à leur face interne — ni encoche ni fenêtre. La demi-largeur de 77,5 mm fixe l'excursion d'esquive du cube de Q2.</p>
+      </div>
 
       <h3>Hauteurs et angles de montage</h3>
       <p>Deux familles de capteurs sur la même carte, deux contraintes verticales à satisfaire — et elles se satisfont sans carte fille, parce qu'elles ne jouent pas dans le même plan. Les capteurs de ligne regardent vers le bas depuis le dessous ; les diodes de télémétrie sont soudées sur le dessus, boîtier couché, et visent vers l'avant en étant <strong>inclinées vers le haut</strong>.</p>
-      <p>Une relation gouverne la première : <strong>garde au sol = rayon de roue − hauteur de l'axe moteur au-dessus du dessous de carte</strong>. Les roues retenues sont des Pololu 40 × 7, soit un rayon de 20 mm. Le support N20 nu place l'arbre à 11 mm au-dessus du dessous de carte, ce qui donnerait 9 mm de garde — bien trop pour l'ITR8307. La correction est mécanique et se chiffre exactement : <strong>4 mm d'entretoises sur mesure</strong> sous le support portent l'axe à 15 mm, et la garde retombe à 5 mm. C'est le bon endroit pour régler, parce qu'une entretoise se retaille en dix minutes là où un PCB se recommande.</p>
+      <p>Une relation gouverne la première : <strong>garde au sol = rayon de roue − hauteur d'axe au-dessus du dessous de carte</strong>. Les roues retenues sont des JSumo JS4311 de 43 × 11 mm, soit un rayon de 21,5 mm. Le berceau du Faulhaber 1524 place l'axe à 14,9 mm au-dessus du <em>dessus</em> de carte — 16,5 mm au-dessus du dessous, épaisseur de 1,6 mm comprise — et la garde tombe juste à <strong>5 mm</strong>. La roue descend donc de 6,6 mm sous le plan supérieur de la carte : à 144 mm d'entraxe sa face interne passe à 66,5 mm de l'axe quand le corps de carte s'arrête à 60 — 6,5 mm de jeu, ni encoche ni fenêtre. La hauteur d'axe est portée par l'équerre-berceau en aluminium posée sur des <strong>entretoises découpées dans les chutes du panneau</strong> — une entretoise = une épaisseur de carte, 1,6 mm (<span class="mono">faulhaber_geom.py</span>, <span class="mono">SHIM_N</span>) : la garde se règle à l'entretoise près, sans réusiner l'équerre — le bon endroit pour régler, là où un PCB se recommande.</p>
       <p>La seconde tient à l'ouverture réelle du faisceau, et c'est là que la fiche technique tranche.</p>
       <figure>
         <div class="figwrap">
@@ -765,7 +835,7 @@
 
               <circle cx="756" cy="222" r="28" fill="var(--rule)" stroke="var(--rule-strong)"/>
               <rect x="716" y="214" width="60" height="26" rx="2" fill="var(--surface)" stroke="var(--rule-strong)"/>
-              <text x="746" y="231" font-size="8.5" text-anchor="middle" fill="var(--ink-2)" font-family="IBM Plex Mono, monospace">N20</text>
+              <text x="746" y="231" font-size="8.5" text-anchor="middle" fill="var(--ink-2)" font-family="IBM Plex Mono, monospace">1524</text>
               <rect x="630" y="214" width="80" height="26" rx="2" fill="none" stroke="var(--ink)" stroke-dasharray="4 3"/>
               <text x="670" y="231" font-size="8.5" text-anchor="middle" fill="var(--ink-2)" font-family="IBM Plex Mono, monospace">PACK 2S</text>
 
@@ -778,7 +848,7 @@
                 <text x="534" y="240" text-anchor="end">5 mm</text>
               </g>
               <text x="563" y="272" font-size="9.5" fill="var(--muted)" font-family="IBM Plex Mono, monospace">barrette à 3 mm sous la carte</text>
-              <text x="700" y="200" font-size="9.5" fill="var(--muted)" font-family="IBM Plex Mono, monospace">roue R = 20 mm · axe porté à 15 mm par 4 mm d'entretoises</text>
+              <text x="700" y="200" font-size="9.5" fill="var(--muted)" font-family="IBM Plex Mono, monospace">roue R = 21,5 mm · axe berceau à 16,5 mm du dessous de carte</text>
 
               <line x1="60" y1="310" x2="940" y2="310" stroke="var(--rule)"/>
               <text x="60" y="344" font-size="12" font-weight="600" fill="var(--ink)" font-family="IBM Plex Sans Condensed, sans-serif">PORTÉE — l'inclinaison qui évite le sol plafonne la distance utile</text>
@@ -855,12 +925,12 @@
       <div class="sechead"><span class="num">§4</span><h2>Sous-systèmes</h2></div>
 
       <h3>Capteur de ligne</h3>
-      <p>C'est la pièce qui décide du chrono, et c'est aussi la seule que tu dois concevoir toi-même. Douze capteurs réflectifs <strong>ITR8307</strong> au pas de 10 mm couvrent 110 mm, soit ±55 mm autour de l'axe : assez pour voir les marques de départ et d'arrivée placées à 40 mm à droite, et pour reconnaître un croisement au fait que <em>toute</em> la barrette passe au noir simultanément.</p>
+      <p>C'est la pièce qui décide du chrono, et c'est aussi la seule que tu dois concevoir toi-même. Douze capteurs réflectifs <strong>ITR8307</strong> en arc de rayon 140 mm centré sur l'essieu : six au pas de 8 mm au centre (±20 mm), trois par côté à ±39, ±58 et ±74 — résolution fine là où l'on régule, écarts ≤ 19 mm là où l'on détecte, pour que la ligne ne soit jamais invisible entre deux capteurs. Couverture <strong>±74 mm</strong> : assez pour voir les marques de départ et d'arrivée placées à 40 mm à droite, et pour reconnaître un croisement au fait que <em>toute</em> la barrette passe au noir simultanément.</p>
       <p>Les émetteurs sont câblés en deux bancs (pairs et impairs), chacun commuté par un MOSFET <span class="mono">AO3400A</span>. La séquence d'acquisition, déclenchée par TIM6 à 2 kHz, enchaîne : mesure tous émetteurs éteints (ambiante), mesure banc A, mesure banc B. La soustraction élimine l'éclairage de salle — exigence directe du chapitre 10 — et l'alternance des bancs supprime la diaphonie entre voisins. Attention : cette soustraction est <em>numérique</em>, et elle ne suffit qu'ici, à 3 mm de la bâche, où le signal est abondant. Le télémètre analogique, lui, joue dans un tout autre régime et demande une suppression du continu en amont du gain — comparaison des deux plus bas.</p>
       <p>Les douze capteurs sont implantés <strong>sous le bord avant de la carte mère</strong>, et non sur une carte fille. Alimente-les depuis <span class="mono">3V3A</span>, la même référence que <span class="mono">VREF+</span> : la mesure devient ratiométrique et l'ondulation résiduelle du buck s'annule.</p>
 
       <h3>Une seule carte, sans exception</h3>
-      <p>La carte fille sur nappe FFC n'avait que deux arguments : le bruit, et le réglage de hauteur. Le premier ne tient pas — un plan de masse continu sur 4 couches est <em>meilleur</em> qu'une nappe, quelle que soit la façon dont on alterne signal et masse dedans. Le second tombe avec les entretoises, qui règlent l'assiette du robot entier.</p>
+      <p>La carte fille sur nappe FFC n'avait que deux arguments : le bruit, et le réglage de hauteur. Le premier ne tient pas — un plan de masse continu sur 4 couches est <em>meilleur</em> qu'une nappe, quelle que soit la façon dont on alterne signal et masse dedans. Le second tombe avec le berceau, qui fige la hauteur d'axe, et le patin avant, qui règle l'assiette du robot entier.</p>
       <p>Restait la question des télémètres, que je croyais condamnés à une carte verticale. Elle disparaît elle aussi dès lors que les diodes sont <strong>soudées à plat sur la carte et inclinées</strong> : le faisceau n'a pas besoin de partir de haut, il a besoin de ne pas descendre. Boîtier couché, pattes cintrées, quatre degrés vers le haut, et l'axe optique à une douzaine de millimètres du sol suffit — c'est la pratique du micromouse, et elle vaut ici pour la même raison.</p>
       <div class="tw">
         <table>
@@ -946,12 +1016,14 @@
         </div>
         <div class="card">
           <h4>Turbine d'appui</h4>
-          <p class="part">Embase ESC 3 points · TIM4 CH3 sur PB8</p>
-          <p>Le moteur brushless n'est pas piloté par la carte : c'est l'ESC qui s'en charge, et la carte ne lui envoie qu'une consigne. L'interface se réduit donc à trois fils, mais deux détails la rendent dangereuse si on les néglige.</p>
+          <p class="part">Embase ESC 3 points · TIM4 CH3 sur PB8 · pack séparé</p>
+          <p>Le moteur brushless n'est pas piloté par la carte : c'est l'ESC qui s'en charge, et la carte ne lui envoie qu'une consigne. Des trois fils du connecteur, un seul est vital et ce n'est pas celui qu'on croit.</p>
           <ul>
-            <li><strong>Broche centrale non connectée</strong> : la plupart des ESC sortent 5 ou 6 V de BEC sur ce fil. Reliée au rail 3,3 V, elle emporte toute la carte</li>
-            <li>Signal servo 1–2 ms à 50–500 Hz, ou <strong>DShot</strong> via TIM4 et DMA — pas de calibration, et le régime réel remonte en télémétrie, ce qui permet de voir la turbine décrocher</li>
-            <li>Puissance prise directement sur VBAT, en amont des ponts moteurs, avec son propre découplage</li>
+            <li><strong>Puissance sur un pack 2S LiPo dédié</strong>, plus sur VBAT : la turbine tire 11 A à 8,4 V et le bus LiFePO4 n'a pas à les porter</li>
+            <li><strong>Masse commune obligatoire</strong> entre ce pack et la carte — la consigne est référencée à la masse de l'ESC, sans liaison elle n'a aucune référence</li>
+            <li><strong>Broche centrale non connectée</strong> : les versions LBEC sortent 5 V sur ce fil. Reliée au rail 3,3 V, elle emporte toute la carte — prendre un ESC <strong>opto</strong>, ou couper le fil au ras du boîtier</li>
+            <li><strong>Calibre 20 A</strong>, pas moins, et consigne plafonnée dans le firmware — voir §8, point 26</li>
+            <li>Signal servo 1–2 ms à 50–500 Hz. Le <strong>DShot</strong>, et avec lui le régime en retour donc la détection de décrochage, n'existe qu'à partir de BLHeli_S — le BLHeli d'origine ne le fait pas</li>
             <li>L'armement de l'ESC fait partie de la séquence de pré-départ, pas du démarrage du firmware</li>
           </ul>
         </div>
@@ -1148,12 +1220,12 @@
       <p>Point de vigilance : sa tension de régulation par cellule descend jusqu'à 3,4 V, donc 3,60 V pour du LiFePO4 est atteignable — mais ce n'est <strong>pas</strong> sa valeur par défaut. Au reset, il part sur un profil Li-ion. Le firmware doit écrire <span class="mono">VCELLREG</span> avant d'autoriser la charge, et la broche <span class="mono">CD</span> doit maintenir le chargeur inhibé jusqu'à ce que cette écriture soit confirmée.</p>
       <p>Si le BQ25887 venait à manquer, la solution de repli est un <strong>CH224K</strong> (<span class="mono">C970725</span>, 0,33 $) qui négocie 12 V en USB-PD, suivi d'un chargeur abaisseur LiFePO4 — au prix de l'obligation d'utiliser un chargeur PD et non un simple port USB.</p>
 
-      <h3>Ce que la turbine change au bilan</h3>
-      <p>C'est l'ajout qui redimensionne tout le reste. Une turbine capable de produire un appui utile sur un robot de cette taille consomme entre 5 et 15 A en continu — davantage que les deux moteurs de traction réunis. Trois conséquences en cascade :</p>
+      <h3>La turbine a son propre pack</h3>
+      <p>C'est la décision qui a défait la cascade du premier bilan. L'EDF 27 tire <strong>11 A à 8,4 V</strong>, et la contre-pression du plénum ne la soulage pas : entre 2 et 5 mm de jeu, la puissance d'air reste plantée à 22 W — ce qu'elle perd en débit, elle le regagne en pression. Ramenés au bus LiFePO4 de 6,4 V, ces 6,4 A équivalents forçaient un pack de 1000 mAh à 15 C, faisaient chuter VBAT sous le nez du convertisseur 3,3 V, et amputaient la poussée d'un tiers parce que les ensembles ESC et brushless du commerce sont calibrés pour du 2S LiPo à 8,4 V. Un <strong>pack 2S LiPo dédié à la turbine</strong> — 450 mAh, environ 28 g — supprime les trois d'un coup.</p>
       <ul>
-        <li><strong>Le pack change de catégorie.</strong> Un accu de réception 2S LiFePO4 de 450 mAh est hors sujet : il faut au minimum 1000 mAh avec un taux de décharge de 15 C, et le poids gagné en électronique se reperd là.</li>
-        <li><strong>La tension joue contre toi.</strong> Un 2S LiFePO4 plafonne à 7,3 V et travaille surtout vers 6,4 V, là où les ensembles ESC et moteur brushless du commerce sont calibrés pour du 2S LiPo à 8,4 V. La poussée réelle sera nettement inférieure à celle annoncée par le fabricant — vérifie-la avant de dimensionner la mécanique.</li>
-        <li><strong>L'appel de courant fait chuter VBAT.</strong> Une montée en régime brutale peut faire décrocher le convertisseur 3,3 V et redémarrer le MCU en pleine ligne droite. Rampe la consigne de turbine plutôt que de l'appliquer d'un coup, augmente le volume de condensateurs à l'entrée du buck, et surveille VBAT sur ADC3 pour lever une alarme avant le décrochage.</li>
+        <li><strong>Le pack principal redevient petit.</strong> Sans la turbine, le bus ne porte plus que les deux moteurs à 1 A chacun : les 450 mAh du premier jet suffisent, le LiFePO4 garde son plateau, et le bus moteurs remonte de 6,06 à <strong>6,32 V</strong> — c'est autant de vitesse de pointe rendue.</li>
+        <li><strong>Les deux masses doivent être reliées.</strong> La consigne est référencée à la masse de l'ESC, donc à celle du pack turbine. Sans liaison entre les deux masses, elle n'a aucune référence — et ça ne se voit pas au multimètre avant de brancher.</li>
+        <li><strong>Le LiPo, lui, ne tient pas son plateau.</strong> L'appui varie comme le carré du régime, donc du carré de la tension : de 8,4 à 7,0 V il chute de <strong>31 %</strong>, là où le LiFePO4 était plat. Mesure la tension du pack turbine sur ADC3 et compense la consigne en boucle ouverte — la marge existe, on ne tourne qu'à 70 %.</li>
       </ul>
 
       <h3>Connectique et protections</h3>
@@ -1191,7 +1263,7 @@
             <tr><td>Buzzer</td><td>TIM17 CH1</td><td class="m">PB9</td><td>Via MOSFET + diode de roue libre</td></tr>
             <tr><td>Switch 5 directions</td><td>GPIO + EXTI</td><td class="m">PE10, PE12, PE15, PD10, PD13</td><td>Haut / bas / gauche / droite / appui, commun à la masse</td></tr>
             <tr><td>Départ</td><td>GPIO + EXTI</td><td class="m">PD14 (bouton et jack)</td><td>Moyen conforme au règlement, en parallèle du départ par télémètre</td></tr>
-            <tr><td>ESC de turbine</td><td>TIM4 CH3 (+ DMA si DShot)</td><td class="m">PB8</td><td>Broche BEC de l'embase laissée non connectée</td></tr>
+            <tr><td>ESC de turbine</td><td>TIM4 CH3 (+ DMA si DShot)</td><td class="m">PB8</td><td>Broche BEC non connectée · masse commune avec le pack turbine</td></tr>
             <tr><td>LED d'état</td><td>GPIO</td><td class="m">PD15 · PC8 · PC9</td><td>Dont une dédiée « BLE alimenté », visible du jury</td></tr>
             <tr><td>Horloge</td><td>HSE</td><td class="m">PH0 · PH1</td><td>Quartz 25 MHz</td></tr>
           </tbody>
@@ -1226,6 +1298,8 @@
             <tr><td>Buzzer passif</td><td>magnétique CMS 9 × 5,5 mm</td><td class="m">—</td><td class="m">1</td><td class="tbc">à vérifier</td></tr>
             <tr><td>Switch 5 directions</td><td>TS-006 · 5 voies + commun</td><td class="m">C3674</td><td class="m">1</td><td class="tbc">empreinte à confirmer</td></tr>
             <tr><td>Embase ESC turbine</td><td>barrette 1×3 au pas de 2,54 mm</td><td class="m">hors PCBA</td><td class="m">1</td><td class="ok">broche centrale NC</td></tr>
+            <tr><td>Variateur de turbine</td><td>Multistar 20A BLHeli_S Rev16 V3 · 2-4S opto</td><td class="m">hors PCBA</td><td class="m">1</td><td class="ok">20 A pour 11 A appelés</td></tr>
+            <tr><td>Pack de turbine</td><td>2S LiPo 450 mAh · ~28 g</td><td class="m">hors PCBA</td><td class="m">1</td><td class="ok">masse à relier à la carte</td></tr>
             <tr><td>Quartz HSE</td><td>25 MHz · 3225 · 10 ppm</td><td class="m">—</td><td class="m">1</td><td class="tbc">à vérifier</td></tr>
             <tr><td>Connecteur de debug</td><td>Tag-Connect TC2050-IDC-NL</td><td class="m">aucun</td><td class="m">0</td><td class="ok">empreinte seule</td></tr>
             <tr><td>Afficheur</td><td>module OLED SSD1306 0,96″ I²C</td><td class="m">hors PCBA</td><td class="m">1</td><td class="ok">embase 4 points</td></tr>
@@ -1274,7 +1348,7 @@
         </div></li>
         <li><span class="n">07</span><div>
           <h5>Le robot ne peut pas voir l'arrivée</h5>
-          <p>Les marques sont à 40 mm à droite de l'axe de piste et font 19 mm de large : elles occupent la bande +30,5 à +49,5 mm. Une barrette centrée de 60 mm de large ne les voit jamais, et le robot ne sait donc pas quand freiner. Or il doit s'arrêter en moins d'un mètre après l'arrivée, sous peine d'essai invalidé. D'où la couverture ±55 mm retenue au §4.</p>
+          <p>Relecture du chapitre 3 : les marques font 19 mm de large et <strong>50 mm de long, perpendiculaires à la piste</strong> — des chutes du même adhésif, posées en travers. Latéralement, une marque couvre donc 50 mm à partir de 40 mm du centre ; selon que ces 40 mm se mesurent au bord proche ou au centre (la figure 2 du règlement ne tranche pas), la bande vaut +40 à +90 mm ou +15 à +65 mm. Une barrette de 60 mm de large ne la voit jamais dans la lecture au bord proche — et le robot doit s'arrêter en moins d'un mètre après l'arrivée, sous peine d'essai invalidé. La couverture ±74 mm retenue au §4 place deux capteurs (+58, +74) dans la bande en lecture au bord proche, et trois (+20, +39, +58) en lecture centrée. Conséquence firmware : la marque noircit <em>plusieurs</em> capteurs de droite — le discriminant croisement/marque est « le côté gauche est-il noir », pas le nombre de capteurs touchés.</p>
         </div></li>
         <li><span class="n">08</span><div>
           <h5>La référence analogique et son retour de masse</h5>
@@ -1286,11 +1360,11 @@
       <ul class="finds">
         <li><span class="n">09</span><div>
           <h5>Le BEC de l'ESC peut emporter toute la carte</h5>
-          <p>La plupart des ESC brushless renvoient 5 ou 6 V de BEC sur le fil central du connecteur servo. Câblé sur une embase où cette broche rejoint le 3,3 V, il détruit le MCU, l'IMU, les télémètres et l'écran d'un seul coup. Laisse la broche centrale non connectée, marque-la « NC » en sérigraphie, et n'utilise que signal et masse. Si tu veux vraiment récupérer le BEC un jour, fais-le passer par un cavalier explicite vers un rail 5 V séparé.</p>
+          <p>La plupart des ESC brushless renvoient 5 ou 6 V de BEC sur le fil central du connecteur servo. Câblé sur une embase où cette broche rejoint le 3,3 V, il détruit le MCU, l'IMU, les télémètres et l'écran d'un seul coup. Laisse la broche centrale non connectée, marque-la « NC » en sérigraphie, et n'utilise que signal et masse. Si tu veux vraiment récupérer le BEC un jour, fais-le passer par un cavalier explicite vers un rail 5 V séparé. Le plus simple reste de prendre une version <strong>opto</strong> ; et si l'ESC en main est une LBEC, de couper le fil central au ras du boîtier plutôt que de le laisser pendre hors connecteur.</p>
         </div></li>
         <li><span class="n">10</span><div>
           <h5>L'ESC ne s'arme pas tout seul</h5>
-          <p>Un ESC standard exige un signal à gaz zéro pendant une à deux secondes après sa mise sous tension, sinon il refuse d'armer et reste muet. Cette temporisation doit faire partie de la séquence de pré-départ, pas du démarrage du firmware — sinon tu découvriras au bord de piste que la turbine ne part pas. Ses bips d'armement vont par ailleurs se mélanger aux tiens : prévois-le dans le protocole sonore. Le DShot supprime le problème et donne en prime le régime réel en retour, ce qui permet de détecter un décrochage de turbine.</p>
+          <p>Un ESC standard exige un signal à gaz zéro pendant une à deux secondes après sa mise sous tension, sinon il refuse d'armer et reste muet. Cette temporisation doit faire partie de la séquence de pré-départ, pas du démarrage du firmware — sinon tu découvriras au bord de piste que la turbine ne part pas. Ses bips d'armement vont par ailleurs se mélanger aux tiens : prévois-le dans le protocole sonore. Le DShot supprime le problème et donne en prime le régime réel en retour, ce qui permet de détecter un décrochage de turbine — mais il n'existe qu'à partir de <strong>BLHeli_S</strong> : sur un BLHeli d'origine à MCU Atmel, la calibration et les bips restent au programme.</p>
         </div></li>
         <li><span class="n">11</span><div>
           <h5>Le télémètre de départ est aussi celui qui voit le cube</h5>
@@ -1354,15 +1428,15 @@
       <ul class="finds">
         <li><span class="n">25</span><div>
           <h5>L'appui aérodynamique reste la contrainte dominante</h5>
-          <p>Tu as bien fait de prévoir la turbine : dans un virage de 20 cm de rayon, 2,5 m/s demandent 3,2 g de force latérale, et aucun pneu de robot ne fournit ça sur une bâche. Mais garde en tête que c'est un système à part entière, pas un accessoire — il a sa propre séquence d'armement, son propre budget d'énergie, et il déplace le centre de gravité. Traite-le comme un second actionneur, avec sa consigne dans la boucle de contrôle : l'appui n'a d'intérêt qu'en virage, et le faire tourner à fond en ligne droite ne fait que vider le pack.</p>
+          <p>Tu as bien fait de prévoir la turbine : dans un virage de 20 cm de rayon, 2,5 m/s demandent 3,2 g de force latérale, et aucun pneu de robot ne fournit ça sur une bâche. Mais garde en tête que c'est un système à part entière, pas un accessoire — il a sa propre séquence d'armement, son propre budget d'énergie, et il déplace le centre de gravité. Traite-le comme un second actionneur, avec sa consigne dans la boucle de contrôle — mais ne le coupe pas en ligne droite : le dimensionnement (§3) montre que la pointe ne s'en ressent presque pas, qu'elle ne pèse plus sur le pack principal depuis qu'elle a le sien, et qu'une réamorce avant chaque virage coûte plus cher qu'un régime tenu.</p>
         </div></li>
         <li><span class="n">26</span><div>
-          <h5>La turbine redimensionne le pack</h5>
-          <p>Cinq à quinze ampères en continu, soit plus que les deux moteurs réunis. Un accu de réception 2S LiFePO4 de 450 mAh est hors sujet : vise 1000 mAh et 15 C au minimum. Et le 2S LiFePO4 plafonne à 7,3 V là où les ensembles ESC et brushless du commerce sont calibrés pour du 2S LiPo à 8,4 V : la poussée réelle sera inférieure à celle du catalogue. Mesure-la avant de figer la mécanique, pas après.</p>
+          <h5>Le variateur se dimensionne sur le courant, pas sur la consigne</h5>
+          <p>Piège dans lequel ce document est tombé une première fois : calibrer l'ESC sur le régime que les paliers du réducteur <em>de roue</em> autorisent. Une limite tenue par le firmware n'est pas une limite — un paramètre mal remis, un essai au banc, un démarrage raté, et l'ESC voit le courant plein. La turbine tire <strong>11 A à 8,4 V</strong> quel que soit le jeu du plénum (<span class="mono">turbineEDF27_dimensionnement.py</span>, §O), et le BLHeli d'origine <strong>n'a aucune mesure de courant</strong> : ni limitation, ni coupure sur blocage de rotor — c'est le MOSFET qui sert de fusible. Un 6 A et un 10 A sont donc tous deux sous-dimensionnés ; il faut <strong>20 A</strong>, ce que le fabricant de la turbine dit autrement en annonçant 15 A minimum. Le <strong>Multistar 20A BLHeli_S Rev16 V3, 2-4S opto</strong> est le bon compromis : même calibre que le 20A V2 slim mais plus compact que ses 62 × 13 mm, et BLHeli_S apporte le DShot. Vérifie enfin le KV imprimé sur le moteur : avec ses trois paires de pôles — 9 bobines, 6 aimants — la version 10000 KV monte à 192 600 tr/min électriques contre 240 000 admis par les Multistar à MCU Atmel, mais la 14500 KV serait à 279 000.</p>
         </div></li>
         <li><span class="n">27</span><div>
-          <h5>Le couple disponible plafonne ton chrono avant l'électronique</h5>
-          <p>Un GM12-N20 1:30 sous 6 V tourne autour de 1000 tr/min, soit environ 1,4 m/s avec des roues de 27 mm. Sur une ligne droite de 6 m, c'est très loin du potentiel. Si tu vises 2,5 m/s, il faut un rapport plus court ou des roues plus grandes, et alors le courant grimpe : le DRV8874 (6 A crête) et le pack doivent suivre, avec une capacité de décharge d'au moins 15 C.</p>
+          <h5>Le couple disponible plafonnait ton chrono — c'est le point qui a changé la motorisation</h5>
+          <p>Un GM12-N20 1:30 sous 6 V tourne autour de 1000 tr/min, soit environ 1,4 m/s : très loin du potentiel d'une ligne droite de 6 m. La réponse est la motorisation <strong>Faulhaber 1524T006SR</strong> (n₀ = 9480 tr/min à 6 V, codeur IE2-1024) avec réducteur planétaire 15/10 de 3,33:1 et roues <strong>JSumo JS4311</strong> de 43 mm : pointe d'environ 5,2 m/s, l'optimum de diamètre étant plat de 34 à 46 mm. Deux limites à programmer plutôt qu'à câbler : <strong>1 A de courant moteur maximal avec codeur</strong> (fiche IE2 — c'est la consigne IPROPI, indépendante de la protection du collecteur), et les 6000 tr/min continus du réducteur, dépassés d'environ 0,9 s par ligne droite en pointe — assumé. PWM à 25 kHz minimum (τe = 21 µs), et un rail 5 V à créer pour les codeurs : le bus 5,0–7,3 V ne leur convient pas. Réserve mécanique : le 15/10 en main est la version à paliers frittés, qui n'admet que ~3 N radiaux au plan de roue pour ~2,2 N statiques — moins de 30 % de marge ; le 15/10K à roulements est la parade si la casse arrive.</p>
         </div></li>
         <li><span class="n">28</span><div>
           <h5>Les encodeurs ne détectent pas le dérapage</h5>
@@ -1390,7 +1464,7 @@
         </div></li>
         <li><span class="n">34</span><div>
           <h5>La hauteur de la barrette doit être réglable</h5>
-          <p>L'ITR8307 travaille au mieux entre 2 et 4 mm de la surface. Sur une bâche qui ondule, c'est peu — et si les capteurs sont sur la carte mère, cette hauteur n'est plus réglable du tout. Deux compensations, et elles sont indépendantes du PCB. La première est mécanique : des entretoises sur mesure sous le support moteur portent l'axe à la hauteur voulue — 4 mm avec les roues Pololu 40 mm retenues. La seconde est logicielle : un courant d'émetteur piloté rattrape une hauteur résiduelle trop grande. Usine un premier jeu d'entretoises et mesure la garde au sol réelle <em>avant</em> de router.</p>
+          <p>L'ITR8307 travaille au mieux entre 2 et 4 mm de la surface. Sur une bâche qui ondule, c'est peu — et si les capteurs sont sur la carte mère, cette hauteur n'est plus réglable du tout. Deux compensations, et elles sont indépendantes du PCB. La première est mécanique : la hauteur d'axe — 14,9 mm au-dessus du dessus de carte avec les roues JS4311, soit 5 mm de garde — est portée par des entretoises en chutes de panneau sous l'équerre aluminium ; en ajouter ou en retirer une déplace l'axe d'une épaisseur de carte (<span class="mono">faulhaber_geom.py</span>, <span class="mono">SHIM_N</span>). La seconde est logicielle : un courant d'émetteur piloté rattrape une hauteur résiduelle trop grande. Monte un premier empilage et mesure la garde au sol réelle <em>avant</em> de router.</p>
         </div></li>
         <li><span class="n">35</span><div>
           <h5>Prévois une voie « ambiante seule » dans chaque cycle</h5>
@@ -1412,10 +1486,10 @@
       <div class="sechead"><span class="num">§9</span><h2>Prochaines étapes</h2></div>
       <p>Dans cet ordre, parce que chaque étape verrouille des choix pour la suivante.</p>
       <ol>
-        <li><strong>Figer la motorisation et la turbine ensemble.</strong> Vitesse cible, rapport de réduction, diamètre de roue, courant crête de traction, et poussée d'appui mesurée sous 6,4 V et non sous 8,4 V. C'est ce trio qui dimensionne le pack, les drivers et les pistes de puissance — tout le reste en découle.</li>
+        <li><strong>Mesurer l'appui sous plénum</strong>, pas la poussée : d'abord la dépression à débit nul, turbine sur une boîte étanche avec manomètre en U (~182 mm de colonne d'eau attendus à 8,4 V), puis le robot complet sur une balance, turbine à fond, posé sur un morceau de la vraie bâche (~435 g attendus avec le rebord de 2 mm — <span class="mono">turbineEDF27_dimensionnement.py</span>, §I). Relève le courant au passage : c'est lui qui valide le calibre de 20 A du §8, point 26. La motorisation, elle, est figée — Faulhaber 1524 + 15/10 de 3,33:1, roues JS4311, pointe ~5,2 m/s — et c'est le couple appui mesuré / pack qui dimensionne encore l'ESC, le connecteur d'accu et les pistes de puissance.</li>
         <li><strong>Écrire aux organisateurs</strong> au sujet du départ par télémètre. La réponse arrive vite et décide si le bouton START reste un secours ou devient le moyen principal.</li>
         <li><strong>Valider le brochage sous CubeMX.</strong> Le mapping exact des canaux ADC est le seul point du §6 qui peut te réserver une surprise : vérifie que les douze voies de la barrette tombent bien sur ADC1 et ADC2, et les quatre de surveillance sur ADC3.</li>
-        <li><strong>Usiner un premier jeu d'entretoises et mesurer la garde au sol réelle</strong>, roues et supports moteurs montés. Le calcul annonce 4 mm d'entretoises pour 5 mm de garde ; c'est la mesure qui tranche, et c'est elle qui valide la barrette de ligne sur la carte mère.</li>
+        <li><strong>Monter équerres et entretoises et mesurer la garde au sol réelle</strong>, roues et moteurs montés. Le calcul annonce 5,0 mm — axe à 14,9 mm au-dessus du dessus de carte, contrôlé par <span class="mono">check_faulhaber_assembly.py</span> — ; c'est la mesure qui tranche, et c'est elle qui valide la barrette de ligne sur la carte mère.</li>
         <li><strong>Prototyper les deux chaînes optiques séparément.</strong> D'un côté trois ou quatre ITR8307 balayés en hauteur de 2 à 8 mm, avec la soustraction numérique en place. De l'autre une station OPV302 + BPW77 sur plaque d'essai, pour caler la porteuse, la constante de couplage alternatif et le gain, et mesurer la portée réelle contre un cube et contre un mur. Ce sont les deux inconnues du projet, et elles ne se valident pas ensemble.</li>
         <li><strong>Trancher le connecteur de debug.</strong> TC2050 en 2×05, ou TC2030 rebroché en VTref / SWDIO / NRST / SWCLK / GND / SWO. Ce choix conditionne la place autour et n'est plus modifiable après le routage.</li>
         <li><strong>Refaire un passage stock JLCPCB</strong> juste avant de commander, et remplir les références marquées « à vérifier » au §7.</li>
@@ -1427,7 +1501,7 @@
     </section>
 
     <footer>
-      Sources vérifiées le 30 août 2026 — jlcpcb.com/partdetail (STM32H723VGT6 C730142, DRV8874PWPR C1855818, CH224K C970725) · lcsc.com (LSM6DSOTR C2655100, BQ25887RGER C2761614, ITR8307/S17/TR8(B) C81632, TPS62933DRLR C3200405, TYPE-C-31-M-12 C165948) · ti.com/lit/ds/symlink/bq25887.pdf · st.com — datasheet STM32H723VG DS13313 · ttelectronics.com — datasheet OPV302 Rev C 09/2018 · Règlement TNRS Formule 1 v2.11, F. Giamarchi et J.-R. Vaillé.
+      Sources vérifiées les 30 août – 1er septembre 2026 — jlcpcb.com/partdetail (STM32H723VGT6 C730142, DRV8874PWPR C1855818, CH224K C970725) · lcsc.com (LSM6DSOTR C2655100, BQ25887RGER C2761614, ITR8307/S17/TR8(B) C81632, TPS62933DRLR C3200405, TYPE-C-31-M-12 C165948) · ti.com/lit/ds/symlink/bq25887.pdf · st.com — datasheet STM32H723VG DS13313 · ttelectronics.com — datasheet OPV302 Rev C 09/2018 · faulhaber.com — fiches 1524T006SR, IE2-1024 et réducteur 15/10 (éd. 2026) · jsumo.com — roue JS4311 · hobbyking.com — fiches Multistar 6A/10A/20A V2 et 20A BLHeli_S Rev16 V3 · turbines-rc.com — EDF AEO RC POWER-X 27 mm · Règlement TNRS Formule 1 v2.11, F. Giamarchi et J.-R. Vaillé.
     </footer>
 
   </main>
