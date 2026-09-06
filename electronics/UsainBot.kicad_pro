@@ -136,7 +136,7 @@
         "min_silk_clearance": 0.0,
         "min_text_height": 0.8,
         "min_text_thickness": 0.08,
-        "min_through_hole_diameter": 0.3,
+        "min_through_hole_diameter": 0.2,
         "min_track_width": 0.2,
         "min_via_annular_width": 0.1,
         "min_via_diameter": 0.5,
@@ -224,7 +224,7 @@
       "internal_id": "",
       "mfg": "",
       "mpn": "",
-      "sch_revision": ""
+      "sch_revision": "A"
     },
     "layer_pairs": [],
     "layer_presets": [],
@@ -431,7 +431,7 @@
       "extra_units": "error",
       "field_name_whitespace": "warning",
       "footprint_filter": "ignore",
-      "footprint_link_issues": "warning",
+      "footprint_link_issues": "ignore",
       "four_way_junction": "ignore",
       "ground_pin_not_ground": "warning",
       "hier_label_mismatch": "error",
@@ -479,7 +479,7 @@
     "classes": [
       {
         "bus_width": 12,
-        "clearance": 0.2,
+        "clearance": 0.15,
         "diff_pair_gap": 0.25,
         "diff_pair_via_gap": 0.25,
         "diff_pair_width": 0.2,
@@ -490,7 +490,7 @@
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "priority": 2147483647,
         "schematic_color": "rgba(0, 0, 0, 0.000)",
-        "track_width": 0.2,
+        "track_width": 0.15,
         "tuning_profile": "",
         "via_diameter": 0.6,
         "via_drill": 0.3,
@@ -589,7 +589,7 @@
       "include_excluded_from_bom": true,
       "name": "Default Editing",
       "sort_asc": true,
-      "sort_field": "R\u00e9f\u00e9rence"
+      "sort_field": "Référence"
     },
     "bus_aliases": {},
     "connection_grid_size": 50.0,
@@ -629,7 +629,7 @@
       {
         "filename": "UsainBot.kicad_sch",
         "name": "UsainBot",
-        "uuid": "00000000-0000-0000-0000-000000000000"
+        "uuid": "e216f09c-2662-6258-2b51-4f4f498f79d0"
       }
     ],
     "used_designators": "",
@@ -638,7 +638,7 @@
   "sheets": [
     [
       "e216f09c-2662-6258-2b51-4f4f498f79d0",
-      "Root"
+      "UsainBot"
     ],
     [
       "3ee10a22-aabb-2c54-dcbf-475ae49e4e1f",
