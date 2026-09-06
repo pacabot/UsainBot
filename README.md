@@ -77,8 +77,6 @@ Conséquence à répercuter : le décalage en Z des modèles 3D du moteur et du 
   Jean-Roch Vaillé pour le Tournoi National de Robotique Sumo. Publié sur
   [robot-sumo.fr](https://robot-sumo.fr), reproduit ici pour le confort de travail de
   l'équipe. Tous droits réservés à leurs auteurs.
-- `mechanics/battery-holder-4xaa-1.snapshot.1/` — modèle de porte-piles téléchargé,
-  conservé pour référence. Sans objet depuis le passage à un pack 2S LiFePO4.
 - `electronics/kicad-lib/3d/GM12-N20_*.step` — dérivés du modèle Waveshare du
   motoréducteur. Voir `electronics/kicad-lib/README.md` pour la provenance et les réserves
   de cotation.
