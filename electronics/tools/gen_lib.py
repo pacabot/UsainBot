@@ -117,6 +117,29 @@ for n in itr:
             n[2] = q('Capteur reflectif infrarouge, SMD-4, pas de 10 mm sur la barrette')
 syms.append(itr)
 
+# ------------------------------------------------------------ 74HC4051
+# Copie du CD4051B : les huit voies et le commun passent en passif. Les
+# declarer bidirectionnelles fait crier l ERC des qu on met une entree
+# inutilisee a la masse, ce qui est pourtant le bon reflexe sur un mux.
+flat_mux, _ = lib.flat('Analog_Switch:CD4051B')
+mux = json.loads(json.dumps(flat_mux))
+mux[1] = q('HC4051')
+for n in mux:
+    if isinstance(n, list) and n[0] == 'symbol':
+        n[1] = q(sexp.unq(n[1]).replace('CD4051B', 'HC4051', 1))
+        for p in sexp.find_all(n, 'pin'):
+            if sexp.unq(sexp.find(p, 'name')[1]).startswith('X'):
+                p[1] = 'passive'
+    if isinstance(n, list) and n[0] == 'property':
+        k = sexp.unq(n[1])
+        if k == 'Value':
+            n[2] = q('74HC4051D')
+        elif k == 'Footprint':
+            n[2] = q('Package_SO:SOIC-16_3.9x9.9mm_P1.27mm')
+        elif k == 'Description':
+            n[2] = q('Multiplexeur analogique 8:1, surveillance lente sur un rang d ADC')
+syms.append(mux)
+
 # ------------------------------------------------------------ AO4407A (SO-8)
 gp = [P('G', '4', -12.7, 0.0, 0, etype='input')]
 gp += [P('S', n, x, -12.7, 90, etype='passive') for n, x in zip(('1','2','3'), (-5.08, 0.0, 5.08))]
@@ -137,6 +160,65 @@ syms.append(['symbol', q('AO4407A'),
                ['stroke', ['width', '0.254'], ['type', 'default']],
                ['fill', ['type', 'none']]]],
              ['symbol', q('AO4407A_1_1')] + gp])
+
+# ------------------------------------------------------------ Motor_Faulhaber
+# Embase de la nappe moteur + encodeur Faulhaber : TE Micro-MaTch 215079-6,
+# femelle sur carte, 2x3 au pas 1,27/2,54, trous en quinconce. Numerotation et
+# noms repris du cablage de la nappe : impairs a gauche, pairs a droite,
+# fil rouge = M+.
+mpins = [P('B',   '5', -10.16,  5.08, 0,   etype='passive'),
+         P('GND', '3', -10.16,  0.0,  0,   etype='passive'),
+         P('M-',  '1', -10.16, -5.08, 0,   etype='passive'),
+         P('A',   '6',  10.16,  5.08, 180, etype='passive'),
+         P('VDD', '4',  10.16,  0.0,  180, etype='passive'),
+         P('M+',  '2',  10.16, -5.08, 180, etype='passive')]
+syms.append(['symbol', q('Motor_Faulhaber'),
+             ['pin_names', ['offset', '1.016']],
+             ['exclude_from_sim', 'no'], ['in_bom', 'yes'], ['on_board', 'yes'],
+             prop('Reference', 'J', -7.62, 10.16, False),
+             prop('Value', 'Motor_Faulhaber', 7.62, 10.16, False),
+             prop('Footprint',
+                  'Connector_TE-Connectivity:TE_Micro-MaTch_215079-6_2x03_P1.27mm_Vertical'),
+             prop('Datasheet', 'https://www.te.com/en/product-7-215079-6.html'),
+             prop('Description',
+                  'Embase TE Micro-MaTch 215079-6 pour nappe moteur + encodeur Faulhaber'),
+             prop('ki_keywords', 'Faulhaber micromatch encoder motor'),
+             prop('ki_fp_filters', 'TE*Micro?MaTch*215079*'),
+             ['symbol', q('Motor_Faulhaber_0_1'), rect(-7.62, 7.62, 7.62, -7.62)],
+             ['symbol', q('Motor_Faulhaber_1_1')] + mpins])
+
+# --------------------------------------------------- Telemetry_Duo (station)
+# Une seule empreinte porte les deux boitiers de la station couchee
+# (Pacabot:Telemetry_Duo_Coude) : il faut donc un seul symbole a quatre
+# broches, sinon deux symboles se disputent la meme empreinte. Numerotation
+# identique a celle des pads : 1 = TX K, 2 = TX A, 3 = RX K, 4 = RX A,
+# c est-a-dire la convention Device:LED / Device:D_Photo (broche 1 = cathode).
+tpins = [P('TX_A', '2', -12.7, 5.08, 0, etype='passive'),
+         P('TX_K', '1', -12.7, -5.08, 0, etype='passive'),
+         P('RX_K', '3', 12.7, 5.08, 180, etype='passive'),
+         P('RX_A', '4', 12.7, -5.08, 180, etype='passive')]
+syms.append(['symbol', q('Telemetry_Duo'),
+             ['pin_names', ['offset', '1.016']],
+             ['exclude_from_sim', 'no'], ['in_bom', 'yes'], ['on_board', 'yes'],
+             prop('Reference', 'TM', -10.16, 12.7, False),
+             prop('Value', 'Telemetry_Duo', 10.16, 12.7, False),
+             prop('Footprint', 'Pacabot:Telemetry_Duo_Coude'),
+             prop('Datasheet', '~'),
+             prop('Description',
+                  'Station de telemetrie : VCSEL OPV302 (TO-46) + photodiode '
+                  'BPV10NF (T-1 3/4) couches derriere un pare-soleil imprime'),
+             prop('ki_keywords', 'telemetry laser VCSEL photodiode OPV302 BPV10NF'),
+             prop('ki_fp_filters', 'Telemetry_Duo*'),
+             ['symbol', q('Telemetry_Duo_0_1'), rect(-10.16, 10.16, 10.16, -10.16),
+              # fleche de visee : le couple regarde vers la droite du symbole
+              ['polyline', ['pts', ['xy', '-5.08', '0'], ['xy', '5.08', '0']],
+               ['stroke', ['width', '0.254'], ['type', 'default']],
+               ['fill', ['type', 'none']]],
+              ['polyline', ['pts', ['xy', '2.54', '1.27'], ['xy', '5.08', '0'],
+                            ['xy', '2.54', '-1.27']],
+               ['stroke', ['width', '0.254'], ['type', 'default']],
+               ['fill', ['type', 'none']]]],
+             ['symbol', q('Telemetry_Duo_1_1')] + tpins])
 
 # ------------------------------------------------------------ rails propres
 BASE, _ = lib.flat('power:+3V3')

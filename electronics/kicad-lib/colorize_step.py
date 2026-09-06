@@ -17,6 +17,13 @@ PALETTE = {
     "GM12-N20_motor_gearbox":  (0.72, 0.60, 0.35),  # reducteur laiton
     "Pololu_wheel_40x7_hub":   (0.95, 0.95, 0.95),  # moyeu plastique blanc
     "Pololu_wheel_40x7_tire":  (0.11, 0.11, 0.12),  # gomme silicone noire
+    # --- motorisation Faulhaber
+    "Faulhaber_1524_motor":       (0.70, 0.71, 0.73),  # acier nickele
+    "Faulhaber_IE2-1024_encoder": (0.14, 0.15, 0.17),  # capot codeur sombre
+    "Faulhaber_15-10_gearhead":   (0.62, 0.63, 0.65),  # inox
+    "Motor_bracket_1524":         (0.80, 0.81, 0.82),  # aluminium usine
+    "JSumo_JS4311_hub":           (0.78, 0.79, 0.80),  # moyeu aluminium
+    "JSumo_JS4311_tire":          (0.84, 0.40, 0.22),  # silicone JSumo, orange
 }
 ITEMS = r'(?:MANIFOLD_SOLID_BREP|SHELL_BASED_SURFACE_MODEL|BREP_WITH_VOIDS|FACETED_BREP)'
 REPRS = (r'(?:ADVANCED_BREP_SHAPE_REPRESENTATION|MANIFOLD_SURFACE_SHAPE_REPRESENTATION'
