@@ -1,0 +1,2419 @@
+{
+  "step": "UsainBot/electronics/integration-review/final-assembly-s17-mated.step",
+  "board": "/Users/zhonx/Documents/Projets_PRE/Pacabot/Pacabot_Junior/UsainBot/electronics/integration-review/assembly-mated.kicad_pcb",
+  "status": "Model-based audit only; ESC dimensions estimated, physical assembly unqualified",
+  "model_count": 355,
+  "footprints_with_models_missing_from_step": [],
+  "unmapped": [],
+  "targets": {
+    "J102": {
+      "models": [
+        {
+          "reference": "J102",
+          "model_label": "Molex_2002411133_simplified",
+          "locked": false,
+          "position": [
+            169.0,
+            -129.1,
+            1.595
+          ],
+          "bbox": {
+            "XMin": 165.82,
+            "XMax": 183.57,
+            "YMin": -132.42,
+            "YMax": -121.82,
+            "ZMin": -1.635,
+            "ZMax": 19.095
+          }
+        },
+        {
+          "reference": "J102",
+          "model_label": "Molex_2002411133_mated_plug_envelope",
+          "locked": false,
+          "position": [
+            169.0,
+            -129.1,
+            1.595
+          ],
+          "bbox": {
+            "XMin": 165.82,
+            "XMax": 183.57,
+            "YMin": -133.12,
+            "YMax": -121.12,
+            "ZMin": 16.895,
+            "ZMax": 32.495
+          }
+        }
+      ],
+      "bbox": {
+        "XMin": 165.82,
+        "XMax": 183.57,
+        "YMin": -133.12,
+        "YMax": -121.12,
+        "ZMin": -1.635,
+        "ZMax": 32.495
+      },
+      "nearest_component": {
+        "reference": "C354",
+        "model_label": "CP_EIA-7343-20_Kemet-V",
+        "locked": false,
+        "position": [
+          190.0,
+          -127.3,
+          1.595
+        ],
+        "bbox": {
+          "XMin": 186.25,
+          "XMax": 193.75,
+          "YMin": -129.6,
+          "YMax": -125.0,
+          "ZMin": 1.595,
+          "ZMax": 3.595
+        },
+        "distance_mm": 2.68,
+        "intersection_mm3": 0
+      },
+      "computed_exact_pairs": [
+        {
+          "reference": "PCB_BODY",
+          "model_label": "assembly-mated_PCB",
+          "locked": null,
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "bbox": {
+            "XMin": 77.5,
+            "XMax": 232.5,
+            "YMin": -284.923193,
+            "YMax": -120.0,
+            "ZMin": 0.0,
+            "ZMax": 1.51
+          },
+          "distance_mm": 0.05,
+          "intersection_mm3": 0.0
+        },
+        {
+          "reference": "M3_FUTURE_COLLAR",
+          "model_label": "UNVALIDATED RESERVED ANNULUS R18.35..23.75 Z0..17",
+          "locked": true,
+          "position": [
+            155.0,
+            -159.0,
+            1.595
+          ],
+          "bbox": {
+            "XMin": 131.25,
+            "XMax": 178.75,
+            "YMin": -182.75,
+            "YMax": -135.25,
+            "ZMin": 1.595,
+            "ZMax": 18.595
+          },
+          "distance_mm": 4.30079,
+          "intersection_mm3": 0
+        },
+        {
+          "reference": "C354",
+          "model_label": "CP_EIA-7343-20_Kemet-V",
+          "locked": false,
+          "position": [
+            190.0,
+            -127.3,
+            1.595
+          ],
+          "bbox": {
+            "XMin": 186.25,
+            "XMax": 193.75,
+            "YMin": -129.6,
+            "YMax": -125.0,
+            "ZMin": 1.595,
+            "ZMax": 3.595
+          },
+          "distance_mm": 2.68,
+          "intersection_mm3": 0
+        },
+        {
+          "reference": "M2",
+          "model_label": "Faulhaber_1524_motor001",
+          "locked": true,
+          "position": [
+            205.0,
+            -145.0,
+            1.595
+          ],
+          "bbox": {
+            "XMin": 176.6,
+            "XMax": 209.5,
+            "YMin": -152.5,
+            "YMax": -137.5,
+            "ZMin": 8.995,
+            "ZMax": 23.995
+          },
+          "distance_mm": 4.386732,
+          "intersection_mm3": 0
+        },
+        {
+          "reference": "M2",
+          "model_label": "Faulhaber_IE2-1024_encoder001",
+          "locked": true,
+          "position": [
+            205.0,
+            -145.0,
+            1.595
+          ],
+          "bbox": {
+            "XMin": 168.2,
+            "XMax": 176.6,
+            "YMin": -152.5,
+            "YMax": -137.5,
+            "ZMin": 8.995,
+            "ZMax": 23.995
+          },
+          "distance_mm": 4.386732,
+          "intersection_mm3": 0
+        },
+        {
+          "reference": "M2",
+          "model_label": "Motor_bracket_1525",
+          "locked": true,
+          "position": [
+            205.0,
+            -145.0,
+            1.595
+          ],
+          "bbox": {
+            "XMin": 189.0,
+            "XMax": 221.0,
+            "YMin": -156.0,
+            "YMax": -134.0,
+            "ZMin": 6.395,
+            "ZMax": 25.000665
+          },
+          "distance_mm": 6.792003,
+          "intersection_mm3": 0
+        },
+        {
+          "reference": "J101",
+          "model_label": "USB_C_Receptacle_HRO_TYPE-C-31-M-12",
+          "locked": true,
+          "position": [
+            155.0,
+            -124.0,
+            1.595
+          ],
+          "bbox": {
+            "XMin": 150.53,
+            "XMax": 159.47,
+            "YMin": -127.65,
+            "YMax": -120.35,
+            "ZMin": 1.595,
+            "ZMax": 4.855
+          },
+          "distance_mm": 6.35,
+          "intersection_mm3": 0
+        },
+        {
+          "reference": "M3",
+          "model_label": "Turbine_EDF27",
+          "locked": true,
+          "position": [
+            155.0,
+            -159.0,
+            27.395
+          ],
+          "bbox": {
+            "XMin": 127.15,
+            "XMax": 174.10054,
+            "YMin": -178.10054,
+            "YMax": -139.89946,
+            "ZMin": 1.595,
+            "ZMax": 29.095
+          },
+          "distance_mm": 11.197888,
+          "intersection_mm3": 0
+        },
+        {
+          "reference": "U101",
+          "model_label": "SOT-23-6",
+          "locked": false,
+          "position": [
+            154.7,
+            -133.35,
+            1.595
+          ],
+          "bbox": {
+            "XMin": 153.3,
+            "XMax": 156.1,
+            "YMin": -134.8,
+            "YMax": -131.9,
+            "ZMin": 1.595,
+            "ZMax": 3.145
+          },
+          "distance_mm": 9.72,
+          "intersection_mm3": 0
+        },
+        {
+          "reference": "J103",
+          "model_label": "EMAX_Bullet_12A_Vertical_PROTOTYPE",
+          "locked": false,
+          "position": [
+            144.0,
+            -134.5,
+            1.595
+          ],
+          "bbox": {
+            "XMin": 136.1,
+            "XMax": 151.9,
+            "YMin": -135.7,
+            "YMax": -131.4,
+            "ZMin": -0.905,
+            "ZMax": 18.595
+          },
+          "distance_mm": 13.92,
+          "intersection_mm3": 0
+        },
+        {
+          "reference": "C704",
+          "model_label": "CP_Elec_6.3x7.7",
+          "locked": false,
+          "position": [
+            144.2,
+            -125.6,
+            1.595
+          ],
+          "bbox": {
+            "XMin": 140.3,
+            "XMax": 148.905833,
+            "YMin": -129.901676,
+            "YMax": -121.298324,
+            "ZMin": 1.595,
+            "ZMax": 9.295
+          },
+          "distance_mm": 17.72,
+          "intersection_mm3": 0
+        },
+        {
+          "reference": "M2",
+          "model_label": "Faulhaber_15-10_gearhead001",
+          "locked": true,
+          "position": [
+            205.0,
+            -145.0,
+            1.595
+          ],
+          "bbox": {
+            "XMin": 201.4,
+            "XMax": 232.7,
+            "YMin": -152.5,
+            "YMax": -137.5,
+            "ZMin": 8.995,
+            "ZMax": 23.995
+          },
+          "distance_mm": 18.361708,
+          "intersection_mm3": 0
+        },
+        {
+          "reference": "C705",
+          "model_label": "C_0402_1005Metric060",
+          "locked": false,
+          "position": [
+            144.2,
+            -129.8,
+            1.595
+          ],
+          "bbox": {
+            "XMin": 143.7,
+            "XMax": 144.7,
+            "YMin": -130.05,
+            "YMax": -129.55,
+            "ZMin": 1.595,
+            "ZMax": 2.095
+          },
+          "distance_mm": 21.12,
+          "intersection_mm3": 0
+        },
+        {
+          "reference": "M1",
+          "model_label": "Faulhaber_IE2-1024_encoder",
+          "locked": true,
+          "position": [
+            105.0,
+            -145.0,
+            1.595
+          ],
+          "bbox": {
+            "XMin": 133.4,
+            "XMax": 141.8,
+            "YMin": -152.5,
+            "YMax": -137.5,
+            "ZMin": 8.995,
+            "ZMax": 23.995
+          },
+          "distance_mm": 25.279731,
+          "intersection_mm3": 0
+        },
+        {
+          "reference": "Q101",
+          "model_label": "SOT-23",
+          "locked": false,
+          "position": [
+            136.45,
+            -128.6,
+            1.595
+          ],
+          "bbox": {
+            "XMin": 135.2,
+            "XMax": 137.7,
+            "YMin": -130.1,
+            "YMax": -127.1,
+            "ZMin": 1.595,
+            "ZMax": 2.795
+          },
+          "distance_mm": 28.12,
+          "intersection_mm3": 0
+        },
+        {
+          "reference": "M1",
+          "model_label": "Faulhaber_1524_motor",
+          "locked": true,
+          "position": [
+            105.0,
+            -145.0,
+            1.595
+          ],
+          "bbox": {
+            "XMin": 100.5,
+            "XMax": 133.4,
+            "YMin": -152.5,
+            "YMax": -137.5,
+            "ZMin": 8.995,
+            "ZMax": 23.995
+          },
+          "distance_mm": 33.081004,
+          "intersection_mm3": 0
+        },
+        {
+          "reference": "M2",
+          "model_label": "JSumo_JS4311_hub001",
+          "locked": true,
+          "position": [
+            205.0,
+            -145.0,
+            1.595
+          ],
+          "bbox": {
+            "XMin": 221.5,
+            "XMax": 232.5,
+            "YMin": -162.5,
+            "YMax": -127.5,
+            "ZMin": -1.005,
+            "ZMax": 33.995
+          },
+          "distance_mm": 37.93,
+          "intersection_mm3": 0
+        },
+        {
+          "reference": "M2",
+          "model_label": "JSumo_JS4311_tire001",
+          "locked": true,
+          "position": [
+            205.0,
+            -145.0,
+            1.595
+          ],
+          "bbox": {
+            "XMin": 223.0,
+            "XMax": 231.0,
+            "YMin": -166.5,
+            "YMax": -123.5,
+            "ZMin": -5.005,
+            "ZMax": 37.995
+          },
+          "distance_mm": 39.43,
+          "intersection_mm3": 0
+        },
+        {
+          "reference": "M1",
+          "model_label": "Motor_bracket_1524",
+          "locked": true,
+          "position": [
+            105.0,
+            -145.0,
+            1.595
+          ],
+          "bbox": {
+            "XMin": 89.0,
+            "XMax": 121.0,
+            "YMin": -156.0,
+            "YMax": -134.0,
+            "ZMin": 6.395,
+            "ZMax": 25.000665
+          },
+          "distance_mm": 45.00532,
+          "intersection_mm3": 0
+        },
+        {
+          "reference": "M1",
+          "model_label": "Faulhaber_15-10_gearhead",
+          "locked": true,
+          "position": [
+            105.0,
+            -145.0,
+            1.595
+          ],
+          "bbox": {
+            "XMin": 77.3,
+            "XMax": 108.6,
+            "YMin": -152.5,
+            "YMax": -137.5,
+            "ZMin": 8.995,
+            "ZMax": 23.995
+          },
+          "distance_mm": 57.387907,
+          "intersection_mm3": 0
+        },
+        {
+          "reference": "M1",
+          "model_label": "JSumo_JS4311_hub",
+          "locked": true,
+          "position": [
+            105.0,
+            -145.0,
+            1.595
+          ],
+          "bbox": {
+            "XMin": 77.5,
+            "XMax": 88.5,
+            "YMin": -162.5,
+            "YMax": -127.5,
+            "ZMin": -1.005,
+            "ZMax": 33.995
+          },
+          "distance_mm": 77.32,
+          "intersection_mm3": 0
+        },
+        {
+          "reference": "M1",
+          "model_label": "JSumo_JS4311_tire",
+          "locked": true,
+          "position": [
+            105.0,
+            -145.0,
+            1.595
+          ],
+          "bbox": {
+            "XMin": 79.0,
+            "XMax": 87.0,
+            "YMin": -166.5,
+            "YMax": -123.5,
+            "ZMin": -5.005,
+            "ZMax": 37.995
+          },
+          "distance_mm": 78.82,
+          "intersection_mm3": 0
+        }
+      ],
+      "collisions": [],
+      "bbox_disjoint_pairs_proven_clear": 332
+    },
+    "J103": {
+      "models": [
+        {
+          "reference": "J103",
+          "model_label": "EMAX_Bullet_12A_Vertical_PROTOTYPE",
+          "locked": false,
+          "position": [
+            144.0,
+            -134.5,
+            1.595
+          ],
+          "bbox": {
+            "XMin": 136.1,
+            "XMax": 151.9,
+            "YMin": -135.7,
+            "YMax": -131.4,
+            "ZMin": -0.905,
+            "ZMax": 18.595
+          }
+        }
+      ],
+      "bbox": {
+        "XMin": 136.1,
+        "XMax": 151.9,
+        "YMin": -135.7,
+        "YMax": -131.4,
+        "ZMin": -0.905,
+        "ZMax": 18.595
+      },
+      "nearest_component": {
+        "reference": "R112",
+        "model_label": "R_0402_1005Metric",
+        "locked": false,
+        "position": [
+          134.45,
+          -132.7375,
+          1.595
+        ],
+        "bbox": {
+          "XMin": 133.95,
+          "XMax": 134.95,
+          "YMin": -132.9875,
+          "YMax": -132.4875,
+          "ZMin": 1.595,
+          "ZMax": 1.945
+        },
+        "distance_mm": 1.15,
+        "intersection_mm3": 0
+      },
+      "computed_exact_pairs": [
+        {
+          "reference": "PCB_BODY",
+          "model_label": "assembly-mated_PCB",
+          "locked": null,
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "bbox": {
+            "XMin": 77.5,
+            "XMax": 232.5,
+            "YMin": -284.923193,
+            "YMax": -120.0,
+            "ZMin": 0.0,
+            "ZMax": 1.51
+          },
+          "distance_mm": 0.085,
+          "intersection_mm3": 0.0
+        },
+        {
+          "reference": "M3_FUTURE_COLLAR",
+          "model_label": "UNVALIDATED RESERVED ANNULUS R18.35..23.75 Z0..17",
+          "locked": true,
+          "position": [
+            155.0,
+            -159.0,
+            1.595
+          ],
+          "bbox": {
+            "XMin": 131.25,
+            "XMax": 178.75,
+            "YMin": -182.75,
+            "YMax": -135.25,
+            "ZMin": 1.595,
+            "ZMax": 18.595
+          },
+          "distance_mm": 0.844308,
+          "intersection_mm3": 0.0
+        },
+        {
+          "reference": "R112",
+          "model_label": "R_0402_1005Metric",
+          "locked": false,
+          "position": [
+            134.45,
+            -132.7375,
+            1.595
+          ],
+          "bbox": {
+            "XMin": 133.95,
+            "XMax": 134.95,
+            "YMin": -132.9875,
+            "YMax": -132.4875,
+            "ZMin": 1.595,
+            "ZMax": 1.945
+          },
+          "distance_mm": 1.15,
+          "intersection_mm3": 0
+        },
+        {
+          "reference": "Q101",
+          "model_label": "SOT-23",
+          "locked": false,
+          "position": [
+            136.45,
+            -128.6,
+            1.595
+          ],
+          "bbox": {
+            "XMin": 135.2,
+            "XMax": 137.7,
+            "YMin": -130.1,
+            "YMax": -127.1,
+            "ZMin": 1.595,
+            "ZMax": 2.795
+          },
+          "distance_mm": 1.3,
+          "intersection_mm3": 0
+        },
+        {
+          "reference": "C705",
+          "model_label": "C_0402_1005Metric060",
+          "locked": false,
+          "position": [
+            144.2,
+            -129.8,
+            1.595
+          ],
+          "bbox": {
+            "XMin": 143.7,
+            "XMax": 144.7,
+            "YMin": -130.05,
+            "YMax": -129.55,
+            "ZMin": 1.595,
+            "ZMax": 2.095
+          },
+          "distance_mm": 1.35,
+          "intersection_mm3": 0
+        },
+        {
+          "reference": "U101",
+          "model_label": "SOT-23-6",
+          "locked": false,
+          "position": [
+            154.7,
+            -133.35,
+            1.595
+          ],
+          "bbox": {
+            "XMin": 153.3,
+            "XMax": 156.1,
+            "YMin": -134.8,
+            "YMax": -131.9,
+            "ZMin": 1.595,
+            "ZMax": 3.145
+          },
+          "distance_mm": 1.4,
+          "intersection_mm3": 0
+        },
+        {
+          "reference": "C704",
+          "model_label": "CP_Elec_6.3x7.7",
+          "locked": false,
+          "position": [
+            144.2,
+            -125.6,
+            1.595
+          ],
+          "bbox": {
+            "XMin": 140.3,
+            "XMax": 148.905833,
+            "YMin": -129.901676,
+            "YMax": -121.298324,
+            "ZMin": 1.595,
+            "ZMax": 9.295
+          },
+          "distance_mm": 2.5,
+          "intersection_mm3": 0
+        },
+        {
+          "reference": "M1",
+          "model_label": "Faulhaber_IE2-1024_encoder",
+          "locked": true,
+          "position": [
+            105.0,
+            -145.0,
+            1.595
+          ],
+          "bbox": {
+            "XMin": 133.4,
+            "XMax": 141.8,
+            "YMin": -152.5,
+            "YMax": -137.5,
+            "ZMin": 8.995,
+            "ZMax": 23.995
+          },
+          "distance_mm": 4.825971,
+          "intersection_mm3": 0
+        },
+        {
+          "reference": "M1",
+          "model_label": "Faulhaber_1524_motor",
+          "locked": true,
+          "position": [
+            105.0,
+            -145.0,
+            1.595
+          ],
+          "bbox": {
+            "XMin": 100.5,
+            "XMax": 133.4,
+            "YMin": -152.5,
+            "YMax": -137.5,
+            "ZMin": 8.995,
+            "ZMax": 23.995
+          },
+          "distance_mm": 6.946222,
+          "intersection_mm3": 0
+        },
+        {
+          "reference": "J101",
+          "model_label": "USB_C_Receptacle_HRO_TYPE-C-31-M-12",
+          "locked": true,
+          "position": [
+            155.0,
+            -124.0,
+            1.595
+          ],
+          "bbox": {
+            "XMin": 150.53,
+            "XMax": 159.47,
+            "YMin": -127.65,
+            "YMax": -120.35,
+            "ZMin": 1.595,
+            "ZMax": 4.855
+          },
+          "distance_mm": 3.75,
+          "intersection_mm3": 0
+        },
+        {
+          "reference": "M3",
+          "model_label": "Turbine_EDF27",
+          "locked": true,
+          "position": [
+            155.0,
+            -159.0,
+            27.395
+          ],
+          "bbox": {
+            "XMin": 127.15,
+            "XMax": 174.10054,
+            "YMin": -178.10054,
+            "YMax": -139.89946,
+            "ZMin": 1.595,
+            "ZMax": 29.095
+          },
+          "distance_mm": 7.299606,
+          "intersection_mm3": 0
+        },
+        {
+          "reference": "J102",
+          "model_label": "Molex_2002411133_simplified",
+          "locked": false,
+          "position": [
+            169.0,
+            -129.1,
+            1.595
+          ],
+          "bbox": {
+            "XMin": 165.82,
+            "XMax": 183.57,
+            "YMin": -132.42,
+            "YMax": -121.82,
+            "ZMin": -1.635,
+            "ZMax": 19.095
+          },
+          "distance_mm": 13.92,
+          "intersection_mm3": 0
+        },
+        {
+          "reference": "J102",
+          "model_label": "Molex_2002411133_mated_plug_envelope",
+          "locked": false,
+          "position": [
+            169.0,
+            -129.1,
+            1.595
+          ],
+          "bbox": {
+            "XMin": 165.82,
+            "XMax": 183.57,
+            "YMin": -133.12,
+            "YMax": -121.12,
+            "ZMin": 16.895,
+            "ZMax": 32.495
+          },
+          "distance_mm": 16.32,
+          "intersection_mm3": 0
+        },
+        {
+          "reference": "M1",
+          "model_label": "Motor_bracket_1524",
+          "locked": true,
+          "position": [
+            105.0,
+            -145.0,
+            1.595
+          ],
+          "bbox": {
+            "XMin": 89.0,
+            "XMax": 121.0,
+            "YMin": -156.0,
+            "YMax": -134.0,
+            "ZMin": 6.395,
+            "ZMax": 25.000665
+          },
+          "distance_mm": 15.807672,
+          "intersection_mm3": 0
+        },
+        {
+          "reference": "M2",
+          "model_label": "Faulhaber_IE2-1024_encoder001",
+          "locked": true,
+          "position": [
+            205.0,
+            -145.0,
+            1.595
+          ],
+          "bbox": {
+            "XMin": 168.2,
+            "XMax": 176.6,
+            "YMin": -152.5,
+            "YMax": -137.5,
+            "ZMin": 8.995,
+            "ZMax": 23.995
+          },
+          "distance_mm": 19.985995,
+          "intersection_mm3": 0
+        },
+        {
+          "reference": "M2",
+          "model_label": "Faulhaber_1524_motor001",
+          "locked": true,
+          "position": [
+            205.0,
+            -145.0,
+            1.595
+          ],
+          "bbox": {
+            "XMin": 176.6,
+            "XMax": 209.5,
+            "YMin": -152.5,
+            "YMax": -137.5,
+            "ZMin": 8.995,
+            "ZMax": 23.995
+          },
+          "distance_mm": 26.765459,
+          "intersection_mm3": 0
+        },
+        {
+          "reference": "M1",
+          "model_label": "Faulhaber_15-10_gearhead",
+          "locked": true,
+          "position": [
+            105.0,
+            -145.0,
+            1.595
+          ],
+          "bbox": {
+            "XMin": 77.3,
+            "XMax": 108.6,
+            "YMin": -152.5,
+            "YMax": -137.5,
+            "ZMin": 8.995,
+            "ZMax": 23.995
+          },
+          "distance_mm": 29.369198,
+          "intersection_mm3": 0
+        },
+        {
+          "reference": "M2",
+          "model_label": "Motor_bracket_1525",
+          "locked": true,
+          "position": [
+            205.0,
+            -145.0,
+            1.595
+          ],
+          "bbox": {
+            "XMin": 189.0,
+            "XMax": 221.0,
+            "YMin": -156.0,
+            "YMax": -134.0,
+            "ZMin": 6.395,
+            "ZMax": 25.000665
+          },
+          "distance_mm": 37.393616,
+          "intersection_mm3": 0
+        },
+        {
+          "reference": "M1",
+          "model_label": "JSumo_JS4311_hub",
+          "locked": true,
+          "position": [
+            105.0,
+            -145.0,
+            1.595
+          ],
+          "bbox": {
+            "XMin": 77.5,
+            "XMax": 88.5,
+            "YMin": -162.5,
+            "YMax": -127.5,
+            "ZMin": -1.005,
+            "ZMax": 33.995
+          },
+          "distance_mm": 47.601011,
+          "intersection_mm3": 0
+        },
+        {
+          "reference": "M1",
+          "model_label": "JSumo_JS4311_tire",
+          "locked": true,
+          "position": [
+            105.0,
+            -145.0,
+            1.595
+          ],
+          "bbox": {
+            "XMin": 79.0,
+            "XMax": 87.0,
+            "YMin": -166.5,
+            "YMax": -123.5,
+            "ZMin": -5.005,
+            "ZMax": 37.995
+          },
+          "distance_mm": 49.1,
+          "intersection_mm3": 0
+        },
+        {
+          "reference": "M2",
+          "model_label": "Faulhaber_15-10_gearhead001",
+          "locked": true,
+          "position": [
+            205.0,
+            -145.0,
+            1.595
+          ],
+          "bbox": {
+            "XMin": 201.4,
+            "XMax": 232.7,
+            "YMin": -152.5,
+            "YMax": -137.5,
+            "ZMin": 8.995,
+            "ZMax": 23.995
+          },
+          "distance_mm": 50.562336,
+          "intersection_mm3": 0
+        },
+        {
+          "reference": "M2",
+          "model_label": "JSumo_JS4311_hub001",
+          "locked": true,
+          "position": [
+            205.0,
+            -145.0,
+            1.595
+          ],
+          "bbox": {
+            "XMin": 221.5,
+            "XMax": 232.5,
+            "YMin": -162.5,
+            "YMax": -127.5,
+            "ZMin": -1.005,
+            "ZMax": 33.995
+          },
+          "distance_mm": 69.600691,
+          "intersection_mm3": 0
+        },
+        {
+          "reference": "M2",
+          "model_label": "JSumo_JS4311_tire001",
+          "locked": true,
+          "position": [
+            205.0,
+            -145.0,
+            1.595
+          ],
+          "bbox": {
+            "XMin": 223.0,
+            "XMax": 231.0,
+            "YMin": -166.5,
+            "YMax": -123.5,
+            "ZMin": -5.005,
+            "ZMax": 37.995
+          },
+          "distance_mm": 71.1,
+          "intersection_mm3": 0
+        }
+      ],
+      "collisions": [],
+      "bbox_disjoint_pairs_proven_clear": 332
+    }
+  },
+  "reserved_obstacles": [
+    {
+      "reference": "M3_FUTURE_COLLAR",
+      "model_label": "UNVALIDATED RESERVED ANNULUS R18.35..23.75 Z0..17",
+      "locked": true,
+      "position": [
+        155.0,
+        -159.0,
+        1.595
+      ],
+      "bbox": {
+        "XMin": 131.25,
+        "XMax": 178.75,
+        "YMin": -182.75,
+        "YMax": -135.25,
+        "ZMin": 1.595,
+        "ZMax": 18.595
+      }
+    }
+  ],
+  "all_target_intersections_zero": true,
+  "global_pairs": {
+    "aabb_candidate_pairs_checked": 160,
+    "positive_intersections": [],
+    "aabb_overlaps_without_volume": [
+      {
+        "a_ref": "C525",
+        "b_ref": "TM521",
+        "a_model": "C_0402_1005Metric",
+        "b_model": "Telemetry_Support001"
+      },
+      {
+        "a_ref": "C525",
+        "b_ref": "TM521",
+        "a_model": "C_0402_1005Metric",
+        "b_model": "Telemetry_Duo_Diodes001"
+      },
+      {
+        "a_ref": "C525",
+        "b_ref": "M3",
+        "a_model": "C_0402_1005Metric",
+        "b_model": "Turbine_EDF27"
+      },
+      {
+        "a_ref": "U501",
+        "b_ref": "C562",
+        "a_model": "TSSOP-14_4.4x5mm_P0.65mm",
+        "b_model": "C_0402_1005Metric081"
+      },
+      {
+        "a_ref": "U501",
+        "b_ref": "TM501",
+        "a_model": "TSSOP-14_4.4x5mm_P0.65mm",
+        "b_model": "Telemetry_Support002"
+      },
+      {
+        "a_ref": "U501",
+        "b_ref": "TM501",
+        "a_model": "TSSOP-14_4.4x5mm_P0.65mm",
+        "b_model": "Telemetry_Duo_Diodes002"
+      },
+      {
+        "a_ref": "C210",
+        "b_ref": "C202",
+        "a_model": "C_0402_1005Metric001",
+        "b_model": "C_0402_1005Metric052"
+      },
+      {
+        "a_ref": "J102",
+        "b_ref": "PCB_BODY",
+        "a_model": "Molex_2002411133_simplified",
+        "b_model": "assembly-mated_PCB"
+      },
+      {
+        "a_ref": "C120",
+        "b_ref": "C214",
+        "a_model": "C_0402_1005Metric002",
+        "b_model": "C_0402_1005Metric004"
+      },
+      {
+        "a_ref": "C120",
+        "b_ref": "FB101",
+        "a_model": "C_0402_1005Metric002",
+        "b_model": "L_0805_2012Metric"
+      },
+      {
+        "a_ref": "C116",
+        "b_ref": "M3",
+        "a_model": "C_0805_2012Metric",
+        "b_model": "Turbine_EDF27"
+      },
+      {
+        "a_ref": "D524",
+        "b_ref": "TM521",
+        "a_model": "D_SOD-323",
+        "b_model": "Telemetry_Support001"
+      },
+      {
+        "a_ref": "D524",
+        "b_ref": "TM521",
+        "a_model": "D_SOD-323",
+        "b_model": "Telemetry_Duo_Diodes001"
+      },
+      {
+        "a_ref": "C121",
+        "b_ref": "C215",
+        "a_model": "C_0402_1005Metric003",
+        "b_model": "C_0402_1005Metric075"
+      },
+      {
+        "a_ref": "C121",
+        "b_ref": "U201",
+        "a_model": "C_0402_1005Metric003",
+        "b_model": "LQFP-144_20x20mm_P0.5mm"
+      },
+      {
+        "a_ref": "C214",
+        "b_ref": "C524",
+        "a_model": "C_0402_1005Metric004",
+        "b_model": "C_0402_1005Metric040"
+      },
+      {
+        "a_ref": "C214",
+        "b_ref": "U201",
+        "a_model": "C_0402_1005Metric004",
+        "b_model": "LQFP-144_20x20mm_P0.5mm"
+      },
+      {
+        "a_ref": "R604",
+        "b_ref": "C602",
+        "a_model": "R_0402_1005Metric006",
+        "b_model": "C_0402_1005Metric061"
+      },
+      {
+        "a_ref": "C521",
+        "b_ref": "R524",
+        "a_model": "C_0402_1005Metric005",
+        "b_model": "R_0402_1005Metric029"
+      },
+      {
+        "a_ref": "C521",
+        "b_ref": "U502",
+        "a_model": "C_0402_1005Metric005",
+        "b_model": "TSSOP-14_4.4x5mm_P0.65mm001"
+      },
+      {
+        "a_ref": "C521",
+        "b_ref": "J601",
+        "a_model": "C_0402_1005Metric005",
+        "b_model": "OLED_0.96_SSD1306_I2C_128x64"
+      },
+      {
+        "a_ref": "C521",
+        "b_ref": "J601",
+        "a_model": "C_0402_1005Metric005",
+        "b_model": "OLED_Standoffs_M2x6"
+      },
+      {
+        "a_ref": "C223",
+        "b_ref": "U201",
+        "a_model": "C_0402_1005Metric006",
+        "b_model": "LQFP-144_20x20mm_P0.5mm"
+      },
+      {
+        "a_ref": "R603",
+        "b_ref": "C601",
+        "a_model": "R_0402_1005Metric007",
+        "b_model": "C_0402_1005Metric057"
+      },
+      {
+        "a_ref": "R204",
+        "b_ref": "U201",
+        "a_model": "R_0402_1005Metric008",
+        "b_model": "LQFP-144_20x20mm_P0.5mm"
+      },
+      {
+        "a_ref": "D523",
+        "b_ref": "TM541",
+        "a_model": "D_SOD-325",
+        "b_model": "Telemetry_Support"
+      },
+      {
+        "a_ref": "D523",
+        "b_ref": "TM521",
+        "a_model": "D_SOD-325",
+        "b_model": "Telemetry_Support001"
+      },
+      {
+        "a_ref": "C603",
+        "b_ref": "R605",
+        "a_model": "C_0402_1005Metric008",
+        "b_model": "R_0402_1005Metric054"
+      },
+      {
+        "a_ref": "C603",
+        "b_ref": "SW601",
+        "a_model": "C_0402_1005Metric008",
+        "b_model": "SKRHABE010"
+      },
+      {
+        "a_ref": "C112",
+        "b_ref": "M3",
+        "a_model": "C_1210_3225Metric",
+        "b_model": "Turbine_EDF27"
+      },
+      {
+        "a_ref": "Q521",
+        "b_ref": "TM521",
+        "a_model": "SOT-025",
+        "b_model": "Telemetry_Support001"
+      },
+      {
+        "a_ref": "Q521",
+        "b_ref": "TM521",
+        "a_model": "SOT-025",
+        "b_model": "Telemetry_Duo_Diodes001"
+      },
+      {
+        "a_ref": "Q521",
+        "b_ref": "M3",
+        "a_model": "SOT-025",
+        "b_model": "Turbine_EDF27"
+      },
+      {
+        "a_ref": "Q602",
+        "b_ref": "TM501",
+        "a_model": "SOT-026",
+        "b_model": "Telemetry_Support002"
+      },
+      {
+        "a_ref": "R548",
+        "b_ref": "C211",
+        "a_model": "R_0402_1005Metric014",
+        "b_model": "C_0402_1005Metric018"
+      },
+      {
+        "a_ref": "C567",
+        "b_ref": "J601",
+        "a_model": "C_0402_1005Metric012",
+        "b_model": "OLED_0.96_SSD1306_I2C_128x64"
+      },
+      {
+        "a_ref": "C567",
+        "b_ref": "J601",
+        "a_model": "C_0402_1005Metric012",
+        "b_model": "OLED_Standoffs_M2x6"
+      },
+      {
+        "a_ref": "M1",
+        "b_ref": "M3",
+        "a_model": "Faulhaber_1524_motor",
+        "b_model": "Turbine_EDF27"
+      },
+      {
+        "a_ref": "M1",
+        "b_ref": "M3",
+        "a_model": "Faulhaber_IE2-1024_encoder",
+        "b_model": "Turbine_EDF27"
+      },
+      {
+        "a_ref": "M1",
+        "b_ref": "PCB_BODY",
+        "a_model": "JSumo_JS4311_hub",
+        "b_model": "assembly-mated_PCB"
+      },
+      {
+        "a_ref": "M1",
+        "b_ref": "PCB_BODY",
+        "a_model": "JSumo_JS4311_tire",
+        "b_model": "assembly-mated_PCB"
+      },
+      {
+        "a_ref": "C217",
+        "b_ref": "U201",
+        "a_model": "C_0402_1005Metric013",
+        "b_model": "LQFP-144_20x20mm_P0.5mm"
+      },
+      {
+        "a_ref": "R524",
+        "b_ref": "J601",
+        "a_model": "R_0402_1005Metric029",
+        "b_model": "OLED_0.96_SSD1306_I2C_128x64"
+      },
+      {
+        "a_ref": "R524",
+        "b_ref": "J601",
+        "a_model": "R_0402_1005Metric029",
+        "b_model": "OLED_Standoffs_M2x6"
+      },
+      {
+        "a_ref": "R527",
+        "b_ref": "J601",
+        "a_model": "R_0402_1005Metric030",
+        "b_model": "OLED_0.96_SSD1306_I2C_128x64"
+      },
+      {
+        "a_ref": "R527",
+        "b_ref": "J601",
+        "a_model": "R_0402_1005Metric030",
+        "b_model": "OLED_Standoffs_M2x6"
+      },
+      {
+        "a_ref": "J301",
+        "b_ref": "PCB_BODY",
+        "a_model": "TE_Micro-MaTch_215079-6_2x03_P1.27mm_Vertical",
+        "b_model": "assembly-mated_PCB"
+      },
+      {
+        "a_ref": "U701",
+        "b_ref": "J601",
+        "a_model": "SOIC-8_5.3x5.3mm_P1.27mm",
+        "b_model": "OLED_0.96_SSD1306_I2C_128x64"
+      },
+      {
+        "a_ref": "U701",
+        "b_ref": "J601",
+        "a_model": "SOIC-8_5.3x5.3mm_P1.27mm",
+        "b_model": "OLED_Standoffs_M2x6"
+      },
+      {
+        "a_ref": "C211",
+        "b_ref": "C208",
+        "a_model": "C_0402_1005Metric018",
+        "b_model": "C_0402_1005Metric038"
+      },
+      {
+        "a_ref": "R620",
+        "b_ref": "TM501",
+        "a_model": "R_0402_1005Metric036",
+        "b_model": "Telemetry_Support002"
+      },
+      {
+        "a_ref": "C544",
+        "b_ref": "C524",
+        "a_model": "C_0402_1005Metric019",
+        "b_model": "C_0402_1005Metric040"
+      },
+      {
+        "a_ref": "C544",
+        "b_ref": "U201",
+        "a_model": "C_0402_1005Metric019",
+        "b_model": "LQFP-144_20x20mm_P0.5mm"
+      },
+      {
+        "a_ref": "C201",
+        "b_ref": "U201",
+        "a_model": "C_0402_1005Metric022",
+        "b_model": "LQFP-144_20x20mm_P0.5mm"
+      },
+      {
+        "a_ref": "TM541",
+        "b_ref": "TM521",
+        "a_model": "Telemetry_Support",
+        "b_model": "Telemetry_Support001"
+      },
+      {
+        "a_ref": "TM541",
+        "b_ref": "TM521",
+        "a_model": "Telemetry_Support",
+        "b_model": "Telemetry_Duo_Diodes001"
+      },
+      {
+        "a_ref": "TM541",
+        "b_ref": "Q541",
+        "a_model": "Telemetry_Support",
+        "b_model": "SOT-033"
+      },
+      {
+        "a_ref": "TM541",
+        "b_ref": "PCB_BODY",
+        "a_model": "Telemetry_Support",
+        "b_model": "assembly-mated_PCB"
+      },
+      {
+        "a_ref": "TM541",
+        "b_ref": "TM521",
+        "a_model": "Telemetry_Duo_Diodes",
+        "b_model": "Telemetry_Support001"
+      },
+      {
+        "a_ref": "TM541",
+        "b_ref": "TM521",
+        "a_model": "Telemetry_Duo_Diodes",
+        "b_model": "Telemetry_Duo_Diodes001"
+      },
+      {
+        "a_ref": "TM541",
+        "b_ref": "D543",
+        "a_model": "Telemetry_Duo_Diodes",
+        "b_model": "D_SOD-329"
+      },
+      {
+        "a_ref": "TM541",
+        "b_ref": "C542",
+        "a_model": "Telemetry_Duo_Diodes",
+        "b_model": "C_0402_1005Metric082"
+      },
+      {
+        "a_ref": "TM541",
+        "b_ref": "R541",
+        "a_model": "Telemetry_Duo_Diodes",
+        "b_model": "R_0402_1005Metric135"
+      },
+      {
+        "a_ref": "TM541",
+        "b_ref": "PCB_BODY",
+        "a_model": "Telemetry_Duo_Diodes",
+        "b_model": "assembly-mated_PCB"
+      },
+      {
+        "a_ref": "C569",
+        "b_ref": "TM521",
+        "a_model": "C_0402_1005Metric023",
+        "b_model": "Telemetry_Duo_Diodes001"
+      },
+      {
+        "a_ref": "C569",
+        "b_ref": "C522",
+        "a_model": "C_0402_1005Metric023",
+        "b_model": "C_0402_1005Metric087"
+      },
+      {
+        "a_ref": "R526",
+        "b_ref": "U502",
+        "a_model": "R_0402_1005Metric049",
+        "b_model": "TSSOP-14_4.4x5mm_P0.65mm001"
+      },
+      {
+        "a_ref": "R526",
+        "b_ref": "J601",
+        "a_model": "R_0402_1005Metric049",
+        "b_model": "OLED_0.96_SSD1306_I2C_128x64"
+      },
+      {
+        "a_ref": "R526",
+        "b_ref": "J601",
+        "a_model": "R_0402_1005Metric049",
+        "b_model": "OLED_Standoffs_M2x6"
+      },
+      {
+        "a_ref": "C203",
+        "b_ref": "U201",
+        "a_model": "C_0402_1005Metric032",
+        "b_model": "LQFP-144_20x20mm_P0.5mm"
+      },
+      {
+        "a_ref": "C564",
+        "b_ref": "R525",
+        "a_model": "C_0402_1005Metric033",
+        "b_model": "R_0402_1005Metric075"
+      },
+      {
+        "a_ref": "C564",
+        "b_ref": "U502",
+        "a_model": "C_0402_1005Metric033",
+        "b_model": "TSSOP-14_4.4x5mm_P0.65mm001"
+      },
+      {
+        "a_ref": "C564",
+        "b_ref": "J601",
+        "a_model": "C_0402_1005Metric033",
+        "b_model": "OLED_0.96_SSD1306_I2C_128x64"
+      },
+      {
+        "a_ref": "C564",
+        "b_ref": "J601",
+        "a_model": "C_0402_1005Metric033",
+        "b_model": "OLED_Standoffs_M2x6"
+      },
+      {
+        "a_ref": "R201",
+        "b_ref": "U201",
+        "a_model": "R_0402_1005Metric059",
+        "b_model": "LQFP-144_20x20mm_P0.5mm"
+      },
+      {
+        "a_ref": "C111",
+        "b_ref": "C109",
+        "a_model": "C_1210_3225Metric002",
+        "b_model": "CP_Elec_6.3x7.008"
+      },
+      {
+        "a_ref": "TM521",
+        "b_ref": "M3",
+        "a_model": "Telemetry_Support001",
+        "b_model": "Turbine_EDF27"
+      },
+      {
+        "a_ref": "TM521",
+        "b_ref": "U502",
+        "a_model": "Telemetry_Support001",
+        "b_model": "TSSOP-14_4.4x5mm_P0.65mm001"
+      },
+      {
+        "a_ref": "TM521",
+        "b_ref": "R521",
+        "a_model": "Telemetry_Support001",
+        "b_model": "R_0402_1005Metric121"
+      },
+      {
+        "a_ref": "TM521",
+        "b_ref": "PCB_BODY",
+        "a_model": "Telemetry_Support001",
+        "b_model": "assembly-mated_PCB"
+      },
+      {
+        "a_ref": "TM521",
+        "b_ref": "M3",
+        "a_model": "Telemetry_Duo_Diodes001",
+        "b_model": "Turbine_EDF27"
+      },
+      {
+        "a_ref": "TM521",
+        "b_ref": "U502",
+        "a_model": "Telemetry_Duo_Diodes001",
+        "b_model": "TSSOP-14_4.4x5mm_P0.65mm001"
+      },
+      {
+        "a_ref": "TM521",
+        "b_ref": "R521",
+        "a_model": "Telemetry_Duo_Diodes001",
+        "b_model": "R_0402_1005Metric121"
+      },
+      {
+        "a_ref": "TM521",
+        "b_ref": "PCB_BODY",
+        "a_model": "Telemetry_Duo_Diodes001",
+        "b_model": "assembly-mated_PCB"
+      },
+      {
+        "a_ref": "C119",
+        "b_ref": "FB101",
+        "a_model": "C_0805_2012Metric003",
+        "b_model": "L_0805_2012Metric"
+      },
+      {
+        "a_ref": "C524",
+        "b_ref": "U201",
+        "a_model": "C_0402_1005Metric040",
+        "b_model": "LQFP-144_20x20mm_P0.5mm"
+      },
+      {
+        "a_ref": "C216",
+        "b_ref": "U201",
+        "a_model": "C_0402_1005Metric041",
+        "b_model": "LQFP-144_20x20mm_P0.5mm"
+      },
+      {
+        "a_ref": "M3",
+        "b_ref": "R522",
+        "a_model": "Turbine_EDF27",
+        "b_model": "R_0402_1005Metric098"
+      },
+      {
+        "a_ref": "M3",
+        "b_ref": "C109",
+        "a_model": "Turbine_EDF27",
+        "b_model": "CP_Elec_6.3x7.008"
+      },
+      {
+        "a_ref": "M3",
+        "b_ref": "M2",
+        "a_model": "Turbine_EDF27",
+        "b_model": "Faulhaber_IE2-1024_encoder001"
+      },
+      {
+        "a_ref": "J351",
+        "b_ref": "PCB_BODY",
+        "a_model": "TE_Micro-MaTch_215079-6_2x03_P1.27mm_Vertical001",
+        "b_model": "assembly-mated_PCB"
+      },
+      {
+        "a_ref": "R358",
+        "b_ref": "C352",
+        "a_model": "R_0402_1005Metric066",
+        "b_model": "C_0402_1005Metric064"
+      },
+      {
+        "a_ref": "R358",
+        "b_ref": "U201",
+        "a_model": "R_0402_1005Metric066",
+        "b_model": "LQFP-144_20x20mm_P0.5mm"
+      },
+      {
+        "a_ref": "C206",
+        "b_ref": "U201",
+        "a_model": "C_0805_2012Metric006",
+        "b_model": "LQFP-144_20x20mm_P0.5mm"
+      },
+      {
+        "a_ref": "R202",
+        "b_ref": "U201",
+        "a_model": "R_0402_1005Metric067",
+        "b_model": "LQFP-144_20x20mm_P0.5mm"
+      },
+      {
+        "a_ref": "C701",
+        "b_ref": "J601",
+        "a_model": "C_0402_1005Metric046",
+        "b_model": "OLED_0.96_SSD1306_I2C_128x64"
+      },
+      {
+        "a_ref": "C701",
+        "b_ref": "J601",
+        "a_model": "C_0402_1005Metric046",
+        "b_model": "OLED_Standoffs_M2x6"
+      },
+      {
+        "a_ref": "C302",
+        "b_ref": "U201",
+        "a_model": "C_0402_1005Metric048",
+        "b_model": "LQFP-144_20x20mm_P0.5mm"
+      },
+      {
+        "a_ref": "C302",
+        "b_ref": "R308",
+        "a_model": "C_0402_1005Metric048",
+        "b_model": "R_0402_1005Metric113"
+      },
+      {
+        "a_ref": "BZ601",
+        "b_ref": "PCB_BODY",
+        "a_model": "MagneticBuzzer_ProSignal_ABI-009-RC",
+        "b_model": "assembly-mated_PCB"
+      },
+      {
+        "a_ref": "R707",
+        "b_ref": "U201",
+        "a_model": "R_0402_1005Metric069",
+        "b_model": "LQFP-144_20x20mm_P0.5mm"
+      },
+      {
+        "a_ref": "R601",
+        "b_ref": "J601",
+        "a_model": "R_0402_1005Metric070",
+        "b_model": "OLED_0.96_SSD1306_I2C_128x64"
+      },
+      {
+        "a_ref": "R601",
+        "b_ref": "J601",
+        "a_model": "R_0402_1005Metric070",
+        "b_model": "OLED_Standoffs_M2x6"
+      },
+      {
+        "a_ref": "C566",
+        "b_ref": "J601",
+        "a_model": "C_0402_1005Metric053",
+        "b_model": "OLED_0.96_SSD1306_I2C_128x64"
+      },
+      {
+        "a_ref": "C566",
+        "b_ref": "J601",
+        "a_model": "C_0402_1005Metric053",
+        "b_model": "OLED_Standoffs_M2x6"
+      },
+      {
+        "a_ref": "R619",
+        "b_ref": "TM501",
+        "a_model": "R_0402_1005Metric074",
+        "b_model": "Telemetry_Support002"
+      },
+      {
+        "a_ref": "C601",
+        "b_ref": "C605",
+        "a_model": "C_0402_1005Metric057",
+        "b_model": "C_0402_1005Metric088"
+      },
+      {
+        "a_ref": "C601",
+        "b_ref": "SW601",
+        "a_model": "C_0402_1005Metric057",
+        "b_model": "SKRHABE010"
+      },
+      {
+        "a_ref": "R525",
+        "b_ref": "J601",
+        "a_model": "R_0402_1005Metric075",
+        "b_model": "OLED_0.96_SSD1306_I2C_128x64"
+      },
+      {
+        "a_ref": "R525",
+        "b_ref": "J601",
+        "a_model": "R_0402_1005Metric075",
+        "b_model": "OLED_Standoffs_M2x6"
+      },
+      {
+        "a_ref": "C705",
+        "b_ref": "C704",
+        "a_model": "C_0402_1005Metric060",
+        "b_model": "CP_Elec_6.3x7.7"
+      },
+      {
+        "a_ref": "U503",
+        "b_ref": "J601",
+        "a_model": "LGA-14_3x2.5mm_P0.5mm_LayoutBorder3x4y",
+        "b_model": "OLED_0.96_SSD1306_I2C_128x64"
+      },
+      {
+        "a_ref": "U503",
+        "b_ref": "J601",
+        "a_model": "LGA-14_3x2.5mm_P0.5mm_LayoutBorder3x4y",
+        "b_model": "OLED_Standoffs_M2x6"
+      },
+      {
+        "a_ref": "C602",
+        "b_ref": "R607",
+        "a_model": "C_0402_1005Metric061",
+        "b_model": "R_0402_1005Metric120"
+      },
+      {
+        "a_ref": "C602",
+        "b_ref": "SW601",
+        "a_model": "C_0402_1005Metric061",
+        "b_model": "SKRHABE010"
+      },
+      {
+        "a_ref": "C352",
+        "b_ref": "U201",
+        "a_model": "C_0402_1005Metric064",
+        "b_model": "LQFP-144_20x20mm_P0.5mm"
+      },
+      {
+        "a_ref": "C523",
+        "b_ref": "J601",
+        "a_model": "C_0402_1005Metric065",
+        "b_model": "OLED_0.96_SSD1306_I2C_128x64"
+      },
+      {
+        "a_ref": "C523",
+        "b_ref": "J601",
+        "a_model": "C_0402_1005Metric065",
+        "b_model": "OLED_Standoffs_M2x6"
+      },
+      {
+        "a_ref": "C122",
+        "b_ref": "U201",
+        "a_model": "C_0402_1005Metric066",
+        "b_model": "LQFP-144_20x20mm_P0.5mm"
+      },
+      {
+        "a_ref": "C122",
+        "b_ref": "R128",
+        "a_model": "C_0402_1005Metric066",
+        "b_model": "R_0402_1005Metric133"
+      },
+      {
+        "a_ref": "C220",
+        "b_ref": "U201",
+        "a_model": "C_0402_1005Metric067",
+        "b_model": "LQFP-144_20x20mm_P0.5mm"
+      },
+      {
+        "a_ref": "R203",
+        "b_ref": "U201",
+        "a_model": "R_0402_1005Metric082",
+        "b_model": "LQFP-144_20x20mm_P0.5mm"
+      },
+      {
+        "a_ref": "U502",
+        "b_ref": "J601",
+        "a_model": "TSSOP-14_4.4x5mm_P0.65mm001",
+        "b_model": "OLED_0.96_SSD1306_I2C_128x64"
+      },
+      {
+        "a_ref": "U502",
+        "b_ref": "J601",
+        "a_model": "TSSOP-14_4.4x5mm_P0.65mm001",
+        "b_model": "OLED_Standoffs_M2x6"
+      },
+      {
+        "a_ref": "J701",
+        "b_ref": "PCB_BODY",
+        "a_model": "PinHeader_1x04_P2.54mm_Vertical",
+        "b_model": "assembly-mated_PCB"
+      },
+      {
+        "a_ref": "C224",
+        "b_ref": "U201",
+        "a_model": "C_0402_1005Metric070",
+        "b_model": "LQFP-144_20x20mm_P0.5mm"
+      },
+      {
+        "a_ref": "C219",
+        "b_ref": "U201",
+        "a_model": "C_0402_1005Metric071",
+        "b_model": "LQFP-144_20x20mm_P0.5mm"
+      },
+      {
+        "a_ref": "C219",
+        "b_ref": "J601",
+        "a_model": "C_0402_1005Metric071",
+        "b_model": "OLED_0.96_SSD1306_I2C_128x64"
+      },
+      {
+        "a_ref": "C219",
+        "b_ref": "J601",
+        "a_model": "C_0402_1005Metric071",
+        "b_model": "OLED_Standoffs_M2x6"
+      },
+      {
+        "a_ref": "J103",
+        "b_ref": "PCB_BODY",
+        "a_model": "EMAX_Bullet_12A_Vertical_PROTOTYPE",
+        "b_model": "assembly-mated_PCB"
+      },
+      {
+        "a_ref": "C604",
+        "b_ref": "SW601",
+        "a_model": "C_0402_1005Metric072",
+        "b_model": "SKRHABE010"
+      },
+      {
+        "a_ref": "C204",
+        "b_ref": "U201",
+        "a_model": "C_0402_1005Metric073",
+        "b_model": "LQFP-144_20x20mm_P0.5mm"
+      },
+      {
+        "a_ref": "C504",
+        "b_ref": "U201",
+        "a_model": "C_0402_1005Metric074",
+        "b_model": "LQFP-144_20x20mm_P0.5mm"
+      },
+      {
+        "a_ref": "C215",
+        "b_ref": "U201",
+        "a_model": "C_0402_1005Metric075",
+        "b_model": "LQFP-144_20x20mm_P0.5mm"
+      },
+      {
+        "a_ref": "C205",
+        "b_ref": "U201",
+        "a_model": "C_0402_1005Metric077",
+        "b_model": "LQFP-144_20x20mm_P0.5mm"
+      },
+      {
+        "a_ref": "C222",
+        "b_ref": "U201",
+        "a_model": "C_0402_1005Metric078",
+        "b_model": "LQFP-144_20x20mm_P0.5mm"
+      },
+      {
+        "a_ref": "C222",
+        "b_ref": "J601",
+        "a_model": "C_0402_1005Metric078",
+        "b_model": "OLED_0.96_SSD1306_I2C_128x64"
+      },
+      {
+        "a_ref": "C222",
+        "b_ref": "J601",
+        "a_model": "C_0402_1005Metric078",
+        "b_model": "OLED_Standoffs_M2x6"
+      },
+      {
+        "a_ref": "U201",
+        "b_ref": "C213",
+        "a_model": "LQFP-144_20x20mm_P0.5mm",
+        "b_model": "C_0805_2012Metric008"
+      },
+      {
+        "a_ref": "U201",
+        "b_ref": "J601",
+        "a_model": "LQFP-144_20x20mm_P0.5mm",
+        "b_model": "OLED_0.96_SSD1306_I2C_128x64"
+      },
+      {
+        "a_ref": "U201",
+        "b_ref": "J601",
+        "a_model": "LQFP-144_20x20mm_P0.5mm",
+        "b_model": "OLED_Standoffs_M2x6"
+      },
+      {
+        "a_ref": "U201",
+        "b_ref": "R308",
+        "a_model": "LQFP-144_20x20mm_P0.5mm",
+        "b_model": "R_0402_1005Metric113"
+      },
+      {
+        "a_ref": "U201",
+        "b_ref": "Y201",
+        "a_model": "LQFP-144_20x20mm_P0.5mm",
+        "b_model": "Crystal_SMD_3225-4Pin_3.2x2.5mm"
+      },
+      {
+        "a_ref": "U201",
+        "b_ref": "R508",
+        "a_model": "LQFP-144_20x20mm_P0.5mm",
+        "b_model": "R_0402_1005Metric129"
+      },
+      {
+        "a_ref": "R702",
+        "b_ref": "J601",
+        "a_model": "R_0402_1005Metric110",
+        "b_model": "OLED_0.96_SSD1306_I2C_128x64"
+      },
+      {
+        "a_ref": "R702",
+        "b_ref": "J601",
+        "a_model": "R_0402_1005Metric110",
+        "b_model": "OLED_Standoffs_M2x6"
+      },
+      {
+        "a_ref": "C213",
+        "b_ref": "J601",
+        "a_model": "C_0805_2012Metric008",
+        "b_model": "OLED_0.96_SSD1306_I2C_128x64"
+      },
+      {
+        "a_ref": "C213",
+        "b_ref": "J601",
+        "a_model": "C_0805_2012Metric008",
+        "b_model": "OLED_Standoffs_M2x6"
+      },
+      {
+        "a_ref": "J601",
+        "b_ref": "C218",
+        "a_model": "OLED_0.96_SSD1306_I2C_128x64",
+        "b_model": "C_0402_1005Metric083"
+      },
+      {
+        "a_ref": "J601",
+        "b_ref": "C522",
+        "a_model": "OLED_0.96_SSD1306_I2C_128x64",
+        "b_model": "C_0402_1005Metric087"
+      },
+      {
+        "a_ref": "J601",
+        "b_ref": "PCB_BODY",
+        "a_model": "OLED_0.96_SSD1306_I2C_128x64",
+        "b_model": "assembly-mated_PCB"
+      },
+      {
+        "a_ref": "J601",
+        "b_ref": "C218",
+        "a_model": "OLED_Standoffs_M2x6",
+        "b_model": "C_0402_1005Metric083"
+      },
+      {
+        "a_ref": "J601",
+        "b_ref": "C522",
+        "a_model": "OLED_Standoffs_M2x6",
+        "b_model": "C_0402_1005Metric087"
+      },
+      {
+        "a_ref": "M2",
+        "b_ref": "PCB_BODY",
+        "a_model": "JSumo_JS4311_hub001",
+        "b_model": "assembly-mated_PCB"
+      },
+      {
+        "a_ref": "M2",
+        "b_ref": "PCB_BODY",
+        "a_model": "JSumo_JS4311_tire001",
+        "b_model": "assembly-mated_PCB"
+      },
+      {
+        "a_ref": "R607",
+        "b_ref": "C605",
+        "a_model": "R_0402_1005Metric120",
+        "b_model": "C_0402_1005Metric088"
+      },
+      {
+        "a_ref": "R607",
+        "b_ref": "SW601",
+        "a_model": "R_0402_1005Metric120",
+        "b_model": "SKRHABE010"
+      },
+      {
+        "a_ref": "C605",
+        "b_ref": "SW601",
+        "a_model": "C_0402_1005Metric088",
+        "b_model": "SKRHABE010"
+      },
+      {
+        "a_ref": "TM501",
+        "b_ref": "PCB_BODY",
+        "a_model": "Telemetry_Support002",
+        "b_model": "assembly-mated_PCB"
+      },
+      {
+        "a_ref": "TM501",
+        "b_ref": "PCB_BODY",
+        "a_model": "Telemetry_Duo_Diodes002",
+        "b_model": "assembly-mated_PCB"
+      }
+    ],
+    "elapsed_seconds": 40.87,
+    "note": "Intersections involving board body may be model lead/board-origin artifacts; not automatically component-body collisions. Same-reference internals intentionally excluded."
+  },
+  "line_sensors": [
+    {
+      "reference": "U404",
+      "model": "Everlight_ITR8307_S17_TR8",
+      "whole_model_bbox": {
+        "XMin": 133.961881,
+        "XMax": 137.711649,
+        "YMin": -280.669162,
+        "YMax": -275.788566,
+        "ZMin": -1.705,
+        "ZMax": -0.085
+      },
+      "body_bbox": {
+        "XMin": 133.961881,
+        "XMax": 137.711649,
+        "YMin": -279.807144,
+        "YMax": -276.650584,
+        "ZMin": -1.705,
+        "ZMax": -0.205
+      },
+      "model_solder_origin_z_mm": -0.085,
+      "body_to_fr4_distance_mm": 0.205,
+      "whole_model_to_fr4_distance_mm": 0.085,
+      "whole_model_fr4_intersection_mm3": 0.0,
+      "paired_top_leds": [
+        {
+          "reference": "D404",
+          "distance_mm": 1.8,
+          "intersection_mm3": 0.0
+        }
+      ]
+    },
+    {
+      "reference": "U408",
+      "model": "Everlight_ITR8307_S17_TR009",
+      "whole_model_bbox": {
+        "XMin": 164.713688,
+        "XMax": 168.332352,
+        "YMin": -281.49586,
+        "YMax": -276.715846,
+        "ZMin": -1.705,
+        "ZMax": -0.085
+      },
+      "body_bbox": {
+        "XMin": 164.713688,
+        "XMax": 168.332352,
+        "YMin": -280.596433,
+        "YMax": -277.615273,
+        "ZMin": -1.705,
+        "ZMax": -0.205
+      },
+      "model_solder_origin_z_mm": -0.085,
+      "body_to_fr4_distance_mm": 0.205,
+      "whole_model_to_fr4_distance_mm": 0.085,
+      "whole_model_fr4_intersection_mm3": 0.0,
+      "paired_top_leds": [
+        {
+          "reference": "D408",
+          "distance_mm": 1.8,
+          "intersection_mm3": 0.0
+        }
+      ]
+    },
+    {
+      "reference": "U406",
+      "model": "Everlight_ITR8307_S17_TR010",
+      "whole_model_bbox": {
+        "XMin": 149.416936,
+        "XMax": 152.89268,
+        "YMin": -281.876978,
+        "YMax": -277.21315,
+        "ZMin": -1.705,
+        "ZMax": -0.085
+      },
+      "body_bbox": {
+        "XMin": 149.416936,
+        "XMax": 152.89268,
+        "YMin": -280.943078,
+        "YMax": -278.14705,
+        "ZMin": -1.705,
+        "ZMax": -0.205
+      },
+      "model_solder_origin_z_mm": -0.085,
+      "body_to_fr4_distance_mm": 0.205,
+      "whole_model_to_fr4_distance_mm": 0.085,
+      "whole_model_fr4_intersection_mm3": 0.0,
+      "paired_top_leds": [
+        {
+          "reference": "D406",
+          "distance_mm": 1.8,
+          "intersection_mm3": 0.0
+        }
+      ]
+    },
+    {
+      "reference": "U405",
+      "model": "Everlight_ITR8307_S17_TR011",
+      "whole_model_bbox": {
+        "XMin": 141.667647,
+        "XMax": 145.286311,
+        "YMin": -281.49586,
+        "YMax": -276.715846,
+        "ZMin": -1.705,
+        "ZMax": -0.085
+      },
+      "body_bbox": {
+        "XMin": 141.667647,
+        "XMax": 145.286311,
+        "YMin": -280.596433,
+        "YMax": -277.615273,
+        "ZMin": -1.705,
+        "ZMax": -0.205
+      },
+      "model_solder_origin_z_mm": -0.085,
+      "body_to_fr4_distance_mm": 0.205,
+      "whole_model_to_fr4_distance_mm": 0.085,
+      "whole_model_fr4_intersection_mm3": 0.0,
+      "paired_top_leds": [
+        {
+          "reference": "D405",
+          "distance_mm": 1.8,
+          "intersection_mm3": 0.0
+        }
+      ]
+    },
+    {
+      "reference": "U412",
+      "model": "Everlight_ITR8307_S17_TR012",
+      "whole_model_bbox": {
+        "XMin": 220.801509,
+        "XMax": 225.107405,
+        "YMin": -263.92651,
+        "YMax": -258.794388,
+        "ZMin": -1.705,
+        "ZMax": -0.085
+      },
+      "body_bbox": {
+        "XMin": 220.805653,
+        "XMax": 225.103261,
+        "YMin": -263.383523,
+        "YMax": -259.337375,
+        "ZMin": -1.705,
+        "ZMax": -0.205
+      },
+      "model_solder_origin_z_mm": -0.085,
+      "body_to_fr4_distance_mm": 0.205,
+      "whole_model_to_fr4_distance_mm": 0.085,
+      "whole_model_fr4_intersection_mm3": 0.0,
+      "paired_top_leds": [
+        {
+          "reference": "D412",
+          "distance_mm": 1.8,
+          "intersection_mm3": 0.0
+        }
+      ]
+    },
+    {
+      "reference": "U407",
+      "model": "Everlight_ITR8307_S17_TR013",
+      "whole_model_bbox": {
+        "XMin": 157.107319,
+        "XMax": 160.583063,
+        "YMin": -281.876978,
+        "YMax": -277.21315,
+        "ZMin": -1.705,
+        "ZMax": -0.085
+      },
+      "body_bbox": {
+        "XMin": 157.107319,
+        "XMax": 160.583063,
+        "YMin": -280.943078,
+        "YMax": -278.14705,
+        "ZMin": -1.705,
+        "ZMax": -0.205
+      },
+      "model_solder_origin_z_mm": -0.085,
+      "body_to_fr4_distance_mm": 0.205,
+      "whole_model_to_fr4_distance_mm": 0.085,
+      "whole_model_fr4_intersection_mm3": 0.0,
+      "paired_top_leds": [
+        {
+          "reference": "D407",
+          "distance_mm": 1.8,
+          "intersection_mm3": 0.0
+        }
+      ]
+    },
+    {
+      "reference": "U401",
+      "model": "Everlight_ITR8307_S17_TR014",
+      "whole_model_bbox": {
+        "XMin": 84.892594,
+        "XMax": 89.19849,
+        "YMin": -263.92651,
+        "YMax": -258.794388,
+        "ZMin": -1.705,
+        "ZMax": -0.085
+      },
+      "body_bbox": {
+        "XMin": 84.896738,
+        "XMax": 89.194346,
+        "YMin": -263.383523,
+        "YMax": -259.337375,
+        "ZMin": -1.705,
+        "ZMax": -0.205
+      },
+      "model_solder_origin_z_mm": -0.085,
+      "body_to_fr4_distance_mm": 0.205,
+      "whole_model_to_fr4_distance_mm": 0.085,
+      "whole_model_fr4_intersection_mm3": 0.0,
+      "paired_top_leds": [
+        {
+          "reference": "D401",
+          "distance_mm": 1.8,
+          "intersection_mm3": 0.0
+        }
+      ]
+    },
+    {
+      "reference": "U403",
+      "model": "Everlight_ITR8307_S17_TR015",
+      "whole_model_bbox": {
+        "XMin": 116.912958,
+        "XMax": 120.912372,
+        "YMin": -277.19626,
+        "YMax": -272.148022,
+        "ZMin": -1.705,
+        "ZMax": -0.085
+      },
+      "body_bbox": {
+        "XMin": 116.912958,
+        "XMax": 120.912372,
+        "YMin": -276.4285,
+        "YMax": -272.915782,
+        "ZMin": -1.705,
+        "ZMax": -0.205
+      },
+      "model_solder_origin_z_mm": -0.085,
+      "body_to_fr4_distance_mm": 0.205,
+      "whole_model_to_fr4_distance_mm": 0.085,
+      "whole_model_fr4_intersection_mm3": 0.0,
+      "paired_top_leds": [
+        {
+          "reference": "D403",
+          "distance_mm": 1.8,
+          "intersection_mm3": 0.0
+        }
+      ]
+    },
+    {
+      "reference": "U411",
+      "model": "Everlight_ITR8307_S17_TR016",
+      "whole_model_bbox": {
+        "XMin": 205.32419,
+        "XMax": 209.507226,
+        "YMin": -271.54108,
+        "YMax": -266.408538,
+        "ZMin": -1.705,
+        "ZMax": -0.085
+      },
+      "body_bbox": {
+        "XMin": 205.32419,
+        "XMax": 209.507226,
+        "YMin": -270.880253,
+        "YMax": -267.069365,
+        "ZMin": -1.705,
+        "ZMax": -0.205
+      },
+      "model_solder_origin_z_mm": -0.085,
+      "body_to_fr4_distance_mm": 0.205,
+      "whole_model_to_fr4_distance_mm": 0.085,
+      "whole_model_fr4_intersection_mm3": 0.0,
+      "paired_top_leds": [
+        {
+          "reference": "D411",
+          "distance_mm": 1.8,
+          "intersection_mm3": 0.0
+        }
+      ]
+    },
+    {
+      "reference": "U410",
+      "model": "Everlight_ITR8307_S17_TR017",
+      "whole_model_bbox": {
+        "XMin": 189.087627,
+        "XMax": 193.087041,
+        "YMin": -277.19626,
+        "YMax": -272.148022,
+        "ZMin": -1.705,
+        "ZMax": -0.085
+      },
+      "body_bbox": {
+        "XMin": 189.087627,
+        "XMax": 193.087041,
+        "YMin": -276.4285,
+        "YMax": -272.915782,
+        "ZMin": -1.705,
+        "ZMax": -0.205
+      },
+      "model_solder_origin_z_mm": -0.085,
+      "body_to_fr4_distance_mm": 0.205,
+      "whole_model_to_fr4_distance_mm": 0.085,
+      "whole_model_fr4_intersection_mm3": 0.0,
+      "paired_top_leds": [
+        {
+          "reference": "D410",
+          "distance_mm": 1.8,
+          "intersection_mm3": 0.0
+        }
+      ]
+    },
+    {
+      "reference": "U402",
+      "model": "Everlight_ITR8307_S17_TR018",
+      "whole_model_bbox": {
+        "XMin": 100.492773,
+        "XMax": 104.675809,
+        "YMin": -271.54108,
+        "YMax": -266.408538,
+        "ZMin": -1.705,
+        "ZMax": -0.085
+      },
+      "body_bbox": {
+        "XMin": 100.492773,
+        "XMax": 104.675809,
+        "YMin": -270.880253,
+        "YMax": -267.069365,
+        "ZMin": -1.705,
+        "ZMax": -0.205
+      },
+      "model_solder_origin_z_mm": -0.085,
+      "body_to_fr4_distance_mm": 0.205,
+      "whole_model_to_fr4_distance_mm": 0.085,
+      "whole_model_fr4_intersection_mm3": 0.0,
+      "paired_top_leds": [
+        {
+          "reference": "D402",
+          "distance_mm": 1.8,
+          "intersection_mm3": 0.0
+        }
+      ]
+    },
+    {
+      "reference": "U409",
+      "model": "Everlight_ITR8307_S17_TR019",
+      "whole_model_bbox": {
+        "XMin": 172.28835,
+        "XMax": 176.038118,
+        "YMin": -280.669162,
+        "YMax": -275.788566,
+        "ZMin": -1.705,
+        "ZMax": -0.085
+      },
+      "body_bbox": {
+        "XMin": 172.28835,
+        "XMax": 176.038118,
+        "YMin": -279.807144,
+        "YMax": -276.650584,
+        "ZMin": -1.705,
+        "ZMax": -0.205
+      },
+      "model_solder_origin_z_mm": -0.085,
+      "body_to_fr4_distance_mm": 0.205,
+      "whole_model_to_fr4_distance_mm": 0.085,
+      "whole_model_fr4_intersection_mm3": 0.0,
+      "paired_top_leds": [
+        {
+          "reference": "D409",
+          "distance_mm": 1.8,
+          "intersection_mm3": 0.0
+        }
+      ]
+    }
+  ],
+  "mechanical_assembly_pairs": [
+    {
+      "a": "M1",
+      "b": "M3",
+      "distance_mm": 1.7101932355875582,
+      "intersection_mm3": 0.0
+    },
+    {
+      "a": "M2",
+      "b": "M3",
+      "distance_mm": 1.7101932355875582,
+      "intersection_mm3": 0.0
+    },
+    {
+      "a": "M1",
+      "b": "M2",
+      "distance_mm": 26.399999999999977,
+      "intersection_mm3": 0.0
+    }
+  ]
+}

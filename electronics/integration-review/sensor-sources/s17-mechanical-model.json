@@ -1,0 +1,122 @@
+{
+  "reference": "ITR8307/S17/TR8(B), LCSC C81632, existing project BOM",
+  "source": "https://www.everlighteurope.com/custom/files/datasheets/DRX-0000322.pdf",
+  "datasheet": "DRX-0000322 Rev6, package dimensions p2",
+  "model_name": "Everlight_ITR8307_S17_TR8",
+  "model_status": "Nominal manufacturer package dimensions; detailed bends and opticalwindows simplified, not supplier CAD",
+  "manufacturer_step_available": false,
+  "units": "mm",
+  "body_nominal": [
+    3.4,
+    2.7,
+    1.5
+  ],
+  "body_dimensions_tolerance": [
+    "+/-0.2",
+    "+/-0.2",
+    "+0.2/-0"
+  ],
+  "overall_nominal": [
+    3.4,
+    4.6,
+    1.62
+  ],
+  "overall_span_tolerance": 0.2,
+  "body_bottom_to_solder_plane": 0.12,
+  "body_bottom_to_solder_plane_tolerance": 0.05,
+  "maximum_height_from_solder_plane": 1.87,
+  "coordinate_convention": "Model Y=-footprintY; Z=0 solder plane; Top default, KiCad flip for Bottom",
+  "bbox": {
+    "XMin": -1.7,
+    "XMax": 1.7,
+    "YMin": -2.3000000000000016,
+    "YMax": 2.3000000000000016,
+    "ZMin": -1.8074430840897546e-15,
+    "ZMax": 1.62
+  },
+  "pins": [
+    {
+      "pin": 1,
+      "function": "CATHODE",
+      "model_xyz_mm": [
+        -0.9,
+        -2.11,
+        0
+      ],
+      "footprint_xy_mm": [
+        -0.9,
+        2.11
+      ],
+      "distal_flat_toe_mm": [
+        0.5,
+        0.38
+      ],
+      "solder_plane_intersection_area_mm2": 0.1899
+    },
+    {
+      "pin": 2,
+      "function": "ANODE",
+      "model_xyz_mm": [
+        -0.9,
+        2.11,
+        0
+      ],
+      "footprint_xy_mm": [
+        -0.9,
+        -2.11
+      ],
+      "distal_flat_toe_mm": [
+        0.5,
+        0.38
+      ],
+      "solder_plane_intersection_area_mm2": 0.1899
+    },
+    {
+      "pin": 3,
+      "function": "COLLECTOR",
+      "model_xyz_mm": [
+        0.9,
+        -2.11,
+        0
+      ],
+      "footprint_xy_mm": [
+        0.9,
+        2.11
+      ],
+      "distal_flat_toe_mm": [
+        0.5,
+        0.38
+      ],
+      "solder_plane_intersection_area_mm2": 0.1899
+    },
+    {
+      "pin": 4,
+      "function": "EMITTER",
+      "model_xyz_mm": [
+        0.9,
+        2.11,
+        0
+      ],
+      "footprint_xy_mm": [
+        0.9,
+        -2.11
+      ],
+      "distal_flat_toe_mm": [
+        0.5,
+        0.38
+      ],
+      "solder_plane_intersection_area_mm2": 0.1899
+    }
+  ],
+  "solid_count": 7,
+  "all_shapes_valid": true,
+  "cutout_required": false,
+  "incompatible_previous_model": "Plain Everlight_ITR8307.step spans6.7mm, bodyZ-.4..1.0; required footprint cutout was removed. It is NOT the chosen formed-lead S17/TR8 variant.",
+  "simplifications": [
+    "Body corner chamfer beside pin2 is omitted: conservative rectangular package envelope; electrical pin numbers remain explicit in solid names.",
+    "Lead bend shape polygonal; specified corner radii not reproduced. Physical toe width, toe length, overallspan and solderdatum retained.",
+    "Metal nominalthickness .12 from shown foot/body datum; cross-section should not be used to produce leadforming tooling.",
+    "Optical window outlines visual estimates within body envelope.",
+    "Nominal CAD; tolerance envelope must be allowed separately."
+  ]
+}

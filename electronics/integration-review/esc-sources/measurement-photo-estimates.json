@@ -1,0 +1,141 @@
+{
+  "status": "PHOTO ESTIMATES ONLY - NOT MANUFACTURER LAND PATTERN",
+  "source": "bbb-DSCF9865.jpeg",
+  "source_px": [
+    1920,
+    1579
+  ],
+  "coordinate_definition": "Facing MOSFET/capacitor side: x across 11mm from GNDpower(-) to BATT+(+); z along15mm from input edge(0) to motor edge(15). Origin centre input edge. This view becomes front of vertical ESC.",
+  "outline_pixels": [
+    [
+      1300.0,
+      625.0
+    ],
+    [
+      1301.0,
+      949.0
+    ],
+    [
+      847.0,
+      617.0
+    ],
+    [
+      843.0,
+      944.0
+    ]
+  ],
+  "outline_mm": [
+    [
+      5.5,
+      0.0
+    ],
+    [
+      -5.5,
+      0.0
+    ],
+    [
+      5.5,
+      15.0
+    ],
+    [
+      -5.5,
+      15.0
+    ]
+  ],
+  "homography_image_to_mm": [
+    [
+      0.0004851790878895607,
+      -0.03391215457004416,
+      26.027965680467553
+    ],
+    [
+      -0.033205380030298305,
+      0.00010248574083425162,
+      43.102940451366386
+    ],
+    [
+      -2.1269016374510525e-05,
+      3.365101251611149e-05,
+      1.0
+    ]
+  ],
+  "pad_centres": {
+    "BATT+": {
+      "pixel": [
+        1269,
+        656
+      ],
+      "x_z_mm": [
+        4.419,
+        1.038
+      ]
+    },
+    "SIGNAL": {
+      "pixel": [
+        1268,
+        762
+      ],
+      "x_z_mm": [
+        0.803,
+        1.078
+      ]
+    },
+    "GND_LOGIC": {
+      "pixel": [
+        1267,
+        810
+      ],
+      "x_z_mm": [
+        -0.826,
+        1.114
+      ]
+    },
+    "GND_POWER": {
+      "pixel": [
+        1266,
+        913
+      ],
+      "x_z_mm": [
+        -4.303,
+        1.154
+      ]
+    },
+    "MOTOR_TOP": {
+      "pixel": [
+        873,
+        647
+      ],
+      "x_z_mm": [
+        4.496,
+        14.136
+      ]
+    },
+    "MOTOR_MIDDLE": {
+      "pixel": [
+        866,
+        773
+      ],
+      "x_z_mm": [
+        0.232,
+        14.318
+      ]
+    },
+    "MOTOR_BOTTOM": {
+      "pixel": [
+        856,
+        902
+      ],
+      "x_z_mm": [
+        -4.096,
+        14.594
+      ]
+    }
+  },
+  "estimated_uncertainty_mm": 0.4,
+  "notes": [
+    "Manual corner and solder-landmark selection; foil masked by solder; no manufacturing tolerance supplied.",
+    "Mapped input row z varies0.13mm; compatible common row within uncertainty.",
+    "Power GND and small signal GND must be continuity-tested before deleting small-GND lead.",
+    "MOTOR A/B/C names are project conventions, no documented manufacturer phase naming."
+  ]
+}

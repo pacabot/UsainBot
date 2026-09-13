@@ -1,0 +1,39 @@
+{
+  "status": "passed",
+  "other_footprints_unchanged_pose_uuid_lock_type": 339,
+  "all_footprint_pad_nets_unchanged": 340,
+  "schematic_net_nodes_unchanged": true,
+  "locked_count": 36,
+  "J102_before": [
+    [
+      "at",
+      "169",
+      "129.1"
+    ],
+    [
+      "layer",
+      "\"F.Cu\""
+    ],
+    null,
+    [
+      "uuid",
+      "\"078e273e-2de2-46b6-9b88-0086ed79c0bb\""
+    ]
+  ],
+  "J102_after": [
+    [
+      "at",
+      "174.7",
+      "129.1"
+    ],
+    [
+      "layer",
+      "\"F.Cu\""
+    ],
+    null,
+    [
+      "uuid",
+      "\"078e273e-2de2-46b6-9b88-0086ed79c0bb\""
+    ]
+  ]
+}

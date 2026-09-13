@@ -1,0 +1,67 @@
+{
+  "prototype_dimensions": true,
+  "checks": [
+    {
+      "pin": 1,
+      "function": "GND_POWER",
+      "pin_esc_fr4_distance_mm": 0.04999999999999993,
+      "pin_esc_fr4_intersection_mm3": 0.0,
+      "pin_esc_pad_distance_mm": 0.0,
+      "pin_esc_pad_intersection_mm3": 0.0,
+      "pin_z_range_mm": [
+        -2.2,
+        4.1499999999999995
+      ],
+      "pin_diameter_mm": 1.2,
+      "pcb_drill_mm": 1.4,
+      "pcb_pad_diameter_mm": 3,
+      "nominal_pin_hole_radial_clearance_mm": 0.09999999999999998,
+      "nominal_copper_annulus_mm": 0.8
+    },
+    {
+      "pin": 2,
+      "function": "SIGNAL",
+      "pin_esc_fr4_distance_mm": 0.04999999999999993,
+      "pin_esc_fr4_intersection_mm3": 0.0,
+      "pin_esc_pad_distance_mm": 4.440892098500626e-16,
+      "pin_esc_pad_intersection_mm3": 0.0,
+      "pin_z_range_mm": [
+        -2.2,
+        4.1499999999999995
+      ],
+      "pin_diameter_mm": 0.6,
+      "pcb_drill_mm": 0.8,
+      "pcb_pad_diameter_mm": 1.6,
+      "nominal_pin_hole_radial_clearance_mm": 0.10000000000000003,
+      "nominal_copper_annulus_mm": 0.4
+    },
+    {
+      "pin": 3,
+      "function": "BATT_PLUS",
+      "pin_esc_fr4_distance_mm": 0.04999999999999993,
+      "pin_esc_fr4_intersection_mm3": 0.0,
+      "pin_esc_pad_distance_mm": 0.0,
+      "pin_esc_pad_intersection_mm3": 0.0,
+      "pin_z_range_mm": [
+        -2.2,
+        4.1499999999999995
+      ],
+      "pin_diameter_mm": 1.2,
+      "pcb_drill_mm": 1.4,
+      "pcb_pad_diameter_mm": 3,
+      "nominal_pin_hole_radial_clearance_mm": 0.09999999999999998,
+      "nominal_copper_annulus_mm": 0.8
+    }
+  ],
+  "power_pin_ohmic_only": {
+    "rho_copper_ohm_m": 1.7241e-08,
+    "diameter_mm": 1.2,
+    "length_mm": 6.35,
+    "section_mm2": 1.1309733552923256,
+    "resistance_ohm": 9.680188263294881e-05,
+    "power_loss_each_at12A_W": 0.013939471099144628,
+    "power_loss_each_at15A_W": 0.021780423592413483,
+    "thermal_validation": false
+  },
+  "limits": "Photo-estimated pad locations and contours. Tangency is geometric only; solder fillet, copper pad adhesion, heat/vibration and smallGND continuity require real ESC tests. No PCB power routing/copper planes created."
+}

@@ -1,0 +1,1441 @@
+{
+  "schema": "usainbot-line-led-alignment-v1",
+  "units": "mm",
+  "source_board_sha256": "065869fae6c5620fdb31676b7d3257df89e9944241a054cb8b9a9f1cef4b7dfd",
+  "rule": {
+    "symmetry_axis_x": 155,
+    "sensor_face": "B",
+    "led_face": "F",
+    "led_offset_sensor_local": [
+      0,
+      0
+    ],
+    "led_angle_offset_deg": 90,
+    "resistor_offset_sensor_local": [
+      0,
+      -2.8
+    ],
+    "resistor_angle_offset_deg": -90,
+    "sensor_passives_offsets": {
+      "C_filter": [
+        1.9,
+        1.45
+      ],
+      "R_load": [
+        1.9,
+        3.5
+      ],
+      "R_IR": [
+        -0.9,
+        3.5
+      ]
+    },
+    "local_coordinate_transform": "X = Ux + dx*cos(a) + dy*sin(a); Y = Uy - dx*sin(a) + dy*cos(a); a = sensor KiCad angle",
+    "led_alignment_fixed_for_any_subsequent_solver": true
+  },
+  "placements": {
+    "D401": {
+      "position": [
+        87.045542,
+        261.360449
+      ],
+      "angle": 120.28491203,
+      "face": "F",
+      "reason": "Aplomb exact capteur U401; axe long radial identique",
+      "before": {
+        "position": [
+          84.2279,
+          262.3044
+        ],
+        "angle": 180.0,
+        "face": "F",
+        "locked": false
+      }
+    },
+    "D402": {
+      "position": [
+        102.584291,
+        268.974809
+      ],
+      "angle": 112.91831181,
+      "face": "F",
+      "reason": "Aplomb exact capteur U402; axe long radial identique",
+      "before": {
+        "position": [
+          99.8525,
+          270.4104
+        ],
+        "angle": 180.0,
+        "face": "F",
+        "locked": false
+      }
+    },
+    "D403": {
+      "position": [
+        118.912665,
+        274.672141
+      ],
+      "angle": 105.55171158,
+      "face": "F",
+      "reason": "Aplomb exact capteur U403; axe long radial identique",
+      "before": {
+        "position": [
+          116.3875,
+          276.4461
+        ],
+        "angle": 180.0,
+        "face": "F",
+        "locked": false
+      }
+    },
+    "D404": {
+      "position": [
+        135.836765,
+        278.228864
+      ],
+      "angle": 98.185111359,
+      "face": "F",
+      "reason": "Aplomb exact capteur U404; axe long radial identique",
+      "before": {
+        "position": [
+          133.5599,
+          280.3119
+        ],
+        "angle": -90.0,
+        "face": "F",
+        "locked": false
+      }
+    },
+    "D405": {
+      "position": [
+        143.476979,
+        279.105853
+      ],
+      "angle": 94.911066815,
+      "face": "F",
+      "reason": "Aplomb exact capteur U405; axe long radial identique",
+      "before": {
+        "position": [
+          141.3228,
+          281.3156
+        ],
+        "angle": -90.0,
+        "face": "F",
+        "locked": false
+      }
+    },
+    "D406": {
+      "position": [
+        151.154808,
+        279.545064
+      ],
+      "angle": 91.637022272,
+      "face": "F",
+      "reason": "Aplomb exact capteur U406; axe long radial identique",
+      "before": {
+        "position": [
+          148.7304,
+          281.8742
+        ],
+        "angle": 92.4555,
+        "face": "F",
+        "locked": false
+      }
+    },
+    "D407": {
+      "position": [
+        158.845191,
+        279.545064
+      ],
+      "angle": 88.362977728,
+      "face": "F",
+      "reason": "Aplomb exact capteur U407; axe long radial identique",
+      "before": {
+        "position": [
+          157.46,
+          280.79
+        ],
+        "angle": 180.0,
+        "face": "F",
+        "locked": false
+      }
+    },
+    "D408": {
+      "position": [
+        166.52302,
+        279.105853
+      ],
+      "angle": 85.088933185,
+      "face": "F",
+      "reason": "Aplomb exact capteur U408; axe long radial identique",
+      "before": {
+        "position": [
+          163.9774,
+          282.0507
+        ],
+        "angle": 90.0,
+        "face": "F",
+        "locked": false
+      }
+    },
+    "D409": {
+      "position": [
+        174.163234,
+        278.228864
+      ],
+      "angle": 81.814888641,
+      "face": "F",
+      "reason": "Aplomb exact capteur U409; axe long radial identique",
+      "before": {
+        "position": [
+          171.3658,
+          280.8692
+        ],
+        "angle": 82.6334,
+        "face": "F",
+        "locked": false
+      }
+    },
+    "D410": {
+      "position": [
+        191.087334,
+        274.672141
+      ],
+      "angle": 74.44828842,
+      "face": "F",
+      "reason": "Aplomb exact capteur U410; axe long radial identique",
+      "before": {
+        "position": [
+          187.8416,
+          277.4955
+        ],
+        "angle": 75.2668,
+        "face": "F",
+        "locked": false
+      }
+    },
+    "D411": {
+      "position": [
+        207.415708,
+        268.974809
+      ],
+      "angle": 67.08168819,
+      "face": "F",
+      "reason": "Aplomb exact capteur U411; axe long radial identique",
+      "before": {
+        "position": [
+          208.5423,
+          271.9346
+        ],
+        "angle": -90.0,
+        "face": "F",
+        "locked": false
+      }
+    },
+    "D412": {
+      "position": [
+        222.954457,
+        261.360449
+      ],
+      "angle": 59.71508797,
+      "face": "F",
+      "reason": "Aplomb exact capteur U412; axe long radial identique",
+      "before": {
+        "position": [
+          223.9921,
+          263.8783
+        ],
+        "angle": -90.0,
+        "face": "F",
+        "locked": false
+      }
+    },
+    "R445": {
+      "position": [
+        85.633501,
+        258.94257
+      ],
+      "angle": -59.71508797,
+      "face": "F",
+      "reason": "Resistance serie du temoin au droit de son anode, radialement vers interieur",
+      "before": {
+        "position": [
+          81.4404,
+          262.3044
+        ],
+        "angle": 0.0,
+        "face": "F",
+        "locked": false
+      }
+    },
+    "C401": {
+      "position": [
+        89.417481,
+        261.654395
+      ],
+      "angle": 120.28491203,
+      "face": "F",
+      "reason": "Filtre LINE_00, a proximite pad 4 du capteur; degagement de la LED",
+      "before": {
+        "position": [
+          89.2348,
+          261.724499
+        ],
+        "angle": 90.0,
+        "face": "F",
+        "locked": false
+      }
+    },
+    "R421": {
+      "position": [
+        90.451297,
+        263.424628
+      ],
+      "angle": -59.71508797,
+      "face": "F",
+      "reason": "Charge phototransistor LINE_00, reliee au filtre et proche pad 4",
+      "before": {
+        "position": [
+          89.2348,
+          263.724499
+        ],
+        "angle": -90.0,
+        "face": "F",
+        "locked": false
+      }
+    },
+    "R401": {
+      "position": [
+        88.033417,
+        264.836669
+      ],
+      "angle": 120.28491203,
+      "face": "F",
+      "reason": "Resistance de courant IR, proche pad 2 du capteur",
+      "before": {
+        "position": [
+          87.6804,
+          264.6322
+        ],
+        "angle": 90.0,
+        "face": "F",
+        "locked": false
+      }
+    },
+    "R446": {
+      "position": [
+        101.49392,
+        266.395838
+      ],
+      "angle": -67.08168819,
+      "face": "F",
+      "reason": "Resistance serie du temoin au droit de son anode, radialement vers interieur",
+      "before": {
+        "position": [
+          97.065,
+          270.4104
+        ],
+        "angle": 0.0,
+        "face": "F",
+        "locked": false
+      }
+    },
+    "C402": {
+      "position": [
+        104.898963,
+        269.570453
+      ],
+      "angle": 112.91831181,
+      "face": "F",
+      "reason": "Filtre LINE_01, a proximite pad 4 du capteur; degagement de la LED",
+      "before": {
+        "position": [
+          104.5036,
+          269.6033
+        ],
+        "angle": 90.0,
+        "face": "F",
+        "locked": false
+      }
+    },
+    "R422": {
+      "position": [
+        105.697271,
+        271.458628
+      ],
+      "angle": -67.08168819,
+      "face": "F",
+      "reason": "Charge phototransistor LINE_01, reliee au filtre et proche pad 4",
+      "before": {
+        "position": [
+          104.5036,
+          271.6033
+        ],
+        "angle": -90.0,
+        "face": "F",
+        "locked": false
+      }
+    },
+    "R402": {
+      "position": [
+        103.1183,
+        272.548999
+      ],
+      "angle": 112.91831181,
+      "face": "F",
+      "reason": "Resistance de courant IR, proche pad 2 du capteur",
+      "before": {
+        "position": [
+          102.8457,
+          272.3043
+        ],
+        "angle": 90.0,
+        "face": "F",
+        "locked": false
+      }
+    },
+    "R447": {
+      "position": [
+        118.161963,
+        271.974652
+      ],
+      "angle": -74.44828842,
+      "face": "F",
+      "reason": "Resistance serie du temoin au droit de son anode, radialement vers interieur",
+      "before": {
+        "position": [
+          113.6,
+          276.4461
+        ],
+        "angle": 0.0,
+        "face": "F",
+        "locked": false
+      }
+    },
+    "C403": {
+      "position": [
+        121.13186,
+        275.55965
+      ],
+      "angle": 105.55171158,
+      "face": "F",
+      "reason": "Filtre LINE_02, a proximite pad 4 du capteur; degagement de la LED",
+      "before": {
+        "position": [
+          120.5304,
+          275.5283
+        ],
+        "angle": 90.0,
+        "face": "F",
+        "locked": false
+      }
+    },
+    "R423": {
+      "position": [
+        121.681482,
+        277.534597
+      ],
+      "angle": -74.44828842,
+      "face": "F",
+      "reason": "Charge phototransistor LINE_02, reliee au filtre et proche pad 4",
+      "before": {
+        "position": [
+          120.5304,
+          277.5283
+        ],
+        "angle": -90.0,
+        "face": "F",
+        "locked": false
+      }
+    },
+    "R403": {
+      "position": [
+        118.983993,
+        278.285299
+      ],
+      "angle": 105.55171158,
+      "face": "F",
+      "reason": "Resistance de courant IR, proche pad 2 du capteur",
+      "before": {
+        "position": [
+          118.7963,
+          278.0109
+        ],
+        "angle": 90.0,
+        "face": "F",
+        "locked": false
+      }
+    },
+    "R448": {
+      "position": [
+        135.438124,
+        275.457387
+      ],
+      "angle": -81.814888641,
+      "face": "F",
+      "reason": "Resistance serie du temoin au droit de son anode, radialement vers interieur",
+      "before": {
+        "position": [
+          131.5599,
+          281.0994
+        ],
+        "angle": 0.0,
+        "face": "F",
+        "locked": false
+      }
+    },
+    "C404": {
+      "position": [
+        137.923849,
+        279.393587
+      ],
+      "angle": 98.185111359,
+      "face": "F",
+      "reason": "Filtre LINE_03, a proximite pad 4 du capteur; degagement de la LED",
+      "before": {
+        "position": [
+          137.1262,
+          279.2722
+        ],
+        "angle": 90.0,
+        "face": "F",
+        "locked": false
+      }
+    },
+    "R424": {
+      "position": [
+        138.215711,
+        281.422704
+      ],
+      "angle": -81.814888641,
+      "face": "F",
+      "reason": "Charge phototransistor LINE_03, reliee au filtre et proche pad 4",
+      "before": {
+        "position": [
+          137.1262,
+          281.2722
+        ],
+        "angle": -90.0,
+        "face": "F",
+        "locked": false
+      }
+    },
+    "R404": {
+      "position": [
+        135.444234,
+        281.821345
+      ],
+      "angle": 98.185111359,
+      "face": "F",
+      "reason": "Resistance de courant IR, proche pad 2 du capteur",
+      "before": {
+        "position": [
+          135.3446,
+          281.5285
+        ],
+        "angle": 90.0,
+        "face": "F",
+        "locked": false
+      }
+    },
+    "R449": {
+      "position": [
+        143.237273,
+        276.316132
+      ],
+      "angle": -85.088933185,
+      "face": "F",
+      "reason": "Resistance serie du temoin au droit de son anode, radialement vers interieur",
+      "before": {
+        "position": [
+          139.3228,
+          282.1031
+        ],
+        "angle": 0.0,
+        "face": "F",
+        "locked": false
+      }
+    },
+    "C405": {
+      "position": [
+        145.494137,
+        280.387872
+      ],
+      "angle": 94.911066815,
+      "face": "F",
+      "reason": "Filtre LINE_04, a proximite pad 4 du capteur; degagement de la LED",
+      "before": {
+        "position": [
+          144.6134,
+          280.2185
+        ],
+        "angle": 90.0,
+        "face": "F",
+        "locked": false
+      }
+    },
+    "R425": {
+      "position": [
+        145.669636,
+        282.430346
+      ],
+      "angle": -85.088933185,
+      "face": "F",
+      "reason": "Charge phototransistor LINE_04, reliee au filtre et proche pad 4",
+      "before": {
+        "position": [
+          144.6134,
+          282.2185
+        ],
+        "angle": -90.0,
+        "face": "F",
+        "locked": false
+      }
+    },
+    "R405": {
+      "position": [
+        142.879916,
+        282.670052
+      ],
+      "angle": 94.911066815,
+      "face": "F",
+      "reason": "Resistance de courant IR, proche pad 2 du capteur",
+      "before": {
+        "position": [
+          142.82,
+          282.3726
+        ],
+        "angle": 90.0,
+        "face": "F",
+        "locked": false
+      }
+    },
+    "R450": {
+      "position": [
+        151.074819,
+        276.746207
+      ],
+      "angle": -88.362977728,
+      "face": "F",
+      "reason": "Resistance serie du temoin au droit de son anode, radialement vers interieur",
+      "before": {
+        "position": [
+          146.6967,
+          281.0874
+        ],
+        "angle": 0.0,
+        "face": "F",
+        "locked": false
+      }
+    },
+    "C406": {
+      "position": [
+        153.095455,
+        280.940194
+      ],
+      "angle": 91.637022272,
+      "face": "F",
+      "reason": "Filtre LINE_05, a proximite pad 4 du capteur; degagement de la LED",
+      "before": {
+        "position": [
+          152.1344,
+          280.7182
+        ],
+        "angle": 90.0,
+        "face": "F",
+        "locked": false
+      }
+    },
+    "R426": {
+      "position": [
+        153.154019,
+        282.989357
+      ],
+      "angle": -88.362977728,
+      "face": "F",
+      "reason": "Charge phototransistor LINE_05, reliee au filtre et proche pad 4",
+      "before": {
+        "position": [
+          152.1344,
+          282.7182
+        ],
+        "angle": -90.0,
+        "face": "F",
+        "locked": false
+      }
+    },
+    "R406": {
+      "position": [
+        150.355162,
+        283.069346
+      ],
+      "angle": 91.637022272,
+      "face": "F",
+      "reason": "Resistance de courant IR, proche pad 2 du capteur",
+      "before": {
+        "position": [
+          150.3352,
+          282.7696
+        ],
+        "angle": 90.0,
+        "face": "F",
+        "locked": false
+      }
+    },
+    "R451": {
+      "position": [
+        158.92518,
+        276.746207
+      ],
+      "angle": -91.637022272,
+      "face": "F",
+      "reason": "Resistance serie du temoin au droit de son anode, radialement vers interieur",
+      "before": {
+        "position": [
+          156.6725,
+          278.79
+        ],
+        "angle": -90.0,
+        "face": "F",
+        "locked": false
+      }
+    },
+    "C407": {
+      "position": [
+        160.702993,
+        281.048751
+      ],
+      "angle": 88.362977728,
+      "face": "F",
+      "reason": "Filtre LINE_06, a proximite pad 4 du capteur; degagement de la LED",
+      "before": {
+        "position": [
+          159.6648,
+          280.7696
+        ],
+        "angle": 90.0,
+        "face": "F",
+        "locked": false
+      }
+    },
+    "R427": {
+      "position": [
+        160.644429,
+        283.097914
+      ],
+      "angle": -91.637022272,
+      "face": "F",
+      "reason": "Charge phototransistor LINE_06, reliee au filtre et proche pad 4",
+      "before": {
+        "position": [
+          159.6648,
+          282.7696
+        ],
+        "angle": -90.0,
+        "face": "F",
+        "locked": false
+      }
+    },
+    "R407": {
+      "position": [
+        157.845572,
+        283.017925
+      ],
+      "angle": 88.362977728,
+      "face": "F",
+      "reason": "Resistance de courant IR, proche pad 2 du capteur",
+      "before": {
+        "position": [
+          157.8656,
+          282.7182
+        ],
+        "angle": 90.0,
+        "face": "F",
+        "locked": false
+      }
+    },
+    "R452": {
+      "position": [
+        166.762726,
+        276.316132
+      ],
+      "angle": -94.911066815,
+      "face": "F",
+      "reason": "Resistance serie du temoin au droit de son anode, radialement vers interieur",
+      "before": {
+        "position": [
+          161.9774,
+          281.2632
+        ],
+        "angle": 0.0,
+        "face": "F",
+        "locked": false
+      }
+    },
+    "C408": {
+      "position": [
+        168.291911,
+        280.713188
+      ],
+      "angle": 85.088933185,
+      "face": "F",
+      "reason": "Filtre LINE_07, a proximite pad 4 du capteur; degagement de la LED",
+      "before": {
+        "position": [
+          167.18,
+          280.3726
+        ],
+        "angle": 90.0,
+        "face": "F",
+        "locked": false
+      }
+    },
+    "R428": {
+      "position": [
+        168.116412,
+        282.755662
+      ],
+      "angle": -94.911066815,
+      "face": "F",
+      "reason": "Charge phototransistor LINE_07, reliee au filtre et proche pad 4",
+      "before": {
+        "position": [
+          167.18,
+          282.3726
+        ],
+        "angle": -90.0,
+        "face": "F",
+        "locked": false
+      }
+    },
+    "R408": {
+      "position": [
+        165.326691,
+        282.515955
+      ],
+      "angle": 85.088933185,
+      "face": "F",
+      "reason": "Resistance de courant IR, proche pad 2 du capteur",
+      "before": {
+        "position": [
+          165.3866,
+          282.2185
+        ],
+        "angle": 90.0,
+        "face": "F",
+        "locked": false
+      }
+    },
+    "R453": {
+      "position": [
+        174.561875,
+        275.457387
+      ],
+      "angle": -98.185111359,
+      "face": "F",
+      "reason": "Resistance serie du temoin au droit de son anode, radialement vers interieur",
+      "before": {
+        "position": [
+          172.2668,
+          278.8882
+        ],
+        "angle": 172.6334,
+        "face": "F",
+        "locked": false
+      }
+    },
+    "C409": {
+      "position": [
+        175.83744,
+        279.9346
+      ],
+      "angle": 81.814888641,
+      "face": "F",
+      "reason": "Filtre LINE_08, a proximite pad 4 du capteur; degagement de la LED",
+      "before": {
+        "position": [
+          174.6554,
+          279.5285
+        ],
+        "angle": 90.0,
+        "face": "F",
+        "locked": false
+      }
+    },
+    "R429": {
+      "position": [
+        175.545578,
+        281.963717
+      ],
+      "angle": -98.185111359,
+      "face": "F",
+      "reason": "Charge phototransistor LINE_08, reliee au filtre et proche pad 4",
+      "before": {
+        "position": [
+          174.6554,
+          281.5285
+        ],
+        "angle": -90.0,
+        "face": "F",
+        "locked": false
+      }
+    },
+    "R409": {
+      "position": [
+        172.774101,
+        281.565076
+      ],
+      "angle": 81.814888641,
+      "face": "F",
+      "reason": "Resistance de courant IR, proche pad 2 du capteur",
+      "before": {
+        "position": [
+          172.8738,
+          281.2722
+        ],
+        "angle": 90.0,
+        "face": "F",
+        "locked": false
+      }
+    },
+    "R454": {
+      "position": [
+        191.838036,
+        271.974652
+      ],
+      "angle": -105.55171158,
+      "face": "F",
+      "reason": "Resistance serie du temoin au droit de son anode, radialement vers interieur",
+      "before": {
+        "position": [
+          188.8419,
+          275.1339
+        ],
+        "angle": -104.7332,
+        "face": "F",
+        "locked": false
+      }
+    },
+    "C410": {
+      "position": [
+        192.529016,
+        276.57846
+      ],
+      "angle": 74.44828842,
+      "face": "F",
+      "reason": "Filtre LINE_09, a proximite pad 4 du capteur; degagement de la LED",
+      "before": {
+        "position": [
+          191.2037,
+          276.0109
+        ],
+        "angle": 90.0,
+        "face": "F",
+        "locked": false
+      }
+    },
+    "R430": {
+      "position": [
+        191.979395,
+        278.553407
+      ],
+      "angle": -105.55171158,
+      "face": "F",
+      "reason": "Charge phototransistor LINE_09, reliee au filtre et proche pad 4",
+      "before": {
+        "position": [
+          191.2037,
+          278.0109
+        ],
+        "angle": -90.0,
+        "face": "F",
+        "locked": false
+      }
+    },
+    "R410": {
+      "position": [
+        189.281906,
+        277.802705
+      ],
+      "angle": 74.44828842,
+      "face": "F",
+      "reason": "Resistance de courant IR, proche pad 2 du capteur",
+      "before": {
+        "position": [
+          189.4696,
+          277.5283
+        ],
+        "angle": 90.0,
+        "face": "F",
+        "locked": false
+      }
+    },
+    "R455": {
+      "position": [
+        208.506079,
+        266.395838
+      ],
+      "angle": -112.91831181,
+      "face": "F",
+      "reason": "Resistance serie du temoin au droit de son anode, radialement vers interieur",
+      "before": {
+        "position": [
+          210.1423,
+          271.9221
+        ],
+        "angle": -90.0,
+        "face": "F",
+        "locked": false
+      }
+    },
+    "C411": {
+      "position": [
+        208.601067,
+        271.050242
+      ],
+      "angle": 67.08168819,
+      "face": "F",
+      "reason": "Filtre LINE_10, a proximite pad 4 du capteur; degagement de la LED",
+      "before": {
+        "position": [
+          207.1543,
+          270.3043
+        ],
+        "angle": 90.0,
+        "face": "F",
+        "locked": false
+      }
+    },
+    "R431": {
+      "position": [
+        207.80276,
+        272.938417
+      ],
+      "angle": -112.91831181,
+      "face": "F",
+      "reason": "Charge phototransistor LINE_10, reliee au filtre et proche pad 4",
+      "before": {
+        "position": [
+          207.1543,
+          272.3043
+        ],
+        "angle": -90.0,
+        "face": "F",
+        "locked": false
+      }
+    },
+    "R411": {
+      "position": [
+        205.223789,
+        271.848046
+      ],
+      "angle": 67.08168819,
+      "face": "F",
+      "reason": "Resistance de courant IR, proche pad 2 du capteur",
+      "before": {
+        "position": [
+          205.4964,
+          271.6033
+        ],
+        "angle": 90.0,
+        "face": "F",
+        "locked": false
+      }
+    },
+    "R456": {
+      "position": [
+        224.366498,
+        258.94257
+      ],
+      "angle": -120.28491203,
+      "face": "F",
+      "reason": "Resistance serie du temoin au droit de son anode, radialement vers interieur",
+      "before": {
+        "position": [
+          225.5921,
+          263.865799
+        ],
+        "angle": -90.0,
+        "face": "F",
+        "locked": false
+      }
+    },
+    "C412": {
+      "position": [
+        223.863926,
+        263.570736
+      ],
+      "angle": 59.71508797,
+      "face": "F",
+      "reason": "Filtre LINE_11, a proximite pad 4 du capteur; degagement de la LED",
+      "before": {
+        "position": [
+          222.3196,
+          262.6322
+        ],
+        "angle": 90.0,
+        "face": "F",
+        "locked": false
+      }
+    },
+    "R432": {
+      "position": [
+        222.83011,
+        265.340969
+      ],
+      "angle": -120.28491203,
+      "face": "F",
+      "reason": "Charge phototransistor LINE_11, reliee au filtre et proche pad 4",
+      "before": {
+        "position": [
+          222.3196,
+          264.6322
+        ],
+        "angle": -90.0,
+        "face": "F",
+        "locked": false
+      }
+    },
+    "R412": {
+      "position": [
+        220.412231,
+        263.928928
+      ],
+      "angle": 59.71508797,
+      "face": "F",
+      "reason": "Resistance de courant IR, proche pad 2 du capteur",
+      "before": {
+        "position": [
+          220.7652,
+          263.724499
+        ],
+        "angle": 90.0,
+        "face": "F",
+        "locked": false
+      }
+    },
+    "D606": {
+      "position": [
+        155,
+        281.5
+      ],
+      "angle": 90,
+      "face": "F",
+      "reason": "Temoin IHM central recentre entre les deux temoins de ligne",
+      "before": {
+        "position": [
+          152.4,
+          278.8
+        ],
+        "angle": 180.0,
+        "face": "F",
+        "locked": false
+      }
+    },
+    "R615": {
+      "position": [
+        155,
+        278.7
+      ],
+      "angle": -90,
+      "face": "F",
+      "reason": "Resistance du temoin IHM D606",
+      "before": {
+        "position": [
+          151.6125,
+          276.8
+        ],
+        "angle": -90.0,
+        "face": "F",
+        "locked": false
+      }
+    },
+    "Q602": {
+      "position": [
+        163.2,
+        275.9
+      ],
+      "angle": 0,
+      "face": "F",
+      "reason": "Commande du temoin IHM, degagement de D408",
+      "before": {
+        "position": [
+          165.0,
+          278.0
+        ],
+        "angle": 90.0,
+        "face": "F",
+        "locked": false
+      }
+    },
+    "R619": {
+      "position": [
+        160.6,
+        274.95
+      ],
+      "angle": 90,
+      "face": "F",
+      "reason": "Resistance de grille Q602",
+      "before": {
+        "position": [
+          162.05,
+          278.5375
+        ],
+        "angle": 0.0,
+        "face": "F",
+        "locked": false
+      }
+    },
+    "R620": {
+      "position": [
+        162.3,
+        273.2
+      ],
+      "angle": 180,
+      "face": "F",
+      "reason": "Pull-down de grille Q602",
+      "before": {
+        "position": [
+          162.45,
+          279.7375
+        ],
+        "angle": 180.0,
+        "face": "F",
+        "locked": false
+      }
+    }
+  },
+  "associations": [
+    {
+      "index": 0,
+      "sensor": "U401",
+      "sensor_pin": "4",
+      "sensor_net": "LINE_00",
+      "mcu_pin": "34",
+      "mcu_pinfunction": "PA0_34",
+      "led": "D401",
+      "resistor": "R445",
+      "cathode_pin": "1",
+      "anode_pin": "2",
+      "led_net": "/Temoins de ligne/LGN00",
+      "driver": "U105",
+      "driver_channel": 0,
+      "driver_pin": "6"
+    },
+    {
+      "index": 1,
+      "sensor": "U402",
+      "sensor_pin": "4",
+      "sensor_net": "LINE_01",
+      "mcu_pin": "35",
+      "mcu_pinfunction": "PA1_35",
+      "led": "D402",
+      "resistor": "R446",
+      "cathode_pin": "1",
+      "anode_pin": "2",
+      "led_net": "/Temoins de ligne/LGN01",
+      "driver": "U105",
+      "driver_channel": 1,
+      "driver_pin": "7"
+    },
+    {
+      "index": 2,
+      "sensor": "U403",
+      "sensor_pin": "4",
+      "sensor_net": "LINE_02",
+      "mcu_pin": "36",
+      "mcu_pinfunction": "PA2_36",
+      "led": "D403",
+      "resistor": "R447",
+      "cathode_pin": "1",
+      "anode_pin": "2",
+      "led_net": "/Temoins de ligne/LGN02",
+      "driver": "U105",
+      "driver_channel": 2,
+      "driver_pin": "8"
+    },
+    {
+      "index": 3,
+      "sensor": "U404",
+      "sensor_pin": "4",
+      "sensor_net": "LINE_03",
+      "mcu_pin": "37",
+      "mcu_pinfunction": "PA3_37",
+      "led": "D404",
+      "resistor": "R448",
+      "cathode_pin": "1",
+      "anode_pin": "2",
+      "led_net": "/Temoins de ligne/LGN03",
+      "driver": "U105",
+      "driver_channel": 3,
+      "driver_pin": "9"
+    },
+    {
+      "index": 4,
+      "sensor": "U405",
+      "sensor_pin": "4",
+      "sensor_net": "LINE_04",
+      "mcu_pin": "40",
+      "mcu_pinfunction": "PA4_40",
+      "led": "D405",
+      "resistor": "R449",
+      "cathode_pin": "1",
+      "anode_pin": "2",
+      "led_net": "/Temoins de ligne/LGN04",
+      "driver": "U105",
+      "driver_channel": 4,
+      "driver_pin": "10"
+    },
+    {
+      "index": 5,
+      "sensor": "U406",
+      "sensor_pin": "4",
+      "sensor_net": "LINE_05",
+      "mcu_pin": "41",
+      "mcu_pinfunction": "PA5_41",
+      "led": "D406",
+      "resistor": "R450",
+      "cathode_pin": "1",
+      "anode_pin": "2",
+      "led_net": "/Temoins de ligne/LGN05",
+      "driver": "U105",
+      "driver_channel": 5,
+      "driver_pin": "11"
+    },
+    {
+      "index": 6,
+      "sensor": "U407",
+      "sensor_pin": "4",
+      "sensor_net": "LINE_06",
+      "mcu_pin": "42",
+      "mcu_pinfunction": "PA6_42",
+      "led": "D407",
+      "resistor": "R451",
+      "cathode_pin": "1",
+      "anode_pin": "2",
+      "led_net": "/Temoins de ligne/LGN06",
+      "driver": "U105",
+      "driver_channel": 6,
+      "driver_pin": "12"
+    },
+    {
+      "index": 7,
+      "sensor": "U408",
+      "sensor_pin": "4",
+      "sensor_net": "LINE_07",
+      "mcu_pin": "43",
+      "mcu_pinfunction": "PA7_43",
+      "led": "D408",
+      "resistor": "R452",
+      "cathode_pin": "1",
+      "anode_pin": "2",
+      "led_net": "/Temoins de ligne/LGN07",
+      "driver": "U105",
+      "driver_channel": 7,
+      "driver_pin": "13"
+    },
+    {
+      "index": 8,
+      "sensor": "U409",
+      "sensor_pin": "4",
+      "sensor_net": "LINE_08",
+      "mcu_pin": "46",
+      "mcu_pinfunction": "PB0_46",
+      "led": "D409",
+      "resistor": "R453",
+      "cathode_pin": "1",
+      "anode_pin": "2",
+      "led_net": "/Temoins de ligne/LGN08",
+      "driver": "U105",
+      "driver_channel": 8,
+      "driver_pin": "15"
+    },
+    {
+      "index": 9,
+      "sensor": "U410",
+      "sensor_pin": "4",
+      "sensor_net": "LINE_09",
+      "mcu_pin": "47",
+      "mcu_pinfunction": "PB1_47",
+      "led": "D410",
+      "resistor": "R454",
+      "cathode_pin": "1",
+      "anode_pin": "2",
+      "led_net": "/Temoins de ligne/LGN09",
+      "driver": "U105",
+      "driver_channel": 9,
+      "driver_pin": "16"
+    },
+    {
+      "index": 10,
+      "sensor": "U411",
+      "sensor_pin": "4",
+      "sensor_net": "LINE_10",
+      "mcu_pin": "44",
+      "mcu_pinfunction": "PC4_44",
+      "led": "D411",
+      "resistor": "R455",
+      "cathode_pin": "1",
+      "anode_pin": "2",
+      "led_net": "/Temoins de ligne/LGN10",
+      "driver": "U105",
+      "driver_channel": 10,
+      "driver_pin": "17"
+    },
+    {
+      "index": 11,
+      "sensor": "U412",
+      "sensor_pin": "4",
+      "sensor_net": "LINE_11",
+      "mcu_pin": "45",
+      "mcu_pinfunction": "PC5_45",
+      "led": "D412",
+      "resistor": "R456",
+      "cathode_pin": "1",
+      "anode_pin": "2",
+      "led_net": "/Temoins de ligne/LGN11",
+      "driver": "U105",
+      "driver_channel": 11,
+      "driver_pin": "18"
+    }
+  ],
+  "metrics": {
+    "changed_footprints": 65,
+    "changed_locked_footprints": 0,
+    "led_sensor_xy_error_mm": 0,
+    "led_mirror_symmetry_residual_mm": 9.999999974752427e-07,
+    "minimum_courtyard_clearance_mm": 0.21000000000000796,
+    "minimum_courtyard_pair": [
+      "Q602",
+      "R619"
+    ],
+    "minimum_led_courtyard_to_board_edge_mm": 2.4202722100321408,
+    "affected_geometry_violations": [],
+    "pcb_vs_schematic_pair_mapping_mismatches": 0,
+    "pad_distance_ranges_mm": {
+      "sensor4_to_C1": [
+        1.3254799191662658,
+        1.3254814875587777
+      ],
+      "sensor4_to_Rload1": [
+        1.0178889677508844,
+        1.0178905800703728
+      ],
+      "sensor2_to_RIR2": [
+        0.18999939630430163,
+        0.1900005792201791
+      ],
+      "led2_to_RLED2": [
+        1.5024961756789565,
+        1.5025008484556734
+      ]
+    },
+    "native_drc_new_copper_or_courtyard_errors": 0,
+    "native_schematic_parity_mismatches": 0
+  },
+  "limitations": [
+    "LEDs are controlled by PCA9685 U105; LINE_i -> LGNi functional association must be respected by firmware (no direct analog wire).",
+    "Native KiCad DRC and full assembly 3D inspection must still be run on the merged board.",
+    "Two pre-existing Bottom sensor end courtyards extend past board outline; locked sensors preserved."
+  ]
+}

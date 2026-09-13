@@ -1,0 +1,1290 @@
+{
+  "C201": {
+    "group": "MCU_VDD",
+    "anchor_ref": "U201",
+    "priority": 10,
+    "note": "100nF local dédié VDD. Pad1 dirigé vers broche, pad2 masse via directe; réserver escape des IO voisines.",
+    "anchor_pin": "17",
+    "pin": "1"
+  },
+  "C202": {
+    "group": "MCU_VDD",
+    "anchor_ref": "U201",
+    "priority": 10,
+    "note": "100nF local dédié VDD. Pad1 dirigé vers broche, pad2 masse via directe; réserver escape des IO voisines.",
+    "anchor_pin": "30",
+    "pin": "1"
+  },
+  "C203": {
+    "group": "MCU_VDD",
+    "anchor_ref": "U201",
+    "priority": 10,
+    "note": "100nF local dédié VDD. Pad1 dirigé vers broche, pad2 masse via directe; réserver escape des IO voisines.",
+    "anchor_pin": "39",
+    "pin": "1"
+  },
+  "C204": {
+    "group": "MCU_VDD",
+    "anchor_ref": "U201",
+    "priority": 10,
+    "note": "100nF local dédié VDD. Pad1 dirigé vers broche, pad2 masse via directe; réserver escape des IO voisines.",
+    "anchor_pin": "52",
+    "pin": "1"
+  },
+  "C205": {
+    "group": "MCU_VDD",
+    "anchor_ref": "U201",
+    "priority": 10,
+    "note": "100nF local dédié VDD. Pad1 dirigé vers broche, pad2 masse via directe; réserver escape des IO voisines.",
+    "anchor_pin": "62",
+    "pin": "1"
+  },
+  "C207": {
+    "group": "MCU_VDD",
+    "anchor_ref": "U201",
+    "priority": 10,
+    "note": "100nF local dédié VDD. Pad1 dirigé vers broche, pad2 masse via directe; réserver escape des IO voisines.",
+    "anchor_pin": "72",
+    "pin": "1"
+  },
+  "C217": {
+    "group": "MCU_VDD",
+    "anchor_ref": "U201",
+    "priority": 10,
+    "note": "100nF local dédié VDD. Pad1 dirigé vers broche, pad2 masse via directe; réserver escape des IO voisines.",
+    "anchor_pin": "84",
+    "pin": "1"
+  },
+  "C218": {
+    "group": "MCU_VDD",
+    "anchor_ref": "U201",
+    "priority": 10,
+    "note": "100nF local dédié VDD. Pad1 dirigé vers broche, pad2 masse via directe; réserver escape des IO voisines.",
+    "anchor_pin": "108",
+    "pin": "1"
+  },
+  "C219": {
+    "group": "MCU_VDD",
+    "anchor_ref": "U201",
+    "priority": 10,
+    "note": "100nF local dédié VDD. Pad1 dirigé vers broche, pad2 masse via directe; réserver escape des IO voisines.",
+    "anchor_pin": "121",
+    "pin": "1"
+  },
+  "C220": {
+    "group": "MCU_VDD",
+    "anchor_ref": "U201",
+    "priority": 10,
+    "note": "100nF local dédié VDD. Pad1 dirigé vers broche, pad2 masse via directe; réserver escape des IO voisines.",
+    "anchor_pin": "131",
+    "pin": "1"
+  },
+  "C221": {
+    "group": "MCU_VDD",
+    "anchor_ref": "U201",
+    "priority": 10,
+    "note": "100nF local dédié VDD. Pad1 dirigé vers broche, pad2 masse via directe; réserver escape des IO voisines.",
+    "anchor_pin": "144",
+    "pin": "1"
+  },
+  "C206": {
+    "group": "MCU_VDD",
+    "anchor_ref": "U201",
+    "priority": 8,
+    "note": "4.7uF réservoir VDD placé près VBAT faute découplage VBAT distinct; voir recommandation C223/C224 dans rapport.",
+    "anchor_pin": "6",
+    "pin": "1"
+  },
+  "C208": {
+    "group": "MCU_analog",
+    "anchor_ref": "U201",
+    "priority": 10,
+    "note": "VDDA/VREF local",
+    "anchor_pin": "33",
+    "pin": "1"
+  },
+  "C209": {
+    "group": "MCU_analog",
+    "anchor_ref": "U201",
+    "priority": 9,
+    "note": "VDDA/VREF local",
+    "anchor_pin": "33",
+    "pin": "1"
+  },
+  "C210": {
+    "group": "MCU_analog",
+    "anchor_ref": "U201",
+    "priority": 10,
+    "note": "VDDA/VREF local",
+    "anchor_pin": "32",
+    "pin": "1"
+  },
+  "C211": {
+    "group": "MCU_analog",
+    "anchor_ref": "U201",
+    "priority": 9,
+    "note": "VDDA/VREF local",
+    "anchor_pin": "32",
+    "pin": "1"
+  },
+  "C222": {
+    "group": "MCU_supply_reset",
+    "anchor_ref": "U201",
+    "priority": 10,
+    "note": "Découplage local broche précise; VCAP C212/C213 ne sont pas +3V3.",
+    "anchor_pin": "95",
+    "pin": "1"
+  },
+  "C212": {
+    "group": "MCU_supply_reset",
+    "anchor_ref": "U201",
+    "priority": 10,
+    "note": "Découplage local broche précise; VCAP C212/C213 ne sont pas +3V3.",
+    "anchor_pin": "71",
+    "pin": "1"
+  },
+  "C213": {
+    "group": "MCU_supply_reset",
+    "anchor_ref": "U201",
+    "priority": 10,
+    "note": "Découplage local broche précise; VCAP C212/C213 ne sont pas +3V3.",
+    "anchor_pin": "106",
+    "pin": "1"
+  },
+  "C214": {
+    "group": "MCU_supply_reset",
+    "anchor_ref": "U201",
+    "priority": 10,
+    "note": "Découplage local broche précise; VCAP C212/C213 ne sont pas +3V3.",
+    "anchor_pin": "25",
+    "pin": "1"
+  },
+  "R201": {
+    "group": "MCU_reset",
+    "anchor_ref": "U201",
+    "priority": 7,
+    "note": "Pullup NRST; C214 doit être encore plus près U201 que R201. SW603 reste verrouillé.",
+    "anchor_pin": "25",
+    "pin": "2"
+  },
+  "R202": {
+    "group": "MCU_boot",
+    "anchor_ref": "U201",
+    "priority": 7,
+    "note": "Pulldown BOOT0",
+    "anchor_pin": "138",
+    "pin": "1"
+  },
+  "R203": {
+    "group": "MCU_boot",
+    "anchor_ref": "U201",
+    "priority": 6,
+    "note": "Pullup BOOT0 option non montée selon schéma",
+    "anchor_pin": "138",
+    "pin": "2"
+  },
+  "Y201": {
+    "group": "MCU_clock",
+    "anchor_ref": "U201",
+    "priority": 10,
+    "note": "Regrouper quartz C215 C216 R204 contre pins23/24; pas de signaux rapides traversant boucle.",
+    "anchor_pin": "23",
+    "pin": "1"
+  },
+  "R204": {
+    "group": "MCU_clock",
+    "anchor_ref": "U201",
+    "priority": 10,
+    "note": "Série OSC_OUT côté source STM32; pin1 rejoint Y201.3",
+    "anchor_pin": "24",
+    "pin": "2"
+  },
+  "C215": {
+    "group": "MCU_clock",
+    "anchor_ref": "Y201",
+    "priority": 10,
+    "note": "Charge quartz OSC_IN; masse commune courte",
+    "anchor_pin": "1",
+    "pin": "1"
+  },
+  "C216": {
+    "group": "MCU_clock",
+    "anchor_ref": "Y201",
+    "priority": 10,
+    "note": "Charge quartz XTAL_OUT; masse commune courte",
+    "anchor_pin": "3",
+    "pin": "1"
+  },
+  "R101": {
+    "group": "USB",
+    "anchor_ref": "J101",
+    "priority": 8,
+    "note": "Terminaison CC au connecteur, pad2 GND",
+    "anchor_pin": "A5",
+    "pin": "1"
+  },
+  "R102": {
+    "group": "USB",
+    "anchor_ref": "J101",
+    "priority": 8,
+    "note": "Terminaison CC au connecteur, pad2 GND",
+    "anchor_pin": "B5",
+    "pin": "1"
+  },
+  "U101": {
+    "group": "USB",
+    "anchor_ref": "J101",
+    "priority": 9,
+    "note": "ESD entre USB connecteur et STM32, pins1/3 côté J101; pins6/4 côté MCU. Si J101 au nord, angle -90 donne ports1/3 au nord et4/6 au sud.",
+    "anchor_pin": "A6",
+    "pin": "1"
+  },
+  "C101": {
+    "group": "charger_input",
+    "anchor_ref": "U102",
+    "priority": 9,
+    "note": "VBUS bypass 1uF, près VBUS et GND",
+    "anchor_pin": "23",
+    "pin": "1"
+  },
+  "C102": {
+    "group": "charger",
+    "anchor_ref": "U102",
+    "priority": 10,
+    "note": "Découplage PMID",
+    "anchor_pin": "21",
+    "pin": "1"
+  },
+  "C103": {
+    "group": "charger",
+    "anchor_ref": "U102",
+    "priority": 10,
+    "note": "Découplage PMID",
+    "anchor_pin": "22",
+    "pin": "1"
+  },
+  "C106": {
+    "group": "charger",
+    "anchor_ref": "U102",
+    "priority": 10,
+    "note": "Découplage SNS prioritaire",
+    "anchor_pin": "15",
+    "pin": "1"
+  },
+  "C107": {
+    "group": "charger",
+    "anchor_ref": "U102",
+    "priority": 10,
+    "note": "Découplage SNS prioritaire",
+    "anchor_pin": "16",
+    "pin": "1"
+  },
+  "C108": {
+    "group": "charger",
+    "anchor_ref": "U102",
+    "priority": 8,
+    "note": "BAT reservoir",
+    "anchor_pin": "13",
+    "pin": "1"
+  },
+  "C105": {
+    "group": "charger",
+    "anchor_ref": "U102",
+    "priority": 10,
+    "note": "REGN bypass",
+    "anchor_pin": "11",
+    "pin": "1"
+  },
+  "C104": {
+    "group": "charger",
+    "anchor_ref": "U102",
+    "priority": 10,
+    "note": "Bootstrap BTST-SW: pad2 vers pins17/18, très petit circuit fermé",
+    "anchor_pin": "12",
+    "pin": "1"
+  },
+  "L101": {
+    "group": "charger",
+    "anchor_ref": "U102",
+    "priority": 10,
+    "note": "Inductance SW/PMID: pad2 SW vers17/18; pad1 vers21/22 et C102/C103, boucle compacte",
+    "anchor_pin": "17",
+    "pin": "2"
+  },
+  "R103": {
+    "group": "charger",
+    "anchor_ref": "U102",
+    "priority": 7,
+    "note": "ILIM programmation",
+    "anchor_pin": "8",
+    "pin": "1"
+  },
+  "R104": {
+    "group": "charger",
+    "anchor_ref": "U102",
+    "priority": 7,
+    "note": "TS pont côté REGN",
+    "anchor_pin": "7",
+    "pin": "2"
+  },
+  "R105": {
+    "group": "charger",
+    "anchor_ref": "U102",
+    "priority": 7,
+    "note": "TS pont côté GND",
+    "anchor_pin": "7",
+    "pin": "1"
+  },
+  "R106": {
+    "group": "charger",
+    "anchor_ref": "U102",
+    "priority": 7,
+    "note": "Mesure MID après série300R; à proximité MID CI, trajet PACK_MID séparé du SW",
+    "anchor_pin": "9",
+    "pin": "2"
+  },
+  "R107": {
+    "group": "charger",
+    "anchor_ref": "U102",
+    "priority": 7,
+    "note": "Résistance équilibrage10R forte dissipation, CBSET; ne pas coller aux autres passifs thermosensibles",
+    "anchor_pin": "10",
+    "pin": "2"
+  },
+  "R108": {
+    "group": "charger",
+    "anchor_ref": "U102",
+    "priority": 7,
+    "note": "Pullup STAT",
+    "anchor_pin": "2",
+    "pin": "2"
+  },
+  "R109": {
+    "group": "charger",
+    "anchor_ref": "U102",
+    "priority": 7,
+    "note": "Pullup PG",
+    "anchor_pin": "1",
+    "pin": "2"
+  },
+  "R111": {
+    "group": "charger",
+    "anchor_ref": "U102",
+    "priority": 7,
+    "note": "Pullup CD",
+    "anchor_pin": "3",
+    "pin": "2"
+  },
+  "D101": {
+    "group": "charger_led",
+    "anchor_ref": "U102",
+    "priority": 4,
+    "note": "Témoin STAT facultatif visuel près USB",
+    "anchor_pin": "2",
+    "pin": "1"
+  },
+  "R110": {
+    "group": "charger_led",
+    "anchor_ref": "D101",
+    "priority": 5,
+    "note": "Limitation courant LED",
+    "anchor_pin": "2",
+    "pin": "2"
+  },
+  "Q101": {
+    "group": "charger_control",
+    "anchor_ref": "U102",
+    "priority": 6,
+    "note": "Transistor commande CD chargeur",
+    "anchor_pin": "3",
+    "pin": "3"
+  },
+  "R112": {
+    "group": "charger_control",
+    "anchor_ref": "Q101",
+    "priority": 8,
+    "note": "Série grille et pulldown locaux",
+    "anchor_pin": "1",
+    "pin": "2"
+  },
+  "R113": {
+    "group": "charger_control",
+    "anchor_ref": "Q101",
+    "priority": 8,
+    "note": "Série grille et pulldown locaux",
+    "anchor_pin": "1",
+    "pin": "1"
+  },
+  "Q104": {
+    "group": "main_power",
+    "anchor_ref": "Q102",
+    "priority": 8,
+    "note": "Commande commune PWR_G Q102/Q103: près des gates côté x197.925",
+    "anchor_pin": "4",
+    "pin": "3"
+  },
+  "C123": {
+    "group": "main_power",
+    "anchor_ref": "Q102",
+    "priority": 8,
+    "note": "Commande commune PWR_G Q102/Q103: près des gates côté x197.925",
+    "anchor_pin": "4",
+    "pin": "1"
+  },
+  "R114": {
+    "group": "main_power",
+    "anchor_ref": "Q102",
+    "priority": 8,
+    "note": "Commande commune PWR_G Q102/Q103: près des gates côté x197.925",
+    "anchor_pin": "4",
+    "pin": "1"
+  },
+  "D106": {
+    "group": "main_power",
+    "anchor_ref": "Q102",
+    "priority": 8,
+    "note": "Commande commune PWR_G Q102/Q103: près des gates côté x197.925",
+    "anchor_pin": "4",
+    "pin": "1"
+  },
+  "F101": {
+    "group": "main_power",
+    "anchor_ref": "Q102",
+    "priority": 8,
+    "note": "Fusible VPACK vers sources MOSFET, côté entrée gauche",
+    "anchor_pin": "1",
+    "pin": "2"
+  },
+  "C109": {
+    "group": "main_power",
+    "anchor_ref": "Q103",
+    "priority": 8,
+    "note": "Réservoir / TVS sur VBAT côté drains, dégager cuivre haute intensité",
+    "anchor_pin": "5",
+    "pin": "1"
+  },
+  "C110": {
+    "group": "main_power",
+    "anchor_ref": "Q103",
+    "priority": 8,
+    "note": "Réservoir / TVS sur VBAT côté drains, dégager cuivre haute intensité",
+    "anchor_pin": "5",
+    "pin": "1"
+  },
+  "D102": {
+    "group": "main_power",
+    "anchor_ref": "Q103",
+    "priority": 9,
+    "note": "Réservoir / TVS sur VBAT côté drains, dégager cuivre haute intensité",
+    "anchor_pin": "5",
+    "pin": "1"
+  },
+  "R124": {
+    "group": "main_power_control",
+    "anchor_ref": "Q104",
+    "priority": 8,
+    "note": "Série grille/pulldown locaux",
+    "anchor_pin": "1",
+    "pin": "2"
+  },
+  "R126": {
+    "group": "main_power_control",
+    "anchor_ref": "Q104",
+    "priority": 8,
+    "note": "Série grille/pulldown locaux",
+    "anchor_pin": "1",
+    "pin": "1"
+  },
+  "SW101": {
+    "group": "main_power_control",
+    "anchor_ref": "Q104",
+    "priority": 3,
+    "note": "Bouton marche arrêt accès opérateur, hors mécanique",
+    "anchor_pin": "3",
+    "pin": "1"
+  },
+  "R125": {
+    "group": "main_power_control",
+    "anchor_ref": "SW101",
+    "priority": 6,
+    "note": "Pullup bouton sur VBAT_SW_IN",
+    "anchor_pin": "1",
+    "pin": "2"
+  },
+  "R127": {
+    "group": "power_button_filter",
+    "anchor_ref": "U201",
+    "priority": 6,
+    "note": "Pont/filtre PWR_BTN à récepteur MCU; BTN_N peut être long",
+    "anchor_pin": "142",
+    "pin": "2"
+  },
+  "R128": {
+    "group": "power_button_filter",
+    "anchor_ref": "U201",
+    "priority": 6,
+    "note": "Pont/filtre PWR_BTN à récepteur MCU; BTN_N peut être long",
+    "anchor_pin": "142",
+    "pin": "1"
+  },
+  "C122": {
+    "group": "power_button_filter",
+    "anchor_ref": "U201",
+    "priority": 8,
+    "note": "Pont/filtre PWR_BTN à récepteur MCU; BTN_N peut être long",
+    "anchor_pin": "142",
+    "pin": "1"
+  },
+  "R119": {
+    "group": "battery_ADC",
+    "anchor_ref": "U201",
+    "priority": 8,
+    "note": "Pont/filtre VBAT_SENSE entier côté ADC; prélever VBAT par piste sense séparée puissance",
+    "anchor_pin": "26",
+    "pin": "2"
+  },
+  "R120": {
+    "group": "battery_ADC",
+    "anchor_ref": "U201",
+    "priority": 8,
+    "note": "Pont/filtre VBAT_SENSE entier côté ADC; prélever VBAT par piste sense séparée puissance",
+    "anchor_pin": "26",
+    "pin": "1"
+  },
+  "C121": {
+    "group": "battery_ADC",
+    "anchor_ref": "U201",
+    "priority": 10,
+    "note": "Pont/filtre VBAT_SENSE entier côté ADC; prélever VBAT par piste sense séparée puissance",
+    "anchor_pin": "26",
+    "pin": "1"
+  },
+  "C111": {
+    "group": "buck",
+    "anchor_ref": "U103",
+    "priority": 9,
+    "note": "VIN-GND boucle entrée minimale; C113 au plus près pins3/4",
+    "anchor_pin": "3",
+    "pin": "1"
+  },
+  "C112": {
+    "group": "buck",
+    "anchor_ref": "U103",
+    "priority": 9,
+    "note": "VIN-GND boucle entrée minimale; C113 au plus près pins3/4",
+    "anchor_pin": "3",
+    "pin": "1"
+  },
+  "C113": {
+    "group": "buck",
+    "anchor_ref": "U103",
+    "priority": 10,
+    "note": "VIN-GND boucle entrée minimale; C113 au plus près pins3/4",
+    "anchor_pin": "3",
+    "pin": "1"
+  },
+  "C114": {
+    "group": "buck",
+    "anchor_ref": "U103",
+    "priority": 10,
+    "note": "Bootstrap pad1 BST6 et pad2 SW5, adjacent côté SW",
+    "anchor_pin": "6",
+    "pin": "1"
+  },
+  "L102": {
+    "group": "buck",
+    "anchor_ref": "U103",
+    "priority": 10,
+    "note": "Inductance pad1 SW5 au plus près; pad2 +3V3 vers sortie",
+    "anchor_pin": "5",
+    "pin": "1"
+  },
+  "C116": {
+    "group": "buck",
+    "anchor_ref": "L102",
+    "priority": 9,
+    "note": "Sortie22uF après inductance, boucle retour GND vers entrée/CI compacte",
+    "anchor_pin": "2",
+    "pin": "1"
+  },
+  "C117": {
+    "group": "buck",
+    "anchor_ref": "L102",
+    "priority": 9,
+    "note": "Sortie22uF après inductance, boucle retour GND vers entrée/CI compacte",
+    "anchor_pin": "2",
+    "pin": "1"
+  },
+  "C115": {
+    "group": "buck_quiet",
+    "anchor_ref": "U103",
+    "priority": 9,
+    "note": "SS10nF côté calme, loin cuivre SW/L102",
+    "anchor_pin": "7",
+    "pin": "1"
+  },
+  "R116": {
+    "group": "buck_quiet",
+    "anchor_ref": "U103",
+    "priority": 8,
+    "note": "Réglage RT proche pin1, loin SW",
+    "anchor_pin": "1",
+    "pin": "1"
+  },
+  "R115": {
+    "group": "buck_quiet",
+    "anchor_ref": "U103",
+    "priority": 7,
+    "note": "Pullup EN",
+    "anchor_pin": "2",
+    "pin": "2"
+  },
+  "R117": {
+    "group": "buck_feedback",
+    "anchor_ref": "U103",
+    "priority": 10,
+    "note": "FB pont haut, prélèvement Kelvin sortie +3V3 après C116/C117, hors SW",
+    "anchor_pin": "8",
+    "pin": "2"
+  },
+  "R118": {
+    "group": "buck_feedback",
+    "anchor_ref": "U103",
+    "priority": 10,
+    "note": "FB pont bas près pin8, masse calme du CI",
+    "anchor_pin": "8",
+    "pin": "1"
+  },
+  "FB101": {
+    "group": "analog_rail",
+    "anchor_ref": "U201",
+    "priority": 8,
+    "note": "Placer à entrée domaine analogique près VDDA et départ AOP, pas à côté inductance buck",
+    "anchor_pin": "33",
+    "pin": "2"
+  },
+  "C118": {
+    "group": "analog_rail",
+    "anchor_ref": "FB101",
+    "priority": 9,
+    "note": "Découplage avant ferrite +3V3",
+    "anchor_pin": "1",
+    "pin": "1"
+  },
+  "C119": {
+    "group": "analog_rail",
+    "anchor_ref": "FB101",
+    "priority": 9,
+    "note": "Filtrage après ferrite +3V3A, GND continue, forme filtre compact",
+    "anchor_pin": "2",
+    "pin": "1"
+  },
+  "C120": {
+    "group": "analog_rail",
+    "anchor_ref": "FB101",
+    "priority": 9,
+    "note": "Filtrage après ferrite +3V3A, GND continue, forme filtre compact",
+    "anchor_pin": "2",
+    "pin": "1"
+  },
+  "C303": {
+    "group": "motor_left",
+    "anchor_ref": "U301",
+    "priority": 10,
+    "note": "Bypass VM-PGND près pins11/9, nord du CI",
+    "anchor_pin": "11",
+    "pin": "1"
+  },
+  "C304": {
+    "group": "motor_left",
+    "anchor_ref": "U301",
+    "priority": 9,
+    "note": "Bulk VM proche mais après céramique; réserve cuivre puissance",
+    "anchor_pin": "11",
+    "pin": "1"
+  },
+  "C305": {
+    "group": "motor_left",
+    "anchor_ref": "U301",
+    "priority": 10,
+    "note": "Réserve pompe VCP-VM pins12/11",
+    "anchor_pin": "12",
+    "pin": "1"
+  },
+  "C306": {
+    "group": "motor_left",
+    "anchor_ref": "U301",
+    "priority": 10,
+    "note": "Flying capacitor CPH-CPL pins13/14 pad1 vers13 pad2 vers14",
+    "anchor_pin": "13",
+    "pin": "1"
+  },
+  "R303": {
+    "group": "motor_left",
+    "anchor_ref": "U301",
+    "priority": 7,
+    "note": "Pulldown nSLEEP",
+    "anchor_pin": "3",
+    "pin": "1"
+  },
+  "R304": {
+    "group": "motor_left",
+    "anchor_ref": "U301",
+    "priority": 6,
+    "note": "Pullup nFAULT",
+    "anchor_pin": "4",
+    "pin": "2"
+  },
+  "R305": {
+    "group": "motor_left",
+    "anchor_ref": "U301",
+    "priority": 8,
+    "note": "Mode courant IMODE",
+    "anchor_pin": "7",
+    "pin": "1"
+  },
+  "R306": {
+    "group": "motor_left",
+    "anchor_ref": "U301",
+    "priority": 8,
+    "note": "PMODE pullup",
+    "anchor_pin": "16",
+    "pin": "2"
+  },
+  "R307": {
+    "group": "motor_left",
+    "anchor_ref": "U301",
+    "priority": 10,
+    "note": "RIPROPI1k conversion courant, sensible près pin6, retour GND calme",
+    "anchor_pin": "6",
+    "pin": "1"
+  },
+  "C307": {
+    "group": "motor_left",
+    "anchor_ref": "J301",
+    "priority": 9,
+    "note": "Condensateur suppression parasites entre les sorties moteur au connecteur; boucle entre pads2/1 courte",
+    "anchor_pin": "2",
+    "pin": "1"
+  },
+  "R308": {
+    "group": "motor_left_ADC",
+    "anchor_ref": "U201",
+    "priority": 9,
+    "note": "Filtre courant 100R série proche récepteur ADC, relié à RIPROPI par signal basse impédance",
+    "anchor_pin": "49",
+    "pin": "2"
+  },
+  "C302": {
+    "group": "motor_left_ADC",
+    "anchor_ref": "U201",
+    "priority": 10,
+    "note": "C1nF de filtrage après100R juste avant entrée ADC, GND calme",
+    "anchor_pin": "49",
+    "pin": "1"
+  },
+  "R309": {
+    "group": "motor_left_encoder",
+    "anchor_ref": "J301",
+    "priority": 7,
+    "note": "Série100R encodeur placé sortie connecteur; paire RC compacte hors puissance",
+    "anchor_pin": "6",
+    "pin": "1"
+  },
+  "C308": {
+    "group": "motor_left_encoder",
+    "anchor_ref": "R309",
+    "priority": 8,
+    "note": "1nF après résistance100R, pin2 GND",
+    "anchor_pin": "2",
+    "pin": "1"
+  },
+  "R310": {
+    "group": "motor_left_encoder",
+    "anchor_ref": "J301",
+    "priority": 7,
+    "note": "Série100R encodeur placé sortie connecteur; paire RC compacte hors puissance",
+    "anchor_pin": "5",
+    "pin": "1"
+  },
+  "C309": {
+    "group": "motor_left_encoder",
+    "anchor_ref": "R310",
+    "priority": 8,
+    "note": "1nF après résistance100R, pin2 GND",
+    "anchor_pin": "2",
+    "pin": "1"
+  },
+  "C353": {
+    "group": "motor_right",
+    "anchor_ref": "U351",
+    "priority": 10,
+    "note": "Bypass VM-PGND près pins11/9, nord du CI",
+    "anchor_pin": "11",
+    "pin": "1"
+  },
+  "C354": {
+    "group": "motor_right",
+    "anchor_ref": "U351",
+    "priority": 9,
+    "note": "Bulk VM proche mais après céramique; réserve cuivre puissance",
+    "anchor_pin": "11",
+    "pin": "1"
+  },
+  "C355": {
+    "group": "motor_right",
+    "anchor_ref": "U351",
+    "priority": 10,
+    "note": "Réserve pompe VCP-VM pins12/11",
+    "anchor_pin": "12",
+    "pin": "1"
+  },
+  "C356": {
+    "group": "motor_right",
+    "anchor_ref": "U351",
+    "priority": 10,
+    "note": "Flying capacitor CPH-CPL pins13/14 pad1 vers13 pad2 vers14",
+    "anchor_pin": "13",
+    "pin": "1"
+  },
+  "R353": {
+    "group": "motor_right",
+    "anchor_ref": "U351",
+    "priority": 7,
+    "note": "Pulldown nSLEEP",
+    "anchor_pin": "3",
+    "pin": "1"
+  },
+  "R354": {
+    "group": "motor_right",
+    "anchor_ref": "U351",
+    "priority": 6,
+    "note": "Pullup nFAULT",
+    "anchor_pin": "4",
+    "pin": "2"
+  },
+  "R355": {
+    "group": "motor_right",
+    "anchor_ref": "U351",
+    "priority": 8,
+    "note": "Mode courant IMODE",
+    "anchor_pin": "7",
+    "pin": "1"
+  },
+  "R356": {
+    "group": "motor_right",
+    "anchor_ref": "U351",
+    "priority": 8,
+    "note": "PMODE pullup",
+    "anchor_pin": "16",
+    "pin": "2"
+  },
+  "R357": {
+    "group": "motor_right",
+    "anchor_ref": "U351",
+    "priority": 10,
+    "note": "RIPROPI1k conversion courant, sensible près pin6, retour GND calme",
+    "anchor_pin": "6",
+    "pin": "1"
+  },
+  "C357": {
+    "group": "motor_right",
+    "anchor_ref": "J351",
+    "priority": 9,
+    "note": "Condensateur suppression parasites entre les sorties moteur au connecteur; boucle entre pads2/1 courte",
+    "anchor_pin": "2",
+    "pin": "1"
+  },
+  "R358": {
+    "group": "motor_right_ADC",
+    "anchor_ref": "U201",
+    "priority": 9,
+    "note": "Filtre courant 100R série proche récepteur ADC, relié à RIPROPI par signal basse impédance",
+    "anchor_pin": "53",
+    "pin": "2"
+  },
+  "C352": {
+    "group": "motor_right_ADC",
+    "anchor_ref": "U201",
+    "priority": 10,
+    "note": "C1nF de filtrage après100R juste avant entrée ADC, GND calme",
+    "anchor_pin": "53",
+    "pin": "1"
+  },
+  "R359": {
+    "group": "motor_right_encoder",
+    "anchor_ref": "J351",
+    "priority": 7,
+    "note": "Série100R encodeur placé sortie connecteur; paire RC compacte hors puissance",
+    "anchor_pin": "6",
+    "pin": "1"
+  },
+  "C358": {
+    "group": "motor_right_encoder",
+    "anchor_ref": "R359",
+    "priority": 8,
+    "note": "1nF après résistance100R, pin2 GND",
+    "anchor_pin": "2",
+    "pin": "1"
+  },
+  "R360": {
+    "group": "motor_right_encoder",
+    "anchor_ref": "J351",
+    "priority": 7,
+    "note": "Série100R encodeur placé sortie connecteur; paire RC compacte hors puissance",
+    "anchor_pin": "5",
+    "pin": "1"
+  },
+  "C359": {
+    "group": "motor_right_encoder",
+    "anchor_ref": "R360",
+    "priority": 8,
+    "note": "1nF après résistance100R, pin2 GND",
+    "anchor_pin": "2",
+    "pin": "1"
+  },
+  "R301": {
+    "group": "motor_reference",
+    "anchor_ref": "U301",
+    "priority": 7,
+    "note": "Référence moteurs commune (drivers distants107mm); recommander ajout C351100nF près U351.5",
+    "anchor_pin": "5",
+    "pin": "2"
+  },
+  "R302": {
+    "group": "motor_reference",
+    "anchor_ref": "U301",
+    "priority": 7,
+    "note": "Référence moteurs commune (drivers distants107mm); recommander ajout C351100nF près U351.5",
+    "anchor_pin": "5",
+    "pin": "1"
+  },
+  "C301": {
+    "group": "motor_reference",
+    "anchor_ref": "U301",
+    "priority": 9,
+    "note": "Référence moteurs commune (drivers distants107mm); recommander ajout C351100nF près U351.5",
+    "anchor_pin": "5",
+    "pin": "1"
+  },
+  "R603": {
+    "group": "joystick",
+    "anchor_ref": "SW601",
+    "priority": 6,
+    "note": "Pullup10k bouton, voisin cap filtre",
+    "anchor_pin": "1",
+    "pin": "2"
+  },
+  "C601": {
+    "group": "joystick",
+    "anchor_ref": "SW601",
+    "priority": 8,
+    "note": "Filtre anti-rebond100nF, petites paires locales autour switch sans obstruer mécanique joystick",
+    "anchor_pin": "1",
+    "pin": "1"
+  },
+  "R604": {
+    "group": "joystick",
+    "anchor_ref": "SW601",
+    "priority": 6,
+    "note": "Pullup10k bouton, voisin cap filtre",
+    "anchor_pin": "2",
+    "pin": "2"
+  },
+  "C602": {
+    "group": "joystick",
+    "anchor_ref": "SW601",
+    "priority": 8,
+    "note": "Filtre anti-rebond100nF, petites paires locales autour switch sans obstruer mécanique joystick",
+    "anchor_pin": "2",
+    "pin": "1"
+  },
+  "R605": {
+    "group": "joystick",
+    "anchor_ref": "SW601",
+    "priority": 6,
+    "note": "Pullup10k bouton, voisin cap filtre",
+    "anchor_pin": "3",
+    "pin": "2"
+  },
+  "C603": {
+    "group": "joystick",
+    "anchor_ref": "SW601",
+    "priority": 8,
+    "note": "Filtre anti-rebond100nF, petites paires locales autour switch sans obstruer mécanique joystick",
+    "anchor_pin": "3",
+    "pin": "1"
+  },
+  "R606": {
+    "group": "joystick",
+    "anchor_ref": "SW601",
+    "priority": 6,
+    "note": "Pullup10k bouton, voisin cap filtre",
+    "anchor_pin": "4",
+    "pin": "2"
+  },
+  "C604": {
+    "group": "joystick",
+    "anchor_ref": "SW601",
+    "priority": 8,
+    "note": "Filtre anti-rebond100nF, petites paires locales autour switch sans obstruer mécanique joystick",
+    "anchor_pin": "4",
+    "pin": "1"
+  },
+  "R607": {
+    "group": "joystick",
+    "anchor_ref": "SW601",
+    "priority": 6,
+    "note": "Pullup10k bouton, voisin cap filtre",
+    "anchor_pin": "5",
+    "pin": "2"
+  },
+  "C605": {
+    "group": "joystick",
+    "anchor_ref": "SW601",
+    "priority": 8,
+    "note": "Filtre anti-rebond100nF, petites paires locales autour switch sans obstruer mécanique joystick",
+    "anchor_pin": "5",
+    "pin": "1"
+  },
+  "R608": {
+    "group": "start_button",
+    "anchor_ref": "SW602",
+    "priority": 6,
+    "note": "Pullup START",
+    "anchor_pin": "1",
+    "pin": "2"
+  },
+  "C606": {
+    "group": "start_button",
+    "anchor_ref": "SW602",
+    "priority": 8,
+    "note": "Filtre START",
+    "anchor_pin": "1",
+    "pin": "1"
+  },
+  "R601": {
+    "group": "I2C",
+    "anchor_ref": "J601",
+    "priority": 6,
+    "note": "Pullup bus I2C partagé chargeur OLED LEDs, près branche numérique de J601",
+    "anchor_pin": "4",
+    "pin": "2"
+  },
+  "R602": {
+    "group": "I2C",
+    "anchor_ref": "J601",
+    "priority": 6,
+    "note": "Pullup bus I2C partagé chargeur OLED LEDs, près branche numérique de J601",
+    "anchor_pin": "3",
+    "pin": "2"
+  },
+  "Q601": {
+    "group": "buzzer",
+    "anchor_ref": "BZ601",
+    "priority": 8,
+    "note": "Boucle courant buzzer compacte",
+    "anchor_pin": "2",
+    "pin": "3"
+  },
+  "D601": {
+    "group": "buzzer",
+    "anchor_ref": "BZ601",
+    "priority": 9,
+    "note": "Roue libre directement entre bornes BZ601 (cathode +3V3)",
+    "anchor_pin": "2",
+    "pin": "2"
+  },
+  "R609": {
+    "group": "buzzer_gate",
+    "anchor_ref": "Q601",
+    "priority": 8,
+    "note": "Série grille après C607",
+    "anchor_pin": "1",
+    "pin": "2"
+  },
+  "R610": {
+    "group": "buzzer_gate",
+    "anchor_ref": "Q601",
+    "priority": 8,
+    "note": "Pulldown grille",
+    "anchor_pin": "1",
+    "pin": "1"
+  },
+  "C607": {
+    "group": "buzzer_gate",
+    "anchor_ref": "R609",
+    "priority": 8,
+    "note": "Couplage AC BUZZER: ce 100nF n est PAS un bypass alimentation",
+    "anchor_pin": "1",
+    "pin": "2"
+  },
+  "D610": {
+    "group": "buzzer_gate",
+    "anchor_ref": "R609",
+    "priority": 8,
+    "note": "Clamp négatif du noeud BZAC vers GND",
+    "anchor_pin": "1",
+    "pin": "1"
+  },
+  "Q602": {
+    "group": "track_lights",
+    "anchor_ref": "U201",
+    "priority": 5,
+    "note": "Commande commune LEDs réparties D606/D608/D609; placer plutôt zone centrale/digitale, pas capteurs analogiques",
+    "anchor_pin": "4",
+    "pin": "1"
+  },
+  "R619": {
+    "group": "track_lights",
+    "anchor_ref": "Q602",
+    "priority": 8,
+    "note": "Série grille/pulldown",
+    "anchor_pin": "1",
+    "pin": "2"
+  },
+  "R620": {
+    "group": "track_lights",
+    "anchor_ref": "Q602",
+    "priority": 8,
+    "note": "Série grille/pulldown",
+    "anchor_pin": "1",
+    "pin": "1"
+  },
+  "R615": {
+    "group": "track_lights",
+    "anchor_ref": "D606",
+    "priority": 7,
+    "note": "Limitation courant LED nez",
+    "anchor_pin": "2",
+    "pin": "2"
+  },
+  "C701": {
+    "group": "flash",
+    "anchor_ref": "U701",
+    "priority": 10,
+    "note": "Bypass flash VCC",
+    "anchor_pin": "8",
+    "pin": "1"
+  },
+  "R701": {
+    "group": "flash",
+    "anchor_ref": "U701",
+    "priority": 7,
+    "note": "Pullup dédié WP/HOLD",
+    "anchor_pin": "3",
+    "pin": "2"
+  },
+  "R702": {
+    "group": "flash",
+    "anchor_ref": "U701",
+    "priority": 7,
+    "note": "Pullup dédié WP/HOLD",
+    "anchor_pin": "7",
+    "pin": "2"
+  },
+  "U701": {
+    "group": "flash",
+    "anchor_ref": "U201",
+    "priority": 8,
+    "note": "Flash proche groupe pins111/112/113/116, CLK6 côté STM32, déduire orientation nets",
+    "anchor_pin": "111",
+    "pin": "6"
+  },
+  "Q701": {
+    "group": "BLE_power",
+    "anchor_ref": "J701",
+    "priority": 7,
+    "note": "Switch rail BLE placé avant réservoir C702/C703",
+    "anchor_pin": "2",
+    "pin": "3"
+  },
+  "Q702": {
+    "group": "BLE_power",
+    "anchor_ref": "Q701",
+    "priority": 7,
+    "note": "Commande NMOS grille PMOS",
+    "anchor_pin": "1",
+    "pin": "3"
+  },
+  "R703": {
+    "group": "BLE_power",
+    "anchor_ref": "Q701",
+    "priority": 7,
+    "note": "Pullup grille PMOS vers source +3V3",
+    "anchor_pin": "1",
+    "pin": "2"
+  },
+  "R704": {
+    "group": "BLE_power",
+    "anchor_ref": "Q702",
+    "priority": 8,
+    "note": "Grille NMOS série100R/pulldown100k",
+    "anchor_pin": "1",
+    "pin": "2"
+  },
+  "R705": {
+    "group": "BLE_power",
+    "anchor_ref": "Q702",
+    "priority": 8,
+    "note": "Grille NMOS série100R/pulldown100k",
+    "anchor_pin": "1",
+    "pin": "1"
+  },
+  "C702": {
+    "group": "BLE_power",
+    "anchor_ref": "J701",
+    "priority": 8,
+    "note": "Réservoir BLE à arrivée module pins2(+)/1(GND)",
+    "anchor_pin": "2",
+    "pin": "1"
+  },
+  "C703": {
+    "group": "BLE_power",
+    "anchor_ref": "J701",
+    "priority": 10,
+    "note": "Réservoir BLE à arrivée module pins2(+)/1(GND)",
+    "anchor_pin": "2",
+    "pin": "1"
+  },
+  "D701": {
+    "group": "BLE_indicator",
+    "anchor_ref": "J701",
+    "priority": 3,
+    "note": "Témoin BLE près module",
+    "anchor_pin": "2",
+    "pin": "2"
+  },
+  "R706": {
+    "group": "BLE_indicator",
+    "anchor_ref": "D701",
+    "priority": 6,
+    "note": "Résistance LED",
+    "anchor_pin": "2",
+    "pin": "2"
+  },
+  "C704": {
+    "group": "ESC_supply",
+    "anchor_ref": "J103",
+    "priority": 8,
+    "note": "Réservoir ESC hors keepout turbine, exception réservée connecteurs uniquement",
+    "anchor_pin": "1",
+    "pin": "1"
+  },
+  "C705": {
+    "group": "ESC_supply",
+    "anchor_ref": "J103",
+    "priority": 8,
+    "note": "Réservoir ESC hors keepout turbine, exception réservée connecteurs uniquement",
+    "anchor_pin": "1",
+    "pin": "1"
+  },
+  "R707": {
+    "group": "ESC_signal",
+    "anchor_ref": "U201",
+    "priority": 8,
+    "note": "Série100R à source ESC_PWM, peut éviter de traverser mécanique avec stub",
+    "anchor_pin": "139",
+    "pin": "1"
+  }
+}

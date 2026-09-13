@@ -39,3 +39,24 @@ venv/
 
 # Journaux d'exécution des générateurs FreeCAD (régénérés à chaque export)
 *.log
+
+# Dossiers de revue électronique : scripts, rapports et résultats finaux sont
+# versionnés. Restent sur disque les assemblages de contrôle (régénérables),
+# les étapes intermédiaires et les copies de documents tiers — le dépôt est
+# public, les rapports citent leurs sources par URL.
+electronics/*-review/**/*.step
+electronics/*-review/**/*.kicad_pcb
+electronics/*-review/**/*.kicad_pro
+electronics/*-review/schematic-svg/
+electronics/*-review/**/*-proposed.json
+electronics/*-review/**/*-validated.json
+electronics/*-review/**/*-before.json
+electronics/*-review/**/before.json
+electronics/*-review/**/before-netlist.xml
+electronics/*-review/**/erc-first.json
+electronics/*-review/*sources/*.pdf
+electronics/*-review/*sources/*.png
+electronics/*-review/*sources/*.jpg
+electronics/*-review/*sources/*.jpeg
+electronics/*-review/*sources/*.webp
+electronics/*-review/*sources/*.html

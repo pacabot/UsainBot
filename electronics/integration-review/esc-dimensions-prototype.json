@@ -1,0 +1,70 @@
+{
+  "model": "EMAX_Bullet_12A_Vertical_PROTOTYPE",
+  "status": "PROTOTYPE - unpublished dimensions estimated",
+  "nominal_pcb_mm": [
+    11,
+    15
+  ],
+  "estimated_pcb_thickness_mm": 1.0,
+  "esc_bottom_above_main_pcb_mm": 2.0,
+  "esc_top_mm": 17.0,
+  "coordinate_convention": "STEP y = -footprint y; STEP z=0 is main PCB top; ESC face with capacitors looks towards positive STEP y / negative footprint y.",
+  "overall_bbox_mm": {
+    "XMin": -7.9,
+    "XMax": 7.8999999999999995,
+    "YMin": -3.1,
+    "YMax": 1.2000000000000002,
+    "ZMin": -2.5,
+    "ZMax": 17.0
+  },
+  "pin_mapping": [
+    {
+      "pad": 1,
+      "function": "GND_POWER",
+      "footprint_xy_mm": [
+        -4.3,
+        0
+      ],
+      "pin_diameter_mm": 1.2,
+      "drill_mm": 1.4,
+      "pad_diameter_mm": 3
+    },
+    {
+      "pad": 2,
+      "function": "SIGNAL",
+      "footprint_xy_mm": [
+        0.8,
+        0.3
+      ],
+      "pin_diameter_mm": 0.6,
+      "drill_mm": 0.8,
+      "pad_diameter_mm": 1.6
+    },
+    {
+      "pad": 3,
+      "function": "BATT_PLUS",
+      "footprint_xy_mm": [
+        4.42,
+        0
+      ],
+      "pin_diameter_mm": 1.2,
+      "drill_mm": 1.4,
+      "pad_diameter_mm": 3
+    }
+  ],
+  "heatshrink": "Removed for direct solder assembly. No heatshrink envelope modelled. Re-fitting heatshrink invalidates present envelope.",
+  "cradle": "Proposed electrically insulating accessory. Two locatingpegs plus qualified adhesive/staking required. Not EMAX part.",
+  "estimated_envelope_thickness_mm": 3.85,
+  "missing_validation": [
+    "Real PCB thickness and complete component maxima",
+    "Barepad centres, dimensions and tolerances",
+    "SmallGND-to-powerGND continuity",
+    "Powerpin solder overlap, thermal test12Acontinuous15Aburst",
+    "Cradle material, heat/vibration retention",
+    "Real motorlead bendradius and routing"
+  ],
+  "cradle_foot_depth_mm": 2.85,
+  "cradle_foot_front_shortening_mm": 0.75,
+  "solid_count": 27,
+  "all_shapes_valid": true
+}

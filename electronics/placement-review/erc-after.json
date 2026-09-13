@@ -1,0 +1,77 @@
+{
+    "$schema": "https://schemas.kicad.org/erc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-09-06T11:34:32",
+    "ignored_checks": [
+        {
+            "description": "Four connection points are joined together",
+            "key": "four_way_junction"
+        },
+        {
+            "description": "SPICE model issue",
+            "key": "simulation_model_issue"
+        },
+        {
+            "description": "Footprint link issue",
+            "key": "footprint_link_issues"
+        },
+        {
+            "description": "Assigned footprint doesn't match footprint filters",
+            "key": "footprint_filter"
+        }
+    ],
+    "included_severities": [
+        "error",
+        "warning",
+        "exclusion"
+    ],
+    "kicad_version": "10.0.1",
+    "sheets": [
+        {
+            "path": "/",
+            "uuid_path": "/e216f09c-2662-6258-2b51-4f4f498f79d0",
+            "violations": []
+        },
+        {
+            "path": "/Alimentation/",
+            "uuid_path": "/e216f09c-2662-6258-2b51-4f4f498f79d0/3ee10a22-aabb-2c54-dcbf-475ae49e4e1f",
+            "violations": []
+        },
+        {
+            "path": "/MCU/",
+            "uuid_path": "/e216f09c-2662-6258-2b51-4f4f498f79d0/165c44a2-41d7-36dd-8a94-1c23bfae135d",
+            "violations": []
+        },
+        {
+            "path": "/Moteurs/",
+            "uuid_path": "/e216f09c-2662-6258-2b51-4f4f498f79d0/f091e242-b2d2-a8c1-4ba0-334789aaf38f",
+            "violations": []
+        },
+        {
+            "path": "/Barrette/",
+            "uuid_path": "/e216f09c-2662-6258-2b51-4f4f498f79d0/c7b2e962-e346-9d71-cf85-4d9257327614",
+            "violations": []
+        },
+        {
+            "path": "/Capteurs/",
+            "uuid_path": "/e216f09c-2662-6258-2b51-4f4f498f79d0/33c8b66d-3859-eb57-e0fa-870eb5261e1e",
+            "violations": []
+        },
+        {
+            "path": "/IHM/",
+            "uuid_path": "/e216f09c-2662-6258-2b51-4f4f498f79d0/d8d4cc76-9839-c28f-ba51-64e83601c223",
+            "violations": []
+        },
+        {
+            "path": "/Traces et turbine/",
+            "uuid_path": "/e216f09c-2662-6258-2b51-4f4f498f79d0/e7cc3c83-7c65-df9f-53be-bd87de8acfc2",
+            "violations": []
+        },
+        {
+            "path": "/Temoins de ligne/",
+            "uuid_path": "/e216f09c-2662-6258-2b51-4f4f498f79d0/ba1ecbcf-1c65-895e-8b85-2425aaf9186b",
+            "violations": []
+        }
+    ],
+    "source": "UsainBot.kicad_sch"
+}

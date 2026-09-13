@@ -1,0 +1,8675 @@
+{
+  "board": "/Users/zhonx/Documents/Projets_PRE/Pacabot/Pacabot_Junior/UsainBot/electronics/mr30-review/assembly-mated.kicad_pcb",
+  "footprints": [
+    {
+      "reference": "C525",
+      "xy": [
+        171.1297,
+        177.7662
+      ],
+      "rotation": 90.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R112",
+      "xy": [
+        134.45,
+        132.7375
+      ],
+      "rotation": 180.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "U501",
+      "xy": [
+        146.656,
+        255.121
+      ],
+      "rotation": -165.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Package_SO.3dshapes/TSSOP-14_4.4x5mm_P0.65mm.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R113",
+      "xy": [
+        132.85,
+        132.3375
+      ],
+      "rotation": -90.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R617",
+      "xy": [
+        97.5,
+        121.0
+      ],
+      "rotation": 180.0,
+      "locked": true,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C210",
+      "xy": [
+        152.2334,
+        231.7125
+      ],
+      "rotation": -45.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "J102",
+      "xy": [
+        174.7,
+        129.1
+      ],
+      "rotation": 0.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KIPRJMOD}/../kicad-lib/3d/AMASS_MR30PB_M_Vertical.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "filename": "${KIPRJMOD}/../kicad-lib/3d/AMASS_MR30_Mated_Clearance.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R448",
+      "xy": [
+        135.438124,
+        275.457387
+      ],
+      "rotation": -81.81488864,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C120",
+      "xy": [
+        148.1383,
+        232.5148
+      ],
+      "rotation": 135.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R124",
+      "xy": [
+        188.6625,
+        130.65
+      ],
+      "rotation": 0.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C116",
+      "xy": [
+        127.66,
+        157.65
+      ],
+      "rotation": 0.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0805_2012Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "D524",
+      "xy": [
+        170.3297,
+        180.4862
+      ],
+      "rotation": -90.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Diode_SMD.3dshapes/D_SOD-323.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "D503",
+      "xy": [
+        157.1559,
+        251.429
+      ],
+      "rotation": 105.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Diode_SMD.3dshapes/D_SOD-323.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C121",
+      "xy": [
+        145.7121,
+        231.1912
+      ],
+      "rotation": -135.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C214",
+      "xy": [
+        148.9586,
+        231.6376
+      ],
+      "rotation": -45.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "Q101",
+      "xy": [
+        136.45,
+        128.6
+      ],
+      "rotation": 0.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Package_TO_SOT_SMD.3dshapes/SOT-23.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R107",
+      "xy": [
+        114.15,
+        128.9625
+      ],
+      "rotation": 0.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_2512_6332Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R528",
+      "xy": [
+        144.8798,
+        233.9589
+      ],
+      "rotation": 45.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R604",
+      "xy": [
+        134.9559,
+        188.0441
+      ],
+      "rotation": -135.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C521",
+      "xy": [
+        166.9257,
+        189.8623
+      ],
+      "rotation": 45.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C223",
+      "xy": [
+        141.4411,
+        220.9201
+      ],
+      "rotation": 135.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R603",
+      "xy": [
+        130.7396,
+        183.8278
+      ],
+      "rotation": -135.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R204",
+      "xy": [
+        149.005,
+        229.2841
+      ],
+      "rotation": 45.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R111",
+      "xy": [
+        131.5375,
+        126.75
+      ],
+      "rotation": 180.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R454",
+      "xy": [
+        191.838036,
+        271.974652
+      ],
+      "rotation": -105.5517116,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "D404",
+      "xy": [
+        135.836765,
+        278.228864
+      ],
+      "rotation": 98.18511136,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/LED_SMD.3dshapes/LED_0603_1608Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "D523",
+      "xy": [
+        187.6672,
+        179.6262
+      ],
+      "rotation": -15.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Diode_SMD.3dshapes/D_SOD-323.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R412",
+      "xy": [
+        220.412231,
+        263.928928
+      ],
+      "rotation": 59.71508797,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R309",
+      "xy": [
+        90.66,
+        124.6
+      ],
+      "rotation": 90.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C561",
+      "xy": [
+        149.1892,
+        249.408
+      ],
+      "rotation": 105.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C603",
+      "xy": [
+        125.9,
+        194.7
+      ],
+      "rotation": -135.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "D544",
+      "xy": [
+        192.4621,
+        159.0243
+      ],
+      "rotation": 0.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Diode_SMD.3dshapes/D_SOD-323.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C112",
+      "xy": [
+        127.94,
+        160.35
+      ],
+      "rotation": 0.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_1210_3225Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R305",
+      "xy": [
+        105.525,
+        129.775
+      ],
+      "rotation": 0.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "Q701",
+      "xy": [
+        119.0,
+        175.0
+      ],
+      "rotation": 180.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Package_TO_SOT_SMD.3dshapes/SOT-23.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C570",
+      "xy": [
+        182.3589,
+        165.4651
+      ],
+      "rotation": 75.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "D410",
+      "xy": [
+        191.087334,
+        274.672141
+      ],
+      "rotation": 74.44828842,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/LED_SMD.3dshapes/LED_0603_1608Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "Q521",
+      "xy": [
+        173.6672,
+        178.8262
+      ],
+      "rotation": 0.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Package_TO_SOT_SMD.3dshapes/SOT-23.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "Q602",
+      "xy": [
+        163.2,
+        275.9
+      ],
+      "rotation": 0.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Package_TO_SOT_SMD.3dshapes/SOT-23.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "SW602",
+      "xy": [
+        119.0,
+        182.0
+      ],
+      "rotation": 0.0,
+      "locked": true,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Button_Switch_SMD.3dshapes/SW_SPST_B3U-1000P.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C563",
+      "xy": [
+        151.421,
+        253.5801
+      ],
+      "rotation": 15.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R548",
+      "xy": [
+        153.2334,
+        233.9124
+      ],
+      "rotation": 135.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "U101",
+      "xy": [
+        154.7,
+        133.35
+      ],
+      "rotation": 180.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Package_TO_SOT_SMD.3dshapes/SOT-23-6.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R403",
+      "xy": [
+        118.983993,
+        278.285299
+      ],
+      "rotation": 105.5517116,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R357",
+      "xy": [
+        209.475,
+        131.775
+      ],
+      "rotation": -90.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "D606",
+      "xy": [
+        155.0,
+        281.5
+      ],
+      "rotation": 90.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/LED_SMD.3dshapes/LED_0603_1608Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R505",
+      "xy": [
+        147.2527,
+        250.9523
+      ],
+      "rotation": 105.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "U351",
+      "xy": [
+        208.5,
+        127.0
+      ],
+      "rotation": 90.0,
+      "locked": true,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Package_SO.3dshapes/HTSSOP-16-1EP_4.4x5mm_P0.65mm_EP3.4x5mm.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R303",
+      "xy": [
+        104.125,
+        132.574999
+      ],
+      "rotation": 0.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C115",
+      "xy": [
+        121.66,
+        165.25
+      ],
+      "rotation": 180.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R451",
+      "xy": [
+        158.92518,
+        276.746207
+      ],
+      "rotation": -91.63702227,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C106",
+      "xy": [
+        121.2625,
+        123.05
+      ],
+      "rotation": 180.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_1210_3225Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R105",
+      "xy": [
+        131.25,
+        122.1625
+      ],
+      "rotation": 0.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R106",
+      "xy": [
+        129.05,
+        121.3625
+      ],
+      "rotation": 180.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R410",
+      "xy": [
+        189.281906,
+        277.802705
+      ],
+      "rotation": 74.44828842,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "Q102",
+      "xy": [
+        200.4,
+        123.6
+      ],
+      "rotation": 0.0,
+      "locked": true,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Package_SO.3dshapes/SOIC-8_3.9x4.9mm_P1.27mm.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C567",
+      "xy": [
+        154.1,
+        192.1125
+      ],
+      "rotation": 180.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R706",
+      "xy": [
+        109.2,
+        173.4725
+      ],
+      "rotation": 0.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "M1",
+      "xy": [
+        105.0,
+        145.0
+      ],
+      "rotation": 90.0,
+      "locked": true,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KIPRJMOD}/../kicad-lib/3d/Motor_bracket_1524.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "filename": "${KIPRJMOD}/../kicad-lib/3d/Faulhaber_15-10_gearhead.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "filename": "${KIPRJMOD}/../kicad-lib/3d/Faulhaber_1524_motor.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "filename": "${KIPRJMOD}/../kicad-lib/3d/Faulhaber_IE2-1024_encoder.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "filename": "${KIPRJMOD}/../kicad-lib/3d/JSumo_JS4311_hub.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "filename": "${KIPRJMOD}/../kicad-lib/3d/JSumo_JS4311_tire.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R444",
+      "xy": [
+        180.45,
+        276.7375
+      ],
+      "rotation": 180.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R307",
+      "xy": [
+        102.475,
+        131.775
+      ],
+      "rotation": -90.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C217",
+      "xy": [
+        165.6376,
+        210.1586
+      ],
+      "rotation": 135.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C110",
+      "xy": [
+        204.875,
+        129.705
+      ],
+      "rotation": 90.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C407",
+      "xy": [
+        160.702993,
+        281.048751
+      ],
+      "rotation": 88.36297773,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R606",
+      "xy": [
+        121.6837,
+        188.4837
+      ],
+      "rotation": 45.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R456",
+      "xy": [
+        224.366498,
+        258.94257
+      ],
+      "rotation": -120.284912,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "SW101",
+      "xy": [
+        138.0,
+        122.3
+      ],
+      "rotation": 0.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Button_Switch_SMD.3dshapes/SW_SPST_B3U-1000P.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R302",
+      "xy": [
+        105.425,
+        128.574999
+      ],
+      "rotation": 0.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R524",
+      "xy": [
+        165.9358,
+        188.8723
+      ],
+      "rotation": 45.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C401",
+      "xy": [
+        89.417481,
+        261.654395
+      ],
+      "rotation": 120.284912,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R527",
+      "xy": [
+        164.3159,
+        193.3293
+      ],
+      "rotation": 135.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "SW603",
+      "xy": [
+        134.8,
+        201.5
+      ],
+      "rotation": 0.0,
+      "locked": true,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Button_Switch_SMD.3dshapes/SW_SPST_B3U-1000P.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C113",
+      "xy": [
+        125.94,
+        163.15
+      ],
+      "rotation": -90.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "J301",
+      "xy": [
+        96.0,
+        131.35
+      ],
+      "rotation": 180.0,
+      "locked": true,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KIPRJMOD}/../kicad-lib/3d/TE_Micro-MaTch_215079-6_2x03_P1.27mm_Vertical.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "D102",
+      "xy": [
+        205.0,
+        159.0
+      ],
+      "rotation": 180.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Diode_SMD.3dshapes/D_SMB.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R408",
+      "xy": [
+        165.326691,
+        282.515955
+      ],
+      "rotation": 85.08893319,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R125",
+      "xy": [
+        134.3,
+        121.9
+      ],
+      "rotation": 0.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "U701",
+      "xy": [
+        145.0,
+        196.0
+      ],
+      "rotation": 0.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Package_SO.3dshapes/SOIC-8_5.3x5.3mm_P1.27mm.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "D406",
+      "xy": [
+        151.154808,
+        279.545064
+      ],
+      "rotation": 91.63702227,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/LED_SMD.3dshapes/LED_0603_1608Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R441",
+      "xy": [
+        124.05,
+        275.5375
+      ],
+      "rotation": 0.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R450",
+      "xy": [
+        151.074819,
+        276.746207
+      ],
+      "rotation": -88.36297773,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R115",
+      "xy": [
+        125.94,
+        165.25
+      ],
+      "rotation": 90.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C211",
+      "xy": [
+        153.8334,
+        232.9125
+      ],
+      "rotation": -45.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R620",
+      "xy": [
+        162.3,
+        273.2
+      ],
+      "rotation": 180.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C544",
+      "xy": [
+        150.7728,
+        230.2518
+      ],
+      "rotation": -45.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C358",
+      "xy": [
+        219.34,
+        126.04
+      ],
+      "rotation": 90.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C501",
+      "xy": [
+        151.4357,
+        255.1861
+      ],
+      "rotation": -75.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R423",
+      "xy": [
+        121.681482,
+        277.534597
+      ],
+      "rotation": -74.44828842,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "D601",
+      "xy": [
+        97.6,
+        163.0
+      ],
+      "rotation": 0.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Diode_SMD.3dshapes/D_SOD-323.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C201",
+      "xy": [
+        144.9301,
+        224.4092
+      ],
+      "rotation": 135.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "TM541",
+      "xy": [
+        192.0,
+        170.0
+      ],
+      "rotation": -15.0,
+      "locked": true,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KIPRJMOD}/../kicad-lib/3d/Telemetry_Support.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "filename": "${KIPRJMOD}/../kicad-lib/3d/Telemetry_Duo_Diodes.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R424",
+      "xy": [
+        138.215711,
+        281.422704
+      ],
+      "rotation": -81.81488864,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "D106",
+      "xy": [
+        195.525,
+        124.705
+      ],
+      "rotation": 90.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Diode_SMD.3dshapes/D_SOD-323.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R401",
+      "xy": [
+        88.033417,
+        264.836669
+      ],
+      "rotation": 120.284912,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C569",
+      "xy": [
+        169.2947,
+        189.1505
+      ],
+      "rotation": 45.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C543",
+      "xy": [
+        178.6074,
+        164.8678
+      ],
+      "rotation": 75.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R406",
+      "xy": [
+        150.355162,
+        283.069346
+      ],
+      "rotation": 91.63702227,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R356",
+      "xy": [
+        206.225,
+        122.225
+      ],
+      "rotation": -90.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R354",
+      "xy": [
+        204.975,
+        125.375
+      ],
+      "rotation": -90.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R102",
+      "xy": [
+        153.25,
+        130.445
+      ],
+      "rotation": -90.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R506",
+      "xy": [
+        149.0845,
+        251.1244
+      ],
+      "rotation": 0.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C502",
+      "xy": [
+        154.3257,
+        254.6637
+      ],
+      "rotation": 15.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C105",
+      "xy": [
+        126.05,
+        122.5625
+      ],
+      "rotation": 0.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0805_2012Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C123",
+      "xy": [
+        195.525,
+        127.505
+      ],
+      "rotation": -90.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R445",
+      "xy": [
+        85.633501,
+        258.94257
+      ],
+      "rotation": -59.71508797,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R561",
+      "xy": [
+        145.5892,
+        251.808
+      ],
+      "rotation": 15.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C221",
+      "xy": [
+        139.6733,
+        215.6477
+      ],
+      "rotation": 135.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C309",
+      "xy": [
+        90.8,
+        128.78
+      ],
+      "rotation": -90.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C703",
+      "xy": [
+        116.8,
+        171.46
+      ],
+      "rotation": 0.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R542",
+      "xy": [
+        189.2321,
+        157.4243
+      ],
+      "rotation": 180.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C351",
+      "xy": [
+        208.425,
+        131.775
+      ],
+      "rotation": -90.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R355",
+      "xy": [
+        210.925,
+        131.775
+      ],
+      "rotation": -90.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R526",
+      "xy": [
+        165.5159,
+        195.3293
+      ],
+      "rotation": -45.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R615",
+      "xy": [
+        155.0,
+        278.7
+      ],
+      "rotation": -90.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R449",
+      "xy": [
+        143.237273,
+        276.316132
+      ],
+      "rotation": -85.08893319,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C410",
+      "xy": [
+        192.529016,
+        276.57846
+      ],
+      "rotation": 74.44828842,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R101",
+      "xy": [
+        156.25,
+        130.445
+      ],
+      "rotation": -90.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C203",
+      "xy": [
+        157.8594,
+        231.6196
+      ],
+      "rotation": -135.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R353",
+      "xy": [
+        204.725,
+        127.375
+      ],
+      "rotation": 90.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "L102",
+      "xy": [
+        123.26,
+        159.05
+      ],
+      "rotation": 90.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KIPRJMOD}/../kicad-lib/3d/L_Taiyo-Yuden_NR-40xx.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R605",
+      "xy": [
+        126.7,
+        195.5
+      ],
+      "rotation": 45.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C564",
+      "xy": [
+        165.2351,
+        191.6101
+      ],
+      "rotation": -135.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R310",
+      "xy": [
+        90.8,
+        126.67
+      ],
+      "rotation": -90.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C404",
+      "xy": [
+        137.923849,
+        279.393587
+      ],
+      "rotation": 98.18511136,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R120",
+      "xy": [
+        146.1121,
+        232.3912
+      ],
+      "rotation": -135.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R502",
+      "xy": [
+        162.9059,
+        252.0915
+      ],
+      "rotation": 180.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "D407",
+      "xy": [
+        158.845191,
+        279.545064
+      ],
+      "rotation": 88.36297773,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/LED_SMD.3dshapes/LED_0603_1608Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C409",
+      "xy": [
+        175.83744,
+        279.9346
+      ],
+      "rotation": 81.81488864,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "D609",
+      "xy": [
+        215.0,
+        121.0
+      ],
+      "rotation": 180.0,
+      "locked": true,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/LED_SMD.3dshapes/LED_0603_1608Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "D402",
+      "xy": [
+        102.584291,
+        268.974809
+      ],
+      "rotation": 112.9183118,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/LED_SMD.3dshapes/LED_0603_1608Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R304",
+      "xy": [
+        106.375,
+        130.975
+      ],
+      "rotation": 180.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C568",
+      "xy": [
+        179.7311,
+        167.6968
+      ],
+      "rotation": 165.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C403",
+      "xy": [
+        121.13186,
+        275.55965
+      ],
+      "rotation": 105.5517116,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C208",
+      "xy": [
+        154.587,
+        232.0661
+      ],
+      "rotation": -45.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R201",
+      "xy": [
+        142.5586,
+        230.8376
+      ],
+      "rotation": 45.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C111",
+      "xy": [
+        123.94,
+        168.75
+      ],
+      "rotation": -90.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_1210_3225Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R504",
+      "xy": [
+        152.788,
+        254.8238
+      ],
+      "rotation": -75.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "U105",
+      "xy": [
+        162.0,
+        244.0
+      ],
+      "rotation": 180.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Package_SO.3dshapes/TSSOP-28_4.4x9.7mm_P0.65mm.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "TM521",
+      "xy": [
+        180.0,
+        187.5
+      ],
+      "rotation": -45.0,
+      "locked": true,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KIPRJMOD}/../kicad-lib/3d/Telemetry_Support.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "filename": "${KIPRJMOD}/../kicad-lib/3d/Telemetry_Duo_Diodes.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R447",
+      "xy": [
+        118.161963,
+        271.974652
+      ],
+      "rotation": -74.44828842,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C354",
+      "xy": [
+        190.0,
+        127.3
+      ],
+      "rotation": 180.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_Tantalum_SMD.3dshapes/CP_EIA-7343-20_Kemet-V.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R562",
+      "xy": [
+        150.3892,
+        249.808
+      ],
+      "rotation": 105.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C307",
+      "xy": [
+        99.86,
+        131.68
+      ],
+      "rotation": 0.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0805_2012Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C209",
+      "xy": [
+        156.187,
+        232.0661
+      ],
+      "rotation": -45.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C119",
+      "xy": [
+        150.9383,
+        235.3148
+      ],
+      "rotation": -135.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0805_2012Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C357",
+      "xy": [
+        206.14,
+        131.87
+      ],
+      "rotation": 180.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0805_2012Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C524",
+      "xy": [
+        150.0192,
+        231.0983
+      ],
+      "rotation": -45.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C216",
+      "xy": [
+        143.6726,
+        229.1537
+      ],
+      "rotation": -135.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C565",
+      "xy": [
+        154.621,
+        252.7801
+      ],
+      "rotation": 15.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0805_2012Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C306",
+      "xy": [
+        100.775,
+        122.625
+      ],
+      "rotation": 180.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R610",
+      "xy": [
+        117.7375,
+        164.55
+      ],
+      "rotation": -90.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R501",
+      "xy": [
+        157.0211,
+        254.6939
+      ],
+      "rotation": -150.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "M3",
+      "xy": [
+        155.0,
+        159.0
+      ],
+      "rotation": 180.0,
+      "locked": true,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KIPRJMOD}/../kicad-lib/3d/Turbine_EDF27.step",
+          "offset": [
+            0.0,
+            0.0,
+            25.8
+          ],
+          "rotation": [
+            180.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C124",
+      "xy": [
+        158.7375,
+        249.825
+      ],
+      "rotation": -90.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C505",
+      "xy": [
+        165.0159,
+        252.0915
+      ],
+      "rotation": 180.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "J351",
+      "xy": [
+        214.0,
+        125.0
+      ],
+      "rotation": 0.0,
+      "locked": true,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KIPRJMOD}/../kicad-lib/3d/TE_Micro-MaTch_215079-6_2x03_P1.27mm_Vertical.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R104",
+      "xy": [
+        133.25,
+        122.9625
+      ],
+      "rotation": 180.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R358",
+      "xy": [
+        163.6092,
+        227.4699
+      ],
+      "rotation": 45.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C206",
+      "xy": [
+        142.9301,
+        226.0092
+      ],
+      "rotation": -135.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0805_2012Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C606",
+      "xy": [
+        115.7,
+        181.6
+      ],
+      "rotation": 90.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R202",
+      "xy": [
+        142.9946,
+        210.7263
+      ],
+      "rotation": 135.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R426",
+      "xy": [
+        153.154019,
+        282.989357
+      ],
+      "rotation": -88.36297773,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C701",
+      "xy": [
+        148.5875,
+        192.495
+      ],
+      "rotation": 90.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C356",
+      "xy": [
+        207.775,
+        122.625
+      ],
+      "rotation": 180.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C302",
+      "xy": [
+        161.395,
+        228.0841
+      ],
+      "rotation": -135.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C308",
+      "xy": [
+        92.26,
+        122.09
+      ],
+      "rotation": 0.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C406",
+      "xy": [
+        153.095455,
+        280.940194
+      ],
+      "rotation": 91.63702227,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "BZ601",
+      "xy": [
+        109.6,
+        163.0
+      ],
+      "rotation": 180.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Buzzer_Beeper.3dshapes/MagneticBuzzer_ProSignal_ABI-009-RC.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "D412",
+      "xy": [
+        222.954457,
+        261.360449
+      ],
+      "rotation": 59.71508797,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/LED_SMD.3dshapes/LED_0603_1608Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C301",
+      "xy": [
+        104.225,
+        131.375
+      ],
+      "rotation": 0.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R707",
+      "xy": [
+        142.2411,
+        212.2799
+      ],
+      "rotation": 45.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C202",
+      "xy": [
+        151.5263,
+        232.6054
+      ],
+      "rotation": -45.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R601",
+      "xy": [
+        158.81,
+        187.7
+      ],
+      "rotation": 90.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "D403",
+      "xy": [
+        118.912665,
+        274.672141
+      ],
+      "rotation": 105.5517116,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/LED_SMD.3dshapes/LED_0603_1608Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R455",
+      "xy": [
+        208.506079,
+        266.395838
+      ],
+      "rotation": -112.9183118,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R404",
+      "xy": [
+        135.444234,
+        281.821345
+      ],
+      "rotation": 98.18511136,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C566",
+      "xy": [
+        157.3625,
+        191.15
+      ],
+      "rotation": -90.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C411",
+      "xy": [
+        208.601067,
+        271.050242
+      ],
+      "rotation": 67.08168819,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "D405",
+      "xy": [
+        143.476979,
+        279.105853
+      ],
+      "rotation": 94.91106681,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/LED_SMD.3dshapes/LED_0603_1608Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C355",
+      "xy": [
+        210.025,
+        122.625
+      ],
+      "rotation": 0.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C353",
+      "xy": [
+        209.875,
+        121.425
+      ],
+      "rotation": 0.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R360",
+      "xy": [
+        219.2,
+        130.479999
+      ],
+      "rotation": -90.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C107",
+      "xy": [
+        120.8625,
+        126.75
+      ],
+      "rotation": 180.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_1210_3225Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R619",
+      "xy": [
+        160.6,
+        274.95
+      ],
+      "rotation": 90.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C601",
+      "xy": [
+        131.5396,
+        184.6278
+      ],
+      "rotation": 45.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R525",
+      "xy": [
+        164.3755,
+        190.8697
+      ],
+      "rotation": -135.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R701",
+      "xy": [
+        139.0125,
+        196.635
+      ],
+      "rotation": 0.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "U301",
+      "xy": [
+        101.5,
+        127.0
+      ],
+      "rotation": 90.0,
+      "locked": true,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Package_SO.3dshapes/HTSSOP-16-1EP_4.4x5mm_P0.65mm_EP3.4x5mm.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "Q501",
+      "xy": [
+        160.3559,
+        253.829
+      ],
+      "rotation": -90.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Package_TO_SOT_SMD.3dshapes/SOT-23.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C118",
+      "xy": [
+        147.8357,
+        236.0174
+      ],
+      "rotation": -45.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C503",
+      "xy": [
+        151.9771,
+        250.9924
+      ],
+      "rotation": 15.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C705",
+      "xy": [
+        144.2,
+        129.8
+      ],
+      "rotation": 0.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "U503",
+      "xy": [
+        155.0,
+        190.0
+      ],
+      "rotation": 0.0,
+      "locked": true,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Package_LGA.3dshapes/LGA-14_3x2.5mm_P0.5mm_LayoutBorder3x4y.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C602",
+      "xy": [
+        134.1559,
+        187.2441
+      ],
+      "rotation": 45.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C405",
+      "xy": [
+        145.494137,
+        280.387872
+      ],
+      "rotation": 94.91106681,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C412",
+      "xy": [
+        223.863926,
+        263.570736
+      ],
+      "rotation": 59.71508797,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C352",
+      "xy": [
+        162.8092,
+        226.6699
+      ],
+      "rotation": -135.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C523",
+      "xy": [
+        162.7553,
+        193.3687
+      ],
+      "rotation": 135.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "D401",
+      "xy": [
+        87.045542,
+        261.360449
+      ],
+      "rotation": 120.284912,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/LED_SMD.3dshapes/LED_0603_1608Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R359",
+      "xy": [
+        219.34,
+        128.15
+      ],
+      "rotation": 90.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C122",
+      "xy": [
+        140.3804,
+        214.1406
+      ],
+      "rotation": -135.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R503",
+      "xy": [
+        160.9059,
+        251.2915
+      ],
+      "rotation": 180.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C220",
+      "xy": [
+        145.0695,
+        209.4515
+      ],
+      "rotation": 45.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R544",
+      "xy": [
+        182.1988,
+        167.0027
+      ],
+      "rotation": -15.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R602",
+      "xy": [
+        155.87,
+        183.3
+      ],
+      "rotation": 0.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R118",
+      "xy": [
+        123.26,
+        165.35
+      ],
+      "rotation": -90.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "FB101",
+      "xy": [
+        149.387,
+        234.0661
+      ],
+      "rotation": 45.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Inductor_SMD.3dshapes/L_0805_2012Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R203",
+      "xy": [
+        140.9946,
+        211.9263
+      ],
+      "rotation": 45.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C102",
+      "xy": [
+        129.75,
+        131.2375
+      ],
+      "rotation": 0.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_1210_3225Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R427",
+      "xy": [
+        160.644429,
+        283.097914
+      ],
+      "rotation": -91.63702227,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "Q601",
+      "xy": [
+        116.0,
+        162.0
+      ],
+      "rotation": 180.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Package_TO_SOT_SMD.3dshapes/SOT-23.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C359",
+      "xy": [
+        219.2,
+        132.59
+      ],
+      "rotation": -90.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R425",
+      "xy": [
+        145.669636,
+        282.430346
+      ],
+      "rotation": -85.08893319,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "Q401",
+      "xy": [
+        127.0,
+        275.0
+      ],
+      "rotation": 90.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Package_TO_SOT_SMD.3dshapes/SOT-23.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C303",
+      "xy": [
+        104.875,
+        124.225
+      ],
+      "rotation": -90.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R443",
+      "xy": [
+        180.05,
+        275.5375
+      ],
+      "rotation": 0.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R563",
+      "xy": [
+        143.2593,
+        259.6897
+      ],
+      "rotation": 105.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "Q402",
+      "xy": [
+        183.0,
+        275.0
+      ],
+      "rotation": 90.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Package_TO_SOT_SMD.3dshapes/SOT-23.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R546",
+      "xy": [
+        180.0754,
+        166.5604
+      ],
+      "rotation": -15.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "U502",
+      "xy": [
+        169.2592,
+        194.0342
+      ],
+      "rotation": -45.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Package_SO.3dshapes/TSSOP-14_4.4x5mm_P0.65mm.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "D543",
+      "xy": [
+        183.4821,
+        161.1618
+      ],
+      "rotation": 180.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Diode_SMD.3dshapes/D_SOD-323.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "J701",
+      "xy": [
+        114.0,
+        174.0
+      ],
+      "rotation": 180.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Connector_PinHeader_2.54mm.3dshapes/PinHeader_1x04_P2.54mm_Vertical.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C224",
+      "xy": [
+        143.0411,
+        222.5201
+      ],
+      "rotation": -45.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R108",
+      "xy": [
+        129.9375,
+        123.25
+      ],
+      "rotation": 180.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C219",
+      "xy": [
+        148.605,
+        205.9159
+      ],
+      "rotation": 45.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "J103",
+      "xy": [
+        144.0,
+        134.5
+      ],
+      "rotation": 180.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KIPRJMOD}/../kicad-lib/3d/EMAX_Bullet_12A_Vertical_PROTOTYPE.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R306",
+      "xy": [
+        99.225,
+        122.225
+      ],
+      "rotation": -90.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R609",
+      "xy": [
+        116.5375,
+        164.95
+      ],
+      "rotation": 90.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C604",
+      "xy": [
+        124.0837,
+        192.4837
+      ],
+      "rotation": -45.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "J101",
+      "xy": [
+        155.0,
+        124.0
+      ],
+      "rotation": 180.0,
+      "locked": true,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KIPRJMOD}/../kicad-lib/3d/USB_C_Receptacle_HRO_TYPE-C-31-M-12.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R409",
+      "xy": [
+        172.774101,
+        281.565076
+      ],
+      "rotation": 81.81488864,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C204",
+      "xy": [
+        164.4556,
+        225.8234
+      ],
+      "rotation": -45.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "D504",
+      "xy": [
+        164.5359,
+        254.4915
+      ],
+      "rotation": -90.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Diode_SMD.3dshapes/D_SOD-323.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C504",
+      "xy": [
+        147.6657,
+        230.7447
+      ],
+      "rotation": -135.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C108",
+      "xy": [
+        130.8625,
+        124.85
+      ],
+      "rotation": 0.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0805_2012Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C215",
+      "xy": [
+        144.8304,
+        230.3073
+      ],
+      "rotation": -135.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R703",
+      "xy": [
+        119.9375,
+        177.95
+      ],
+      "rotation": 90.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "D608",
+      "xy": [
+        95.0,
+        121.0
+      ],
+      "rotation": 0.0,
+      "locked": true,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/LED_SMD.3dshapes/LED_0603_1608Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C607",
+      "xy": [
+        118.9375,
+        166.26
+      ],
+      "rotation": 180.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R301",
+      "xy": [
+        105.425,
+        127.375
+      ],
+      "rotation": 180.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R119",
+      "xy": [
+        146.9121,
+        233.5912
+      ],
+      "rotation": 45.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "U504",
+      "xy": [
+        179.3902,
+        172.4618
+      ],
+      "rotation": -105.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Package_SO.3dshapes/TSSOP-14_4.4x5mm_P0.65mm.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R428",
+      "xy": [
+        168.116412,
+        282.755662
+      ],
+      "rotation": -94.91106681,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R405",
+      "xy": [
+        142.879916,
+        282.670052
+      ],
+      "rotation": 94.91106681,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R126",
+      "xy": [
+        190.2625,
+        131.05
+      ],
+      "rotation": -90.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R522",
+      "xy": [
+        173.1297,
+        175.8762
+      ],
+      "rotation": -90.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R407",
+      "xy": [
+        157.845572,
+        283.017925
+      ],
+      "rotation": 88.36297773,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R453",
+      "xy": [
+        174.561875,
+        275.457387
+      ],
+      "rotation": -98.18511136,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "D101",
+      "xy": [
+        133.5375,
+        127.65
+      ],
+      "rotation": -90.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/LED_SMD.3dshapes/LED_0603_1608Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R432",
+      "xy": [
+        222.83011,
+        265.340969
+      ],
+      "rotation": -120.284912,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "Q702",
+      "xy": [
+        123.0,
+        177.0
+      ],
+      "rotation": 180.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Package_TO_SOT_SMD.3dshapes/SOT-23.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "Q104",
+      "xy": [
+        192.8,
+        131.6
+      ],
+      "rotation": 0.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Package_TO_SOT_SMD.3dshapes/SOT-23.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C304",
+      "xy": [
+        110.075,
+        124.225
+      ],
+      "rotation": 0.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_Tantalum_SMD.3dshapes/CP_EIA-7343-20_Kemet-V.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R446",
+      "xy": [
+        101.49392,
+        266.395838
+      ],
+      "rotation": -67.08168819,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C704",
+      "xy": [
+        144.2,
+        125.6
+      ],
+      "rotation": 0.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/CP_Elec_6.3x7.7.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R431",
+      "xy": [
+        207.80276,
+        272.938417
+      ],
+      "rotation": -112.9183118,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C205",
+      "xy": [
+        166.7912,
+        222.6879
+      ],
+      "rotation": 45.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R704",
+      "xy": [
+        123.5375,
+        179.95
+      ],
+      "rotation": 90.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R545",
+      "xy": [
+        175.9032,
+        171.9286
+      ],
+      "rotation": -105.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R608",
+      "xy": [
+        117.3,
+        179.2
+      ],
+      "rotation": -90.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C109",
+      "xy": [
+        129.199999,
+        170.0
+      ],
+      "rotation": -90.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/CP_Elec_6.3x7.7.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R103",
+      "xy": [
+        133.15,
+        124.9625
+      ],
+      "rotation": -90.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C222",
+      "xy": [
+        162.5485,
+        207.0695
+      ],
+      "rotation": -45.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R116",
+      "xy": [
+        124.74,
+        165.35
+      ],
+      "rotation": -90.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C103",
+      "xy": [
+        124.65,
+        131.2375
+      ],
+      "rotation": 180.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_1210_3225Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R109",
+      "xy": [
+        131.5375,
+        128.15
+      ],
+      "rotation": 180.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C402",
+      "xy": [
+        104.898963,
+        269.570453
+      ],
+      "rotation": 112.9183118,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "U201",
+      "xy": [
+        155.0,
+        217.0
+      ],
+      "rotation": 45.0,
+      "locked": true,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Package_QFP.3dshapes/LQFP-144_20x20mm_P0.5mm.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C541",
+      "xy": [
+        181.8365,
+        168.355
+      ],
+      "rotation": -15.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C562",
+      "xy": [
+        142.8593,
+        252.4897
+      ],
+      "rotation": 90.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R702",
+      "xy": [
+        150.9875,
+        195.365
+      ],
+      "rotation": 180.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R507",
+      "xy": [
+        151.0845,
+        252.3244
+      ],
+      "rotation": 15.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C213",
+      "xy": [
+        159.0594,
+        201.9804
+      ],
+      "rotation": 45.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0805_2012Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "J601",
+      "xy": [
+        155.0,
+        196.15
+      ],
+      "rotation": 0.0,
+      "locked": true,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KIPRJMOD}/../kicad-lib/3d/OLED_0.96_SSD1306_I2C_128x64.step",
+          "offset": [
+            0.0,
+            0.0,
+            6.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "filename": "${KIPRJMOD}/../kicad-lib/3d/OLED_Standoffs_M2x6.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R422",
+      "xy": [
+        105.697271,
+        271.458628
+      ],
+      "rotation": -67.08168819,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "Q103",
+      "xy": [
+        200.4,
+        130.199999
+      ],
+      "rotation": 0.0,
+      "locked": true,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Package_SO.3dshapes/SOIC-8_3.9x4.9mm_P1.27mm.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "D701",
+      "xy": [
+        111.2,
+        174.26
+      ],
+      "rotation": 90.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/LED_SMD.3dshapes/LED_0603_1608Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R308",
+      "xy": [
+        162.195,
+        228.8841
+      ],
+      "rotation": 45.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C542",
+      "xy": [
+        183.6146,
+        165.8015
+      ],
+      "rotation": 75.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R452",
+      "xy": [
+        166.762726,
+        276.316132
+      ],
+      "rotation": -94.91106681,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "D408",
+      "xy": [
+        166.52302,
+        279.105853
+      ],
+      "rotation": 85.08893319,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/LED_SMD.3dshapes/LED_0603_1608Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "D610",
+      "xy": [
+        116.9375,
+        167.86
+      ],
+      "rotation": -90.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Diode_SMD.3dshapes/D_SOD-323.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R442",
+      "xy": [
+        124.45,
+        276.7375
+      ],
+      "rotation": 180.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "Y201",
+      "xy": [
+        146.2515,
+        227.7305
+      ],
+      "rotation": 135.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Crystal.3dshapes/Crystal_SMD_3225-4Pin_3.2x2.5mm.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R618",
+      "xy": [
+        212.5,
+        121.0
+      ],
+      "rotation": 0.0,
+      "locked": true,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "M2",
+      "xy": [
+        205.0,
+        145.0
+      ],
+      "rotation": -90.0,
+      "locked": true,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KIPRJMOD}/../kicad-lib/3d/Motor_bracket_1524.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "filename": "${KIPRJMOD}/../kicad-lib/3d/Faulhaber_15-10_gearhead.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "filename": "${KIPRJMOD}/../kicad-lib/3d/Faulhaber_1524_motor.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "filename": "${KIPRJMOD}/../kicad-lib/3d/Faulhaber_IE2-1024_encoder.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "filename": "${KIPRJMOD}/../kicad-lib/3d/JSumo_JS4311_hub.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "filename": "${KIPRJMOD}/../kicad-lib/3d/JSumo_JS4311_tire.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R402",
+      "xy": [
+        103.1183,
+        272.548999
+      ],
+      "rotation": 112.9183118,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C702",
+      "xy": [
+        110.4,
+        171.46
+      ],
+      "rotation": 180.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0805_2012Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R127",
+      "xy": [
+        139.1804,
+        217.3406
+      ],
+      "rotation": 45.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "D409",
+      "xy": [
+        174.163234,
+        278.228864
+      ],
+      "rotation": 81.81488864,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/LED_SMD.3dshapes/LED_0603_1608Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R411",
+      "xy": [
+        205.223789,
+        271.848046
+      ],
+      "rotation": 67.08168819,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C117",
+      "xy": [
+        118.86,
+        157.65
+      ],
+      "rotation": 180.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0805_2012Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C218",
+      "xy": [
+        156.3523,
+        201.6733
+      ],
+      "rotation": 45.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R607",
+      "xy": [
+        133.2477,
+        186.336
+      ],
+      "rotation": -135.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C101",
+      "xy": [
+        129.55,
+        127.6375
+      ],
+      "rotation": 90.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R521",
+      "xy": [
+        172.7973,
+        181.6961
+      ],
+      "rotation": 45.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C545",
+      "xy": [
+        191.3421,
+        157.4243
+      ],
+      "rotation": 180.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R705",
+      "xy": [
+        124.7375,
+        179.55
+      ],
+      "rotation": -90.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C207",
+      "xy": [
+        170.3267,
+        218.3523
+      ],
+      "rotation": -45.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R547",
+      "xy": [
+        178.0754,
+        166.9604
+      ],
+      "rotation": 75.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "L101",
+      "xy": [
+        120.0625,
+        130.449999
+      ],
+      "rotation": 0.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KIPRJMOD}/../kicad-lib/3d/L_Taiyo-Yuden_NR-30xx.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R543",
+      "xy": [
+        189.6321,
+        158.6243
+      ],
+      "rotation": 0.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C114",
+      "xy": [
+        120.86,
+        162.35
+      ],
+      "rotation": 90.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R523",
+      "xy": [
+        168.7297,
+        179.8762
+      ],
+      "rotation": -90.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R430",
+      "xy": [
+        191.979395,
+        278.553407
+      ],
+      "rotation": -105.5517116,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R114",
+      "xy": [
+        197.125,
+        127.105
+      ],
+      "rotation": 180.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R110",
+      "xy": [
+        135.1375,
+        125.6375
+      ],
+      "rotation": -90.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R508",
+      "xy": [
+        144.0051,
+        231.6053
+      ],
+      "rotation": -45.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R564",
+      "xy": [
+        144.4593,
+        259.289699
+      ],
+      "rotation": -75.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C522",
+      "xy": [
+        168.614,
+        188.2312
+      ],
+      "rotation": 45.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R421",
+      "xy": [
+        90.451297,
+        263.424628
+      ],
+      "rotation": -59.71508797,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "D411",
+      "xy": [
+        207.415708,
+        268.974809
+      ],
+      "rotation": 67.08168819,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/LED_SMD.3dshapes/LED_0603_1608Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C605",
+      "xy": [
+        132.4477,
+        185.536
+      ],
+      "rotation": 45.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "U102",
+      "xy": [
+        126.0,
+        126.5
+      ],
+      "rotation": 180.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Package_DFN_QFN.3dshapes/HVQFN-24-1EP_4x4mm_P0.5mm_EP2.1x2.1mm.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R117",
+      "xy": [
+        122.06,
+        163.35
+      ],
+      "rotation": -90.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R128",
+      "xy": [
+        139.5804,
+        213.3406
+      ],
+      "rotation": -135.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C212",
+      "xy": [
+        170.3732,
+        220.7059
+      ],
+      "rotation": -45.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0805_2012Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R429",
+      "xy": [
+        175.545578,
+        281.963717
+      ],
+      "rotation": -98.18511136,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "Q541",
+      "xy": [
+        186.6821,
+        159.1618
+      ],
+      "rotation": -90.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Package_TO_SOT_SMD.3dshapes/SOT-23.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "SW601",
+      "xy": [
+        128.719759,
+        189.663946
+      ],
+      "rotation": 45.0,
+      "locked": true,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KIPRJMOD}/../kicad-lib/3d/SKRHABE010.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C305",
+      "xy": [
+        103.025,
+        122.625
+      ],
+      "rotation": 0.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "TM501",
+      "xy": [
+        155.0,
+        265.0
+      ],
+      "rotation": -75.0,
+      "locked": true,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KIPRJMOD}/../kicad-lib/3d/Telemetry_Support.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "filename": "${KIPRJMOD}/../kicad-lib/3d/Telemetry_Duo_Diodes.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "F101",
+      "xy": [
+        191.0,
+        121.8
+      ],
+      "rotation": 0.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_1206_3216Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C408",
+      "xy": [
+        168.291911,
+        280.713188
+      ],
+      "rotation": 85.08893319,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "C104",
+      "xy": [
+        128.35,
+        122.9625
+      ],
+      "rotation": -90.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "R541",
+      "xy": [
+        184.2172,
+        163.2966
+      ],
+      "rotation": -105.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "U103",
+      "xy": [
+        124.0,
+        163.0
+      ],
+      "rotation": 180.0,
+      "locked": false,
+      "layer": "F.Cu",
+      "models": [
+        {
+          "filename": "${KICAD10_3DMODEL_DIR}/Package_TO_SOT_SMD.3dshapes/SOT-583-8.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "U404",
+      "xy": [
+        135.836765,
+        278.228864
+      ],
+      "rotation": 8.185111359,
+      "locked": true,
+      "layer": "B.Cu",
+      "models": [
+        {
+          "filename": "${KIPRJMOD}/../kicad-lib/3d/Everlight_ITR8307_S17_TR8.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "U408",
+      "xy": [
+        166.52302,
+        279.105853
+      ],
+      "rotation": -4.911066815,
+      "locked": true,
+      "layer": "B.Cu",
+      "models": [
+        {
+          "filename": "${KIPRJMOD}/../kicad-lib/3d/Everlight_ITR8307_S17_TR8.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "U406",
+      "xy": [
+        151.154808,
+        279.545064
+      ],
+      "rotation": 1.637022272,
+      "locked": true,
+      "layer": "B.Cu",
+      "models": [
+        {
+          "filename": "${KIPRJMOD}/../kicad-lib/3d/Everlight_ITR8307_S17_TR8.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "U405",
+      "xy": [
+        143.476979,
+        279.105853
+      ],
+      "rotation": 4.911066815,
+      "locked": true,
+      "layer": "B.Cu",
+      "models": [
+        {
+          "filename": "${KIPRJMOD}/../kicad-lib/3d/Everlight_ITR8307_S17_TR8.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "U412",
+      "xy": [
+        222.954457,
+        261.360449
+      ],
+      "rotation": -30.28491203,
+      "locked": true,
+      "layer": "B.Cu",
+      "models": [
+        {
+          "filename": "${KIPRJMOD}/../kicad-lib/3d/Everlight_ITR8307_S17_TR8.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "U407",
+      "xy": [
+        158.845191,
+        279.545064
+      ],
+      "rotation": -1.637022272,
+      "locked": true,
+      "layer": "B.Cu",
+      "models": [
+        {
+          "filename": "${KIPRJMOD}/../kicad-lib/3d/Everlight_ITR8307_S17_TR8.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "U401",
+      "xy": [
+        87.045542,
+        261.360449
+      ],
+      "rotation": 30.28491203,
+      "locked": true,
+      "layer": "B.Cu",
+      "models": [
+        {
+          "filename": "${KIPRJMOD}/../kicad-lib/3d/Everlight_ITR8307_S17_TR8.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "U403",
+      "xy": [
+        118.912665,
+        274.672141
+      ],
+      "rotation": 15.55171158,
+      "locked": true,
+      "layer": "B.Cu",
+      "models": [
+        {
+          "filename": "${KIPRJMOD}/../kicad-lib/3d/Everlight_ITR8307_S17_TR8.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "U411",
+      "xy": [
+        207.415708,
+        268.974809
+      ],
+      "rotation": -22.91831181,
+      "locked": true,
+      "layer": "B.Cu",
+      "models": [
+        {
+          "filename": "${KIPRJMOD}/../kicad-lib/3d/Everlight_ITR8307_S17_TR8.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "U410",
+      "xy": [
+        191.087334,
+        274.672141
+      ],
+      "rotation": -15.55171158,
+      "locked": true,
+      "layer": "B.Cu",
+      "models": [
+        {
+          "filename": "${KIPRJMOD}/../kicad-lib/3d/Everlight_ITR8307_S17_TR8.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "U402",
+      "xy": [
+        102.584291,
+        268.974809
+      ],
+      "rotation": 22.91831181,
+      "locked": true,
+      "layer": "B.Cu",
+      "models": [
+        {
+          "filename": "${KIPRJMOD}/../kicad-lib/3d/Everlight_ITR8307_S17_TR8.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "U409",
+      "xy": [
+        174.163234,
+        278.228864
+      ],
+      "rotation": -8.185111359,
+      "locked": true,
+      "layer": "B.Cu",
+      "models": [
+        {
+          "filename": "${KIPRJMOD}/../kicad-lib/3d/Everlight_ITR8307_S17_TR8.step",
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    }
+  ]
+}

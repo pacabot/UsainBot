@@ -1,0 +1,50 @@
+{
+  "source": "sources/mr30pb-m.step; Lucidar mirror, CAD origin not certified manufacturer",
+  "transform": "Rx=-90deg then translate(0,+5.85,-0.75)mm",
+  "header_bbox": {
+    "XMin": -6.15,
+    "XMax": 6.15,
+    "YMin": -2.650000000000001,
+    "YMax": 2.649999999999999,
+    "ZMin": -3.0000000000122804,
+    "ZMax": 10.400000001270215
+  },
+  "manufacturer_body_mm": [
+    11.9,
+    5.3,
+    10.4
+  ],
+  "cad_flange_width_mm": 12.3,
+  "pad_numbering": "Project convention: Top board 1 GND at x+3.5 /2 MID x0 /3 VPACK x-3.5. Marked explicitly; not a universal battery pinout.",
+  "tails": [
+    {
+      "xy": [
+        -3.5,
+        0
+      ],
+      "metal_volume_within_hole_mm3": 5.002462702082349,
+      "nominal_drill_mm": 1.8
+    },
+    {
+      "xy": [
+        0,
+        0
+      ],
+      "metal_volume_within_hole_mm3": 5.002462702082348,
+      "nominal_drill_mm": 1.8
+    },
+    {
+      "xy": [
+        3.5,
+        0
+      ],
+      "metal_volume_within_hole_mm3": 5.002462702082348,
+      "nominal_drill_mm": 1.8
+    }
+  ],
+  "mated_clearance_mm": [
+    12.6,
+    5.7,
+    24.9
+  ]
+}

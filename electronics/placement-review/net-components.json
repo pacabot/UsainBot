@@ -1,0 +1,5909 @@
+{
+  "C101": {
+    "value": "1uF",
+    "pins": {
+      "1": {
+        "net": "/Alimentation/VBUS_IN",
+        "function": ""
+      },
+      "2": {
+        "net": "GND",
+        "function": ""
+      }
+    }
+  },
+  "C102": {
+    "value": "22uF",
+    "pins": {
+      "1": {
+        "net": "/Alimentation/PMID",
+        "function": ""
+      },
+      "2": {
+        "net": "GND",
+        "function": ""
+      }
+    }
+  },
+  "C103": {
+    "value": "22uF",
+    "pins": {
+      "1": {
+        "net": "/Alimentation/PMID",
+        "function": ""
+      },
+      "2": {
+        "net": "GND",
+        "function": ""
+      }
+    }
+  },
+  "C104": {
+    "value": "47nF",
+    "pins": {
+      "1": {
+        "net": "/Alimentation/BTST",
+        "function": ""
+      },
+      "2": {
+        "net": "/Alimentation/SW_CHG",
+        "function": ""
+      }
+    }
+  },
+  "C105": {
+    "value": "4u7F",
+    "pins": {
+      "1": {
+        "net": "/Alimentation/REGN",
+        "function": ""
+      },
+      "2": {
+        "net": "GND",
+        "function": ""
+      }
+    }
+  },
+  "C106": {
+    "value": "22uF",
+    "pins": {
+      "1": {
+        "net": "/Alimentation/SNS_CHG",
+        "function": ""
+      },
+      "2": {
+        "net": "GND",
+        "function": ""
+      }
+    }
+  },
+  "C107": {
+    "value": "22uF",
+    "pins": {
+      "1": {
+        "net": "/Alimentation/SNS_CHG",
+        "function": ""
+      },
+      "2": {
+        "net": "GND",
+        "function": ""
+      }
+    }
+  },
+  "C108": {
+    "value": "10uF",
+    "pins": {
+      "2": {
+        "net": "GND",
+        "function": ""
+      },
+      "1": {
+        "net": "VPACK",
+        "function": ""
+      }
+    }
+  },
+  "C109": {
+    "value": "100uF",
+    "pins": {
+      "2": {
+        "net": "GND",
+        "function": ""
+      },
+      "1": {
+        "net": "VBAT",
+        "function": ""
+      }
+    }
+  },
+  "C110": {
+    "value": "100nF",
+    "pins": {
+      "2": {
+        "net": "GND",
+        "function": ""
+      },
+      "1": {
+        "net": "VBAT",
+        "function": ""
+      }
+    }
+  },
+  "C111": {
+    "value": "10uF",
+    "pins": {
+      "2": {
+        "net": "GND",
+        "function": ""
+      },
+      "1": {
+        "net": "VBAT",
+        "function": ""
+      }
+    }
+  },
+  "C112": {
+    "value": "10uF",
+    "pins": {
+      "2": {
+        "net": "GND",
+        "function": ""
+      },
+      "1": {
+        "net": "VBAT",
+        "function": ""
+      }
+    }
+  },
+  "C113": {
+    "value": "100nF",
+    "pins": {
+      "2": {
+        "net": "GND",
+        "function": ""
+      },
+      "1": {
+        "net": "VBAT",
+        "function": ""
+      }
+    }
+  },
+  "C114": {
+    "value": "100nF",
+    "pins": {
+      "1": {
+        "net": "/Alimentation/BST_BUCK",
+        "function": ""
+      },
+      "2": {
+        "net": "/Alimentation/SW_BUCK",
+        "function": ""
+      }
+    }
+  },
+  "C115": {
+    "value": "10nF",
+    "pins": {
+      "1": {
+        "net": "/Alimentation/SS_BUCK",
+        "function": ""
+      },
+      "2": {
+        "net": "GND",
+        "function": ""
+      }
+    }
+  },
+  "C116": {
+    "value": "22uF",
+    "pins": {
+      "1": {
+        "net": "+3V3",
+        "function": ""
+      },
+      "2": {
+        "net": "GND",
+        "function": ""
+      }
+    }
+  },
+  "C117": {
+    "value": "22uF",
+    "pins": {
+      "1": {
+        "net": "+3V3",
+        "function": ""
+      },
+      "2": {
+        "net": "GND",
+        "function": ""
+      }
+    }
+  },
+  "C118": {
+    "value": "100nF",
+    "pins": {
+      "1": {
+        "net": "+3V3",
+        "function": ""
+      },
+      "2": {
+        "net": "GND",
+        "function": ""
+      }
+    }
+  },
+  "C119": {
+    "value": "10uF",
+    "pins": {
+      "1": {
+        "net": "+3V3A",
+        "function": ""
+      },
+      "2": {
+        "net": "GND",
+        "function": ""
+      }
+    }
+  },
+  "C120": {
+    "value": "100nF",
+    "pins": {
+      "1": {
+        "net": "+3V3A",
+        "function": ""
+      },
+      "2": {
+        "net": "GND",
+        "function": ""
+      }
+    }
+  },
+  "C121": {
+    "value": "100nF",
+    "pins": {
+      "2": {
+        "net": "GND",
+        "function": ""
+      },
+      "1": {
+        "net": "VBAT_SENSE",
+        "function": ""
+      }
+    }
+  },
+  "C122": {
+    "value": "100nF",
+    "pins": {
+      "2": {
+        "net": "GND",
+        "function": ""
+      },
+      "1": {
+        "net": "PWR_BTN",
+        "function": ""
+      }
+    }
+  },
+  "C123": {
+    "value": "1uF",
+    "pins": {
+      "1": {
+        "net": "/Alimentation/PWR_G",
+        "function": ""
+      },
+      "2": {
+        "net": "GND",
+        "function": ""
+      }
+    }
+  },
+  "D101": {
+    "value": "vert - charge",
+    "pins": {
+      "2": {
+        "net": "/Alimentation/CHG_LED_A",
+        "function": "A_2"
+      },
+      "1": {
+        "net": "/Alimentation/CHG_STAT",
+        "function": "K_1"
+      }
+    }
+  },
+  "D102": {
+    "value": "SMBJ9.0A",
+    "pins": {
+      "2": {
+        "net": "GND",
+        "function": "A2_2"
+      },
+      "1": {
+        "net": "VBAT",
+        "function": "A1_1"
+      }
+    }
+  },
+  "D106": {
+    "value": "BAT54",
+    "pins": {
+      "2": {
+        "net": "/Alimentation/BTN_N",
+        "function": "A_2"
+      },
+      "1": {
+        "net": "/Alimentation/PWR_G",
+        "function": "K_1"
+      }
+    }
+  },
+  "F101": {
+    "value": "12 A",
+    "pins": {
+      "2": {
+        "net": "/Alimentation/VBAT_SW_IN",
+        "function": ""
+      },
+      "1": {
+        "net": "VPACK",
+        "function": ""
+      }
+    }
+  },
+  "FB101": {
+    "value": "600R @ 100 MHz",
+    "pins": {
+      "1": {
+        "net": "+3V3",
+        "function": ""
+      },
+      "2": {
+        "net": "+3V3A",
+        "function": ""
+      }
+    }
+  },
+  "J101": {
+    "value": "TYPE-C-31-M-12",
+    "pins": {
+      "A5": {
+        "net": "/Alimentation/CC1",
+        "function": "CC1_A5"
+      },
+      "B5": {
+        "net": "/Alimentation/CC2",
+        "function": "CC2_B5"
+      },
+      "A7": {
+        "net": "/Alimentation/USB_DM_C",
+        "function": "D-_A7"
+      },
+      "B7": {
+        "net": "/Alimentation/USB_DM_C",
+        "function": "D-_B7"
+      },
+      "A6": {
+        "net": "/Alimentation/USB_DP_C",
+        "function": "D+_A6"
+      },
+      "B6": {
+        "net": "/Alimentation/USB_DP_C",
+        "function": "D+_B6"
+      },
+      "A4": {
+        "net": "/Alimentation/VBUS_IN",
+        "function": "VBUS_A4"
+      },
+      "A9": {
+        "net": "/Alimentation/VBUS_IN",
+        "function": "VBUS_A9"
+      },
+      "B4": {
+        "net": "/Alimentation/VBUS_IN",
+        "function": "VBUS_B4"
+      },
+      "B9": {
+        "net": "/Alimentation/VBUS_IN",
+        "function": "VBUS_B9"
+      },
+      "A1": {
+        "net": "GND",
+        "function": "GND_A1"
+      },
+      "A12": {
+        "net": "GND",
+        "function": "GND_A12"
+      },
+      "B1": {
+        "net": "GND",
+        "function": "GND_B1"
+      },
+      "B12": {
+        "net": "GND",
+        "function": "GND_B12"
+      },
+      "SH": {
+        "net": "GND",
+        "function": "SHIELD_SH"
+      },
+      "A8": {
+        "net": "unconnected-(J101-SBU1-PadA8)",
+        "function": "SBU1_A8"
+      },
+      "B8": {
+        "net": "unconnected-(J101-SBU2-PadB8)",
+        "function": "SBU2_B8"
+      }
+    }
+  },
+  "J102": {
+    "value": "Pack 2S - puissance",
+    "pins": {
+      "2": {
+        "net": "GND",
+        "function": "Pin_2_2"
+      },
+      "1": {
+        "net": "VPACK",
+        "function": "Pin_1_1"
+      }
+    }
+  },
+  "J104": {
+    "value": "Pack 2S - equilibrage",
+    "pins": {
+      "2": {
+        "net": "/Alimentation/PACK_MID",
+        "function": "Pin_2_2"
+      },
+      "1": {
+        "net": "GND",
+        "function": "Pin_1_1"
+      },
+      "3": {
+        "net": "VPACK",
+        "function": "Pin_3_3"
+      }
+    }
+  },
+  "L101": {
+    "value": "1uH / 4 A",
+    "pins": {
+      "1": {
+        "net": "/Alimentation/PMID",
+        "function": "1_1"
+      },
+      "2": {
+        "net": "/Alimentation/SW_CHG",
+        "function": "2_2"
+      }
+    }
+  },
+  "L102": {
+    "value": "4u7H / 3 A",
+    "pins": {
+      "2": {
+        "net": "+3V3",
+        "function": "2_2"
+      },
+      "1": {
+        "net": "/Alimentation/SW_BUCK",
+        "function": "1_1"
+      }
+    }
+  },
+  "Q101": {
+    "value": "AO3400A",
+    "pins": {
+      "3": {
+        "net": "/Alimentation/CD",
+        "function": "D_3"
+      },
+      "1": {
+        "net": "/Alimentation/Q101_G",
+        "function": "G_1"
+      },
+      "2": {
+        "net": "GND",
+        "function": "S_2"
+      }
+    }
+  },
+  "Q102": {
+    "value": "AO4407A",
+    "pins": {
+      "4": {
+        "net": "/Alimentation/PWR_G",
+        "function": "G_4"
+      },
+      "1": {
+        "net": "/Alimentation/VBAT_SW_IN",
+        "function": "S_1"
+      },
+      "2": {
+        "net": "/Alimentation/VBAT_SW_IN",
+        "function": "S_2"
+      },
+      "3": {
+        "net": "/Alimentation/VBAT_SW_IN",
+        "function": "S_3"
+      },
+      "5": {
+        "net": "VBAT",
+        "function": "D_5"
+      },
+      "6": {
+        "net": "VBAT",
+        "function": "D_6"
+      },
+      "7": {
+        "net": "VBAT",
+        "function": "D_7"
+      },
+      "8": {
+        "net": "VBAT",
+        "function": "D_8"
+      }
+    }
+  },
+  "Q103": {
+    "value": "AO4407A",
+    "pins": {
+      "4": {
+        "net": "/Alimentation/PWR_G",
+        "function": "G_4"
+      },
+      "1": {
+        "net": "/Alimentation/VBAT_SW_IN",
+        "function": "S_1"
+      },
+      "2": {
+        "net": "/Alimentation/VBAT_SW_IN",
+        "function": "S_2"
+      },
+      "3": {
+        "net": "/Alimentation/VBAT_SW_IN",
+        "function": "S_3"
+      },
+      "5": {
+        "net": "VBAT",
+        "function": "D_5"
+      },
+      "6": {
+        "net": "VBAT",
+        "function": "D_6"
+      },
+      "7": {
+        "net": "VBAT",
+        "function": "D_7"
+      },
+      "8": {
+        "net": "VBAT",
+        "function": "D_8"
+      }
+    }
+  },
+  "Q104": {
+    "value": "AO3400A",
+    "pins": {
+      "3": {
+        "net": "/Alimentation/PWR_G",
+        "function": "D_3"
+      },
+      "1": {
+        "net": "/Alimentation/Q104_G",
+        "function": "G_1"
+      },
+      "2": {
+        "net": "GND",
+        "function": "S_2"
+      }
+    }
+  },
+  "R101": {
+    "value": "5k1",
+    "pins": {
+      "1": {
+        "net": "/Alimentation/CC1",
+        "function": ""
+      },
+      "2": {
+        "net": "GND",
+        "function": ""
+      }
+    }
+  },
+  "R102": {
+    "value": "5k1",
+    "pins": {
+      "1": {
+        "net": "/Alimentation/CC2",
+        "function": ""
+      },
+      "2": {
+        "net": "GND",
+        "function": ""
+      }
+    }
+  },
+  "R103": {
+    "value": "383R",
+    "pins": {
+      "1": {
+        "net": "/Alimentation/ILIM",
+        "function": ""
+      },
+      "2": {
+        "net": "GND",
+        "function": ""
+      }
+    }
+  },
+  "R104": {
+    "value": "5k23",
+    "pins": {
+      "1": {
+        "net": "/Alimentation/REGN",
+        "function": ""
+      },
+      "2": {
+        "net": "/Alimentation/TS",
+        "function": ""
+      }
+    }
+  },
+  "R105": {
+    "value": "30k1",
+    "pins": {
+      "1": {
+        "net": "/Alimentation/TS",
+        "function": ""
+      },
+      "2": {
+        "net": "GND",
+        "function": ""
+      }
+    }
+  },
+  "R106": {
+    "value": "300R",
+    "pins": {
+      "2": {
+        "net": "/Alimentation/MID_R",
+        "function": ""
+      },
+      "1": {
+        "net": "/Alimentation/PACK_MID",
+        "function": ""
+      }
+    }
+  },
+  "R107": {
+    "value": "10R",
+    "pins": {
+      "2": {
+        "net": "/Alimentation/CBSET_R",
+        "function": ""
+      },
+      "1": {
+        "net": "/Alimentation/PACK_MID",
+        "function": ""
+      }
+    }
+  },
+  "R108": {
+    "value": "10k",
+    "pins": {
+      "1": {
+        "net": "+3V3",
+        "function": ""
+      },
+      "2": {
+        "net": "/Alimentation/CHG_STAT",
+        "function": ""
+      }
+    }
+  },
+  "R109": {
+    "value": "10k",
+    "pins": {
+      "1": {
+        "net": "+3V3",
+        "function": ""
+      },
+      "2": {
+        "net": "/Alimentation/CHG_PG",
+        "function": ""
+      }
+    }
+  },
+  "R110": {
+    "value": "2k2",
+    "pins": {
+      "1": {
+        "net": "+3V3",
+        "function": ""
+      },
+      "2": {
+        "net": "/Alimentation/CHG_LED_A",
+        "function": ""
+      }
+    }
+  },
+  "R111": {
+    "value": "100k",
+    "pins": {
+      "2": {
+        "net": "/Alimentation/CD",
+        "function": ""
+      },
+      "1": {
+        "net": "/Alimentation/REGN",
+        "function": ""
+      }
+    }
+  },
+  "R112": {
+    "value": "100R",
+    "pins": {
+      "2": {
+        "net": "/Alimentation/Q101_G",
+        "function": ""
+      },
+      "1": {
+        "net": "CHG_CD_EN",
+        "function": ""
+      }
+    }
+  },
+  "R113": {
+    "value": "100k",
+    "pins": {
+      "1": {
+        "net": "/Alimentation/Q101_G",
+        "function": ""
+      },
+      "2": {
+        "net": "GND",
+        "function": ""
+      }
+    }
+  },
+  "R114": {
+    "value": "100k",
+    "pins": {
+      "1": {
+        "net": "/Alimentation/PWR_G",
+        "function": ""
+      },
+      "2": {
+        "net": "/Alimentation/VBAT_SW_IN",
+        "function": ""
+      }
+    }
+  },
+  "R115": {
+    "value": "100k",
+    "pins": {
+      "2": {
+        "net": "/Alimentation/EN_BUCK",
+        "function": ""
+      },
+      "1": {
+        "net": "VBAT",
+        "function": ""
+      }
+    }
+  },
+  "R116": {
+    "value": "42k2",
+    "pins": {
+      "1": {
+        "net": "/Alimentation/RT_BUCK",
+        "function": ""
+      },
+      "2": {
+        "net": "GND",
+        "function": ""
+      }
+    }
+  },
+  "R117": {
+    "value": "100k",
+    "pins": {
+      "1": {
+        "net": "+3V3",
+        "function": ""
+      },
+      "2": {
+        "net": "/Alimentation/FB_BUCK",
+        "function": ""
+      }
+    }
+  },
+  "R118": {
+    "value": "31k6",
+    "pins": {
+      "1": {
+        "net": "/Alimentation/FB_BUCK",
+        "function": ""
+      },
+      "2": {
+        "net": "GND",
+        "function": ""
+      }
+    }
+  },
+  "R119": {
+    "value": "22k",
+    "pins": {
+      "1": {
+        "net": "VBAT",
+        "function": ""
+      },
+      "2": {
+        "net": "VBAT_SENSE",
+        "function": ""
+      }
+    }
+  },
+  "R120": {
+    "value": "10k",
+    "pins": {
+      "2": {
+        "net": "GND",
+        "function": ""
+      },
+      "1": {
+        "net": "VBAT_SENSE",
+        "function": ""
+      }
+    }
+  },
+  "R124": {
+    "value": "100R",
+    "pins": {
+      "2": {
+        "net": "/Alimentation/Q104_G",
+        "function": ""
+      },
+      "1": {
+        "net": "PWR_HOLD",
+        "function": ""
+      }
+    }
+  },
+  "R125": {
+    "value": "10k",
+    "pins": {
+      "2": {
+        "net": "/Alimentation/BTN_N",
+        "function": ""
+      },
+      "1": {
+        "net": "/Alimentation/VBAT_SW_IN",
+        "function": ""
+      }
+    }
+  },
+  "R126": {
+    "value": "100k",
+    "pins": {
+      "1": {
+        "net": "/Alimentation/Q104_G",
+        "function": ""
+      },
+      "2": {
+        "net": "GND",
+        "function": ""
+      }
+    }
+  },
+  "R127": {
+    "value": "470k",
+    "pins": {
+      "1": {
+        "net": "/Alimentation/BTN_N",
+        "function": ""
+      },
+      "2": {
+        "net": "PWR_BTN",
+        "function": ""
+      }
+    }
+  },
+  "R128": {
+    "value": "220k",
+    "pins": {
+      "2": {
+        "net": "GND",
+        "function": ""
+      },
+      "1": {
+        "net": "PWR_BTN",
+        "function": ""
+      }
+    }
+  },
+  "SW101": {
+    "value": "MARCHE / ARRET",
+    "pins": {
+      "1": {
+        "net": "/Alimentation/BTN_N",
+        "function": "1_1"
+      },
+      "2": {
+        "net": "GND",
+        "function": "2_2"
+      }
+    }
+  },
+  "U101": {
+    "value": "USBLC6-2SC6",
+    "pins": {
+      "3": {
+        "net": "/Alimentation/USB_DM_C",
+        "function": "I/O2_3"
+      },
+      "1": {
+        "net": "/Alimentation/USB_DP_C",
+        "function": "I/O1_1"
+      },
+      "5": {
+        "net": "/Alimentation/VBUS_IN",
+        "function": "VBUS_5"
+      },
+      "2": {
+        "net": "GND",
+        "function": "GND_2"
+      },
+      "4": {
+        "net": "USB_DM",
+        "function": "I/O2_4"
+      },
+      "6": {
+        "net": "USB_DP",
+        "function": "I/O1_6"
+      }
+    }
+  },
+  "U102": {
+    "value": "BQ25887RGER",
+    "pins": {
+      "12": {
+        "net": "/Alimentation/BTST",
+        "function": "BTST_12"
+      },
+      "10": {
+        "net": "/Alimentation/CBSET_R",
+        "function": "CBSET_10"
+      },
+      "3": {
+        "net": "/Alimentation/CD",
+        "function": "CD_3"
+      },
+      "1": {
+        "net": "/Alimentation/CHG_PG",
+        "function": "~{PG}_1"
+      },
+      "2": {
+        "net": "/Alimentation/CHG_STAT",
+        "function": "STAT_2"
+      },
+      "8": {
+        "net": "/Alimentation/ILIM",
+        "function": "ILIM_8"
+      },
+      "9": {
+        "net": "/Alimentation/MID_R",
+        "function": "MID_9"
+      },
+      "21": {
+        "net": "/Alimentation/PMID",
+        "function": "PMID_21"
+      },
+      "22": {
+        "net": "/Alimentation/PMID",
+        "function": "PMID_22"
+      },
+      "11": {
+        "net": "/Alimentation/REGN",
+        "function": "REGN_11"
+      },
+      "15": {
+        "net": "/Alimentation/SNS_CHG",
+        "function": "SNS_15"
+      },
+      "16": {
+        "net": "/Alimentation/SNS_CHG",
+        "function": "SNS_16"
+      },
+      "17": {
+        "net": "/Alimentation/SW_CHG",
+        "function": "SW_17"
+      },
+      "18": {
+        "net": "/Alimentation/SW_CHG",
+        "function": "SW_18"
+      },
+      "7": {
+        "net": "/Alimentation/TS",
+        "function": "TS_7"
+      },
+      "23": {
+        "net": "/Alimentation/VBUS_IN",
+        "function": "VBUS_23"
+      },
+      "6": {
+        "net": "CHG_INT",
+        "function": "~{INT}_6"
+      },
+      "19": {
+        "net": "GND",
+        "function": "GND_19"
+      },
+      "20": {
+        "net": "GND",
+        "function": "GND_20"
+      },
+      "24": {
+        "net": "GND",
+        "function": "PSEL_24"
+      },
+      "25": {
+        "net": "GND",
+        "function": "GND_25"
+      },
+      "5": {
+        "net": "SCL2",
+        "function": "SCL_5"
+      },
+      "4": {
+        "net": "SDA2",
+        "function": "SDA_4"
+      },
+      "13": {
+        "net": "VPACK",
+        "function": "BAT_13"
+      },
+      "14": {
+        "net": "VPACK",
+        "function": "BAT_14"
+      }
+    }
+  },
+  "U103": {
+    "value": "TPS62933DRLR",
+    "pins": {
+      "6": {
+        "net": "/Alimentation/BST_BUCK",
+        "function": "BST_6"
+      },
+      "2": {
+        "net": "/Alimentation/EN_BUCK",
+        "function": "EN_2"
+      },
+      "8": {
+        "net": "/Alimentation/FB_BUCK",
+        "function": "FB_8"
+      },
+      "1": {
+        "net": "/Alimentation/RT_BUCK",
+        "function": "RT_1"
+      },
+      "7": {
+        "net": "/Alimentation/SS_BUCK",
+        "function": "SS_7"
+      },
+      "5": {
+        "net": "/Alimentation/SW_BUCK",
+        "function": "SW_5"
+      },
+      "4": {
+        "net": "GND",
+        "function": "GND_4"
+      },
+      "3": {
+        "net": "VBAT",
+        "function": "VIN_3"
+      }
+    }
+  },
+  "C201": {
+    "value": "100nF",
+    "pins": {
+      "1": {
+        "net": "+3V3",
+        "function": ""
+      },
+      "2": {
+        "net": "GND",
+        "function": ""
+      }
+    }
+  },
+  "C202": {
+    "value": "100nF",
+    "pins": {
+      "1": {
+        "net": "+3V3",
+        "function": ""
+      },
+      "2": {
+        "net": "GND",
+        "function": ""
+      }
+    }
+  },
+  "C203": {
+    "value": "100nF",
+    "pins": {
+      "1": {
+        "net": "+3V3",
+        "function": ""
+      },
+      "2": {
+        "net": "GND",
+        "function": ""
+      }
+    }
+  },
+  "C204": {
+    "value": "100nF",
+    "pins": {
+      "1": {
+        "net": "+3V3",
+        "function": ""
+      },
+      "2": {
+        "net": "GND",
+        "function": ""
+      }
+    }
+  },
+  "C205": {
+    "value": "100nF",
+    "pins": {
+      "1": {
+        "net": "+3V3",
+        "function": ""
+      },
+      "2": {
+        "net": "GND",
+        "function": ""
+      }
+    }
+  },
+  "C206": {
+    "value": "4u7F",
+    "pins": {
+      "1": {
+        "net": "+3V3",
+        "function": ""
+      },
+      "2": {
+        "net": "GND",
+        "function": ""
+      }
+    }
+  },
+  "C207": {
+    "value": "100nF",
+    "pins": {
+      "1": {
+        "net": "+3V3",
+        "function": ""
+      },
+      "2": {
+        "net": "GND",
+        "function": ""
+      }
+    }
+  },
+  "C208": {
+    "value": "100nF",
+    "pins": {
+      "1": {
+        "net": "+3V3A",
+        "function": ""
+      },
+      "2": {
+        "net": "GND",
+        "function": ""
+      }
+    }
+  },
+  "C209": {
+    "value": "1uF",
+    "pins": {
+      "1": {
+        "net": "+3V3A",
+        "function": ""
+      },
+      "2": {
+        "net": "GND",
+        "function": ""
+      }
+    }
+  },
+  "C210": {
+    "value": "100nF",
+    "pins": {
+      "1": {
+        "net": "+3V3A",
+        "function": ""
+      },
+      "2": {
+        "net": "GND",
+        "function": ""
+      }
+    }
+  },
+  "C211": {
+    "value": "1uF",
+    "pins": {
+      "1": {
+        "net": "+3V3A",
+        "function": ""
+      },
+      "2": {
+        "net": "GND",
+        "function": ""
+      }
+    }
+  },
+  "C212": {
+    "value": "2u2F",
+    "pins": {
+      "1": {
+        "net": "/MCU/VCAP1",
+        "function": ""
+      },
+      "2": {
+        "net": "GND",
+        "function": ""
+      }
+    }
+  },
+  "C213": {
+    "value": "2u2F",
+    "pins": {
+      "1": {
+        "net": "/MCU/VCAP2",
+        "function": ""
+      },
+      "2": {
+        "net": "GND",
+        "function": ""
+      }
+    }
+  },
+  "C214": {
+    "value": "100nF",
+    "pins": {
+      "1": {
+        "net": "/MCU/NRST",
+        "function": ""
+      },
+      "2": {
+        "net": "GND",
+        "function": ""
+      }
+    }
+  },
+  "C215": {
+    "value": "10pF",
+    "pins": {
+      "1": {
+        "net": "/MCU/OSC_IN",
+        "function": ""
+      },
+      "2": {
+        "net": "GND",
+        "function": ""
+      }
+    }
+  },
+  "C216": {
+    "value": "10pF",
+    "pins": {
+      "1": {
+        "net": "/MCU/XTAL_OUT",
+        "function": ""
+      },
+      "2": {
+        "net": "GND",
+        "function": ""
+      }
+    }
+  },
+  "C217": {
+    "value": "100nF",
+    "pins": {
+      "1": {
+        "net": "+3V3",
+        "function": ""
+      },
+      "2": {
+        "net": "GND",
+        "function": ""
+      }
+    }
+  },
+  "C218": {
+    "value": "100nF",
+    "pins": {
+      "1": {
+        "net": "+3V3",
+        "function": ""
+      },
+      "2": {
+        "net": "GND",
+        "function": ""
+      }
+    }
+  },
+  "C219": {
+    "value": "100nF",
+    "pins": {
+      "1": {
+        "net": "+3V3",
+        "function": ""
+      },
+      "2": {
+        "net": "GND",
+        "function": ""
+      }
+    }
+  },
+  "C220": {
+    "value": "100nF",
+    "pins": {
+      "1": {
+        "net": "+3V3",
+        "function": ""
+      },
+      "2": {
+        "net": "GND",
+        "function": ""
+      }
+    }
+  },
+  "C221": {
+    "value": "100nF",
+    "pins": {
+      "1": {
+        "net": "+3V3",
+        "function": ""
+      },
+      "2": {
+        "net": "GND",
+        "function": ""
+      }
+    }
+  },
+  "C222": {
+    "value": "100nF",
+    "pins": {
+      "1": {
+        "net": "+3V3",
+        "function": ""
+      },
+      "2": {
+        "net": "GND",
+        "function": ""
+      }
+    }
+  },
+  "C223": {
+    "value": "100nF",
+    "pins": {
+      "1": {
+        "net": "+3V3",
+        "function": ""
+      },
+      "2": {
+        "net": "GND",
+        "function": ""
+      }
+    }
+  },
+  "C224": {
+    "value": "1uF",
+    "pins": {
+      "1": {
+        "net": "+3V3",
+        "function": ""
+      },
+      "2": {
+        "net": "GND",
+        "function": ""
+      }
+    }
+  },
+  "J201": {
+    "value": "TC2030-IDC-FP",
+    "pins": {
+      "1": {
+        "net": "+3V3",
+        "function": ""
+      },
+      "3": {
+        "net": "/MCU/NRST",
+        "function": ""
+      },
+      "4": {
+        "net": "/MCU/SWCLK",
+        "function": ""
+      },
+      "5": {
+        "net": "/MCU/SWDIO",
+        "function": ""
+      },
+      "2": {
+        "net": "/MCU/SWO",
+        "function": ""
+      },
+      "6": {
+        "net": "GND",
+        "function": ""
+      }
+    }
+  },
+  "R201": {
+    "value": "10k",
+    "pins": {
+      "1": {
+        "net": "+3V3",
+        "function": ""
+      },
+      "2": {
+        "net": "/MCU/NRST",
+        "function": ""
+      }
+    }
+  },
+  "R202": {
+    "value": "10k",
+    "pins": {
+      "1": {
+        "net": "/MCU/BOOT0",
+        "function": ""
+      },
+      "2": {
+        "net": "GND",
+        "function": ""
+      }
+    }
+  },
+  "R203": {
+    "value": "10k",
+    "pins": {
+      "1": {
+        "net": "+3V3",
+        "function": ""
+      },
+      "2": {
+        "net": "/MCU/BOOT0",
+        "function": ""
+      }
+    }
+  },
+  "R204": {
+    "value": "220R",
+    "pins": {
+      "2": {
+        "net": "/MCU/OSC_OUT",
+        "function": ""
+      },
+      "1": {
+        "net": "/MCU/XTAL_OUT",
+        "function": ""
+      }
+    }
+  },
+  "SW603": {
+    "value": "RESET",
+    "pins": {
+      "1": {
+        "net": "/MCU/NRST",
+        "function": "1_1"
+      },
+      "2": {
+        "net": "GND",
+        "function": "2_2"
+      }
+    }
+  },
+  "U201": {
+    "value": "STM32H723ZGT6",
+    "pins": {
+      "108": {
+        "net": "+3V3",
+        "function": "VDD_108"
+      },
+      "121": {
+        "net": "+3V3",
+        "function": "VDD_121"
+      },
+      "131": {
+        "net": "+3V3",
+        "function": "VDD_131"
+      },
+      "143": {
+        "net": "+3V3",
+        "function": "PDR_ON_143"
+      },
+      "144": {
+        "net": "+3V3",
+        "function": "VDD_144"
+      },
+      "17": {
+        "net": "+3V3",
+        "function": "VDD_17"
+      },
+      "30": {
+        "net": "+3V3",
+        "function": "VDD_30"
+      },
+      "39": {
+        "net": "+3V3",
+        "function": "VDD_39"
+      },
+      "52": {
+        "net": "+3V3",
+        "function": "VDD_52"
+      },
+      "6": {
+        "net": "+3V3",
+        "function": "VBAT_6"
+      },
+      "62": {
+        "net": "+3V3",
+        "function": "VDD_62"
+      },
+      "72": {
+        "net": "+3V3",
+        "function": "VDD_72"
+      },
+      "84": {
+        "net": "+3V3",
+        "function": "VDD_84"
+      },
+      "95": {
+        "net": "+3V3",
+        "function": "VDD33USB_95"
+      },
+      "32": {
+        "net": "+3V3A",
+        "function": "VREF+_32"
+      },
+      "33": {
+        "net": "+3V3A",
+        "function": "VDDA_33"
+      },
+      "138": {
+        "net": "/MCU/BOOT0",
+        "function": "BOOT0_138"
+      },
+      "25": {
+        "net": "/MCU/NRST",
+        "function": "NRST_25"
+      },
+      "23": {
+        "net": "/MCU/OSC_IN",
+        "function": "PH0_23"
+      },
+      "24": {
+        "net": "/MCU/OSC_OUT",
+        "function": "PH1_24"
+      },
+      "109": {
+        "net": "/MCU/SWCLK",
+        "function": "PA14(JTCK_109"
+      },
+      "105": {
+        "net": "/MCU/SWDIO",
+        "function": "PA13(JTMS_105"
+      },
+      "133": {
+        "net": "/MCU/SWO",
+        "function": "PB3(JTDO_133"
+      },
+      "71": {
+        "net": "/MCU/VCAP1",
+        "function": "VCAP_71"
+      },
+      "106": {
+        "net": "/MCU/VCAP2",
+        "function": "VCAP_106"
+      },
+      "100": {
+        "net": "BLE_PWR_EN",
+        "function": "PA8_100"
+      },
+      "102": {
+        "net": "BLE_RX",
+        "function": "PA10_102"
+      },
+      "101": {
+        "net": "BLE_TX",
+        "function": "PA9_101"
+      },
+      "140": {
+        "net": "BUZZER",
+        "function": "PB9_140"
+      },
+      "2": {
+        "net": "CHG_CD_EN",
+        "function": "PE3_2"
+      },
+      "3": {
+        "net": "CHG_INT",
+        "function": "PE4_3"
+      },
+      "134": {
+        "net": "ENC_L_A",
+        "function": "PB4(NJTRST)_134"
+      },
+      "135": {
+        "net": "ENC_L_B",
+        "function": "PB5_135"
+      },
+      "96": {
+        "net": "ENC_R_A",
+        "function": "PC6_96"
+      },
+      "97": {
+        "net": "ENC_R_B",
+        "function": "PC7_97"
+      },
+      "139": {
+        "net": "ESC_PWM",
+        "function": "PB8_139"
+      },
+      "112": {
+        "net": "FLASH_MISO",
+        "function": "PC11_112"
+      },
+      "113": {
+        "net": "FLASH_MOSI",
+        "function": "PC12_113"
+      },
+      "111": {
+        "net": "FLASH_SCK",
+        "function": "PC10_111"
+      },
+      "116": {
+        "net": "FLASH_nCS",
+        "function": "PD2_116"
+      },
+      "107": {
+        "net": "GND",
+        "function": "VSS_107"
+      },
+      "120": {
+        "net": "GND",
+        "function": "VSS_120"
+      },
+      "130": {
+        "net": "GND",
+        "function": "VSS_130"
+      },
+      "16": {
+        "net": "GND",
+        "function": "VSS_16"
+      },
+      "31": {
+        "net": "GND",
+        "function": "VSSA_31"
+      },
+      "38": {
+        "net": "GND",
+        "function": "VSS_38"
+      },
+      "51": {
+        "net": "GND",
+        "function": "VSS_51"
+      },
+      "61": {
+        "net": "GND",
+        "function": "VSS_61"
+      },
+      "83": {
+        "net": "GND",
+        "function": "VSS_83"
+      },
+      "94": {
+        "net": "GND",
+        "function": "VSS_94"
+      },
+      "5": {
+        "net": "IMU_INT1",
+        "function": "PE6_5"
+      },
+      "75": {
+        "net": "IMU_MISO",
+        "function": "PB14_75"
+      },
+      "76": {
+        "net": "IMU_MOSI",
+        "function": "PB15_76"
+      },
+      "74": {
+        "net": "IMU_SCK",
+        "function": "PB13_74"
+      },
+      "73": {
+        "net": "IMU_nCS",
+        "function": "PB12_73"
+      },
+      "49": {
+        "net": "IPROPI_L",
+        "function": "PF11_49"
+      },
+      "53": {
+        "net": "IPROPI_R",
+        "function": "PF13_53"
+      },
+      "58": {
+        "net": "IR_BANK_A",
+        "function": "PE7_58"
+      },
+      "59": {
+        "net": "IR_BANK_B",
+        "function": "PE8_59"
+      },
+      "34": {
+        "net": "LINE_00",
+        "function": "PA0_34"
+      },
+      "35": {
+        "net": "LINE_01",
+        "function": "PA1_35"
+      },
+      "36": {
+        "net": "LINE_02",
+        "function": "PA2_36"
+      },
+      "37": {
+        "net": "LINE_03",
+        "function": "PA3_37"
+      },
+      "40": {
+        "net": "LINE_04",
+        "function": "PA4_40"
+      },
+      "41": {
+        "net": "LINE_05",
+        "function": "PA5_41"
+      },
+      "42": {
+        "net": "LINE_06",
+        "function": "PA6_42"
+      },
+      "43": {
+        "net": "LINE_07",
+        "function": "PA7_43"
+      },
+      "46": {
+        "net": "LINE_08",
+        "function": "PB0_46"
+      },
+      "47": {
+        "net": "LINE_09",
+        "function": "PB1_47"
+      },
+      "44": {
+        "net": "LINE_10",
+        "function": "PC4_44"
+      },
+      "45": {
+        "net": "LINE_11",
+        "function": "PC5_45"
+      },
+      "60": {
+        "net": "MOT_L_IN1",
+        "function": "PE9_60"
+      },
+      "64": {
+        "net": "MOT_L_IN2",
+        "function": "PE11_64"
+      },
+      "117": {
+        "net": "MOT_L_nFAULT",
+        "function": "PD3_117"
+      },
+      "114": {
+        "net": "MOT_L_nSLEEP",
+        "function": "PD0_114"
+      },
+      "66": {
+        "net": "MOT_R_IN1",
+        "function": "PE13_66"
+      },
+      "67": {
+        "net": "MOT_R_IN2",
+        "function": "PE14_67"
+      },
+      "118": {
+        "net": "MOT_R_nFAULT",
+        "function": "PD4_118"
+      },
+      "115": {
+        "net": "MOT_R_nSLEEP",
+        "function": "PD1_115"
+      },
+      "142": {
+        "net": "PWR_BTN",
+        "function": "PE1_142"
+      },
+      "141": {
+        "net": "PWR_HOLD",
+        "function": "PE0_141"
+      },
+      "27": {
+        "net": "RX_F",
+        "function": "PC1_27"
+      },
+      "28": {
+        "net": "RX_FL",
+        "function": "PC2_C_28"
+      },
+      "29": {
+        "net": "RX_L",
+        "function": "PC3_C_29"
+      },
+      "69": {
+        "net": "SCL2",
+        "function": "PB10_69"
+      },
+      "70": {
+        "net": "SDA2",
+        "function": "PB11_70"
+      },
+      "85": {
+        "net": "START_BTN",
+        "function": "PD14_85"
+      },
+      "65": {
+        "net": "SW_DOWN",
+        "function": "PE12_65"
+      },
+      "68": {
+        "net": "SW_LEFT",
+        "function": "PE15_68"
+      },
+      "82": {
+        "net": "SW_PUSH",
+        "function": "PD13_82"
+      },
+      "79": {
+        "net": "SW_RIGHT",
+        "function": "PD10_79"
+      },
+      "63": {
+        "net": "SW_UP",
+        "function": "PE10_63"
+      },
+      "4": {
+        "net": "TRACK_EN",
+        "function": "PE5_4"
+      },
+      "48": {
+        "net": "TX_F",
+        "function": "PB2_48"
+      },
+      "1": {
+        "net": "TX_FL",
+        "function": "PE2_1"
+      },
+      "7": {
+        "net": "TX_L",
+        "function": "PC13_7"
+      },
+      "103": {
+        "net": "USB_DM",
+        "function": "PA11_103"
+      },
+      "104": {
+        "net": "USB_DP",
+        "function": "PA12_104"
+      },
+      "26": {
+        "net": "VBAT_SENSE",
+        "function": "PC0_26"
+      },
+      "110": {
+        "net": "unconnected-(U201-PA15(JTDI)-Pad110)",
+        "function": "PA15(JTDI)_110"
+      },
+      "136": {
+        "net": "unconnected-(U201-PB6-Pad136)",
+        "function": "PB6_136"
+      },
+      "137": {
+        "net": "unconnected-(U201-PB7-Pad137)",
+        "function": "PB7_137"
+      },
+      "98": {
+        "net": "unconnected-(U201-PC8-Pad98)",
+        "function": "PC8_98"
+      },
+      "99": {
+        "net": "unconnected-(U201-PC9-Pad99)",
+        "function": "PC9_99"
+      },
+      "8": {
+        "net": "unconnected-(U201-PC14-Pad8)",
+        "function": "PC14_8"
+      },
+      "9": {
+        "net": "unconnected-(U201-PC15-Pad9)",
+        "function": "PC15_9"
+      },
+      "119": {
+        "net": "unconnected-(U201-PD5-Pad119)",
+        "function": "PD5_119"
+      },
+      "122": {
+        "net": "unconnected-(U201-PD6-Pad122)",
+        "function": "PD6_122"
+      },
+      "123": {
+        "net": "unconnected-(U201-PD7-Pad123)",
+        "function": "PD7_123"
+      },
+      "77": {
+        "net": "unconnected-(U201-PD8-Pad77)",
+        "function": "PD8_77"
+      },
+      "78": {
+        "net": "unconnected-(U201-PD9-Pad78)",
+        "function": "PD9_78"
+      },
+      "80": {
+        "net": "unconnected-(U201-PD11-Pad80)",
+        "function": "PD11_80"
+      },
+      "81": {
+        "net": "unconnected-(U201-PD12-Pad81)",
+        "function": "PD12_81"
+      },
+      "86": {
+        "net": "unconnected-(U201-PD15-Pad86)",
+        "function": "PD15_86"
+      },
+      "10": {
+        "net": "unconnected-(U201-PF0-Pad10)",
+        "function": "PF0_10"
+      },
+      "11": {
+        "net": "unconnected-(U201-PF1-Pad11)",
+        "function": "PF1_11"
+      },
+      "12": {
+        "net": "unconnected-(U201-PF2-Pad12)",
+        "function": "PF2_12"
+      },
+      "13": {
+        "net": "unconnected-(U201-PF3-Pad13)",
+        "function": "PF3_13"
+      },
+      "14": {
+        "net": "unconnected-(U201-PF4-Pad14)",
+        "function": "PF4_14"
+      },
+      "15": {
+        "net": "unconnected-(U201-PF5-Pad15)",
+        "function": "PF5_15"
+      },
+      "18": {
+        "net": "unconnected-(U201-PF6-Pad18)",
+        "function": "PF6_18"
+      },
+      "19": {
+        "net": "unconnected-(U201-PF7-Pad19)",
+        "function": "PF7_19"
+      },
+      "20": {
+        "net": "unconnected-(U201-PF8-Pad20)",
+        "function": "PF8_20"
+      },
+      "21": {
+        "net": "unconnected-(U201-PF9-Pad21)",
+        "function": "PF9_21"
+      },
+      "22": {
+        "net": "unconnected-(U201-PF10-Pad22)",
+        "function": "PF10_22"
+      },
+      "50": {
+        "net": "unconnected-(U201-PF12-Pad50)",
+        "function": "PF12_50"
+      },
+      "54": {
+        "net": "unconnected-(U201-PF14-Pad54)",
+        "function": "PF14_54"
+      },
+      "55": {
+        "net": "unconnected-(U201-PF15-Pad55)",
+        "function": "PF15_55"
+      },
+      "56": {
+        "net": "unconnected-(U201-PG0-Pad56)",
+        "function": "PG0_56"
+      },
+      "57": {
+        "net": "unconnected-(U201-PG1-Pad57)",
+        "function": "PG1_57"
+      },
+      "87": {
+        "net": "unconnected-(U201-PG2-Pad87)",
+        "function": "PG2_87"
+      },
+      "88": {
+        "net": "unconnected-(U201-PG3-Pad88)",
+        "function": "PG3_88"
+      },
+      "89": {
+        "net": "unconnected-(U201-PG4-Pad89)",
+        "function": "PG4_89"
+      },
+      "90": {
+        "net": "unconnected-(U201-PG5-Pad90)",
+        "function": "PG5_90"
+      },
+      "91": {
+        "net": "unconnected-(U201-PG6-Pad91)",
+        "function": "PG6_91"
+      },
+      "92": {
+        "net": "unconnected-(U201-PG7-Pad92)",
+        "function": "PG7_92"
+      },
+      "93": {
+        "net": "unconnected-(U201-PG8-Pad93)",
+        "function": "PG8_93"
+      },
+      "124": {
+        "net": "unconnected-(U201-PG9-Pad124)",
+        "function": "PG9_124"
+      },
+      "125": {
+        "net": "unconnected-(U201-PG10-Pad125)",
+        "function": "PG10_125"
+      },
+      "126": {
+        "net": "unconnected-(U201-PG11-Pad126)",
+        "function": "PG11_126"
+      },
+      "127": {
+        "net": "unconnected-(U201-PG12-Pad127)",
+        "function": "PG12_127"
+      },
+      "128": {
+        "net": "unconnected-(U201-PG13-Pad128)",
+        "function": "PG13_128"
+      },
+      "129": {
+        "net": "unconnected-(U201-PG14-Pad129)",
+        "function": "PG14_129"
+      },
+      "132": {
+        "net": "unconnected-(U201-PG15-Pad132)",
+        "function": "PG15_132"
+      }
+    }
+  },
+  "Y201": {
+    "value": "25 MHz / 10 ppm",
+    "pins": {
+      "1": {
+        "net": "/MCU/OSC_IN",
+        "function": "1_1"
+      },
+      "3": {
+        "net": "/MCU/XTAL_OUT",
+        "function": "3_3"
+      },
+      "2": {
+        "net": "GND",
+        "function": "G_2"
+      },
+      "4": {
+        "net": "GND",
+        "function": "G_4"
+      }
+    }
+  },
+  "C301": {
+    "value": "100nF",
+    "pins": {
+      "1": {
+        "net": "/Moteurs/VREF_MOT",
+        "function": ""
+      },
+      "2": {
+        "net": "GND",
+        "function": ""
+      }
+    }
+  },
+  "C302": {
+    "value": "1nF",
+    "pins": {
+      "2": {
+        "net": "GND",
+        "function": ""
+      },
+      "1": {
+        "net": "IPROPI_L",
+        "function": ""
+      }
+    }
+  },
+  "C303": {
+    "value": "100nF",
+    "pins": {
+      "2": {
+        "net": "GND",
+        "function": ""
+      },
+      "1": {
+        "net": "VBAT",
+        "function": ""
+      }
+    }
+  },
+  "C304": {
+    "value": "100uF",
+    "pins": {
+      "2": {
+        "net": "GND",
+        "function": ""
+      },
+      "1": {
+        "net": "VBAT",
+        "function": ""
+      }
+    }
+  },
+  "C305": {
+    "value": "100nF",
+    "pins": {
+      "1": {
+        "net": "/Moteurs/VCP_L",
+        "function": ""
+      },
+      "2": {
+        "net": "VBAT",
+        "function": ""
+      }
+    }
+  },
+  "C306": {
+    "value": "22nF",
+    "pins": {
+      "1": {
+        "net": "/Moteurs/CPH_L",
+        "function": ""
+      },
+      "2": {
+        "net": "/Moteurs/CPL_L",
+        "function": ""
+      }
+    }
+  },
+  "C307": {
+    "value": "100nF",
+    "pins": {
+      "1": {
+        "net": "/Moteurs/MOT_L_OUT1",
+        "function": ""
+      },
+      "2": {
+        "net": "/Moteurs/MOT_L_OUT2",
+        "function": ""
+      }
+    }
+  },
+  "C308": {
+    "value": "1nF",
+    "pins": {
+      "1": {
+        "net": "ENC_L_A",
+        "function": ""
+      },
+      "2": {
+        "net": "GND",
+        "function": ""
+      }
+    }
+  },
+  "C309": {
+    "value": "1nF",
+    "pins": {
+      "1": {
+        "net": "ENC_L_B",
+        "function": ""
+      },
+      "2": {
+        "net": "GND",
+        "function": ""
+      }
+    }
+  },
+  "C351": {
+    "value": "100nF",
+    "pins": {
+      "1": {
+        "net": "/Moteurs/VREF_MOT",
+        "function": ""
+      },
+      "2": {
+        "net": "GND",
+        "function": ""
+      }
+    }
+  },
+  "C352": {
+    "value": "1nF",
+    "pins": {
+      "2": {
+        "net": "GND",
+        "function": ""
+      },
+      "1": {
+        "net": "IPROPI_R",
+        "function": ""
+      }
+    }
+  },
+  "C353": {
+    "value": "100nF",
+    "pins": {
+      "2": {
+        "net": "GND",
+        "function": ""
+      },
+      "1": {
+        "net": "VBAT",
+        "function": ""
+      }
+    }
+  },
+  "C354": {
+    "value": "100uF",
+    "pins": {
+      "2": {
+        "net": "GND",
+        "function": ""
+      },
+      "1": {
+        "net": "VBAT",
+        "function": ""
+      }
+    }
+  },
+  "C355": {
+    "value": "100nF",
+    "pins": {
+      "1": {
+        "net": "/Moteurs/VCP_R",
+        "function": ""
+      },
+      "2": {
+        "net": "VBAT",
+        "function": ""
+      }
+    }
+  },
+  "C356": {
+    "value": "22nF",
+    "pins": {
+      "1": {
+        "net": "/Moteurs/CPH_R",
+        "function": ""
+      },
+      "2": {
+        "net": "/Moteurs/CPL_R",
+        "function": ""
+      }
+    }
+  },
+  "C357": {
+    "value": "100nF",
+    "pins": {
+      "1": {
+        "net": "/Moteurs/MOT_R_OUT1",
+        "function": ""
+      },
+      "2": {
+        "net": "/Moteurs/MOT_R_OUT2",
+        "function": ""
+      }
+    }
+  },
+  "C358": {
+    "value": "1nF",
+    "pins": {
+      "1": {
+        "net": "ENC_R_A",
+        "function": ""
+      },
+      "2": {
+        "net": "GND",
+        "function": ""
+      }
+    }
+  },
+  "C359": {
+    "value": "1nF",
+    "pins": {
+      "1": {
+        "net": "ENC_R_B",
+        "function": ""
+      },
+      "2": {
+        "net": "GND",
+        "function": ""
+      }
+    }
+  },
+  "J301": {
+    "value": "Moteur Faulhaber + IE2",
+    "pins": {
+      "4": {
+        "net": "+3V3",
+        "function": "VDD_4"
+      },
+      "6": {
+        "net": "/Moteurs/ENC_L_A_RAW",
+        "function": "A_6"
+      },
+      "5": {
+        "net": "/Moteurs/ENC_L_B_RAW",
+        "function": "B_5"
+      },
+      "2": {
+        "net": "/Moteurs/MOT_L_OUT1",
+        "function": "M+_2"
+      },
+      "1": {
+        "net": "/Moteurs/MOT_L_OUT2",
+        "function": "M-_1"
+      },
+      "3": {
+        "net": "GND",
+        "function": "GND_3"
+      }
+    }
+  },
+  "J351": {
+    "value": "Moteur Faulhaber + IE2",
+    "pins": {
+      "4": {
+        "net": "+3V3",
+        "function": "VDD_4"
+      },
+      "6": {
+        "net": "/Moteurs/ENC_R_A_RAW",
+        "function": "A_6"
+      },
+      "5": {
+        "net": "/Moteurs/ENC_R_B_RAW",
+        "function": "B_5"
+      },
+      "2": {
+        "net": "/Moteurs/MOT_R_OUT1",
+        "function": "M+_2"
+      },
+      "1": {
+        "net": "/Moteurs/MOT_R_OUT2",
+        "function": "M-_1"
+      },
+      "3": {
+        "net": "GND",
+        "function": "GND_3"
+      }
+    }
+  },
+  "R301": {
+    "value": "10k",
+    "pins": {
+      "1": {
+        "net": "+3V3",
+        "function": ""
+      },
+      "2": {
+        "net": "/Moteurs/VREF_MOT",
+        "function": ""
+      }
+    }
+  },
+  "R302": {
+    "value": "6k8",
+    "pins": {
+      "1": {
+        "net": "/Moteurs/VREF_MOT",
+        "function": ""
+      },
+      "2": {
+        "net": "GND",
+        "function": ""
+      }
+    }
+  },
+  "R303": {
+    "value": "100k",
+    "pins": {
+      "2": {
+        "net": "GND",
+        "function": ""
+      },
+      "1": {
+        "net": "MOT_L_nSLEEP",
+        "function": ""
+      }
+    }
+  },
+  "R304": {
+    "value": "10k",
+    "pins": {
+      "1": {
+        "net": "+3V3",
+        "function": ""
+      },
+      "2": {
+        "net": "MOT_L_nFAULT",
+        "function": ""
+      }
+    }
+  },
+  "R305": {
+    "value": "20k",
+    "pins": {
+      "1": {
+        "net": "/Moteurs/IMODE_L",
+        "function": ""
+      },
+      "2": {
+        "net": "GND",
+        "function": ""
+      }
+    }
+  },
+  "R306": {
+    "value": "10k",
+    "pins": {
+      "1": {
+        "net": "+3V3",
+        "function": ""
+      },
+      "2": {
+        "net": "/Moteurs/PMODE_L",
+        "function": ""
+      }
+    }
+  },
+  "R307": {
+    "value": "1k",
+    "pins": {
+      "1": {
+        "net": "/Moteurs/IPROPI_L_RAW",
+        "function": ""
+      },
+      "2": {
+        "net": "GND",
+        "function": ""
+      }
+    }
+  },
+  "R308": {
+    "value": "100R",
+    "pins": {
+      "1": {
+        "net": "/Moteurs/IPROPI_L_RAW",
+        "function": ""
+      },
+      "2": {
+        "net": "IPROPI_L",
+        "function": ""
+      }
+    }
+  },
+  "R309": {
+    "value": "100R",
+    "pins": {
+      "1": {
+        "net": "/Moteurs/ENC_L_A_RAW",
+        "function": ""
+      },
+      "2": {
+        "net": "ENC_L_A",
+        "function": ""
+      }
+    }
+  },
+  "R310": {
+    "value": "100R",
+    "pins": {
+      "1": {
+        "net": "/Moteurs/ENC_L_B_RAW",
+        "function": ""
+      },
+      "2": {
+        "net": "ENC_L_B",
+        "function": ""
+      }
+    }
+  },
+  "R353": {
+    "value": "100k",
+    "pins": {
+      "2": {
+        "net": "GND",
+        "function": ""
+      },
+      "1": {
+        "net": "MOT_R_nSLEEP",
+        "function": ""
+      }
+    }
+  },
+  "R354": {
+    "value": "10k",
+    "pins": {
+      "1": {
+        "net": "+3V3",
+        "function": ""
+      },
+      "2": {
+        "net": "MOT_R_nFAULT",
+        "function": ""
+      }
+    }
+  },
+  "R355": {
+    "value": "20k",
+    "pins": {
+      "1": {
+        "net": "/Moteurs/IMODE_R",
+        "function": ""
+      },
+      "2": {
+        "net": "GND",
+        "function": ""
+      }
+    }
+  },
+  "R356": {
+    "value": "10k",
+    "pins": {
+      "1": {
+        "net": "+3V3",
+        "function": ""
+      },
+      "2": {
+        "net": "/Moteurs/PMODE_R",
+        "function": ""
+      }
+    }
+  },
+  "R357": {
+    "value": "1k",
+    "pins": {
+      "1": {
+        "net": "/Moteurs/IPROPI_R_RAW",
+        "function": ""
+      },
+      "2": {
+        "net": "GND",
+        "function": ""
+      }
+    }
+  },
+  "R358": {
+    "value": "100R",
+    "pins": {
+      "1": {
+        "net": "/Moteurs/IPROPI_R_RAW",
+        "function": ""
+      },
+      "2": {
+        "net": "IPROPI_R",
+        "function": ""
+      }
+    }
+  },
+  "R359": {
+    "value": "100R",
+    "pins": {
+      "1": {
+        "net": "/Moteurs/ENC_R_A_RAW",
+        "function": ""
+      },
+      "2": {
+        "net": "ENC_R_A",
+        "function": ""
+      }
+    }
+  },
+  "R360": {
+    "value": "100R",
+    "pins": {
+      "1": {
+        "net": "/Moteurs/ENC_R_B_RAW",
+        "function": ""
+      },
+      "2": {
+        "net": "ENC_R_B",
+        "function": ""
+      }
+    }
+  },
+  "U301": {
+    "value": "DRV8874PWPR",
+    "pins": {
+      "13": {
+        "net": "/Moteurs/CPH_L",
+        "function": "CPH_13"
+      },
+      "14": {
+        "net": "/Moteurs/CPL_L",
+        "function": "CPL_14"
+      },
+      "7": {
+        "net": "/Moteurs/IMODE_L",
+        "function": "IMODE_7"
+      },
+      "6": {
+        "net": "/Moteurs/IPROPI_L_RAW",
+        "function": "IPROPI_6"
+      },
+      "8": {
+        "net": "/Moteurs/MOT_L_OUT1",
+        "function": "OUT1_8"
+      },
+      "10": {
+        "net": "/Moteurs/MOT_L_OUT2",
+        "function": "OUT2_10"
+      },
+      "16": {
+        "net": "/Moteurs/PMODE_L",
+        "function": "PMODE_16"
+      },
+      "12": {
+        "net": "/Moteurs/VCP_L",
+        "function": "VCP_12"
+      },
+      "5": {
+        "net": "/Moteurs/VREF_MOT",
+        "function": "VREF_5"
+      },
+      "15": {
+        "net": "GND",
+        "function": "GND_15"
+      },
+      "17": {
+        "net": "GND",
+        "function": "PAD_17"
+      },
+      "9": {
+        "net": "GND",
+        "function": "PGND_9"
+      },
+      "1": {
+        "net": "MOT_L_IN1",
+        "function": "EN/IN1_1"
+      },
+      "2": {
+        "net": "MOT_L_IN2",
+        "function": "PH/IN2_2"
+      },
+      "4": {
+        "net": "MOT_L_nFAULT",
+        "function": "~{nFAULT}_4"
+      },
+      "3": {
+        "net": "MOT_L_nSLEEP",
+        "function": "nSLEEP_3"
+      },
+      "11": {
+        "net": "VBAT",
+        "function": "VM_11"
+      }
+    }
+  },
+  "U351": {
+    "value": "DRV8874PWPR",
+    "pins": {
+      "13": {
+        "net": "/Moteurs/CPH_R",
+        "function": "CPH_13"
+      },
+      "14": {
+        "net": "/Moteurs/CPL_R",
+        "function": "CPL_14"
+      },
+      "7": {
+        "net": "/Moteurs/IMODE_R",
+        "function": "IMODE_7"
+      },
+      "6": {
+        "net": "/Moteurs/IPROPI_R_RAW",
+        "function": "IPROPI_6"
+      },
+      "8": {
+        "net": "/Moteurs/MOT_R_OUT1",
+        "function": "OUT1_8"
+      },
+      "10": {
+        "net": "/Moteurs/MOT_R_OUT2",
+        "function": "OUT2_10"
+      },
+      "16": {
+        "net": "/Moteurs/PMODE_R",
+        "function": "PMODE_16"
+      },
+      "12": {
+        "net": "/Moteurs/VCP_R",
+        "function": "VCP_12"
+      },
+      "5": {
+        "net": "/Moteurs/VREF_MOT",
+        "function": "VREF_5"
+      },
+      "15": {
+        "net": "GND",
+        "function": "GND_15"
+      },
+      "17": {
+        "net": "GND",
+        "function": "PAD_17"
+      },
+      "9": {
+        "net": "GND",
+        "function": "PGND_9"
+      },
+      "1": {
+        "net": "MOT_R_IN1",
+        "function": "EN/IN1_1"
+      },
+      "2": {
+        "net": "MOT_R_IN2",
+        "function": "PH/IN2_2"
+      },
+      "4": {
+        "net": "MOT_R_nFAULT",
+        "function": "~{nFAULT}_4"
+      },
+      "3": {
+        "net": "MOT_R_nSLEEP",
+        "function": "nSLEEP_3"
+      },
+      "11": {
+        "net": "VBAT",
+        "function": "VM_11"
+      }
+    }
+  },
+  "C401": {
+    "value": "1nF",
+    "pins": {
+      "2": {
+        "net": "GND",
+        "function": ""
+      },
+      "1": {
+        "net": "LINE_00",
+        "function": ""
+      }
+    }
+  },
+  "C402": {
+    "value": "1nF",
+    "pins": {
+      "2": {
+        "net": "GND",
+        "function": ""
+      },
+      "1": {
+        "net": "LINE_01",
+        "function": ""
+      }
+    }
+  },
+  "C403": {
+    "value": "1nF",
+    "pins": {
+      "2": {
+        "net": "GND",
+        "function": ""
+      },
+      "1": {
+        "net": "LINE_02",
+        "function": ""
+      }
+    }
+  },
+  "C404": {
+    "value": "1nF",
+    "pins": {
+      "2": {
+        "net": "GND",
+        "function": ""
+      },
+      "1": {
+        "net": "LINE_03",
+        "function": ""
+      }
+    }
+  },
+  "C405": {
+    "value": "1nF",
+    "pins": {
+      "2": {
+        "net": "GND",
+        "function": ""
+      },
+      "1": {
+        "net": "LINE_04",
+        "function": ""
+      }
+    }
+  },
+  "C406": {
+    "value": "1nF",
+    "pins": {
+      "2": {
+        "net": "GND",
+        "function": ""
+      },
+      "1": {
+        "net": "LINE_05",
+        "function": ""
+      }
+    }
+  },
+  "C407": {
+    "value": "1nF",
+    "pins": {
+      "2": {
+        "net": "GND",
+        "function": ""
+      },
+      "1": {
+        "net": "LINE_06",
+        "function": ""
+      }
+    }
+  },
+  "C408": {
+    "value": "1nF",
+    "pins": {
+      "2": {
+        "net": "GND",
+        "function": ""
+      },
+      "1": {
+        "net": "LINE_07",
+        "function": ""
+      }
+    }
+  },
+  "C409": {
+    "value": "1nF",
+    "pins": {
+      "2": {
+        "net": "GND",
+        "function": ""
+      },
+      "1": {
+        "net": "LINE_08",
+        "function": ""
+      }
+    }
+  },
+  "C410": {
+    "value": "1nF",
+    "pins": {
+      "2": {
+        "net": "GND",
+        "function": ""
+      },
+      "1": {
+        "net": "LINE_09",
+        "function": ""
+      }
+    }
+  },
+  "C411": {
+    "value": "1nF",
+    "pins": {
+      "2": {
+        "net": "GND",
+        "function": ""
+      },
+      "1": {
+        "net": "LINE_10",
+        "function": ""
+      }
+    }
+  },
+  "C412": {
+    "value": "1nF",
+    "pins": {
+      "2": {
+        "net": "GND",
+        "function": ""
+      },
+      "1": {
+        "net": "LINE_11",
+        "function": ""
+      }
+    }
+  },
+  "Q401": {
+    "value": "AO3400A",
+    "pins": {
+      "3": {
+        "net": "/Barrette/IR_BANK_A_N",
+        "function": "D_3"
+      },
+      "1": {
+        "net": "/Barrette/Q401_G",
+        "function": "G_1"
+      },
+      "2": {
+        "net": "GND",
+        "function": "S_2"
+      }
+    }
+  },
+  "Q402": {
+    "value": "AO3400A",
+    "pins": {
+      "3": {
+        "net": "/Barrette/IR_BANK_B_N",
+        "function": "D_3"
+      },
+      "1": {
+        "net": "/Barrette/Q402_G",
+        "function": "G_1"
+      },
+      "2": {
+        "net": "GND",
+        "function": "S_2"
+      }
+    }
+  },
+  "R401": {
+    "value": "100R",
+    "pins": {
+      "1": {
+        "net": "+3V3",
+        "function": ""
+      },
+      "2": {
+        "net": "/Barrette/IR_A00",
+        "function": ""
+      }
+    }
+  },
+  "R402": {
+    "value": "100R",
+    "pins": {
+      "1": {
+        "net": "+3V3",
+        "function": ""
+      },
+      "2": {
+        "net": "/Barrette/IR_A01",
+        "function": ""
+      }
+    }
+  },
+  "R403": {
+    "value": "100R",
+    "pins": {
+      "1": {
+        "net": "+3V3",
+        "function": ""
+      },
+      "2": {
+        "net": "/Barrette/IR_A02",
+        "function": ""
+      }
+    }
+  },
+  "R404": {
+    "value": "100R",
+    "pins": {
+      "1": {
+        "net": "+3V3",
+        "function": ""
+      },
+      "2": {
+        "net": "/Barrette/IR_A03",
+        "function": ""
+      }
+    }
+  },
+  "R405": {
+    "value": "100R",
+    "pins": {
+      "1": {
+        "net": "+3V3",
+        "function": ""
+      },
+      "2": {
+        "net": "/Barrette/IR_A04",
+        "function": ""
+      }
+    }
+  },
+  "R406": {
+    "value": "100R",
+    "pins": {
+      "1": {
+        "net": "+3V3",
+        "function": ""
+      },
+      "2": {
+        "net": "/Barrette/IR_A05",
+        "function": ""
+      }
+    }
+  },
+  "R407": {
+    "value": "100R",
+    "pins": {
+      "1": {
+        "net": "+3V3",
+        "function": ""
+      },
+      "2": {
+        "net": "/Barrette/IR_A06",
+        "function": ""
+      }
+    }
+  },
+  "R408": {
+    "value": "100R",
+    "pins": {
+      "1": {
+        "net": "+3V3",
+        "function": ""
+      },
+      "2": {
+        "net": "/Barrette/IR_A07",
+        "function": ""
+      }
+    }
+  },
+  "R409": {
+    "value": "100R",
+    "pins": {
+      "1": {
+        "net": "+3V3",
+        "function": ""
+      },
+      "2": {
+        "net": "/Barrette/IR_A08",
+        "function": ""
+      }
+    }
+  },
+  "R410": {
+    "value": "100R",
+    "pins": {
+      "1": {
+        "net": "+3V3",
+        "function": ""
+      },
+      "2": {
+        "net": "/Barrette/IR_A09",
+        "function": ""
+      }
+    }
+  },
+  "R411": {
+    "value": "100R",
+    "pins": {
+      "1": {
+        "net": "+3V3",
+        "function": ""
+      },
+      "2": {
+        "net": "/Barrette/IR_A10",
+        "function": ""
+      }
+    }
+  },
+  "R412": {
+    "value": "100R",
+    "pins": {
+      "1": {
+        "net": "+3V3",
+        "function": ""
+      },
+      "2": {
+        "net": "/Barrette/IR_A11",
+        "function": ""
+      }
+    }
+  },
+  "R421": {
+    "value": "10k",
+    "pins": {
+      "2": {
+        "net": "GND",
+        "function": ""
+      },
+      "1": {
+        "net": "LINE_00",
+        "function": ""
+      }
+    }
+  },
+  "R422": {
+    "value": "10k",
+    "pins": {
+      "2": {
+        "net": "GND",
+        "function": ""
+      },
+      "1": {
+        "net": "LINE_01",
+        "function": ""
+      }
+    }
+  },
+  "R423": {
+    "value": "10k",
+    "pins": {
+      "2": {
+        "net": "GND",
+        "function": ""
+      },
+      "1": {
+        "net": "LINE_02",
+        "function": ""
+      }
+    }
+  },
+  "R424": {
+    "value": "10k",
+    "pins": {
+      "2": {
+        "net": "GND",
+        "function": ""
+      },
+      "1": {
+        "net": "LINE_03",
+        "function": ""
+      }
+    }
+  },
+  "R425": {
+    "value": "10k",
+    "pins": {
+      "2": {
+        "net": "GND",
+        "function": ""
+      },
+      "1": {
+        "net": "LINE_04",
+        "function": ""
+      }
+    }
+  },
+  "R426": {
+    "value": "10k",
+    "pins": {
+      "2": {
+        "net": "GND",
+        "function": ""
+      },
+      "1": {
+        "net": "LINE_05",
+        "function": ""
+      }
+    }
+  },
+  "R427": {
+    "value": "10k",
+    "pins": {
+      "2": {
+        "net": "GND",
+        "function": ""
+      },
+      "1": {
+        "net": "LINE_06",
+        "function": ""
+      }
+    }
+  },
+  "R428": {
+    "value": "10k",
+    "pins": {
+      "2": {
+        "net": "GND",
+        "function": ""
+      },
+      "1": {
+        "net": "LINE_07",
+        "function": ""
+      }
+    }
+  },
+  "R429": {
+    "value": "10k",
+    "pins": {
+      "2": {
+        "net": "GND",
+        "function": ""
+      },
+      "1": {
+        "net": "LINE_08",
+        "function": ""
+      }
+    }
+  },
+  "R430": {
+    "value": "10k",
+    "pins": {
+      "2": {
+        "net": "GND",
+        "function": ""
+      },
+      "1": {
+        "net": "LINE_09",
+        "function": ""
+      }
+    }
+  },
+  "R431": {
+    "value": "10k",
+    "pins": {
+      "2": {
+        "net": "GND",
+        "function": ""
+      },
+      "1": {
+        "net": "LINE_10",
+        "function": ""
+      }
+    }
+  },
+  "R432": {
+    "value": "10k",
+    "pins": {
+      "2": {
+        "net": "GND",
+        "function": ""
+      },
+      "1": {
+        "net": "LINE_11",
+        "function": ""
+      }
+    }
+  },
+  "R441": {
+    "value": "100R",
+    "pins": {
+      "2": {
+        "net": "/Barrette/Q401_G",
+        "function": ""
+      },
+      "1": {
+        "net": "IR_BANK_A",
+        "function": ""
+      }
+    }
+  },
+  "R442": {
+    "value": "100k",
+    "pins": {
+      "1": {
+        "net": "/Barrette/Q401_G",
+        "function": ""
+      },
+      "2": {
+        "net": "GND",
+        "function": ""
+      }
+    }
+  },
+  "R443": {
+    "value": "100R",
+    "pins": {
+      "2": {
+        "net": "/Barrette/Q402_G",
+        "function": ""
+      },
+      "1": {
+        "net": "IR_BANK_B",
+        "function": ""
+      }
+    }
+  },
+  "R444": {
+    "value": "100k",
+    "pins": {
+      "1": {
+        "net": "/Barrette/Q402_G",
+        "function": ""
+      },
+      "2": {
+        "net": "GND",
+        "function": ""
+      }
+    }
+  },
+  "U401": {
+    "value": "ITR8307/S17/TR8",
+    "pins": {
+      "3": {
+        "net": "+3V3A",
+        "function": ""
+      },
+      "2": {
+        "net": "/Barrette/IR_A00",
+        "function": "A_2"
+      },
+      "1": {
+        "net": "/Barrette/IR_BANK_A_N",
+        "function": "K_1"
+      },
+      "4": {
+        "net": "LINE_00",
+        "function": ""
+      }
+    }
+  },
+  "U402": {
+    "value": "ITR8307/S17/TR8",
+    "pins": {
+      "3": {
+        "net": "+3V3A",
+        "function": ""
+      },
+      "2": {
+        "net": "/Barrette/IR_A01",
+        "function": "A_2"
+      },
+      "1": {
+        "net": "/Barrette/IR_BANK_B_N",
+        "function": "K_1"
+      },
+      "4": {
+        "net": "LINE_01",
+        "function": ""
+      }
+    }
+  },
+  "U403": {
+    "value": "ITR8307/S17/TR8",
+    "pins": {
+      "3": {
+        "net": "+3V3A",
+        "function": ""
+      },
+      "2": {
+        "net": "/Barrette/IR_A02",
+        "function": "A_2"
+      },
+      "1": {
+        "net": "/Barrette/IR_BANK_A_N",
+        "function": "K_1"
+      },
+      "4": {
+        "net": "LINE_02",
+        "function": ""
+      }
+    }
+  },
+  "U404": {
+    "value": "ITR8307/S17/TR8",
+    "pins": {
+      "3": {
+        "net": "+3V3A",
+        "function": ""
+      },
+      "2": {
+        "net": "/Barrette/IR_A03",
+        "function": "A_2"
+      },
+      "1": {
+        "net": "/Barrette/IR_BANK_B_N",
+        "function": "K_1"
+      },
+      "4": {
+        "net": "LINE_03",
+        "function": ""
+      }
+    }
+  },
+  "U405": {
+    "value": "ITR8307/S17/TR8",
+    "pins": {
+      "3": {
+        "net": "+3V3A",
+        "function": ""
+      },
+      "2": {
+        "net": "/Barrette/IR_A04",
+        "function": "A_2"
+      },
+      "1": {
+        "net": "/Barrette/IR_BANK_A_N",
+        "function": "K_1"
+      },
+      "4": {
+        "net": "LINE_04",
+        "function": ""
+      }
+    }
+  },
+  "U406": {
+    "value": "ITR8307/S17/TR8",
+    "pins": {
+      "3": {
+        "net": "+3V3A",
+        "function": ""
+      },
+      "2": {
+        "net": "/Barrette/IR_A05",
+        "function": "A_2"
+      },
+      "1": {
+        "net": "/Barrette/IR_BANK_B_N",
+        "function": "K_1"
+      },
+      "4": {
+        "net": "LINE_05",
+        "function": ""
+      }
+    }
+  },
+  "U407": {
+    "value": "ITR8307/S17/TR8",
+    "pins": {
+      "3": {
+        "net": "+3V3A",
+        "function": ""
+      },
+      "2": {
+        "net": "/Barrette/IR_A06",
+        "function": "A_2"
+      },
+      "1": {
+        "net": "/Barrette/IR_BANK_A_N",
+        "function": "K_1"
+      },
+      "4": {
+        "net": "LINE_06",
+        "function": ""
+      }
+    }
+  },
+  "U408": {
+    "value": "ITR8307/S17/TR8",
+    "pins": {
+      "3": {
+        "net": "+3V3A",
+        "function": ""
+      },
+      "2": {
+        "net": "/Barrette/IR_A07",
+        "function": "A_2"
+      },
+      "1": {
+        "net": "/Barrette/IR_BANK_B_N",
+        "function": "K_1"
+      },
+      "4": {
+        "net": "LINE_07",
+        "function": ""
+      }
+    }
+  },
+  "U409": {
+    "value": "ITR8307/S17/TR8",
+    "pins": {
+      "3": {
+        "net": "+3V3A",
+        "function": ""
+      },
+      "2": {
+        "net": "/Barrette/IR_A08",
+        "function": "A_2"
+      },
+      "1": {
+        "net": "/Barrette/IR_BANK_A_N",
+        "function": "K_1"
+      },
+      "4": {
+        "net": "LINE_08",
+        "function": ""
+      }
+    }
+  },
+  "U410": {
+    "value": "ITR8307/S17/TR8",
+    "pins": {
+      "3": {
+        "net": "+3V3A",
+        "function": ""
+      },
+      "2": {
+        "net": "/Barrette/IR_A09",
+        "function": "A_2"
+      },
+      "1": {
+        "net": "/Barrette/IR_BANK_B_N",
+        "function": "K_1"
+      },
+      "4": {
+        "net": "LINE_09",
+        "function": ""
+      }
+    }
+  },
+  "U411": {
+    "value": "ITR8307/S17/TR8",
+    "pins": {
+      "3": {
+        "net": "+3V3A",
+        "function": ""
+      },
+      "2": {
+        "net": "/Barrette/IR_A10",
+        "function": "A_2"
+      },
+      "1": {
+        "net": "/Barrette/IR_BANK_A_N",
+        "function": "K_1"
+      },
+      "4": {
+        "net": "LINE_10",
+        "function": ""
+      }
+    }
+  },
+  "U412": {
+    "value": "ITR8307/S17/TR8",
+    "pins": {
+      "3": {
+        "net": "+3V3A",
+        "function": ""
+      },
+      "2": {
+        "net": "/Barrette/IR_A11",
+        "function": "A_2"
+      },
+      "1": {
+        "net": "/Barrette/IR_BANK_B_N",
+        "function": "K_1"
+      },
+      "4": {
+        "net": "LINE_11",
+        "function": ""
+      }
+    }
+  },
+  "C501": {
+    "value": "22pF",
+    "pins": {
+      "1": {
+        "net": "/Capteurs/PD_F",
+        "function": ""
+      },
+      "2": {
+        "net": "/Capteurs/TIA_F",
+        "function": ""
+      }
+    }
+  },
+  "C502": {
+    "value": "1nF",
+    "pins": {
+      "2": {
+        "net": "/Capteurs/G_F",
+        "function": ""
+      },
+      "1": {
+        "net": "/Capteurs/TIA_F",
+        "function": ""
+      }
+    }
+  },
+  "C503": {
+    "value": "1uF",
+    "pins": {
+      "1": {
+        "net": "/Capteurs/CG_F",
+        "function": ""
+      },
+      "2": {
+        "net": "GND",
+        "function": ""
+      }
+    }
+  },
+  "C504": {
+    "value": "4n7",
+    "pins": {
+      "2": {
+        "net": "GND",
+        "function": ""
+      },
+      "1": {
+        "net": "RX_F",
+        "function": ""
+      }
+    }
+  },
+  "C505": {
+    "value": "10nF",
+    "pins": {
+      "2": {
+        "net": "/Capteurs/TXAC_F",
+        "function": ""
+      },
+      "1": {
+        "net": "TX_F",
+        "function": ""
+      }
+    }
+  },
+  "C521": {
+    "value": "22pF",
+    "pins": {
+      "1": {
+        "net": "/Capteurs/PD_FL",
+        "function": ""
+      },
+      "2": {
+        "net": "/Capteurs/TIA_FL",
+        "function": ""
+      }
+    }
+  },
+  "C522": {
+    "value": "1nF",
+    "pins": {
+      "2": {
+        "net": "/Capteurs/G_FL",
+        "function": ""
+      },
+      "1": {
+        "net": "/Capteurs/TIA_FL",
+        "function": ""
+      }
+    }
+  },
+  "C523": {
+    "value": "1uF",
+    "pins": {
+      "1": {
+        "net": "/Capteurs/CG_FL",
+        "function": ""
+      },
+      "2": {
+        "net": "GND",
+        "function": ""
+      }
+    }
+  },
+  "C524": {
+    "value": "4n7",
+    "pins": {
+      "2": {
+        "net": "GND",
+        "function": ""
+      },
+      "1": {
+        "net": "RX_FL",
+        "function": ""
+      }
+    }
+  },
+  "C525": {
+    "value": "10nF",
+    "pins": {
+      "2": {
+        "net": "/Capteurs/TXAC_FL",
+        "function": ""
+      },
+      "1": {
+        "net": "TX_FL",
+        "function": ""
+      }
+    }
+  },
+  "C541": {
+    "value": "22pF",
+    "pins": {
+      "1": {
+        "net": "/Capteurs/PD_L",
+        "function": ""
+      },
+      "2": {
+        "net": "/Capteurs/TIA_L",
+        "function": ""
+      }
+    }
+  },
+  "C542": {
+    "value": "1nF",
+    "pins": {
+      "2": {
+        "net": "/Capteurs/G_L",
+        "function": ""
+      },
+      "1": {
+        "net": "/Capteurs/TIA_L",
+        "function": ""
+      }
+    }
+  },
+  "C543": {
+    "value": "1uF",
+    "pins": {
+      "1": {
+        "net": "/Capteurs/CG_L",
+        "function": ""
+      },
+      "2": {
+        "net": "GND",
+        "function": ""
+      }
+    }
+  },
+  "C544": {
+    "value": "4n7",
+    "pins": {
+      "2": {
+        "net": "GND",
+        "function": ""
+      },
+      "1": {
+        "net": "RX_L",
+        "function": ""
+      }
+    }
+  },
+  "C545": {
+    "value": "10nF",
+    "pins": {
+      "2": {
+        "net": "/Capteurs/TXAC_L",
+        "function": ""
+      },
+      "1": {
+        "net": "TX_L",
+        "function": ""
+      }
+    }
+  },
+  "C561": {
+    "value": "1uF",
+    "pins": {
+      "1": {
+        "net": "/Capteurs/VREF_RX",
+        "function": ""
+      },
+      "2": {
+        "net": "GND",
+        "function": ""
+      }
+    }
+  },
+  "C562": {
+    "value": "1uF",
+    "pins": {
+      "1": {
+        "net": "/Capteurs/VREF_MID_R",
+        "function": ""
+      },
+      "2": {
+        "net": "GND",
+        "function": ""
+      }
+    }
+  },
+  "C563": {
+    "value": "100nF",
+    "pins": {
+      "1": {
+        "net": "+3V3A",
+        "function": ""
+      },
+      "2": {
+        "net": "GND",
+        "function": ""
+      }
+    }
+  },
+  "C564": {
+    "value": "100nF",
+    "pins": {
+      "1": {
+        "net": "+3V3A",
+        "function": ""
+      },
+      "2": {
+        "net": "GND",
+        "function": ""
+      }
+    }
+  },
+  "C565": {
+    "value": "10uF",
+    "pins": {
+      "1": {
+        "net": "+3V3A",
+        "function": ""
+      },
+      "2": {
+        "net": "GND",
+        "function": ""
+      }
+    }
+  },
+  "C566": {
+    "value": "100nF",
+    "pins": {
+      "1": {
+        "net": "+3V3",
+        "function": ""
+      },
+      "2": {
+        "net": "GND",
+        "function": ""
+      }
+    }
+  },
+  "C567": {
+    "value": "100nF",
+    "pins": {
+      "1": {
+        "net": "+3V3",
+        "function": ""
+      },
+      "2": {
+        "net": "GND",
+        "function": ""
+      }
+    }
+  },
+  "C568": {
+    "value": "100nF",
+    "pins": {
+      "1": {
+        "net": "+3V3A",
+        "function": ""
+      },
+      "2": {
+        "net": "GND",
+        "function": ""
+      }
+    }
+  },
+  "C569": {
+    "value": "100nF",
+    "pins": {
+      "1": {
+        "net": "/Capteurs/VREF_RX",
+        "function": ""
+      },
+      "2": {
+        "net": "GND",
+        "function": ""
+      }
+    }
+  },
+  "C570": {
+    "value": "100nF",
+    "pins": {
+      "1": {
+        "net": "/Capteurs/VREF_RX",
+        "function": ""
+      },
+      "2": {
+        "net": "GND",
+        "function": ""
+      }
+    }
+  },
+  "D503": {
+    "value": "PESD3V3",
+    "pins": {
+      "1": {
+        "net": "/Capteurs/LAS_F_K",
+        "function": "A1_1"
+      },
+      "2": {
+        "net": "GND",
+        "function": "A2_2"
+      }
+    }
+  },
+  "D504": {
+    "value": "BAT54",
+    "pins": {
+      "1": {
+        "net": "/Capteurs/TXAC_F",
+        "function": "K_1"
+      },
+      "2": {
+        "net": "GND",
+        "function": "A_2"
+      }
+    }
+  },
+  "D523": {
+    "value": "PESD3V3",
+    "pins": {
+      "1": {
+        "net": "/Capteurs/LAS_FL_K",
+        "function": "A1_1"
+      },
+      "2": {
+        "net": "GND",
+        "function": "A2_2"
+      }
+    }
+  },
+  "D524": {
+    "value": "BAT54",
+    "pins": {
+      "1": {
+        "net": "/Capteurs/TXAC_FL",
+        "function": "K_1"
+      },
+      "2": {
+        "net": "GND",
+        "function": "A_2"
+      }
+    }
+  },
+  "D543": {
+    "value": "PESD3V3",
+    "pins": {
+      "1": {
+        "net": "/Capteurs/LAS_L_K",
+        "function": "A1_1"
+      },
+      "2": {
+        "net": "GND",
+        "function": "A2_2"
+      }
+    }
+  },
+  "D544": {
+    "value": "BAT54",
+    "pins": {
+      "1": {
+        "net": "/Capteurs/TXAC_L",
+        "function": "K_1"
+      },
+      "2": {
+        "net": "GND",
+        "function": "A_2"
+      }
+    }
+  },
+  "Q501": {
+    "value": "AO3400A",
+    "pins": {
+      "3": {
+        "net": "/Capteurs/LAS_F_K",
+        "function": "D_3"
+      },
+      "1": {
+        "net": "/Capteurs/Q501_G",
+        "function": "G_1"
+      },
+      "2": {
+        "net": "GND",
+        "function": "S_2"
+      }
+    }
+  },
+  "Q521": {
+    "value": "AO3400A",
+    "pins": {
+      "3": {
+        "net": "/Capteurs/LAS_FL_K",
+        "function": "D_3"
+      },
+      "1": {
+        "net": "/Capteurs/Q521_G",
+        "function": "G_1"
+      },
+      "2": {
+        "net": "GND",
+        "function": "S_2"
+      }
+    }
+  },
+  "Q541": {
+    "value": "AO3400A",
+    "pins": {
+      "3": {
+        "net": "/Capteurs/LAS_L_K",
+        "function": "D_3"
+      },
+      "1": {
+        "net": "/Capteurs/Q541_G",
+        "function": "G_1"
+      },
+      "2": {
+        "net": "GND",
+        "function": "S_2"
+      }
+    }
+  },
+  "R501": {
+    "value": "100R",
+    "pins": {
+      "1": {
+        "net": "+3V3",
+        "function": ""
+      },
+      "2": {
+        "net": "/Capteurs/LAS_F_A",
+        "function": ""
+      }
+    }
+  },
+  "R502": {
+    "value": "100R",
+    "pins": {
+      "2": {
+        "net": "/Capteurs/Q501_G",
+        "function": ""
+      },
+      "1": {
+        "net": "/Capteurs/TXAC_F",
+        "function": ""
+      }
+    }
+  },
+  "R503": {
+    "value": "100k",
+    "pins": {
+      "1": {
+        "net": "/Capteurs/Q501_G",
+        "function": ""
+      },
+      "2": {
+        "net": "GND",
+        "function": ""
+      }
+    }
+  },
+  "R504": {
+    "value": "220k",
+    "pins": {
+      "1": {
+        "net": "/Capteurs/PD_F",
+        "function": ""
+      },
+      "2": {
+        "net": "/Capteurs/TIA_F",
+        "function": ""
+      }
+    }
+  },
+  "R505": {
+    "value": "100k",
+    "pins": {
+      "1": {
+        "net": "/Capteurs/G_F",
+        "function": ""
+      },
+      "2": {
+        "net": "/Capteurs/VREF_MID",
+        "function": ""
+      }
+    }
+  },
+  "R506": {
+    "value": "100k",
+    "pins": {
+      "1": {
+        "net": "/Capteurs/AMP_F",
+        "function": ""
+      },
+      "2": {
+        "net": "/Capteurs/FB_F",
+        "function": ""
+      }
+    }
+  },
+  "R507": {
+    "value": "910R",
+    "pins": {
+      "2": {
+        "net": "/Capteurs/CG_F",
+        "function": ""
+      },
+      "1": {
+        "net": "/Capteurs/FB_F",
+        "function": ""
+      }
+    }
+  },
+  "R508": {
+    "value": "1k",
+    "pins": {
+      "1": {
+        "net": "/Capteurs/AMP_F",
+        "function": ""
+      },
+      "2": {
+        "net": "RX_F",
+        "function": ""
+      }
+    }
+  },
+  "R521": {
+    "value": "100R",
+    "pins": {
+      "1": {
+        "net": "+3V3",
+        "function": ""
+      },
+      "2": {
+        "net": "/Capteurs/LAS_FL_A",
+        "function": ""
+      }
+    }
+  },
+  "R522": {
+    "value": "100R",
+    "pins": {
+      "2": {
+        "net": "/Capteurs/Q521_G",
+        "function": ""
+      },
+      "1": {
+        "net": "/Capteurs/TXAC_FL",
+        "function": ""
+      }
+    }
+  },
+  "R523": {
+    "value": "100k",
+    "pins": {
+      "1": {
+        "net": "/Capteurs/Q521_G",
+        "function": ""
+      },
+      "2": {
+        "net": "GND",
+        "function": ""
+      }
+    }
+  },
+  "R524": {
+    "value": "220k",
+    "pins": {
+      "1": {
+        "net": "/Capteurs/PD_FL",
+        "function": ""
+      },
+      "2": {
+        "net": "/Capteurs/TIA_FL",
+        "function": ""
+      }
+    }
+  },
+  "R525": {
+    "value": "100k",
+    "pins": {
+      "1": {
+        "net": "/Capteurs/G_FL",
+        "function": ""
+      },
+      "2": {
+        "net": "/Capteurs/VREF_MID",
+        "function": ""
+      }
+    }
+  },
+  "R526": {
+    "value": "100k",
+    "pins": {
+      "1": {
+        "net": "/Capteurs/AMP_FL",
+        "function": ""
+      },
+      "2": {
+        "net": "/Capteurs/FB_FL",
+        "function": ""
+      }
+    }
+  },
+  "R527": {
+    "value": "910R",
+    "pins": {
+      "2": {
+        "net": "/Capteurs/CG_FL",
+        "function": ""
+      },
+      "1": {
+        "net": "/Capteurs/FB_FL",
+        "function": ""
+      }
+    }
+  },
+  "R528": {
+    "value": "1k",
+    "pins": {
+      "1": {
+        "net": "/Capteurs/AMP_FL",
+        "function": ""
+      },
+      "2": {
+        "net": "RX_FL",
+        "function": ""
+      }
+    }
+  },
+  "R541": {
+    "value": "100R",
+    "pins": {
+      "1": {
+        "net": "+3V3",
+        "function": ""
+      },
+      "2": {
+        "net": "/Capteurs/LAS_L_A",
+        "function": ""
+      }
+    }
+  },
+  "R542": {
+    "value": "100R",
+    "pins": {
+      "2": {
+        "net": "/Capteurs/Q541_G",
+        "function": ""
+      },
+      "1": {
+        "net": "/Capteurs/TXAC_L",
+        "function": ""
+      }
+    }
+  },
+  "R543": {
+    "value": "100k",
+    "pins": {
+      "1": {
+        "net": "/Capteurs/Q541_G",
+        "function": ""
+      },
+      "2": {
+        "net": "GND",
+        "function": ""
+      }
+    }
+  },
+  "R544": {
+    "value": "220k",
+    "pins": {
+      "1": {
+        "net": "/Capteurs/PD_L",
+        "function": ""
+      },
+      "2": {
+        "net": "/Capteurs/TIA_L",
+        "function": ""
+      }
+    }
+  },
+  "R545": {
+    "value": "100k",
+    "pins": {
+      "1": {
+        "net": "/Capteurs/G_L",
+        "function": ""
+      },
+      "2": {
+        "net": "/Capteurs/VREF_MID",
+        "function": ""
+      }
+    }
+  },
+  "R546": {
+    "value": "100k",
+    "pins": {
+      "1": {
+        "net": "/Capteurs/AMP_L",
+        "function": ""
+      },
+      "2": {
+        "net": "/Capteurs/FB_L",
+        "function": ""
+      }
+    }
+  },
+  "R547": {
+    "value": "910R",
+    "pins": {
+      "2": {
+        "net": "/Capteurs/CG_L",
+        "function": ""
+      },
+      "1": {
+        "net": "/Capteurs/FB_L",
+        "function": ""
+      }
+    }
+  },
+  "R548": {
+    "value": "1k",
+    "pins": {
+      "1": {
+        "net": "/Capteurs/AMP_L",
+        "function": ""
+      },
+      "2": {
+        "net": "RX_L",
+        "function": ""
+      }
+    }
+  },
+  "R561": {
+    "value": "10k",
+    "pins": {
+      "1": {
+        "net": "+3V3A",
+        "function": ""
+      },
+      "2": {
+        "net": "/Capteurs/VREF_RX",
+        "function": ""
+      }
+    }
+  },
+  "R562": {
+    "value": "2k2",
+    "pins": {
+      "1": {
+        "net": "/Capteurs/VREF_RX",
+        "function": ""
+      },
+      "2": {
+        "net": "GND",
+        "function": ""
+      }
+    }
+  },
+  "R563": {
+    "value": "10k",
+    "pins": {
+      "1": {
+        "net": "+3V3A",
+        "function": ""
+      },
+      "2": {
+        "net": "/Capteurs/VREF_MID_R",
+        "function": ""
+      }
+    }
+  },
+  "R564": {
+    "value": "10k",
+    "pins": {
+      "1": {
+        "net": "/Capteurs/VREF_MID_R",
+        "function": ""
+      },
+      "2": {
+        "net": "GND",
+        "function": ""
+      }
+    }
+  },
+  "TM501": {
+    "value": "OPV302 + BPV10NF",
+    "pins": {
+      "3": {
+        "net": "+3V3A",
+        "function": "RX_K_3"
+      },
+      "2": {
+        "net": "/Capteurs/LAS_F_A",
+        "function": "TX_A_2"
+      },
+      "1": {
+        "net": "/Capteurs/LAS_F_K",
+        "function": "TX_K_1"
+      },
+      "4": {
+        "net": "/Capteurs/PD_F",
+        "function": "RX_A_4"
+      }
+    }
+  },
+  "TM521": {
+    "value": "OPV302 + BPV10NF",
+    "pins": {
+      "3": {
+        "net": "+3V3A",
+        "function": "RX_K_3"
+      },
+      "2": {
+        "net": "/Capteurs/LAS_FL_A",
+        "function": "TX_A_2"
+      },
+      "1": {
+        "net": "/Capteurs/LAS_FL_K",
+        "function": "TX_K_1"
+      },
+      "4": {
+        "net": "/Capteurs/PD_FL",
+        "function": "RX_A_4"
+      }
+    }
+  },
+  "TM541": {
+    "value": "OPV302 + BPV10NF",
+    "pins": {
+      "3": {
+        "net": "+3V3A",
+        "function": "RX_K_3"
+      },
+      "2": {
+        "net": "/Capteurs/LAS_L_A",
+        "function": "TX_A_2"
+      },
+      "1": {
+        "net": "/Capteurs/LAS_L_K",
+        "function": "TX_K_1"
+      },
+      "4": {
+        "net": "/Capteurs/PD_L",
+        "function": "RX_A_4"
+      }
+    }
+  },
+  "U501": {
+    "value": "TLV9064",
+    "pins": {
+      "4": {
+        "net": "+3V3A",
+        "function": "V+_4"
+      },
+      "7": {
+        "net": "/Capteurs/AMP_F",
+        "function": ""
+      },
+      "6": {
+        "net": "/Capteurs/FB_F",
+        "function": "-_6"
+      },
+      "5": {
+        "net": "/Capteurs/G_F",
+        "function": "+_5"
+      },
+      "2": {
+        "net": "/Capteurs/PD_F",
+        "function": "-_2"
+      },
+      "1": {
+        "net": "/Capteurs/TIA_F",
+        "function": ""
+      },
+      "8": {
+        "net": "/Capteurs/U501_SPARE_3",
+        "function": ""
+      },
+      "9": {
+        "net": "/Capteurs/U501_SPARE_3",
+        "function": "-_9"
+      },
+      "13": {
+        "net": "/Capteurs/VREF_MID",
+        "function": "-_13"
+      },
+      "14": {
+        "net": "/Capteurs/VREF_MID",
+        "function": ""
+      },
+      "12": {
+        "net": "/Capteurs/VREF_MID_R",
+        "function": "+_12"
+      },
+      "10": {
+        "net": "/Capteurs/VREF_RX",
+        "function": "+_10"
+      },
+      "3": {
+        "net": "/Capteurs/VREF_RX",
+        "function": "+_3"
+      },
+      "11": {
+        "net": "GND",
+        "function": "V-_11"
+      }
+    }
+  },
+  "U502": {
+    "value": "TLV9064",
+    "pins": {
+      "4": {
+        "net": "+3V3A",
+        "function": "V+_4"
+      },
+      "7": {
+        "net": "/Capteurs/AMP_FL",
+        "function": ""
+      },
+      "6": {
+        "net": "/Capteurs/FB_FL",
+        "function": "-_6"
+      },
+      "5": {
+        "net": "/Capteurs/G_FL",
+        "function": "+_5"
+      },
+      "2": {
+        "net": "/Capteurs/PD_FL",
+        "function": "-_2"
+      },
+      "1": {
+        "net": "/Capteurs/TIA_FL",
+        "function": ""
+      },
+      "13": {
+        "net": "/Capteurs/U502_SPARE",
+        "function": "-_13"
+      },
+      "14": {
+        "net": "/Capteurs/U502_SPARE",
+        "function": ""
+      },
+      "8": {
+        "net": "/Capteurs/U502_SPARE_3",
+        "function": ""
+      },
+      "9": {
+        "net": "/Capteurs/U502_SPARE_3",
+        "function": "-_9"
+      },
+      "10": {
+        "net": "/Capteurs/VREF_RX",
+        "function": "+_10"
+      },
+      "12": {
+        "net": "/Capteurs/VREF_RX",
+        "function": "+_12"
+      },
+      "3": {
+        "net": "/Capteurs/VREF_RX",
+        "function": "+_3"
+      },
+      "11": {
+        "net": "GND",
+        "function": "V-_11"
+      }
+    }
+  },
+  "U503": {
+    "value": "LSM6DSOTR",
+    "pins": {
+      "5": {
+        "net": "+3V3",
+        "function": "VDDIO_5"
+      },
+      "8": {
+        "net": "+3V3",
+        "function": "VDD_8"
+      },
+      "2": {
+        "net": "GND",
+        "function": "SDX_2"
+      },
+      "3": {
+        "net": "GND",
+        "function": "SCX_3"
+      },
+      "6": {
+        "net": "GND",
+        "function": "GND_6"
+      },
+      "7": {
+        "net": "GND",
+        "function": "GND_7"
+      },
+      "4": {
+        "net": "IMU_INT1",
+        "function": "INT1_4"
+      },
+      "1": {
+        "net": "IMU_MISO",
+        "function": "SDO/SA0_1"
+      },
+      "14": {
+        "net": "IMU_MOSI",
+        "function": "SDA_14"
+      },
+      "13": {
+        "net": "IMU_SCK",
+        "function": "SCL_13"
+      },
+      "12": {
+        "net": "IMU_nCS",
+        "function": "CS_12"
+      },
+      "9": {
+        "net": "unconnected-(U503-INT2-Pad9)",
+        "function": "INT2_9"
+      },
+      "10": {
+        "net": "unconnected-(U503-NC-Pad10)",
+        "function": "NC_10"
+      },
+      "11": {
+        "net": "unconnected-(U503-NC-Pad11)",
+        "function": "NC_11"
+      }
+    }
+  },
+  "U504": {
+    "value": "TLV9064",
+    "pins": {
+      "4": {
+        "net": "+3V3A",
+        "function": "V+_4"
+      },
+      "7": {
+        "net": "/Capteurs/AMP_L",
+        "function": ""
+      },
+      "6": {
+        "net": "/Capteurs/FB_L",
+        "function": "-_6"
+      },
+      "5": {
+        "net": "/Capteurs/G_L",
+        "function": "+_5"
+      },
+      "2": {
+        "net": "/Capteurs/PD_L",
+        "function": "-_2"
+      },
+      "1": {
+        "net": "/Capteurs/TIA_L",
+        "function": ""
+      },
+      "8": {
+        "net": "/Capteurs/U504_SPARE_3",
+        "function": ""
+      },
+      "9": {
+        "net": "/Capteurs/U504_SPARE_3",
+        "function": "-_9"
+      },
+      "13": {
+        "net": "/Capteurs/U504_SPARE_4",
+        "function": "-_13"
+      },
+      "14": {
+        "net": "/Capteurs/U504_SPARE_4",
+        "function": ""
+      },
+      "10": {
+        "net": "/Capteurs/VREF_RX",
+        "function": "+_10"
+      },
+      "12": {
+        "net": "/Capteurs/VREF_RX",
+        "function": "+_12"
+      },
+      "3": {
+        "net": "/Capteurs/VREF_RX",
+        "function": "+_3"
+      },
+      "11": {
+        "net": "GND",
+        "function": "V-_11"
+      }
+    }
+  },
+  "BZ601": {
+    "value": "buzzer magnetique 9 x 5,5 mm",
+    "pins": {
+      "1": {
+        "net": "+3V3",
+        "function": "+_1"
+      },
+      "2": {
+        "net": "/IHM/BUZZ_D",
+        "function": "-_2"
+      }
+    }
+  },
+  "C601": {
+    "value": "100nF",
+    "pins": {
+      "2": {
+        "net": "GND",
+        "function": ""
+      },
+      "1": {
+        "net": "SW_UP",
+        "function": ""
+      }
+    }
+  },
+  "C602": {
+    "value": "100nF",
+    "pins": {
+      "2": {
+        "net": "GND",
+        "function": ""
+      },
+      "1": {
+        "net": "SW_DOWN",
+        "function": ""
+      }
+    }
+  },
+  "C603": {
+    "value": "100nF",
+    "pins": {
+      "2": {
+        "net": "GND",
+        "function": ""
+      },
+      "1": {
+        "net": "SW_LEFT",
+        "function": ""
+      }
+    }
+  },
+  "C604": {
+    "value": "100nF",
+    "pins": {
+      "2": {
+        "net": "GND",
+        "function": ""
+      },
+      "1": {
+        "net": "SW_RIGHT",
+        "function": ""
+      }
+    }
+  },
+  "C605": {
+    "value": "100nF",
+    "pins": {
+      "2": {
+        "net": "GND",
+        "function": ""
+      },
+      "1": {
+        "net": "SW_PUSH",
+        "function": ""
+      }
+    }
+  },
+  "C606": {
+    "value": "100nF",
+    "pins": {
+      "2": {
+        "net": "GND",
+        "function": ""
+      },
+      "1": {
+        "net": "START_BTN",
+        "function": ""
+      }
+    }
+  },
+  "C607": {
+    "value": "100nF",
+    "pins": {
+      "2": {
+        "net": "/IHM/BZAC",
+        "function": ""
+      },
+      "1": {
+        "net": "BUZZER",
+        "function": ""
+      }
+    }
+  },
+  "D601": {
+    "value": "BAT54",
+    "pins": {
+      "1": {
+        "net": "+3V3",
+        "function": "K_1"
+      },
+      "2": {
+        "net": "/IHM/BUZZ_D",
+        "function": "A_2"
+      }
+    }
+  },
+  "D606": {
+    "value": "bleue - nez",
+    "pins": {
+      "2": {
+        "net": "/IHM/D606_A",
+        "function": "A_2"
+      },
+      "1": {
+        "net": "/IHM/TRACK_SW",
+        "function": "K_1"
+      }
+    }
+  },
+  "D608": {
+    "value": "rouge - coin arriere gauche",
+    "pins": {
+      "2": {
+        "net": "/IHM/D608_A",
+        "function": "A_2"
+      },
+      "1": {
+        "net": "/IHM/TRACK_SW",
+        "function": "K_1"
+      }
+    }
+  },
+  "D609": {
+    "value": "rouge - coin arriere droit",
+    "pins": {
+      "2": {
+        "net": "/IHM/D609_A",
+        "function": "A_2"
+      },
+      "1": {
+        "net": "/IHM/TRACK_SW",
+        "function": "K_1"
+      }
+    }
+  },
+  "D610": {
+    "value": "BAT54",
+    "pins": {
+      "1": {
+        "net": "/IHM/BZAC",
+        "function": "K_1"
+      },
+      "2": {
+        "net": "GND",
+        "function": "A_2"
+      }
+    }
+  },
+  "J601": {
+    "value": "OLED SSD1306 I2C",
+    "pins": {
+      "2": {
+        "net": "+3V3",
+        "function": "Pin_2_2"
+      },
+      "1": {
+        "net": "GND",
+        "function": "Pin_1_1"
+      },
+      "3": {
+        "net": "SCL2",
+        "function": "Pin_3_3"
+      },
+      "4": {
+        "net": "SDA2",
+        "function": "Pin_4_4"
+      }
+    }
+  },
+  "Q601": {
+    "value": "AO3400A",
+    "pins": {
+      "3": {
+        "net": "/IHM/BUZZ_D",
+        "function": "D_3"
+      },
+      "1": {
+        "net": "/IHM/Q601_G",
+        "function": "G_1"
+      },
+      "2": {
+        "net": "GND",
+        "function": "S_2"
+      }
+    }
+  },
+  "Q602": {
+    "value": "AO3400A",
+    "pins": {
+      "1": {
+        "net": "/IHM/Q602_G",
+        "function": "G_1"
+      },
+      "3": {
+        "net": "/IHM/TRACK_SW",
+        "function": "D_3"
+      },
+      "2": {
+        "net": "GND",
+        "function": "S_2"
+      }
+    }
+  },
+  "R601": {
+    "value": "4k7",
+    "pins": {
+      "1": {
+        "net": "+3V3",
+        "function": ""
+      },
+      "2": {
+        "net": "SDA2",
+        "function": ""
+      }
+    }
+  },
+  "R602": {
+    "value": "4k7",
+    "pins": {
+      "1": {
+        "net": "+3V3",
+        "function": ""
+      },
+      "2": {
+        "net": "SCL2",
+        "function": ""
+      }
+    }
+  },
+  "R603": {
+    "value": "10k",
+    "pins": {
+      "1": {
+        "net": "+3V3",
+        "function": ""
+      },
+      "2": {
+        "net": "SW_UP",
+        "function": ""
+      }
+    }
+  },
+  "R604": {
+    "value": "10k",
+    "pins": {
+      "1": {
+        "net": "+3V3",
+        "function": ""
+      },
+      "2": {
+        "net": "SW_DOWN",
+        "function": ""
+      }
+    }
+  },
+  "R605": {
+    "value": "10k",
+    "pins": {
+      "1": {
+        "net": "+3V3",
+        "function": ""
+      },
+      "2": {
+        "net": "SW_LEFT",
+        "function": ""
+      }
+    }
+  },
+  "R606": {
+    "value": "10k",
+    "pins": {
+      "1": {
+        "net": "+3V3",
+        "function": ""
+      },
+      "2": {
+        "net": "SW_RIGHT",
+        "function": ""
+      }
+    }
+  },
+  "R607": {
+    "value": "10k",
+    "pins": {
+      "1": {
+        "net": "+3V3",
+        "function": ""
+      },
+      "2": {
+        "net": "SW_PUSH",
+        "function": ""
+      }
+    }
+  },
+  "R608": {
+    "value": "10k",
+    "pins": {
+      "1": {
+        "net": "+3V3",
+        "function": ""
+      },
+      "2": {
+        "net": "START_BTN",
+        "function": ""
+      }
+    }
+  },
+  "R609": {
+    "value": "100R",
+    "pins": {
+      "1": {
+        "net": "/IHM/BZAC",
+        "function": ""
+      },
+      "2": {
+        "net": "/IHM/Q601_G",
+        "function": ""
+      }
+    }
+  },
+  "R610": {
+    "value": "100k",
+    "pins": {
+      "1": {
+        "net": "/IHM/Q601_G",
+        "function": ""
+      },
+      "2": {
+        "net": "GND",
+        "function": ""
+      }
+    }
+  },
+  "R615": {
+    "value": "220R",
+    "pins": {
+      "2": {
+        "net": "/IHM/D606_A",
+        "function": ""
+      },
+      "1": {
+        "net": "VBAT",
+        "function": ""
+      }
+    }
+  },
+  "R617": {
+    "value": "300R",
+    "pins": {
+      "2": {
+        "net": "/IHM/D608_A",
+        "function": ""
+      },
+      "1": {
+        "net": "VBAT",
+        "function": ""
+      }
+    }
+  },
+  "R618": {
+    "value": "300R",
+    "pins": {
+      "2": {
+        "net": "/IHM/D609_A",
+        "function": ""
+      },
+      "1": {
+        "net": "VBAT",
+        "function": ""
+      }
+    }
+  },
+  "R619": {
+    "value": "100R",
+    "pins": {
+      "2": {
+        "net": "/IHM/Q602_G",
+        "function": ""
+      },
+      "1": {
+        "net": "TRACK_EN",
+        "function": ""
+      }
+    }
+  },
+  "R620": {
+    "value": "100k",
+    "pins": {
+      "1": {
+        "net": "/IHM/Q602_G",
+        "function": ""
+      },
+      "2": {
+        "net": "GND",
+        "function": ""
+      }
+    }
+  },
+  "SW601": {
+    "value": "SKRHABE010",
+    "pins": {
+      "6": {
+        "net": "GND",
+        "function": "COM_6"
+      },
+      "2": {
+        "net": "SW_DOWN",
+        "function": "DOWN_2"
+      },
+      "3": {
+        "net": "SW_LEFT",
+        "function": "LEFT_3"
+      },
+      "5": {
+        "net": "SW_PUSH",
+        "function": "PUSH_5"
+      },
+      "4": {
+        "net": "SW_RIGHT",
+        "function": "RIGHT_4"
+      },
+      "1": {
+        "net": "SW_UP",
+        "function": "UP_1"
+      }
+    }
+  },
+  "SW602": {
+    "value": "START",
+    "pins": {
+      "2": {
+        "net": "GND",
+        "function": "2_2"
+      },
+      "1": {
+        "net": "START_BTN",
+        "function": "1_1"
+      }
+    }
+  },
+  "C701": {
+    "value": "100nF",
+    "pins": {
+      "1": {
+        "net": "+3V3",
+        "function": ""
+      },
+      "2": {
+        "net": "GND",
+        "function": ""
+      }
+    }
+  },
+  "C702": {
+    "value": "10uF",
+    "pins": {
+      "1": {
+        "net": "+3V3_BLE",
+        "function": ""
+      },
+      "2": {
+        "net": "GND",
+        "function": ""
+      }
+    }
+  },
+  "C703": {
+    "value": "100nF",
+    "pins": {
+      "1": {
+        "net": "+3V3_BLE",
+        "function": ""
+      },
+      "2": {
+        "net": "GND",
+        "function": ""
+      }
+    }
+  },
+  "C704": {
+    "value": "220uF",
+    "pins": {
+      "2": {
+        "net": "GND",
+        "function": ""
+      },
+      "1": {
+        "net": "VBAT",
+        "function": ""
+      }
+    }
+  },
+  "C705": {
+    "value": "100nF",
+    "pins": {
+      "2": {
+        "net": "GND",
+        "function": ""
+      },
+      "1": {
+        "net": "VBAT",
+        "function": ""
+      }
+    }
+  },
+  "D701": {
+    "value": "bleue",
+    "pins": {
+      "2": {
+        "net": "/Traces et turbine/BLE_LED_A",
+        "function": "A_2"
+      },
+      "1": {
+        "net": "GND",
+        "function": "K_1"
+      }
+    }
+  },
+  "J103": {
+    "value": "MultiStar 10A (debout)",
+    "pins": {
+      "2": {
+        "net": "GND",
+        "function": "Pin_2_2"
+      },
+      "1": {
+        "net": "VBAT",
+        "function": "Pin_1_1"
+      }
+    }
+  },
+  "J701": {
+    "value": "Module OTA (ESP32-C3)",
+    "pins": {
+      "2": {
+        "net": "+3V3_BLE",
+        "function": "Pin_2_2"
+      },
+      "4": {
+        "net": "BLE_RX",
+        "function": "Pin_4_4"
+      },
+      "3": {
+        "net": "BLE_TX",
+        "function": "Pin_3_3"
+      },
+      "1": {
+        "net": "GND",
+        "function": "Pin_1_1"
+      }
+    }
+  },
+  "J702": {
+    "value": "Signal ESC (coudee)",
+    "pins": {
+      "1": {
+        "net": "/Traces et turbine/ESC_SIG",
+        "function": "Pin_1_1"
+      }
+    }
+  },
+  "Q701": {
+    "value": "SI2301CDS",
+    "pins": {
+      "2": {
+        "net": "+3V3",
+        "function": "S_2"
+      },
+      "3": {
+        "net": "+3V3_BLE",
+        "function": "D_3"
+      },
+      "1": {
+        "net": "/Traces et turbine/BLE_PG",
+        "function": "G_1"
+      }
+    }
+  },
+  "Q702": {
+    "value": "AO3400A",
+    "pins": {
+      "3": {
+        "net": "/Traces et turbine/BLE_PG",
+        "function": "D_3"
+      },
+      "1": {
+        "net": "/Traces et turbine/Q702_G",
+        "function": "G_1"
+      },
+      "2": {
+        "net": "GND",
+        "function": "S_2"
+      }
+    }
+  },
+  "R701": {
+    "value": "10k",
+    "pins": {
+      "1": {
+        "net": "+3V3",
+        "function": ""
+      },
+      "2": {
+        "net": "/Traces et turbine/FLASH_nWP",
+        "function": ""
+      }
+    }
+  },
+  "R702": {
+    "value": "10k",
+    "pins": {
+      "1": {
+        "net": "+3V3",
+        "function": ""
+      },
+      "2": {
+        "net": "/Traces et turbine/FLASH_nHOLD",
+        "function": ""
+      }
+    }
+  },
+  "R703": {
+    "value": "100k",
+    "pins": {
+      "1": {
+        "net": "+3V3",
+        "function": ""
+      },
+      "2": {
+        "net": "/Traces et turbine/BLE_PG",
+        "function": ""
+      }
+    }
+  },
+  "R704": {
+    "value": "100R",
+    "pins": {
+      "2": {
+        "net": "/Traces et turbine/Q702_G",
+        "function": ""
+      },
+      "1": {
+        "net": "BLE_PWR_EN",
+        "function": ""
+      }
+    }
+  },
+  "R705": {
+    "value": "100k",
+    "pins": {
+      "1": {
+        "net": "/Traces et turbine/Q702_G",
+        "function": ""
+      },
+      "2": {
+        "net": "GND",
+        "function": ""
+      }
+    }
+  },
+  "R706": {
+    "value": "1k",
+    "pins": {
+      "1": {
+        "net": "+3V3_BLE",
+        "function": ""
+      },
+      "2": {
+        "net": "/Traces et turbine/BLE_LED_A",
+        "function": ""
+      }
+    }
+  },
+  "R707": {
+    "value": "100R",
+    "pins": {
+      "2": {
+        "net": "/Traces et turbine/ESC_SIG",
+        "function": ""
+      },
+      "1": {
+        "net": "ESC_PWM",
+        "function": ""
+      }
+    }
+  },
+  "U701": {
+    "value": "W25Q128JVSIQ",
+    "pins": {
+      "8": {
+        "net": "+3V3",
+        "function": "VCC_8"
+      },
+      "7": {
+        "net": "/Traces et turbine/FLASH_nHOLD",
+        "function": "~{HOLD}/~{RESET}/IO_{3}_7"
+      },
+      "3": {
+        "net": "/Traces et turbine/FLASH_nWP",
+        "function": "~{WP}/IO_{2}_3"
+      },
+      "2": {
+        "net": "FLASH_MISO",
+        "function": "DO/IO_{1}_2"
+      },
+      "5": {
+        "net": "FLASH_MOSI",
+        "function": "DI/IO_{0}_5"
+      },
+      "6": {
+        "net": "FLASH_SCK",
+        "function": "CLK_6"
+      },
+      "1": {
+        "net": "FLASH_nCS",
+        "function": "~{CS}_1"
+      },
+      "4": {
+        "net": "GND",
+        "function": "GND_4"
+      }
+    }
+  },
+  "C124": {
+    "value": "100nF",
+    "pins": {
+      "1": {
+        "net": "+3V3",
+        "function": ""
+      },
+      "2": {
+        "net": "GND",
+        "function": ""
+      }
+    }
+  },
+  "D401": {
+    "value": "verte - capteur 00",
+    "pins": {
+      "1": {
+        "net": "/Temoins de ligne/LGN00",
+        "function": "K_1"
+      },
+      "2": {
+        "net": "/Temoins de ligne/LGN00_A",
+        "function": "A_2"
+      }
+    }
+  },
+  "D402": {
+    "value": "verte - capteur 01",
+    "pins": {
+      "1": {
+        "net": "/Temoins de ligne/LGN01",
+        "function": "K_1"
+      },
+      "2": {
+        "net": "/Temoins de ligne/LGN01_A",
+        "function": "A_2"
+      }
+    }
+  },
+  "D403": {
+    "value": "verte - capteur 02",
+    "pins": {
+      "1": {
+        "net": "/Temoins de ligne/LGN02",
+        "function": "K_1"
+      },
+      "2": {
+        "net": "/Temoins de ligne/LGN02_A",
+        "function": "A_2"
+      }
+    }
+  },
+  "D404": {
+    "value": "verte - capteur 03",
+    "pins": {
+      "1": {
+        "net": "/Temoins de ligne/LGN03",
+        "function": "K_1"
+      },
+      "2": {
+        "net": "/Temoins de ligne/LGN03_A",
+        "function": "A_2"
+      }
+    }
+  },
+  "D405": {
+    "value": "verte - capteur 04",
+    "pins": {
+      "1": {
+        "net": "/Temoins de ligne/LGN04",
+        "function": "K_1"
+      },
+      "2": {
+        "net": "/Temoins de ligne/LGN04_A",
+        "function": "A_2"
+      }
+    }
+  },
+  "D406": {
+    "value": "verte - capteur 05",
+    "pins": {
+      "1": {
+        "net": "/Temoins de ligne/LGN05",
+        "function": "K_1"
+      },
+      "2": {
+        "net": "/Temoins de ligne/LGN05_A",
+        "function": "A_2"
+      }
+    }
+  },
+  "D407": {
+    "value": "verte - capteur 06",
+    "pins": {
+      "1": {
+        "net": "/Temoins de ligne/LGN06",
+        "function": "K_1"
+      },
+      "2": {
+        "net": "/Temoins de ligne/LGN06_A",
+        "function": "A_2"
+      }
+    }
+  },
+  "D408": {
+    "value": "verte - capteur 07",
+    "pins": {
+      "1": {
+        "net": "/Temoins de ligne/LGN07",
+        "function": "K_1"
+      },
+      "2": {
+        "net": "/Temoins de ligne/LGN07_A",
+        "function": "A_2"
+      }
+    }
+  },
+  "D409": {
+    "value": "verte - capteur 08",
+    "pins": {
+      "1": {
+        "net": "/Temoins de ligne/LGN08",
+        "function": "K_1"
+      },
+      "2": {
+        "net": "/Temoins de ligne/LGN08_A",
+        "function": "A_2"
+      }
+    }
+  },
+  "D410": {
+    "value": "verte - capteur 09",
+    "pins": {
+      "1": {
+        "net": "/Temoins de ligne/LGN09",
+        "function": "K_1"
+      },
+      "2": {
+        "net": "/Temoins de ligne/LGN09_A",
+        "function": "A_2"
+      }
+    }
+  },
+  "D411": {
+    "value": "verte - capteur 10",
+    "pins": {
+      "1": {
+        "net": "/Temoins de ligne/LGN10",
+        "function": "K_1"
+      },
+      "2": {
+        "net": "/Temoins de ligne/LGN10_A",
+        "function": "A_2"
+      }
+    }
+  },
+  "D412": {
+    "value": "verte - capteur 11",
+    "pins": {
+      "1": {
+        "net": "/Temoins de ligne/LGN11",
+        "function": "K_1"
+      },
+      "2": {
+        "net": "/Temoins de ligne/LGN11_A",
+        "function": "A_2"
+      }
+    }
+  },
+  "R445": {
+    "value": "1k",
+    "pins": {
+      "1": {
+        "net": "+3V3",
+        "function": ""
+      },
+      "2": {
+        "net": "/Temoins de ligne/LGN00_A",
+        "function": ""
+      }
+    }
+  },
+  "R446": {
+    "value": "1k",
+    "pins": {
+      "1": {
+        "net": "+3V3",
+        "function": ""
+      },
+      "2": {
+        "net": "/Temoins de ligne/LGN01_A",
+        "function": ""
+      }
+    }
+  },
+  "R447": {
+    "value": "1k",
+    "pins": {
+      "1": {
+        "net": "+3V3",
+        "function": ""
+      },
+      "2": {
+        "net": "/Temoins de ligne/LGN02_A",
+        "function": ""
+      }
+    }
+  },
+  "R448": {
+    "value": "1k",
+    "pins": {
+      "1": {
+        "net": "+3V3",
+        "function": ""
+      },
+      "2": {
+        "net": "/Temoins de ligne/LGN03_A",
+        "function": ""
+      }
+    }
+  },
+  "R449": {
+    "value": "1k",
+    "pins": {
+      "1": {
+        "net": "+3V3",
+        "function": ""
+      },
+      "2": {
+        "net": "/Temoins de ligne/LGN04_A",
+        "function": ""
+      }
+    }
+  },
+  "R450": {
+    "value": "1k",
+    "pins": {
+      "1": {
+        "net": "+3V3",
+        "function": ""
+      },
+      "2": {
+        "net": "/Temoins de ligne/LGN05_A",
+        "function": ""
+      }
+    }
+  },
+  "R451": {
+    "value": "1k",
+    "pins": {
+      "1": {
+        "net": "+3V3",
+        "function": ""
+      },
+      "2": {
+        "net": "/Temoins de ligne/LGN06_A",
+        "function": ""
+      }
+    }
+  },
+  "R452": {
+    "value": "1k",
+    "pins": {
+      "1": {
+        "net": "+3V3",
+        "function": ""
+      },
+      "2": {
+        "net": "/Temoins de ligne/LGN07_A",
+        "function": ""
+      }
+    }
+  },
+  "R453": {
+    "value": "1k",
+    "pins": {
+      "1": {
+        "net": "+3V3",
+        "function": ""
+      },
+      "2": {
+        "net": "/Temoins de ligne/LGN08_A",
+        "function": ""
+      }
+    }
+  },
+  "R454": {
+    "value": "1k",
+    "pins": {
+      "1": {
+        "net": "+3V3",
+        "function": ""
+      },
+      "2": {
+        "net": "/Temoins de ligne/LGN09_A",
+        "function": ""
+      }
+    }
+  },
+  "R455": {
+    "value": "1k",
+    "pins": {
+      "1": {
+        "net": "+3V3",
+        "function": ""
+      },
+      "2": {
+        "net": "/Temoins de ligne/LGN10_A",
+        "function": ""
+      }
+    }
+  },
+  "R456": {
+    "value": "1k",
+    "pins": {
+      "1": {
+        "net": "+3V3",
+        "function": ""
+      },
+      "2": {
+        "net": "/Temoins de ligne/LGN11_A",
+        "function": ""
+      }
+    }
+  },
+  "U105": {
+    "value": "PCA9685PW",
+    "pins": {
+      "28": {
+        "net": "+3V3",
+        "function": "VDD_28"
+      },
+      "6": {
+        "net": "/Temoins de ligne/LGN00",
+        "function": "LED0_6"
+      },
+      "7": {
+        "net": "/Temoins de ligne/LGN01",
+        "function": "LED1_7"
+      },
+      "8": {
+        "net": "/Temoins de ligne/LGN02",
+        "function": "LED2_8"
+      },
+      "9": {
+        "net": "/Temoins de ligne/LGN03",
+        "function": "LED3_9"
+      },
+      "10": {
+        "net": "/Temoins de ligne/LGN04",
+        "function": "LED4_10"
+      },
+      "11": {
+        "net": "/Temoins de ligne/LGN05",
+        "function": "LED5_11"
+      },
+      "12": {
+        "net": "/Temoins de ligne/LGN06",
+        "function": "LED6_12"
+      },
+      "13": {
+        "net": "/Temoins de ligne/LGN07",
+        "function": "LED7_13"
+      },
+      "15": {
+        "net": "/Temoins de ligne/LGN08",
+        "function": "LED8_15"
+      },
+      "16": {
+        "net": "/Temoins de ligne/LGN09",
+        "function": "LED9_16"
+      },
+      "17": {
+        "net": "/Temoins de ligne/LGN10",
+        "function": "LED10_17"
+      },
+      "18": {
+        "net": "/Temoins de ligne/LGN11",
+        "function": "LED11_18"
+      },
+      "1": {
+        "net": "GND",
+        "function": "A0_1"
+      },
+      "14": {
+        "net": "GND",
+        "function": "VSS_14"
+      },
+      "2": {
+        "net": "GND",
+        "function": "A1_2"
+      },
+      "23": {
+        "net": "GND",
+        "function": "~{OE}_23"
+      },
+      "24": {
+        "net": "GND",
+        "function": "A5_24"
+      },
+      "25": {
+        "net": "GND",
+        "function": "EXTCLK_25"
+      },
+      "3": {
+        "net": "GND",
+        "function": "A2_3"
+      },
+      "4": {
+        "net": "GND",
+        "function": "A3_4"
+      },
+      "5": {
+        "net": "GND",
+        "function": "A4_5"
+      },
+      "26": {
+        "net": "SCL2",
+        "function": "SCL_26"
+      },
+      "27": {
+        "net": "SDA2",
+        "function": "SDA_27"
+      },
+      "19": {
+        "net": "unconnected-(U105-LED12-Pad19)",
+        "function": "LED12_19"
+      },
+      "20": {
+        "net": "unconnected-(U105-LED13-Pad20)",
+        "function": "LED13_20"
+      },
+      "21": {
+        "net": "unconnected-(U105-LED14-Pad21)",
+        "function": "LED14_21"
+      },
+      "22": {
+        "net": "unconnected-(U105-LED15-Pad22)",
+        "function": "LED15_22"
+      }
+    }
+  }
+}

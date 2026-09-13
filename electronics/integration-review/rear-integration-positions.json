@@ -1,0 +1,91 @@
+{
+  "placements": {
+    "J102": {
+      "position": [
+        169,
+        129.1
+      ],
+      "angle": 0,
+      "face": "F",
+      "reason": "MegaFit latch accessible vers arriere, hors moteur droit; origine geometrique broche3 VPACK (numerotation fabricant vue Top)"
+    },
+    "J103": {
+      "position": [
+        144,
+        134.5
+      ],
+      "angle": 180,
+      "face": "F",
+      "reason": "ESC vertical et berceau compact verifie en 3D hors moteurs, turbine et anneau conservateur; reserve collier indicative explicite"
+    },
+    "C704": {
+      "position": [
+        144.2,
+        125.6
+      ],
+      "angle": 0,
+      "face": "F",
+      "reason": "Reservoir 220uF VPACK deplace de 3.8mm lateralement et 2.2mm vers arriere; puissance chargeur conservee"
+    },
+    "U101": {
+      "position": [
+        154.7,
+        133.35
+      ],
+      "angle": 180,
+      "face": "F",
+      "reason": "Protection USB decalee entre sortie connecteur et MCU, libre du nouvel ESC"
+    },
+    "C705": {
+      "position": [
+        144.2,
+        129.8
+      ],
+      "angle": 0,
+      "face": "F",
+      "reason": "Bypass VPACK au milieu des deux entrees puissance ESC, devant le reservoir, hors berceau"
+    },
+    "Q101": {
+      "position": [
+        136.45,
+        128.6
+      ],
+      "angle": 0,
+      "face": "F",
+      "reason": "Commande logique chargeur repositionnee localement pour nouveau ESC; R112/R113 conserves"
+    }
+  },
+  "issues": [],
+  "schema": "usainbot-rear-integration-placement-v1",
+  "units": "mm",
+  "removed_references": [
+    "J104",
+    "J702"
+  ],
+  "replacement_references": [
+    "J102",
+    "J103"
+  ],
+  "footprints": {
+    "J102": "Pacabot:Molex_Mega-Fit_200241-1133_1x03_P5.70mm_Vertical",
+    "J103": "Pacabot:EMAX_Bullet_12A_Vertical_3Pin_PROTOTYPE"
+  },
+  "metrics": {
+    "clearance_courtyard_min_mm": 0.20000000000004547,
+    "courtyard_or_board_violations": [],
+    "modified_preexisting_mobile_footprints": 4,
+    "replaced_connector_footprints": 2,
+    "unchanged_other_locked_positions": true,
+    "distance_pads_mm": {
+      "C704_VPACK_ESC_BATT": 9.1047460151286,
+      "C704_GND_ESC_GND": 9.009439494219393,
+      "C705_VPACK_ESC_BATT": 6.263353734222516,
+      "C705_GND_ESC_GND": 5.932486831001022
+    },
+    "esc_courtyard_overlap_indicative_collar_mm2": 14.358320885042472,
+    "megafit_courtyard_to_M2_mm": 0.28999999999999204,
+    "megafit_courtyard_to_C354_mm": 0.27000000000001023
+  },
+  "mechanical_note": "J103 courtyard overlaps the indicative future collar circle. The actual compact cradle and ESC solids were independently checked in 3D: clearance to conservative collar ring 0.844mm at y134.5, no solid intersection. Keep this distinction explicit; no unqualified fabrication validation.",
+  "connector_origin_note": "MegaFit origin x0 is geometric left hole = manufacturer pad3 VPACK, pad2 at x5.7=midpoint, pad1 at x11.4=GND; manufacturer Top mating-view numbering checked by battery agent."
+}

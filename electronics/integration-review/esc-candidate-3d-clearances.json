@@ -1,0 +1,80 @@
+{
+  "(144, 135, 180)": {
+    "M1": {
+      "distance_mm": 4.5650848842053255,
+      "intersection_mm3": 0.0
+    },
+    "M2": {
+      "distance_mm": 19.836582366930042,
+      "intersection_mm3": 0.0
+    },
+    "M3": {
+      "distance_mm": 6.817664417035539,
+      "intersection_mm3": 0.0
+    },
+    "J101_USB": {
+      "distance_mm": 4.25,
+      "intersection_mm3": 0.0
+    },
+    "FUTURE_COLLAR_R23_75_NOT_A_VALIDATED_PART": {
+      "distance_mm": 0.3607859681098121,
+      "intersection_mm3": 0.0,
+      "obstacle_z_range_mm": [
+        0,
+        17
+      ]
+    }
+  },
+  "(144, 134.5, 180)": {
+    "M1": {
+      "distance_mm": 4.825971404805455,
+      "intersection_mm3": 0.0
+    },
+    "M2": {
+      "distance_mm": 19.98599509656699,
+      "intersection_mm3": 0.0
+    },
+    "M3": {
+      "distance_mm": 7.29960629616135,
+      "intersection_mm3": 0.0
+    },
+    "J101_USB": {
+      "distance_mm": 3.75,
+      "intersection_mm3": 0.0
+    },
+    "FUTURE_COLLAR_R23_75_NOT_A_VALIDATED_PART": {
+      "distance_mm": 0.8443082846418147,
+      "intersection_mm3": 0.0,
+      "obstacle_z_range_mm": [
+        0,
+        17
+      ]
+    }
+  },
+  "(144, 134, 180)": {
+    "M1": {
+      "distance_mm": 5.122499389946272,
+      "intersection_mm3": 0.0
+    },
+    "M2": {
+      "distance_mm": 20.146711890529428,
+      "intersection_mm3": 0.0
+    },
+    "M3": {
+      "distance_mm": 7.782233288493471,
+      "intersection_mm3": 0.0
+    },
+    "J101_USB": {
+      "distance_mm": 3.25,
+      "intersection_mm3": 0.0
+    },
+    "FUTURE_COLLAR_R23_75_NOT_A_VALIDATED_PART": {
+      "distance_mm": 1.3284768277501378,
+      "intersection_mm3": 0.0,
+      "obstacle_z_range_mm": [
+        0,
+        17
+      ]
+    }
+  }
+}

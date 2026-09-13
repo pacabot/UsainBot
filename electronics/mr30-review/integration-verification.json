@@ -1,0 +1,2463 @@
+{
+  "schema": "usainbot-final-integration-verification-v2",
+  "status": "passed",
+  "kicad_version": "10.0.1",
+  "board": "/Users/zhonx/Documents/Projets_PRE/Pacabot/Pacabot_Junior/UsainBot/electronics/UsainBot.kicad_pcb",
+  "board_sha256": "cb431fe4c21f0412fe3629e97f44a36846a3fb235e87f1b3c6d80b2f11f554cc",
+  "board_mtime_utc_epoch": 1788773044.702967,
+  "baseline_zip_sha256": "5136392917efeff613d82528a0bc10fe2c7e251ea4aadf19a64a6450036f5486",
+  "netlist_sha256": "60e3bdd7a70fe0998821751b9550b3816ee37dfbe7a33fe55a7fa7fa2542b351",
+  "tolerances": {
+    "pad_mm": 5e-06,
+    "locked_angle_deg": 1e-06,
+    "locked_xy": "exact integer nanometres"
+  },
+  "footprints": 340,
+  "top": 328,
+  "bottom": 12,
+  "tracks": 0,
+  "vias": 0,
+  "tracks_and_vias": 0,
+  "zones": 0,
+  "original_locked_count": 40,
+  "preserved_locked_count": 36,
+  "preserved_locked_references": [
+    "D608",
+    "D609",
+    "J101",
+    "J201",
+    "J301",
+    "J351",
+    "J601",
+    "M1",
+    "M2",
+    "M3",
+    "Q102",
+    "Q103",
+    "R617",
+    "R618",
+    "SW601",
+    "SW602",
+    "SW603",
+    "TM501",
+    "TM521",
+    "TM541",
+    "U201",
+    "U301",
+    "U351",
+    "U401",
+    "U402",
+    "U403",
+    "U404",
+    "U405",
+    "U406",
+    "U407",
+    "U408",
+    "U409",
+    "U410",
+    "U411",
+    "U412",
+    "U503"
+  ],
+  "locked_checks": [
+    {
+      "reference": "D608",
+      "before": {
+        "uuid": "b5911de5-a744-4fa4-8a2a-5d0ec7ab9286",
+        "xy": [
+          95.0,
+          121.0
+        ],
+        "angle": 0.0,
+        "side": "F.Cu",
+        "locked": true,
+        "footprint": "LED_SMD:LED_0603_1608Metric"
+      },
+      "after": {
+        "uuid": "b5911de5-a744-4fa4-8a2a-5d0ec7ab9286",
+        "xy": [
+          95.0,
+          121.0
+        ],
+        "angle": 0.0,
+        "side": "F.Cu",
+        "locked": true,
+        "footprint": "LED_SMD:LED_0603_1608Metric"
+      },
+      "equal": {
+        "uuid": true,
+        "xy_exact_nm": true,
+        "angle": true,
+        "side": true,
+        "locked": true
+      }
+    },
+    {
+      "reference": "D609",
+      "before": {
+        "uuid": "645da60b-97a9-40ac-a8f3-f4c0d05c1b4a",
+        "xy": [
+          215.0,
+          121.0
+        ],
+        "angle": 180.0,
+        "side": "F.Cu",
+        "locked": true,
+        "footprint": "LED_SMD:LED_0603_1608Metric"
+      },
+      "after": {
+        "uuid": "645da60b-97a9-40ac-a8f3-f4c0d05c1b4a",
+        "xy": [
+          215.0,
+          121.0
+        ],
+        "angle": 180.0,
+        "side": "F.Cu",
+        "locked": true,
+        "footprint": "LED_SMD:LED_0603_1608Metric"
+      },
+      "equal": {
+        "uuid": true,
+        "xy_exact_nm": true,
+        "angle": true,
+        "side": true,
+        "locked": true
+      }
+    },
+    {
+      "reference": "J101",
+      "before": {
+        "uuid": "b2f559f1-25f3-4644-80c9-a6b83046b0e2",
+        "xy": [
+          155.0,
+          124.0
+        ],
+        "angle": 180.0,
+        "side": "F.Cu",
+        "locked": true,
+        "footprint": "Connector_USB:USB_C_Receptacle_HRO_TYPE-C-31-M-12"
+      },
+      "after": {
+        "uuid": "b2f559f1-25f3-4644-80c9-a6b83046b0e2",
+        "xy": [
+          155.0,
+          124.0
+        ],
+        "angle": 180.0,
+        "side": "F.Cu",
+        "locked": true,
+        "footprint": "Connector_USB:USB_C_Receptacle_HRO_TYPE-C-31-M-12"
+      },
+      "equal": {
+        "uuid": true,
+        "xy_exact_nm": true,
+        "angle": true,
+        "side": true,
+        "locked": true
+      }
+    },
+    {
+      "reference": "J201",
+      "before": {
+        "uuid": "1fffd8fc-b642-4d67-8c97-3fca9cf81f6b",
+        "xy": [
+          166.54,
+          233.96
+        ],
+        "angle": 0.0,
+        "side": "F.Cu",
+        "locked": true,
+        "footprint": "Connector:Tag-Connect_TC2030-IDC-FP_2x03_P1.27mm_Vertical"
+      },
+      "after": {
+        "uuid": "1fffd8fc-b642-4d67-8c97-3fca9cf81f6b",
+        "xy": [
+          166.54,
+          233.96
+        ],
+        "angle": 0.0,
+        "side": "F.Cu",
+        "locked": true,
+        "footprint": "Connector:Tag-Connect_TC2030-IDC-FP_2x03_P1.27mm_Vertical"
+      },
+      "equal": {
+        "uuid": true,
+        "xy_exact_nm": true,
+        "angle": true,
+        "side": true,
+        "locked": true
+      }
+    },
+    {
+      "reference": "J301",
+      "before": {
+        "uuid": "3b353ab8-5ea2-4fc6-a3a1-0dd1dcaf9940",
+        "xy": [
+          96.0,
+          131.35
+        ],
+        "angle": 180.0,
+        "side": "F.Cu",
+        "locked": true,
+        "footprint": "Connector_TE-Connectivity:TE_Micro-MaTch_215079-6_2x03_P1.27mm_Vertical"
+      },
+      "after": {
+        "uuid": "3b353ab8-5ea2-4fc6-a3a1-0dd1dcaf9940",
+        "xy": [
+          96.0,
+          131.35
+        ],
+        "angle": 180.0,
+        "side": "F.Cu",
+        "locked": true,
+        "footprint": "Connector_TE-Connectivity:TE_Micro-MaTch_215079-6_2x03_P1.27mm_Vertical"
+      },
+      "equal": {
+        "uuid": true,
+        "xy_exact_nm": true,
+        "angle": true,
+        "side": true,
+        "locked": true
+      }
+    },
+    {
+      "reference": "J351",
+      "before": {
+        "uuid": "7d872cbc-3ae1-4b6c-b8f4-2b45d0e2c108",
+        "xy": [
+          214.0,
+          125.0
+        ],
+        "angle": 0.0,
+        "side": "F.Cu",
+        "locked": true,
+        "footprint": "Connector_TE-Connectivity:TE_Micro-MaTch_215079-6_2x03_P1.27mm_Vertical"
+      },
+      "after": {
+        "uuid": "7d872cbc-3ae1-4b6c-b8f4-2b45d0e2c108",
+        "xy": [
+          214.0,
+          125.0
+        ],
+        "angle": 0.0,
+        "side": "F.Cu",
+        "locked": true,
+        "footprint": "Connector_TE-Connectivity:TE_Micro-MaTch_215079-6_2x03_P1.27mm_Vertical"
+      },
+      "equal": {
+        "uuid": true,
+        "xy_exact_nm": true,
+        "angle": true,
+        "side": true,
+        "locked": true
+      }
+    },
+    {
+      "reference": "J601",
+      "before": {
+        "uuid": "d0a07a0d-bc96-4b25-a75f-47778b3254a8",
+        "xy": [
+          155.0,
+          196.15
+        ],
+        "angle": 0.0,
+        "side": "F.Cu",
+        "locked": true,
+        "footprint": "Pacabot:OLED_096_I2C"
+      },
+      "after": {
+        "uuid": "d0a07a0d-bc96-4b25-a75f-47778b3254a8",
+        "xy": [
+          155.0,
+          196.15
+        ],
+        "angle": 0.0,
+        "side": "F.Cu",
+        "locked": true,
+        "footprint": "Pacabot:OLED_096_I2C"
+      },
+      "equal": {
+        "uuid": true,
+        "xy_exact_nm": true,
+        "angle": true,
+        "side": true,
+        "locked": true
+      }
+    },
+    {
+      "reference": "M1",
+      "before": {
+        "uuid": "3314f5da-7c66-4ac4-9de9-f9efa12048fa",
+        "xy": [
+          105.0,
+          145.0
+        ],
+        "angle": 90.0,
+        "side": "F.Cu",
+        "locked": true,
+        "footprint": "Motor_Faulhaber_1524_15-10"
+      },
+      "after": {
+        "uuid": "3314f5da-7c66-4ac4-9de9-f9efa12048fa",
+        "xy": [
+          105.0,
+          145.0
+        ],
+        "angle": 90.0,
+        "side": "F.Cu",
+        "locked": true,
+        "footprint": "Motor_Faulhaber_1524_15-10"
+      },
+      "equal": {
+        "uuid": true,
+        "xy_exact_nm": true,
+        "angle": true,
+        "side": true,
+        "locked": true
+      }
+    },
+    {
+      "reference": "M2",
+      "before": {
+        "uuid": "d8574a2b-9f98-45e2-9e39-a2ab1c0667e8",
+        "xy": [
+          205.0,
+          145.0
+        ],
+        "angle": -90.0,
+        "side": "F.Cu",
+        "locked": true,
+        "footprint": "Motor_Faulhaber_1524_15-10"
+      },
+      "after": {
+        "uuid": "d8574a2b-9f98-45e2-9e39-a2ab1c0667e8",
+        "xy": [
+          205.0,
+          145.0
+        ],
+        "angle": -90.0,
+        "side": "F.Cu",
+        "locked": true,
+        "footprint": "Motor_Faulhaber_1524_15-10"
+      },
+      "equal": {
+        "uuid": true,
+        "xy_exact_nm": true,
+        "angle": true,
+        "side": true,
+        "locked": true
+      }
+    },
+    {
+      "reference": "M3",
+      "before": {
+        "uuid": "799bdc75-090a-4488-9da7-65ed4f7023c3",
+        "xy": [
+          155.0,
+          159.0
+        ],
+        "angle": 180.0,
+        "side": "F.Cu",
+        "locked": true,
+        "footprint": "Turbine_EDF27_dessus"
+      },
+      "after": {
+        "uuid": "799bdc75-090a-4488-9da7-65ed4f7023c3",
+        "xy": [
+          155.0,
+          159.0
+        ],
+        "angle": 180.0,
+        "side": "F.Cu",
+        "locked": true,
+        "footprint": "Turbine_EDF27_dessus"
+      },
+      "equal": {
+        "uuid": true,
+        "xy_exact_nm": true,
+        "angle": true,
+        "side": true,
+        "locked": true
+      }
+    },
+    {
+      "reference": "Q102",
+      "before": {
+        "uuid": "2f4bcbb5-a8cd-43cd-88aa-a8e641c6f239",
+        "xy": [
+          200.4,
+          123.6
+        ],
+        "angle": 0.0,
+        "side": "F.Cu",
+        "locked": true,
+        "footprint": "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
+      },
+      "after": {
+        "uuid": "2f4bcbb5-a8cd-43cd-88aa-a8e641c6f239",
+        "xy": [
+          200.4,
+          123.6
+        ],
+        "angle": 0.0,
+        "side": "F.Cu",
+        "locked": true,
+        "footprint": "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
+      },
+      "equal": {
+        "uuid": true,
+        "xy_exact_nm": true,
+        "angle": true,
+        "side": true,
+        "locked": true
+      }
+    },
+    {
+      "reference": "Q103",
+      "before": {
+        "uuid": "d0d150f8-4bbb-425f-828e-b48019d22867",
+        "xy": [
+          200.4,
+          130.199999
+        ],
+        "angle": 0.0,
+        "side": "F.Cu",
+        "locked": true,
+        "footprint": "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
+      },
+      "after": {
+        "uuid": "d0d150f8-4bbb-425f-828e-b48019d22867",
+        "xy": [
+          200.4,
+          130.199999
+        ],
+        "angle": 0.0,
+        "side": "F.Cu",
+        "locked": true,
+        "footprint": "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
+      },
+      "equal": {
+        "uuid": true,
+        "xy_exact_nm": true,
+        "angle": true,
+        "side": true,
+        "locked": true
+      }
+    },
+    {
+      "reference": "R617",
+      "before": {
+        "uuid": "06cb20cb-53a6-426d-8142-8d316a42ff74",
+        "xy": [
+          97.5,
+          121.0
+        ],
+        "angle": 180.0,
+        "side": "F.Cu",
+        "locked": true,
+        "footprint": "Resistor_SMD:R_0402_1005Metric"
+      },
+      "after": {
+        "uuid": "06cb20cb-53a6-426d-8142-8d316a42ff74",
+        "xy": [
+          97.5,
+          121.0
+        ],
+        "angle": 180.0,
+        "side": "F.Cu",
+        "locked": true,
+        "footprint": "Resistor_SMD:R_0402_1005Metric"
+      },
+      "equal": {
+        "uuid": true,
+        "xy_exact_nm": true,
+        "angle": true,
+        "side": true,
+        "locked": true
+      }
+    },
+    {
+      "reference": "R618",
+      "before": {
+        "uuid": "d846e32c-b9e1-437b-b551-1d30cd0aabab",
+        "xy": [
+          212.5,
+          121.0
+        ],
+        "angle": 0.0,
+        "side": "F.Cu",
+        "locked": true,
+        "footprint": "Resistor_SMD:R_0402_1005Metric"
+      },
+      "after": {
+        "uuid": "d846e32c-b9e1-437b-b551-1d30cd0aabab",
+        "xy": [
+          212.5,
+          121.0
+        ],
+        "angle": 0.0,
+        "side": "F.Cu",
+        "locked": true,
+        "footprint": "Resistor_SMD:R_0402_1005Metric"
+      },
+      "equal": {
+        "uuid": true,
+        "xy_exact_nm": true,
+        "angle": true,
+        "side": true,
+        "locked": true
+      }
+    },
+    {
+      "reference": "SW601",
+      "before": {
+        "uuid": "f6fe34fc-b0ec-4e6d-aa2e-dadbd8c82ae6",
+        "xy": [
+          128.719759,
+          189.663946
+        ],
+        "angle": 45.0,
+        "side": "F.Cu",
+        "locked": true,
+        "footprint": "Pacabot:SKRHABE010"
+      },
+      "after": {
+        "uuid": "f6fe34fc-b0ec-4e6d-aa2e-dadbd8c82ae6",
+        "xy": [
+          128.719759,
+          189.663946
+        ],
+        "angle": 45.0,
+        "side": "F.Cu",
+        "locked": true,
+        "footprint": "Pacabot:SKRHABE010"
+      },
+      "equal": {
+        "uuid": true,
+        "xy_exact_nm": true,
+        "angle": true,
+        "side": true,
+        "locked": true
+      }
+    },
+    {
+      "reference": "SW602",
+      "before": {
+        "uuid": "2634a844-12b6-44de-8cd6-6c423c23f927",
+        "xy": [
+          119.0,
+          182.0
+        ],
+        "angle": 0.0,
+        "side": "F.Cu",
+        "locked": true,
+        "footprint": "Button_Switch_SMD:SW_SPST_B3U-1000P"
+      },
+      "after": {
+        "uuid": "2634a844-12b6-44de-8cd6-6c423c23f927",
+        "xy": [
+          119.0,
+          182.0
+        ],
+        "angle": 0.0,
+        "side": "F.Cu",
+        "locked": true,
+        "footprint": "Button_Switch_SMD:SW_SPST_B3U-1000P"
+      },
+      "equal": {
+        "uuid": true,
+        "xy_exact_nm": true,
+        "angle": true,
+        "side": true,
+        "locked": true
+      }
+    },
+    {
+      "reference": "SW603",
+      "before": {
+        "uuid": "391465a2-c3c4-4a27-a30f-3b6d674a1e4c",
+        "xy": [
+          134.8,
+          201.5
+        ],
+        "angle": 0.0,
+        "side": "F.Cu",
+        "locked": true,
+        "footprint": "Button_Switch_SMD:SW_SPST_B3U-1000P"
+      },
+      "after": {
+        "uuid": "391465a2-c3c4-4a27-a30f-3b6d674a1e4c",
+        "xy": [
+          134.8,
+          201.5
+        ],
+        "angle": 0.0,
+        "side": "F.Cu",
+        "locked": true,
+        "footprint": "Button_Switch_SMD:SW_SPST_B3U-1000P"
+      },
+      "equal": {
+        "uuid": true,
+        "xy_exact_nm": true,
+        "angle": true,
+        "side": true,
+        "locked": true
+      }
+    },
+    {
+      "reference": "TM501",
+      "before": {
+        "uuid": "f7aaea1e-c9dc-4d28-98d6-80c000486410",
+        "xy": [
+          155.0,
+          265.0
+        ],
+        "angle": -75.0,
+        "side": "F.Cu",
+        "locked": true,
+        "footprint": "Pacabot:Telemetry_Duo_Coude"
+      },
+      "after": {
+        "uuid": "f7aaea1e-c9dc-4d28-98d6-80c000486410",
+        "xy": [
+          155.0,
+          265.0
+        ],
+        "angle": -75.0,
+        "side": "F.Cu",
+        "locked": true,
+        "footprint": "Pacabot:Telemetry_Duo_Coude"
+      },
+      "equal": {
+        "uuid": true,
+        "xy_exact_nm": true,
+        "angle": true,
+        "side": true,
+        "locked": true
+      }
+    },
+    {
+      "reference": "TM521",
+      "before": {
+        "uuid": "6e24bee5-8964-4f1e-a4f3-b80df5ba601d",
+        "xy": [
+          180.0,
+          187.5
+        ],
+        "angle": -45.0,
+        "side": "F.Cu",
+        "locked": true,
+        "footprint": "Pacabot:Telemetry_Duo_Coude"
+      },
+      "after": {
+        "uuid": "6e24bee5-8964-4f1e-a4f3-b80df5ba601d",
+        "xy": [
+          180.0,
+          187.5
+        ],
+        "angle": -45.0,
+        "side": "F.Cu",
+        "locked": true,
+        "footprint": "Pacabot:Telemetry_Duo_Coude"
+      },
+      "equal": {
+        "uuid": true,
+        "xy_exact_nm": true,
+        "angle": true,
+        "side": true,
+        "locked": true
+      }
+    },
+    {
+      "reference": "TM541",
+      "before": {
+        "uuid": "4b5a2149-bf30-44ef-9d54-71c784c51c0a",
+        "xy": [
+          192.0,
+          170.0
+        ],
+        "angle": -15.0,
+        "side": "F.Cu",
+        "locked": true,
+        "footprint": "Pacabot:Telemetry_Duo_Coude"
+      },
+      "after": {
+        "uuid": "4b5a2149-bf30-44ef-9d54-71c784c51c0a",
+        "xy": [
+          192.0,
+          170.0
+        ],
+        "angle": -15.0,
+        "side": "F.Cu",
+        "locked": true,
+        "footprint": "Pacabot:Telemetry_Duo_Coude"
+      },
+      "equal": {
+        "uuid": true,
+        "xy_exact_nm": true,
+        "angle": true,
+        "side": true,
+        "locked": true
+      }
+    },
+    {
+      "reference": "U201",
+      "before": {
+        "uuid": "ce0a2229-8c70-4695-897b-2e3e2b659996",
+        "xy": [
+          155.0,
+          217.0
+        ],
+        "angle": 45.0,
+        "side": "F.Cu",
+        "locked": true,
+        "footprint": "Package_QFP:LQFP-144_20x20mm_P0.5mm"
+      },
+      "after": {
+        "uuid": "ce0a2229-8c70-4695-897b-2e3e2b659996",
+        "xy": [
+          155.0,
+          217.0
+        ],
+        "angle": 45.0,
+        "side": "F.Cu",
+        "locked": true,
+        "footprint": "Package_QFP:LQFP-144_20x20mm_P0.5mm"
+      },
+      "equal": {
+        "uuid": true,
+        "xy_exact_nm": true,
+        "angle": true,
+        "side": true,
+        "locked": true
+      }
+    },
+    {
+      "reference": "U301",
+      "before": {
+        "uuid": "904549c8-470d-4532-b1a2-306f0dae3c93",
+        "xy": [
+          101.5,
+          127.0
+        ],
+        "angle": 90.0,
+        "side": "F.Cu",
+        "locked": true,
+        "footprint": "Package_SO:HTSSOP-16-1EP_4.4x5mm_P0.65mm_EP3.4x5mm"
+      },
+      "after": {
+        "uuid": "904549c8-470d-4532-b1a2-306f0dae3c93",
+        "xy": [
+          101.5,
+          127.0
+        ],
+        "angle": 90.0,
+        "side": "F.Cu",
+        "locked": true,
+        "footprint": "Package_SO:HTSSOP-16-1EP_4.4x5mm_P0.65mm_EP3.4x5mm"
+      },
+      "equal": {
+        "uuid": true,
+        "xy_exact_nm": true,
+        "angle": true,
+        "side": true,
+        "locked": true
+      }
+    },
+    {
+      "reference": "U351",
+      "before": {
+        "uuid": "2b8084b0-5121-4442-83c6-c75751b76cb3",
+        "xy": [
+          208.5,
+          127.0
+        ],
+        "angle": 90.0,
+        "side": "F.Cu",
+        "locked": true,
+        "footprint": "Package_SO:HTSSOP-16-1EP_4.4x5mm_P0.65mm_EP3.4x5mm"
+      },
+      "after": {
+        "uuid": "2b8084b0-5121-4442-83c6-c75751b76cb3",
+        "xy": [
+          208.5,
+          127.0
+        ],
+        "angle": 90.0,
+        "side": "F.Cu",
+        "locked": true,
+        "footprint": "Package_SO:HTSSOP-16-1EP_4.4x5mm_P0.65mm_EP3.4x5mm"
+      },
+      "equal": {
+        "uuid": true,
+        "xy_exact_nm": true,
+        "angle": true,
+        "side": true,
+        "locked": true
+      }
+    },
+    {
+      "reference": "U401",
+      "before": {
+        "uuid": "80f3434d-8eaf-443b-892c-8fade53b2bb7",
+        "xy": [
+          87.045542,
+          261.360449
+        ],
+        "angle": 30.28491203,
+        "side": "B.Cu",
+        "locked": true,
+        "footprint": "Pacabot:ITR8307_dessous"
+      },
+      "after": {
+        "uuid": "80f3434d-8eaf-443b-892c-8fade53b2bb7",
+        "xy": [
+          87.045542,
+          261.360449
+        ],
+        "angle": 30.28491203,
+        "side": "B.Cu",
+        "locked": true,
+        "footprint": "Pacabot:ITR8307_S17_TR8_Bottom"
+      },
+      "equal": {
+        "uuid": true,
+        "xy_exact_nm": true,
+        "angle": true,
+        "side": true,
+        "locked": true
+      }
+    },
+    {
+      "reference": "U402",
+      "before": {
+        "uuid": "e1a91dbe-396a-4f96-bf5e-6b24f5f8d97d",
+        "xy": [
+          102.584291,
+          268.974809
+        ],
+        "angle": 22.91831181,
+        "side": "B.Cu",
+        "locked": true,
+        "footprint": "Pacabot:ITR8307_dessous"
+      },
+      "after": {
+        "uuid": "e1a91dbe-396a-4f96-bf5e-6b24f5f8d97d",
+        "xy": [
+          102.584291,
+          268.974809
+        ],
+        "angle": 22.91831181,
+        "side": "B.Cu",
+        "locked": true,
+        "footprint": "Pacabot:ITR8307_S17_TR8_Bottom"
+      },
+      "equal": {
+        "uuid": true,
+        "xy_exact_nm": true,
+        "angle": true,
+        "side": true,
+        "locked": true
+      }
+    },
+    {
+      "reference": "U403",
+      "before": {
+        "uuid": "86bb6ae3-292c-48ed-a766-be40402ae1f7",
+        "xy": [
+          118.912665,
+          274.672141
+        ],
+        "angle": 15.55171158,
+        "side": "B.Cu",
+        "locked": true,
+        "footprint": "Pacabot:ITR8307_dessous"
+      },
+      "after": {
+        "uuid": "86bb6ae3-292c-48ed-a766-be40402ae1f7",
+        "xy": [
+          118.912665,
+          274.672141
+        ],
+        "angle": 15.55171158,
+        "side": "B.Cu",
+        "locked": true,
+        "footprint": "Pacabot:ITR8307_S17_TR8_Bottom"
+      },
+      "equal": {
+        "uuid": true,
+        "xy_exact_nm": true,
+        "angle": true,
+        "side": true,
+        "locked": true
+      }
+    },
+    {
+      "reference": "U404",
+      "before": {
+        "uuid": "1ce9ee73-5fbb-4003-8a1a-70578f79b77c",
+        "xy": [
+          135.836765,
+          278.228864
+        ],
+        "angle": 8.185111359,
+        "side": "B.Cu",
+        "locked": true,
+        "footprint": "Pacabot:ITR8307_dessous"
+      },
+      "after": {
+        "uuid": "1ce9ee73-5fbb-4003-8a1a-70578f79b77c",
+        "xy": [
+          135.836765,
+          278.228864
+        ],
+        "angle": 8.185111359,
+        "side": "B.Cu",
+        "locked": true,
+        "footprint": "Pacabot:ITR8307_S17_TR8_Bottom"
+      },
+      "equal": {
+        "uuid": true,
+        "xy_exact_nm": true,
+        "angle": true,
+        "side": true,
+        "locked": true
+      }
+    },
+    {
+      "reference": "U405",
+      "before": {
+        "uuid": "237e42d4-c4ea-44f8-85a8-e4b59bb23ae0",
+        "xy": [
+          143.476979,
+          279.105853
+        ],
+        "angle": 4.911066815,
+        "side": "B.Cu",
+        "locked": true,
+        "footprint": "Pacabot:ITR8307_dessous"
+      },
+      "after": {
+        "uuid": "237e42d4-c4ea-44f8-85a8-e4b59bb23ae0",
+        "xy": [
+          143.476979,
+          279.105853
+        ],
+        "angle": 4.911066815,
+        "side": "B.Cu",
+        "locked": true,
+        "footprint": "Pacabot:ITR8307_S17_TR8_Bottom"
+      },
+      "equal": {
+        "uuid": true,
+        "xy_exact_nm": true,
+        "angle": true,
+        "side": true,
+        "locked": true
+      }
+    },
+    {
+      "reference": "U406",
+      "before": {
+        "uuid": "1f19e6e4-9f5c-40cd-83ae-bfa66cdc92ab",
+        "xy": [
+          151.154808,
+          279.545064
+        ],
+        "angle": 1.637022272,
+        "side": "B.Cu",
+        "locked": true,
+        "footprint": "Pacabot:ITR8307_dessous"
+      },
+      "after": {
+        "uuid": "1f19e6e4-9f5c-40cd-83ae-bfa66cdc92ab",
+        "xy": [
+          151.154808,
+          279.545064
+        ],
+        "angle": 1.637022272,
+        "side": "B.Cu",
+        "locked": true,
+        "footprint": "Pacabot:ITR8307_S17_TR8_Bottom"
+      },
+      "equal": {
+        "uuid": true,
+        "xy_exact_nm": true,
+        "angle": true,
+        "side": true,
+        "locked": true
+      }
+    },
+    {
+      "reference": "U407",
+      "before": {
+        "uuid": "4d6891d7-01ef-4119-9b9f-47503ce950b0",
+        "xy": [
+          158.845191,
+          279.545064
+        ],
+        "angle": -1.637022272,
+        "side": "B.Cu",
+        "locked": true,
+        "footprint": "Pacabot:ITR8307_dessous"
+      },
+      "after": {
+        "uuid": "4d6891d7-01ef-4119-9b9f-47503ce950b0",
+        "xy": [
+          158.845191,
+          279.545064
+        ],
+        "angle": -1.637022272,
+        "side": "B.Cu",
+        "locked": true,
+        "footprint": "Pacabot:ITR8307_S17_TR8_Bottom"
+      },
+      "equal": {
+        "uuid": true,
+        "xy_exact_nm": true,
+        "angle": true,
+        "side": true,
+        "locked": true
+      }
+    },
+    {
+      "reference": "U408",
+      "before": {
+        "uuid": "1d94faca-135b-4859-9b51-15f55fc21b01",
+        "xy": [
+          166.52302,
+          279.105853
+        ],
+        "angle": -4.911066815,
+        "side": "B.Cu",
+        "locked": true,
+        "footprint": "Pacabot:ITR8307_dessous"
+      },
+      "after": {
+        "uuid": "1d94faca-135b-4859-9b51-15f55fc21b01",
+        "xy": [
+          166.52302,
+          279.105853
+        ],
+        "angle": -4.911066815,
+        "side": "B.Cu",
+        "locked": true,
+        "footprint": "Pacabot:ITR8307_S17_TR8_Bottom"
+      },
+      "equal": {
+        "uuid": true,
+        "xy_exact_nm": true,
+        "angle": true,
+        "side": true,
+        "locked": true
+      }
+    },
+    {
+      "reference": "U409",
+      "before": {
+        "uuid": "eeca977b-20b0-4ded-a2f4-3a2c0379d8ff",
+        "xy": [
+          174.163234,
+          278.228864
+        ],
+        "angle": -8.185111359,
+        "side": "B.Cu",
+        "locked": true,
+        "footprint": "Pacabot:ITR8307_dessous"
+      },
+      "after": {
+        "uuid": "eeca977b-20b0-4ded-a2f4-3a2c0379d8ff",
+        "xy": [
+          174.163234,
+          278.228864
+        ],
+        "angle": -8.185111359,
+        "side": "B.Cu",
+        "locked": true,
+        "footprint": "Pacabot:ITR8307_S17_TR8_Bottom"
+      },
+      "equal": {
+        "uuid": true,
+        "xy_exact_nm": true,
+        "angle": true,
+        "side": true,
+        "locked": true
+      }
+    },
+    {
+      "reference": "U410",
+      "before": {
+        "uuid": "d9053348-6020-4a0a-80ac-743bd3ddc14b",
+        "xy": [
+          191.087334,
+          274.672141
+        ],
+        "angle": -15.55171158,
+        "side": "B.Cu",
+        "locked": true,
+        "footprint": "Pacabot:ITR8307_dessous"
+      },
+      "after": {
+        "uuid": "d9053348-6020-4a0a-80ac-743bd3ddc14b",
+        "xy": [
+          191.087334,
+          274.672141
+        ],
+        "angle": -15.55171158,
+        "side": "B.Cu",
+        "locked": true,
+        "footprint": "Pacabot:ITR8307_S17_TR8_Bottom"
+      },
+      "equal": {
+        "uuid": true,
+        "xy_exact_nm": true,
+        "angle": true,
+        "side": true,
+        "locked": true
+      }
+    },
+    {
+      "reference": "U411",
+      "before": {
+        "uuid": "c74a45c0-68b2-4fc5-932a-f03b64838f42",
+        "xy": [
+          207.415708,
+          268.974809
+        ],
+        "angle": -22.91831181,
+        "side": "B.Cu",
+        "locked": true,
+        "footprint": "Pacabot:ITR8307_dessous"
+      },
+      "after": {
+        "uuid": "c74a45c0-68b2-4fc5-932a-f03b64838f42",
+        "xy": [
+          207.415708,
+          268.974809
+        ],
+        "angle": -22.91831181,
+        "side": "B.Cu",
+        "locked": true,
+        "footprint": "Pacabot:ITR8307_S17_TR8_Bottom"
+      },
+      "equal": {
+        "uuid": true,
+        "xy_exact_nm": true,
+        "angle": true,
+        "side": true,
+        "locked": true
+      }
+    },
+    {
+      "reference": "U412",
+      "before": {
+        "uuid": "3e73b8d0-7880-4325-b4d5-b1fe409d0085",
+        "xy": [
+          222.954457,
+          261.360449
+        ],
+        "angle": -30.28491203,
+        "side": "B.Cu",
+        "locked": true,
+        "footprint": "Pacabot:ITR8307_dessous"
+      },
+      "after": {
+        "uuid": "3e73b8d0-7880-4325-b4d5-b1fe409d0085",
+        "xy": [
+          222.954457,
+          261.360449
+        ],
+        "angle": -30.28491203,
+        "side": "B.Cu",
+        "locked": true,
+        "footprint": "Pacabot:ITR8307_S17_TR8_Bottom"
+      },
+      "equal": {
+        "uuid": true,
+        "xy_exact_nm": true,
+        "angle": true,
+        "side": true,
+        "locked": true
+      }
+    },
+    {
+      "reference": "U503",
+      "before": {
+        "uuid": "933058d2-ae5e-42e5-930b-51225da95a5a",
+        "xy": [
+          155.0,
+          190.0
+        ],
+        "angle": 0.0,
+        "side": "F.Cu",
+        "locked": true,
+        "footprint": "Package_LGA:LGA-14_3x2.5mm_P0.5mm_LayoutBorder3x4y"
+      },
+      "after": {
+        "uuid": "933058d2-ae5e-42e5-930b-51225da95a5a",
+        "xy": [
+          155.0,
+          190.0
+        ],
+        "angle": 0.0,
+        "side": "F.Cu",
+        "locked": true,
+        "footprint": "Package_LGA:LGA-14_3x2.5mm_P0.5mm_LayoutBorder3x4y"
+      },
+      "equal": {
+        "uuid": true,
+        "xy_exact_nm": true,
+        "angle": true,
+        "side": true,
+        "locked": true
+      }
+    }
+  ],
+  "replaced_obsolete_locked_interfaces": [
+    "J102",
+    "J103",
+    "J104",
+    "J702"
+  ],
+  "removed_interfaces": [
+    "J104",
+    "J702"
+  ],
+  "led_alignment_exact": true,
+  "led_checks": [
+    {
+      "index": 0,
+      "sensor": "U401",
+      "led": "D401",
+      "xy_exact": true,
+      "angle_exact_within_tolerance": true,
+      "anode_local": [
+        5.839608875901625e-07,
+        -0.7875001227534181
+      ],
+      "cathode_local": [
+        -5.839608875901625e-07,
+        0.7875001227534181
+      ],
+      "driver_pin": "6",
+      "line_net": "LINE_00"
+    },
+    {
+      "index": 1,
+      "sensor": "U402",
+      "led": "D402",
+      "xy_exact": true,
+      "angle_exact_within_tolerance": true,
+      "anode_local": [
+        1.3095442286115144e-07,
+        -0.7875004519268123
+      ],
+      "cathode_local": [
+        -1.3095443185395794e-07,
+        0.7875004519268702
+      ],
+      "driver_pin": "7",
+      "line_net": "LINE_01"
+    },
+    {
+      "index": 2,
+      "sensor": "U403",
+      "led": "D403",
+      "xy_exact": true,
+      "angle_exact_within_tolerance": true,
+      "anode_local": [
+        1.0407889702856998e-07,
+        -0.7875002474831262
+      ],
+      "cathode_local": [
+        -1.0407889702856998e-07,
+        0.7875002474831262
+      ],
+      "driver_pin": "8",
+      "line_net": "LINE_02"
+    },
+    {
+      "index": 3,
+      "sensor": "U404",
+      "led": "D404",
+      "xy_exact": true,
+      "angle_exact_within_tolerance": true,
+      "anode_local": [
+        -2.519399129041755e-07,
+        -0.7875000942272404
+      ],
+      "cathode_local": [
+        2.519398766831493e-07,
+        0.7875000942272926
+      ],
+      "driver_pin": "9",
+      "line_net": "LINE_03"
+    },
+    {
+      "index": 4,
+      "sensor": "U405",
+      "led": "D405",
+      "xy_exact": true,
+      "angle_exact_within_tolerance": true,
+      "anode_local": [
+        3.833051135659904e-07,
+        -0.7875000538221734
+      ],
+      "cathode_local": [
+        -3.8330510870876466e-07,
+        0.7875000538221167
+      ],
+      "driver_pin": "10",
+      "line_net": "LINE_04"
+    },
+    {
+      "index": 5,
+      "sensor": "U406",
+      "led": "D406",
+      "xy_exact": true,
+      "angle_exact_within_tolerance": true,
+      "anode_local": [
+        -1.049045172903107e-06,
+        -0.787500436853186
+      ],
+      "cathode_local": [
+        1.0490451461189765e-06,
+        0.7875004368531285
+      ],
+      "driver_pin": "11",
+      "line_net": "LINE_05"
+    },
+    {
+      "index": 6,
+      "sensor": "U407",
+      "led": "D407",
+      "xy_exact": true,
+      "angle_exact_within_tolerance": true,
+      "anode_local": [
+        4.945328251765302e-08,
+        -0.7875004082856438
+      ],
+      "cathode_local": [
+        -4.945328414135419e-08,
+        0.7875004082855871
+      ],
+      "driver_pin": "12",
+      "line_net": "LINE_06"
+    },
+    {
+      "index": 7,
+      "sensor": "U408",
+      "led": "D408",
+      "xy_exact": true,
+      "angle_exact_within_tolerance": true,
+      "anode_local": [
+        -3.833051135659904e-07,
+        -0.7875000538221734
+      ],
+      "cathode_local": [
+        3.8330510870876466e-07,
+        0.7875000538221167
+      ],
+      "driver_pin": "13",
+      "line_net": "LINE_07"
+    },
+    {
+      "index": 8,
+      "sensor": "U409",
+      "led": "D409",
+      "xy_exact": true,
+      "angle_exact_within_tolerance": true,
+      "anode_local": [
+        -7.378733450358332e-07,
+        -0.787499951855511
+      ],
+      "cathode_local": [
+        7.378733812568594e-07,
+        0.7874999518555632
+      ],
+      "driver_pin": "15",
+      "line_net": "LINE_08"
+    },
+    {
+      "index": 9,
+      "sensor": "U410",
+      "led": "D410",
+      "xy_exact": true,
+      "angle_exact_within_tolerance": true,
+      "anode_local": [
+        1.6402909558399514e-07,
+        -0.7874992840942643
+      ],
+      "cathode_local": [
+        -1.64029068189242e-07,
+        0.7874992840942567
+      ],
+      "driver_pin": "16",
+      "line_net": "LINE_09"
+    },
+    {
+      "index": 10,
+      "sensor": "U411",
+      "led": "D411",
+      "xy_exact": true,
+      "angle_exact_within_tolerance": true,
+      "anode_local": [
+        -1.3095440976051975e-07,
+        -0.7875004519268178
+      ],
+      "cathode_local": [
+        1.3095443185395794e-07,
+        0.7875004519268702
+      ],
+      "driver_pin": "17",
+      "line_net": "LINE_10"
+    },
+    {
+      "index": 11,
+      "sensor": "U412",
+      "led": "D412",
+      "xy_exact": true,
+      "angle_exact_within_tolerance": true,
+      "anode_local": [
+        7.838677458238408e-07,
+        -0.78749976352529
+      ],
+      "cathode_local": [
+        -7.838677212879119e-07,
+        0.7874997635252757
+      ],
+      "driver_pin": "18",
+      "line_net": "LINE_11"
+    }
+  ],
+  "s17_sensor_checks": [
+    {
+      "reference": "U401",
+      "footprint": "Pacabot:ITR8307_S17_TR8_Bottom",
+      "value": "ITR8307/S17/TR8(B)",
+      "pads": {
+        "1": {
+          "net": "/Barrette/IR_BANK_A_N",
+          "local_bottom_xy": [
+            -0.8999997800448165,
+            -2.110000262214502
+          ],
+          "xy": [
+            85.204293,
+            259.992274
+          ],
+          "size": [
+            1.2,
+            1.4
+          ]
+        },
+        "2": {
+          "net": "/Barrette/IR_A00",
+          "local_bottom_xy": [
+            -0.8999999251776074,
+            2.1099999251917745
+          ],
+          "xy": [
+            87.33244,
+            263.636364
+          ],
+          "size": [
+            1.2,
+            1.4
+          ]
+        },
+        "3": {
+          "net": "+3V3A",
+          "local_bottom_xy": [
+            0.8999999251776197,
+            -2.1099999251917674
+          ],
+          "xy": [
+            86.758644,
+            259.084534
+          ],
+          "size": [
+            1.2,
+            1.4
+          ]
+        },
+        "4": {
+          "net": "LINE_00",
+          "local_bottom_xy": [
+            0.899999780044829,
+            2.110000262214509
+          ],
+          "xy": [
+            88.886791,
+            262.728624
+          ],
+          "size": [
+            1.2,
+            1.4
+          ]
+        }
+      },
+      "C_filter_mm": 1.0160703788325902,
+      "R_load_mm": 1.3320665133520866,
+      "R_IR_mm": 0.8800007769837455
+    },
+    {
+      "reference": "U402",
+      "footprint": "Pacabot:ITR8307_S17_TR8_Bottom",
+      "value": "ITR8307/S17/TR8(B)",
+      "pads": {
+        "1": {
+          "net": "/Barrette/IR_BANK_B_N",
+          "local_bottom_xy": [
+            -0.9000004448327652,
+            -2.1099999827319467
+          ],
+          "xy": [
+            100.933663,
+            267.381847
+          ],
+          "size": [
+            1.2,
+            1.4
+          ]
+        },
+        "2": {
+          "net": "/Barrette/IR_A01",
+          "local_bottom_xy": [
+            -0.899999743030832,
+            2.1099998856145845
+          ],
+          "xy": [
+            102.577009,
+            271.268724
+          ],
+          "size": [
+            1.2,
+            1.4
+          ]
+        },
+        "3": {
+          "net": "+3V3A",
+          "local_bottom_xy": [
+            0.8999997430308229,
+            -2.109999885614527
+          ],
+          "xy": [
+            102.591573,
+            266.680894
+          ],
+          "size": [
+            1.2,
+            1.4
+          ]
+        },
+        "4": {
+          "net": "LINE_01",
+          "local_bottom_xy": [
+            0.9000004448327783,
+            2.1099999827319524
+          ],
+          "xy": [
+            104.234919,
+            270.567771
+          ],
+          "size": [
+            1.2,
+            1.4
+          ]
+        }
+      },
+      "C_filter_mm": 1.0160698171857931,
+      "R_load_mm": 1.3320661471777449,
+      "R_IR_mm": 0.8800002446022015
+    },
+    {
+      "reference": "U403",
+      "footprint": "Pacabot:ITR8307_S17_TR8_Bottom",
+      "value": "ITR8307/S17/TR8(B)",
+      "pads": {
+        "1": {
+          "net": "/Barrette/IR_BANK_A_N",
+          "local_bottom_xy": [
+            -0.9000002636262636,
+            -2.1099997306269116
+          ],
+          "xy": [
+            117.479907,
+            272.880688
+          ],
+          "size": [
+            1.2,
+            1.4
+          ]
+        },
+        "2": {
+          "net": "/Barrette/IR_A02",
+          "local_bottom_xy": [
+            -0.8999999430472472,
+            2.110000334071757
+          ],
+          "xy": [
+            118.611323,
+            276.946189
+          ],
+          "size": [
+            1.2,
+            1.4
+          ]
+        },
+        "3": {
+          "net": "+3V3A",
+          "local_bottom_xy": [
+            0.8999999430472334,
+            -2.110000334071761
+          ],
+          "xy": [
+            119.214007,
+            272.398093
+          ],
+          "size": [
+            1.2,
+            1.4
+          ]
+        },
+        "4": {
+          "net": "LINE_02",
+          "local_bottom_xy": [
+            0.9000002636262501,
+            2.109999730626908
+          ],
+          "xy": [
+            120.345423,
+            276.463594
+          ],
+          "size": [
+            1.2,
+            1.4
+          ]
+        }
+      },
+      "C_filter_mm": 1.0160700507002423,
+      "R_load_mm": 1.332066500817816,
+      "R_IR_mm": 0.8799997975846304
+    },
+    {
+      "reference": "U404",
+      "footprint": "Pacabot:ITR8307_S17_TR8_Bottom",
+      "value": "ITR8307/S17/TR8(B)",
+      "pads": {
+        "1": {
+          "net": "/Barrette/IR_BANK_B_N",
+          "local_bottom_xy": [
+            -0.8999997788172296,
+            -2.1099995411056334
+          ],
+          "xy": [
+            134.645529,
+            276.268493
+          ],
+          "size": [
+            1.2,
+            1.4
+          ]
+        },
+        "2": {
+          "net": "/Barrette/IR_A03",
+          "local_bottom_xy": [
+            -0.9000004772370024,
+            2.110000399772081
+          ],
+          "xy": [
+            135.246337,
+            280.445505
+          ],
+          "size": [
+            1.2,
+            1.4
+          ]
+        },
+        "3": {
+          "net": "+3V3A",
+          "local_bottom_xy": [
+            0.9000004772369661,
+            -2.1100003997720287
+          ],
+          "xy": [
+            136.427193,
+            276.012223
+          ],
+          "size": [
+            1.2,
+            1.4
+          ]
+        },
+        "4": {
+          "net": "LINE_03",
+          "local_bottom_xy": [
+            0.8999997788172014,
+            2.109999541105629
+          ],
+          "xy": [
+            137.028001,
+            280.189235
+          ],
+          "size": [
+            1.2,
+            1.4
+          ]
+        }
+      },
+      "C_filter_mm": 1.016070495605508,
+      "R_load_mm": 1.3320657772407487,
+      "R_IR_mm": 0.879999320223549
+    },
+    {
+      "reference": "U405",
+      "footprint": "Pacabot:ITR8307_S17_TR8_Bottom",
+      "value": "ITR8307/S17/TR8(B)",
+      "pads": {
+        "1": {
+          "net": "/Barrette/IR_BANK_A_N",
+          "local_bottom_xy": [
+            -0.900000356176992,
+            -2.1099997367607486
+          ],
+          "xy": [
+            142.399647,
+            277.080648
+          ],
+          "size": [
+            1.2,
+            1.4
+          ]
+        },
+        "2": {
+          "net": "/Barrette/IR_A04",
+          "local_bottom_xy": [
+            -0.8999998524543854,
+            2.1099998569634706
+          ],
+          "xy": [
+            142.760919,
+            281.285155
+          ],
+          "size": [
+            1.2,
+            1.4
+          ]
+        },
+        "3": {
+          "net": "+3V3A",
+          "local_bottom_xy": [
+            0.8999998524543903,
+            -2.109999856963527
+          ],
+          "xy": [
+            144.193039,
+            276.926551
+          ],
+          "size": [
+            1.2,
+            1.4
+          ]
+        },
+        "4": {
+          "net": "LINE_04",
+          "local_bottom_xy": [
+            0.9000003561769969,
+            2.1099997367606917
+          ],
+          "xy": [
+            144.554311,
+            281.131058
+          ],
+          "size": [
+            1.2,
+            1.4
+          ]
+        }
+      },
+      "C_filter_mm": 1.016069665637131,
+      "R_load_mm": 1.3320652666051997,
+      "R_IR_mm": 0.8799996546914333
+    },
+    {
+      "reference": "U406",
+      "footprint": "Pacabot:ITR8307_S17_TR8_Bottom",
+      "value": "ITR8307/S17/TR8(B)",
+      "pads": {
+        "1": {
+          "net": "/Barrette/IR_BANK_B_N",
+          "local_bottom_xy": [
+            -0.8999998108742724,
+            -2.1099999477986717
+          ],
+          "xy": [
+            150.194898,
+            277.461636
+          ],
+          "size": [
+            1.2,
+            1.4
+          ]
+        },
+        "2": {
+          "net": "/Barrette/IR_A05",
+          "local_bottom_xy": [
+            -0.8999998453226046,
+            2.110000383162095
+          ],
+          "xy": [
+            150.315453,
+            281.679914
+          ],
+          "size": [
+            1.2,
+            1.4
+          ]
+        },
+        "3": {
+          "net": "+3V3A",
+          "local_bottom_xy": [
+            0.8999998453225778,
+            -2.1100003831621525
+          ],
+          "xy": [
+            151.994163,
+            277.410214
+          ],
+          "size": [
+            1.2,
+            1.4
+          ]
+        },
+        "4": {
+          "net": "LINE_05",
+          "local_bottom_xy": [
+            0.899999810874274,
+            2.109999947798615
+          ],
+          "xy": [
+            152.114718,
+            281.628492
+          ],
+          "size": [
+            1.2,
+            1.4
+          ]
+        }
+      },
+      "C_filter_mm": 1.0160701558637546,
+      "R_load_mm": 1.3320664109394003,
+      "R_IR_mm": 0.8799991756814276
+    },
+    {
+      "reference": "U407",
+      "footprint": "Pacabot:ITR8307_S17_TR8_Bottom",
+      "value": "ITR8307/S17/TR8(B)",
+      "pads": {
+        "1": {
+          "net": "/Barrette/IR_BANK_A_N",
+          "local_bottom_xy": [
+            -0.8999998453226062,
+            -2.1100003831621517
+          ],
+          "xy": [
+            158.005836,
+            277.410214
+          ],
+          "size": [
+            1.2,
+            1.4
+          ]
+        },
+        "2": {
+          "net": "/Barrette/IR_A06",
+          "local_bottom_xy": [
+            -0.899999810874274,
+            2.109999947798615
+          ],
+          "xy": [
+            157.885281,
+            281.628492
+          ],
+          "size": [
+            1.2,
+            1.4
+          ]
+        },
+        "3": {
+          "net": "+3V3A",
+          "local_bottom_xy": [
+            0.8999998108742724,
+            -2.1099999477986717
+          ],
+          "xy": [
+            159.805101,
+            277.461636
+          ],
+          "size": [
+            1.2,
+            1.4
+          ]
+        },
+        "4": {
+          "net": "LINE_06",
+          "local_bottom_xy": [
+            0.8999998453226046,
+            2.110000383162095
+          ],
+          "xy": [
+            159.684546,
+            281.679914
+          ],
+          "size": [
+            1.2,
+            1.4
+          ]
+        }
+      },
+      "C_filter_mm": 1.0160718316664274,
+      "R_load_mm": 1.3320654907203229,
+      "R_IR_mm": 0.8800001752732701
+    },
+    {
+      "reference": "U408",
+      "footprint": "Pacabot:ITR8307_S17_TR8_Bottom",
+      "value": "ITR8307/S17/TR8(B)",
+      "pads": {
+        "1": {
+          "net": "/Barrette/IR_BANK_B_N",
+          "local_bottom_xy": [
+            -0.8999998524543903,
+            -2.109999856963527
+          ],
+          "xy": [
+            165.80696,
+            276.926551
+          ],
+          "size": [
+            1.2,
+            1.4
+          ]
+        },
+        "2": {
+          "net": "/Barrette/IR_A07",
+          "local_bottom_xy": [
+            -0.9000003561769969,
+            2.1099997367606917
+          ],
+          "xy": [
+            165.445688,
+            281.131058
+          ],
+          "size": [
+            1.2,
+            1.4
+          ]
+        },
+        "3": {
+          "net": "+3V3A",
+          "local_bottom_xy": [
+            0.9000003561769638,
+            -2.1099997367607464
+          ],
+          "xy": [
+            167.600352,
+            277.080648
+          ],
+          "size": [
+            1.2,
+            1.4
+          ]
+        },
+        "4": {
+          "net": "LINE_07",
+          "local_bottom_xy": [
+            0.8999998524543854,
+            2.1099998569634706
+          ],
+          "xy": [
+            167.23908,
+            281.285155
+          ],
+          "size": [
+            1.2,
+            1.4
+          ]
+        }
+      },
+      "C_filter_mm": 1.016071321100055,
+      "R_load_mm": 1.3320666070771445,
+      "R_IR_mm": 0.8799996546914333
+    },
+    {
+      "reference": "U409",
+      "footprint": "Pacabot:ITR8307_S17_TR8_Bottom",
+      "value": "ITR8307/S17/TR8(B)",
+      "pads": {
+        "1": {
+          "net": "/Barrette/IR_BANK_A_N",
+          "local_bottom_xy": [
+            -0.9000004772369661,
+            -2.1100003997720287
+          ],
+          "xy": [
+            173.572806,
+            276.012223
+          ],
+          "size": [
+            1.2,
+            1.4
+          ]
+        },
+        "2": {
+          "net": "/Barrette/IR_A08",
+          "local_bottom_xy": [
+            -0.8999997788172014,
+            2.109999541105629
+          ],
+          "xy": [
+            172.971998,
+            280.189235
+          ],
+          "size": [
+            1.2,
+            1.4
+          ]
+        },
+        "3": {
+          "net": "+3V3A",
+          "local_bottom_xy": [
+            0.8999997788172296,
+            -2.1099995411056334
+          ],
+          "xy": [
+            175.35447,
+            276.268493
+          ],
+          "size": [
+            1.2,
+            1.4
+          ]
+        },
+        "4": {
+          "net": "LINE_08",
+          "local_bottom_xy": [
+            0.9000004772370024,
+            2.110000399772081
+          ],
+          "xy": [
+            174.753662,
+            280.445505
+          ],
+          "size": [
+            1.2,
+            1.4
+          ]
+        }
+      },
+      "C_filter_mm": 1.0160707040482102,
+      "R_load_mm": 1.332065671175774,
+      "R_IR_mm": 0.8800003100368828
+    },
+    {
+      "reference": "U410",
+      "footprint": "Pacabot:ITR8307_S17_TR8_Bottom",
+      "value": "ITR8307/S17/TR8(B)",
+      "pads": {
+        "1": {
+          "net": "/Barrette/IR_BANK_B_N",
+          "local_bottom_xy": [
+            -0.8999999430472472,
+            -2.110000334071757
+          ],
+          "xy": [
+            190.785992,
+            272.398093
+          ],
+          "size": [
+            1.2,
+            1.4
+          ]
+        },
+        "2": {
+          "net": "/Barrette/IR_A09",
+          "local_bottom_xy": [
+            -0.9000002636262636,
+            2.1099997306269116
+          ],
+          "xy": [
+            189.654576,
+            276.463594
+          ],
+          "size": [
+            1.2,
+            1.4
+          ]
+        },
+        "3": {
+          "net": "+3V3A",
+          "local_bottom_xy": [
+            0.9000002636262636,
+            -2.1099997306269116
+          ],
+          "xy": [
+            192.520092,
+            272.880688
+          ],
+          "size": [
+            1.2,
+            1.4
+          ]
+        },
+        "4": {
+          "net": "LINE_09",
+          "local_bottom_xy": [
+            0.8999999430472472,
+            2.110000334071757
+          ],
+          "xy": [
+            191.388676,
+            276.946189
+          ],
+          "size": [
+            1.2,
+            1.4
+          ]
+        }
+      },
+      "C_filter_mm": 1.016070562071363,
+      "R_load_mm": 1.3320659946924345,
+      "R_IR_mm": 0.8800007609735231
+    },
+    {
+      "reference": "U411",
+      "footprint": "Pacabot:ITR8307_S17_TR8_Bottom",
+      "value": "ITR8307/S17/TR8(B)",
+      "pads": {
+        "1": {
+          "net": "/Barrette/IR_BANK_A_N",
+          "local_bottom_xy": [
+            -0.8999997430308229,
+            -2.109999885614527
+          ],
+          "xy": [
+            207.408426,
+            266.680894
+          ],
+          "size": [
+            1.2,
+            1.4
+          ]
+        },
+        "2": {
+          "net": "/Barrette/IR_A10",
+          "local_bottom_xy": [
+            -0.9000004448327521,
+            2.1099999827319413
+          ],
+          "xy": [
+            205.76508,
+            270.567771
+          ],
+          "size": [
+            1.2,
+            1.4
+          ]
+        },
+        "3": {
+          "net": "+3V3A",
+          "local_bottom_xy": [
+            0.9000004448327783,
+            -2.1099999827319524
+          ],
+          "xy": [
+            209.066336,
+            267.381847
+          ],
+          "size": [
+            1.2,
+            1.4
+          ]
+        },
+        "4": {
+          "net": "LINE_10",
+          "local_bottom_xy": [
+            0.899999743030845,
+            2.109999885614579
+          ],
+          "xy": [
+            207.42299,
+            271.268724
+          ],
+          "size": [
+            1.2,
+            1.4
+          ]
+        }
+      },
+      "C_filter_mm": 1.0160712507127716,
+      "R_load_mm": 1.3320661130112836,
+      "R_IR_mm": 0.8800002446022592
+    },
+    {
+      "reference": "U412",
+      "footprint": "Pacabot:ITR8307_S17_TR8_Bottom",
+      "value": "ITR8307/S17/TR8(B)",
+      "pads": {
+        "1": {
+          "net": "/Barrette/IR_BANK_B_N",
+          "local_bottom_xy": [
+            -0.8999999251776074,
+            -2.1099999251917745
+          ],
+          "xy": [
+            223.241355,
+            259.084534
+          ],
+          "size": [
+            1.2,
+            1.4
+          ]
+        },
+        "2": {
+          "net": "/Barrette/IR_A11",
+          "local_bottom_xy": [
+            -0.899999780044829,
+            2.110000262214509
+          ],
+          "xy": [
+            221.113208,
+            262.728624
+          ],
+          "size": [
+            1.2,
+            1.4
+          ]
+        },
+        "3": {
+          "net": "+3V3A",
+          "local_bottom_xy": [
+            0.899999780044829,
+            -2.110000262214509
+          ],
+          "xy": [
+            224.795706,
+            259.992274
+          ],
+          "size": [
+            1.2,
+            1.4
+          ]
+        },
+        "4": {
+          "net": "LINE_11",
+          "local_bottom_xy": [
+            0.8999999251776319,
+            2.1099999251917603
+          ],
+          "xy": [
+            222.667559,
+            263.636364
+          ],
+          "size": [
+            1.2,
+            1.4
+          ]
+        }
+      },
+      "C_filter_mm": 1.0160717010944433,
+      "R_load_mm": 1.3320667535720523,
+      "R_IR_mm": 0.879999913455109
+    }
+  ],
+  "pad_net_checks": {
+    "numbered_physical_pads_checked": 1064,
+    "unique_ref_pin_pairs": 1051,
+    "net_mismatches": [],
+    "missing_connected_pads": [],
+    "footprint_assignment_mismatches": [],
+    "schematic_only_components": [
+      "ESC103",
+      "M703"
+    ],
+    "mechanical_board_only_components": [
+      "M1",
+      "M2",
+      "M3"
+    ]
+  },
+  "pinmaps": {
+    "J102": {
+      "1": {
+        "net": "GND",
+        "xy": [
+          178.2,
+          129.1
+        ],
+        "local_xy": [
+          3.5,
+          0.0
+        ],
+        "drill": [
+          1.8,
+          1.8
+        ],
+        "size": [
+          3.0,
+          3.0
+        ],
+        "annular_ring_mm": 0.6,
+        "zone_connection": 2
+      },
+      "2": {
+        "net": "/Alimentation/PACK_MID",
+        "xy": [
+          174.7,
+          129.1
+        ],
+        "local_xy": [
+          0.0,
+          0.0
+        ],
+        "drill": [
+          1.8,
+          1.8
+        ],
+        "size": [
+          2.5,
+          2.5
+        ],
+        "annular_ring_mm": 0.35,
+        "zone_connection": 2
+      },
+      "3": {
+        "net": "VPACK",
+        "xy": [
+          171.2,
+          129.1
+        ],
+        "local_xy": [
+          -3.5,
+          0.0
+        ],
+        "drill": [
+          1.8,
+          1.8
+        ],
+        "size": [
+          3.0,
+          3.0
+        ],
+        "annular_ring_mm": 0.6,
+        "zone_connection": 2
+      }
+    },
+    "J103": {
+      "1": {
+        "net": "GND",
+        "xy": [
+          148.3,
+          134.5
+        ],
+        "local_xy": [
+          -4.300000000000011,
+          5.265981236333632e-16
+        ],
+        "drill": [
+          1.4,
+          1.4
+        ],
+        "size": [
+          3.0,
+          3.0
+        ],
+        "annular_ring_mm": 0.8,
+        "zone_connection": 2
+      },
+      "2": {
+        "net": "/Traces et turbine/ESC_SIG",
+        "xy": [
+          143.2,
+          134.2
+        ],
+        "local_xy": [
+          0.8000000000000114,
+          0.30000000000001126
+        ],
+        "drill": [
+          0.8,
+          0.8
+        ],
+        "size": [
+          1.6,
+          1.6
+        ],
+        "annular_ring_mm": 0.4,
+        "zone_connection": 2
+      },
+      "3": {
+        "net": "VPACK",
+        "xy": [
+          139.58,
+          134.5
+        ],
+        "local_xy": [
+          4.4199999999999875,
+          -5.412938852231286e-16
+        ],
+        "drill": [
+          1.4,
+          1.4
+        ],
+        "size": [
+          3.0,
+          3.0
+        ],
+        "annular_ring_mm": 0.8,
+        "zone_connection": 2
+      }
+    }
+  },
+  "connector_npth_holes": {
+    "J102": [],
+    "J103": [
+      [
+        -7.0,
+        1.1999999999999895,
+        1.7
+      ],
+      [
+        7.0,
+        1.1999999999999877,
+        1.7
+      ]
+    ]
+  },
+  "native_reports": {
+    "drc": {
+      "report": "/Users/zhonx/Documents/Projets_PRE/Pacabot/Pacabot_Junior/UsainBot/electronics/mr30-review/drc-final.json",
+      "sha256": "81b32b7fa446b1bce9bcc727eab08cd032355660bc71815c2f47d706b001c78d",
+      "errors": 0,
+      "warnings": 146,
+      "source": "UsainBot.kicad_pcb",
+      "date": "2026-09-07T11:24:08",
+      "report_mtime_utc_epoch": 1788773048.1169598,
+      "unconnected_items": 499,
+      "schematic_parity_issues": 0
+    },
+    "erc": {
+      "report": "/Users/zhonx/Documents/Projets_PRE/Pacabot/Pacabot_Junior/UsainBot/electronics/mr30-review/erc-final.json",
+      "sha256": "bc48861add962399e327a31e58b594dd30eaa54a8593df3b0ac87b2d3e19ea86",
+      "errors": 0,
+      "warnings": 0,
+      "source": "UsainBot.kicad_sch",
+      "date": "2026-09-07T11:21:37",
+      "report_mtime_utc_epoch": 1788772897.494752
+    }
+  },
+  "input_board_and_schematics_unchanged": true,
+  "errors": [],
+  "scope_limit": "This verifies board/schematic data and reads native reports; 3D collision, physical ESC metrology, current/thermal capability and harness identification remain separate engineering validations."
+}

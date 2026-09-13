@@ -1,0 +1,250 @@
+{
+  "J102": {
+    "footprint": "Molex_Mega-Fit_200241-1133_1x03_P5.70mm_Vertical",
+    "pads": [
+      {
+        "pad": "",
+        "net": "",
+        "xy_mm": [
+          171.85,
+          130.44
+        ],
+        "size_mm": [
+          3.0,
+          3.0
+        ],
+        "drill_mm": [
+          3.0,
+          3.0
+        ]
+      },
+      {
+        "pad": "",
+        "net": "",
+        "xy_mm": [
+          177.55,
+          130.44
+        ],
+        "size_mm": [
+          3.0,
+          3.0
+        ],
+        "drill_mm": [
+          3.0,
+          3.0
+        ]
+      },
+      {
+        "pad": "1",
+        "net": "GND",
+        "xy_mm": [
+          180.4,
+          129.1
+        ],
+        "size_mm": [
+          2.7,
+          2.7
+        ],
+        "drill_mm": [
+          1.8,
+          1.8
+        ]
+      },
+      {
+        "pad": "2",
+        "net": "/Alimentation/PACK_MID",
+        "xy_mm": [
+          174.7,
+          129.1
+        ],
+        "size_mm": [
+          2.7,
+          2.7
+        ],
+        "drill_mm": [
+          1.8,
+          1.8
+        ]
+      },
+      {
+        "pad": "3",
+        "net": "VPACK",
+        "xy_mm": [
+          169.0,
+          129.1
+        ],
+        "size_mm": [
+          2.7,
+          2.7
+        ],
+        "drill_mm": [
+          1.8,
+          1.8
+        ]
+      }
+    ],
+    "locked": false,
+    "angle": 0.0,
+    "layer": "F.Cu"
+  },
+  "J103": {
+    "footprint": "EMAX_Bullet_12A_Vertical_3Pin_PROTOTYPE",
+    "pads": [
+      {
+        "pad": "",
+        "net": "",
+        "xy_mm": [
+          151.0,
+          133.3
+        ],
+        "size_mm": [
+          1.7,
+          1.7
+        ],
+        "drill_mm": [
+          1.7,
+          1.7
+        ]
+      },
+      {
+        "pad": "",
+        "net": "",
+        "xy_mm": [
+          137.0,
+          133.3
+        ],
+        "size_mm": [
+          1.7,
+          1.7
+        ],
+        "drill_mm": [
+          1.7,
+          1.7
+        ]
+      },
+      {
+        "pad": "1",
+        "net": "GND",
+        "xy_mm": [
+          148.3,
+          134.5
+        ],
+        "size_mm": [
+          3.0,
+          3.0
+        ],
+        "drill_mm": [
+          1.4,
+          1.4
+        ]
+      },
+      {
+        "pad": "2",
+        "net": "/Traces et turbine/ESC_SIG",
+        "xy_mm": [
+          143.2,
+          134.2
+        ],
+        "size_mm": [
+          1.6,
+          1.6
+        ],
+        "drill_mm": [
+          0.8,
+          0.8
+        ]
+      },
+      {
+        "pad": "3",
+        "net": "VPACK",
+        "xy_mm": [
+          139.58,
+          134.5
+        ],
+        "size_mm": [
+          3.0,
+          3.0
+        ],
+        "drill_mm": [
+          1.4,
+          1.4
+        ]
+      }
+    ],
+    "locked": false,
+    "angle": 180.0,
+    "layer": "F.Cu"
+  },
+  "U401": {
+    "footprint": "ITR8307_S17_TR8_Bottom",
+    "pads": [
+      {
+        "pad": "1",
+        "net": "/Barrette/IR_BANK_A_N",
+        "xy_mm": [
+          85.204293,
+          259.992274
+        ],
+        "size_mm": [
+          1.2,
+          1.4
+        ],
+        "drill_mm": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "pad": "2",
+        "net": "/Barrette/IR_A00",
+        "xy_mm": [
+          87.33244,
+          263.636364
+        ],
+        "size_mm": [
+          1.2,
+          1.4
+        ],
+        "drill_mm": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "pad": "3",
+        "net": "+3V3A",
+        "xy_mm": [
+          86.758644,
+          259.084534
+        ],
+        "size_mm": [
+          1.2,
+          1.4
+        ],
+        "drill_mm": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "pad": "4",
+        "net": "LINE_00",
+        "xy_mm": [
+          88.886791,
+          262.728624
+        ],
+        "size_mm": [
+          1.2,
+          1.4
+        ],
+        "drill_mm": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "locked": true,
+    "angle": 30.28491203,
+    "layer": "B.Cu"
+  }
+}

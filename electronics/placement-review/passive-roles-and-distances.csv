@@ -1,0 +1,277 @@
+reference,value,group,priority,anchor,component_pad,distance_mm,before_mm,role
+C541,22pF,,10,U504.2,1,1.803,,Contre-réaction TIA placée conjointement avec U504
+R544,220k,,10,U504.2,1,3.179,,Contre-réaction TIA placée conjointement avec U504
+C521,22pF,,10,U502.2,1,1.803,15.923,Contre-réaction TIA placée conjointement avec U502
+R524,220k,,10,U502.2,1,3.179,18.269,Contre-réaction TIA placée conjointement avec U502
+C501,22pF,,10,U501.2,1,1.803,75.559,Contre-réaction TIA placée conjointement avec U501
+R504,220k,,10,U501.2,1,3.179,20.909,Contre-réaction TIA placée conjointement avec U501
+U101,USBLC6-2SC6,USB,9,J101.A6,1,5.535,10.905,Organisation par fonction : U101
+U701,W25Q128JVSIQ,flash,8,U201.111,6,8.538,8.732,Organisation par fonction : U701
+SW101,MARCHE / ARRET,main_power_control,3,Q104.3,1,58.186,5.302,Organisation par fonction : SW101
+F101,12 A,main_power,8,Q102.1,2,5.464,10.367,Organisation par fonction : F101
+C109,100uF,main_power,8,Q103.5,1,81.65,28.199,Organisation par fonction : C109
+C354,100uF,motor_right,9,U351.11,1,16.642,9.383,Organisation par fonction : C354
+D102,SMBJ9.0A,main_power,9,Q103.5,1,27.233,27.749,Organisation par fonction : D102
+C704,220uF,ESC_supply,8,J103.1,1,16.704,34.459,Organisation par fonction : C704
+Q101,AO3400A,charger_control,6,U102.3,3,7.496,16.954,Organisation par fonction : Q101
+Q104,AO3400A,main_power,8,Q102.4,3,7.395,7.278,Organisation par fonction : Q104
+Q601,AO3400A,buzzer,8,BZ601.2,3,13.101,7.419,Organisation par fonction : Q601
+Q602,AO3400A,track_lights,5,U201.4,1,63.362,61.557,Organisation par fonction : Q602
+Q701,SI2301CDS,BLE_power,7,J701.2,3,5.388,10.675,Organisation par fonction : Q701
+Q702,AO3400A,BLE_power,7,Q701.1,3,2.37,5.764,Organisation par fonction : Q702
+L102,4u7H / 3 A,buck,10,U103.5,1,1.8,2.476,Inductance pad1 SW5 au plus près; pad2 +3V3 vers sortie
+C107,22uF,charger,10,U102.16,1,1.725,7.328,Découplage SNS prioritaire
+C106,22uF,charger,10,U102.15,1,3.463,11.221,Découplage SNS prioritaire
+C103,22uF,charger,10,U102.22,1,2.803,7.249,Découplage PMID
+C102,22uF,charger,10,U102.21,1,3.77,8.408,Découplage PMID
+Y201,25 MHz / 10 ppm,MCU_clock,10,U201.23,1,2.275,75.686,Regrouper quartz C215 C216 R204 contre pins23/24; pas de signaux rapides traversant boucle.
+L101,1uH / 4 A,charger,10,U102.17,2,4.319,4.318,"Inductance SW/PMID: pad2 SW vers17/18; pad1 vers21/22 et C102/C103, boucle compacte"
+C213,2u2F,MCU_supply_reset,10,U201.106,1,1.878,22.189,Découplage local broche précise; VCAP C212/C213 ne sont pas +3V3.
+C212,2u2F,MCU_supply_reset,10,U201.71,1,1.878,8.993,Découplage local broche précise; VCAP C212/C213 ne sont pas +3V3.
+C105,4u7F,charger,10,U102.11,1,2.006,3.31,REGN bypass
+R357,1k,motor_right,10,U351.6,1,1.49,15.583,"RIPROPI1k conversion courant, sensible près pin6, retour GND calme"
+R307,1k,motor_left,10,U301.6,1,1.49,2.753,"RIPROPI1k conversion courant, sensible près pin6, retour GND calme"
+R204,220R,MCU_clock,10,U201.24,2,2.44,16.788,Série OSC_OUT côté source STM32; pin1 rejoint Y201.3
+R118,31k6,buck_feedback,10,U103.8,1,1.09,4.32,"FB pont bas près pin8, masse calme du CI"
+R117,100k,buck_feedback,10,U103.8,2,1.205,3.954,"FB pont haut, prélèvement Kelvin sortie +3V3 après C116/C117, hors SW"
+C703,100nF,BLE_power,10,J701.2,1,2.32,14.637,Réservoir BLE à arrivée module pins2(+)/1(GND)
+C701,100nF,flash,10,U701.8,1,1.12,7.205,Bypass flash VCC
+C568,100nF,,10,U504.4,1,1.877,,Découplage local AOP
+C567,100nF,,10,U503.5,1,1.203,63.293,Découplage VDDIO de la centrale inertielle verrouillée
+C566,100nF,,10,U503.8,1,1.203,60.036,Découplage VDD de la centrale inertielle verrouillée
+C564,100nF,,10,U502.4,1,1.818,34.322,Découplage local AOP
+C563,100nF,,10,U501.4,1,1.678,29.321,Découplage local AOP
+C544,4n7,,10,U201.29,1,1.818,39.525,"Réservoir ADC laser, côté broche STM32"
+C524,4n7,,10,U201.28,1,3.079,40.142,"Réservoir ADC laser, côté broche STM32"
+C504,4n7,,10,U201.27,1,3.773,42.486,"Réservoir ADC laser, côté broche STM32"
+C356,22nF,motor_right,10,U351.13,1,1.602,15.425,Flying capacitor CPH-CPL pins13/14 pad1 vers13 pad2 vers14
+C355,100nF,motor_right,10,U351.12,1,1.755,8.305,Réserve pompe VCP-VM pins12/11
+C353,100nF,motor_right,10,U351.11,1,2.801,9.172,"Bypass VM-PGND près pins11/9, nord du CI"
+C352,1nF,motor_right_ADC,10,U201.53,1,1.699,93.006,"C1nF de filtrage après100R juste avant entrée ADC, GND calme"
+C351,100nF,,10,U351.5,1,1.572,,Découplage ajouté sur alimentation locale distante
+C306,22nF,motor_left,10,U301.13,1,1.602,9.816,Flying capacitor CPH-CPL pins13/14 pad1 vers13 pad2 vers14
+C305,100nF,motor_left,10,U301.12,1,1.755,7.132,Réserve pompe VCP-VM pins12/11
+C303,100nF,motor_left,10,U301.11,1,2.448,4.076,"Bypass VM-PGND près pins11/9, nord du CI"
+C302,1nF,motor_left_ADC,10,U201.49,1,1.699,94.376,"C1nF de filtrage après100R juste avant entrée ADC, GND calme"
+C223,100nF,,10,U201.6,1,1.699,,Découplage ajouté sur alimentation locale distante
+C222,100nF,MCU_supply_reset,10,U201.95,1,1.699,30.502,Découplage local broche précise; VCAP C212/C213 ne sont pas +3V3.
+C221,100nF,MCU_VDD,10,U201.144,1,1.305,42.823,"100nF local dédié VDD. Pad1 dirigé vers broche, pad2 masse via directe; réserver escape des IO voisines."
+C220,100nF,MCU_VDD,10,U201.131,1,1.699,41.675,"100nF local dédié VDD. Pad1 dirigé vers broche, pad2 masse via directe; réserver escape des IO voisines."
+C219,100nF,MCU_VDD,10,U201.121,1,1.699,44.173,"100nF local dédié VDD. Pad1 dirigé vers broche, pad2 masse via directe; réserver escape des IO voisines."
+C218,100nF,MCU_VDD,10,U201.108,1,1.305,44.818,"100nF local dédié VDD. Pad1 dirigé vers broche, pad2 masse via directe; réserver escape des IO voisines."
+C217,100nF,MCU_VDD,10,U201.84,1,1.699,37.422,"100nF local dédié VDD. Pad1 dirigé vers broche, pad2 masse via directe; réserver escape des IO voisines."
+C216,10pF,MCU_clock,10,Y201.3,1,1.526,71.897,Charge quartz XTAL_OUT; masse commune courte
+C215,10pF,MCU_clock,10,Y201.1,1,3.209,63.489,Charge quartz OSC_IN; masse commune courte
+C214,100nF,MCU_supply_reset,10,U201.25,1,4.604,7.964,Découplage local broche précise; VCAP C212/C213 ne sont pas +3V3.
+C210,100nF,MCU_analog,10,U201.32,1,2.088,14.455,VDDA/VREF local
+C208,100nF,MCU_analog,10,U201.33,1,2.646,19.908,VDDA/VREF local
+C207,100nF,MCU_VDD,10,U201.72,1,1.305,18.398,"100nF local dédié VDD. Pad1 dirigé vers broche, pad2 masse via directe; réserver escape des IO voisines."
+C205,100nF,MCU_VDD,10,U201.62,1,1.699,15.425,"100nF local dédié VDD. Pad1 dirigé vers broche, pad2 masse via directe; réserver escape des IO voisines."
+C204,100nF,MCU_VDD,10,U201.52,1,2.461,25.034,"100nF local dédié VDD. Pad1 dirigé vers broche, pad2 masse via directe; réserver escape des IO voisines."
+C203,100nF,MCU_VDD,10,U201.39,1,1.699,41.016,"100nF local dédié VDD. Pad1 dirigé vers broche, pad2 masse via directe; réserver escape des IO voisines."
+C202,100nF,MCU_VDD,10,U201.30,1,3.676,36.976,"100nF local dédié VDD. Pad1 dirigé vers broche, pad2 masse via directe; réserver escape des IO voisines."
+C201,100nF,MCU_VDD,10,U201.17,1,1.818,47.515,"100nF local dédié VDD. Pad1 dirigé vers broche, pad2 masse via directe; réserver escape des IO voisines."
+C124,100nF,,10,U105.28,1,1.189,9.683,Découplage VDD du contrôleur PWM de témoins
+C121,100nF,battery_ADC,10,U201.26,1,5.467,15.425,Pont/filtre VBAT_SENSE entier côté ADC; prélever VBAT par piste sense séparée puissance
+C114,100nF,buck,10,U103.6,1,2.401,9.983,"Bootstrap pad1 BST6 et pad2 SW5, adjacent côté SW"
+C113,100nF,buck,10,U103.3,1,1.203,9.063,VIN-GND boucle entrée minimale; C113 au plus près pins3/4
+C104,47nF,charger,10,U102.12,1,4.158,8.152,"Bootstrap BTST-SW: pad2 vers pins17/18, très petit circuit fermé"
+C304,100uF,motor_left,9,U301.11,1,4.48,8.044,Bulk VM proche mais après céramique; réserve cuivre puissance
+C112,10uF,buck,9,U103.3,1,2.956,6.0,VIN-GND boucle entrée minimale; C113 au plus près pins3/4
+C111,10uF,buck,9,U103.3,1,4.595,4.455,VIN-GND boucle entrée minimale; C113 au plus près pins3/4
+C357,100nF,motor_right,9,J351.2,1,10.985,20.032,Condensateur suppression parasites entre les sorties moteur au connecteur; boucle entre pads2/1 courte
+C307,100nF,motor_left,9,J301.2,1,5.68,21.599,Condensateur suppression parasites entre les sorties moteur au connecteur; boucle entre pads2/1 courte
+C206,4u7F,,9,U201.17,1,3.584,25.153,Réservoir VDD près de l’arrivée alimentation
+C117,22uF,buck,9,L102.2,1,3.45,5.764,"Sortie22uF après inductance, boucle retour GND vers entrée/CI compacte"
+C116,22uF,buck,9,L102.2,1,3.45,7.424,"Sortie22uF après inductance, boucle retour GND vers entrée/CI compacte"
+D601,BAT54,buzzer,9,BZ601.2,2,3.35,14.737,Roue libre directement entre bornes BZ601 (cathode +3V3)
+C101,1uF,charger_input,9,U102.23,1,2.8,8.999,"VBUS bypass 1uF, près VBUS et GND"
+R547,910R,,9,U504.6,1,2.123,,Branche de gain vers référence médiane
+R546,100k,,9,U504.6,2,3.16,,Contre-réaction du gain B
+R527,910R,,9,U502.6,1,1.807,36.931,Branche de gain vers référence médiane
+R526,100k,,9,U502.6,2,2.795,35.454,Contre-réaction du gain B
+R507,910R,,9,U501.6,1,1.649,28.313,Branche de gain vers référence médiane
+R506,100k,,9,U501.6,2,2.064,29.791,Contre-réaction du gain B
+R358,100R,motor_right_ADC,9,U201.53,2,2.829,97.378,"Filtre courant 100R série proche récepteur ADC, relié à RIPROPI par signal basse impédance"
+R308,100R,motor_left_ADC,9,U201.49,2,2.829,91.314,"Filtre courant 100R série proche récepteur ADC, relié à RIPROPI par signal basse impédance"
+C570,100nF,,9,U504.3,1,4.204,,Filtrage local de VREF_RX après séparation physique des TIA
+C569,100nF,,9,U502.3,1,2.416,,Filtrage local de VREF_RX après séparation physique des TIA
+C301,100nF,motor_reference,9,U301.5,1,2.499,8.071,Référence moteurs commune (drivers distants107mm); recommander ajout C351100nF près U351.5
+C224,1uF,,9,U201.6,1,2.088,,Découplage ajouté sur alimentation locale distante
+C211,1uF,MCU_analog,9,U201.32,1,3.496,13.381,VDDA/VREF local
+C209,1uF,MCU_analog,9,U201.33,1,3.857,15.363,VDDA/VREF local
+C115,10nF,buck_quiet,9,U103.7,1,2.292,12.383,"SS10nF côté calme, loin cuivre SW/L102"
+C702,10uF,BLE_power,8,J701.2,1,2.65,13.425,Réservoir BLE à arrivée module pins2(+)/1(GND)
+C108,10uF,charger,8,U102.13,1,5.864,3.472,BAT reservoir
+D106,BAT54,main_power,8,Q102.4,1,2.413,13.802,Commande commune PWR_G Q102/Q103: près des gates côté x197.925
+FB101,600R @ 100 MHz,analog_rail,8,U201.33,2,4.394,38.498,"Placer à entrée domaine analogique près VDDA et départ AOP, pas à côté inductance buck"
+C119,10uF,analog_rail,9,FB101.2,1,1.982,2.768,"Filtrage après ferrite +3V3A, GND continue, forme filtre compact"
+C120,100nF,analog_rail,9,FB101.2,1,1.723,3.791,"Filtrage après ferrite +3V3A, GND continue, forme filtre compact"
+C118,100nF,analog_rail,9,FB101.1,1,1.428,20.215,Découplage avant ferrite +3V3
+R431,10k,,8,U411.4,1,0.11,9.139,Charge phototransistor près du capteur
+R430,10k,,8,U410.4,1,0.11,8.347,Charge phototransistor près du capteur
+R423,10k,,8,U403.4,1,0.11,9.04,Charge phototransistor près du capteur
+R422,10k,,8,U402.4,1,0.11,9.448,Charge phototransistor près du capteur
+R707,100R,ESC_signal,8,U201.139,1,1.698,89.132,"Série100R à source ESC_PWM, peut éviter de traverser mécanique avec stub"
+R705,100k,BLE_power,8,Q702.1,1,1.352,9.838,Grille NMOS série100R/pulldown100k
+R704,100R,BLE_power,8,Q702.1,2,1.543,8.16,Grille NMOS série100R/pulldown100k
+R620,100k,track_lights,8,Q602.1,1,1.352,6.237,Série grille/pulldown
+R619,100R,track_lights,8,Q602.1,2,1.543,4.86,Série grille/pulldown
+R610,100k,buzzer_gate,8,Q601.1,1,1.352,6.643,Pulldown grille
+R609,100R,buzzer_gate,8,Q601.1,2,1.543,5.068,Série grille après C607
+D610,BAT54,buzzer_gate,8,R609.1,1,1.408,4.235,Clamp négatif du noeud BZAC vers GND
+R545,100k,,8,U504.5,1,3.958,,Polarisation de l’entrée du gain B
+R525,100k,,8,U502.5,1,2.829,31.901,Polarisation de l’entrée du gain B
+R505,100k,,8,U501.5,1,2.969,33.29,Polarisation de l’entrée du gain B
+R429,10k,,8,U409.4,1,0.11,7.901,Charge phototransistor près du capteur
+R428,10k,,8,U408.4,1,0.11,12.22,Charge phototransistor près du capteur
+R427,10k,,8,U407.4,1,0.11,12.162,Charge phototransistor près du capteur
+R426,10k,,8,U406.4,1,0.11,12.079,Charge phototransistor près du capteur
+R425,10k,,8,U405.4,1,0.11,11.971,Charge phototransistor près du capteur
+R424,10k,,8,U404.4,1,0.11,8.904,Charge phototransistor près du capteur
+R356,10k,motor_right,8,U351.16,2,1.49,3.079,PMODE pullup
+R355,20k,motor_right,8,U351.7,1,1.691,12.499,Mode courant IMODE
+R306,10k,motor_left,8,U301.16,2,1.49,7.396,PMODE pullup
+R305,20k,motor_left,8,U301.7,1,1.89,4.288,Mode courant IMODE
+R126,100k,main_power_control,8,Q104.1,1,1.604,7.953,Série grille/pulldown locaux
+R124,100R,main_power_control,8,Q104.1,2,2.69,9.063,Série grille/pulldown locaux
+R120,10k,battery_ADC,8,U201.26,1,6.055,12.904,Pont/filtre VBAT_SENSE entier côté ADC; prélever VBAT par piste sense séparée puissance
+R119,22k,battery_ADC,8,U201.26,2,6.674,10.827,Pont/filtre VBAT_SENSE entier côté ADC; prélever VBAT par piste sense séparée puissance
+R116,42k2,buck_quiet,8,U103.1,1,1.09,16.247,"Réglage RT proche pin1, loin SW"
+R114,100k,main_power,8,Q102.4,1,1.626,5.465,Commande commune PWR_G Q102/Q103: près des gates côté x197.925
+R113,100k,charger_control,8,Q101.1,1,1.384,3.247,Série grille et pulldown locaux
+R112,100R,charger_control,8,Q101.1,2,1.604,4.784,Série grille et pulldown locaux
+R102,5k1,USB,8,J101.B5,1,1.89,8.654,"Terminaison CC au connecteur, pad2 GND"
+R101,5k1,USB,8,J101.A5,1,1.89,13.406,"Terminaison CC au connecteur, pad2 GND"
+R432,10k,,8,U412.4,1,0.11,9.057,Charge phototransistor près du capteur
+R421,10k,,8,U401.4,1,0.11,10.038,Charge phototransistor près du capteur
+C705,100nF,ESC_supply,8,J103.1,1,3.719,42.529,"Réservoir ESC hors keepout turbine, exception réservée connecteurs uniquement"
+C607,100nF,buzzer_gate,8,R609.1,2,2.08,6.19,Couplage AC BUZZER: ce 100nF n est PAS un bypass alimentation
+C606,100nF,start_button,8,SW602.1,1,1.602,24.374,Filtre START
+C605,100nF,joystick,8,SW601.5,1,1.526,9.746,"Filtre anti-rebond100nF, petites paires locales autour switch sans obstruer mécanique joystick"
+C604,100nF,joystick,8,SW601.4,1,1.699,14.965,"Filtre anti-rebond100nF, petites paires locales autour switch sans obstruer mécanique joystick"
+C603,100nF,joystick,8,SW601.3,1,1.526,13.831,"Filtre anti-rebond100nF, petites paires locales autour switch sans obstruer mécanique joystick"
+C602,100nF,joystick,8,SW601.2,1,1.526,7.667,"Filtre anti-rebond100nF, petites paires locales autour switch sans obstruer mécanique joystick"
+C601,100nF,joystick,8,SW601.1,1,1.526,7.093,"Filtre anti-rebond100nF, petites paires locales autour switch sans obstruer mécanique joystick"
+C542,1nF,,8,U504.1,1,4.204,,Liaison AC à la sortie TIA
+C522,1nF,,8,U502.1,1,2.088,34.609,Liaison AC à la sortie TIA
+C502,1nF,,8,U501.1,1,4.204,31.175,Liaison AC à la sortie TIA
+C412,1nF,,8,U412.4,1,1.12,10.181,Filtre signal ligne près du phototransistor
+C411,1nF,,8,U411.4,1,1.12,11.149,Filtre signal ligne près du phototransistor
+C410,1nF,,8,U410.4,1,1.12,10.718,Filtre signal ligne près du phototransistor
+C409,1nF,,8,U409.4,1,1.12,10.195,Filtre signal ligne près du phototransistor
+C407,1nF,,8,U407.4,1,1.12,15.686,Filtre signal ligne près du phototransistor
+C406,1nF,,8,U406.4,1,1.12,15.599,Filtre signal ligne près du phototransistor
+C404,1nF,,8,U404.4,1,1.12,11.416,Filtre signal ligne près du phototransistor
+C403,1nF,,8,U403.4,1,1.12,11.631,Filtre signal ligne près du phototransistor
+C402,1nF,,8,U402.4,1,1.12,11.721,Filtre signal ligne près du phototransistor
+C401,1nF,,8,U401.4,1,1.12,10.757,Filtre signal ligne près du phototransistor
+C123,1uF,main_power,8,Q102.4,1,2.841,8.266,Commande commune PWR_G Q102/Q103: près des gates côté x197.925
+C122,100nF,power_button_filter,8,U201.142,1,1.699,96.43,Pont/filtre PWR_BTN à récepteur MCU; BTN_N peut être long
+C110,100nF,main_power,8,Q103.5,1,2.772,31.668,"Réservoir / TVS sur VBAT côté drains, dégager cuivre haute intensité"
+C408,1nF,,8,U408.4,1,1.12,15.747,Filtre signal ligne près du phototransistor
+C405,1nF,,8,U405.4,1,1.12,15.486,Filtre signal ligne près du phototransistor
+R107,10R,charger,7,U102.10,2,9.694,14.49,"Résistance équilibrage10R forte dissipation, CBSET; ne pas coller aux autres passifs thermosensibles"
+R703,100k,BLE_power,7,Q701.1,2,1.49,7.361,Pullup grille PMOS vers source +3V3
+R702,10k,flash,7,U701.7,2,1.89,7.424,Pullup dédié WP/HOLD
+R701,10k,flash,7,U701.3,2,1.89,4.816,Pullup dédié WP/HOLD
+R548,1k,,7,C544.1,2,4.381,3.142,Résistance série du filtre ADC au pied du condensateur
+R542,100R,,7,Q541.1,2,1.352,8.25,Résistance série de grille
+R541,100R,,7,TM541.2,2,1.759,15.513,Limitation du courant émetteur
+R528,1k,,7,C524.1,2,5.27,3.254,Résistance série du filtre ADC au pied du condensateur
+R522,100R,,7,Q521.1,2,1.543,18.619,Résistance série de grille
+R521,100R,,7,TM521.2,2,4.885,13.387,Limitation du courant émetteur
+R508,1k,,7,C504.1,2,3.96,3.254,Résistance série du filtre ADC au pied du condensateur
+R502,100R,,7,Q501.1,2,1.352,10.048,Résistance série de grille
+R501,100R,,7,TM501.2,2,1.8,14.036,Limitation du courant émetteur
+R444,100k,,7,Q402.1,1,1.352,5.384,Commande de grille et rappel du banc IR
+R443,100R,,7,Q402.1,2,1.543,1.984,Commande de grille et rappel du banc IR
+R442,100k,,7,Q401.1,1,1.352,6.237,Commande de grille et rappel du banc IR
+R441,100R,,7,Q401.1,2,1.543,4.86,Commande de grille et rappel du banc IR
+R411,100R,,7,U411.2,2,0.11,8.466,"Courant LED IR, Top au droit du capteur"
+R410,100R,,7,U410.2,2,0.11,9.492,"Courant LED IR, Top au droit du capteur"
+R408,100R,,7,U408.2,2,0.11,9.519,"Courant LED IR, Top au droit du capteur"
+R407,100R,,7,U407.2,2,0.11,9.615,"Courant LED IR, Top au droit du capteur"
+R406,100R,,7,U406.2,2,0.11,9.682,"Courant LED IR, Top au droit du capteur"
+R405,100R,,7,U405.2,2,0.11,9.72,"Courant LED IR, Top au droit du capteur"
+R403,100R,,7,U403.2,2,0.11,9.4,"Courant LED IR, Top au droit du capteur"
+R402,100R,,7,U402.2,2,0.11,7.739,"Courant LED IR, Top au droit du capteur"
+R360,100R,motor_right_encoder,7,J351.5,1,5.201,12.295,Série100R encodeur placé sortie connecteur; paire RC compacte hors puissance
+C359,1nF,motor_right_encoder,8,R360.2,1,1.12,4.402,"1nF après résistance100R, pin2 GND"
+R359,100R,motor_right_encoder,7,J351.6,1,3.883,17.648,Série100R encodeur placé sortie connecteur; paire RC compacte hors puissance
+C358,1nF,motor_right_encoder,8,R359.2,1,1.12,4.693,"1nF après résistance100R, pin2 GND"
+R353,100k,motor_right,7,U351.3,1,3.378,14.645,Pulldown nSLEEP
+R310,100R,motor_left_encoder,7,J301.5,1,5.201,12.375,Série100R encodeur placé sortie connecteur; paire RC compacte hors puissance
+C309,1nF,motor_left_encoder,8,R310.2,1,1.12,3.367,"1nF après résistance100R, pin2 GND"
+R309,100R,motor_left_encoder,7,J301.6,1,2.802,12.501,Série100R encodeur placé sortie connecteur; paire RC compacte hors puissance
+C308,1nF,motor_left_encoder,8,R309.2,1,2.292,3.367,"1nF après résistance100R, pin2 GND"
+R303,100k,motor_left,7,U301.3,1,4.17,12.606,Pulldown nSLEEP
+R302,6k8,motor_reference,7,U301.5,1,3.315,7.24,Référence moteurs commune (drivers distants107mm); recommander ajout C351100nF près U351.5
+R301,10k,motor_reference,7,U301.5,2,3.913,7.211,Référence moteurs commune (drivers distants107mm); recommander ajout C351100nF près U351.5
+R202,10k,MCU_boot,7,U201.138,1,2.44,28.707,Pulldown BOOT0
+R201,10k,MCU_reset,7,U201.25,2,7.747,6.375,Pullup NRST; C214 doit être encore plus près U201 que R201. SW603 reste verrouillé.
+R115,100k,buck_quiet,7,U103.2,2,1.913,3.578,Pullup EN
+R111,100k,charger,7,U102.3,2,3.09,8.648,Pullup CD
+R109,10k,charger,7,U102.1,2,3.116,7.474,Pullup PG
+R108,10k,charger,7,U102.2,2,4.269,5.858,Pullup STAT
+R106,300R,charger,7,U102.9,2,3.935,7.861,"Mesure MID après série300R; à proximité MID CI, trajet PACK_MID séparé du SW"
+R105,30k1,charger,7,U102.7,1,4.236,4.118,TS pont côté GND
+R104,5k23,charger,7,U102.7,2,5.718,5.421,TS pont côté REGN
+R103,383R,charger,7,U102.8,1,6.401,9.247,ILIM programmation
+R412,100R,,7,U412.2,2,0.11,8.794,"Courant LED IR, Top au droit du capteur"
+R401,100R,,7,U401.2,2,0.11,8.117,"Courant LED IR, Top au droit du capteur"
+R409,100R,,7,U409.2,2,0.11,8.212,"Courant LED IR, Top au droit du capteur"
+R404,100R,,7,U404.2,2,0.11,7.518,"Courant LED IR, Top au droit du capteur"
+C545,10nF,,7,R542.1,2,1.12,3.939,Couplage AC de la modulation : condensateur série avant résistance de grille
+C543,1uF,,7,R547.2,1,1.169,3.254,Retour AC du gain vers masse
+C525,10nF,,7,R522.1,2,2.772,14.691,Couplage AC de la modulation : condensateur série avant résistance de grille
+C523,1uF,,7,R527.2,1,1.135,3.439,Retour AC du gain vers masse
+C505,10nF,,7,R502.1,2,1.12,5.5,Couplage AC de la modulation : condensateur série avant résistance de grille
+C503,1uF,,7,R507.2,1,1.078,3.254,Retour AC du gain vers masse
+C565,10uF,,6,U501.4,1,4.491,25.251,Références analogiques et réservoir du groupe avant
+D544,BAT54,,6,C545.2,1,1.692,5.554,Écrêtage négatif du signal de grille après couplage AC
+D543,PESD3V3,,6,TM541.1,1,2.122,23.449,Protection ESD sur cathode laser
+D524,BAT54,,6,C525.2,1,2.294,12.616,Écrêtage négatif du signal de grille après couplage AC
+D523,PESD3V3,,6,TM521.1,1,7.898,22.908,Protection ESD sur cathode laser
+D504,BAT54,,6,C505.2,1,1.35,3.368,Écrêtage négatif du signal de grille après couplage AC
+D503,PESD3V3,,6,TM501.1,1,4.012,9.228,Protection ESD sur cathode laser
+R608,10k,start_button,6,SW602.1,2,2.29,23.973,Pullup START
+R607,10k,joystick,6,SW601.5,2,1.697,9.517,"Pullup10k bouton, voisin cap filtre"
+R606,10k,joystick,6,SW601.4,2,3.96,12.512,"Pullup10k bouton, voisin cap filtre"
+R605,10k,joystick,6,SW601.3,2,1.697,16.595,"Pullup10k bouton, voisin cap filtre"
+R604,10k,joystick,6,SW601.2,2,2.04,17.877,"Pullup10k bouton, voisin cap filtre"
+R603,10k,joystick,6,SW601.1,2,1.697,16.64,"Pullup10k bouton, voisin cap filtre"
+R602,4k7,I2C,6,J601.3,2,2.003,8.353,"Pullup bus I2C partagé chargeur OLED LEDs, près branche numérique de J601"
+R601,4k7,I2C,6,J601.4,2,1.89,12.062,"Pullup bus I2C partagé chargeur OLED LEDs, près branche numérique de J601"
+R564,10k,,6,U501.12,1,2.323,30.639,Références analogiques et réservoir du groupe avant
+R563,10k,,6,U501.12,2,2.863,31.936,Références analogiques et réservoir du groupe avant
+R562,2k2,,6,U501.3,1,4.799,29.774,Références analogiques et réservoir du groupe avant
+R561,10k,,6,U501.3,2,4.838,31.066,Références analogiques et réservoir du groupe avant
+R543,100k,,6,Q541.1,1,1.543,7.823,Rappel de grille
+R523,100k,,6,Q521.1,1,4.269,5.084,Rappel de grille
+R503,100k,,6,Q501.1,1,1.604,9.497,Rappel de grille
+R354,10k,motor_right,6,U351.4,2,5.037,12.279,Pullup nFAULT
+R304,10k,motor_left,6,U301.4,2,4.841,4.275,Pullup nFAULT
+R203,10k,MCU_boot,6,U201.138,2,2.829,24.862,Pullup BOOT0 option non montée selon schéma
+R128,220k,power_button_filter,6,U201.142,1,2.829,95.915,Pont/filtre PWR_BTN à récepteur MCU; BTN_N peut être long
+R127,470k,power_button_filter,6,U201.142,2,3.18,101.222,Pont/filtre PWR_BTN à récepteur MCU; BTN_N peut être long
+R125,10k,main_power_control,6,SW101.1,2,1.543,2.992,Pullup bouton sur VBAT_SW_IN
+C562,1uF,,6,U501.12,1,3.719,37.029,Références analogiques et réservoir du groupe avant
+C561,1uF,,6,U501.3,1,5.144,23.173,Références analogiques et réservoir du groupe avant
+D101,vert - charge,charger_led,4,U102.2,1,5.613,15.907,Témoin STAT facultatif visuel près USB
+R110,2k2,charger_led,5,D101.2,2,2.794,3.077,Limitation courant LED
+R453,1k,,5,D409.2,2,1.299,4.451,Résistance témoin associé
+D701,bleue,BLE_indicator,3,J701.2,2,3.448,19.381,Témoin BLE près module
+R706,1k,BLE_indicator,6,D701.2,2,1.49,5.678,Résistance LED
+R615,220R,track_lights,7,D606.2,2,1.49,2.722,Limitation courant LED nez
+R456,1k,,5,D412.2,2,1.626,4.272,Résistance témoin associé
+R455,1k,,5,D411.2,2,1.626,4.321,Résistance témoin associé
+R454,1k,,5,D410.2,2,1.294,4.382,Résistance témoin associé
+R452,1k,,5,D408.2,2,1.49,4.482,Résistance témoin associé
+R451,1k,,5,D407.2,2,1.49,4.011,Résistance témoin associé
+R450,1k,,5,D406.2,2,1.49,4.615,Résistance témoin associé
+R448,1k,,5,D404.2,2,1.49,4.606,Résistance témoin associé
+R447,1k,,5,D403.2,2,1.49,4.667,Résistance témoin associé
+R445,1k,,5,D401.2,2,1.49,4.754,Résistance témoin associé
+R449,1k,,5,D405.2,2,1.49,4.576,Résistance témoin associé
+R446,1k,,5,D402.2,2,1.49,4.718,Résistance témoin associé

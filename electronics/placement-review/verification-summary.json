@@ -1,0 +1,380 @@
+{
+  "footprints_before": 335,
+  "footprints_after": 342,
+  "locked_positions_preserved": 40,
+  "stm32_rotation_before_deg": -135.0,
+  "stm32_rotation_after_deg": 45.0,
+  "flipped_to_top": [
+    "C122",
+    "C123",
+    "C124",
+    "C301",
+    "C302",
+    "C308",
+    "C309",
+    "C352",
+    "C354",
+    "C356",
+    "C357",
+    "C358",
+    "C359",
+    "C401",
+    "C402",
+    "C403",
+    "C404",
+    "C405",
+    "C406",
+    "C407",
+    "C408",
+    "C409",
+    "C410",
+    "C411",
+    "C412",
+    "D106",
+    "Q101",
+    "Q104",
+    "R103",
+    "R104",
+    "R105",
+    "R108",
+    "R109",
+    "R111",
+    "R112",
+    "R113",
+    "R124",
+    "R125",
+    "R126",
+    "R127",
+    "R128",
+    "R301",
+    "R302",
+    "R303",
+    "R304",
+    "R305",
+    "R306",
+    "R307",
+    "R308",
+    "R309",
+    "R310",
+    "R353",
+    "R354",
+    "R355",
+    "R356",
+    "R357",
+    "R358",
+    "R359",
+    "R360",
+    "R401",
+    "R402",
+    "R403",
+    "R404",
+    "R405",
+    "R406",
+    "R407",
+    "R408",
+    "R409",
+    "R410",
+    "R411",
+    "R412",
+    "R421",
+    "R422",
+    "R423",
+    "R424",
+    "R425",
+    "R426",
+    "R427",
+    "R428",
+    "R429",
+    "R430",
+    "R431",
+    "R432",
+    "U105"
+  ],
+  "remaining_bottom": [
+    "U401",
+    "U402",
+    "U403",
+    "U404",
+    "U405",
+    "U406",
+    "U407",
+    "U408",
+    "U409",
+    "U410",
+    "U411",
+    "U412"
+  ],
+  "added_components": [
+    "C223",
+    "C224",
+    "C351",
+    "C568",
+    "C569",
+    "C570",
+    "U504"
+  ],
+  "net_mismatches": [],
+  "missing_pads": [],
+  "laser_distances": [
+    {
+      "station": "TM501",
+      "amplifier": "U501",
+      "photodiode_input_before_mm": 33.861,
+      "photodiode_input_after_mm": 3.1,
+      "feedback_resistor_leads_before_mm": 40.683,
+      "feedback_resistor_leads_after_mm": 6.32,
+      "feedback_capacitor_leads_before_mm": 150.108,
+      "feedback_capacitor_leads_after_mm": 3.549
+    },
+    {
+      "station": "TM521",
+      "amplifier": "U502",
+      "photodiode_input_before_mm": 55.975,
+      "photodiode_input_after_mm": 7.375,
+      "feedback_resistor_leads_before_mm": 145.631,
+      "feedback_resistor_leads_after_mm": 6.32,
+      "feedback_capacitor_leads_before_mm": 140.476,
+      "feedback_capacitor_leads_after_mm": 3.549
+    },
+    {
+      "station": "TM541",
+      "amplifier": "U504",
+      "photodiode_input_before_mm": 69.011,
+      "photodiode_input_after_mm": 2.903,
+      "feedback_resistor_leads_before_mm": 146.671,
+      "feedback_resistor_leads_after_mm": 6.32,
+      "feedback_capacitor_leads_before_mm": 142.507,
+      "feedback_capacitor_leads_after_mm": 3.549
+    }
+  ],
+  "drc_counts": {
+    "courtyards_overlap": 1,
+    "npth_inside_courtyard": 1,
+    "silk_edge_clearance": 11,
+    "lib_footprint_mismatch": 26,
+    "text_height": 12,
+    "silk_overlap": 46,
+    "silk_over_copper": 67
+  },
+  "drc_errors": [
+    {
+      "description": "Courtyards overlap",
+      "items": [
+        {
+          "description": "Empreinte J702",
+          "pos": {
+            "x": 146.0,
+            "y": 140.0
+          },
+          "uuid": "acaeb208-e862-449d-9a96-bb381889bb1c"
+        },
+        {
+          "description": "Empreinte J103",
+          "pos": {
+            "x": 154.5,
+            "y": 136.5
+          },
+          "uuid": "af1769a8-4962-42a6-8f7b-eab9fcf0d2ea"
+        }
+      ],
+      "severity": "error",
+      "type": "courtyards_overlap"
+    },
+    {
+      "description": "NPTH inside courtyard",
+      "items": [
+        {
+          "description": "Pad Non Métallisé de J103",
+          "pos": {
+            "x": 146.9,
+            "y": 136.5
+          },
+          "uuid": "17ef19e2-4306-4627-a243-51decce4ba9d"
+        },
+        {
+          "description": "Empreinte J702",
+          "pos": {
+            "x": 146.0,
+            "y": 140.0
+          },
+          "uuid": "acaeb208-e862-449d-9a96-bb381889bb1c"
+        }
+      ],
+      "severity": "error",
+      "type": "npth_inside_courtyard"
+    }
+  ],
+  "schematic_parity_count": 0,
+  "placement_geometry_violations": [
+    {
+      "kind": "courtyard_outside_board",
+      "references": [
+        "J101"
+      ],
+      "all_locked": true,
+      "face": "F",
+      "overlap_mm2": 1.54135,
+      "position": [
+        155.0,
+        119.9275
+      ]
+    },
+    {
+      "kind": "courtyard_overlap",
+      "references": [
+        "J103",
+        "J702"
+      ],
+      "all_locked": true,
+      "face": "F",
+      "overlap_mm2": 12.0744,
+      "position": [
+        146.685,
+        136.5
+      ]
+    },
+    {
+      "kind": "courtyard_outside_board",
+      "references": [
+        "J201"
+      ],
+      "all_locked": true,
+      "face": "F",
+      "overlap_mm2": 0.79972,
+      "position": [
+        170.1141,
+        237.1649
+      ]
+    },
+    {
+      "kind": "npth_clearance",
+      "references": [
+        "J702",
+        "J103"
+      ],
+      "all_locked": true,
+      "face": "F",
+      "drill_index": 0,
+      "clearance_mm": 0.25,
+      "mechanical_radius_mm": null,
+      "overlap_mm2": 4.44023,
+      "position": [
+        146.7887,
+        136.5
+      ]
+    },
+    {
+      "kind": "courtyard_outside_board",
+      "references": [
+        "M1"
+      ],
+      "all_locked": true,
+      "face": "F",
+      "overlap_mm2": 5.51005,
+      "position": [
+        88.8775,
+        145.0
+      ]
+    },
+    {
+      "kind": "npth_clearance",
+      "references": [
+        "M1",
+        "M3"
+      ],
+      "all_locked": true,
+      "face": "F",
+      "drill_index": 2,
+      "clearance_mm": 0.25,
+      "mechanical_radius_mm": 1.8,
+      "overlap_mm2": 0.303168,
+      "position": [
+        134.9458,
+        148.375
+      ]
+    },
+    {
+      "kind": "courtyard_outside_board",
+      "references": [
+        "M2"
+      ],
+      "all_locked": true,
+      "face": "F",
+      "overlap_mm2": 5.51005,
+      "position": [
+        221.1225,
+        145.0
+      ]
+    },
+    {
+      "kind": "npth_clearance",
+      "references": [
+        "M2",
+        "M3"
+      ],
+      "all_locked": true,
+      "face": "F",
+      "drill_index": 0,
+      "clearance_mm": 0.25,
+      "mechanical_radius_mm": 1.8,
+      "overlap_mm2": 0.303168,
+      "position": [
+        175.0542,
+        148.375
+      ]
+    },
+    {
+      "kind": "courtyard_outside_board",
+      "references": [
+        "TM521"
+      ],
+      "all_locked": true,
+      "face": "F",
+      "overlap_mm2": 0.846979,
+      "position": [
+        191.3208,
+        187.6405
+      ]
+    },
+    {
+      "kind": "courtyard_outside_board",
+      "references": [
+        "TM541"
+      ],
+      "all_locked": true,
+      "face": "F",
+      "overlap_mm2": 0.160055,
+      "position": [
+        197.4978,
+        180.7864
+      ]
+    },
+    {
+      "kind": "courtyard_outside_board",
+      "references": [
+        "U401"
+      ],
+      "all_locked": true,
+      "face": "B",
+      "overlap_mm2": 0.00885,
+      "position": [
+        86.9553,
+        257.1323
+      ]
+    },
+    {
+      "kind": "courtyard_outside_board",
+      "references": [
+        "U412"
+      ],
+      "all_locked": true,
+      "face": "B",
+      "overlap_mm2": 0.008911,
+      "position": [
+        223.0447,
+        257.1325
+      ]
+    }
+  ],
+  "distance_note": "Distances géométriques entre centres des pastilles; aucune longueur routée ni validation de SI/PI."
+}
