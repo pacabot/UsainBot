@@ -381,6 +381,18 @@ en post-traitement par `colorize_step.py`, sur le même motif que les modèles
 livrés avec KiCad. Pour changer une teinte : éditer `PALETTE` en tête du script,
 régénérer le STEP concerné, puis relancer `python3 colorize_step.py`.
 
+**Un troisième piège de console, celui-là silencieux.** `step_colors.py`
+reconnaît chaque solide par le nom de son `PRODUCT`, c'est-à-dire le `Label`
+FreeCAD : il lui faut donc **un PRODUCT par corps** dans le STEP.
+`Part.export()` n'en écrit qu'un seul, anonyme (`Open CASCADE STEP translator
+7.8 1`), qui rassemble toute la liste — aucun label ne correspond plus, la
+fonction rend 0 sans rien dire et le modèle arrive gris uniforme dans KiCad.
+C'est ce qui est arrivé à l'ESC EMAX du 6 septembre 2026 : 27 solides, zéro
+`COLOUR_RGB`. **Exporter par `Import.export()`**, qui conserve la structure
+d'assemblage et les labels — c'est ce que fait `gen_3d_models.py` — et
+vérifier le nombre de styles rendus (`build_emax_bullet12a.py` l'assertionne
+contre le nombre de corps).
+
 ## Ré-export de la turbine
 
 `turbineEDF27.FCStd` **se modifie à la main dans FreeCAD** : c'est lui qui
