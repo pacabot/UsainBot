@@ -94,7 +94,7 @@ syms.append(['symbol', q('SW_Nav_5Way'),
              ['symbol', q('SW_Nav_5Way_0_1'), rect(-10.16, 11.43, 10.16, -11.43)],
              ['symbol', q('SW_Nav_5Way_1_1')] + np_])
 
-# ------------------------------------------------------------ ITR8307
+# ------------------------------------------------------------ ITR8307/S17/TR8(B)
 # Copie du symbole standard : les broches du phototransistor sont retypees en
 # passif. Collecteur ouvert / emetteur ouvert font hurler l ERC des qu on les
 # relie a un rail, ce qui est pourtant exactement le montage voulu ici.
@@ -110,11 +110,16 @@ for n in itr:
     if isinstance(n, list) and n[0] == 'property':
         k = sexp.unq(n[1])
         if k == 'Value':
-            n[2] = q('ITR8307/S17/TR8')
+            n[2] = q('ITR8307/S17/TR8(B)')
         elif k == 'Footprint':
-            n[2] = q('OptoDevice:Everlight_ITR8307')
+            n[2] = q('Pacabot:ITR8307_S17_TR8_Bottom')
+        elif k == 'Datasheet':
+            n[2] = q('https://www.everlighteurope.com/custom/files/datasheets/DRX-0000322.pdf')
         elif k == 'Description':
-            n[2] = q('Capteur reflectif infrarouge, SMD-4, pas de 10 mm sur la barrette')
+            n[2] = q('ITR8307/S17/TR8(B), rang optique B, gull-wing SMD-4 sans decoupe PCB; '
+                     'montage Bottom, face optique vers le sol; 1 K, 2 A, 3 C, 4 E; chanfrein cote 2')
+        elif k == 'ki_fp_filters':
+            n[2] = q('ITR8307_S17_TR8*')
 syms.append(itr)
 
 # ------------------------------------------------------------ 74HC4051
@@ -222,8 +227,8 @@ syms.append(['symbol', q('Telemetry_Duo'),
 
 # ------------------------------------------------------------ rails propres
 BASE, _ = lib.flat('power:+3V3')
-for rail, desc in [('VBAT', 'Bus batterie commute 5,0 a 7,3 V'),
-                   ('VPACK', 'Sortie brute du pack 2S, en amont de l interrupteur'),
+for rail, desc in [('VBAT', 'Bus du pack commun 2S commute pour carte et traction; tension selon cellules'),
+                   ('VPACK', 'Pack commun 2S brut, ESC et chargeur en amont de l interrupteur'),
                    ('+3V3A', 'Rail 3,3 V analogique filtre (VDDA, VREF+, barrette)'),
                    ('+3V3_BLE', 'Rail 3,3 V commute du module BLE')]:
     c = json.loads(json.dumps(BASE))
@@ -245,6 +250,10 @@ root = ['kicad_symbol_lib', ['version', '20241209'], ['generator', q('kicad_symb
         ['generator_version', q('9.0')]] + syms
 os.makedirs(os.path.dirname(OUT), exist_ok=True)
 open(OUT, 'w', encoding='utf-8').write(sexp.dump(root) + '\n')
+
+# Preserve the externally mounted module symbols used by the integrated design.
+from integration_blocks import ensure_symbols
+ensure_symbols(OUT)
 
 # Normalisation par KiCad lui-meme : le schema embarque une copie de chaque
 # symbole et la compare a la librairie. Sans ce passage, la moindre difference

@@ -1,4 +1,38 @@
+> Connecteur batterie actuel : AMASS MR30PB-M + MR30-F ; [modifications, dimensions et contrôles](../mr30-review/README.md). Les générateurs ont été mis à jour.
+
 # Générateur du schéma
+
+> **Intégration LED / ESC / batterie du 6 septembre 2026.** Le
+> [rapport consolidé](../integration-review/README.md) décrit l'état courant
+> réellement enregistré et contrôlé. J102 est désormais un Mega-Fit 3 contacts ;
+> J103 porte l'EMAX Bullet **12A** vertical. J104/J702 sont supprimés.
+> Les 12 LED Top sont à l'aplomb des capteurs Bottom dont le boîtier exact
+> S17 a été corrigé, sans déplacer leurs centres ou modifier leurs verrous.
+> Les sections historiques de zonage ci-dessous ne doivent pas servir à
+> reconstruire le placement actuel. Les géométries ESC restent un prototype
+> mesuré sur photo, avec validations physiques explicites dans le rapport.
+> `integration_blocks.py` contient les blocs schématiques actuels ;
+> `sync_integration_pcb.py` synchronise leur netlist exportée avec le PCB
+> conservé. `integrate_esc_battery_schematic.py` était une migration ponctuelle
+> déjà appliquée, à ne pas rejouer. Les modèles FreeCAD et leurs générateurs
+> sont conservés dans `integration-review/` et `kicad-lib/3d/`.
+
+> **Placement PCB repris le 6 septembre 2026.** Le PCB courant et le
+> [dossier de revue](../placement-review/README.md) remplacent les anciennes
+> tables de placement décrites plus bas. Ne pas relancer `place_pcb.py --reset`
+> ni appliquer `layout_fit.json` sur cette implantation. Tous les composants
+> sont maintenant en Top, sauf les 12 capteurs de ligne. Les trois stations
+> laser ont chacune leur boîtier AOP. Les ajouts de schéma sont reportés dans
+> `design.py`, mais les retouches manuelles existantes restent prioritaires.
+>
+> Contrôles nouveaux : `audit_placement_geometry.py` avec le Python KiCad et
+> un `--analysis-python` disposant de Shapely ; `placement_metrics.py` avec
+> Python standard ; `render_placement_review.py` et `preview_analog_paths.py`
+> avec NumPy, Shapely 2 et Matplotlib. Ils ne modifient pas le PCB.
+> `refine_placement.py` calcule une table depuis la sauvegarde de cette revue ;
+> `apply_refined_placement.py` l'applique explicitement en vérifiant les
+> verrous. Ces deux derniers scripts ne doivent pas être rejoués après de
+> nouvelles retouches manuelles sans mettre à jour leurs données d'entrée.
 
 Les huit `*.kicad_sch` de `electronics/` et la bibliothèque
 `kicad-lib/Pacabot.kicad_sym` sont **produits par ces scripts**, à partir du
@@ -169,10 +203,14 @@ python3 fit_layout.py            # controle + ajustements -> layout_fit.json
 cd .. && kicad-cli pcb drc --format json --severity-error -o /tmp/drc.json UsainBot.kicad_pcb
 ```
 
-L'état de référence est **0 violation DRC** et **0 empreinte sans modèle 3D**
-(`place_pcb.py` le vérifie et le dit à chaque passe). L'empreinte
-`Pacabot:ITR8307_dessous` est la Everlight officielle **sans la fenêtre
-Edge.Cuts** (capteur monté dessous, face au sol : pas de regard traversant).
+Le contrôle actuel est documenté dans `integration-review/README.md` :
+0 erreur DRC, mais des avertissements de sérigraphie/bibliothèque et les
+connexions non routées restent présents. L'ancienne `ITR8307_dessous`
+copiait une autre variante avec fenêtre et un modèle incompatible. Elle
+est remplacée par `Pacabot:ITR8307_S17_TR8_Bottom`, suivant la fiche
+Everlight **DRX-0000322 rév.6** du S17/TR8(B), qui a des pattes formées et
+ne nécessite pas de fenêtre. Les pastilles et le STEP ont été corrigés
+ensemble ; retirer seulement le contour Edge.Cuts ne corrigeait pas le boîtier.
 
 ## Zonage de la carte (refonte du 4 septembre)
 
@@ -287,19 +325,15 @@ construction.
   quatre broches — deux symboles ne peuvent pas se partager une empreinte :
   c'est `Pacabot:Telemetry_Duo` dans `gen_lib.py`, références `TM501`,
   `TM521`, `TM541`.
-- `Pacabot:ESC_Multistar_10A` — le variateur de turbine **monté debout sur
-  sa tranche, côté entrée de puissance**. Carte 22 × 12 mm (Turnigy
-  MultiStar 10 A BLHeli-S Opto, 5,1 g) : posée sur le chant, elle ne prend
-  plus que **12 × 5 mm au sol pour 22 mm de haut**, et la bande arrière
-  n'offrait justement que 7,2 mm entre l'embase USB et le courtyard de
-  l'équerre. Ses deux fils d'alimentation se soudent dans deux perçages
-  ⌀2,0 au pas de 5,08 et le tiennent debout ; deux trous de collier bride
-  le corps — deux soudures ne tiennent pas un porte-à-faux de 22 mm sur un
-  robot qui freine à 8 g. Le PWM part sur `J702`, une broche **coudée**
-  posée à côté, orientée vers l'arrière : le fil de commande descend du
-  variateur à plat, sans boucle par-dessus le corps.
-- `Pacabot:ITR8307_dessous` — Everlight officielle sans la fenetre
-  Edge.Cuts (capteur dessous, face au sol).
+- `Pacabot:EMAX_Bullet_12A_Vertical_3Pin_PROTOTYPE` — montage EMAX
+  EMX-SC-1873, 11 × 15 mm, GND/SIGNAL/+BATT, pins puissance cuivre
+  Ø1,2 mm, support isolant. Remplace l'ancien MultiStar et J702. Les
+  entraxes photographiques et épaisseurs estimées exigent une mesure réelle.
+- `Pacabot:Molex_Mega-Fit_200241-1133_1x03_P5.70mm_Vertical` — prise
+  commune GND/MID/VPACK ; brochage fabricant 3/2/1 de gauche à droite
+  vu dessus embase, verrou au nord. Remplace XT30 et JST-XH.
+- `Pacabot:ITR8307_S17_TR8_Bottom` — boîtier S17/TR8(B) exact,
+  modèle Part Design et pads corrigés, face Bottom sans fenêtre PCB.
 
 ## Modèles 3D
 

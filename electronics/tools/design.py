@@ -220,7 +220,7 @@ def sheet_power():
     sh = Sheet(LIB, 'Alimentation', '01-power.kicad_sch', paper='A3',
                title='UsainBot - Alimentation, charge USB-C, protections',
                rev=REV, date=DATE, company=COMPANY,
-               comments=('Pack 2S LiFePO4 - bus VBAT 5,0 a 7,3 V',
+               comments=('Pack commun 2S - chimie et cellules a definir - J102 GND / MID / VPACK',
                          'Chargeur elevateur BQ25887 place en amont de l interrupteur'))
 
     # ---------------------------------------------------------- USB-C
@@ -294,9 +294,10 @@ def sheet_power():
 
     # equilibrage / point milieu
     Rh(sh, 'R106', '300R', 172, 168, 'PACK_MID', 'MID_R')
-    R(sh, 'R107', '10R / 1W', 190, 168, 'PACK_MID', 'CBSET_R',
+    R(sh, 'R107', '47R / 1W', 190, 168, 'PACK_MID', 'CBSET_R',
       'Resistor_SMD:R_2512_6332Metric')
-    sh.note('R107 fixe le courant d equilibrage (400 mA max).', 158, 186, 1.0)
+    sh.note('R107 : 47R / 1W, environ 88 mA sous 4,2 V; 0,36 W typique.\n'
+            'Equilibrage plus lent si cellules desequilibrees.', 158, 186, 1.0)
 
     # temoins et inhibition
     R(sh, 'R108', '10k', 106, 112, '@+3V3', 'CHG_STAT')
@@ -305,30 +306,18 @@ def sheet_power():
     R(sh, 'R110', '2k2', 106, 128, '@+3V3', 'CHG_LED_A')
     R(sh, 'R111', '100k', 106, 160, 'REGN', 'CD')
     nmos_switch(sh, 'Q101', 178, 200, '$CHG_CD_EN', 'CD', rref=('R112', 'R113'))
-    sh.note('CD haut = charge inhibee. La grille est au 0 V tant que le MCU\n'
-            'n a pas ecrit VCELLREG : un pack LiFePO4 ne voit jamais le profil\n'
-            'Li-ion par defaut (4,2 V/cellule), meme carte eteinte.', 140, 240, 1.0)
+    sh.note('CD haut = charge inhibee par defaut materiel.\n'
+            'Pack commun 2S : cellules / capacite / chimie non choisies.\n'
+            'Definir VCELLREG, courant, protections et firmware AVANT toute charge.\n'
+            'Le programme de charge reste a implementer et a valider.', 140, 240, 1.0)
     return sh
 
 
 def sheet_power_b(sh):
     # ------------------------------------------------- pack, coupure, inversion
     sh.box(220, 24, 190, 104, 'D. Pack 2S : puissance et equilibrage, interrupteur general')
-    j2 = sh.place('Connector_Generic:Conn_01x02', 'J102', 'Pack 2S - puissance',
-                  236, 46, fp='Connector_AMASS:AMASS_XT30U-M_1x02_P5.0mm_Vertical',
-                  ref_at=(226, 38), val_at=(226, 58))
-    cx(sh, j2.pin('1'), '@VPACK')      # B+
-    cx(sh, j2.pin('2'), '@GND')        # B-
-    j4 = sh.place('Connector_Generic:Conn_01x03', 'J104', 'Pack 2S - equilibrage',
-                  272, 46, fp='Connector_JST:JST_XH_B3B-XH-A_1x03_P2.50mm_Vertical',
-                  ref_at=(262, 38), val_at=(262, 60))
-    # troncons de trois longueurs : les coudes des deux rails tombent sinon
-    # tous deux sur la ligne de la broche du milieu, et court-circuitent B+
-    # sur B- sans que rien ne le signale a l ecran.
-    cx(sh, j4.pin('1'), '@GND', 7.62)       # B- (fil noir de la nappe)
-    cx(sh, j4.pin('2'), 'PACK_MID', 2.54)   # point milieu (equilibrage BQ25887)
-    cx(sh, j4.pin('3'), '@VPACK', 15.24)    # B+
-
+    from integration_blocks import build_battery
+    build_battery(sh, globals(), 'Pacabot:AMASS_MR30PB-M_1x03_P3.50mm_Vertical')
 
     vert(sh, 'Device:Fuse', 'F101', '12 A', 316, 46, '@VPACK', 'VBAT_SW_IN', R12)
 
@@ -361,18 +350,18 @@ def sheet_power_b(sh):
         cx_bar(sh, q_, ('5', '6', '7', '8'), '@VBAT')     # drain cote charge
         cx(sh, q_.pin('4'), 'PWR_G')
     R(sh, 'R114', '100k', 340, 80, 'PWR_G', 'VBAT_SW_IN')
-    sh.note('Pack : XT30 vertical pour le courant, JST-XH pour la nappe\n'
-            'd equilibrage qui apporte le point milieu au BQ25887. Coupure par\n'
+    sh.note('Pack commun : MR30 3 contacts GND / MID / VPACK.\n'
+            'MID apporte le point milieu au BQ25887. Coupure par\n'
             'deux canaux P en parallele (Rds/2), grille rappelee a la source\n'
             'par R114 : coupe par defaut, aucune fuite de grille.\n'
             'MISE SOUS TENSION PAR BOUTON POUSSOIR. L appui tire la grille au\n'
             '0 V par D106 et les FET conduisent. Le firmware met PE0 a 1 des le\n'
             'demarrage : Q104 tient la grille, le bouton peut etre relache. Il\n'
-            'lit ensuite le bouton sur PE1 (diviseur 470k/220k, 2,3 V au plein\n'
-            'du pack) et coupe en relachant PE0 - apres avoir ferme la flash,\n'
+            'lit ensuite le bouton sur PE1 (diviseur 470k/220k, 0,319 x VPACK) et coupe\n'
+            'en relachant PE0 - apres avoir ferme la flash,\n'
             'ce qu un interrupteur ne savait pas faire. C123 donne 100 ms de\n'
             'retombee : un reset du MCU ne coupe pas l alimentation.\n'
-            'A l arret : 7,3 V / 700 k, soit 10 uA.', 296, 245, 1.0)
+            'A l arret : courant carte de veille; ESC reste alimente sur VPACK.', 296, 245, 1.0)
     horiz(sh, 'Device:D_TVS', 'D102', 'SMBJ9.0A', 300, 118, '@VBAT', '@GND', 'Diode_SMD:D_SMB')
     C(sh, 'C109', '100uF/16V', 330, 118, '@VBAT', '@GND', CPOL)
     C(sh, 'C110', '100nF', 344, 118, '@VBAT', '@GND', C06)
@@ -573,6 +562,7 @@ def sheet_mcu():
     C(sh, 'C222', '100nF', 282, 168, '@+3V3', '@GND')
     C(sh, 'C212', '2u2F/10V', 320, 168, 'VCAP1', '@GND', C08)
     C(sh, 'C213', '2u2F/10V', 358, 168, 'VCAP2', '@GND', C08)
+    mcu_vbat_decoupling(sh)
     sh.note('C208/C209 : VDDA.  C210/C211 : VREF+.  C222 : VDD33USB, broche\n'
             'separee sur le LQFP144 alors que le LQFP100 la reliait en interne.\n'
             'VCAP : 2,2 uF ceramique, ESR < 2 ohm, tres pres du boitier.\n'
@@ -638,6 +628,7 @@ def sheet_motors():
     R(sh, 'R301', '10k', 32, 254, '@+3V3', 'VREF_MOT')
     R(sh, 'R302', '6k8', 32, 272, 'VREF_MOT', '@GND')
     C(sh, 'C301', '100nF', 48, 272, 'VREF_MOT', '@GND')
+    motor_reference_decoupling(sh)
     sh.note('VREF_MOT = 3,3 x 6,8/16,8 = 1,34 V.\n'
             'ITRIP = VREF / (AIPROPI x RIPROPI) = 1,34 / (450 uA/A x 1 k) ~ 3,0 A,\n'
             'soit environ deux fois le courant de calage du GM12-N20 a 6 V.\n'
@@ -713,7 +704,7 @@ def sheet_motors():
 # =====================================================================
 def sheet_line():
     sh = Sheet(LIB, 'Barrette', '04-line-array.kicad_sch', paper='A3',
-               title='UsainBot - Barrette de ligne, 12 x ITR8307 au pas de 10 mm',
+               title='UsainBot - Barrette de ligne, 12 x ITR8307/S17/TR8(B) en Bottom',
                rev=REV, date=DATE, company=COMPANY,
                comments=('Couverture +/-55 mm : voit les marques a 40 mm a droite',
                          'Emetteurs pulses en deux bancs : ambiante soustraite, diaphonie supprimee'))
@@ -731,8 +722,9 @@ def sheet_line():
         y = rows[i // 4]
         bank = 'A' if i % 2 == 0 else 'B'
         line = f'$LINE_{i:02d}'
-        u = sh.place('Pacabot:ITR8307', f'U{401 + i}', 'ITR8307/S17/TR8',
-                     x, y, fp='Pacabot:ITR8307_dessous', fields={'LCSC': 'C81632'},
+        u = sh.place('Pacabot:ITR8307', f'U{401 + i}', 'ITR8307/S17/TR8(B)',
+                     x, y, fp='Pacabot:ITR8307_S17_TR8_Bottom', fields={'LCSC': 'C81632'},
+                     datasheet='https://www.everlighteurope.com/custom/files/datasheets/DRX-0000322.pdf',
                      ref_at=(x, y - 7.62), val_at=(x, y + 8.89))
         cx(sh, u.pin('2'), f'IR_A{i:02d}')          # anode de la diode
         cx(sh, u.pin('1'), f'IR_BANK_{bank}_N')     # cathode -> banc commute
@@ -808,6 +800,22 @@ STATIONS = (('F',  'avant, 15 deg',         22),
             ('L',  'gauche, 75 deg',       278))
 # 15/45/75 : chaque visee garde ~15 deg d avance sur la normale, la balise
 # est acquise avant d arriver a sa hauteur.
+
+
+def mcu_vbat_decoupling(sh):
+    sh.box(268, 200, 142, 40, 'VBAT du STM32 relie au 3,3 V')
+    C(sh, 'C223', '100nF', 282, 218, '@+3V3', '@GND')
+    C(sh, 'C224', '1uF', 314, 218, '@+3V3', '@GND')
+    sh.note('C223 + C224 pres de U201.6.\n'
+            'Decouplage local de VBAT ;\n'
+            'C206 reste le reservoir VDD.', 346, 222, 1.0)
+
+
+def motor_reference_decoupling(sh):
+    C(sh, 'C351', '100nF', 250, 270, 'VREF_MOT', '@GND')
+    sh.note('C301 au pied de U301.5 ; C351 au pied de U351.5.\n'
+            'Le rail commun de seuil est filtre localement aux deux ponts.',
+            70, 276, 1.0)
 
 
 def sheet_sensors():
@@ -963,10 +971,20 @@ def sensor_local_amplifiers(sh):
     cx(sh, p.pin('V+'), '@+3V3A')
     cx(sh, p.pin('V-'), '@GND')
     C(sh, 'C568', '100nF', 495, 232, '@+3V3A', '@GND')
+    sensor_local_reference_filters(sh)
     sh.note('C563 / C564 / C568 : 100 nF local, broche 4 vers masse.\n'
             'Entrees inutilisees polarisees par VREF_RX, sorties bouclees.\n'
             'Plan de masse continu ; retours TX eloignes des noeuds PD.',
             426, 270, 1.0)
+
+
+def sensor_local_reference_filters(sh):
+    # La reference resistive n'est plus locale aux trois TIA apres separation.
+    C(sh, 'C569', '100nF', 495, 190, 'VREF_RX', '@GND')
+    C(sh, 'C570', '100nF', 535, 190, 'VREF_RX', '@GND')
+    sh.note('C569 / C570 : filtre VREF_RX au pied de U502.3 / U504.3.\n'
+            'C561 conserve le filtrage de reference local a U501.',
+            426, 210, 1.0)
 
 
 # =====================================================================
@@ -1075,7 +1093,7 @@ def sheet_comms():
                title='UsainBot - Flash de traces, module BLE, embase ESC de turbine',
                rev=REV, date=DATE, company=COMPANY,
                comments=('Chapitre 2 : moyens de communication inhibes au moment du depart',
-                         'Broche BEC de l embase ESC laissee non connectee'))
+                         'EMAX Bullet 12A sans BEC; montage 3 pins prototype; phases moteur hors PCB'))
 
     # ---------------------------------------------------------- flash SPI
     sh.box(16, 24, 170, 96, 'Memoire de traces  -  W25Q128 sur SPI3, 50 MHz')
@@ -1123,45 +1141,9 @@ def sheet_comms():
             'module, broche 4 = TX : a recroiser selon la serigraphie.',
             200, 150, 1.0)
 
-    # ---------------------------------------------------------- turbine
-    sh.box(16, 168, 394, 76, 'Turbine d appui  -  l ESC est autonome, la carte ne lui envoie qu une consigne')
-    j2 = sh.place('Connector_Generic:Conn_01x01', 'J702', 'Signal ESC (coudee)',
-                  90, 200,
-                  fp='Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Horizontal',
-                  ref_at=(76, 192), val_at=(76, 208))
-    cx(sh, j2.pin('1'), 'ESC_SIG')
-    Rh(sh, 'R707', '100R', 150, 202, '$ESC_PWM', 'ESC_SIG')
-    sh.note('Une seule broche, et COUDEE : le variateur est debout juste a cote,\n'
-            'son fil de commande arrive a plat le long de la carte. Le cordon\n'
-            'trois fils est coupe - le fil central (BEC) sort 5 ou 6 V sur la\n'
-            'plupart des variateurs et emporterait le rail 3,3 V, et le fil de\n'
-            'masse est inutile puisque le meme cuivre revient par le fil noir de\n'
-            'puissance soude en J103, a quelques millimetres de la.', 76, 232, 1.0)
-    sh.note('Calibre : la turbine tire 11 A a 8,4 V, mais elle est ici sur VBAT\n'
-            '(5,0 a 7,3 V) et le courant d une helice suit le carre de la tension :\n'
-            '11 x (6,4/8,4)^2 = 6,4 A sur le plateau LiFePO4. Les 10 A continus du\n'
-            'MultiStar tiennent donc, avec 15 A de crete a la mise en rotation.\n'
-            'A verifier a la pince amperemetrique au premier essai en charge.',
-            176, 240, 1.0)
-    j3 = sh.place('Connector_Generic:Conn_01x02', 'J103', 'MultiStar 10A (debout)',
-                  300, 200, fp='Pacabot:ESC_Multistar_10A',
-                  ref_at=(286, 190), val_at=(286, 212))
-    cx(sh, j3.pin('1'), '@VBAT')
-    cx(sh, j3.pin('2'), '@GND')
-    C(sh, 'C704', '220uF/10V', 344, 202, '@VBAT', '@GND', CPOL)  # VBAT <= 7,3 V
-    C(sh, 'C705', '100nF', 358, 202, '@VBAT', '@GND')
-    sh.note('Turnigy MultiStar 10A BLHeli-S (Opto) : 22 x 12 mm, 5,1 g, 10 A\n'
-            'continu / 15 A crete. Il est DEBOUT sur sa tranche cote entree de\n'
-            'puissance, ses deux fils soudes dans J103 et un collier au corps :\n'
-            '12 x 5 mm d emprise pour 22 mm de haut. Aucun connecteur ne\n'
-            's intercale sur le courant de la turbine.', 286, 240, 1.0)
-    sh.note('Puissance prise sur VBAT en amont des ponts moteurs, avec son propre decouplage.\n'
-            'Rampe la consigne : une montee en regime brutale fait chuter VBAT et peut faire\n'
-            'redemarrer le MCU en pleine ligne droite. L armement de l ESC fait partie de la\n'
-            'sequence de pre-depart, pas du demarrage du firmware.\n\n'
-            'F101 12 A et les deux AO4407A en parallele de la feuille 01 laissent\n'
-            'la marge.',
-            18, 254, 1.0)
+    # Vertical Bullet module; external phases are separate from main PCB pads.
+    from integration_blocks import build_esc
+    build_esc(sh, globals())
     return sh
 
 
@@ -1190,7 +1172,7 @@ def sheet_root(children):
     sh = Sheet(LIB, 'UsainBot', ROOT_FILE, paper='A3',
                title='UsainBot - robot suiveur de ligne, epreuve Formule 1 TNRS',
                rev=REV, date=DATE, company=COMPANY,
-               comments=('STM32H723VGT6 - 12 voies de ligne - 2 ponts DRV8874 - pack 2S LiFePO4',
+               comments=('STM32H723ZGT6 - 12 voies de ligne - 2 ponts DRV8874 - pack commun 2S',
                          'Reglement Formule 1 v2.11 (2025) - carte 4 couches, assemblage JLCPCB'))
     sh.note('UsainBot  -  architecture materielle', 20, 30, 4.0, bold=True)
     sh.note('Les feuilles communiquent par etiquettes globales : chaque bloc se lit seul,\n'
@@ -1205,21 +1187,21 @@ def sheet_root(children):
         add_sheet(sh, child, x, y, w, h, page)
 
     blurb = {
-        '01-power.kicad_sch': 'USB-C, chargeur elevateur BQ25887, pack 2S,\ncoupure generale, anti-inversion, buck 3,3 V, rail 3V3A',
+        '01-power.kicad_sch': 'USB-C, BQ25887, pack commun 2S sur MR30 3 contacts,\ncoupure carte/traction, ESC sur VPACK brut, buck 3,3 V',
         '02-mcu.kicad_sch': 'STM32H723VGT6 en LQFP100, decouplage, quartz 25 MHz,\nreset, BOOT0, empreinte Tag-Connect SWD + SWO',
         '03-motors.kicad_sch': 'Deux DRV8874 en mode PWM, limitation de courant,\nconnecteurs moteur + encodeur, filtrage de quadrature',
-        '04-line-array.kicad_sch': 'Douze ITR8307 au pas de 10 mm, deux bancs d emetteurs\npulses, charges d emetteur sur le rail analogique',
+        '04-line-array.kicad_sch': 'Douze ITR8307/S17/TR8(B) gull-wing en Bottom sans decoupe,\nemetteurs pulses; 12 temoins Top associes',
         '05-sensors.kicad_sch': 'Deux VL53L1X sur languette sechable, voie analogique\nrapide a gauche, LSM6DSO sur SPI2',
         '06-hmi.kicad_sch': 'OLED I2C2, switch 5 directions, buzzer sur TIM17,\nbouton et jack de depart, temoins',
-        '07-comms.kicad_sch': 'Flash W25Q128 sur SPI3, module BLE a alimentation\ncommutee, embase ESC et puissance de turbine',
+        '07-comms.kicad_sch': 'Flash W25Q128, module BLE commute, EMAX Bullet 12A\nEMX-SC-1873 vertical sur J103; phases hors PCB',
         '08-line-leds.kicad_sch': 'Douze temoins de presence de ligne sur PCA9685,\nun par capteur de la moustache, pilotes en PWM par I2C2',
     }
     for child, (x, y, w, h, _) in zip(children, lay):
         sh.note(blurb[child.filename], x + 3, y + 14, 1.2)
 
     sh.note('Points ouverts :\n'
-            '-  la turbine est sur VBAT : 6,4 A au plateau LiFePO4 contre 11 A a 8,4 V, d ou le\n'
-            '   MultiStar 10 A. A verifier a la pince au premier essai en charge ;\n'
+            '-  EMAX Bullet 12 A / 15 A crete sur VPACK brut : geometrie verticale prototype a mesurer ;\n'
+            '   pack commun 2S, protection generale, cellules et profil de charge restent a definir ;\n'
             '-  OPV302 et BPV10NF hors bibliotheque JLCPCB : pose manuelle, les deux sont couches\n'
             '   dans le support imprime de la station ;\n'
             '-  les seize entrees ADC du LQFP100 sont toutes prises (12 voies de ligne, 3 voies de\n'

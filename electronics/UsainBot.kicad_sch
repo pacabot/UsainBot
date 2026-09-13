@@ -9,7 +9,7 @@
 		(date "2026-08-30")
 		(rev "A")
 		(company "Pacabot")
-		(comment 1 "STM32H723VGT6 - 12 voies de ligne - 2 ponts DRV8874 - pack 2S LiFePO4")
+		(comment 1 "STM32H723ZGT6 - 12 voies de ligne - 2 ponts DRV8874 - pack 2S - chimie a definir")
 		(comment 2 "Reglement Formule 1 v2.11 (2025) - carte 4 couches, assemblage JLCPCB")
 	)
 	(lib_symbols)
@@ -460,7 +460,7 @@
 		)
 		(uuid "8acf6fc5-8560-31ba-427f-765d3b894c87")
 	)
-	(text "Points ouverts :\n-  la turbine est sur VBAT : 6,4 A au plateau LiFePO4 contre 11 A a 8,4 V, d ou le\n   MultiStar 10 A. A verifier a la pince au premier essai en charge ;\n-  OPV302 et BPV10NF hors bibliotheque JLCPCB : pose manuelle, les deux sont couches\n   dans le support imprime de la station ;\n-  les seize entrees ADC du LQFP100 sont toutes prises (12 voies de ligne, 3 voies de\n   telemetrie, 1 sortie de multiplexeur) : U104 ne peut pas etre supprime sans passer\n   au LQFP144 ;\n-  valeurs a recaler : R116 (frequence du buck), R107 (courant d equilibrage),\n   charge du quartz, R421-R432 (gain des voies de ligne)."
+	(text "Points ouverts :\n- Pack commun 2S : cellules, capacite, chimie et protection generale a definir.\n  La recharge BQ25887 reste inhibee jusqu a configuration et validation du firmware.\n- EMAX Bullet 12A EMX-SC-1873 sur VPACK brut : 12 A continu / 15 A pointe.\n  Montage vertical prototype : mesurer pads / epaisseur / continuites de masse.\n- STM32H723ZGT6 LQFP144 : ADC directs pour ligne, telemetrie et mesures moteur.\n- OPV302 et BPV10NF : pose manuelle dans leurs supports de station.\n- Routage a effectuer; valider cuivre de puissance, thermique et vibrations avant fabrication."
 		(exclude_from_sim no)
 		(at 20 288 0)
 		(effects

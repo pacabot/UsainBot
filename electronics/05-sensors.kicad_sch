@@ -16030,4 +16030,395 @@
 		)
 		(uuid "ebfc9570-9947-983d-d1c1-4bfaeb868f16")
 	)
+	(symbol
+		(lib_id "Device:C")
+		(at 495.3 190.5 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "9e21299a-66f6-699a-75d2-48bae0ca8ec7")
+		(property "Reference" "C569"
+			(at 497.3 187.46 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100nF"
+			(at 497.3 190 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 495.3 190.5 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 495.3 190.5 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 495.3 190.5 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Voltage" "25V"
+			(at 497.3 192.54 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+			)
+		)
+		(property "Dielectric" "X7R"
+			(at 497.3 195.08 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "066d60c5-d54a-8df1-33be-9bf7cabdb793")
+		)
+		(pin "2"
+			(uuid "d842e1be-08b0-fbaa-979c-2bfc5b937752")
+		)
+		(instances
+			(project "UsainBot"
+				(path "/e216f09c-2662-6258-2b51-4f4f498f79d0/33c8b66d-3859-eb57-e0fa-870eb5261e1e"
+					(reference "C569")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 495.3 186.69)
+			(xy 495.3 184.15)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a167af65-ed64-a183-7db0-c5e9407ae544")
+	)
+	(label "VREF_RX"
+		(at 495.3 184.15 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left bottom)
+		)
+		(uuid "cc6cf7a0-7e72-3036-c2e2-47d3ae20a16f")
+	)
+	(wire
+		(pts
+			(xy 495.3 194.31)
+			(xy 495.3 196.85)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f78ab5bf-fb82-5ebc-6caf-4ea7c191dcd2")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 495.3 196.85 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "3f28d85f-7013-fde1-91ef-a56fbebb10d8")
+		(property "Reference" "#PWR9501"
+			(at 495.3 187.96 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 495.3 205.74 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" ""
+			(at 495.3 196.85 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 495.3 196.85 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 495.3 196.85 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "9b861c25-8ab2-460e-1b45-4a31cc5f214a")
+		)
+		(instances
+			(project "UsainBot"
+				(path "/e216f09c-2662-6258-2b51-4f4f498f79d0/33c8b66d-3859-eb57-e0fa-870eb5261e1e"
+					(reference "#PWR9501")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 534.67 190.5 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "5045d243-236a-30e0-7bf6-42c6fcfd49c1")
+		(property "Reference" "C570"
+			(at 537.3 187.46 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100nF"
+			(at 537.3 190 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 534.67 190.5 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 534.67 190.5 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 534.67 190.5 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Voltage" "25V"
+			(at 537.3 192.54 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+			)
+		)
+		(property "Dielectric" "X7R"
+			(at 537.3 195.08 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "fb5af53b-1faf-90b7-b8f5-424c7a3f122f")
+		)
+		(pin "2"
+			(uuid "6bbb16b2-b92d-3e0d-db2e-6c58a96c193e")
+		)
+		(instances
+			(project "UsainBot"
+				(path "/e216f09c-2662-6258-2b51-4f4f498f79d0/33c8b66d-3859-eb57-e0fa-870eb5261e1e"
+					(reference "C570")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 534.67 186.69)
+			(xy 534.67 184.15)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a3757dcd-3b9d-8197-d633-f42acf2fe123")
+	)
+	(label "VREF_RX"
+		(at 534.67 184.15 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left bottom)
+		)
+		(uuid "3ec1b07e-5be8-8843-5017-289352957fc1")
+	)
+	(wire
+		(pts
+			(xy 534.67 194.31)
+			(xy 534.67 196.85)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "41387506-191d-4621-c562-33f03fbb8d47")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 534.67 196.85 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "32c9b5f2-926b-28dc-f7ee-f72b8c0e83a3")
+		(property "Reference" "#PWR9502"
+			(at 534.67 187.96 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 534.67 205.74 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" ""
+			(at 534.67 196.85 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 534.67 196.85 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 534.67 196.85 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "75771ce7-34b2-bdf3-aaae-8f07a14865e5")
+		)
+		(instances
+			(project "UsainBot"
+				(path "/e216f09c-2662-6258-2b51-4f4f498f79d0/33c8b66d-3859-eb57-e0fa-870eb5261e1e"
+					(reference "#PWR9502")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(text "C569 / C570 : filtre VREF_RX au pied de U502.3 / U504.3.\nC561 conserve le filtrage de reference local a U501."
+		(exclude_from_sim no)
+		(at 426 210 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left bottom)
+		)
+		(uuid "94653210-3c60-bfe8-1c3b-cb6d1c80f8c6")
+	)
 )

@@ -9749,4 +9749,205 @@
 		(uuid "b9d7abee-d112-a978-747f-34f07cd3a1a9")
 	)
 	(embedded_fonts no)
+	(symbol
+		(lib_id "Device:C")
+		(at 250.19 270.51 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "c08d617e-0c3f-d476-ef41-2b623bab2743")
+		(property "Reference" "C351"
+			(at 252.3 267.46 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100nF"
+			(at 252.3 270 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 250.19 270.51 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 250.19 270.51 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 250.19 270.51 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Voltage" "25V"
+			(at 252.3 272.54 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+			)
+		)
+		(property "Dielectric" "X7R"
+			(at 252.3 275.08 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "306ca3f8-2362-d64d-b301-222f8570bf1b")
+		)
+		(pin "2"
+			(uuid "506f423a-17bf-5c64-fd14-c8f4f43c7dce")
+		)
+		(instances
+			(project "UsainBot"
+				(path "/e216f09c-2662-6258-2b51-4f4f498f79d0/f091e242-b2d2-a8c1-4ba0-334789aaf38f"
+					(reference "C351")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 250.19 266.7)
+			(xy 250.19 264.16)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "27564665-9610-0aa0-6dd0-59414b882dc0")
+	)
+	(label "VREF_MOT"
+		(at 250.19 264.16 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left bottom)
+		)
+		(uuid "37a99a05-5ac6-3b7e-fadc-c8e05b1e33d9")
+	)
+	(wire
+		(pts
+			(xy 250.19 274.32)
+			(xy 250.19 276.86)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "82003256-1267-63b3-b66f-56de38316c75")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 250.19 276.86 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "4dec65ff-9281-afed-e92a-c4ff55c4f503")
+		(property "Reference" "#PWR9201"
+			(at 250.19 267.97 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 250.19 285.75 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" ""
+			(at 250.19 276.86 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 250.19 276.86 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 250.19 276.86 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "9e613725-64d6-5b2f-38fd-a8bef89d3a7f")
+		)
+		(instances
+			(project "UsainBot"
+				(path "/e216f09c-2662-6258-2b51-4f4f498f79d0/f091e242-b2d2-a8c1-4ba0-334789aaf38f"
+					(reference "#PWR9201")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(text "C301 au pied de U301.5 ; C351 au pied de U351.5.\nLe rail commun de seuil est filtre localement aux deux ponts."
+		(exclude_from_sim no)
+		(at 70 276 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left bottom)
+		)
+		(uuid "8e7d810e-f439-98ef-20ab-9c515121a61c")
+	)
 )

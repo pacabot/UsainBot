@@ -15588,4 +15588,529 @@
 		(uuid "15202421-383a-c742-e9b6-fda261e7003d")
 	)
 	(embedded_fonts no)
+	(rectangle
+		(start 268 200)
+		(end 410 240)
+		(stroke
+			(width 0.1)
+			(type dash)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "1ca767ae-35f5-6288-f073-a2604105f03a")
+	)
+	(text "VBAT du STM32 relie au 3,3 V"
+		(exclude_from_sim no)
+		(at 269.27 199 0)
+		(effects
+			(font
+				(size 1.6 1.6)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "e6ada0bd-6397-d5d3-d049-e7a8e09ad9ae")
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 281.94 218.44 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "52775047-cdc2-3b2e-43f1-cd98c8e7d60e")
+		(property "Reference" "C223"
+			(at 284.3 215.46 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100nF"
+			(at 284.3 218 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 281.94 218.44 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 281.94 218.44 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 281.94 218.44 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Voltage" "25V"
+			(at 284.3 220.54 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+			)
+		)
+		(property "Dielectric" "X7R"
+			(at 284.3 223.08 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "f67ce00f-8605-ddfb-2fcf-d670cd59aa4f")
+		)
+		(pin "2"
+			(uuid "6f8aae79-bb10-7e66-2ea7-eb1317925c71")
+		)
+		(instances
+			(project "UsainBot"
+				(path "/e216f09c-2662-6258-2b51-4f4f498f79d0/165c44a2-41d7-36dd-8a94-1c23bfae135d"
+					(reference "C223")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 281.94 214.63)
+			(xy 281.94 212.09)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bff6a646-9041-def7-b2b5-fc5a2552dc00")
+	)
+	(symbol
+		(lib_id "power:+3V3")
+		(at 281.94 212.09 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "3d2a9413-6db6-4658-6a0b-b977a2b9247b")
+		(property "Reference" "#PWR9101"
+			(at 281.94 203.2 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+3V3"
+			(at 281.94 220.98 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" ""
+			(at 281.94 212.09 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 281.94 212.09 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 281.94 212.09 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "7bb27c2d-8167-f331-3f6a-3f7dd5670c38")
+		)
+		(instances
+			(project "UsainBot"
+				(path "/e216f09c-2662-6258-2b51-4f4f498f79d0/165c44a2-41d7-36dd-8a94-1c23bfae135d"
+					(reference "#PWR9101")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 281.94 222.25)
+			(xy 281.94 224.79)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6b8eefba-920c-f0a6-4b74-fd70f8d4f7b5")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 281.94 224.79 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "e4f14971-fa64-7f15-786e-335aa4442c91")
+		(property "Reference" "#PWR9102"
+			(at 281.94 215.9 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 281.94 233.68 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" ""
+			(at 281.94 224.79 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 281.94 224.79 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 281.94 224.79 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "b4a91af3-6cae-4116-27b5-40e92ad17bdb")
+		)
+		(instances
+			(project "UsainBot"
+				(path "/e216f09c-2662-6258-2b51-4f4f498f79d0/165c44a2-41d7-36dd-8a94-1c23bfae135d"
+					(reference "#PWR9102")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 313.69 218.44 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "fec2c885-c93e-5ac0-4453-42ee6a53d285")
+		(property "Reference" "C224"
+			(at 316.3 215.46 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "1uF"
+			(at 316.3 218 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 313.69 218.44 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 313.69 218.44 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 313.69 218.44 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Voltage" "16V"
+			(at 316.3 220.54 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+			)
+		)
+		(property "Dielectric" "X5R"
+			(at 316.3 223.08 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "4ad9a558-1b49-d5db-74b7-09941f7cc6a3")
+		)
+		(pin "2"
+			(uuid "a0557a1c-25a3-33d2-dc02-cdf9cf950ee6")
+		)
+		(instances
+			(project "UsainBot"
+				(path "/e216f09c-2662-6258-2b51-4f4f498f79d0/165c44a2-41d7-36dd-8a94-1c23bfae135d"
+					(reference "C224")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 313.69 214.63)
+			(xy 313.69 212.09)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e186a3bf-b689-7f1b-b312-3185704d6877")
+	)
+	(symbol
+		(lib_id "power:+3V3")
+		(at 313.69 212.09 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "81793fa7-7eb0-4164-dbba-96bf589466de")
+		(property "Reference" "#PWR9103"
+			(at 313.69 203.2 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+3V3"
+			(at 313.69 220.98 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" ""
+			(at 313.69 212.09 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 313.69 212.09 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 313.69 212.09 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "480de10c-af5e-63d8-32e7-3d223f8b8403")
+		)
+		(instances
+			(project "UsainBot"
+				(path "/e216f09c-2662-6258-2b51-4f4f498f79d0/165c44a2-41d7-36dd-8a94-1c23bfae135d"
+					(reference "#PWR9103")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 313.69 222.25)
+			(xy 313.69 224.79)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9b5cfb17-b33b-858e-af65-928b58b79a1b")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 313.69 224.79 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "e0264213-492d-3aa2-ec2d-395a63c293e0")
+		(property "Reference" "#PWR9104"
+			(at 313.69 215.9 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 313.69 233.68 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" ""
+			(at 313.69 224.79 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 313.69 224.79 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 313.69 224.79 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "632c4c82-0bb7-3a2a-a6cf-0abe7fc03b63")
+		)
+		(instances
+			(project "UsainBot"
+				(path "/e216f09c-2662-6258-2b51-4f4f498f79d0/165c44a2-41d7-36dd-8a94-1c23bfae135d"
+					(reference "#PWR9104")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(text "C223 + C224 pres de U201.6.\nDecouplage local de VBAT ;\nC206 reste le reservoir VDD."
+		(exclude_from_sim no)
+		(at 346 222 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left bottom)
+		)
+		(uuid "02b056ea-9905-7254-1535-e35cafe33a9a")
+	)
 )

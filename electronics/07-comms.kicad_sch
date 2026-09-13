@@ -10,7 +10,7 @@
 		(rev "A")
 		(company "Pacabot")
 		(comment 1 "Chapitre 2 : moyens de communication inhibes au moment du depart")
-		(comment 2 "Broche BEC de l embase ESC laissee non connectee")
+		(comment 2 "EMAX Bullet 12A sans BEC; montage 3 pins prototype; phases moteur hors PCB")
 	)
 	(lib_symbols
 		(symbol "Connector_Generic:Conn_01x01"
@@ -2580,6 +2580,741 @@
 					)
 					(fill
 						(type none)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Pacabot:ESC_Vertical_Mount3"
+			(pin_names
+				(offset 1.016)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "J"
+				(at -12.7 13.97 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "ESC_Vertical_Mount3"
+				(at 0 -13.97 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "Pacabot:EMAX_Bullet_12A_Vertical_3Pin_PROTOTYPE"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://emax-usa.com/products/d-shot-bullet-series-12a-esc-blheli-s"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Three motherboard holes for solid copper pins soldered to ESC input pads; prototype geometry estimated from photographs; insulating support required."
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "ESC_Vertical_Mount3_0_1"
+				(rectangle
+					(start -17.78 10.16)
+					(end 17.78 -10.16)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+			)
+			(symbol "ESC_Vertical_Mount3_1_1"
+				(pin passive line
+					(at -20.32 -5.08 0)
+					(length 2.54)
+					(name "GND_POWER"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -20.32 0 0)
+					(length 2.54)
+					(name "SIGNAL"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -20.32 5.08 0)
+					(length 2.54)
+					(name "+BATT"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "Pacabot:EMAX_Bullet_12A_EMX_SC_1873"
+			(pin_names
+				(offset 1.016)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board no)
+			(property "Reference" "ESC"
+				(at -12.7 13.97 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "EMAX_Bullet_12A_EMX_SC_1873"
+				(at 0 -13.97 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "Pacabot:EMAX_Bullet_12A_Vertical_3Pin_PROTOTYPE"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://emax-usa.com/products/d-shot-bullet-series-12a-esc-blheli-s"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Exact EMAX Bullet 12A BLHeli-S EMX-SC-1873; module outside motherboard. Input mounting via J103; phases wired directly to motor. Pin numbers are project mapping, not manufacturer numbering. Logic GND to power GND continuity must be measured."
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "EMAX_Bullet_12A_EMX_SC_1873_0_1"
+				(rectangle
+					(start -17.78 10.16)
+					(end 17.78 -10.16)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+			)
+			(symbol "EMAX_Bullet_12A_EMX_SC_1873_1_1"
+				(pin power_in line
+					(at -20.32 -5.08 0)
+					(length 2.54)
+					(name "GND_POWER"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -20.32 0 0)
+					(length 2.54)
+					(name "SIGNAL"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -20.32 5.08 0)
+					(length 2.54)
+					(name "+BATT"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin output line
+					(at 20.32 5.08 180)
+					(length 2.54)
+					(name "MOTOR_A"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin output line
+					(at 20.32 0 180)
+					(length 2.54)
+					(name "MOTOR_B"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin output line
+					(at 20.32 -5.08 180)
+					(length 2.54)
+					(name "MOTOR_C"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "Pacabot:VPACK"
+			(power global)
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "#PWR"
+				(at 0 -3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "VPACK"
+				(at 0 3.556 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Sortie brute du pack 2S, en amont de l interrupteur"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "global power"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "VPACK_0_1"
+				(polyline
+					(pts
+						(xy -0.762 1.27)
+						(xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 2.54)
+						(xy 0.762 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 0)
+						(xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "VPACK_1_1"
+				(pin power_in line
+					(at 0 0 90)
+					(length 0)
+					(name "VPACK"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Pacabot:Turbine_3Phase_Offboard"
+			(pin_names
+				(offset 1.016)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board no)
+			(property "Reference" "M"
+				(at -12.7 13.97 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Turbine_3Phase_Offboard"
+				(at 0 -13.97 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://emax-usa.com/products/d-shot-bullet-series-12a-esc-blheli-s"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Three phase turbine motor, wired directly to ESC; no motherboard pads."
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "Turbine_3Phase_Offboard_0_1"
+				(rectangle
+					(start -17.78 10.16)
+					(end 17.78 -10.16)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+			)
+			(symbol "Turbine_3Phase_Offboard_1_1"
+				(pin passive line
+					(at -20.32 5.08 0)
+					(length 2.54)
+					(name "A"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -20.32 0 0)
+					(length 2.54)
+					(name "B"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -20.32 -5.08 0)
+					(length 2.54)
+					(name "C"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "Device:C_Polarized"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0.254)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "C"
+				(at 0.635 2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "C_Polarized"
+				(at 0.635 -2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" ""
+				(at 0.9652 -3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Polarized capacitor"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "cap capacitor"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "CP_*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "C_Polarized_0_1"
+				(rectangle
+					(start -2.286 0.508)
+					(end 2.286 1.016)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.778 2.286)
+						(xy -0.762 2.286)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 2.794)
+						(xy -1.27 1.778)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start 2.286 -0.508)
+					(end -2.286 -1.016)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+			)
+			(symbol "C_Polarized_1_1"
+				(pin passive line
+					(at 0 3.81 270)
+					(length 2.794)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 2.794)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
 					)
 				)
 			)
@@ -5750,9 +6485,10 @@
 		)
 		(uuid "5cac356a-1925-30f3-bc32-9b3a436e5e3f")
 	)
+	(embedded_fonts no)
 	(rectangle
 		(start 16 168)
-		(end 410 244)
+		(end 410 242)
 		(stroke
 			(width 0.1)
 			(type dash)
@@ -5760,9 +6496,9 @@
 		(fill
 			(type none)
 		)
-		(uuid "ab91d3c6-8ea6-4361-bc77-76c986742ffc")
+		(uuid "30d6f627-d942-c14a-5521-c839cd2c8b3b")
 	)
-	(text "Turbine d appui  -  l ESC est autonome, la carte ne lui envoie qu une consigne"
+	(text "Turbine : EMAX Bullet 12A EMX-SC-1873 / BLHeli-S / sans BEC"
 		(exclude_from_sim no)
 		(at 17.27 167 0)
 		(effects
@@ -5772,97 +6508,11 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "aa03162a-80e1-8c2c-d3e8-6782f4a20ef4")
-	)
-	(symbol
-		(lib_id "Connector_Generic:Conn_01x01")
-		(at 90.17 199.39 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "cbace941-928c-046a-fd95-fb1560248644")
-		(property "Reference" "J702"
-			(at 76 192 0)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "Value" "Signal ESC (coudee)"
-			(at 76 208 0)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Horizontal"
-			(at 90.17 199.39 0)
-			(effects
-				(font
-					(size 1 1)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 90.17 199.39 0)
-			(effects
-				(font
-					(size 1 1)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 90.17 199.39 0)
-			(effects
-				(font
-					(size 1 1)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "f263c75e-8306-34ab-9427-2752fcb0683a")
-		)
-		(instances
-			(project "UsainBot"
-				(path "/e216f09c-2662-6258-2b51-4f4f498f79d0/e7cc3c83-7c65-df9f-53be-bd87de8acfc2"
-					(reference "J702")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(wire
-		(pts
-			(xy 85.09 199.39)
-			(xy 82.55 199.39)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a455b364-62c4-45f7-7b89-0b850585a175")
-	)
-	(label "ESC_SIG"
-		(at 82.55 199.39 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1 1)
-			)
-			(justify right bottom)
-		)
-		(uuid "d49cb59e-141c-ea84-4ed8-81ae276ab3c7")
+		(uuid "40f88993-5109-46d3-6f36-7758c74bead6")
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 149.86 201.93 0)
+		(at 41.91 190.5 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5870,7 +6520,7 @@
 		(dnp no)
 		(uuid "dce0a8a5-e0e3-1960-f1d3-ed98d8de68e2")
 		(property "Reference" "R707"
-			(at 152.3 199.46 0)
+			(at 44.3 187.46 0)
 			(effects
 				(font
 					(size 1 1)
@@ -5879,7 +6529,7 @@
 			)
 		)
 		(property "Value" "100R"
-			(at 152.3 202 0)
+			(at 44.3 190 0)
 			(effects
 				(font
 					(size 1 1)
@@ -5888,7 +6538,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
-			(at 149.86 201.93 0)
+			(at 41.91 190.5 0)
 			(effects
 				(font
 					(size 1 1)
@@ -5898,7 +6548,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 149.86 201.93 0)
+			(at 41.91 190.5 0)
 			(effects
 				(font
 					(size 1 1)
@@ -5908,7 +6558,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 149.86 201.93 0)
+			(at 41.91 190.5 0)
 			(effects
 				(font
 					(size 1 1)
@@ -5918,7 +6568,7 @@
 			)
 		)
 		(property "Power" "63mW"
-			(at 152.3 204.54 0)
+			(at 44.3 192.54 0)
 			(effects
 				(font
 					(size 1 1)
@@ -5943,18 +6593,18 @@
 	)
 	(wire
 		(pts
-			(xy 149.86 198.12)
-			(xy 149.86 195.58)
+			(xy 41.91 186.69)
+			(xy 41.91 184.15)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "dd272332-3d93-27ee-0f06-5e595ce9d79f")
+		(uuid "e1895c86-e65f-f4b8-03bc-3e4b6e3eee28")
 	)
 	(global_label "ESC_PWM"
 		(shape bidirectional)
-		(at 149.86 195.58 0)
+		(at 41.91 184.15 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -5962,9 +6612,9 @@
 			)
 			(justify left)
 		)
-		(uuid "8b7dcc93-d365-315f-bbb2-a30a83ff1521")
+		(uuid "45e37486-b7f2-253c-e60f-85e1af2886ce")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 149.86 195.58 0)
+			(at 41.91 184.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5975,17 +6625,17 @@
 	)
 	(wire
 		(pts
-			(xy 149.86 205.74)
-			(xy 149.86 208.28)
+			(xy 41.91 194.31)
+			(xy 41.91 196.85)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "9efc351c-2057-60c9-f5cb-b2130b3d05f3")
+		(uuid "7833985f-7759-60c9-04b1-2038ff903fe3")
 	)
 	(label "ESC_SIG"
-		(at 149.86 208.28 0)
+		(at 41.91 196.85 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -5993,57 +6643,35 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "78a55938-127c-9414-41a3-6b6626c7595b")
-	)
-	(text "Une seule broche, et COUDEE : le variateur est debout juste a cote,\nson fil de commande arrive a plat le long de la carte. Le cordon\ntrois fils est coupe - le fil central (BEC) sort 5 ou 6 V sur la\nplupart des variateurs et emporterait le rail 3,3 V, et le fil de\nmasse est inutile puisque le meme cuivre revient par le fil noir de\npuissance soude en J103, a quelques millimetres de la."
-		(exclude_from_sim no)
-		(at 76 232 0)
-		(effects
-			(font
-				(size 1 1)
-			)
-			(justify left bottom)
-		)
-		(uuid "99c6ff18-e449-2835-a589-7494e4f29796")
-	)
-	(text "Calibre : la turbine tire 11 A a 8,4 V, mais elle est ici sur VBAT\n(5,0 a 7,3 V) et le courant d une helice suit le carre de la tension :\n11 x (6,4/8,4)^2 = 6,4 A sur le plateau LiFePO4. Les 10 A continus du\nMultiStar tiennent donc, avec 15 A de crete a la mise en rotation.\nA verifier a la pince amperemetrique au premier essai en charge."
-		(exclude_from_sim no)
-		(at 176 240 0)
-		(effects
-			(font
-				(size 1 1)
-			)
-			(justify left bottom)
-		)
-		(uuid "99a76ccf-5f83-8a4a-0f82-d234940a7f37")
+		(uuid "576febc7-aece-b13a-a85d-cf264984d1cc")
 	)
 	(symbol
-		(lib_id "Connector_Generic:Conn_01x02")
-		(at 299.72 199.39 0)
+		(lib_id "Pacabot:ESC_Vertical_Mount3")
+		(at 111.76 208.28 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(dnp no)
 		(uuid "84200d52-a6b7-ed28-b1d9-1b6ade91ea71")
 		(property "Reference" "J103"
-			(at 286 190 0)
+			(at 112 193 0)
 			(effects
 				(font
 					(size 1 1)
 				)
 			)
 		)
-		(property "Value" "MultiStar 10A (debout)"
-			(at 286 212 0)
+		(property "Value" "Montage vertical ESC (prototype)"
+			(at 112 223 0)
 			(effects
 				(font
 					(size 1 1)
 				)
 			)
 		)
-		(property "Footprint" "Pacabot:ESC_Multistar_10A"
-			(at 299.72 199.39 0)
+		(property "Footprint" "Pacabot:EMAX_Bullet_12A_Vertical_3Pin_PROTOTYPE"
+			(at 111.76 208.28 0)
 			(effects
 				(font
 					(size 1 1)
@@ -6052,7 +6680,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 299.72 199.39 0)
+			(at 111.76 208.28 0)
 			(effects
 				(font
 					(size 1 1)
@@ -6061,7 +6689,25 @@
 			)
 		)
 		(property "Description" ""
-			(at 299.72 199.39 0)
+			(at 111.76 208.28 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mechanical_status" "PROTOTYPE - measure physical ESC before fabrication"
+			(at 111.76 208.28 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(hide yes)
+			)
+		)
+		(property "Power_pins" "Solid copper diameter 1.20 mm; holes 1.40 mm; pads 3.00 mm"
+			(at 111.76 208.28 0)
 			(effects
 				(font
 					(size 1 1)
@@ -6075,6 +6721,9 @@
 		(pin "2"
 			(uuid "c137bc4d-2655-5f66-327f-b44e14b54d81")
 		)
+		(pin "3"
+			(uuid "99a9778b-744e-b265-2e75-68a7eacd8eb8")
+		)
 		(instances
 			(project "UsainBot"
 				(path "/e216f09c-2662-6258-2b51-4f4f498f79d0/e7cc3c83-7c65-df9f-53be-bd87de8acfc2"
@@ -6084,39 +6733,33 @@
 			)
 		)
 	)
-	(wire
-		(pts
-			(xy 294.64 199.39)
-			(xy 292.1 199.39)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f6ba50dd-16bf-2893-554b-07daea691484")
-	)
-	(wire
-		(pts
-			(xy 292.1 199.39)
-			(xy 292.1 196.85)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8f33afe4-64f4-0afe-b799-0415e70aa494")
-	)
 	(symbol
-		(lib_id "Pacabot:VBAT")
-		(at 292.1 196.85 0)
+		(lib_id "Pacabot:EMAX_Bullet_12A_EMX_SC_1873")
+		(at 240.03 208.28 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
+		(in_bom yes)
+		(on_board no)
 		(dnp no)
-		(uuid "a109fa15-ff7b-3f20-6580-4de58f9ffd0e")
-		(property "Reference" "#PWR312"
-			(at 292.1 187.96 0)
+		(uuid "ac86f6b6-bbe1-4625-4216-2e75bac645f3")
+		(property "Reference" "ESC103"
+			(at 240 189 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Value" "EMAX Bullet 12A EMX-SC-1873"
+			(at 240 193 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Footprint" "Pacabot:EMAX_Bullet_12A_Vertical_3Pin_PROTOTYPE"
+			(at 240.03 208.28 0)
 			(effects
 				(font
 					(size 1 1)
@@ -6124,26 +6767,8 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "VBAT"
-			(at 292.1 205.74 0)
-			(effects
-				(font
-					(size 1 1)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint" ""
-			(at 292.1 196.85 0)
-			(effects
-				(font
-					(size 1 1)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 292.1 196.85 0)
+		(property "Datasheet" "https://emax-usa.com/products/d-shot-bullet-series-12a-esc-blheli-s"
+			(at 240.03 208.28 0)
 			(effects
 				(font
 					(size 1 1)
@@ -6152,7 +6777,43 @@
 			)
 		)
 		(property "Description" ""
-			(at 292.1 196.85 0)
+			(at 240.03 208.28 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "EMAX"
+			(at 240.03 208.28 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "EMX-SC-1873"
+			(at 240.03 208.28 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(hide yes)
+			)
+		)
+		(property "Motherboard_interface" "J103; phases 4/5/6 are direct external wires"
+			(at 240.03 208.28 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(hide yes)
+			)
+		)
+		(property "Ground_check" "Confirm small logic GND continuity to large power GND before assembly"
+			(at 240.03 208.28 0)
 			(effects
 				(font
 					(size 1 1)
@@ -6161,12 +6822,27 @@
 			)
 		)
 		(pin "1"
-			(uuid "bc808c28-2041-64c3-6e00-3a93d975d8e0")
+			(uuid "9ccf5292-40c9-32d5-734c-e289db974e79")
+		)
+		(pin "2"
+			(uuid "1249ecca-9688-3f10-8fe4-2eb69babc901")
+		)
+		(pin "3"
+			(uuid "7bc9cb9d-4636-c394-2615-43530cc6eed9")
+		)
+		(pin "4"
+			(uuid "92aa6c7e-e6ea-6ccd-a0b9-6c06d4496462")
+		)
+		(pin "5"
+			(uuid "5eae041c-9bcc-5315-d06c-51f495d7d6f4")
+		)
+		(pin "6"
+			(uuid "a7eaac38-75f7-142c-1816-302d55e71320")
 		)
 		(instances
 			(project "UsainBot"
 				(path "/e216f09c-2662-6258-2b51-4f4f498f79d0/e7cc3c83-7c65-df9f-53be-bd87de8acfc2"
-					(reference "#PWR312")
+					(reference "ESC103")
 					(unit 1)
 				)
 			)
@@ -6174,37 +6850,37 @@
 	)
 	(wire
 		(pts
-			(xy 294.64 201.93)
-			(xy 292.1 201.93)
+			(xy 91.44 213.36)
+			(xy 83.82 213.36)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "69cc9248-e50e-63ba-739f-a776fa0b3075")
+		(uuid "18940114-3a5e-c437-7c45-e4b3b827d663")
 	)
 	(wire
 		(pts
-			(xy 292.1 201.93)
-			(xy 292.1 204.47)
+			(xy 83.82 213.36)
+			(xy 83.82 215.9)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "819a1a75-3707-900f-bfc9-cc1601419618")
+		(uuid "da8f4b15-3f9b-d99a-d82e-033982769ed7")
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 292.1 204.47 0)
+		(at 83.82 215.9 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
 		(on_board yes)
 		(dnp no)
-		(uuid "0a88e06d-ffd6-2972-553a-26f590410973")
-		(property "Reference" "#PWR313"
-			(at 292.1 195.58 0)
+		(uuid "fbf840fb-bd2b-6380-0a84-7e5ddca1a219")
+		(property "Reference" "#PWR9501"
+			(at 83.82 207.01 0)
 			(effects
 				(font
 					(size 1 1)
@@ -6213,7 +6889,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 292.1 213.36 0)
+			(at 83.82 224.79 0)
 			(effects
 				(font
 					(size 1 1)
@@ -6222,7 +6898,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 292.1 204.47 0)
+			(at 83.82 215.9 0)
 			(effects
 				(font
 					(size 1 1)
@@ -6231,7 +6907,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 292.1 204.47 0)
+			(at 83.82 215.9 0)
 			(effects
 				(font
 					(size 1 1)
@@ -6240,7 +6916,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 292.1 204.47 0)
+			(at 83.82 215.9 0)
 			(effects
 				(font
 					(size 1 1)
@@ -6249,20 +6925,530 @@
 			)
 		)
 		(pin "1"
-			(uuid "3b8a78e9-cab4-4d80-2f71-3b3bdecd4a33")
+			(uuid "e9dc8bd3-0b41-14fe-436c-d85cca67d754")
 		)
 		(instances
 			(project "UsainBot"
 				(path "/e216f09c-2662-6258-2b51-4f4f498f79d0/e7cc3c83-7c65-df9f-53be-bd87de8acfc2"
-					(reference "#PWR313")
+					(reference "#PWR9501")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 91.44 208.28)
+			(xy 88.9 208.28)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "43faca57-0946-6b7f-d152-4d97738eda96")
+	)
+	(label "ESC_SIG"
+		(at 88.9 208.28 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify right bottom)
+		)
+		(uuid "ec0d4a9b-ea83-f740-0093-ea734339a2bf")
+	)
+	(wire
+		(pts
+			(xy 91.44 203.2)
+			(xy 78.74 203.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "76a12289-ee0c-3212-3493-7021b0d534e6")
+	)
+	(wire
+		(pts
+			(xy 78.74 203.2)
+			(xy 78.74 200.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c7168790-d6a2-e9df-7b1e-8447fed010cd")
+	)
+	(symbol
+		(lib_id "Pacabot:VPACK")
+		(at 78.74 200.66 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "b14f0263-74ea-fac1-3aeb-ca09fdca3af9")
+		(property "Reference" "#PWR9502"
+			(at 78.74 191.77 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "VPACK"
+			(at 78.74 209.55 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" ""
+			(at 78.74 200.66 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 78.74 200.66 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 78.74 200.66 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "3e33ad42-cdd3-1812-308d-96af9b8c30f0")
+		)
+		(instances
+			(project "UsainBot"
+				(path "/e216f09c-2662-6258-2b51-4f4f498f79d0/e7cc3c83-7c65-df9f-53be-bd87de8acfc2"
+					(reference "#PWR9502")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 219.71 213.36)
+			(xy 212.09 213.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c48ad74e-533b-513d-6c50-e899d89cacbf")
+	)
+	(wire
+		(pts
+			(xy 212.09 213.36)
+			(xy 212.09 215.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4d0279f7-45eb-1733-778b-398c03858f40")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 212.09 215.9 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "f2d725d4-27ce-0e93-ae47-80121ae07150")
+		(property "Reference" "#PWR9503"
+			(at 212.09 207.01 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 212.09 224.79 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" ""
+			(at 212.09 215.9 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 212.09 215.9 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 212.09 215.9 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "68882a3f-c571-7d3c-7639-1b4777326c3d")
+		)
+		(instances
+			(project "UsainBot"
+				(path "/e216f09c-2662-6258-2b51-4f4f498f79d0/e7cc3c83-7c65-df9f-53be-bd87de8acfc2"
+					(reference "#PWR9503")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 219.71 208.28)
+			(xy 217.17 208.28)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a2b30cc8-e80c-20a1-fbfc-8a8a5c6744f4")
+	)
+	(label "ESC_SIG"
+		(at 217.17 208.28 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify right bottom)
+		)
+		(uuid "4f0c0bda-2fc6-692c-a6e8-2515475ad20c")
+	)
+	(wire
+		(pts
+			(xy 219.71 203.2)
+			(xy 207.01 203.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7a11492e-f4e0-7d04-35e2-a1718bf5b3ac")
+	)
+	(wire
+		(pts
+			(xy 207.01 203.2)
+			(xy 207.01 200.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "906e60ed-8af1-c045-49ca-9f53fb05a527")
+	)
+	(symbol
+		(lib_id "Pacabot:VPACK")
+		(at 207.01 200.66 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "cf6bca91-bab7-8430-4102-a51e8c3b9cb9")
+		(property "Reference" "#PWR9504"
+			(at 207.01 191.77 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "VPACK"
+			(at 207.01 209.55 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" ""
+			(at 207.01 200.66 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 207.01 200.66 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 207.01 200.66 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "f5c1c515-93a1-9e8d-ab39-33c901f608cc")
+		)
+		(instances
+			(project "UsainBot"
+				(path "/e216f09c-2662-6258-2b51-4f4f498f79d0/e7cc3c83-7c65-df9f-53be-bd87de8acfc2"
+					(reference "#PWR9504")
 					(unit 1)
 				)
 			)
 		)
 	)
 	(symbol
-		(lib_id "Device:C")
-		(at 344.17 201.93 0)
+		(lib_id "Pacabot:Turbine_3Phase_Offboard")
+		(at 368.3 208.28 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "92265d1d-90cb-4350-1c19-1904b16c7154")
+		(property "Reference" "M703"
+			(at 368 193 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Value" "Turbine / fils hors PCB"
+			(at 368 223 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 368.3 208.28 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 368.3 208.28 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 368.3 208.28 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "7be3dbe4-9f71-2ed9-f81b-ab7b649158da")
+		)
+		(pin "2"
+			(uuid "5073a14f-30ff-e2de-b1cc-57d74e023458")
+		)
+		(pin "3"
+			(uuid "e9d2106a-9e0c-84dd-5463-bf069182a0c6")
+		)
+		(instances
+			(project "UsainBot"
+				(path "/e216f09c-2662-6258-2b51-4f4f498f79d0/e7cc3c83-7c65-df9f-53be-bd87de8acfc2"
+					(reference "M703")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 260.35 203.2)
+			(xy 262.89 203.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "eef3fdfd-4639-943c-b3bf-800a928b37dc")
+	)
+	(label "ESC_PHASE_A"
+		(at 262.89 203.2 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left bottom)
+		)
+		(uuid "493275cd-eeee-3783-c842-5a8bfc2b0003")
+	)
+	(wire
+		(pts
+			(xy 347.98 203.2)
+			(xy 345.44 203.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cd09afc0-d515-eee3-6f94-4037f4bb3166")
+	)
+	(label "ESC_PHASE_A"
+		(at 345.44 203.2 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify right bottom)
+		)
+		(uuid "a99bc5dc-4b65-86fe-5203-083685cde317")
+	)
+	(wire
+		(pts
+			(xy 260.35 208.28)
+			(xy 262.89 208.28)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "82230c45-3796-17a4-253d-1150d8653ccf")
+	)
+	(label "ESC_PHASE_B"
+		(at 262.89 208.28 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left bottom)
+		)
+		(uuid "1b643292-7243-b81c-9bdc-5bc75285676d")
+	)
+	(wire
+		(pts
+			(xy 347.98 208.28)
+			(xy 345.44 208.28)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3afb56fe-ba45-2944-981a-2bdf2094228c")
+	)
+	(label "ESC_PHASE_B"
+		(at 345.44 208.28 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify right bottom)
+		)
+		(uuid "20d9b094-e004-b728-778c-7cb800419cab")
+	)
+	(wire
+		(pts
+			(xy 260.35 213.36)
+			(xy 262.89 213.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8dcea2ba-ddec-e6e9-c1d8-68baa672e12b")
+	)
+	(label "ESC_PHASE_C"
+		(at 262.89 213.36 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left bottom)
+		)
+		(uuid "0e8f26b1-8220-9f84-46bd-7db6ad34bbe1")
+	)
+	(wire
+		(pts
+			(xy 347.98 213.36)
+			(xy 345.44 213.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "14747567-efb7-e05e-6532-f8287220193c")
+	)
+	(label "ESC_PHASE_C"
+		(at 345.44 213.36 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify right bottom)
+		)
+		(uuid "61012bac-6a0e-2a85-29bc-b704ccb0c089")
+	)
+	(symbol
+		(lib_id "Device:C_Polarized")
+		(at 170.18 209.55 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6270,7 +7456,7 @@
 		(dnp no)
 		(uuid "42090f52-16d1-42a2-d90c-ec0a79a1682d")
 		(property "Reference" "C704"
-			(at 348.3 199.46 0)
+			(at 174.3 207.46 0)
 			(effects
 				(font
 					(size 1 1)
@@ -6279,7 +7465,7 @@
 			)
 		)
 		(property "Value" "220uF"
-			(at 348.3 202 0)
+			(at 174.3 210 0)
 			(effects
 				(font
 					(size 1 1)
@@ -6288,7 +7474,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:CP_Elec_6.3x7.7"
-			(at 344.17 201.93 0)
+			(at 170.18 209.55 0)
 			(effects
 				(font
 					(size 1 1)
@@ -6298,7 +7484,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 344.17 201.93 0)
+			(at 170.18 209.55 0)
 			(effects
 				(font
 					(size 1 1)
@@ -6308,7 +7494,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 344.17 201.93 0)
+			(at 170.18 209.55 0)
 			(effects
 				(font
 					(size 1 1)
@@ -6317,8 +7503,8 @@
 				(hide yes)
 			)
 		)
-		(property "Voltage" "10V"
-			(at 348.3 204.54 0)
+		(property "Voltage" "16V"
+			(at 174.3 212.54 0)
 			(effects
 				(font
 					(size 1 1)
@@ -6327,7 +7513,7 @@
 			)
 		)
 		(property "Dielectric" "ALU"
-			(at 348.3 207.08 0)
+			(at 174.3 215.08 0)
 			(effects
 				(font
 					(size 1 1)
@@ -6353,26 +7539,26 @@
 	)
 	(wire
 		(pts
-			(xy 344.17 198.12)
-			(xy 344.17 195.58)
+			(xy 170.18 205.74)
+			(xy 170.18 203.2)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "62322b6c-cb4c-01a6-8b37-7507feff0c3e")
+		(uuid "87b7d6e9-fe97-08a2-7fc2-c6382a2d0dee")
 	)
 	(symbol
-		(lib_id "Pacabot:VBAT")
-		(at 344.17 195.58 0)
+		(lib_id "Pacabot:VPACK")
+		(at 170.18 203.2 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
 		(on_board yes)
 		(dnp no)
-		(uuid "8254388a-d403-f0d3-6617-8247e4ddc6a7")
-		(property "Reference" "#PWR314"
-			(at 344.17 186.69 0)
+		(uuid "b32f08d0-3b98-a5ab-fae1-dd554e2a96f3")
+		(property "Reference" "#PWR9505"
+			(at 170.18 194.31 0)
 			(effects
 				(font
 					(size 1 1)
@@ -6380,8 +7566,8 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "VBAT"
-			(at 344.17 204.47 0)
+		(property "Value" "VPACK"
+			(at 170.18 212.09 0)
 			(effects
 				(font
 					(size 1 1)
@@ -6390,7 +7576,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 344.17 195.58 0)
+			(at 170.18 203.2 0)
 			(effects
 				(font
 					(size 1 1)
@@ -6399,7 +7585,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 344.17 195.58 0)
+			(at 170.18 203.2 0)
 			(effects
 				(font
 					(size 1 1)
@@ -6408,7 +7594,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 344.17 195.58 0)
+			(at 170.18 203.2 0)
 			(effects
 				(font
 					(size 1 1)
@@ -6417,12 +7603,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "d6d2dca9-dbf9-7883-2716-4b593eb11664")
+			(uuid "96893eac-5c37-7686-06d5-466419d4d55c")
 		)
 		(instances
 			(project "UsainBot"
 				(path "/e216f09c-2662-6258-2b51-4f4f498f79d0/e7cc3c83-7c65-df9f-53be-bd87de8acfc2"
-					(reference "#PWR314")
+					(reference "#PWR9505")
 					(unit 1)
 				)
 			)
@@ -6430,26 +7616,26 @@
 	)
 	(wire
 		(pts
-			(xy 344.17 205.74)
-			(xy 344.17 208.28)
+			(xy 170.18 213.36)
+			(xy 170.18 215.9)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "acab5288-4bfa-8e56-b4e1-2aa496b16944")
+		(uuid "2557e211-0b53-81e4-7db0-469162f47b99")
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 344.17 208.28 0)
+		(at 170.18 215.9 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
 		(on_board yes)
 		(dnp no)
-		(uuid "de188627-fd4e-4cb0-6d65-011acae1d63f")
-		(property "Reference" "#PWR315"
-			(at 344.17 199.39 0)
+		(uuid "a7fceb1c-27d6-8995-842a-d6d7a9d815b1")
+		(property "Reference" "#PWR9506"
+			(at 170.18 207.01 0)
 			(effects
 				(font
 					(size 1 1)
@@ -6458,7 +7644,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 344.17 217.17 0)
+			(at 170.18 224.79 0)
 			(effects
 				(font
 					(size 1 1)
@@ -6467,7 +7653,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 344.17 208.28 0)
+			(at 170.18 215.9 0)
 			(effects
 				(font
 					(size 1 1)
@@ -6476,7 +7662,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 344.17 208.28 0)
+			(at 170.18 215.9 0)
 			(effects
 				(font
 					(size 1 1)
@@ -6485,7 +7671,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 344.17 208.28 0)
+			(at 170.18 215.9 0)
 			(effects
 				(font
 					(size 1 1)
@@ -6494,12 +7680,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "e82a269b-138d-bd24-e7b5-bab265ea0f4e")
+			(uuid "776e39f9-23eb-6172-d702-929f42864978")
 		)
 		(instances
 			(project "UsainBot"
 				(path "/e216f09c-2662-6258-2b51-4f4f498f79d0/e7cc3c83-7c65-df9f-53be-bd87de8acfc2"
-					(reference "#PWR315")
+					(reference "#PWR9506")
 					(unit 1)
 				)
 			)
@@ -6507,7 +7693,7 @@
 	)
 	(symbol
 		(lib_id "Device:C")
-		(at 358.14 201.93 0)
+		(at 187.96 209.55 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6515,7 +7701,7 @@
 		(dnp no)
 		(uuid "1ff046dd-d0af-96a7-76e6-463db5007b63")
 		(property "Reference" "C705"
-			(at 360.3 199.46 0)
+			(at 190.3 207.46 0)
 			(effects
 				(font
 					(size 1 1)
@@ -6524,7 +7710,7 @@
 			)
 		)
 		(property "Value" "100nF"
-			(at 360.3 202 0)
+			(at 190.3 210 0)
 			(effects
 				(font
 					(size 1 1)
@@ -6533,7 +7719,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
-			(at 358.14 201.93 0)
+			(at 187.96 209.55 0)
 			(effects
 				(font
 					(size 1 1)
@@ -6543,7 +7729,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 358.14 201.93 0)
+			(at 187.96 209.55 0)
 			(effects
 				(font
 					(size 1 1)
@@ -6553,7 +7739,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 358.14 201.93 0)
+			(at 187.96 209.55 0)
 			(effects
 				(font
 					(size 1 1)
@@ -6563,7 +7749,7 @@
 			)
 		)
 		(property "Voltage" "25V"
-			(at 360.3 204.54 0)
+			(at 190.3 212.54 0)
 			(effects
 				(font
 					(size 1 1)
@@ -6572,7 +7758,7 @@
 			)
 		)
 		(property "Dielectric" "X7R"
-			(at 360.3 207.08 0)
+			(at 190.3 215.08 0)
 			(effects
 				(font
 					(size 1 1)
@@ -6598,26 +7784,26 @@
 	)
 	(wire
 		(pts
-			(xy 358.14 198.12)
-			(xy 358.14 195.58)
+			(xy 187.96 205.74)
+			(xy 187.96 203.2)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "5374e9a3-8e03-b85c-6b3b-787335ecc8e0")
+		(uuid "6610a2be-0c73-ef5b-6fa4-a015f575eb23")
 	)
 	(symbol
-		(lib_id "Pacabot:VBAT")
-		(at 358.14 195.58 0)
+		(lib_id "Pacabot:VPACK")
+		(at 187.96 203.2 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
 		(on_board yes)
 		(dnp no)
-		(uuid "3a177d1e-d25f-800b-3768-5a63cd2b0061")
-		(property "Reference" "#PWR316"
-			(at 358.14 186.69 0)
+		(uuid "a7324538-4862-8e84-44a7-2af5e2fd3003")
+		(property "Reference" "#PWR9507"
+			(at 187.96 194.31 0)
 			(effects
 				(font
 					(size 1 1)
@@ -6625,8 +7811,8 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "VBAT"
-			(at 358.14 204.47 0)
+		(property "Value" "VPACK"
+			(at 187.96 212.09 0)
 			(effects
 				(font
 					(size 1 1)
@@ -6635,7 +7821,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 358.14 195.58 0)
+			(at 187.96 203.2 0)
 			(effects
 				(font
 					(size 1 1)
@@ -6644,7 +7830,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 358.14 195.58 0)
+			(at 187.96 203.2 0)
 			(effects
 				(font
 					(size 1 1)
@@ -6653,7 +7839,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 358.14 195.58 0)
+			(at 187.96 203.2 0)
 			(effects
 				(font
 					(size 1 1)
@@ -6662,12 +7848,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "1ff85674-d659-c8d2-9c31-5ed12b26f26e")
+			(uuid "4975e7e5-fc38-63af-b702-f62beebc9417")
 		)
 		(instances
 			(project "UsainBot"
 				(path "/e216f09c-2662-6258-2b51-4f4f498f79d0/e7cc3c83-7c65-df9f-53be-bd87de8acfc2"
-					(reference "#PWR316")
+					(reference "#PWR9507")
 					(unit 1)
 				)
 			)
@@ -6675,26 +7861,26 @@
 	)
 	(wire
 		(pts
-			(xy 358.14 205.74)
-			(xy 358.14 208.28)
+			(xy 187.96 213.36)
+			(xy 187.96 215.9)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "14d1cfab-879f-05e2-215a-47d9971285ea")
+		(uuid "8a8af321-bfe7-d8f5-ce6e-c9bec07987f3")
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 358.14 208.28 0)
+		(at 187.96 215.9 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
 		(on_board yes)
 		(dnp no)
-		(uuid "27872388-17f4-9293-23ed-581b72e34799")
-		(property "Reference" "#PWR317"
-			(at 358.14 199.39 0)
+		(uuid "ccdc3377-f3e8-50fc-52ae-70c4df182a09")
+		(property "Reference" "#PWR9508"
+			(at 187.96 207.01 0)
 			(effects
 				(font
 					(size 1 1)
@@ -6703,7 +7889,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 358.14 217.17 0)
+			(at 187.96 224.79 0)
 			(effects
 				(font
 					(size 1 1)
@@ -6712,7 +7898,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 358.14 208.28 0)
+			(at 187.96 215.9 0)
 			(effects
 				(font
 					(size 1 1)
@@ -6721,7 +7907,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 358.14 208.28 0)
+			(at 187.96 215.9 0)
 			(effects
 				(font
 					(size 1 1)
@@ -6730,7 +7916,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 358.14 208.28 0)
+			(at 187.96 215.9 0)
 			(effects
 				(font
 					(size 1 1)
@@ -6739,38 +7925,37 @@
 			)
 		)
 		(pin "1"
-			(uuid "bc812d01-ace6-fa27-e725-893a8fe6eaae")
+			(uuid "68d52835-c24c-70f6-aa80-89e7b4ebff5d")
 		)
 		(instances
 			(project "UsainBot"
 				(path "/e216f09c-2662-6258-2b51-4f4f498f79d0/e7cc3c83-7c65-df9f-53be-bd87de8acfc2"
-					(reference "#PWR317")
+					(reference "#PWR9508")
 					(unit 1)
 				)
 			)
 		)
 	)
-	(text "Turnigy MultiStar 10A BLHeli-S (Opto) : 22 x 12 mm, 5,1 g, 10 A\ncontinu / 15 A crete. Il est DEBOUT sur sa tranche cote entree de\npuissance, ses deux fils soudes dans J103 et un collier au corps :\n12 x 5 mm d emprise pour 22 mm de haut. Aucun connecteur ne\ns intercale sur le courant de la turbine."
+	(text "J103 : trois pins sur la carte. ESC103 et M703 : circuit externe, exclus du PCB.\nLes sorties moteur ne passent pas dans le cuivre de la carte.\nPCB ESC 11 x 15 mm; montage vertical avec soutien isolant a realiser.\nEntraxes et epaisseurs estimes sur photos : valider sur la piece avant fabrication."
 		(exclude_from_sim no)
-		(at 286 240 0)
+		(at 18 255 0)
 		(effects
 			(font
 				(size 1 1)
 			)
 			(justify left bottom)
 		)
-		(uuid "0efdac5d-4269-13d4-c9bb-0d99300716c7")
+		(uuid "8e5e2458-5104-3a57-831e-8f4146b788e3")
 	)
-	(text "Puissance prise sur VBAT en amont des ponts moteurs, avec son propre decouplage.\nRampe la consigne : une montee en regime brutale fait chuter VBAT et peut faire\nredemarrer le MCU en pleine ligne droite. L armement de l ESC fait partie de la\nsequence de pre-depart, pas du demarrage du firmware.\n\nF101 12 A et les deux AO4407A en parallele de la feuille 01 laissent\nla marge."
+	(text "VPACK = batterie brute : ESC sous tension tant que le pack est branche.\nF101 et le bouton coupent la carte / traction, pas la branche ESC.\nPack commun 2S : protection generale et profil de charge a definir avec les cellules.\nPetit GND logique et gros GND puissance : continuite a mesurer; sinon 4e liaison requise."
 		(exclude_from_sim no)
-		(at 18 254 0)
+		(at 18 277 0)
 		(effects
 			(font
 				(size 1 1)
 			)
 			(justify left bottom)
 		)
-		(uuid "0b6c292d-235f-cfed-2a80-081ec5d6da2a")
+		(uuid "68ba5879-c2be-dbc2-a533-22cb89a20edd")
 	)
-	(embedded_fonts no)
 )

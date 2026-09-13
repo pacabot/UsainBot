@@ -84,7 +84,8 @@
 		(symbol "+3V3A_0_1"
 			(polyline
 				(pts
-					(xy -0.762 1.27) (xy 0 2.54)
+					(xy -0.762 1.27)
+					(xy 0 2.54)
 				)
 				(stroke
 					(width 0)
@@ -96,7 +97,8 @@
 			)
 			(polyline
 				(pts
-					(xy 0 2.54) (xy 0.762 1.27)
+					(xy 0 2.54)
+					(xy 0.762 1.27)
 				)
 				(stroke
 					(width 0)
@@ -108,7 +110,8 @@
 			)
 			(polyline
 				(pts
-					(xy 0 0) (xy 0 2.54)
+					(xy 0 0)
+					(xy 0 2.54)
 				)
 				(stroke
 					(width 0)
@@ -223,7 +226,8 @@
 		(symbol "+3V3_BLE_0_1"
 			(polyline
 				(pts
-					(xy -0.762 1.27) (xy 0 2.54)
+					(xy -0.762 1.27)
+					(xy 0 2.54)
 				)
 				(stroke
 					(width 0)
@@ -235,7 +239,8 @@
 			)
 			(polyline
 				(pts
-					(xy 0 2.54) (xy 0.762 1.27)
+					(xy 0 2.54)
+					(xy 0.762 1.27)
 				)
 				(stroke
 					(width 0)
@@ -247,7 +252,8 @@
 			)
 			(polyline
 				(pts
-					(xy 0 0) (xy 0 2.54)
+					(xy 0 0)
+					(xy 0 2.54)
 				)
 				(stroke
 					(width 0)
@@ -378,7 +384,10 @@
 			)
 			(polyline
 				(pts
-					(xy -5.08 5.08) (xy 5.08 5.08) (xy 0 0) (xy -5.08 5.08)
+					(xy -5.08 5.08)
+					(xy 5.08 5.08)
+					(xy 0 0)
+					(xy -5.08 5.08)
 				)
 				(stroke
 					(width 0.254)
@@ -1053,7 +1062,8 @@
 			)
 			(polyline
 				(pts
-					(xy -8.128 2.54) (xy -6.604 2.54)
+					(xy -8.128 2.54)
+					(xy -6.604 2.54)
 				)
 				(stroke
 					(width 0.254)
@@ -1076,7 +1086,8 @@
 			)
 			(polyline
 				(pts
-					(xy -5.588 2.794) (xy -3.302 3.556)
+					(xy -5.588 2.794)
+					(xy -3.302 3.556)
 				)
 				(stroke
 					(width 0.254)
@@ -1088,7 +1099,8 @@
 			)
 			(polyline
 				(pts
-					(xy -4.572 10.16) (xy -5.08 10.16)
+					(xy -4.572 10.16)
+					(xy -5.08 10.16)
 				)
 				(stroke
 					(width 0.254)
@@ -1100,7 +1112,8 @@
 			)
 			(polyline
 				(pts
-					(xy -4.572 1.524) (xy -4.572 2.159)
+					(xy -4.572 1.524)
+					(xy -4.572 2.159)
 				)
 				(stroke
 					(width 0.254)
@@ -1112,7 +1125,8 @@
 			)
 			(polyline
 				(pts
-					(xy -4.572 0.254) (xy -4.572 0.889)
+					(xy -4.572 0.254)
+					(xy -4.572 0.889)
 				)
 				(stroke
 					(width 0.254)
@@ -1124,7 +1138,8 @@
 			)
 			(polyline
 				(pts
-					(xy -4.572 0) (xy -5.207 0)
+					(xy -4.572 0)
+					(xy -5.207 0)
 				)
 				(stroke
 					(width 0.254)
@@ -1136,7 +1151,8 @@
 			)
 			(polyline
 				(pts
-					(xy -3.81 10.16) (xy -3.175 10.16)
+					(xy -3.81 10.16)
+					(xy -3.175 10.16)
 				)
 				(stroke
 					(width 0.254)
@@ -1159,7 +1175,8 @@
 			)
 			(polyline
 				(pts
-					(xy -1.778 10.16) (xy -2.286 10.16)
+					(xy -1.778 10.16)
+					(xy -2.286 10.16)
 				)
 				(stroke
 					(width 0.254)
@@ -1171,7 +1188,8 @@
 			)
 			(polyline
 				(pts
-					(xy -1.778 2.794) (xy 2.286 5.08)
+					(xy -1.778 2.794)
+					(xy 2.286 5.08)
 				)
 				(stroke
 					(width 0.254)
@@ -1183,7 +1201,8 @@
 			)
 			(polyline
 				(pts
-					(xy -0.508 10.16) (xy -1.016 10.16)
+					(xy -0.508 10.16)
+					(xy -1.016 10.16)
 				)
 				(stroke
 					(width 0.254)
@@ -1195,7 +1214,8 @@
 			)
 			(polyline
 				(pts
-					(xy -0.508 9.652) (xy -0.508 10.16)
+					(xy -0.508 9.652)
+					(xy -0.508 10.16)
 				)
 				(stroke
 					(width 0.254)
@@ -1207,7 +1227,8 @@
 			)
 			(polyline
 				(pts
-					(xy -0.508 8.636) (xy -0.508 9.144)
+					(xy -0.508 8.636)
+					(xy -0.508 9.144)
 				)
 				(stroke
 					(width 0.254)
@@ -1219,7 +1240,8 @@
 			)
 			(polyline
 				(pts
-					(xy -0.508 7.62) (xy -0.508 8.255)
+					(xy -0.508 7.62)
+					(xy -0.508 8.255)
 				)
 				(stroke
 					(width 0.254)
@@ -1231,7 +1253,8 @@
 			)
 			(polyline
 				(pts
-					(xy -0.508 6.35) (xy -0.508 6.985)
+					(xy -0.508 6.35)
+					(xy -0.508 6.985)
 				)
 				(stroke
 					(width 0.254)
@@ -1243,7 +1266,8 @@
 			)
 			(polyline
 				(pts
-					(xy -0.508 5.08) (xy -0.508 5.715)
+					(xy -0.508 5.08)
+					(xy -0.508 5.715)
 				)
 				(stroke
 					(width 0.254)
@@ -1255,7 +1279,8 @@
 			)
 			(polyline
 				(pts
-					(xy -0.508 3.81) (xy -0.508 4.445)
+					(xy -0.508 3.81)
+					(xy -0.508 4.445)
 				)
 				(stroke
 					(width 0.254)
@@ -1355,7 +1380,8 @@
 			)
 			(polyline
 				(pts
-					(xy 4.064 5.08) (xy 5.842 5.08)
+					(xy 4.064 5.08)
+					(xy 5.842 5.08)
 				)
 				(stroke
 					(width 0.254)
@@ -1367,7 +1393,8 @@
 			)
 			(polyline
 				(pts
-					(xy 4.064 2.54) (xy 5.842 2.54)
+					(xy 4.064 2.54)
+					(xy 5.842 2.54)
 				)
 				(stroke
 					(width 0.254)
@@ -1379,7 +1406,8 @@
 			)
 			(polyline
 				(pts
-					(xy 4.064 0) (xy 5.842 0)
+					(xy 4.064 0)
+					(xy 5.842 0)
 				)
 				(stroke
 					(width 0.254)
@@ -1391,7 +1419,8 @@
 			)
 			(polyline
 				(pts
-					(xy 4.064 -2.54) (xy 5.842 -2.54)
+					(xy 4.064 -2.54)
+					(xy 5.842 -2.54)
 				)
 				(stroke
 					(width 0.254)
@@ -1403,7 +1432,8 @@
 			)
 			(polyline
 				(pts
-					(xy 4.064 -5.08) (xy 5.842 -5.08)
+					(xy 4.064 -5.08)
+					(xy 5.842 -5.08)
 				)
 				(stroke
 					(width 0.254)
@@ -1415,7 +1445,8 @@
 			)
 			(polyline
 				(pts
-					(xy 4.064 -7.62) (xy 5.842 -7.62)
+					(xy 4.064 -7.62)
+					(xy 5.842 -7.62)
 				)
 				(stroke
 					(width 0.254)
@@ -1427,7 +1458,8 @@
 			)
 			(polyline
 				(pts
-					(xy 4.064 -10.16) (xy 5.842 -10.16)
+					(xy 4.064 -10.16)
+					(xy 5.842 -10.16)
 				)
 				(stroke
 					(width 0.254)
@@ -1439,7 +1471,8 @@
 			)
 			(polyline
 				(pts
-					(xy 4.064 -12.7) (xy 5.842 -12.7)
+					(xy 4.064 -12.7)
+					(xy 5.842 -12.7)
 				)
 				(stroke
 					(width 0.254)
@@ -1773,7 +1806,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "OptoDevice:Everlight_ITR8307"
+		(property "Footprint" "Pacabot:ITR8307_S17_TR8_Bottom"
 			(at 0 -5.08 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1784,7 +1817,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://datasheet.lcsc.com/szlcsc/1810010232_Everlight-Elec-ITR8307-S17-TR8-B_C81632.pdf"
+		(property "Datasheet" "https://www.everlighteurope.com/custom/files/datasheets/DRX-0000322.pdf"
 			(at 0 2.54 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1795,7 +1828,7 @@
 				)
 			)
 		)
-		(property "Description" "Capteur reflectif infrarouge, SMD-4, pas de 10 mm sur la barrette"
+		(property "Description" "Everlight ITR8307/S17/TR8(B), gull-wing SMD 4.6x3.4x1.5mm, no PCB window; project lands derived from DRX-0000322 Rev.6."
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1817,7 +1850,7 @@
 				)
 			)
 		)
-		(property "ki_fp_filters" "Everlight*ITR1201SR10AR*"
+		(property "ki_fp_filters" "Pacabot:ITR8307_S17_TR8_Bottom"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1831,7 +1864,10 @@
 		(symbol "ITR8307_0_1"
 			(polyline
 				(pts
-					(xy -5.08 -2.54) (xy -3.175 -2.54) (xy -3.175 2.54) (xy -5.08 2.54)
+					(xy -5.08 -2.54)
+					(xy -3.175 -2.54)
+					(xy -3.175 2.54)
+					(xy -5.08 2.54)
 				)
 				(stroke
 					(width 0)
@@ -1843,7 +1879,11 @@
 			)
 			(polyline
 				(pts
-					(xy -5.08 -3.81) (xy 5.08 -3.81) (xy 5.08 3.81) (xy -5.08 3.81) (xy -5.08 -3.81)
+					(xy -5.08 -3.81)
+					(xy 5.08 -3.81)
+					(xy 5.08 3.81)
+					(xy -5.08 3.81)
+					(xy -5.08 -3.81)
 				)
 				(stroke
 					(width 0.254)
@@ -1855,7 +1895,8 @@
 			)
 			(polyline
 				(pts
-					(xy -3.81 -0.635) (xy -2.54 -0.635)
+					(xy -3.81 -0.635)
+					(xy -2.54 -0.635)
 				)
 				(stroke
 					(width 0.254)
@@ -1867,7 +1908,10 @@
 			)
 			(polyline
 				(pts
-					(xy -3.175 -0.635) (xy -3.81 0.635) (xy -2.54 0.635) (xy -3.175 -0.635)
+					(xy -3.175 -0.635)
+					(xy -3.81 0.635)
+					(xy -2.54 0.635)
+					(xy -3.175 -0.635)
 				)
 				(stroke
 					(width 0.254)
@@ -1879,7 +1923,9 @@
 			)
 			(polyline
 				(pts
-					(xy -2.54 1.651) (xy -1.524 2.667) (xy -2.032 2.54)
+					(xy -2.54 1.651)
+					(xy -1.524 2.667)
+					(xy -2.032 2.54)
 				)
 				(stroke
 					(width 0)
@@ -1891,7 +1937,8 @@
 			)
 			(polyline
 				(pts
-					(xy -2.286 2.921) (xy -2.032 3.175)
+					(xy -2.286 2.921)
+					(xy -2.032 3.175)
 				)
 				(stroke
 					(width 0)
@@ -1903,7 +1950,9 @@
 			)
 			(polyline
 				(pts
-					(xy -2.159 0.889) (xy -1.143 1.905) (xy -1.651 1.778)
+					(xy -2.159 0.889)
+					(xy -1.143 1.905)
+					(xy -1.651 1.778)
 				)
 				(stroke
 					(width 0)
@@ -1915,7 +1964,8 @@
 			)
 			(polyline
 				(pts
-					(xy -1.778 2.921) (xy -1.524 3.175)
+					(xy -1.778 2.921)
+					(xy -1.524 3.175)
 				)
 				(stroke
 					(width 0)
@@ -1927,7 +1977,8 @@
 			)
 			(polyline
 				(pts
-					(xy -1.524 2.667) (xy -1.651 2.159)
+					(xy -1.524 2.667)
+					(xy -1.651 2.159)
 				)
 				(stroke
 					(width 0)
@@ -1939,7 +1990,8 @@
 			)
 			(polyline
 				(pts
-					(xy -1.27 2.921) (xy -1.016 3.175)
+					(xy -1.27 2.921)
+					(xy -1.016 3.175)
 				)
 				(stroke
 					(width 0)
@@ -1951,7 +2003,8 @@
 			)
 			(polyline
 				(pts
-					(xy -1.143 1.905) (xy -1.27 1.397)
+					(xy -1.143 1.905)
+					(xy -1.27 1.397)
 				)
 				(stroke
 					(width 0)
@@ -1963,7 +2016,8 @@
 			)
 			(polyline
 				(pts
-					(xy -0.762 2.921) (xy -0.508 3.175)
+					(xy -0.762 2.921)
+					(xy -0.508 3.175)
 				)
 				(stroke
 					(width 0)
@@ -1975,7 +2029,8 @@
 			)
 			(polyline
 				(pts
-					(xy -0.254 2.921) (xy 0 3.175)
+					(xy -0.254 2.921)
+					(xy 0 3.175)
 				)
 				(stroke
 					(width 0)
@@ -1987,7 +2042,8 @@
 			)
 			(polyline
 				(pts
-					(xy 0.254 2.921) (xy 0.508 3.175)
+					(xy 0.254 2.921)
+					(xy 0.508 3.175)
 				)
 				(stroke
 					(width 0)
@@ -1999,7 +2055,9 @@
 			)
 			(polyline
 				(pts
-					(xy 0.635 1.905) (xy 1.651 0.889) (xy 1.524 1.397)
+					(xy 0.635 1.905)
+					(xy 1.651 0.889)
+					(xy 1.524 1.397)
 				)
 				(stroke
 					(width 0)
@@ -2011,7 +2069,8 @@
 			)
 			(polyline
 				(pts
-					(xy 0.762 2.921) (xy 1.016 3.175)
+					(xy 0.762 2.921)
+					(xy 1.016 3.175)
 				)
 				(stroke
 					(width 0)
@@ -2023,7 +2082,9 @@
 			)
 			(polyline
 				(pts
-					(xy 1.016 2.667) (xy 2.032 1.651) (xy 1.905 2.159)
+					(xy 1.016 2.667)
+					(xy 2.032 1.651)
+					(xy 1.905 2.159)
 				)
 				(stroke
 					(width 0)
@@ -2035,7 +2096,8 @@
 			)
 			(polyline
 				(pts
-					(xy 1.27 2.921) (xy 1.524 3.175)
+					(xy 1.27 2.921)
+					(xy 1.524 3.175)
 				)
 				(stroke
 					(width 0)
@@ -2047,7 +2109,8 @@
 			)
 			(polyline
 				(pts
-					(xy 1.651 0.889) (xy 1.143 1.016)
+					(xy 1.651 0.889)
+					(xy 1.143 1.016)
 				)
 				(stroke
 					(width 0)
@@ -2059,7 +2122,8 @@
 			)
 			(polyline
 				(pts
-					(xy 1.778 2.921) (xy -2.413 2.921)
+					(xy 1.778 2.921)
+					(xy -2.413 2.921)
 				)
 				(stroke
 					(width 0)
@@ -2071,7 +2135,8 @@
 			)
 			(polyline
 				(pts
-					(xy 2.032 1.651) (xy 1.524 1.778)
+					(xy 2.032 1.651)
+					(xy 1.524 1.778)
 				)
 				(stroke
 					(width 0)
@@ -2083,7 +2148,8 @@
 			)
 			(polyline
 				(pts
-					(xy 2.667 1.016) (xy 2.667 -1.016)
+					(xy 2.667 1.016)
+					(xy 2.667 -1.016)
 				)
 				(stroke
 					(width 0.3556)
@@ -2095,7 +2161,8 @@
 			)
 			(polyline
 				(pts
-					(xy 2.667 0.127) (xy 3.81 1.27)
+					(xy 2.667 0.127)
+					(xy 3.81 1.27)
 				)
 				(stroke
 					(width 0)
@@ -2107,7 +2174,8 @@
 			)
 			(polyline
 				(pts
-					(xy 2.667 -0.127) (xy 3.81 -1.27)
+					(xy 2.667 -0.127)
+					(xy 3.81 -1.27)
 				)
 				(stroke
 					(width 0)
@@ -2119,7 +2187,10 @@
 			)
 			(polyline
 				(pts
-					(xy 3.683 -1.143) (xy 3.429 -0.635) (xy 3.175 -0.889) (xy 3.683 -1.143)
+					(xy 3.683 -1.143)
+					(xy 3.429 -0.635)
+					(xy 3.175 -0.889)
+					(xy 3.683 -1.143)
 				)
 				(stroke
 					(width 0)
@@ -2131,7 +2202,9 @@
 			)
 			(polyline
 				(pts
-					(xy 3.81 1.27) (xy 3.81 2.54) (xy 5.08 2.54)
+					(xy 3.81 1.27)
+					(xy 3.81 2.54)
+					(xy 5.08 2.54)
 				)
 				(stroke
 					(width 0)
@@ -2143,7 +2216,9 @@
 			)
 			(polyline
 				(pts
-					(xy 3.81 -1.27) (xy 3.81 -2.54) (xy 5.08 -2.54)
+					(xy 3.81 -1.27)
+					(xy 3.81 -2.54)
+					(xy 5.08 -2.54)
 				)
 				(stroke
 					(width 0)
@@ -3091,7 +3166,8 @@
 			)
 			(polyline
 				(pts
-					(xy -5.08 0) (xy 5.08 0)
+					(xy -5.08 0)
+					(xy 5.08 0)
 				)
 				(stroke
 					(width 0.254)
@@ -3103,7 +3179,9 @@
 			)
 			(polyline
 				(pts
-					(xy 2.54 1.27) (xy 5.08 0) (xy 2.54 -1.27)
+					(xy 2.54 1.27)
+					(xy 5.08 0)
+					(xy 2.54 -1.27)
 				)
 				(stroke
 					(width 0.254)
@@ -3272,7 +3350,8 @@
 		(symbol "VBAT_0_1"
 			(polyline
 				(pts
-					(xy -0.762 1.27) (xy 0 2.54)
+					(xy -0.762 1.27)
+					(xy 0 2.54)
 				)
 				(stroke
 					(width 0)
@@ -3284,7 +3363,8 @@
 			)
 			(polyline
 				(pts
-					(xy 0 2.54) (xy 0.762 1.27)
+					(xy 0 2.54)
+					(xy 0.762 1.27)
 				)
 				(stroke
 					(width 0)
@@ -3296,7 +3376,8 @@
 			)
 			(polyline
 				(pts
-					(xy 0 0) (xy 0 2.54)
+					(xy 0 0)
+					(xy 0 2.54)
 				)
 				(stroke
 					(width 0)
@@ -3411,7 +3492,8 @@
 		(symbol "VPACK_0_1"
 			(polyline
 				(pts
-					(xy -0.762 1.27) (xy 0 2.54)
+					(xy -0.762 1.27)
+					(xy 0 2.54)
 				)
 				(stroke
 					(width 0)
@@ -3423,7 +3505,8 @@
 			)
 			(polyline
 				(pts
-					(xy 0 2.54) (xy 0.762 1.27)
+					(xy 0 2.54)
+					(xy 0.762 1.27)
 				)
 				(stroke
 					(width 0)
@@ -3435,7 +3518,8 @@
 			)
 			(polyline
 				(pts
-					(xy 0 0) (xy 0 2.54)
+					(xy 0 0)
+					(xy 0 2.54)
 				)
 				(stroke
 					(width 0)
@@ -3467,5 +3551,419 @@
 			)
 		)
 		(embedded_fonts no)
+	)
+	(symbol "EMAX_Bullet_12A_EMX_SC_1873"
+		(pin_names
+			(offset 1.016)
+		)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board no)
+		(property "Reference" "ESC"
+			(at -12.7 13.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "EMAX_Bullet_12A_EMX_SC_1873"
+			(at 0 -13.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Pacabot:EMAX_Bullet_12A_Vertical_3Pin_PROTOTYPE"
+			(at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://emax-usa.com/products/d-shot-bullet-series-12a-esc-blheli-s"
+			(at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Exact EMAX Bullet 12A BLHeli-S EMX-SC-1873; module outside motherboard. Input mounting via J103; phases wired directly to motor. Pin numbers are project mapping, not manufacturer numbering. Logic GND to power GND continuity must be measured."
+			(at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(symbol "EMAX_Bullet_12A_EMX_SC_1873_0_1"
+			(rectangle
+				(start -17.78 10.16)
+				(end 17.78 -10.16)
+				(stroke
+					(width 0.254)
+					(type default)
+				)
+				(fill
+					(type background)
+				)
+			)
+		)
+		(symbol "EMAX_Bullet_12A_EMX_SC_1873_1_1"
+			(pin power_in line
+				(at -20.32 -5.08 0)
+				(length 2.54)
+				(name "GND_POWER"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin input line
+				(at -20.32 0 0)
+				(length 2.54)
+				(name "SIGNAL"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin power_in line
+				(at -20.32 5.08 0)
+				(length 2.54)
+				(name "+BATT"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "3"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin output line
+				(at 20.32 5.08 180)
+				(length 2.54)
+				(name "MOTOR_A"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "4"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin output line
+				(at 20.32 0 180)
+				(length 2.54)
+				(name "MOTOR_B"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "5"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin output line
+				(at 20.32 -5.08 180)
+				(length 2.54)
+				(name "MOTOR_C"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "6"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+		)
+	)
+	(symbol "ESC_Vertical_Mount3"
+		(pin_names
+			(offset 1.016)
+		)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(property "Reference" "J"
+			(at -12.7 13.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "ESC_Vertical_Mount3"
+			(at 0 -13.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Pacabot:EMAX_Bullet_12A_Vertical_3Pin_PROTOTYPE"
+			(at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://emax-usa.com/products/d-shot-bullet-series-12a-esc-blheli-s"
+			(at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Three motherboard holes for solid copper pins soldered to ESC input pads; prototype geometry estimated from photographs; insulating support required."
+			(at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(symbol "ESC_Vertical_Mount3_0_1"
+			(rectangle
+				(start -17.78 10.16)
+				(end 17.78 -10.16)
+				(stroke
+					(width 0.254)
+					(type default)
+				)
+				(fill
+					(type background)
+				)
+			)
+		)
+		(symbol "ESC_Vertical_Mount3_1_1"
+			(pin passive line
+				(at -20.32 -5.08 0)
+				(length 2.54)
+				(name "GND_POWER"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at -20.32 0 0)
+				(length 2.54)
+				(name "SIGNAL"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at -20.32 5.08 0)
+				(length 2.54)
+				(name "+BATT"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "3"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+		)
+	)
+	(symbol "Turbine_3Phase_Offboard"
+		(pin_names
+			(offset 1.016)
+		)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board no)
+		(property "Reference" "M"
+			(at -12.7 13.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Turbine_3Phase_Offboard"
+			(at 0 -13.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://emax-usa.com/products/d-shot-bullet-series-12a-esc-blheli-s"
+			(at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Three phase turbine motor, wired directly to ESC; no motherboard pads."
+			(at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(symbol "Turbine_3Phase_Offboard_0_1"
+			(rectangle
+				(start -17.78 10.16)
+				(end 17.78 -10.16)
+				(stroke
+					(width 0.254)
+					(type default)
+				)
+				(fill
+					(type background)
+				)
+			)
+		)
+		(symbol "Turbine_3Phase_Offboard_1_1"
+			(pin passive line
+				(at -20.32 5.08 0)
+				(length 2.54)
+				(name "A"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at -20.32 0 0)
+				(length 2.54)
+				(name "B"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at -20.32 -5.08 0)
+				(length 2.54)
+				(name "C"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "3"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+		)
 	)
 )

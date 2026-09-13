@@ -9,7 +9,7 @@
 		(date "2026-08-30")
 		(rev "A")
 		(company "Pacabot")
-		(comment 1 "Pack 2S LiFePO4 - bus VBAT 5,0 a 7,3 V")
+		(comment 1 "Pack commun 2S - chimie et cellules a definir - J102 GND / MID / VPACK")
 		(comment 2 "Chargeur elevateur BQ25887 place en amont de l interrupteur")
 	)
 	(lib_symbols
@@ -9481,7 +9481,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10R"
+		(property "Value" "47R"
 			(at 194 168 0)
 			(effects
 				(font
@@ -9588,7 +9588,7 @@
 		)
 		(uuid "4eb9283d-246f-c755-0e17-b3ac0349143c")
 	)
-	(text "R107 fixe le courant d equilibrage (400 mA max)."
+	(text "R107 = 47R / 1W : equilibrage ~88mA a 4,2V; dissipation ~0,36W.\nMaximum conservateur a 4,6V : 0,46W avec tolerance 1%; verifier thermique.\nBQ25887 : equilibrage qualifie au-dessus de 3,7V/cellule (Li-ion/LiPo)."
 		(exclude_from_sim no)
 		(at 158 186 0)
 		(effects
@@ -10881,7 +10881,7 @@
 			)
 		)
 	)
-	(text "CD haut = charge inhibee. La grille est au 0 V tant que le MCU\nn a pas ecrit VCELLREG : un pack LiFePO4 ne voit jamais le profil\nLi-ion par defaut (4,2 V/cellule), meme carte eteinte."
+	(text "CD haut = charge inhibee par defaut materiel.\nPack commun 2S : cellules / capacite / chimie non choisies.\nDefinir VCELLREG, courant, protections et firmware AVANT toute charge.\nLe programme de charge reste a implementer et a valider."
 		(exclude_from_sim no)
 		(at 140 240 0)
 		(effects
@@ -10915,517 +10915,6 @@
 			(justify left bottom)
 		)
 		(uuid "6aaa6fb1-deec-7f92-f849-fb884317a509")
-	)
-	(symbol
-		(lib_id "Connector_Generic:Conn_01x02")
-		(at 236.22 45.72 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "1768839e-92ab-945b-827b-8250fb0e7607")
-		(property "Reference" "J102"
-			(at 226 38 0)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "Value" "Pack 2S - puissance"
-			(at 229.81 58 0)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "Footprint" "Connector_AMASS:AMASS_XT30U-M_1x02_P5.0mm_Vertical"
-			(at 236.22 45.72 0)
-			(effects
-				(font
-					(size 1 1)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 236.22 45.72 0)
-			(effects
-				(font
-					(size 1 1)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 236.22 45.72 0)
-			(effects
-				(font
-					(size 1 1)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "0295f798-ed6a-04b5-18a8-acb126556467")
-		)
-		(pin "2"
-			(uuid "ce1f3722-3c96-6e09-33e1-ec483297d1e6")
-		)
-		(instances
-			(project "UsainBot"
-				(path "/e216f09c-2662-6258-2b51-4f4f498f79d0/3ee10a22-aabb-2c54-dcbf-475ae49e4e1f"
-					(reference "J102")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(wire
-		(pts
-			(xy 231.14 45.72)
-			(xy 228.6 45.72)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2da13285-06a6-dd4e-f010-9b9799b4acb3")
-	)
-	(wire
-		(pts
-			(xy 228.6 45.72)
-			(xy 228.6 43.18)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "548a40c6-f704-cf8a-6fe9-307c99a13819")
-	)
-	(symbol
-		(lib_id "Pacabot:VPACK")
-		(at 228.6 43.18 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(dnp no)
-		(uuid "be84a684-1469-a372-896c-e8ef07bdd265")
-		(property "Reference" "#PWR022"
-			(at 228.6 34.29 0)
-			(effects
-				(font
-					(size 1 1)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "VPACK"
-			(at 228.6 52.07 0)
-			(effects
-				(font
-					(size 1 1)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint" ""
-			(at 228.6 43.18 0)
-			(effects
-				(font
-					(size 1 1)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 228.6 43.18 0)
-			(effects
-				(font
-					(size 1 1)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 228.6 43.18 0)
-			(effects
-				(font
-					(size 1 1)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "cbc7dfb5-f8e9-79c6-f281-70097a7d1203")
-		)
-		(instances
-			(project "UsainBot"
-				(path "/e216f09c-2662-6258-2b51-4f4f498f79d0/3ee10a22-aabb-2c54-dcbf-475ae49e4e1f"
-					(reference "#PWR022")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(wire
-		(pts
-			(xy 231.14 48.26)
-			(xy 228.6 48.26)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "757b2aa1-e955-8ebc-81cc-94fafb1a16cf")
-	)
-	(wire
-		(pts
-			(xy 228.6 48.26)
-			(xy 228.6 50.8)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4e35cc02-e56e-787a-622d-78cfe7fc9cd8")
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 228.6 50.8 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(dnp no)
-		(uuid "dff7da5e-ca8a-ad44-1c6c-0bb7aca46c94")
-		(property "Reference" "#PWR023"
-			(at 228.6 41.91 0)
-			(effects
-				(font
-					(size 1 1)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 228.6 59.69 0)
-			(effects
-				(font
-					(size 1 1)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint" ""
-			(at 228.6 50.8 0)
-			(effects
-				(font
-					(size 1 1)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 228.6 50.8 0)
-			(effects
-				(font
-					(size 1 1)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 228.6 50.8 0)
-			(effects
-				(font
-					(size 1 1)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "02985096-3ec9-9875-9a3b-9c7ebec990b7")
-		)
-		(instances
-			(project "UsainBot"
-				(path "/e216f09c-2662-6258-2b51-4f4f498f79d0/3ee10a22-aabb-2c54-dcbf-475ae49e4e1f"
-					(reference "#PWR023")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector_Generic:Conn_01x03")
-		(at 271.78 45.72 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "0e1d76e3-cdb5-6f88-8e08-5d2522620aed")
-		(property "Reference" "J104"
-			(at 262 38 0)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "Value" "Pack 2S - equilibrage"
-			(at 262 60 0)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "Footprint" "Connector_JST:JST_XH_B3B-XH-A_1x03_P2.50mm_Vertical"
-			(at 271.78 45.72 0)
-			(effects
-				(font
-					(size 1 1)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 271.78 45.72 0)
-			(effects
-				(font
-					(size 1 1)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 271.78 45.72 0)
-			(effects
-				(font
-					(size 1 1)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "0c024e59-2c1f-5409-ab05-58e5fff11381")
-		)
-		(pin "2"
-			(uuid "cfb9ab9f-004f-3314-45bf-678d8e650984")
-		)
-		(pin "3"
-			(uuid "11fd0f02-6f3d-7ed8-e91f-498496536ed9")
-		)
-		(instances
-			(project "UsainBot"
-				(path "/e216f09c-2662-6258-2b51-4f4f498f79d0/3ee10a22-aabb-2c54-dcbf-475ae49e4e1f"
-					(reference "J104")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(wire
-		(pts
-			(xy 266.7 43.18)
-			(xy 259.08 43.18)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "985a1562-5e2b-d3e6-d489-31703bc9184e")
-	)
-	(wire
-		(pts
-			(xy 259.08 43.18)
-			(xy 259.08 45.72)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8114f1ce-052c-e3b8-582b-078af1ae37a2")
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 259.08 45.72 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(dnp no)
-		(uuid "17b9b6e5-94e6-1088-4211-ed63e0b8ddb9")
-		(property "Reference" "#PWR024"
-			(at 259.08 36.83 0)
-			(effects
-				(font
-					(size 1 1)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 259.08 54.61 0)
-			(effects
-				(font
-					(size 1 1)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint" ""
-			(at 259.08 45.72 0)
-			(effects
-				(font
-					(size 1 1)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 259.08 45.72 0)
-			(effects
-				(font
-					(size 1 1)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 259.08 45.72 0)
-			(effects
-				(font
-					(size 1 1)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "9ea9b171-a1b2-4194-67b1-fdfc9a545633")
-		)
-		(instances
-			(project "UsainBot"
-				(path "/e216f09c-2662-6258-2b51-4f4f498f79d0/3ee10a22-aabb-2c54-dcbf-475ae49e4e1f"
-					(reference "#PWR024")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(wire
-		(pts
-			(xy 266.7 45.72)
-			(xy 264.16 45.72)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b5c5f6d9-9077-274f-18e4-a49a0de83f22")
-	)
-	(label "PACK_MID"
-		(at 264.16 45.72 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1 1)
-			)
-			(justify right bottom)
-		)
-		(uuid "46221267-f369-6921-b21b-22ff3c23993d")
-	)
-	(wire
-		(pts
-			(xy 266.7 48.26)
-			(xy 251.46 48.26)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "3acd249b-ccdd-d4e8-54a4-9230ac8a7289")
-	)
-	(wire
-		(pts
-			(xy 251.46 48.26)
-			(xy 251.46 45.72)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8efd2365-bb83-17d4-7de6-2b4042254e2b")
-	)
-	(symbol
-		(lib_id "Pacabot:VPACK")
-		(at 251.46 45.72 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(dnp no)
-		(uuid "1cbf59e8-e2be-15dd-c378-b583ed884258")
-		(property "Reference" "#PWR025"
-			(at 251.46 36.83 0)
-			(effects
-				(font
-					(size 1 1)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "VPACK"
-			(at 251.46 54.61 0)
-			(effects
-				(font
-					(size 1 1)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint" ""
-			(at 251.46 45.72 0)
-			(effects
-				(font
-					(size 1 1)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 251.46 45.72 0)
-			(effects
-				(font
-					(size 1 1)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 251.46 45.72 0)
-			(effects
-				(font
-					(size 1 1)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "6d37459b-13d7-5cf8-973b-96c316222f96")
-		)
-		(instances
-			(project "UsainBot"
-				(path "/e216f09c-2662-6258-2b51-4f4f498f79d0/3ee10a22-aabb-2c54-dcbf-475ae49e4e1f"
-					(reference "#PWR025")
-					(unit 1)
-				)
-			)
-		)
 	)
 	(symbol
 		(lib_id "Device:Fuse")
@@ -11690,17 +11179,6 @@
 		)
 		(uuid "99622d3f-d9e8-38b9-ae86-c5eeecf27aeb")
 	)
-	(label "VBAT_SW_IN"
-		(at 228.6 63.5 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1 1)
-			)
-			(justify left bottom)
-		)
-		(uuid "e1a17fdf-8feb-1b7e-d513-da95dcbcb7c5")
-	)
 	(wire
 		(pts
 			(xy 228.6 73.66)
@@ -11814,17 +11292,6 @@
 			(type default)
 		)
 		(uuid "4bea6a84-edb6-8b57-0729-218853cf76b8")
-	)
-	(label "BTN_N"
-		(at 247.65 63.5 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1 1)
-			)
-			(justify left bottom)
-		)
-		(uuid "227af656-fe35-6412-e862-e23e958b322d")
 	)
 	(wire
 		(pts
@@ -11949,27 +11416,6 @@
 			(type default)
 		)
 		(uuid "d34d6df9-5498-f3a2-1edd-3be9e78cae0d")
-	)
-	(global_label "PWR_BTN"
-		(shape bidirectional)
-		(at 267.97 63.5 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1 1)
-			)
-			(justify left)
-		)
-		(uuid "d264c0c8-864b-d098-fffd-7693ae213634")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 267.97 63.5 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 	)
 	(wire
 		(pts
@@ -12149,27 +11595,6 @@
 			(type default)
 		)
 		(uuid "d3d50729-89e6-f53d-4191-f9840287568f")
-	)
-	(global_label "PWR_BTN"
-		(shape bidirectional)
-		(at 285.75 63.5 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1 1)
-			)
-			(justify left)
-		)
-		(uuid "3e369a9b-d4c3-cf3e-7d28-1687d281667b")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 285.75 63.5 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 	)
 	(wire
 		(pts
@@ -14027,7 +13452,7 @@
 		)
 		(uuid "5c159660-ce6f-d8bb-b92f-37a8d2795b8e")
 	)
-	(text "Pack : XT30 vertical pour le courant, JST-XH pour la nappe\nd equilibrage qui apporte le point milieu au BQ25887. Coupure par\ndeux canaux P en parallele (Rds/2), grille rappelee a la source\npar R114 : coupe par defaut, aucune fuite de grille.\nMISE SOUS TENSION PAR BOUTON POUSSOIR. L appui tire la grille au\n0 V par D106 et les FET conduisent. Le firmware met PE0 a 1 des le\ndemarrage : Q104 tient la grille, le bouton peut etre relache. Il\nlit ensuite le bouton sur PE1 (diviseur 470k/220k, 2,3 V au plein\ndu pack) et coupe en relachant PE0 - apres avoir ferme la flash,\nce qu un interrupteur ne savait pas faire. C123 donne 100 ms de\nretombee : un reset du MCU ne coupe pas l alimentation.\nA l arret : 7,3 V / 700 k, soit 10 uA."
+	(text "Pack commun : J102 MR30 3 contacts GND / MID / VPACK.\nMID alimente la mesure / equilibrage du BQ25887. Coupure par\ndeux canaux P en parallele (Rds/2), grille rappelee a la source\npar R114 : coupe par defaut, aucune fuite de grille.\nMISE SOUS TENSION PAR BOUTON POUSSOIR. L appui tire la grille au\n0 V par D106 et les FET conduisent. Le firmware met PE0 a 1 des le\ndemarrage : Q104 tient la grille, le bouton peut etre relache. Il\nlit ensuite le bouton sur PE1 (diviseur 470k/220k, 0,319 x VPACK) et coupe en relachant PE0 - apres avoir ferme la flash,\nce qu un interrupteur ne savait pas faire. C123 donne 100 ms de\nretombee : un reset du MCU ne coupe pas l alimentation.\nA l arret : courant carte de veille; ESC reste alimente sur VPACK."
 		(exclude_from_sim no)
 		(at 296 245 0)
 		(effects
@@ -19220,7 +18645,7 @@
 			)
 		)
 	)
-	(text "7,3 V -> 2,28 V, directement sur PC0. Le 74HC4051 qui multiplexait\ncette mesure avec les deux IPROPI a disparu avec le passage au\nLQFP144 : chacun des trois a desormais son entree, et surtout les\ndeux courants moteur se lisent au meme instant (PF11 sur ADC1,\nPF13 sur ADC2, meme numero de voie). Thevenin 6,9 k, C121 sert de\nreservoir de charge pour l echantillonnage."
+	(text "Mesure VBAT : diviseur 22k / 10k, directement sur PC0. Le 74HC4051 qui multiplexait\ncette mesure avec les deux IPROPI a disparu avec le passage au\nLQFP144 : chacun des trois a desormais son entree, et surtout les\ndeux courants moteur se lisent au meme instant (PF11 sur ADC1,\nPF13 sur ADC2, meme numero de voie). Thevenin 6,9 k, C121 sert de\nreservoir de charge pour l echantillonnage."
 		(exclude_from_sim no)
 		(at 18 232 0)
 		(effects
@@ -19903,4 +19328,399 @@
 		(uuid "69147e2d-c0cf-bc0b-5051-26dc604f79c4")
 	)
 	(embedded_fonts no)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x03")
+		(at 254 45.72 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "1768839e-92ab-945b-827b-8250fb0e7607")
+		(property "Reference" "J102"
+			(at 254 33 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Value" "Pack 2S - AMASS MR30"
+			(at 254 61 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Footprint" "Pacabot:AMASS_MR30PB-M_1x03_P3.50mm_Vertical"
+			(at 254 45.72 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://lucidar.me/en/electronics/files/mr30pb-m.pdf"
+			(at 254 45.72 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 254 45.72 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "AMASS"
+			(at 254 45.72 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "MR30PB-M30.G.Y"
+			(at 254 45.72 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(hide yes)
+			)
+		)
+		(property "Harness" "Project pinout: 1 GND / 2 PACK_MID / 3 VPACK; AWG16 power, AWG24 MID; 5cm power leads each assumed"
+			(at 254 45.72 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(hide yes)
+			)
+		)
+		(property "Rated_current" "20 A per manufacturer at deltaT 85K with AWG16; thermal validation required at 15.5A continuous /18.5A peak"
+			(at 254 45.72 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "0295f798-ed6a-04b5-18a8-acb126556467")
+		)
+		(pin "2"
+			(uuid "ce1f3722-3c96-6e09-33e1-ec483297d1e6")
+		)
+		(pin "3"
+			(uuid "e6edd279-15cd-dbaa-b4c6-08bff170db82")
+		)
+		(instances
+			(project "UsainBot"
+				(path "/e216f09c-2662-6258-2b51-4f4f498f79d0/3ee10a22-aabb-2c54-dcbf-475ae49e4e1f"
+					(reference "J102")
+					(unit 1)
+				)
+			)
+		)
+		(property "Mating_connector" "MR30-F.G.Y; optional cover 98023.PG"
+			(at 254 45.72 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mechanical_revision" "AMASS MR30PB-M 2021V1: 11.9x5.3x10.4mm; 3mm tails; pitch3.50; drill1.80+0.20/0"
+			(at 254 45.72 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(hide yes)
+			)
+		)
+		(property "Operating_budget" "ESC 12A continuous /15A peak + 2 DC motors x1A + electronics provisional1.5A"
+			(at 254 45.72 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 248.92 43.18)
+			(xy 241.3 43.18)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c56d7271-261a-8b09-b2e1-e84cff61ed26")
+	)
+	(wire
+		(pts
+			(xy 241.3 43.18)
+			(xy 241.3 45.72)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8a322a24-46db-091b-1ff1-0185a6050ccc")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 241.3 45.72 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "fc3944ed-1504-334c-20cc-002a24951514")
+		(property "Reference" "#PWR9509"
+			(at 241.3 36.83 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 241.3 54.61 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" ""
+			(at 241.3 45.72 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 241.3 45.72 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 241.3 45.72 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "b74c937c-4318-0c7f-dfbe-ce7140b1d365")
+		)
+		(instances
+			(project "UsainBot"
+				(path "/e216f09c-2662-6258-2b51-4f4f498f79d0/3ee10a22-aabb-2c54-dcbf-475ae49e4e1f"
+					(reference "#PWR9509")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 248.92 45.72)
+			(xy 246.38 45.72)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f6c36263-419d-75d6-03b6-ed09e2713da3")
+	)
+	(label "PACK_MID"
+		(at 246.38 45.72 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify right bottom)
+		)
+		(uuid "4f49afe6-72f0-4ce7-34da-5426028454e0")
+	)
+	(wire
+		(pts
+			(xy 248.92 48.26)
+			(xy 233.68 48.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e86e97cc-051a-1de6-8155-4fe5fbf38918")
+	)
+	(wire
+		(pts
+			(xy 233.68 48.26)
+			(xy 233.68 45.72)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "26325bc1-f46f-4792-e8d4-e1522c9300e8")
+	)
+	(symbol
+		(lib_id "Pacabot:VPACK")
+		(at 233.68 45.72 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "7c9bad62-15d2-a295-6960-5d812cedf634")
+		(property "Reference" "#PWR9510"
+			(at 233.68 36.83 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "VPACK"
+			(at 233.68 54.61 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" ""
+			(at 233.68 45.72 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 233.68 45.72 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 233.68 45.72 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "0feab5c1-650a-7a84-3012-27b011cd954e")
+		)
+		(instances
+			(project "UsainBot"
+				(path "/e216f09c-2662-6258-2b51-4f4f498f79d0/3ee10a22-aabb-2c54-dcbf-475ae49e4e1f"
+					(reference "#PWR9510")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(label "VBAT_SW_IN"
+		(at 228.6 63.5 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left bottom)
+		)
+		(uuid "e1a17fdf-8feb-1b7e-d513-da95dcbcb7c5")
+	)
+	(label "BTN_N"
+		(at 247.65 63.5 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left bottom)
+		)
+		(uuid "227af656-fe35-6412-e862-e23e958b322d")
+	)
+	(global_label "PWR_BTN"
+		(shape bidirectional)
+		(at 267.97 63.5 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left)
+		)
+		(uuid "d264c0c8-864b-d098-fffd-7693ae213634")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 267.97 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "PWR_BTN"
+		(shape bidirectional)
+		(at 285.75 63.5 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left)
+		)
+		(uuid "3e369a9b-d4c3-cf3e-7d28-1687d281667b")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 285.75 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+	)
 )

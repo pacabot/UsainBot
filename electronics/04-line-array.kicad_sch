@@ -483,7 +483,7 @@
 					(justify right)
 				)
 			)
-			(property "Footprint" "OptoDevice:Everlight_ITR8307"
+			(property "Footprint" "Pacabot:ITR8307_S17_TR8_Bottom"
 				(at 0 -5.08 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -494,7 +494,7 @@
 					)
 				)
 			)
-			(property "Datasheet" "https://datasheet.lcsc.com/szlcsc/1810010232_Everlight-Elec-ITR8307-S17-TR8-B_C81632.pdf"
+			(property "Datasheet" "https://www.everlighteurope.com/custom/files/datasheets/DRX-0000322.pdf"
 				(at 0 2.54 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -505,7 +505,7 @@
 					)
 				)
 			)
-			(property "Description" "Capteur reflectif infrarouge, SMD-4, pas de 10 mm sur la barrette"
+			(property "Description" "Everlight ITR8307/S17/TR8(B), gull-wing SMD 4.6x3.4x1.5mm, no PCB window; project lands derived from DRX-0000322 Rev.6."
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -527,7 +527,7 @@
 					)
 				)
 			)
-			(property "ki_fp_filters" "Everlight*ITR1201SR10AR*"
+			(property "ki_fp_filters" "Pacabot:ITR8307_S17_TR8_Bottom"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -1616,7 +1616,7 @@
 				)
 			)
 		)
-		(property "Value" "ITR8307/S17/TR8"
+		(property "Value" "ITR8307/S17/TR8(B)"
 			(at 62 70.89 0)
 			(effects
 				(font
@@ -1624,7 +1624,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Pacabot:ITR8307_dessous"
+		(property "Footprint" "Pacabot:ITR8307_S17_TR8_Bottom"
 			(at 62.23 62.23 0)
 			(effects
 				(font
@@ -1633,7 +1633,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://www.everlighteurope.com/custom/files/datasheets/DRX-0000322.pdf"
 			(at 62.23 62.23 0)
 			(effects
 				(font
@@ -2432,7 +2432,7 @@
 				)
 			)
 		)
-		(property "Value" "ITR8307/S17/TR8"
+		(property "Value" "ITR8307/S17/TR8(B)"
 			(at 152 70.89 0)
 			(effects
 				(font
@@ -2440,7 +2440,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Pacabot:ITR8307_dessous"
+		(property "Footprint" "Pacabot:ITR8307_S17_TR8_Bottom"
 			(at 152.4 62.23 0)
 			(effects
 				(font
@@ -2449,7 +2449,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://www.everlighteurope.com/custom/files/datasheets/DRX-0000322.pdf"
 			(at 152.4 62.23 0)
 			(effects
 				(font
@@ -3248,7 +3248,7 @@
 				)
 			)
 		)
-		(property "Value" "ITR8307/S17/TR8"
+		(property "Value" "ITR8307/S17/TR8(B)"
 			(at 242 70.89 0)
 			(effects
 				(font
@@ -3256,7 +3256,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Pacabot:ITR8307_dessous"
+		(property "Footprint" "Pacabot:ITR8307_S17_TR8_Bottom"
 			(at 242.57 62.23 0)
 			(effects
 				(font
@@ -3265,7 +3265,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://www.everlighteurope.com/custom/files/datasheets/DRX-0000322.pdf"
 			(at 242.57 62.23 0)
 			(effects
 				(font
@@ -4064,7 +4064,7 @@
 				)
 			)
 		)
-		(property "Value" "ITR8307/S17/TR8"
+		(property "Value" "ITR8307/S17/TR8(B)"
 			(at 332 70.89 0)
 			(effects
 				(font
@@ -4072,7 +4072,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Pacabot:ITR8307_dessous"
+		(property "Footprint" "Pacabot:ITR8307_S17_TR8_Bottom"
 			(at 331.47 62.23 0)
 			(effects
 				(font
@@ -4081,7 +4081,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://www.everlighteurope.com/custom/files/datasheets/DRX-0000322.pdf"
 			(at 331.47 62.23 0)
 			(effects
 				(font
@@ -4880,7 +4880,7 @@
 				)
 			)
 		)
-		(property "Value" "ITR8307/S17/TR8"
+		(property "Value" "ITR8307/S17/TR8(B)"
 			(at 62 130.89 0)
 			(effects
 				(font
@@ -4888,7 +4888,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Pacabot:ITR8307_dessous"
+		(property "Footprint" "Pacabot:ITR8307_S17_TR8_Bottom"
 			(at 62.23 121.92 0)
 			(effects
 				(font
@@ -4897,7 +4897,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://www.everlighteurope.com/custom/files/datasheets/DRX-0000322.pdf"
 			(at 62.23 121.92 0)
 			(effects
 				(font
@@ -5696,7 +5696,7 @@
 				)
 			)
 		)
-		(property "Value" "ITR8307/S17/TR8"
+		(property "Value" "ITR8307/S17/TR8(B)"
 			(at 152 130.89 0)
 			(effects
 				(font
@@ -5704,7 +5704,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Pacabot:ITR8307_dessous"
+		(property "Footprint" "Pacabot:ITR8307_S17_TR8_Bottom"
 			(at 152.4 121.92 0)
 			(effects
 				(font
@@ -5713,7 +5713,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://www.everlighteurope.com/custom/files/datasheets/DRX-0000322.pdf"
 			(at 152.4 121.92 0)
 			(effects
 				(font
@@ -6512,7 +6512,7 @@
 				)
 			)
 		)
-		(property "Value" "ITR8307/S17/TR8"
+		(property "Value" "ITR8307/S17/TR8(B)"
 			(at 242 130.89 0)
 			(effects
 				(font
@@ -6520,7 +6520,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Pacabot:ITR8307_dessous"
+		(property "Footprint" "Pacabot:ITR8307_S17_TR8_Bottom"
 			(at 242.57 121.92 0)
 			(effects
 				(font
@@ -6529,7 +6529,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://www.everlighteurope.com/custom/files/datasheets/DRX-0000322.pdf"
 			(at 242.57 121.92 0)
 			(effects
 				(font
@@ -7328,7 +7328,7 @@
 				)
 			)
 		)
-		(property "Value" "ITR8307/S17/TR8"
+		(property "Value" "ITR8307/S17/TR8(B)"
 			(at 332 130.89 0)
 			(effects
 				(font
@@ -7336,7 +7336,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Pacabot:ITR8307_dessous"
+		(property "Footprint" "Pacabot:ITR8307_S17_TR8_Bottom"
 			(at 331.47 121.92 0)
 			(effects
 				(font
@@ -7345,7 +7345,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://www.everlighteurope.com/custom/files/datasheets/DRX-0000322.pdf"
 			(at 331.47 121.92 0)
 			(effects
 				(font
@@ -8144,7 +8144,7 @@
 				)
 			)
 		)
-		(property "Value" "ITR8307/S17/TR8"
+		(property "Value" "ITR8307/S17/TR8(B)"
 			(at 62 190.89 0)
 			(effects
 				(font
@@ -8152,7 +8152,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Pacabot:ITR8307_dessous"
+		(property "Footprint" "Pacabot:ITR8307_S17_TR8_Bottom"
 			(at 62.23 181.61 0)
 			(effects
 				(font
@@ -8161,7 +8161,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://www.everlighteurope.com/custom/files/datasheets/DRX-0000322.pdf"
 			(at 62.23 181.61 0)
 			(effects
 				(font
@@ -8960,7 +8960,7 @@
 				)
 			)
 		)
-		(property "Value" "ITR8307/S17/TR8"
+		(property "Value" "ITR8307/S17/TR8(B)"
 			(at 152 190.89 0)
 			(effects
 				(font
@@ -8968,7 +8968,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Pacabot:ITR8307_dessous"
+		(property "Footprint" "Pacabot:ITR8307_S17_TR8_Bottom"
 			(at 152.4 181.61 0)
 			(effects
 				(font
@@ -8977,7 +8977,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://www.everlighteurope.com/custom/files/datasheets/DRX-0000322.pdf"
 			(at 152.4 181.61 0)
 			(effects
 				(font
@@ -9776,7 +9776,7 @@
 				)
 			)
 		)
-		(property "Value" "ITR8307/S17/TR8"
+		(property "Value" "ITR8307/S17/TR8(B)"
 			(at 242 190.89 0)
 			(effects
 				(font
@@ -9784,7 +9784,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Pacabot:ITR8307_dessous"
+		(property "Footprint" "Pacabot:ITR8307_S17_TR8_Bottom"
 			(at 242.57 181.61 0)
 			(effects
 				(font
@@ -9793,7 +9793,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://www.everlighteurope.com/custom/files/datasheets/DRX-0000322.pdf"
 			(at 242.57 181.61 0)
 			(effects
 				(font
@@ -10592,7 +10592,7 @@
 				)
 			)
 		)
-		(property "Value" "ITR8307/S17/TR8"
+		(property "Value" "ITR8307/S17/TR8(B)"
 			(at 332 190.89 0)
 			(effects
 				(font
@@ -10600,7 +10600,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Pacabot:ITR8307_dessous"
+		(property "Footprint" "Pacabot:ITR8307_S17_TR8_Bottom"
 			(at 331.47 181.61 0)
 			(effects
 				(font
@@ -10609,7 +10609,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://www.everlighteurope.com/custom/files/datasheets/DRX-0000322.pdf"
 			(at 331.47 181.61 0)
 			(effects
 				(font
