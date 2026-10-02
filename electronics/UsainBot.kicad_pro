@@ -2,6 +2,91 @@
   "board": {
     "3dviewports": [],
     "design_settings": {
+      "bom_export_filename": "${PROJECTNAME}.csv",
+      "bom_fmt_presets": [],
+      "bom_fmt_settings": {
+        "field_delimiter": ",",
+        "include_byte_order_mark": false,
+        "keep_line_breaks": false,
+        "keep_tabs": false,
+        "name": "CSV",
+        "ref_delimiter": ",",
+        "ref_range_delimiter": "",
+        "string_delimiter": "\""
+      },
+      "bom_presets": [],
+      "bom_settings": {
+        "exclude_dnp": false,
+        "fields_ordered": [
+          {
+            "group_by": false,
+            "label": "Reference",
+            "name": "Reference",
+            "show": true
+          },
+          {
+            "group_by": false,
+            "label": "Qty",
+            "name": "${QUANTITY}",
+            "show": true
+          },
+          {
+            "group_by": true,
+            "label": "Value",
+            "name": "Value",
+            "show": true
+          },
+          {
+            "group_by": true,
+            "label": "DNP",
+            "name": "${DNP}",
+            "show": true
+          },
+          {
+            "group_by": true,
+            "label": "Exclude from BOM",
+            "name": "${EXCLUDE_FROM_BOM}",
+            "show": true
+          },
+          {
+            "group_by": true,
+            "label": "Exclude from Board",
+            "name": "${EXCLUDE_FROM_BOARD}",
+            "show": true
+          },
+          {
+            "group_by": true,
+            "label": "Exclude from Simulation",
+            "name": "${EXCLUDE_FROM_SIM}",
+            "show": true
+          },
+          {
+            "group_by": true,
+            "label": "Exclude from Position Files",
+            "name": "${EXCLUDE_FROM_POS_FILES}",
+            "show": true
+          },
+          {
+            "group_by": true,
+            "label": "Footprint",
+            "name": "Footprint",
+            "show": true
+          },
+          {
+            "group_by": false,
+            "label": "Datasheet",
+            "name": "Datasheet",
+            "show": true
+          }
+        ],
+        "filter_scope": "reference",
+        "filter_string": "",
+        "group_symbols": true,
+        "include_excluded_from_bom": true,
+        "name": "Default Editing",
+        "sort_asc": true,
+        "sort_field": "Reference"
+      },
       "defaults": {
         "apply_defaults_to_fp_barcodes": false,
         "apply_defaults_to_fp_dimensions": false,
@@ -50,22 +135,46 @@
         "silk_text_thickness": 0.1,
         "silk_text_upright": false,
         "zones": {
-          "min_clearance": 0.5
+          "border_display_style": 2,
+          "border_hatch_pitch": 0.5,
+          "corner_radius": 0.0,
+          "corner_smoothing": 0,
+          "fill_mode": 0,
+          "hatch_gap": 1.5,
+          "hatch_orientation": 0.0,
+          "hatch_smoothing_level": 0,
+          "hatch_smoothing_value": 0.1,
+          "hatch_thickness": 1.0,
+          "min_clearance": 0.5,
+          "min_island_area": 10.0,
+          "min_thickness": 0.25,
+          "pad_connection": 1,
+          "remove_islands": 0,
+          "thermal_relief_gap": 0.5,
+          "thermal_relief_spoke_width": 0.5
         }
       },
-      "diff_pair_dimensions": [],
+      "diff_pair_dimensions": [
+        {
+          "gap": 0.0,
+          "via_gap": 0.0,
+          "width": 0.0
+        }
+      ],
       "drc_exclusions": [],
       "meta": {
-        "version": 2
+        "version": 3
       },
       "rule_severities": {
         "annular_width": "error",
+        "assertion_failure": "error",
         "clearance": "error",
         "connection_width": "warning",
         "copper_edge_clearance": "error",
         "copper_sliver": "warning",
         "courtyards_overlap": "error",
         "creepage": "error",
+        "dense_footprint_no_escape": "warning",
         "diff_pair_gap_out_of_range": "error",
         "diff_pair_uncoupled_length_too_long": "error",
         "drill_out_of_range": "error",
@@ -73,6 +182,7 @@
         "extra_footprint": "warning",
         "footprint": "error",
         "footprint_filters_mismatch": "ignore",
+        "footprint_scaled_with_pads": "warning",
         "footprint_symbol_field_mismatch": "warning",
         "footprint_symbol_mismatch": "warning",
         "footprint_type_mismatch": "ignore",
@@ -87,16 +197,26 @@
         "lib_footprint_issues": "warning",
         "lib_footprint_mismatch": "warning",
         "malformed_courtyard": "error",
+        "malformed_microvia_stack_span": "error",
+        "microvia_aspect_ratio": "error",
+        "microvia_crosses_core": "warning",
         "microvia_drill_out_of_range": "error",
+        "microvia_stack_depth": "error",
+        "microvia_stack_not_filled": "warning",
         "mirrored_text_on_front_layer": "warning",
         "missing_courtyard": "ignore",
         "missing_footprint": "warning",
         "missing_tuning_profile": "warning",
+        "net_chain_return_path": "error",
+        "net_chain_stub_length": "error",
+        "net_chain_tuning_profiles": "error",
         "net_conflict": "warning",
         "nonmirrored_text_on_back_layer": "warning",
         "npth_inside_courtyard": "error",
+        "pad_no_room_at_class_width": "warning",
         "padstack": "warning",
         "pth_inside_courtyard": "error",
+        "routing_blocked": "warning",
         "shorting_items": "error",
         "silk_edge_clearance": "warning",
         "silk_over_copper": "warning",
@@ -120,6 +240,8 @@
         "unconnected_items": "error",
         "unresolved_variable": "error",
         "via_dangling": "warning",
+        "via_diameter": "error",
+        "via_stitch_overlap": "error",
         "zones_intersect": "error"
       },
       "rules": {
@@ -156,6 +278,7 @@
         {
           "td_allow_use_two_tracks": true,
           "td_curve_segcount": 0,
+          "td_enabled": false,
           "td_height_ratio": 1.0,
           "td_length_ratio": 0.5,
           "td_maxheight": 2.0,
@@ -167,6 +290,7 @@
         {
           "td_allow_use_two_tracks": true,
           "td_curve_segcount": 0,
+          "td_enabled": false,
           "td_height_ratio": 1.0,
           "td_length_ratio": 0.5,
           "td_maxheight": 2.0,
@@ -178,6 +302,7 @@
         {
           "td_allow_use_two_tracks": true,
           "td_curve_segcount": 0,
+          "td_enabled": false,
           "td_height_ratio": 1.0,
           "td_length_ratio": 0.5,
           "td_maxheight": 2.0,
@@ -187,7 +312,9 @@
           "td_width_to_size_filter_ratio": 0.9
         }
       ],
-      "track_widths": [],
+      "track_widths": [
+        0.0
+      ],
       "tuning_pattern_settings": {
         "diff_pair_defaults": {
           "corner_radius_percentage": 80,
@@ -214,7 +341,13 @@
           "spacing": 0.6
         }
       },
-      "via_dimensions": [],
+      "via_dimensions": [
+        {
+          "diameter": 0.0,
+          "drill": 0.0
+        }
+      ],
+      "via_stack_presets": [],
       "zones_allow_external_fillets": false
     },
     "ipc2581": {
@@ -223,8 +356,12 @@
       "distpn": "",
       "internal_id": "",
       "mfg": "",
+      "mode": "",
       "mpn": "",
-      "sch_revision": "A"
+      "net_names": "",
+      "ref_des": "",
+      "sch_revision": "A",
+      "sections": ""
     },
     "layer_pairs": [],
     "layer_presets": [],
@@ -468,6 +605,7 @@
     }
   },
   "libraries": {
+    "pinned_design_block_libs": [],
     "pinned_footprint_libs": [],
     "pinned_symbol_libs": []
   },
@@ -500,17 +638,3402 @@
     "meta": {
       "version": 5
     },
-    "net_colors": null,
-    "netclass_assignments": null,
+    "net_chain_classes": {},
+    "net_chain_netclasses": {},
+    "net_colors": {},
+    "netclass_assignments": {},
     "netclass_patterns": []
   },
   "pcbnew": {
+    "find_by_properties": {
+      "recent_queries": []
+    },
     "last_paths": {
       "idf": "",
       "netlist": "",
       "plot": "",
       "specctra_dsn": "",
+      "step": "",
       "vrml": ""
+    },
+    "native_autorouter": {
+      "allow_vias": true,
+      "deferred_rules": [],
+      "fanout": false,
+      "fanout_keep_vias": true,
+      "fanout_max_distance_mm": 0.0,
+      "fanout_nets": "GND, +3.3V",
+      "fanout_own_via": true,
+      "fanout_share_when_no_room": true,
+      "footprint_move_radius_mm": 1.5,
+      "footprint_move_rotation": true,
+      "improvement_threshold": 0.01,
+      "layers": {
+        "B.Cu": {
+          "other_cost": 2700,
+          "prefer_vertical": false,
+          "preferred_cost": 1800,
+          "route": true
+        },
+        "F.Cu": {
+          "other_cost": 2900,
+          "prefer_vertical": true,
+          "preferred_cost": 1800,
+          "route": true
+        },
+        "In1.Cu": {
+          "other_cost": 1900,
+          "prefer_vertical": false,
+          "preferred_cost": 1000,
+          "route": true
+        },
+        "In2.Cu": {
+          "other_cost": 2100,
+          "prefer_vertical": true,
+          "preferred_cost": 1000,
+          "route": true
+        }
+      },
+      "mode": 0,
+      "netclasses": {
+        "+3V3": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "+3V3A": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "+3V3_BLE": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Alimentation/BST_BUCK": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Alimentation/BTN_N": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Alimentation/BTST": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Alimentation/CBSET_R": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Alimentation/CC1": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Alimentation/CC2": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Alimentation/CD": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Alimentation/CHG_LED_A": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Alimentation/CHG_PG": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Alimentation/CHG_STAT": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Alimentation/EN_BUCK": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Alimentation/FB_BUCK": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Alimentation/ILIM": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Alimentation/MID_R": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Alimentation/PACK_MID": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Alimentation/PMID": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Alimentation/PWR_G": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Alimentation/Q101_G": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Alimentation/Q104_G": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Alimentation/REGN": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Alimentation/RT_BUCK": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Alimentation/SNS_CHG": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Alimentation/SS_BUCK": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Alimentation/SW_BUCK": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Alimentation/SW_CHG": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Alimentation/TS": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Alimentation/USB_DM_C": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Alimentation/USB_DP_C": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Alimentation/VBAT_SW_IN": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Alimentation/VBUS_IN": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Barrette/IR_A00": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Barrette/IR_A01": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Barrette/IR_A02": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Barrette/IR_A03": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Barrette/IR_A04": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Barrette/IR_A05": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Barrette/IR_A06": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Barrette/IR_A07": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Barrette/IR_A08": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Barrette/IR_A09": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Barrette/IR_A10": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Barrette/IR_A11": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Barrette/IR_BANK_A_N": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Barrette/IR_BANK_B_N": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Barrette/Q401_G": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Barrette/Q402_G": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Capteurs/AMP_F": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Capteurs/AMP_FL": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Capteurs/AMP_L": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Capteurs/CG_F": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Capteurs/CG_FL": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Capteurs/CG_L": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Capteurs/FB_F": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Capteurs/FB_FL": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Capteurs/FB_L": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Capteurs/G_F": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Capteurs/G_FL": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Capteurs/G_L": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Capteurs/LAS_FL_A": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Capteurs/LAS_FL_K": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Capteurs/LAS_F_A": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Capteurs/LAS_F_K": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Capteurs/LAS_L_A": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Capteurs/LAS_L_K": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Capteurs/PD_F": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Capteurs/PD_FL": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Capteurs/PD_L": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Capteurs/Q501_G": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Capteurs/Q521_G": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Capteurs/Q541_G": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Capteurs/TIA_F": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Capteurs/TIA_FL": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Capteurs/TIA_L": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Capteurs/TXAC_F": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Capteurs/TXAC_FL": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Capteurs/TXAC_L": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Capteurs/U501_SPARE_3": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Capteurs/U502_SPARE": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Capteurs/U502_SPARE_3": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Capteurs/U504_SPARE_3": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Capteurs/U504_SPARE_4": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Capteurs/VREF_MID": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Capteurs/VREF_MID_R": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Capteurs/VREF_RX": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/IHM/BUZZ_D": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/IHM/BZAC": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/IHM/D606_A": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/IHM/D608_A": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/IHM/D609_A": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/IHM/Q601_G": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/IHM/Q602_G": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/IHM/TRACK_SW": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/MCU/BOOT0": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/MCU/NRST": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/MCU/OSC_IN": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/MCU/OSC_OUT": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/MCU/SWCLK": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/MCU/SWDIO": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/MCU/SWO": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/MCU/VCAP1": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/MCU/VCAP2": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/MCU/XTAL_OUT": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Moteurs/CPH_L": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Moteurs/CPH_R": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Moteurs/CPL_L": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Moteurs/CPL_R": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Moteurs/ENC_L_A_RAW": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Moteurs/ENC_L_B_RAW": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Moteurs/ENC_R_A_RAW": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Moteurs/ENC_R_B_RAW": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Moteurs/IMODE_L": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Moteurs/IMODE_R": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Moteurs/IPROPI_L_RAW": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Moteurs/IPROPI_R_RAW": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Moteurs/MOT_L_OUT1": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Moteurs/MOT_L_OUT2": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Moteurs/MOT_R_OUT1": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Moteurs/MOT_R_OUT2": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Moteurs/PMODE_L": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Moteurs/PMODE_R": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Moteurs/VCP_L": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Moteurs/VCP_R": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Moteurs/VREF_MOT": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Temoins de ligne/LGN00": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Temoins de ligne/LGN00_A": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Temoins de ligne/LGN01": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Temoins de ligne/LGN01_A": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Temoins de ligne/LGN02": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Temoins de ligne/LGN02_A": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Temoins de ligne/LGN03": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Temoins de ligne/LGN03_A": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Temoins de ligne/LGN04": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Temoins de ligne/LGN04_A": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Temoins de ligne/LGN05": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Temoins de ligne/LGN05_A": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Temoins de ligne/LGN06": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Temoins de ligne/LGN06_A": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Temoins de ligne/LGN07": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Temoins de ligne/LGN07_A": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Temoins de ligne/LGN08": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Temoins de ligne/LGN08_A": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Temoins de ligne/LGN09": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Temoins de ligne/LGN09_A": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Temoins de ligne/LGN10": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Temoins de ligne/LGN10_A": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Temoins de ligne/LGN11": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Temoins de ligne/LGN11_A": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Traces et turbine/BLE_LED_A": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Traces et turbine/BLE_PG": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Traces et turbine/ESC_SIG": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Traces et turbine/FLASH_nHOLD": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Traces et turbine/FLASH_nWP": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "/Traces et turbine/Q702_G": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "BLE_PWR_EN": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "BLE_RX": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "BLE_TX": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "BUZZER": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "CHG_CD_EN": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "CHG_INT": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "ENC_L_A": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "ENC_L_B": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "ENC_R_A": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "ENC_R_B": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "ESC_PWM": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "FLASH_MISO": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "FLASH_MOSI": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "FLASH_SCK": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "FLASH_nCS": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "GND": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "IMU_INT1": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "IMU_MISO": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "IMU_MOSI": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "IMU_SCK": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "IMU_nCS": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "IPROPI_L": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "IPROPI_R": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "IR_BANK_A": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "IR_BANK_B": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "LINE_00": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "LINE_01": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "LINE_02": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "LINE_03": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "LINE_04": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "LINE_05": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "LINE_06": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "LINE_07": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "LINE_08": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "LINE_09": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "LINE_10": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "LINE_11": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "MOT_L_IN1": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "MOT_L_IN2": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "MOT_L_nFAULT": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "MOT_L_nSLEEP": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "MOT_R_IN1": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "MOT_R_IN2": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "MOT_R_nFAULT": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "MOT_R_nSLEEP": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "PWR_BTN": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "PWR_HOLD": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "RX_F": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "RX_FL": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "RX_L": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "SCL2": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "SDA2": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "START_BTN": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "SW_DOWN": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "SW_LEFT": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "SW_PUSH": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "SW_RIGHT": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "SW_UP": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "TRACK_EN": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "TX_F": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "TX_FL": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "TX_L": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "USB_DM": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "USB_DP": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "VBAT": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "VBAT_SENSE": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "VPACK": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "unconnected-(J101-SBU1-PadA8)": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "unconnected-(J101-SBU2-PadB8)": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "unconnected-(U105-LED12-Pad19)": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "unconnected-(U105-LED13-Pad20)": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "unconnected-(U105-LED14-Pad21)": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "unconnected-(U105-LED15-Pad22)": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "unconnected-(U201-PA15(JTDI)-Pad110)": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "unconnected-(U201-PB6-Pad136)": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "unconnected-(U201-PB7-Pad137)": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "unconnected-(U201-PC14-Pad8)": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "unconnected-(U201-PC15-Pad9)": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "unconnected-(U201-PC8-Pad98)": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "unconnected-(U201-PC9-Pad99)": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "unconnected-(U201-PD11-Pad80)": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "unconnected-(U201-PD12-Pad81)": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "unconnected-(U201-PD15-Pad86)": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "unconnected-(U201-PD5-Pad119)": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "unconnected-(U201-PD6-Pad122)": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "unconnected-(U201-PD7-Pad123)": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "unconnected-(U201-PD8-Pad77)": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "unconnected-(U201-PD9-Pad78)": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "unconnected-(U201-PF0-Pad10)": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "unconnected-(U201-PF1-Pad11)": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "unconnected-(U201-PF10-Pad22)": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "unconnected-(U201-PF12-Pad50)": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "unconnected-(U201-PF14-Pad54)": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "unconnected-(U201-PF15-Pad55)": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "unconnected-(U201-PF2-Pad12)": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "unconnected-(U201-PF3-Pad13)": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "unconnected-(U201-PF4-Pad14)": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "unconnected-(U201-PF5-Pad15)": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "unconnected-(U201-PF6-Pad18)": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "unconnected-(U201-PF7-Pad19)": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "unconnected-(U201-PF8-Pad20)": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "unconnected-(U201-PF9-Pad21)": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "unconnected-(U201-PG0-Pad56)": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "unconnected-(U201-PG1-Pad57)": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "unconnected-(U201-PG10-Pad125)": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "unconnected-(U201-PG11-Pad126)": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "unconnected-(U201-PG12-Pad127)": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "unconnected-(U201-PG13-Pad128)": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "unconnected-(U201-PG14-Pad129)": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "unconnected-(U201-PG15-Pad132)": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "unconnected-(U201-PG2-Pad87)": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "unconnected-(U201-PG3-Pad88)": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "unconnected-(U201-PG4-Pad89)": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "unconnected-(U201-PG5-Pad90)": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "unconnected-(U201-PG6-Pad91)": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "unconnected-(U201-PG7-Pad92)": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "unconnected-(U201-PG8-Pad93)": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "unconnected-(U201-PG9-Pad124)": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "unconnected-(U503-INT2-Pad9)": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "unconnected-(U503-NC-Pad10)": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "unconnected-(U503-NC-Pad11)": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        }
+      },
+      "optimization_attempts": 0,
+      "optimization_passes": 100,
+      "plane_via_cost": 5,
+      "route_diff_pairs": true,
+      "route_escapes": true,
+      "routing_attempts": 0,
+      "routing_passes": 0,
+      "stage": 0,
+      "start_ripup_cost": 100,
+      "stop_after_passes_without_progress": 3,
+      "time_limit_s": 43200.0,
+      "via_cost": 20,
+      "vias_for_current": true
     },
     "page_layout_descr_file": ""
   },
@@ -672,7 +4195,7 @@
   "text_variables": {},
   "tuning_profiles": {
     "meta": {
-      "version": 0
+      "version": 2
     },
     "tuning_profiles_impedance_geometric": []
   }
