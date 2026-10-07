@@ -42,14 +42,15 @@ chaque type à 199 rapports (499 pour les isolements et les connexions) : les 19
 « lib_footprint_issues » et les 499 connexions ouvertes sont des plafonds, identiques
 avant et après.
 
-| Type | Avant | Après | Explication |
-|---|---|---|---|
-| pad_no_room_at_class_width | 0 | 26 | attendu, voir ci-dessous |
-| text_height | 16 | 30 | +14 : textes de J102, TM501/521/541, J601 sous 1,0 mm (minimum JLCPCB, était 0,8) |
-| text_thickness | 0 | 20 | +20 : traits de J102, J103 et des 12 ITR8307 sous 0,15 mm (minimum JLCPCB, était 0,08) |
-| silk_over_copper | 62 | 24 | même défauts, regroupés : avec un pont de vernis minimal de 0,13 mm, KiCad fusionne les ouvertures trop proches et compte par objet de sérigraphie |
-| lib_footprint_issues, lib_footprint_mismatch, silk_overlap, silk_edge_clearance | 199, 14, 44, 9 | inchangés | antérieurs, hors du sujet |
-| isolement, perçage, anneau, largeur | 0 | **0** | aucune violation de règle de cuivre |
+| Type | Avant (`ef2d518`) | Règles (`17459e3`) | Après le 07/10 | Explication |
+|---|---|---|---|---|
+| pad_no_room_at_class_width | 0 | 26 | 26 | attendu, voir ci-dessous |
+| text_height | 16 | 30 | 30 | +14 : textes de J102, TM501/521/541, J601 sous 1,0 mm (minimum JLCPCB, était 0,8) |
+| text_thickness | 0 | 20 | 20 | +20 : traits de J102, J103 et des 12 ITR8307 sous 0,15 mm (minimum JLCPCB, était 0,08) |
+| silk_over_copper | 62 | 24 | 23 | mêmes défauts, regroupés : avec un pont de vernis minimal de 0,13 mm, KiCad fusionne les ouvertures trop proches et compte par objet de sérigraphie ; −1 le 07/10 (référence de R617 passée sur F.Fab) |
+| silk_overlap, silk_edge_clearance | 44, 9 | 44, 9 | 41, 8 | −4 le 07/10 : références de R617 et R618 passées sur F.Fab |
+| lib_footprint_issues, lib_footprint_mismatch | 199, 14 | 199, 14 | 199, 14 | antérieurs : bibliothèques globales absentes de la configuration du `kicad-cli` ; 199 est un plafond |
+| isolement, perçage, anneau, largeur, courtyard, bord | 0 | **0** | **0** | aucune violation de cuivre ni de placement |
 
 Les 26 « pad_no_room » sont toutes des pastilles plus étroites que la largeur de leur
 classe de puissance : QFN du chargeur (9), USB-C (2), SOT-583 du buck (2), HTSSOP des
@@ -81,9 +82,32 @@ routée.
 
 1. **Finition ENIG** : option payante chez JLCPCB, **conservée** (décision de
    l'utilisateur) ; c'est la seule option payante de la carte.
-2. **Paire USB** : renommage des nets en `_P`/`_N` demandé, traité dans un commit suivant.
-3. **Constats de schéma** (voir [courants.md](courants.md)) : codeurs IE2 à passer en
-   5 V et R615/R617/R618 à passer en 0603 (demandés, commit suivant) ; F101 sans
-   référence et calibré 12 A pour une branche de 3,9 A ; notes périmées (IIN 2,4 A,
-   buck 2 A, I_TRIP).
+2. **Paire USB** : nets renommés en `_P`/`_N` le 07/10 (voir plus bas).
+3. **Constats de schéma** (voir [courants.md](courants.md)) : codeurs IE2 en 5 V et
+   R615/R617/R618 en 0603 traités le 07/10 ; restent F101 sans référence et calibré 12 A
+   pour une branche de 3,9 A, et les notes périmées (IIN 2,4 A, buck 2 A, I_TRIP).
 4. **Turbine** : 10 A à confirmer par mesure.
+
+## Modifications de schéma du 7 octobre 2026
+
+Demandées par l'utilisateur après lecture de ce dossier ; schéma vérifié avec le `kicad-cli`
+stock 10.0.1 (celui du fork refuse de charger le schéma), carte avec celui du fork.
+
+- **Paires USB renommées** : `USB_DP`/`USB_DM` → `USB_D_P`/`USB_D_N`,
+  `/Alimentation/USB_DP_C`/`USB_DM_C` → `/Alimentation/USB_C_D_P`/`USB_C_D_N` (étiquettes
+  des feuilles 01 et 02, nets de la carte, motifs de classe, réglages de l'autorouteur).
+- **Codeurs IE2 en 5 V** : U302 TPS70950DBVR (LCSC C96028, extended) sur VBAT, EN sur +3V3,
+  C310 1 µF 0402 25 V X5R (C52923) en entrée, C311 4,7 µF 0603 16 V X5R (C19666) en sortie
+  (≥ 1,5 µF effectifs exigés par TI) ; nouveau net `/Moteurs/ENC_5V` vers J301.4 et J351.4,
+  classe ALIM_LOGIQUE. Symbole `Pacabot:TPS70950DBV` ajouté à la bibliothèque du projet
+  (brochage DBV du TPS709 : 1 IN, 2 GND, 3 EN, 4 NC, 5 OUT, vérifié dans SBVS186H).
+  Placés sur la carte en (100 ; 182), zone libre côté gauche, à déplacer à volonté.
+- **R615, R617, R618 en 0603** : 390 Ω, 560 Ω, 560 Ω (LCSC C23151, C23204), ≈ 10 mA par LED,
+  ≤ 50 mW à 7,3 V. La 0603 ne tenait plus aux places des 0402 : R615 remonte de 0,4 mm,
+  R618 se glisse entre C353 et D609, qui s'écarte de 0,25 mm vers le coin ; R617 passe en
+  (101,3 ; 121,1), seule place libre à moins de 19 mm de D608.
+
+Contrôles : netlist du schéma (KiCad stock) et nets des pastilles de la carte identiques
+pastille par pastille ; valeurs et empreintes identiques ; ERC 0 ; DRC sans nouvelle
+violation ; affectation des classes relue par KiCad. L'avertissement de numérotation du
+schéma (`#PWR9501`, `#PWR9502` en double) est antérieur et sans effet électrique.

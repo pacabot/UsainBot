@@ -12,6 +12,7 @@ pack 2S LiFePO4 ─ MR30 J102 ─┬─ VPACK ───────────�
                              └─ VPACK ─ F101 ─ VBAT_SW_IN ─ Q102 ∥ Q103 ─ VBAT ─┬─ DRV8874 U301 (moteur gauche)
                                                                                ├─ DRV8874 U351 (moteur droit)
                                                                                ├─ TPS62933 U103 ─ +3V3
+                                                                               ├─ TPS70950 U302 ─ ENC_5V (codeurs IE2)
                                                                                └─ LED IHM (R615, R617, R618)
 USB-C J101 ─ VBUS_IN ─ U101 ─ U102 VBUS ─ PMID ─ L101 ─ SW_CHG (boost 1,5 MHz) ─ SNS_CHG ─ BAT
 ```
@@ -49,9 +50,9 @@ Chiffres :
    6,4–7,3 V ; l'ESC accepte 12 A continu et 15 A en pointe.
 2. **Buzzer** : modèle non identifié (valeur « 9 × 5,5 mm », empreinte ABI-009-RC de
    12 mm). La note du schéma dit 200 mA ; l'ABI-009 tire 30 mA sous 6 V.
-3. **LED IHM** : aucune référence de LED, Vf supposés. Les résistances R615, R617, R618
-   (0402, 63 mW) dissipent 65 à 94 mW si les LED restent allumées : au-dessus de leur
-   puissance nominale. Régime de TRACK_SW à préciser.
+3. **LED IHM** : aucune référence de LED, Vf supposés. Traité le 07/10/2026 : R615, R617,
+   R618 passent en 0603 (100 mW) à 390 Ω / 560 Ω / 560 Ω, soit ≈ 10 mA par LED et 47 à
+   50 mW à 7,3 V (la moitié de la puissance nominale). Régime de TRACK_SW toujours à préciser.
 4. **ESP32-C3** : 335 mA de crête d'émission, comptés dans la crête +3V3. S'il est coupé
    par Q701 en course, la crête tombe à environ 0,9 A.
 5. **Moteurs** : le « 1 A réel » dépasse le courant nominal du 1524 (0,545 A) ; tenable
@@ -59,8 +60,11 @@ Chiffres :
 
 Constats hors règles de conception, à traiter dans le schéma :
 
-6. **Codeurs IE2 sous-alimentés** : J301 et J351 broche 4 sont sur +3V3, alors que l'IE2-16
-   demande 4 à 18 V et les IE2-400 / IE2-1024 4,5 à 5,5 V (fiches Faulhaber).
+6. **Codeurs IE2 sous-alimentés** : traité le 07/10/2026. Un TPS70950 (U302, entrée VBAT,
+   EN sur +3V3) fournit `ENC_5V` à J301 et J351 broche 4 : ≥ 4,74 V à VBAT 5,0 V. Les
+   sorties des codeurs montent alors à > 4,5 V ; elles arrivent sur PC6, PC7, PB4 et PB5
+   (broches 96, 97, 134, 135), toutes FT_h (DS13313 p. 66–70), et EN sur +3V3 garantit que
+   le 5 V n'apparaît qu'avec l'alimentation du MCU.
 7. **F101 sans référence** : valeur « 12 A », empreinte 1206, aucun MPN. Un fusible 12 A
    sur une branche dont le pire cas fait 3,9 A ne coupe un défaut qu'au-delà d'environ
    40 A en quelques secondes (Bourns SF-1206HH12M-2 : coupure en ≤ 5 s à 350 %).

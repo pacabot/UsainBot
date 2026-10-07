@@ -955,6 +955,10 @@
         "pattern": "+3V3*"
       },
       {
+        "netclass": "ALIM_LOGIQUE",
+        "pattern": "/Moteurs/ENC_5V"
+      },
+      {
         "netclass": "IMPULSION",
         "pattern": "/Barrette/IR_*"
       },
@@ -1056,11 +1060,11 @@
       },
       {
         "netclass": "USB",
-        "pattern": "USB_D?"
+        "pattern": "USB_D_?"
       },
       {
         "netclass": "USB",
-        "pattern": "/Alimentation/USB_D?_C"
+        "pattern": "/Alimentation/USB_C_D_?"
       }
     ]
   },
@@ -1464,7 +1468,7 @@
           "route": true,
           "stage": 2
         },
-        "/Alimentation/USB_DM_C": {
+        "/Alimentation/USB_C_D_N": {
           "layers": [
             "F.Cu",
             "In1.Cu",
@@ -1476,7 +1480,7 @@
           "route": true,
           "stage": 2
         },
-        "/Alimentation/USB_DP_C": {
+        "/Alimentation/USB_C_D_P": {
           "layers": [
             "F.Cu",
             "In1.Cu",
@@ -2425,6 +2429,19 @@
           "protect_existing": false,
           "route": true,
           "stage": 1
+        },
+        "/Moteurs/ENC_5V": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 1,
+          "current_a": 1.2
         },
         "/Moteurs/ENC_L_A_RAW": {
           "layers": [
@@ -3738,7 +3755,7 @@
           "route": true,
           "stage": 3
         },
-        "USB_DM": {
+        "USB_D_N": {
           "layers": [
             "F.Cu",
             "In1.Cu",
@@ -3750,7 +3767,7 @@
           "route": true,
           "stage": 2
         },
-        "USB_DP": {
+        "USB_D_P": {
           "layers": [
             "F.Cu",
             "In1.Cu",
@@ -4401,6 +4418,18 @@
           "stage": 3
         },
         "unconnected-(U201-PG9-Pad124)": {
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "B.Cu"
+          ],
+          "new_vias": true,
+          "protect_existing": false,
+          "route": true,
+          "stage": 3
+        },
+        "unconnected-(U302-NC-Pad4)": {
           "layers": [
             "F.Cu",
             "In1.Cu",

@@ -6981,7 +6981,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "220R"
+		(property "Value" "390R"
 			(at 40.3 113.27 0)
 			(effects
 				(font
@@ -6990,7 +6990,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 38.1 113.03 0)
 			(effects
 				(font
@@ -7020,7 +7020,7 @@
 				(hide yes)
 			)
 		)
-		(property "Power" "63mW"
+		(property "Power" "100mW"
 			(at 40.3 115.81 0)
 			(effects
 				(font
@@ -7272,7 +7272,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "300R"
+		(property "Value" "560R"
 			(at 70.3 113.27 0)
 			(effects
 				(font
@@ -7281,7 +7281,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 68.58 113.03 0)
 			(effects
 				(font
@@ -7311,7 +7311,7 @@
 				(hide yes)
 			)
 		)
-		(property "Power" "63mW"
+		(property "Power" "100mW"
 			(at 70.3 115.81 0)
 			(effects
 				(font
@@ -7563,7 +7563,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "300R"
+		(property "Value" "560R"
 			(at 100.3 113.27 0)
 			(effects
 				(font
@@ -7572,7 +7572,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 97.79 113.03 0)
 			(effects
 				(font
@@ -7602,7 +7602,7 @@
 				(hide yes)
 			)
 		)
-		(property "Power" "63mW"
+		(property "Power" "100mW"
 			(at 100.3 115.81 0)
 			(effects
 				(font

@@ -14,7 +14,7 @@ minimums de fabrication de [capacites-jlcpcb.md](capacites-jlcpcb.md).
 | CHARGEUR | 2,0 | 0,20 | 0,6 / 0,3 | — | 3,0 | 1 | brun | entrée USB et sortie du boost |
 | COMMUTATION | 2,0 | 0,20 | 0,6 / 0,3 | — | — | 1 | rouge vif | nœuds SW ; F.Cu seule, sans via |
 | AMORCAGE | 0,3 | 0,20 | 0,5 / 0,3 | — | — | 1 | rose | bootstrap, pompes de charge |
-| ALIM_LOGIQUE | 0,3 | 0,15 | 0,6 / 0,3 | — | 1,2 | 1 | jaune | +3V3, +3V3A, +3V3_BLE, REGN ; plan In2 |
+| ALIM_LOGIQUE | 0,3 | 0,15 | 0,6 / 0,3 | — | 1,2 | 1 | jaune | +3V3, +3V3A, +3V3_BLE, REGN, 5 V des codeurs ; plan In2 |
 | GND | 0,3 | 0,15 | 0,6 / 0,3 | — | — | 1 | gris | plan In1 ; raccords de pastille |
 | IMPULSION | 0,3 | 0,15 | 0,5 / 0,3 | — | — | 1 | violet | émetteurs pulsés, buzzer |
 | ANALOGIQUE | 0,2 | 0,15 | 0,5 / 0,3 | — | — | 2 | vert | mesures, références, retours |
@@ -50,7 +50,7 @@ paire USB ; 3 = le reste.
 Écrits dans `pcbnew.native_autorouter` du `.kicad_pro` :
 
 - étape et courant de chaque net, selon sa classe (le fork les stocke net par net) ;
-  les 277 nets ont une entrée, contrôlée par `check_classes.py` ;
+  les 279 nets ont une entrée, contrôlée par `check_classes.py` ;
 - COMMUTATION limitée à F.Cu, sans nouvelle via : le nœud SW reste sur la couche des
   composants (U102, L101, U103, L102 sont tous sur F.Cu), surface minimale ;
 - In1.Cu fermée au routage (plan GND plein, rôle des couches accepté le 02/10/2026).
@@ -72,12 +72,12 @@ Jokers KiCad (`*`, `?`, ancrés, sensibles à la casse) sur les noms complets.
 | CHARGEUR | `/Alimentation/VBUS_IN`, `/Alimentation/PMID`, `/Alimentation/SNS_CHG` |
 | COMMUTATION | `/Alimentation/SW_CHG`, `/Alimentation/SW_BUCK` |
 | AMORCAGE | `/Alimentation/BTST`, `/Alimentation/BST_BUCK`, `/Moteurs/CP?_?`, `/Moteurs/VCP_?` |
-| ALIM_LOGIQUE | `/Alimentation/REGN`, `+3V3*` |
+| ALIM_LOGIQUE | `/Alimentation/REGN`, `+3V3*`, `/Moteurs/ENC_5V` |
 | GND | `GND` |
 | IMPULSION | `/Barrette/IR_*`, `/Capteurs/LAS_*`, `/IHM/BUZZ_D` |
 | ANALOGIQUE | `/Capteurs/PD_*`, `/Capteurs/TIA_*`, `/Capteurs/FB_*`, `/Capteurs/G_*`, `/Capteurs/CG_*`, `/Capteurs/AMP_*`, `/Capteurs/VREF_*`, `/Capteurs/U50?_SPARE*`, `RX_*`, `/Moteurs/IPROPI_*`, `IPROPI_?`, `/Moteurs/VREF_MOT`, `VBAT_SENSE`, `LINE_??`, `/Alimentation/FB_BUCK`, `/Alimentation/RT_BUCK`, `/Alimentation/SS_BUCK`, `/Alimentation/ILIM`, `/Alimentation/TS`, `/Alimentation/MID_R` |
 | HORLOGE | `/MCU/OSC_*`, `/MCU/XTAL_OUT` |
-| USB | `USB_D?`, `/Alimentation/USB_D?_C` |
+| USB | `USB_D_?`, `/Alimentation/USB_C_D_?` |
 | Default | tous les autres nets |
 
 Contrôles faits le 2 octobre 2026 :
@@ -91,15 +91,18 @@ Contrôles faits le 2 octobre 2026 :
   J101.B4/B9, superposées à A9/A4 sur le même net VBUS_IN, ne sont citées qu'une fois.
   Ce contrôle a fait corriger un motif `/Moteurs/CP[HL]_?` : les crochets ne sont pas
   des jokers KiCad, le motif est devenu `/Moteurs/CP?_?`.
+- après les modifications du 07/10/2026, ALIM_LOGIQUE relue de la même façon (143
+  pastilles, dont J301.4, J351.4, U302.3/5, C311.1) ; USB relue par un isolement de classe
+  sondé à 3 mm, car le contrôle d'échappement ne cite plus les pastilles d'une paire
+  reconnue : les quatre nets renommés sont bien dans USB.
 
-Proposition de renommage (non faite, le schéma n'est pas modifié) : `USB_DP`/`USB_DM` et
-`/Alimentation/USB_DP_C`/`USB_DM_C` ne sont pas reconnus comme paires par KiCad, qui
-attend `_P`/`_N` ou `+`/`-` ; les renommer `USB_D_P`/`USB_D_N` et `USB_C_D_P`/`USB_C_D_N`
-permettrait au routeur de paires du fork de les tirer couplées.
+Paires USB renommées le 07/10/2026 (`USB_D_P`/`USB_D_N`, `/Alimentation/USB_C_D_P`/`USB_C_D_N`) :
+KiCad les reconnaît désormais comme paires, et le routeur de paires du fork peut les tirer
+couplées à 0,34 / 0,20 mm.
 
 ## Liste exhaustive net → classe
 
-Default contient 117 nets numériques lents et 54 broches non connectées. Il est utilisé
+Default contient 117 nets numériques lents et 55 broches non connectées. Il est utilisé
 volontairement comme classe « numérique » : chaque net de la liste Default ci-dessous a
 été relu (SPI, I²C, GPIO, grilles des MOSFET, LED témoins, codeurs, SWD, BOOT0, NRST,
 VCAP1/2 du MCU, équilibrage des cellules à 75–88 mA au plus).
@@ -128,9 +131,9 @@ VCAP1/2 du MCU, équilibrage des cellules à 75–88 mA au plus).
 
 `/Alimentation/BST_BUCK`, `/Alimentation/BTST`, `/Moteurs/CPH_L`, `/Moteurs/CPH_R`, `/Moteurs/CPL_L`, `/Moteurs/CPL_R`, `/Moteurs/VCP_L`, `/Moteurs/VCP_R`
 
-### ALIM_LOGIQUE — 4 nets
+### ALIM_LOGIQUE — 5 nets
 
-`+3V3`, `+3V3A`, `+3V3_BLE`, `/Alimentation/REGN`
+`+3V3`, `+3V3A`, `+3V3_BLE`, `/Alimentation/REGN`, `/Moteurs/ENC_5V`
 
 ### GND — 1 nets
 
@@ -150,10 +153,10 @@ VCAP1/2 du MCU, équilibrage des cellules à 75–88 mA au plus).
 
 ### USB — 4 nets
 
-`/Alimentation/USB_DM_C`, `/Alimentation/USB_DP_C`, `USB_DM`, `USB_DP`
+`/Alimentation/USB_C_D_N`, `/Alimentation/USB_C_D_P`, `USB_D_N`, `USB_D_P`
 
-### Default — 171 nets
+### Default — 172 nets
 
 `/Alimentation/BTN_N`, `/Alimentation/CBSET_R`, `/Alimentation/CC1`, `/Alimentation/CC2`, `/Alimentation/CD`, `/Alimentation/CHG_LED_A`, `/Alimentation/CHG_PG`, `/Alimentation/CHG_STAT`, `/Alimentation/EN_BUCK`, `/Alimentation/PACK_MID`, `/Alimentation/PWR_G`, `/Alimentation/Q101_G`, `/Alimentation/Q104_G`, `/Barrette/Q401_G`, `/Barrette/Q402_G`, `/Capteurs/Q501_G`, `/Capteurs/Q521_G`, `/Capteurs/Q541_G`, `/Capteurs/TXAC_F`, `/Capteurs/TXAC_FL`, `/Capteurs/TXAC_L`, `/IHM/BZAC`, `/IHM/D606_A`, `/IHM/D608_A`, `/IHM/D609_A`, `/IHM/Q601_G`, `/IHM/Q602_G`, `/IHM/TRACK_SW`, `/MCU/BOOT0`, `/MCU/NRST`, `/MCU/SWCLK`, `/MCU/SWDIO`, `/MCU/SWO`, `/MCU/VCAP1`, `/MCU/VCAP2`, `/Moteurs/ENC_L_A_RAW`, `/Moteurs/ENC_L_B_RAW`, `/Moteurs/ENC_R_A_RAW`, `/Moteurs/ENC_R_B_RAW`, `/Moteurs/IMODE_L`, `/Moteurs/IMODE_R`, `/Moteurs/PMODE_L`, `/Moteurs/PMODE_R`, `/Temoins de ligne/LGN00`, `/Temoins de ligne/LGN00_A`, `/Temoins de ligne/LGN01`, `/Temoins de ligne/LGN01_A`, `/Temoins de ligne/LGN02`, `/Temoins de ligne/LGN02_A`, `/Temoins de ligne/LGN03`, `/Temoins de ligne/LGN03_A`, `/Temoins de ligne/LGN04`, `/Temoins de ligne/LGN04_A`, `/Temoins de ligne/LGN05`, `/Temoins de ligne/LGN05_A`, `/Temoins de ligne/LGN06`, `/Temoins de ligne/LGN06_A`, `/Temoins de ligne/LGN07`, `/Temoins de ligne/LGN07_A`, `/Temoins de ligne/LGN08`, `/Temoins de ligne/LGN08_A`, `/Temoins de ligne/LGN09`, `/Temoins de ligne/LGN09_A`, `/Temoins de ligne/LGN10`, `/Temoins de ligne/LGN10_A`, `/Temoins de ligne/LGN11`, `/Temoins de ligne/LGN11_A`, `/Traces et turbine/BLE_LED_A`, `/Traces et turbine/BLE_PG`, `/Traces et turbine/ESC_SIG`, `/Traces et turbine/FLASH_nHOLD`, `/Traces et turbine/FLASH_nWP`, `/Traces et turbine/Q702_G`, `BLE_PWR_EN`, `BLE_RX`, `BLE_TX`, `BUZZER`, `CHG_CD_EN`, `CHG_INT`, `ENC_L_A`, `ENC_L_B`, `ENC_R_A`, `ENC_R_B`, `ESC_PWM`, `FLASH_MISO`, `FLASH_MOSI`, `FLASH_SCK`, `FLASH_nCS`, `IMU_INT1`, `IMU_MISO`, `IMU_MOSI`, `IMU_SCK`, `IMU_nCS`, `IR_BANK_A`, `IR_BANK_B`, `MOT_L_IN1`, `MOT_L_IN2`, `MOT_L_nFAULT`, `MOT_L_nSLEEP`, `MOT_R_IN1`, `MOT_R_IN2`, `MOT_R_nFAULT`, `MOT_R_nSLEEP`, `PWR_BTN`, `PWR_HOLD`, `SCL2`, `SDA2`, `START_BTN`, `SW_DOWN`, `SW_LEFT`, `SW_PUSH`, `SW_RIGHT`, `SW_UP`, `TRACK_EN`, `TX_F`, `TX_FL`, `TX_L`
 
-Plus 54 broches non connectées (`unconnected-…`, une pastille chacune, rien à router).
+Plus 55 broches non connectées (`unconnected-…`, une pastille chacune, rien à router).

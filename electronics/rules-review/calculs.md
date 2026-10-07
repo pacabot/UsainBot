@@ -158,11 +158,10 @@ devant les fronts de 4 à 20 ns de la pleine vitesse : l'écart d'impédance y e
 conséquence. Le préimprégné 7628 épais impose des pistes larges : la paire doit se
 rétrécir aux pastilles de l'USB-C (0,30 mm au pas de 0,5) et du LQFP.
 
-Point bloquant pour le routeur de paires : KiCad ne reconnaît une paire que par des noms
-en `_P`/`_N` ou `+`/`-`. `USB_DP`/`USB_DM` et `/Alimentation/USB_DP_C`/`USB_DM_C` ne
-sont donc pas vus comme des paires : la classe porte la largeur et l'écart, mais le
-routeur de paires du fork ne s'en servira pas tant que les nets ne sont pas renommés
-(proposition : `USB_D_P`/`USB_D_N` et `USB_C_D_P`/`USB_C_D_N`, à faire dans le schéma).
+Nommage : depuis le 07/10/2026 les nets s'appellent `USB_D_P`/`USB_D_N` et
+`/Alimentation/USB_C_D_P`/`USB_C_D_N`. KiCad, qui ne reconnaît une paire que par des noms en
+`_P`/`_N` ou `+`/`-`, les voit comme deux paires, et le routeur de paires du fork les tire
+couplées avec la largeur et l'écart de la classe USB.
 
 ## 5. Diaphonie : isolement entre analogique et sources de bruit
 

@@ -5636,7 +5636,7 @@
 		)
 		(uuid "023d7b99-1f98-c9dd-6b63-970ee063983e")
 	)
-	(label "USB_DP_C"
+	(label "USB_C_D_P"
 		(at 64.77 67.31 0)
 		(fields_autoplaced yes)
 		(effects
@@ -5697,7 +5697,7 @@
 		)
 		(uuid "6e7cac47-d893-f8ee-b7a6-3dbc1711726b")
 	)
-	(label "USB_DM_C"
+	(label "USB_C_D_N"
 		(at 64.77 62.23 0)
 		(fields_autoplaced yes)
 		(effects
@@ -6245,7 +6245,7 @@
 		)
 		(uuid "7c6dc7b3-5e23-10e7-e811-1930f78fe6d0")
 	)
-	(label "USB_DP_C"
+	(label "USB_C_D_P"
 		(at 120.65 44.45 180)
 		(fields_autoplaced yes)
 		(effects
@@ -6267,7 +6267,7 @@
 		)
 		(uuid "1ffaa8ed-f935-cfb8-b2a4-d99337414cf5")
 	)
-	(global_label "USB_DP"
+	(global_label "USB_D_P"
 		(shape bidirectional)
 		(at 135.89 44.45 0)
 		(fields_autoplaced yes)
@@ -6299,7 +6299,7 @@
 		)
 		(uuid "f453f111-7cc3-3dcf-96d3-7e1c4d36a5f2")
 	)
-	(label "USB_DM_C"
+	(label "USB_C_D_N"
 		(at 120.65 46.99 180)
 		(fields_autoplaced yes)
 		(effects
@@ -6321,7 +6321,7 @@
 		)
 		(uuid "ea17dfcf-93a2-b707-7d5f-dba7dcae8191")
 	)
-	(global_label "USB_DM"
+	(global_label "USB_D_N"
 		(shape bidirectional)
 		(at 135.89 46.99 0)
 		(fields_autoplaced yes)
