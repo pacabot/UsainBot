@@ -1,0 +1,71 @@
+(version 1)
+
+# Règles de conception UsainBot — JLCPCB 4 couches standard (JLC04161H-7628, 1 oz / 0,5 oz).
+# Justifications : electronics/rules-review/ (capacites-jlcpcb.md, calculs.md, classes.md).
+#
+# Sémantique vérifiée dans le fork : toutes les règles vraies s'appliquent dans l'ordre du
+# fichier, la dernière écrase min / opt / max champ par champ ; une règle n'est jamais un
+# plancher. Les classes de nets (UsainBot.kicad_pro) passent avant tout ce fichier.
+# Ordre ci-dessous : perçages, isolement entre classes, étranglements. Seuls les deux
+# étranglements portent la même contrainte : une piste qui touche à la fois le courtyard d'un
+# passif et celui d'un circuit intégré prend la règle des circuits intégrés, placée en dernier
+# (la plus étroite, 0,25 mm, celle qui passe entre les pastilles du QFN).
+# Chaque règle a été vérifiée vivante le 02/10/2026 (valeur rendue extrême ou pistes-sondes
+# sur une copie de la carte : elle produit bien des violations).
+
+# --- Perçages ------------------------------------------------------------------------------
+
+# JLCPCB : trou PTH -> piste 0,28 mini / 0,35 recommandé ; trou PTH -> cuivre interne 0,30.
+# Le plancher de la carte (0,25) couvre les vias : trou de via -> cuivre 0,20.
+(rule "Trou PTH vers cuivre"
+  (condition "A.Type == 'Pad' && A.Pad_Type == 'Through-hole' && A.Hole_Size_X > 0.3mm")
+  (constraint hole_clearance (min 0.35mm)))
+
+# JLCPCB : trou PTH -> trou PTH 0,45. Le plancher de la carte (0,25) couvre les vias (0,20).
+(rule "Trou PTH vers trou PTH"
+  (condition "A.Type == 'Pad' && A.Pad_Type == 'Through-hole' && A.Hole_Size_X > 0.3mm && B.Type == 'Pad' && B.Pad_Type == 'Through-hole' && B.Hole_Size_X > 0.3mm")
+  (constraint hole_to_hole (min 0.5mm)))
+
+# JLCPCB : anneau PTH 0,15 absolu, 0,20 recommandé (multicouche 1 oz). Vias : plancher 0,10.
+(rule "Anneau PTH"
+  (condition "A.Type == 'Pad' && A.Pad_Type == 'Through-hole' && A.Hole_Size_X > 0.3mm")
+  (constraint annular_width (min 0.2mm)))
+
+# --- Isolements entre classes --------------------------------------------------------------
+
+# Analogique sensible et quartz contre les sources de bruit (nœuds de commutation, amorçage,
+# sorties moteur, émetteurs pulsés, chemin de puissance du chargeur). Diaphonie entre
+# microrubans sur plan : K / (1 + (D/H)^2) ; H = 0,21 mm (F.Cu -> In1), D = 3 H = 0,65 mm
+# ramène le couplage à 1/10 de celui de deux pistes accolées. Les paires de pastilles sont
+# exclues : leur écart est fixé par le placement, pas par le routage. Les courtyards des
+# boîtiers qui mêlent par nature les deux domaines sont exemptés, sans quoi aucune piste ne
+# pourrait sortir de leurs broches : chargeur et buck (U10? : ILIM, TS, FB, SS, RT à côté de
+# SW, BTST, PMID), ponts (U3?1 : VREF, IPROPI à côté des sorties et de la pompe), capteurs
+# OPV302 + photodiode (TM5?1 : émetteur et récepteur dans le même boîtier). U101 et U105,
+# aussi couverts par U10?, n'ont aucun net analogique.
+# Le moteur évalue la condition dans les deux ordres (A, B) et (B, A) : vérifié le 02/10/2026,
+# chaque sens seul donne les mêmes 188 paires. Parenthèses obligatoires : dans ce moteur,
+# « X && Y || Z && W » sans parenthèses ne correspond à rien (règle morte sans erreur).
+(rule "Analogique contre bruit"
+  (condition "(A.Type != 'Pad' || B.Type != 'Pad') && (A.hasNetclass('ANALOGIQUE') || A.hasNetclass('HORLOGE')) && (B.hasNetclass('COMMUTATION') || B.hasNetclass('AMORCAGE') || B.hasNetclass('MOTEUR') || B.hasNetclass('IMPULSION') || B.hasNetclass('CHARGEUR')) && !(A.intersectsCourtyard('U10?') || B.intersectsCourtyard('U10?') || A.intersectsCourtyard('U3?1') || B.intersectsCourtyard('U3?1') || A.intersectsCourtyard('TM5?1') || B.intersectsCourtyard('TM5?1'))")
+  (constraint clearance (min 0.65mm)))
+
+# --- Étranglements aux pastilles étroites --------------------------------------------------
+
+# Les classes de puissance (0,5 à 2,0 mm) arrivent sur des pastilles plus étroites qu'elles.
+# Sous le courtyard de ces composants seulement, la piste peut se réduire à la largeur des
+# pastilles ; l'autorouteur du fork s'en sert pour tirer les échappements, puis reprend la
+# largeur de classe dès qu'elle passe. Les grands courtyards (ESC, MR30, turbine, moteurs)
+# ne sont pas listés : une piste de puissance n'y rétrécit jamais.
+# Passifs sur un net de puissance dont la pastille est plus étroite que la classe :
+# condensateurs d'amorçage côté nœud de commutation (C104, C114, 0402), découplages VPACK et
+# VBUS (C705 0402, C101 0603, C108 0805), inductance du buck côté SW_BUCK (L102, 1,2 mm).
+(rule "Etranglement passifs"
+  (condition "A.Type == 'Track' && (A.intersectsCourtyard('C104') || A.intersectsCourtyard('C114') || A.intersectsCourtyard('C705') || A.intersectsCourtyard('C101') || A.intersectsCourtyard('C108') || A.intersectsCourtyard('L102'))")
+  (constraint track_width (min 0.2mm) (opt 0.5mm)))
+
+# Circuits intégrés, en dernier (voir l'en-tête) : QFN du chargeur (pastilles 0,25), SOT-583
+# du buck (0,30), USB-C (0,30), HTSSOP des ponts (0,45), SOT-23-6 de la protection USB (0,60).
+(rule "Etranglement circuits integres"
+  (condition "A.Type == 'Track' && (A.intersectsCourtyard('U102') || A.intersectsCourtyard('U103') || A.intersectsCourtyard('J101') || A.intersectsCourtyard('U301') || A.intersectsCourtyard('U351') || A.intersectsCourtyard('U101'))")
+  (constraint track_width (min 0.2mm) (opt 0.25mm)))
