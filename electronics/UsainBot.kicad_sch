@@ -475,30 +475,6 @@
 		(path "/"
 			(page "1")
 		)
-		(path "/3ee10a22-aabb-2c54-dcbf-475ae49e4e1f"
-			(page "2")
-		)
-		(path "/165c44a2-41d7-36dd-8a94-1c23bfae135d"
-			(page "3")
-		)
-		(path "/f091e242-b2d2-a8c1-4ba0-334789aaf38f"
-			(page "4")
-		)
-		(path "/c7b2e962-e346-9d71-cf85-4d9257327614"
-			(page "5")
-		)
-		(path "/33c8b66d-3859-eb57-e0fa-870eb5261e1e"
-			(page "6")
-		)
-		(path "/d8d4cc76-9839-c28f-ba51-64e83601c223"
-			(page "7")
-		)
-		(path "/e7cc3c83-7c65-df9f-53be-bd87de8acfc2"
-			(page "8")
-		)
-		(path "/ba1ecbcf-1c65-895e-8b85-2425aaf9186b"
-			(page "9")
-		)
 	)
 	(embedded_fonts no)
 )

@@ -11,12 +11,6 @@ d'ou ce post-traitement.
 import re, sys, os
 
 PALETTE = {
-    "GM12-N20_bracket":        (0.93, 0.93, 0.91),  # ABS blanc
-    "GM12-N20_motor_encoder":  (0.16, 0.18, 0.20),  # bloc encodeur sombre
-    "GM12-N20_motor_can":      (0.66, 0.68, 0.70),  # carter nickele
-    "GM12-N20_motor_gearbox":  (0.72, 0.60, 0.35),  # reducteur laiton
-    "Pololu_wheel_40x7_hub":   (0.95, 0.95, 0.95),  # moyeu plastique blanc
-    "Pololu_wheel_40x7_tire":  (0.11, 0.11, 0.12),  # gomme silicone noire
     # --- motorisation Faulhaber
     "Faulhaber_1524_motor":       (0.70, 0.71, 0.73),  # acier nickele
     "Faulhaber_IE2-1024_encoder": (0.14, 0.15, 0.17),  # capot codeur sombre

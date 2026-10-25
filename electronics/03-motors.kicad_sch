@@ -5,7 +5,7 @@
 	(uuid "f091e242-b2d2-a8c1-4ba0-334789aaf38f")
 	(paper "A3")
 	(title_block
-		(title "UsainBot - Ponts en H DRV8874, moteurs GM12-N20 et encodeurs")
+		(title "UsainBot - Ponts en H DRV8874, moteurs Faulhaber 1524 et codeurs IE2")
 		(date "2026-08-30")
 		(rev "A")
 		(company "Pacabot")

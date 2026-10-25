@@ -171,21 +171,6 @@ sont la même pièce. Deux pièges de plus au passage : en offscreen,
 `saveImage()` segfaulte (pas de contexte OpenGL) et `print()` est avalé —
 le bilan du script sort aussi dans `Telemetry_Duo.log`.
 
-## Motor_GM12-N20_Bracket
-
-Empreinte **mécanique** (aucune connexion électrique) du moteur GM12-N20 6 V 1:30
-monté sur son support N20/N30.
-
-- Origine = **milieu des deux trous de fixation**
-- Axe moteur suivant **Y**, arbre de sortie vers **−Y**
-- Face avant du support **6,00 mm en retrait** de la face de sortie d'axe
-- 2 trous non métallisés **Ø 2,2 mm** (M2 avec jeu), **entraxe 18,00 mm**
-- Emprise totale : X ±12,75 mm, Y −22,45 → +17,85 mm (40,30 mm de long)
-- `F.Fab` : contour support + corps moteur + arbre — `F.SilkS` : support seul
-
-Régénérer après une mesure : éditer les constantes en tête de
-`gen_motor_footprint.py` puis `python3 gen_motor_footprint.py`.
-
 ## Motor_Faulhaber_1524_15-10
 
 Empreinte **mécanique** de la motorisation qui remplace le N20 : Faulhaber
@@ -252,8 +237,7 @@ s'écarte de sa valeur. À relancer après toute retouche.
 Le repère des modèles 3D de KiCad a son **Y inversé** par rapport à celui de
 l'empreinte. Les deux générateurs appliquent donc un miroir en Y au moment de
 l'export : sans lui, une empreinte tournée de ±90° affiche ses modèles côté pour
-côté, arbre et roue partant du mauvais bord de la carte. Les modèles N20, qui
-viennent de Waveshare, respectent déjà cette convention.
+côté, arbre et roue partant du mauvais bord de la carte.
 
 Le miroir passe par `transformShape`, ni `mirror()` ni `transformGeometry`.
 `mirror()`, sur une forme qui porte un `Placement`, travaille dans le repère
@@ -310,12 +294,9 @@ turbine, équerres moteur, pack à l'arrière — ne voulait plus rien dire.
 |---|---|---|
 | `USB_C_Receptacle_HRO_TYPE-C-31-M-12.step` | blindage + languette | 8,94 × 7,30 × 3,26 (F.Fab + fiche HRO) |
 | `TE_Micro-MaTch_215079-6_2x03_P1.27mm_Vertical.step` | corps **rouge**, contacts, queues | 9,70 × 5,20 × 4,00 (plan client TE C-215079 rév. Y2) |
-| `AMASS_XT30U-M_1x02_P5.0mm_Vertical.step` | embase mâle jaune + 2 contacts | 10,2 × 5,2 × 9,0 — **hauteur à recaler** |
 | `L_Taiyo-Yuden_NR-30xx.step` / `NR-40xx` | self blindée | 3,0³ h 1,5 / 4,0³ h 3,0 |
-| `SW_SPDT_Shouhan_MSK12C02.step` | corps + bouton | 6,70 × 4,25 × 1,4 + 1,5 de bouton |
 | `SKRHABE010.step` | capot + bascule | 7,35 × 7,50 × 1,80 |
 | `Turbine_EDF27.step` | les quatre corps du document PartDesign | ré-exporté par `../../mechanics/export_turbineEDF27.py` |
-| `ESC_Multistar_10A.step` | variateur **debout** sur sa tranche, fils compris | 12 × 5 au sol, 22 de haut (HobbyKing : carte 22 × 12, 5,1 g) |
 | `OLED_Standoffs_M2x6.step` | les quatre entretoises M2 × 6 et leurs vis | fûts ⌀4 à (±11,5 ; ±10,35) |
 
 **Le Micro-MaTch a été refait le 4 septembre** : le premier modèle reprenait
@@ -334,24 +315,9 @@ HTSSOP-16 et le HVQFN-24 existent sous un autre nom) : la table est dans
 `../tools/place_pcb.py`, qui refuse de finir en silence s'il reste une
 empreinte sans modèle.
 
-| Fichier | Couleur | Origine |
-|---|---|---|
-| `GM12-N20_bracket.step` | blanc ABS | `n20_motor_mounting_bracket001` de `../motorHolder.fcstd` |
-| `GM12-N20_motor_gearbox.step` | laiton | STEP Waveshare, faces à Y ≥ 16,07 (réducteur + arbre) |
-| `GM12-N20_motor_can.step` | nickel | STEP Waveshare, faces à 1,0 ≤ Y < 16,07 |
-| `GM12-N20_motor_encoder.step` | sombre | STEP Waveshare, faces à Y < 1,0 |
-| `Pololu_wheel_40x7_hub.step` | blanc | STEP officiel Pololu, faces à r ≤ 18,3 mm |
-| `Pololu_wheel_40x7_tire.step` | noir | STEP officiel Pololu, faces à r > 18,3 mm |
-
-La roue est le modèle officiel Pololu du 40×7 mm **blanc** — exactement la
-référence 1454 achetée. Séparation moyeu/gomme au rayon 18,25 mm, d'après le
-plan coté Pololu : moyeu Ø36,5 mm, hors-tout Ø40,0 mm.
-
-Position de la roue : emmanchée à fond, face extérieure au bout d'arbre.
-
 ### Motorisation Faulhaber
 
-Six fichiers de plus, produits par `gen_faulhaber_3d.py` et
+Six fichiers, produits par `gen_faulhaber_3d.py` et
 `../../mechanics/Motor_bracket_1524.FCStd`.
 
 | Fichier | Couleur | Origine | Masse |
@@ -428,46 +394,6 @@ session). Et le contrôle de cloison de `telemetry_duo.py` sondait un volume
 avec une **boîte écrite en dur** : raccourcir le pare-soleil de 2 mm la
 faisait dépasser de la pièce et signalait une cloison ajourée là où il n'y
 avait plus que du vide. La sonde suit maintenant `X_AVANT`.
-
-## Provenance des cotes
-
-| Cote | Valeur | Source |
-|---|---|---|
-| **Entraxe des trous** | **18,00 mm** | vue de dessus de la datasheet Handson `GA12-N20-Bracket.pdf` — **confirmé au pied à coulisse sur la pièce réelle** |
-| Diamètre des trous | M2 (écrou hexagonal) | datasheet — porté à 2,20 mm sur la carte pour le jeu |
-| Largeur hors-tout | 25,00 mm | datasheet |
-| Profondeur | 11,50 mm | datasheet (dont 8,50 mm pour la zone des oreilles) |
-| **Retrait support / face de sortie d'axe** | **6,00 mm** | **mesuré sur le montage réel** |
-| Section moteur | 10 × 12 mm | plan coté Waveshare + STEP |
-| Longueur totale moteur | 40,30 mm | STEP Waveshare |
-| Arbre | Ø3 mm, méplat D 2,5 mm, 9,2 mm | STEP Waveshare |
-
-## Réserves
-
-1. **Le 3D du support ne correspond pas exactement à la pièce réelle.**
-   `n20_motor_mounting_bracket001` (extrait de `../motorHolder.fcstd`) mesure
-   27,50 mm de large pour un entraxe de 18,50 mm, alors que la pièce achetée
-   fait 25,00 mm pour 18,00 mm d'entraxe. C'est un modèle téléchargé, pas un
-   relevé de la pièce. **L'empreinte est juste** (cotes datasheet vérifiées au
-   pied à coulisse) ; seul le rendu 3D est indicatif, avec 0,25 mm d'écart par
-   trou et 1,25 mm par côté.
-
-2. **Attention au texte de la datasheet Handson** : son résumé annonce
-   « *Pitch: about 16 mm* », ce qui est faux. La cote de 18,0 mm portée sur la
-   vue de dessus, dont les lignes d'attache aboutissent au centre des logements
-   d'écrou, est la bonne.
-
-3. **Le 3D du moteur est un Waveshare DCGM-N20-12V-EN-200RPM (12 V, 1:150)**,
-   pas le GM12-N20 6 V 1:30 réellement acheté. Même famille et mêmes cotes
-   d'enveloppe, mais le bloc encodeur en bout diffère : le modèle porte un
-   connecteur ZH1.5-6PIN là où la pièce réelle a un faisceau.
-
-4. Le bloc encodeur du modèle descend à Z = −0,41 mm (très légèrement sous le
-   plan de la carte) et culmine à Z = 18,50 mm.
-
-5. Le sens de montage du support est **confirmé** : la face à 7,25 mm de l'axe
-   des trous est bien côté arbre. Le support serre le **corps du moteur**, pas le
-   réducteur — il couvre 3,03 mm de réducteur et 8,47 mm de moteur.
 
 ## Réserves — motorisation Faulhaber
 
