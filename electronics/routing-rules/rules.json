@@ -1,0 +1,161 @@
+{
+ "stackup": {
+  "cu_out": 0.035,
+  "cu_in": 0.0152,
+  "prepreg": 0.0994,
+  "er_prepreg": 4.1,
+  "core": 1.2696,
+  "er_core": 4.6
+ },
+ "dT": 20.0,
+ "widths": {
+  "PACK": {
+   "ext_cont": 8.64615863589471,
+   "ext_pic": 6.746384543098342,
+   "ext_2x": 3.3236050669264237,
+   "int_cont": 51.79185224070034
+  },
+  "VBAT": {
+   "ext_cont": 3.176635810310175,
+   "ext_pic": 3.713418316522814,
+   "ext_2x": 1.2211067734861527,
+   "int_cont": 19.02854891270185
+  },
+  "MOTEUR": {
+   "ext_cont": 0.8976037469333807,
+   "ext_pic": 1.4274473152938472,
+   "ext_2x": 0.34504113179404045,
+   "int_cont": 5.376787841813865
+  },
+  "CHARGE": {
+   "ext_cont": 0.8976037469333807,
+   "ext_pic": 0.8159726324963993,
+   "ext_2x": 0.34504113179404045,
+   "int_cont": 5.376787841813865
+  },
+  "BUCK": {
+   "ext_cont": 0.5130978106698741,
+   "ext_pic": 0.5487143284863187,
+   "ext_2x": 0.19723608543238108,
+   "int_cont": 3.073536713161524
+  },
+  "3V3": {
+   "ext_cont": 0.19723608543238108,
+   "ext_pic": 0.3136619266479244,
+   "ext_2x": 0.07581804597041836,
+   "int_cont": 1.1814752219372102
+  },
+  "FAIBLE": {
+   "ext_cont": 0.037477819220985135,
+   "ext_pic": 0.04634834505084864,
+   "ext_2x": 0.014406567714718899,
+   "int_cont": 0.22449804093793158
+  }
+ },
+ "currents": {
+  "PACK": {
+   "cont": 15.5,
+   "pic": 18.5,
+   "src": "mr30-review : ESC 12 A cont./15 A pic + 2 x 1 A moteurs + 1,5 A electronique. J102 -> J103 (ESC) et J102 -> F101."
+  },
+  "VBAT": {
+   "cont": 7.5,
+   "pic": 12.0,
+   "src": "Branche fusible F101 12 A : 2 x ITRIP 3,0 A (DRV8874, VREF 1,34 V, RIPROPI 1 k) + 1,5 A electronique. Le fusible borne le pic."
+  },
+  "MOTEUR": {
+   "cont": 3.0,
+   "pic": 6.0,
+   "src": "ITRIP = 1,34 V / (450 uA/A x 1 k) = 3,0 A regule par le DRV8874 ; 6 A = seuil de protection OCP du DRV8874. Reel : 1 A."
+  },
+  "CHARGE": {
+   "cont": 3.0,
+   "pic": 4.0,
+   "src": "BQ25887 : IIN = KILIM / 383 R ~ 2,4 A + ondulation ; L101 4 A."
+  },
+  "BUCK": {
+   "cont": 2.0,
+   "pic": 3.0,
+   "src": "TPS62933 : sortie 3,3 V / 2 A retenue au schema, 3 A max, L102 3 A."
+  },
+  "3V3": {
+   "cont": 1.0,
+   "pic": 2.0,
+   "src": "Distribution +3V3 : ~0,5 A estimes (MCU, bancs IR 126 mA pulses, laser 3 x 12 mA, OLED, BLE), largeur pour 1 A."
+  },
+  "FAIBLE": {
+   "cont": 0.3,
+   "pic": 0.5,
+   "src": "Bancs IR 6 x 21 mA = 126 mA, lasers 12 mA, buzzer, +3V3_BLE, equilibrage PACK_MID 88 mA, 3V3A."
+  }
+ },
+ "ipc_clearance": {
+  "B1 interne": 0.05,
+  "B2 externe nu": 0.1,
+  "B4 externe vernis (masque)": 0.05,
+  "A6 pattes composant nues": 0.13,
+  "A7 pattes composant vernies": 0.13
+ },
+ "vias": {
+  "0.3/0.6": {
+   "i_dT10": 0.7378502665494807,
+   "i_dT20": 1.0009708646094437
+  },
+  "0.4/0.8": {
+   "i_dT10": 0.8996247205745646,
+   "i_dT20": 1.2204347890103568
+  }
+ },
+ "validation": {
+  "solveur_vs_hammerstad": {
+   "w": 0.2,
+   "h": 0.0994,
+   "fd": 50.543152591939844,
+   "hammerstad": 50.28966481515175
+  }
+ },
+ "usb": [
+  {
+   "w": 0.17,
+   "s": 0.18,
+   "zdiff": 91.04851993541008,
+   "eeff": 2.786344950431904
+  },
+  {
+   "w": 0.18,
+   "s": 0.18,
+   "zdiff": 88.47800525859378,
+   "eeff": 2.80172911039508
+  },
+  {
+   "w": 0.18,
+   "s": 0.2,
+   "zdiff": 89.72339013814275,
+   "eeff": 2.820050343504986
+  },
+  {
+   "w": 0.19,
+   "s": 0.2,
+   "zdiff": 86.09372877029477,
+   "eeff": 2.8404960441867773
+  },
+  {
+   "w": 0.2,
+   "s": 0.2,
+   "zdiff": 83.82842563993238,
+   "eeff": 2.8549024893603483
+  }
+ ],
+ "single": [
+  {
+   "w": 0.15,
+   "z0": 53.08333354442558,
+   "eeff": 3.005032750205123
+  },
+  {
+   "w": 0.2,
+   "z0": 45.7166975633444,
+   "eeff": 3.085662594655086
+  }
+ ]
+}
