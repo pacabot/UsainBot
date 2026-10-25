@@ -23,6 +23,14 @@ rules/            règlement de l'épreuve
 Les bibliothèques sont référencées en `${KIPRJMOD}/kicad-lib/…` : le dépôt se clone et
 s'ouvre tel quel, sans chemin absolu ni variable d'environnement à déclarer.
 
+Le projet s'ouvre avec **KiCad 10.0** stable. Le routage se fait avec un fork 10.99
+(autorouteur) qui enregistre la carte dans un format que 10.0 refuse : après chaque
+enregistrement depuis le fork, ramener la carte au format 10.0 avant de commiter.
+
+```sh
+cd electronics && python3 tools/to_kicad10.py UsainBot.kicad_pcb
+```
+
 ## Architecture
 
 Le document de conception — choix du microcontrôleur, schémas blocs, implantation,

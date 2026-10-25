@@ -1,3 +1,5 @@
+> **Format KiCad.** `to_kicad10.py` ramène une carte enregistrée par le fork 10.99 au format 10.0 stable (positions `transform` → `at`, réglages propres au fork retirés). Positions, cuivre et masque sont vérifiés identiques entre les deux versions.
+
 > Connecteur batterie actuel : AMASS MR30PB-M + MR30-F ; [modifications, dimensions et contrôles](../mr30-review/README.md). Les générateurs ont été mis à jour.
 
 # Générateur du schéma
