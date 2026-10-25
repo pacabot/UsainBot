@@ -635,251 +635,251 @@
   "net_settings": {
     "classes": [
       {
-        "name": "PACK",
-        "priority": 0,
-        "clearance": 0.2,
-        "track_width": 1.2,
-        "via_diameter": 0.6,
-        "via_drill": 0.3,
-        "microvia_diameter": 0.3,
-        "microvia_drill": 0.1,
-        "diff_pair_width": 1.2,
+        "bus_width": 12,
+        "clearance": 0.15,
         "diff_pair_gap": 0.25,
         "diff_pair_via_gap": 0.25,
-        "pcb_color": "rgba(220, 40, 40, 0.900)",
-        "schematic_color": "rgba(0, 0, 0, 0.000)",
-        "bus_width": 12,
-        "wire_width": 6,
+        "diff_pair_width": 0.2,
         "line_style": 0,
-        "tuning_profile": ""
-      },
-      {
-        "name": "VBAT",
-        "priority": 1,
-        "clearance": 0.2,
-        "track_width": 0.5,
-        "via_diameter": 0.6,
-        "via_drill": 0.3,
         "microvia_diameter": 0.3,
         "microvia_drill": 0.1,
-        "diff_pair_width": 0.5,
-        "diff_pair_gap": 0.25,
-        "diff_pair_via_gap": 0.25,
-        "pcb_color": "rgba(240, 120, 30, 0.900)",
+        "name": "Default",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "priority": 2147483647,
         "schematic_color": "rgba(0, 0, 0, 0.000)",
-        "bus_width": 12,
-        "wire_width": 6,
-        "line_style": 0,
-        "tuning_profile": ""
-      },
-      {
-        "name": "MOTEUR",
-        "priority": 2,
-        "clearance": 0.2,
-        "track_width": 0.5,
-        "via_diameter": 0.6,
-        "via_drill": 0.3,
-        "microvia_diameter": 0.3,
-        "microvia_drill": 0.1,
-        "diff_pair_width": 0.5,
-        "diff_pair_gap": 0.25,
-        "diff_pair_via_gap": 0.25,
-        "pcb_color": "rgba(200, 0, 160, 0.900)",
-        "schematic_color": "rgba(0, 0, 0, 0.000)",
-        "bus_width": 12,
-        "wire_width": 6,
-        "line_style": 0,
-        "tuning_profile": ""
-      },
-      {
-        "name": "CHARGEUR",
-        "priority": 3,
-        "clearance": 0.2,
-        "track_width": 2.0,
-        "via_diameter": 0.6,
-        "via_drill": 0.3,
-        "microvia_diameter": 0.3,
-        "microvia_drill": 0.1,
-        "diff_pair_width": 2.0,
-        "diff_pair_gap": 0.25,
-        "diff_pair_via_gap": 0.25,
-        "pcb_color": "rgba(160, 80, 0, 0.900)",
-        "schematic_color": "rgba(0, 0, 0, 0.000)",
-        "bus_width": 12,
-        "wire_width": 6,
-        "line_style": 0,
-        "tuning_profile": ""
-      },
-      {
-        "name": "COMMUTATION",
-        "priority": 4,
-        "clearance": 0.2,
-        "track_width": 2.0,
-        "via_diameter": 0.6,
-        "via_drill": 0.3,
-        "microvia_diameter": 0.3,
-        "microvia_drill": 0.1,
-        "diff_pair_width": 2.0,
-        "diff_pair_gap": 0.25,
-        "diff_pair_via_gap": 0.25,
-        "pcb_color": "rgba(255, 0, 0, 0.900)",
-        "schematic_color": "rgba(0, 0, 0, 0.000)",
-        "bus_width": 12,
-        "wire_width": 6,
-        "line_style": 0,
-        "tuning_profile": ""
-      },
-      {
-        "name": "AMORCAGE",
-        "priority": 5,
-        "clearance": 0.2,
-        "track_width": 0.3,
+        "track_width": 0.2,
+        "tuning_profile": "",
         "via_diameter": 0.5,
         "via_drill": 0.3,
-        "microvia_diameter": 0.3,
-        "microvia_drill": 0.1,
-        "diff_pair_width": 0.3,
-        "diff_pair_gap": 0.25,
-        "diff_pair_via_gap": 0.25,
-        "pcb_color": "rgba(255, 150, 150, 0.900)",
-        "schematic_color": "rgba(0, 0, 0, 0.000)",
-        "bus_width": 12,
-        "wire_width": 6,
-        "line_style": 0,
-        "tuning_profile": ""
+        "wire_width": 6
       },
       {
+        "bus_width": 12,
+        "clearance": 0.15,
+        "diff_pair_gap": 0.25,
+        "diff_pair_via_gap": 0.25,
+        "diff_pair_width": 0.3,
+        "line_style": 0,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
         "name": "ALIM_LOGIQUE",
+        "pcb_color": "rgba(250, 220, 0, 0.902)",
         "priority": 6,
-        "clearance": 0.15,
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
         "track_width": 0.3,
+        "tuning_profile": "",
         "via_diameter": 0.6,
         "via_drill": 0.3,
-        "microvia_diameter": 0.3,
-        "microvia_drill": 0.1,
-        "diff_pair_width": 0.3,
-        "diff_pair_gap": 0.25,
-        "diff_pair_via_gap": 0.25,
-        "pcb_color": "rgba(250, 220, 0, 0.900)",
-        "schematic_color": "rgba(0, 0, 0, 0.000)",
-        "bus_width": 12,
-        "wire_width": 6,
-        "line_style": 0,
-        "tuning_profile": ""
+        "wire_width": 6
       },
       {
-        "name": "GND",
-        "priority": 7,
-        "clearance": 0.15,
-        "track_width": 0.3,
-        "via_diameter": 0.6,
-        "via_drill": 0.3,
-        "microvia_diameter": 0.3,
-        "microvia_drill": 0.1,
-        "diff_pair_width": 0.3,
+        "bus_width": 12,
+        "clearance": 0.2,
         "diff_pair_gap": 0.25,
         "diff_pair_via_gap": 0.25,
-        "pcb_color": "rgba(80, 80, 80, 0.900)",
-        "schematic_color": "rgba(0, 0, 0, 0.000)",
-        "bus_width": 12,
-        "wire_width": 6,
+        "diff_pair_width": 0.3,
         "line_style": 0,
-        "tuning_profile": ""
-      },
-      {
-        "name": "IMPULSION",
-        "priority": 8,
-        "clearance": 0.15,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "name": "AMORCAGE",
+        "pcb_color": "rgba(255, 150, 150, 0.902)",
+        "priority": 5,
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
         "track_width": 0.3,
+        "tuning_profile": "",
         "via_diameter": 0.5,
         "via_drill": 0.3,
-        "microvia_diameter": 0.3,
-        "microvia_drill": 0.1,
-        "diff_pair_width": 0.3,
-        "diff_pair_gap": 0.25,
-        "diff_pair_via_gap": 0.25,
-        "pcb_color": "rgba(150, 0, 255, 0.900)",
-        "schematic_color": "rgba(0, 0, 0, 0.000)",
-        "bus_width": 12,
-        "wire_width": 6,
-        "line_style": 0,
-        "tuning_profile": ""
+        "wire_width": 6
       },
       {
+        "bus_width": 12,
+        "clearance": 0.15,
+        "diff_pair_gap": 0.25,
+        "diff_pair_via_gap": 0.25,
+        "diff_pair_width": 0.2,
+        "line_style": 0,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
         "name": "ANALOGIQUE",
+        "pcb_color": "rgba(0, 170, 80, 0.902)",
         "priority": 9,
-        "clearance": 0.15,
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
         "track_width": 0.2,
+        "tuning_profile": "",
         "via_diameter": 0.5,
         "via_drill": 0.3,
-        "microvia_diameter": 0.3,
-        "microvia_drill": 0.1,
-        "diff_pair_width": 0.2,
-        "diff_pair_gap": 0.25,
-        "diff_pair_via_gap": 0.25,
-        "pcb_color": "rgba(0, 170, 80, 0.900)",
-        "schematic_color": "rgba(0, 0, 0, 0.000)",
-        "bus_width": 12,
-        "wire_width": 6,
-        "line_style": 0,
-        "tuning_profile": ""
+        "wire_width": 6
       },
       {
+        "bus_width": 12,
+        "clearance": 0.2,
+        "diff_pair_gap": 0.25,
+        "diff_pair_via_gap": 0.25,
+        "diff_pair_width": 2.0,
+        "line_style": 0,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "name": "CHARGEUR",
+        "pcb_color": "rgba(160, 80, 0, 0.902)",
+        "priority": 3,
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 2.0,
+        "tuning_profile": "",
+        "via_diameter": 0.6,
+        "via_drill": 0.3,
+        "wire_width": 6
+      },
+      {
+        "bus_width": 12,
+        "clearance": 0.2,
+        "diff_pair_gap": 0.25,
+        "diff_pair_via_gap": 0.25,
+        "diff_pair_width": 2.0,
+        "line_style": 0,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "name": "COMMUTATION",
+        "pcb_color": "rgba(255, 0, 0, 0.902)",
+        "priority": 4,
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 2.0,
+        "tuning_profile": "",
+        "via_diameter": 0.6,
+        "via_drill": 0.3,
+        "wire_width": 6
+      },
+      {
+        "bus_width": 12,
+        "clearance": 0.15,
+        "diff_pair_gap": 0.25,
+        "diff_pair_via_gap": 0.25,
+        "diff_pair_width": 0.3,
+        "line_style": 0,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "name": "GND",
+        "pcb_color": "rgba(80, 80, 80, 0.902)",
+        "priority": 7,
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 0.3,
+        "tuning_profile": "",
+        "via_diameter": 0.6,
+        "via_drill": 0.3,
+        "wire_width": 6
+      },
+      {
+        "bus_width": 12,
+        "clearance": 0.15,
+        "diff_pair_gap": 0.25,
+        "diff_pair_via_gap": 0.25,
+        "diff_pair_width": 0.2,
+        "line_style": 0,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
         "name": "HORLOGE",
+        "pcb_color": "rgba(0, 200, 200, 0.902)",
         "priority": 10,
-        "clearance": 0.15,
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
         "track_width": 0.2,
+        "tuning_profile": "",
         "via_diameter": 0.5,
         "via_drill": 0.3,
-        "microvia_diameter": 0.3,
-        "microvia_drill": 0.1,
-        "diff_pair_width": 0.2,
-        "diff_pair_gap": 0.25,
-        "diff_pair_via_gap": 0.25,
-        "pcb_color": "rgba(0, 200, 200, 0.900)",
-        "schematic_color": "rgba(0, 0, 0, 0.000)",
-        "bus_width": 12,
-        "wire_width": 6,
-        "line_style": 0,
-        "tuning_profile": ""
+        "wire_width": 6
       },
       {
-        "name": "USB",
-        "priority": 11,
+        "bus_width": 12,
         "clearance": 0.15,
-        "track_width": 0.34,
-        "via_diameter": 0.5,
-        "via_drill": 0.3,
+        "diff_pair_gap": 0.25,
+        "diff_pair_via_gap": 0.25,
+        "diff_pair_width": 0.3,
+        "line_style": 0,
         "microvia_diameter": 0.3,
         "microvia_drill": 0.1,
-        "diff_pair_width": 0.34,
+        "name": "IMPULSION",
+        "pcb_color": "rgba(150, 0, 255, 0.902)",
+        "priority": 8,
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 0.3,
+        "tuning_profile": "",
+        "via_diameter": 0.5,
+        "via_drill": 0.3,
+        "wire_width": 6
+      },
+      {
+        "bus_width": 12,
+        "clearance": 0.2,
+        "diff_pair_gap": 0.25,
+        "diff_pair_via_gap": 0.25,
+        "diff_pair_width": 0.5,
+        "line_style": 0,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "name": "MOTEUR",
+        "pcb_color": "rgba(200, 0, 160, 0.902)",
+        "priority": 2,
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 0.5,
+        "tuning_profile": "",
+        "via_diameter": 0.6,
+        "via_drill": 0.3,
+        "wire_width": 6
+      },
+      {
+        "bus_width": 12,
+        "clearance": 0.2,
+        "diff_pair_gap": 0.25,
+        "diff_pair_via_gap": 0.25,
+        "diff_pair_width": 1.2,
+        "line_style": 0,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "name": "PACK",
+        "pcb_color": "rgba(220, 40, 40, 0.902)",
+        "priority": 0,
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 1.2,
+        "tuning_profile": "",
+        "via_diameter": 0.6,
+        "via_drill": 0.3,
+        "wire_width": 6
+      },
+      {
+        "bus_width": 12,
+        "clearance": 0.15,
         "diff_pair_gap": 0.2,
         "diff_pair_via_gap": 0.25,
-        "pcb_color": "rgba(0, 100, 255, 0.900)",
-        "schematic_color": "rgba(0, 0, 0, 0.000)",
-        "bus_width": 12,
-        "wire_width": 6,
+        "diff_pair_width": 0.34,
         "line_style": 0,
-        "tuning_profile": ""
-      },
-      {
-        "name": "Default",
-        "priority": 2147483647,
-        "clearance": 0.15,
-        "track_width": 0.2,
-        "via_diameter": 0.5,
-        "via_drill": 0.3,
         "microvia_diameter": 0.3,
         "microvia_drill": 0.1,
-        "diff_pair_width": 0.2,
+        "name": "USB",
+        "pcb_color": "rgba(0, 100, 255, 0.902)",
+        "priority": 11,
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 0.34,
+        "tuning_profile": "",
+        "via_diameter": 0.5,
+        "via_drill": 0.3,
+        "wire_width": 6
+      },
+      {
+        "bus_width": 12,
+        "clearance": 0.2,
         "diff_pair_gap": 0.25,
         "diff_pair_via_gap": 0.25,
-        "pcb_color": "rgba(0, 0, 0, 0.000)",
-        "schematic_color": "rgba(0, 0, 0, 0.000)",
-        "bus_width": 12,
-        "wire_width": 6,
+        "diff_pair_width": 0.5,
         "line_style": 0,
-        "tuning_profile": ""
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "name": "VBAT",
+        "pcb_color": "rgba(240, 120, 30, 0.902)",
+        "priority": 1,
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 0.5,
+        "tuning_profile": "",
+        "via_diameter": 0.6,
+        "via_drill": 0.3,
+        "wire_width": 6
       }
     ],
     "meta": {
@@ -1121,6 +1121,7 @@
       "mode": 0,
       "netclasses": {
         "+3V3": {
+          "current_a": 1.2,
           "layers": [
             "F.Cu",
             "In1.Cu",
@@ -1130,10 +1131,10 @@
           "new_vias": true,
           "protect_existing": false,
           "route": true,
-          "stage": 1,
-          "current_a": 1.2
+          "stage": 1
         },
         "+3V3A": {
+          "current_a": 1.2,
           "layers": [
             "F.Cu",
             "In1.Cu",
@@ -1143,10 +1144,10 @@
           "new_vias": true,
           "protect_existing": false,
           "route": true,
-          "stage": 1,
-          "current_a": 1.2
+          "stage": 1
         },
         "+3V3_BLE": {
+          "current_a": 1.2,
           "layers": [
             "F.Cu",
             "In1.Cu",
@@ -1156,8 +1157,7 @@
           "new_vias": true,
           "protect_existing": false,
           "route": true,
-          "stage": 1,
-          "current_a": 1.2
+          "stage": 1
         },
         "/Alimentation/BST_BUCK": {
           "layers": [
@@ -1340,6 +1340,7 @@
           "stage": 3
         },
         "/Alimentation/PMID": {
+          "current_a": 3.0,
           "layers": [
             "F.Cu",
             "In1.Cu",
@@ -1349,8 +1350,7 @@
           "new_vias": true,
           "protect_existing": false,
           "route": true,
-          "stage": 1,
-          "current_a": 3.0
+          "stage": 1
         },
         "/Alimentation/PWR_G": {
           "layers": [
@@ -1389,6 +1389,7 @@
           "stage": 3
         },
         "/Alimentation/REGN": {
+          "current_a": 1.2,
           "layers": [
             "F.Cu",
             "In1.Cu",
@@ -1398,8 +1399,7 @@
           "new_vias": true,
           "protect_existing": false,
           "route": true,
-          "stage": 1,
-          "current_a": 1.2
+          "stage": 1
         },
         "/Alimentation/RT_BUCK": {
           "layers": [
@@ -1414,6 +1414,7 @@
           "stage": 2
         },
         "/Alimentation/SNS_CHG": {
+          "current_a": 3.0,
           "layers": [
             "F.Cu",
             "In1.Cu",
@@ -1423,8 +1424,7 @@
           "new_vias": true,
           "protect_existing": false,
           "route": true,
-          "stage": 1,
-          "current_a": 3.0
+          "stage": 1
         },
         "/Alimentation/SS_BUCK": {
           "layers": [
@@ -1493,6 +1493,7 @@
           "stage": 2
         },
         "/Alimentation/VBAT_SW_IN": {
+          "current_a": 3.9,
           "layers": [
             "F.Cu",
             "In1.Cu",
@@ -1502,10 +1503,10 @@
           "new_vias": true,
           "protect_existing": false,
           "route": true,
-          "stage": 1,
-          "current_a": 3.9
+          "stage": 1
         },
         "/Alimentation/VBUS_IN": {
+          "current_a": 3.0,
           "layers": [
             "F.Cu",
             "In1.Cu",
@@ -1515,8 +1516,7 @@
           "new_vias": true,
           "protect_existing": false,
           "route": true,
-          "stage": 1,
-          "current_a": 3.0
+          "stage": 1
         },
         "/Barrette/IR_A00": {
           "layers": [
@@ -2431,6 +2431,7 @@
           "stage": 1
         },
         "/Moteurs/ENC_5V": {
+          "current_a": 1.2,
           "layers": [
             "F.Cu",
             "In1.Cu",
@@ -2440,8 +2441,7 @@
           "new_vias": true,
           "protect_existing": false,
           "route": true,
-          "stage": 1,
-          "current_a": 1.2
+          "stage": 1
         },
         "/Moteurs/ENC_L_A_RAW": {
           "layers": [
@@ -2540,6 +2540,7 @@
           "stage": 2
         },
         "/Moteurs/MOT_L_OUT1": {
+          "current_a": 1.5,
           "layers": [
             "F.Cu",
             "In1.Cu",
@@ -2549,10 +2550,10 @@
           "new_vias": true,
           "protect_existing": false,
           "route": true,
-          "stage": 1,
-          "current_a": 1.5
+          "stage": 1
         },
         "/Moteurs/MOT_L_OUT2": {
+          "current_a": 1.5,
           "layers": [
             "F.Cu",
             "In1.Cu",
@@ -2562,10 +2563,10 @@
           "new_vias": true,
           "protect_existing": false,
           "route": true,
-          "stage": 1,
-          "current_a": 1.5
+          "stage": 1
         },
         "/Moteurs/MOT_R_OUT1": {
+          "current_a": 1.5,
           "layers": [
             "F.Cu",
             "In1.Cu",
@@ -2575,10 +2576,10 @@
           "new_vias": true,
           "protect_existing": false,
           "route": true,
-          "stage": 1,
-          "current_a": 1.5
+          "stage": 1
         },
         "/Moteurs/MOT_R_OUT2": {
+          "current_a": 1.5,
           "layers": [
             "F.Cu",
             "In1.Cu",
@@ -2588,8 +2589,7 @@
           "new_vias": true,
           "protect_existing": false,
           "route": true,
-          "stage": 1,
-          "current_a": 1.5
+          "stage": 1
         },
         "/Moteurs/PMODE_L": {
           "layers": [
@@ -3780,6 +3780,7 @@
           "stage": 2
         },
         "VBAT": {
+          "current_a": 3.9,
           "layers": [
             "F.Cu",
             "In1.Cu",
@@ -3789,8 +3790,7 @@
           "new_vias": true,
           "protect_existing": false,
           "route": true,
-          "stage": 1,
-          "current_a": 3.9
+          "stage": 1
         },
         "VBAT_SENSE": {
           "layers": [
@@ -3805,6 +3805,7 @@
           "stage": 2
         },
         "VPACK": {
+          "current_a": 2.2,
           "layers": [
             "F.Cu",
             "In1.Cu",
@@ -3814,8 +3815,7 @@
           "new_vias": true,
           "protect_existing": false,
           "route": true,
-          "stage": 1,
-          "current_a": 2.2
+          "stage": 1
         },
         "unconnected-(J101-SBU1-PadA8)": {
           "layers": [
